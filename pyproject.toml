@@ -1,0 +1,48 @@
+[project]
+name = "ghidra-docs"
+version = "0.1.0"
+description = "Convert Ghidra's HTML help documentation to Markdown files"
+readme = "README.md"
+authors = [
+    { name = "Lee Chagolla-Christensen", email = "lee@localhost" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "lxml>=6.0.2",
+]
+
+[project.scripts]
+ghidra-help-to-markdown = "ghidra_help_to_markdown.main:main"
+ghidra-docs-validator = "ghidra_help_to_markdown.validator:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ghidra_help_to_markdown"]
+
+[dependency-groups]
+dev = [
+    "grip>=4.6.2",
+    "ruff>=0.14.8",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+exclude = [
+    ".venv",
+    "__pycache__",
+    ".ruff_cache",
+    "downloads",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "ANN"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

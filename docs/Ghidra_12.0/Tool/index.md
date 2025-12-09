@@ -1,0 +1,18 @@
+# Tool
+
+[← Back to Home](../index.md)
+
+## Contents
+
+- [Configure Tool](Configure_Tool.md)
+- [Default Tools](Ghidra_Tool_Administration.md#defaulttools)
+- [Tool Options Dialog](ToolOptions_Dialog.md)
+- [Tools](Ghidra_Tool_Administration.md)
+- [Create Tool](Ghidra_Tool_Administration.md#create-tool)
+- [Run Tool](Ghidra_Tool_Administration.md#run-tool)
+- [Close Tool](Ghidra_Tool_Administration.md#close-tool)
+- [Save Tool](Ghidra_Tool_Administration.md#save-tool)
+- [Undo/Redo](Undo_Redo.md)
+- [Import Tools](Ghidra_Tool_Administration.md#import-tool)
+- [Import Default Tools](Ghidra_Tool_Administration.md#import-ghidra-tools)
+- [Export Tool](Ghidra_Tool_Administration.md#export-tool)
