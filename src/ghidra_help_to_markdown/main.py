@@ -301,6 +301,10 @@ class GhidraHelpConverter:
     ) -> tuple[int, list[tuple[str, str]], list[tuple[str, str]]]:
         """Convert all HTML files to Markdown.
 
+        Uses a two-pass approach:
+        1. First pass: Convert all HTML to Markdown, collect anchor mappings
+        2. Second pass: Resolve links using the complete anchor mapping
+
         Returns:
             Tuple of (converted_count, image_mismatches, code_block_mismatches) where:
             - image_mismatches is a list of (file_path, message) tuples for files with image count issues
@@ -326,6 +330,10 @@ class GhidraHelpConverter:
             if html_path not in all_files_to_convert:
                 all_files_to_convert[html_path] = []
 
+        # Store converted markdown content for second pass
+        converted_files: list[tuple[str, str, str, Optional[tuple]]] = []  # (html_path, rel_path, markdown, prev_next)
+
+        # PASS 1: Convert all HTML files to Markdown and collect anchor mappings
         for html_path, entries in all_files_to_convert.items():
             # Apply module filter
             if module_filter:
@@ -364,6 +372,10 @@ class GhidraHelpConverter:
                 )
                 markdown = converter.convert_file(source_path)
 
+                # Collect anchor mappings from this file
+                if converter.anchor_to_heading_slug:
+                    self.link_resolver.add_anchor_mappings(rel_path, converter.anchor_to_heading_slug)
+
                 # Validate image counts
                 is_valid, img_msg = converter.validate_image_counts()
                 if not is_valid:
@@ -376,24 +388,34 @@ class GhidraHelpConverter:
                     code_block_mismatches.append((rel_path, code_msg))
                     self.log(f"  WARNING: {rel_path} - {code_msg}")
 
-                # Resolve links
-                markdown = self.link_resolver.transform_markdown_links(markdown, rel_path)
-
-                # Add navigation
+                # Store for second pass
                 prev_next = prev_next_map.get(html_path)
-                if prev_next:
-                    prev_entry, current_entry, next_entry = prev_next
-                    markdown = self._add_navigation(markdown, rel_path, prev_entry, current_entry, next_entry)
-
-                # Write output
-                output_path.parent.mkdir(parents=True, exist_ok=True)
-                output_path.write_text(markdown, encoding="utf-8")
-                converted += 1
+                converted_files.append((html_path, rel_path, markdown, prev_next))
 
                 self.log(f"  Converted: {rel_path}")
 
             except Exception as e:
                 print(f"  Error converting {html_path}: {e}")
+
+        # PASS 2: Resolve links and write files (now that all anchor mappings are collected)
+        for html_path, rel_path, markdown, prev_next in converted_files:
+            try:
+                # Resolve links using complete anchor mapping
+                markdown = self.link_resolver.transform_markdown_links(markdown, rel_path)
+
+                # Add navigation
+                if prev_next:
+                    prev_entry, current_entry, next_entry = prev_next
+                    markdown = self._add_navigation(markdown, rel_path, prev_entry, current_entry, next_entry)
+
+                # Write output
+                output_path = self.output_dir / rel_path
+                output_path.parent.mkdir(parents=True, exist_ok=True)
+                output_path.write_text(markdown, encoding="utf-8")
+                converted += 1
+
+            except Exception as e:
+                print(f"  Error writing {rel_path}: {e}")
 
         return converted, image_mismatches, code_block_mismatches
 
@@ -600,6 +622,18 @@ class GhidraHelpConverter:
         else:
             anchor = ""
 
+        # Handle external docs (e.g., "external:docs/WhatsNew.html")
+        if html_path.startswith("external:"):
+            external_path = html_path[len("external:") :]
+            if external_path.endswith(".html"):
+                external_path = external_path[:-5] + ".md"
+            elif external_path.endswith(".htm"):
+                external_path = external_path[:-4] + ".md"
+            # Calculate relative path from current file to external doc
+            current_dir = Path(current_path).parent
+            depth = len(current_dir.parts) if current_dir.parts else 0
+            return "../" * depth + external_path + anchor
+
         # Convert to md path
         if html_path.startswith("help/topics/"):
             md_path = html_path[len("help/topics/") :]
@@ -688,24 +722,29 @@ class GhidraHelpConverter:
 
         This handles:
         1. README_PDB.html - PDB Parser documentation
-        2. WhatsNew.html - What's New in Ghidra
+        2. WhatsNew.md - What's New in Ghidra (already markdown, just copy)
         3. tips.txt - Tips of the Day (converted to Tips.md)
         """
         converted = 0
 
-        # External docs to convert (pattern -> output path)
-        external_docs = {
+        # External HTML docs to convert (pattern -> output path)
+        external_html_docs = {
             "**/PDB/src/global/docs/README_PDB.html": "docs/README_PDB.md",
-            "**/Public_Release/src/global/docs/WhatsNew.html": "docs/WhatsNew.md",
-            "**/Public_Release/src/global/docs/ChangeHistory.html": "docs/ChangeHistory.md",
             "**/GhidraDocs/InstallationGuide.html": "docs/InstallationGuide.md",
+        }
+
+        # External markdown docs to copy (pattern -> output path)
+        external_md_docs = {
+            "**/Public_Release/src/global/docs/WhatsNew.md": "docs/WhatsNew.md",
+            "**/Public_Release/src/global/docs/ChangeHistory.md": "docs/ChangeHistory.md",
         }
 
         # Create docs directory
         docs_dir = self.output_dir / "docs"
         docs_dir.mkdir(exist_ok=True)
 
-        for pattern, output_path in external_docs.items():
+        # Convert HTML docs
+        for pattern, output_path in external_html_docs.items():
             matches = list(self.ghidra_root.glob(pattern))
             if matches:
                 source_path = matches[0]
@@ -714,11 +753,6 @@ class GhidraHelpConverter:
                     content = source_path.read_text(encoding="utf-8", errors="replace")
                     converter = HTMLToMarkdownConverter()
                     markdown = converter.convert(content)
-
-                    # Fix links in docs that reference sibling files
-                    if "WhatsNew" in output_path:
-                        markdown = markdown.replace("](InstallationGuide.html)", "](InstallationGuide.md)")
-                        markdown = markdown.replace("](ChangeHistory.html)", "](ChangeHistory.md)")
 
                     # Write output
                     output_file = self.output_dir / output_path
@@ -729,6 +763,29 @@ class GhidraHelpConverter:
                     converted += 1
                 except Exception as e:
                     print(f"  Error converting {source_path}: {e}")
+
+        # Copy markdown docs (fix links as needed)
+        for pattern, output_path in external_md_docs.items():
+            matches = list(self.ghidra_root.glob(pattern))
+            if matches:
+                source_path = matches[0]
+                try:
+                    # Read markdown content
+                    markdown = source_path.read_text(encoding="utf-8", errors="replace")
+
+                    # Fix links in docs that reference sibling files
+                    markdown = markdown.replace("](InstallationGuide.html)", "](InstallationGuide.md)")
+                    markdown = markdown.replace("](ChangeHistory.html)", "](ChangeHistory.md)")
+
+                    # Write output
+                    output_file = self.output_dir / output_path
+                    output_file.parent.mkdir(parents=True, exist_ok=True)
+                    output_file.write_text(markdown, encoding="utf-8")
+
+                    self.log(f"  Copied: {output_path}")
+                    converted += 1
+                except Exception as e:
+                    print(f"  Error copying {source_path}: {e}")
 
         # Generate Tips.md from tips.txt
         tips_pattern = "**/Base/src/main/resources/ghidra/app/plugin/core/totd/tips.txt"
@@ -809,6 +866,13 @@ class GhidraHelpConverter:
             "",
             "---",
             "",
+            "## What's New",
+            "",
+            "- [What's New in Ghidra](docs/WhatsNew.md)",
+            "- [Change History](docs/ChangeHistory.md)",
+            "",
+            "---",
+            "",
             "## Table of Contents",
             "",
         ]
@@ -816,11 +880,25 @@ class GhidraHelpConverter:
         def write_entry(entry: TOCEntry, level: int = 0) -> None:
             indent = "  " * level
             if entry.target:
+                target = entry.target
+
+                # Handle external docs (e.g., "external:docs/WhatsNew.html")
+                if target.startswith("external:"):
+                    external_path = target[len("external:") :]
+                    if external_path.endswith(".html"):
+                        external_path = external_path[:-5] + ".md"
+                    elif external_path.endswith(".htm"):
+                        external_path = external_path[:-4] + ".md"
+                    lines.append(f"{indent}- [{entry.text}]({external_path})")
+                    for child in entry.children:
+                        write_entry(child, level + 1)
+                    return
+
                 # Get the markdown path
-                if entry.target.startswith("help/topics/"):
-                    md_path = entry.target[len("help/topics/") :]
+                if target.startswith("help/topics/"):
+                    md_path = target[len("help/topics/") :]
                 else:
-                    md_path = entry.target
+                    md_path = target
 
                 # Remove anchor for file path
                 if "#" in md_path:
@@ -832,10 +910,12 @@ class GhidraHelpConverter:
                     md_path = md_path[:-5] + ".md"
 
                 # Add anchor if this entry has one (points to a section)
-                # Slugify the anchor for markdown compatibility
+                # Slugify and resolve the anchor for markdown compatibility
                 anchor_suffix = ""
                 if entry.anchor:
-                    anchor_suffix = f"#{slugify(entry.anchor)}"
+                    anchor_slug = slugify(entry.anchor)
+                    resolved_anchor = self.link_resolver._resolve_anchor(anchor_slug, md_path)
+                    anchor_suffix = f"#{resolved_anchor}"
 
                 lines.append(f"{indent}- [{entry.text}]({md_path}{anchor_suffix})")
             else:
@@ -845,6 +925,9 @@ class GhidraHelpConverter:
                 write_entry(child, level + 1)
 
         for entry in self.toc_tree.entries:
+            # Skip "What's New" since it's already at the top
+            if entry.target and entry.target.startswith("external:docs/WhatsNew"):
+                continue
             write_entry(entry)
 
         lines.append("")
@@ -910,10 +993,14 @@ class GhidraHelpConverter:
                         rel_path = rel_path[:-5] + ".md"
 
                     # Add anchor if this entry has one (points to a section)
-                    # Slugify the anchor for markdown compatibility
+                    # Slugify and resolve the anchor for markdown compatibility
                     anchor_suffix = ""
                     if entry.anchor:
-                        anchor_suffix = f"#{slugify(entry.anchor)}"
+                        anchor_slug = slugify(entry.anchor)
+                        # Compute full md path for anchor resolution
+                        target_md_path = f"{module}/{rel_path}"
+                        resolved_anchor = self.link_resolver._resolve_anchor(anchor_slug, target_md_path)
+                        anchor_suffix = f"#{resolved_anchor}"
 
                     lines.append(f"- [{entry.text}]({rel_path}{anchor_suffix})")
 

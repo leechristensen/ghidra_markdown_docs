@@ -8,9 +8,9 @@ the substitution of a value for a more meaningful name. Ghidra provides a
 special editor for Enum data types.
 
 
-[Create an Enum data type](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes)
+[Create an Enum data type](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types)
 using the
-[Data Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#editenum) display. The editor for an Enum is shown below.
+[Data Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#editing-a-data-type) display. The editor for an Enum is shown below.
 
 
 ![](images/EnumEditor.png)
@@ -118,7 +118,7 @@ effect on the enum.
 **Related Topics:**
 
 
-- [Create Enum using the Data Manager](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes)
+- [Create Enum using the Data Manager](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types)
 
 
 ---

@@ -25,7 +25,7 @@ provides/exports.
 Bundles are Jars, but Ghidra will automatically compile source
 directories to bundles.  We refer to source directories intended to be
 used in OSGi as [*source
-bundles*](BundleManager.md#sourcebundles). Each Ghidra script directory is a seperate
+bundles*](BundleManager.md#source-bundles). Each Ghidra script directory is a seperate
 source bundle.
 3. Bundles can *export* Java packages for use by other bundles,
 and packages can have version numbers assigned.
@@ -85,7 +85,7 @@ using [bndlib](https://bnd.bndtools.org/) so that:
 - Packages listed in `@importpackage` meta-data are imported from active bundles.
 
 
-Note: *import* and *export* here refer to inter-bundle dependency, see [below](#inter-bundle-dependency)
+Note: *import* and *export* here refer to inter-bundle dependency, see [below](#inter-bundle-run-time-dependency)
 
 
 If no bundle activator is present, a stub is created and referenced in the generated manifest.
@@ -288,7 +288,7 @@ disabled - Ghidra knows the
 path, but that's it
 inactive - scripts are visible in the script
 manager, but no classes are loaded.  A bundle moves into this state when its
-dependencies become inactive (e.g. by being disabled), one of its scripts is deleted, or its cache is [cleaned](#cleanbundles)
+dependencies become inactive (e.g. by being disabled), one of its scripts is deleted, or its cache is [cleaned](#cleaning-bundles)
 active - the bundle is built and classes within
 can be loaded
 

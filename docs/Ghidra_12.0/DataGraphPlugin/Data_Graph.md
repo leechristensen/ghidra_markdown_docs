@@ -152,7 +152,7 @@ expanded.
 - **Set Original Source** - Makes this the original source
 root vertex. All other vertices are reorganized and laid out as if they were discovered
 by following references from this vertex.See [Vertex
-Layout.](#layout)
+Layout.](#vertex-layout)
 - **Delete Selected Vertices** - Deletes the selected
 vertices and any descendants vertices (vertices that were discovered via exploring from
 that vertex.)
@@ -222,8 +222,8 @@ and actions.
 
 
 - [Satellite View](../VisualGraph/Visual_Graph.md#satellite-view)
-- [Panning](../VisualGraph/Visual_Graph.md#pan)
-- [Zooming](../VisualGraph/Visual_Graph.md#zoom)
+- [Panning](../VisualGraph/Visual_Graph.md#panning)
+- [Zooming](../VisualGraph/Visual_Graph.md#zooming)
 - [Interaction Threshold](../VisualGraph/Visual_Graph.md#interaction-threshold)
 
 

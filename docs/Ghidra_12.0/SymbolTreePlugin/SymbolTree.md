@@ -374,7 +374,7 @@ Table](../SymbolTablePlugin/symbol_table.md)
 Browser](../Selection/Selecting.md)
 - [Listing Fields](../CodeBrowserPlugin/CodeBrowserOptions.md)
 - [Labels](../LabelMgrPlugin/Labels.md)
-- [External References](../ReferencesPlugin/References_from.md#extrefs)
+- [External References](../ReferencesPlugin/References_from.md#external-references)
 - [Resolving External
 References](../ReferencesPlugin/external_program_names.md)
 

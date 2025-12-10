@@ -63,7 +63,7 @@ operations on variables.*
 
 
 *If a function starts with an unconditional jump
-instruction, the function will be created as a [Thunk Function](#thunkfunctions)
+instruction, the function will be created as a [Thunk Function](#thunk-functions)
 if possible.*
 
 
@@ -92,7 +92,7 @@ that you can change the suggested function name, **FUN_**
 is created with the name from the dialog.
 
 
-If the symbol name is changed, the function name displayed will also change. [Rename Function](#cbannotationfunctionsrename) can be used to rename the function.
+If the symbol name is changed, the function name displayed will also change. [Rename Function](#rename-function) can be used to rename the function.
 
 
 In stack-based processors, *Create Function* will try to identify parameters and
@@ -259,8 +259,7 @@ For information on editing functions, see [Function
 Signature Help.](Variables.md#edit-function)
 
 
-## Rename
-Function
+## Rename Function
 
 
 *Rename Function* renames an existing function. As discussed in [Create Function](#create-function), the function name is the same as the primary label at
@@ -347,8 +346,7 @@ Comment* field. See [Edit
 Comments](../CommentsPlugin/Comments.md#edit-comments) for more information on comments.
 
 
-## Stack Depth
-Change
+## Stack Depth Change
 
 
 You can specify a relative change in the stack depth at the address of the current

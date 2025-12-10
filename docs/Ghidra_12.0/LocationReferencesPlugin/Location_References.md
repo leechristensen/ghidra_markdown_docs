@@ -1,7 +1,6 @@
 [Home](../index.md) > [LocationReferencesPlugin](index.md) > Back References
 
-# Location
-References Dialog
+# Location References Dialog
 
 
 | ![](images/ReferencesToDialog.png) |
@@ -70,7 +69,7 @@ popup is shown.  Here are some examples:
 as in function signatures and locations that type is applied in memory,
 - When over an address, all references to the code unit containing that address will
 be shown, (which is what the
-[Show References to Address](#show-refs-to-code-unit) action does),
+[Show References to Address](#to-show-location-references-to-code-unit) action does),
 
 
 ### Results Window Header

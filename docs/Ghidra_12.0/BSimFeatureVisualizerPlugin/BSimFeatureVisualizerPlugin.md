@@ -4,7 +4,7 @@
 
 
 The **BSim Feature Visualizer Plugin** is used to visualize the
-[BSim Features](../BSim/FeatureWeight.md#functionfeatures) of the function at the current address.
+[BSim Features](../BSim/FeatureWeight.md#features-of-software-functions) of the function at the current address.
 
 
 
@@ -64,7 +64,7 @@ corresponding row.
 
 
 - **Sequence Number**:
-(See [here](../DecompilePlugin/DecompilerConcepts.md#conceptpcodeops)
+(See [here](../DecompilePlugin/DecompilerConcepts.md#p-code-operations)
 for details on sequence numbers).For DATA_FLOW and COMBINED features,
 this column contains
 the sequence number of the pcode op associated with the feature.  For DUAL_FLOW features it
@@ -144,7 +144,7 @@ This plugin has several options which can be set in the Tool Options menu.
 
 This file is a BSim database configuration template.  An "index tuning" parameter is
 read from this file and passed to the decompiler when generating BSim features. See
-[here](../BSim/DatabaseConfiguration.md#createdatabase)
+[here](../BSim/DatabaseConfiguration.md#creating-a-database)
 for details.
 
 

@@ -141,8 +141,7 @@ Choose the register for the association and press the *Ok* button.  The
 *Address(es)* field shows the set of addresses that will be affected.
 
 
-## Delete Exiting Register Value Ranges
-Associations
+## Delete Exiting Register Value Ranges Associations
 
 
 You can delete associated register values using *Delete Register Value Range* action

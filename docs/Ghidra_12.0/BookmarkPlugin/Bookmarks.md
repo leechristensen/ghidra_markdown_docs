@@ -5,7 +5,7 @@
 
 Bookmarks are used to flag addresses of interest in a Program. Each Bookmark consists of an
 address, a type, a name, a category (optional), and a description (optional). Bookmarks may be
-organized using the category field. Ghidra places various Bookmark icons in the [Marker Margin](../CodeBrowserPlugin/CodeBrowser.md#cbmarkermargin) of the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md) to indicate locations of
+organized using the category field. Ghidra places various Bookmark icons in the [Marker Margin](../CodeBrowserPlugin/CodeBrowser.md#margin-marker) of the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md) to indicate locations of
 defined bookmarks. The tooltip (shown when the mouse hovers over the Bookmark icon in the
 Marker Margin) shows the Bookmark's type and comment.
 
@@ -17,24 +17,23 @@ The type refers to how the bookmark was added. Ghidra supplies five types of boo
 | --- | --- | --- |
 | Type (icon) | How Bookmark is Added | Navigator Color |
 | --- | --- | --- |
-| Note ![notes.gif](../icons/notes.gif) | Added via the [Note Bookmarkdialog](#createbookmarkdialog) ; *Notes* are intended to be user-defined only. | Purple |
+| Note ![notes.gif](../icons/notes.gif) | Added via the [Note Bookmarkdialog](#add-a-bookmark-in-the-codebrowser) ; *Notes* are intended to be user-defined only. | Purple |
 | Info ![information.png](../icons/information.png) | May be added by a plugin to mark an address of interest. | Cyan |
 | Analysis ![applications-system.png](../icons/applications-system.png) | Added during the [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md) process.               Indicates automatic changes which have been made to the program (e.g., code found,               address tables, etc.). | Orange |
 | Error ![edit-delete.png](../icons/edit-delete.png) | Added by the [disassembler](../DisassemblerPlugin/Disassembly.md) or [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md) process when an               unexpected condition is identified at a specific address (e.g., bad               instruction). | Red |
 | *Unknown* ![unknown.gif](../icons/unknown.gif)   | Represents a custom Bookmark type which was added by a plugin not               currently configured into the tool. A properly designed plugin will assign a custom               icon and color to its custom type.   | Magenta   |
 
 
-Ghidra also places a marker for the bookmark in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#cbnavigationmargin) of the
+Ghidra also places a marker for the bookmark in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#navigation-marker) of the
 Code Browser. Clicking on the Navigation Margin causes the Code Browser to go to that address,
 and centers it in the browser.
 
 
 The following paragraphs describes the [*Bookmarks
-window*](#show-bookmarks), and how to [add](#createbookmarkdialog) and [remove](#delete-bookmarks) bookmarks.
+window*](#bookmarks-window), and how to [add](#add-a-bookmark-in-the-codebrowser) and [remove](#remove-bookmarks) bookmarks.
 
 
-## **Add a Bookmark (in the
-CodeBrowser)**
+## **Add a Bookmark (in the CodeBrowser)**
 
 
 ![](images/AddBookmarkDialog.png)
@@ -66,16 +65,15 @@ location.
 
 
 The following image depicts the Code Browser with Bookmarks. Notice the checkmarks in the
-[Marker Margin](../CodeBrowserPlugin/CodeBrowser.md#cbmarkermargin) on
-the left and the markers in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#cbnavigationmargin) on
+[Marker Margin](../CodeBrowserPlugin/CodeBrowser.md#margin-marker) on
+the left and the markers in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#navigation-marker) on
 the right.
 
 
 ![](images/MarkerForBookmark.png)
 
 
-## **Remove a Bookmark (in the
-CodeBrowser)**
+## **Remove a Bookmark (in the CodeBrowser)**
 
 
 To remove a bookmark,
@@ -83,7 +81,7 @@ To remove a bookmark,
 
 1. Position the cursor on the address of the bookmark to be deleted
 2. From the [Marker
-Margin](../CodeBrowserPlugin/CodeBrowser.md#cbmarkermargin), right-mouse-click, select **Delete Bookmark →  `<type>`: `<description>`**
+Margin](../CodeBrowserPlugin/CodeBrowser.md#margin-marker), right-mouse-click, select **Delete Bookmark →  `<type>`: `<description>`**
 
 
 ## **Bookmarks Window**
@@ -185,7 +183,7 @@ field found at the bottom of the bookmark table. This filter will include only t
 Bookmarks whose Category or Description contain the specified text. For example, to show
 only the entry point bookmarks, you would enter "entry" in the filter field. The results
 would show only those bookmarks with a Category or Description containing the word "entry".
-The text filter is not case sensitive, nor does it support *[Regular Expressions](../Glossary/glossary.md#regularexpression)*.
+The text filter is not case sensitive, nor does it support *[Regular Expressions](../Glossary/glossary.md#regular-expression)*.
 
 
 ### **Reorder Columns**
@@ -203,7 +201,7 @@ in the table.
 2. Click the Select Bookmark Locations ![Make Selection](../icons/stack.png)
 button in the local toolbar.
 3. The corresponding addresses are selected in the browser.
-4. Navigate to the selected addressed by using the [navigation buttons](../Selection/Selecting.md#navigateoverselection) (![NextSelectionBlock16.gif](../icons/NextSelectionBlock16.gif) , ![PreviousSelectionBlock16.gif](../icons/PreviousSelectionBlock16.gif) ) on the *main* tool bar.
+4. Navigate to the selected addressed by using the [navigation buttons](../Selection/Selecting.md#navigating-over-a-selection) (![NextSelectionBlock16.gif](../icons/NextSelectionBlock16.gif) , ![PreviousSelectionBlock16.gif](../icons/PreviousSelectionBlock16.gif) ) on the *main* tool bar.
 
 
 ### Remove Bookmarks
@@ -229,7 +227,7 @@ Click the **Dismiss** button to exit the *Bookmarks* window.
 
 - [Navigate on Selection](../Selection/Selecting.md)
 - [Marker
-Margin](../CodeBrowserPlugin/CodeBrowser.md#cbmarkermargin)
+Margin](../CodeBrowserPlugin/CodeBrowser.md#margin-marker)
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
 
 

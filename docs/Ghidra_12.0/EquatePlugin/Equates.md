@@ -41,7 +41,7 @@ There are several operations that are associated with Equates. They are:
 - [Rename Equate](#rename-equate)
 - [Remove Equate](#remove-equate)
 - [Apply Enum](#apply-enum)
-- [View Equates](#equate-table)
+- [View Equates](#view-equates)
 - [Convert](#convert)
 
 

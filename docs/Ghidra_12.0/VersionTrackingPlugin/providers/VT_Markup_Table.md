@@ -7,7 +7,7 @@
 A markup item is some type of information that has been specified in the source program
 that you now wish to move to the equivalent function or data within the destination program.
 The Version Tracking Markup Items table shows a list of markup items for the currently
-selected match in the [Version Tracking Matches table](VT_Matches_Table.md#matches-table).
+selected match in the [Version Tracking Matches table](VT_Matches_Table.md#version-tracking-matches-table).
 
 
 Below the Markup Items table you can also view two listings,
@@ -15,7 +15,7 @@ one for the source program and the other for the destination program. The dual l
 provide an alternate way, besides the table, to view and manipulate the markup items.
 This also provides the capability to drag a markup item from the source program and apply it,
 where you want, by dropping it in the destination program.
-The [dual listing](#dual-listing) will be described below in more detail.
+The [dual listing](#dual-listing-window) will be described below in more detail.
 
 
 | ![](../images/VersionTrackingMarkupItems.png) |

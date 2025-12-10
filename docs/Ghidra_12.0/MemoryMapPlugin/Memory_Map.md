@@ -208,7 +208,7 @@ The memory block operations are available through the icons on the header of the
 window, or select a block in the table, right mouse click, and choose an option.
 
 
-### **  Add**
+### ** Add**
 
 
 Select **Add** to bring up the *Add Memory Block* dialog.  Fill in the
@@ -405,8 +405,7 @@ it can be changed by editing this field
 be split.*
 
 
-### Expand
-Up
+### Expand Up
 
 
 Select **Expand Up** to bring up the *Expand Block Up* Dialog. The *Expand
@@ -437,8 +436,7 @@ entered here which will cause a corresponding change in the start address.
 blocks cannot be expanded.*
 
 
-### Expand
-Down
+### Expand Down
 
 
 Select **Expand Down** to bring up the *Expand Block Down* Dialog. The *Expand
@@ -511,8 +509,7 @@ corresponding overlay address space will also be removed if no other overlay blo
 exist within that space.*
 
 
-### Set Image
-Base
+### Set Image Base
 
 
 The *Set Image Base* action allows you to change the base address of a
@@ -534,8 +531,7 @@ To change the image base, enter a new image base in the text field and click on 
 | --- |
 
 
-### Auto Updating Selection
-by Location
+### Auto Updating Selection by Location
 
 
 The ![locationIn.gif](../icons/locationIn.gif)   button controls whether a memory

@@ -15,7 +15,7 @@ tools.
 
 Ghidra provides a default tool, the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md) that is in your Tool Chest. It
 has all of the Core plugins
-already loaded. This tool may be [re-imported](#import-ghidra-tools) into your tool
+already loaded. This tool may be [re-imported](#import-default-tools-to-tool-chest) into your tool
 chest at any time. If the tools exist in your tool chest, then a one-up number is assigned to
 the name to make them unique. (You will see the name in the tool tip, and in the **Tools** →  **Run** menu.)
 Any tool that you create and add to your Tool Chest is always available to your active
@@ -30,9 +30,9 @@ The following sections describe tool management:
 
 
 - [Create Tool](#create-tool)
-- [Save Tool to Tool Chest](#save-tool)
+- [Save Tool to Tool Chest](#save-tool-to-tool-chest)
 - [Export Tool](#export-tool)
-- [Import Tool into Tool Chest](#import-tool)
+- [Import Tool into Tool Chest](#import-tool-to-tool-chest)
 - [Configure Tool](Configure_Tool.md)
 - [Run  Tool](#run-tool)
 - [Connect Tools](../FrontEndPlugin/Connecting_Tools.md)
@@ -69,7 +69,7 @@ To create a New Tool,
 When you save a tool to your Tool Chest, you are saving the tool's configuration such
 that it is available to your active project.  (When you open any project, icons for
 all tools from your Tool Chest will appear in the Tool Chest panel in the [Ghidra Project
-Window](../FrontEndPlugin/Ghidra_Front_end.md#toolchest)).  An icon for a new tool shows up on the Tool Chest panel of the Ghidra
+Window](../FrontEndPlugin/Ghidra_Front_end.md#tool-chest)).  An icon for a new tool shows up on the Tool Chest panel of the Ghidra
 Project Window.
 
 
@@ -120,7 +120,7 @@ are working on a similar problem may find your tool useful.
 2. Select the **Export...** option.
 
 
-The [Status](../FrontEndPlugin/Ghidra_Front_end.md#statuswindow)
+The [Status](../FrontEndPlugin/Ghidra_Front_end.md#console)
 area on the Ghidra Project Window indicates whether the export was successful.
 
 
@@ -152,7 +152,7 @@ Export Default Tool...**
 
 
 Use the Import Tool option to import an [exported tool](#export-tool)
-into Ghidra.  The imported tool will appear in your [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#toolchest) with the other
+into Ghidra.  The imported tool will appear in your [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#tool-chest) with the other
 tools. If the name of the imported tool already exists, a one-up number is assigned to the
 newly imported tool to make the name unique.
 
@@ -166,7 +166,7 @@ To import a tool,
 
 
 If the import was successful, an icon for the tool is added to the Tool Chest panel. Any
-errors during the import are reported in the [Status](../FrontEndPlugin/Ghidra_Front_end.md#statuswindow) area on the
+errors during the import are reported in the [Status](../FrontEndPlugin/Ghidra_Front_end.md#console) area on the
 Ghidra Project Window.
 
 
@@ -207,7 +207,7 @@ CodeBrowser_1.
 ### Run Tool
 
 
-To launch a tool from the [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#toolchest),
+To launch a tool from the [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#tool-chest),
 
 
 - Click on the icon for that tool in the Tool Chest panel on the Ghidra Project Window,
@@ -220,7 +220,7 @@ Window](../FrontEndPlugin/Ghidra_Front_end.md), select **Tools** →
 To launch a tool with a specific Program,
 
 
-- Drag a Program file from the [data tree](../FrontEndPlugin/Ghidra_Front_end.md#projectdatatree) in the
+- Drag a Program file from the [data tree](../FrontEndPlugin/Ghidra_Front_end.md#project-data-tree) in the
 Ghidra Project Window, and drop it onto a tool  icon in the Tool Chest panel. The
 tool is launched and has the Program opened.
 
@@ -233,7 +233,7 @@ CodeBrowser(2).*
 ### Rename Tool
 
 
-To rename a tool  from the [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#toolchest),
+To rename a tool  from the [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#tool-chest),
 
 
 - Right-click on the icon for the tool in the Tool Chest panel in the Ghidra Project
@@ -293,7 +293,7 @@ Ghidra uses tool names to store tool
 associations.  This can lead to odd behavior if you rename a custom tool to be the
 name of a default tool.  If your tools exhibit odd behavior, such as being unable to
 open a file that is considered to be a default type, then you can always delete your
-tools and [re-import the default tools](#import-ghidra-tools) again.
+tools and [re-import the default tools](#import-default-tools-to-tool-chest) again.
 
 
 ### Close Tool
@@ -352,7 +352,7 @@ You may configure Ghidra to not automatically save the tool via the Front End op
 ### Delete Tool
 
 
-To delete a tool from your [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#toolchest),
+To delete a tool from your [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#tool-chest),
 
 
 - From the [Ghidra Project
@@ -400,7 +400,7 @@ bar.
 - [Ghidra Project
 Window](../FrontEndPlugin/Ghidra_Front_end.md)
 - [Configure
-Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end_Menus.md#configure)
+Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end_Menus.md#configure-project-window)
 - [Code Viewer](../CodeBrowserPlugin/CodeBrowser.md)
 
 

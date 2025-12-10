@@ -34,21 +34,21 @@ tracking in Ghidra.
 Version Tracking Concepts:
 
 
-- [Session](#session)
-- [Associations](#intro-associations)
-- [Matches](#intro-matches)
-- [Markup Items](#intro-markup-items)
-- [Correlators](#intro-correlators)
-- [How to Start](#intro-how-to-start)
+- [Session](#version-tracking-session)
+- [Associations](#version-tracking-associations)
+- [Matches](#version-tracking-matches)
+- [Markup Items](#version-tracking-markup-items)
+- [Correlators](#version-tracking-correlators)
+- [How to Start](#how-to-start)
 
 
 ## Version Tracking Session
 
 
 A *session* is created as a result of running one of Ghidra's matching
-algorithms (a.k.a., a [correlator](#intro-correlators)) against two binaries.
+algorithms (a.k.a., a [correlator](#version-tracking-correlators)) against two binaries.
 The newly created session is stored in the
-[Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end.md#project-window).
+[Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end.md#ghidra-project-window).
 The session records the history of any work done within that session (e.g., applying
 markup).  Furthermore, since changes are saved, you may close and reopen a session to
 continue work at a later time.  Sessions can be updated with new data by running
@@ -99,7 +99,7 @@ markup for a match that has been blocked by another already accepted match.
 
 Ghidra also has the concept of an
 [Implied
-Match](providers/VT_Implied_Matches_Table.md#implied-matches).  If you accept a function match, then Ghidra will generate implied matches for any functions
+Match](providers/VT_Implied_Matches_Table.md#version-tracking-implied-match).  If you accept a function match, then Ghidra will generate implied matches for any functions
 called by the two functions that make up the function match.
 
 

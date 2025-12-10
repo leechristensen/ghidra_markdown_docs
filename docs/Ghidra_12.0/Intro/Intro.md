@@ -169,7 +169,7 @@ for that tool and the tool's icon will be displayed in the *Running Tools* area 
 Ghidra Project Window.
 
 
-Ghidra also supports the concept of *workspaces*. A [workspace](../FrontEndPlugin/Ghidra_Front_end.md#workspace) is simply a
+Ghidra also supports the concept of *workspaces*. A [workspace](../FrontEndPlugin/Ghidra_Front_end.md#workspaces) is simply a
 collection of running tools that are visible on the desktop. Users can have multiple
 workspaces, each with its own set of running tools. Running tools that are not in the current
 workspace are still running and consuming system resources even though they are not

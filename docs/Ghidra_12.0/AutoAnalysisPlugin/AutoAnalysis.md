@@ -80,7 +80,7 @@ To Cancel the analysis, press the ![Stop](../icons/process-stop.png) button.
 ### Analyze All Open
 
 
-This action will auto-analyze all open programs. The [options](#auto-analysis-option) will be displayed only one time and re-used for each
+This action will auto-analyze all open programs. The [options](#auto-analysis-options-panel) will be displayed only one time and re-used for each
 program.
 
 
@@ -110,7 +110,7 @@ applicable to the current program will be available within the One Shot sub-menu
 
 
 When opening a program for the first time, you will be asked if you want to analyze the
-program. If you respond "Yes", The [Auto Analysis Options](#auto-analysis-option)
+program. If you respond "Yes", The [Auto Analysis Options](#auto-analysis-options-panel)
 dialog will appear, allowing you to begin analyzing the program. If you decide not to
 analyze the program, you have the choice of having Ghidra asking you  again the next time
 you open the program. If you pick the "No" options, Ghidra will continue to ask you to
@@ -192,7 +192,7 @@ added to Ghidra and can be supplied by add-on modules/contribs.
 ### Address Table Analyzer
 
 
-Looks at all undefined data locations to find possible [address tables](../Glossary/glossary.md#addresstable).
+Looks at all undefined data locations to find possible [address tables](../Glossary/glossary.md#address-table).
 
 
 You can also find and create address tables manually via the [Search for Address Tables](../Search/Search_for_AddressTables.md)
@@ -506,8 +506,7 @@ table including references.
 Started By: New disassembled code
 
 
-### Propagate External Parameters
-Analyzer
+### Propagate External Parameters Analyzer
 
 
 This analyzer uses external Windows function call parameter information to populate

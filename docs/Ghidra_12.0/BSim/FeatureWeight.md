@@ -3,8 +3,7 @@
 # Features and Weights
 
 
-## Features of
-Software Functions
+## Features of Software Functions
 
 
 The BSim Database uses a **feature vector**
@@ -40,8 +39,7 @@ in any of the features for that function, but information describing where the c
 and the set of parameters it takes is encoded.
 
 
-## Weighting
-Software Features
+## Weighting Software Features
 
 
 Some features are more useful for identifying a specific function out of a large corpus
@@ -91,8 +89,7 @@ in the same way as with native code. But a specialized weighting scheme is neede
 balance BSim's sensitivity to these operations.
 
 
-## Comparing Feature
-Vectors
+## Comparing Feature Vectors
 
 
 For a particular function, the set of extracted features and their assigned weights make

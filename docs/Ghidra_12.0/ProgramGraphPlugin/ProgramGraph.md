@@ -23,11 +23,11 @@ another. The nodes of the graph represent blocks of code and the edges represent
 the blocks of code.
 
 
-There are two basic flow graph types, [Block Flow](#graph-block-flow) and [Call Graph](#graph-calls-using-default-model). Different colors and shapes are used to
+There are two basic flow graph types, [Block Flow](#block-flow-graph) and [Call Graph](#graph-calls). Different colors and shapes are used to
 depict each node and the flow between them.
 
 
-[Data graphs](#data-reference-graph) show reference relationships between memory
+[Data graphs](#graph-data-references) show reference relationships between memory
 locations. They can be constrained to just **"To References"**, just **"From References"**,
 or both. By default a single hop is graphed with the option to extend from within the
 graph.
@@ -139,7 +139,7 @@ within the selection will become the current location. If the address of the cur
 is not part of any node within the graph, the red arrow will not be visible.
 
 
-When the option **[Graph Show Location](#show-location-in-graph)** is turned on, the graph will re-orient
+When the option **[Graph Show Location](#show-location)** is turned on, the graph will re-orient
 itself to insure that the red location arrow is always visible.
 
 
@@ -188,7 +188,7 @@ last graph window created, popped to the top, or interacted with to change the c
 selection or location. Instead of a new window for each graph, all graphs will be rendered
 using the same window. When a graph window is re-used the existing graph information is cleared
 and replaced with the new graph information. If [Append
-Graph](#show-location-in-graph) is also turned on, the information is also appended to the active graph window.
+Graph](#show-location) is also turned on, the information is also appended to the active graph window.
 
 
 To Reuse A Graph,
@@ -285,7 +285,7 @@ Allows the user to rename the symbol in the program represented by the given ver
 
 
 A Code Flow Graph is an extension of a [Block Flow
-Graph](#graph-block-flow) in which each graph node (i.e., vertex) contains the list of instructions contained
+Graph](#block-flow-graph) in which each graph node (i.e., vertex) contains the list of instructions contained
 within the associated block. The list of instructions are passed to the graph as the vertex
 label.
 

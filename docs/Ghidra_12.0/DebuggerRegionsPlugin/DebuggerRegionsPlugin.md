@@ -73,8 +73,7 @@ It behaves like Map Regions, except that it will propose the selected region be 
 block containing the cursor in the static listing.
 
 
-### Select
-Addresses
+### Select Addresses
 
 
 This action is available when at least one region is selected. It selects all addresses in

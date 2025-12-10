@@ -14,10 +14,10 @@ icon from the tool bar, or the
 
 A Decompiler window always displays one *function* at a time.
 The initial window that comes up in the Code Browser is called the **Main**
-window (see [Main Window](DecompilerWindow.md#mainwindow)), and it automatically decompiles and displays the function at the
+window (see [Main Window](DecompilerWindow.md#main-window)), and it automatically decompiles and displays the function at the
 *current address*, following the user's navigation.  Other
 **Snapshot** windows can also
-be opened that show different functions at the same time (see [Snapshot Windows](DecompilerWindow.md#snapshot)). But any window
+be opened that show different functions at the same time (see [Snapshot Windows](DecompilerWindow.md#snapshot-windows)). But any window
 only shows one function at a time.
 
 
@@ -54,7 +54,7 @@ instead of the normal output.  Decompilation may also successfully produce outpu
 one or more warnings during the process.  These warnings are integrated into the output as
 source code comments starting with label `WARNING:`.  They occur either at the
 beginning of the function as part of the function header or at the point in the code directly
-associated with the warning (see [Warning Comments](DecompilerAnnotations.md#commentwarnings)).
+associated with the warning (see [Warning Comments](DecompilerAnnotations.md#warning-comments)).
 
 
 ## Main Window
@@ -70,7 +70,7 @@ at the *current address* within the Code Browser and follows as the user navigat
 within the Program.  Any mouse click, menu option, or other action causing the cursor to move to a new
 address in the Listing also causes the main window to display the function containing that address.
 Navigation to new functions is also possible from within the window by double-clicking on function
-tokens (see [Mouse Actions](DecompilerWindow.md#mouseactions)).
+tokens (see [Mouse Actions](DecompilerWindow.md#mouse-actions)).
 
 
 ### Cross-Highlighting
@@ -136,14 +136,14 @@ Navigating to new functions within a Snapshot window is possible when the window
 
 
 Double-clicking on specific tokens within the Snapshot window may also cause it to navigate
-to a new location (see [Double-Click](DecompilerWindow.md#mousedouble)).
+to a new location (see [Double-Click](DecompilerWindow.md#double-click)).
 
 
 ## Undefined Functions
 
 
 If the current location within the Code Browser is in disassembled code, but that code
-is not contained in a [Formal Function Body](DecompilerAnnotations.md#annoteformalfunctionbody),
+is not contained in a [Formal Function Body](DecompilerAnnotations.md#formal-function-body),
 then the Decompiler invents a function body, on the fly, called an
 **Undefined Function**.  The background color of the window
 is changed to gray to indicate this special state.
@@ -195,7 +195,7 @@ a final dialog is presented to confirm that the file should be overwritten.
 This action exports a single function at a time.  The user can export all functions
 simultaneously from the Code Browser, by selecting the menu
 **File -&gt; Export Program...** and then choosing
-[C/C++](../ExporterPlugin/exporter.md#c-cpp)
+[C/C++](../ExporterPlugin/exporter.md#cc)
 from the drop-down menu. See the full documentation for
 the [Export](../ExporterPlugin/exporter.md) dialog.
 
@@ -210,7 +210,7 @@ the [Export](../ExporterPlugin/exporter.md) dialog.
 Creates a new *Snapshot* window.  The *Snapshot* window
 displays the same function as the Decompiler window on which the action was triggered,
 and if that window navigates to other functions, the *Snapshot* does not
-follow but continues to display the original function (see [Snapshot Windows](DecompilerWindow.md#snapshot)).
+follow but continues to display the original function (see [Snapshot Windows](DecompilerWindow.md#snapshot-windows)).
 
 
 ### Re-decompile
@@ -314,7 +314,7 @@ Moves the Decompiler window cursor and highlights the token. Within the
 associated with it, a left-click generates a
 *navigation* event to that address, which may cause other
 windows to display code near that address
-(see [Cross-Highlighting](DecompilerWindow.md#crosshighlighting)).
+(see [Cross-Highlighting](DecompilerWindow.md#cross-highlighting)).
 
 
 Selecting a '(' or ')' token causes it and its matching parenthesis to be
@@ -381,7 +381,7 @@ Generates a navigation event to the address, within the current function, associ
 the clicked token.  This allows *Snapshot* windows to do basic
 cross-highlighting in the same way as the *main* Decompiler window.
 A ctrl-shift-click causes Listing and other windows to navigate to and display the same
-portion of code currently being displayed in the Snapshot window (see [Cross-Highlighting](DecompilerWindow.md#crosshighlighting)).
+portion of code currently being displayed in the Snapshot window (see [Cross-Highlighting](DecompilerWindow.md#cross-highlighting)).
 
 
 This action is performed by clicking on the desired token with the *left* mouse
@@ -401,7 +401,7 @@ the keyboard to navigate to each highlighted token.
 
 Almost all the actions described in this section can be activated from the menu that pops up
 when right-clicking on a token within the Decompiler window. The pop-up menu is context sensitive and
-the type of token in particular (see [Display](DecompilerWindow.md#decompilerdisplay)) determines what actions are available.
+the type of token in particular (see [Display](DecompilerWindow.md#display)) determines what actions are available.
 The token clicked provides a local context for the action and may be used to pinpoint the exact
 variable or operation affected.
 
@@ -409,7 +409,7 @@ variable or operation affected.
 Many of the actions have a key binding, which, if it exists, will be listed in the pop-up menu.
 If the key binding is used to activate the action, local context is determined by the current cursor
 position.  Key bindings can be reassigned from the
-[Key Bindings](../Tool/ToolOptions_Dialog.md#keybindings-option)
+[Key Bindings](../Tool/ToolOptions_Dialog.md#key-bindings)
 section of the **Tool Options Dialog.**
 
 
@@ -422,7 +422,7 @@ selected variable.
 
 The action is available on variable tokens that the Decompiler has already determined are pointers, and
 is designed to create an *offset pointer*, which is a typedef with its
-*component offset* attribute set (See [Offset Pointers](DecompilerAnnotations.md#attributeoffsetpointer)). It
+*component offset* attribute set (See [Offset Pointers](DecompilerAnnotations.md#offset-pointers)). It
 brings up a dialog that allows the user to select:
 
 
@@ -454,7 +454,7 @@ the program that use it.
 Once an offset pointer exists, either by invoking this action or by creating it manually
 (see [Pointer-Typedef Settings](../DataTypeManagerPlugin/data_type_manager_description.md#pointer-typedef-settings)),
 it can be applied to variables like any other data-type, either through the Listing window or using the
-[Retype Variable](DecompilerWindow.md#actionretypevariable) action in the Decompiler window.
+[Retype Variable](DecompilerWindow.md#retype-variable) action in the Decompiler window.
 
 
 ### Auto Create Structure
@@ -476,7 +476,7 @@ retyped to be a pointer to the *structure*. Within the window,
 the function is decompiled again and references to new fields in the structure
 should be immediately apparent.  These can be renamed or retyped from the window
 to further refine the new *structure* definition
-(see [Rename Variable](DecompilerWindow.md#actionrenamevariable)).
+(see [Rename Variable](DecompilerWindow.md#rename-variable)).
 
 
 > Auto Fill in Structure If the selected variable is already a pointer to a structure ,
@@ -502,7 +502,7 @@ section of code.
 
 
 A Decompiler window can display all comment types, but this may be affected by the Display options
-(see [Comments](DecompilerAnnotations.md#annotecomments)).
+(see [Comments](DecompilerAnnotations.md#comments)).
 
 
 > Set Plate Comment... Brings up the dialog for setting or editing a Plate comment. Set Pre Comment... Brings up the dialog for setting or editing a Pre comment. Set... Brings up the dialog for setting or editing a comment based on the selected token.
@@ -518,16 +518,16 @@ to the Program database as new Variable Annotations.  The recovered data-type is
 not committed as part of the annotation, only the name and storage location.
 
 
-Parameters are not affected by this command (see [Commit Params/Return](DecompilerWindow.md#actioncommitparams)).
+Parameters are not affected by this command (see [Commit Params/Return](DecompilerWindow.md#commit-paramsreturn)).
 The purpose of the command is to synchronize the local variables in the
 Decompiler's view of a function with the formal Variable Annotations in the disassembly view,
 without otherwise affecting the decompilation.  After executing this command, additional changes
 to local variables can be performed directly on the corresponding annotations displayed in Listing windows,
-using various methods (see [Variable Annotations](DecompilerAnnotations.md#annotevariables)).
+using various methods (see [Variable Annotations](DecompilerAnnotations.md#variable-annotations)).
 Data-types are not forced for new annotations, they are created with
 an *undefined* data-type, which allows the Decompiler to refine
 its view of the variable's data-type as new information becomes available
-(see [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)).
+(see [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)).
 
 
 ### Commit Params/Return
@@ -549,12 +549,12 @@ Listing window as part of the function header, and the action effectively
 
 Committed prototype information is used both when decompiling the function itself and when
 decompiling other functions that call it. The committed annotations are *forcing*
-on the Decompiler (see [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)), and it will
+on the Decompiler (see [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)), and it will
 no longer perform prototype recovery analysis for that function. The Decompiler assumes the committed parameters,
 and only the committed parameters, exist and will not modify their data-types, with the
 exception of parameters that are explicitly marked as having an *undefined*
 data-type. The user must manually modify individual variables or clear the entire prototype
-if they want a change (see [Variable Annotations](DecompilerAnnotations.md#annotevariables)).
+if they want a change (see [Variable Annotations](DecompilerAnnotations.md#variable-annotations)).
 
 
 ### Convert
@@ -585,7 +585,7 @@ values cannot be forced into an unsigned representation, and vice versa.
 
 The constant's encoding can be changed by selecting a different **Convert**
 command, or it can be returned to its *default* encoding by selecting
-the [Remove Convert/Equate](DecompilerWindow.md#actionremoveequate) command.
+the [Remove Convert/Equate](DecompilerWindow.md#remove-convertequate) command.
 
 
 ### Copy
@@ -614,7 +614,7 @@ and for *enumerations*, which will bring up the
 
 
 Any change to the definition of the data-type is automatically incorporated by the Decompiler into its output
-(see [Variable Data-types](DecompilerAnnotations.md#annotedatatype)).
+(see [Variable Data-types](DecompilerAnnotations.md#variable-data-types)).
 
 
 ### Edit Function Signature
@@ -666,7 +666,7 @@ is referring to a user selected field.
 A union data-type overlays multiple other data-type interpretations
 (**fields**) on top of one variable; any one of which may be active at
 a point where the variable is accessed. The Decompiler automatically selects which field it thinks is being
-referenced (See [Unions](DecompilerAnnotations.md#typeunion)).  But this action allows the user to force
+referenced (See [Unions](DecompilerAnnotations.md#unions)).  But this action allows the user to force
 the Decompiler to use a particular field.
 
 
@@ -696,7 +696,7 @@ These actions are available from the keyboard, with no equivalent pop-up menu en
 **Shift-Open Bracket** will go to the previous enclosing
 open brace.   **Shift-Close Bracket** will go to the
 next enclosing closing brace.   These key bindings can be changed via the
-[Tool Options Dialog](../Tool/ToolOptions_Dialog.md#keybindings-option).
+[Tool Options Dialog](../Tool/ToolOptions_Dialog.md#key-bindings).
 
 
 Paired braces can also be navigated by double-clicking.
@@ -709,7 +709,7 @@ These actions are available from the popup menu and keyboard.   Only tokens high
 middle-mouse will be navigated.   **Shift-Comma** will
 go to the previous highlighted token.    **Shift-Period**
 will go to the next highlighted token.   These key bindings can be changed via the
-[Tool Options Dialog](../Tool/ToolOptions_Dialog.md#keybindings-option).
+[Tool Options Dialog](../Tool/ToolOptions_Dialog.md#key-bindings).
 
 
 ### Highlight
@@ -782,7 +782,7 @@ corresponding to the call site can be edited.  The dialog provides fine-grained 
 the return data-type along with the name and data-type of each input parameter.
 The function prototype properties **Calling Convention**,
 **In Line**, and **No Return**
-can also be set (see [Function Prototypes](DecompilerAnnotations.md#annoteprototype)).
+can also be set (see [Function Prototypes](DecompilerAnnotations.md#function-prototypes)).
 
 
 Confirming the dialog forces the new function prototype on the Decompiler's view of the called function,
@@ -793,7 +793,7 @@ This action is suitable for either indirect calls or direct calls to functions t
 of arguments; situations where a complete description of all parameters is not available.
 For direct calls with a fixed number of arguments, it is almost always better to provide
 parameter information by setting the function's prototype directly (see the
-[Commit Params/Return](DecompilerWindow.md#actioncommitparams) command).  In this situation, the "Override Signature"
+[Commit Params/Return](DecompilerWindow.md#commit-paramsreturn) command).  In this situation, the "Override Signature"
 command is still possible, but it will bring up a confirmation dialog.
 
 
@@ -824,7 +824,7 @@ which displays a row for each reference with its address and other context.
 Uses (references) specifically are to *variables* that have been assigned the data-type.
 References to parameters and global variables are always listed.
 If the *Dynamic Data Type Discovery* option is on
-(see [To Find Location References to Data Types](../LocationReferencesPlugin/Location_References.md#data-types)),
+(see [To Find Location References to Data Types](../LocationReferencesPlugin/Location_References.md#to-find-location-references-to-data-types)),
 the Decompiler's propagation analysis is invoked on all functions to discover local
 variables as well.
 
@@ -863,8 +863,8 @@ Remove the display *conversion* or *equate* from
 the constant under the cursor.
 
 
-The selected constant must have had either a [Convert](DecompilerWindow.md#actionconvert) or a
-[Set Equate...](DecompilerWindow.md#actionsetequate) command applied to it.  After applying this command,
+The selected constant must have had either a [Convert](DecompilerWindow.md#convert) or a
+[Set Equate...](DecompilerWindow.md#set-equate) command applied to it.  After applying this command,
 the conversion is no longer applied, and the selected constant will be displayed
 using the decompiler's default strategy, which depends on the data-type of the constant and
 other display settings (See [Integer format](DecompilerOptions.md#displayintegerformat)).
@@ -877,7 +877,7 @@ Remove the overriding function prototype applied previously to the called functi
 
 
 This action can only be triggered at *call sites*, where an overriding
-prototype was previously placed by the [Override Signature](DecompilerWindow.md#actionoverridesignature) command. As with
+prototype was previously placed by the [Override Signature](DecompilerWindow.md#override-signature) command. As with
 this command, users must select either the token representing the called function's name or the
 tokens representing the function pointer at the call site.  The action causes the
 override to be removed immediately. Parameter information will be drawn from the Decompiler's
@@ -892,7 +892,7 @@ Remove the label corresponding to the token under the cursor.
 
 A label can be removed by triggering this action while the corresponding label token is
 under the cursor.   For more on removing labels, see
-[Removing a Label](../LabelMgrPlugin/Labels.md#remove-label).
+[Removing a Label](../LabelMgrPlugin/Labels.md#removing-a-label).
 
 
 The change will be immediately visible across all references to the label
@@ -952,8 +952,8 @@ is triggered again to incorporate the new name, but the output is otherwise unaf
 
 Within a Decompiler window, field name tokens are presented *in context*,
 showing how they are used within the code flow of the current function.
-Combined with [Auto Create Structure](DecompilerWindow.md#actionautostructure) and
-[Retype Field](DecompilerWindow.md#actionretypefield), this action allows a
+Combined with [Auto Create Structure](DecompilerWindow.md#auto-create-structure) and
+[Retype Field](DecompilerWindow.md#retype-field), this action allows a
 *structure* to be created and filled in based on this context.
 
 
@@ -991,7 +991,7 @@ Rename the label corresponding to the token under the cursor.
 
 A label can be renamed by triggering this action while the corresponding label token is
 under the cursor.   This action brings up the
-[Edit Label Dialog](../LabelMgrPlugin/Labels.md#addeditdialog).
+[Edit Label Dialog](../LabelMgrPlugin/Labels.md#addedit-label-dialog).
 
 
 The change will be immediately visible across all references to the label
@@ -1016,7 +1016,7 @@ change, but otherwise the output is unaffected.
 
 Local variables and parameters presented by the Decompiler may be invented on-the-fly
 and don't necessarily have a formal annotation in Ghidra
-(see [Variable Annotations](DecompilerAnnotations.md#annotevariables)). Performing this action on
+(see [Variable Annotations](DecompilerAnnotations.md#variable-annotations)). Performing this action on
 a variable will create an annotation if one didn't exist previously, which will
 generally be visible as part of the function header in any Listing window.
 A new annotation will *not* commit the data-type of the variable,
@@ -1046,7 +1046,7 @@ corresponding data-type definition.
 
 The change to the definition is visible globally throughout the Program,
 anywhere the data-type is referenced, and is *forcing*
-on the Decompiler (see [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)). Decompilation is triggered
+on the Decompiler (see [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)). Decompilation is triggered
 again, and the new data-type is propagated from the point of the field reference(s).
 Changes to the output may be large and indirect.
 
@@ -1065,7 +1065,7 @@ the data-type.
 
 The change is visible globally throughout the Program, anywhere the variable is
 referenced, and is *forcing* on the Decompiler
-(see [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)). Decompilation is triggered
+(see [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)). Decompilation is triggered
 again, and the new data-type is propagated from the variable reference(s).
 Changes to the output may be large and indirect.
 
@@ -1084,10 +1084,10 @@ the return value (named `<RETURN>`) did not exist previously, one is created.
 
 
 As input parameter annotations and the return value annotation must be committed as a whole
-(see the discussion of function prototype's in [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)), if
+(see the discussion of function prototype's in [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)), if
 no prototype existed previously, this action also causes variable annotations for all
 input parameters to be created as well.  In this situation, the action is equivalent to
-[Commit Params/Return](DecompilerWindow.md#actioncommitparams), and a confirmation dialog comes up to notify the user.
+[Commit Params/Return](DecompilerWindow.md#commit-paramsreturn), and a confirmation dialog comes up to notify the user.
 
 
 Setting a data-type on the return value using this action affects decompilation for the
@@ -1109,14 +1109,14 @@ the data-type.
 
 
 The change to the data-type is *forcing* on the Decompiler
-(see [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)). Decompilation is triggered again, and the new
+(see [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)). Decompilation is triggered again, and the new
 data-type is propagated from the variable reference(s). Changes to the output may be
 large and indirect.
 
 
 Local variables and parameters presented by the Decompiler may be invented on-the-fly
 and don't necessarily have a formal annotation in Ghidra
-(see [Variable Annotations](DecompilerAnnotations.md#annotevariables)). Performing this action on a variable
+(see [Variable Annotations](DecompilerAnnotations.md#variable-annotations)). Performing this action on a variable
 will create an annotation if one didn't exist previously, which will generally be
 visible as part of the function header in any Listing window.
 
@@ -1161,7 +1161,7 @@ which case the equate will be applied only in the Decompiler window.
 
 
 Once an equate is applied, the constant can be returned to its *default* display
-by selecting the [Remove Convert/Equate](DecompilerWindow.md#actionremoveequate) command.
+by selecting the [Remove Convert/Equate](DecompilerWindow.md#remove-convertequate) command.
 
 
 ### Split Out As New Variable
@@ -1171,11 +1171,11 @@ Split a high-level variable so that the selected token becomes a new variable wi
 possible range.
 
 
-The Decompiler defines high-level variables in terms of [varnodes](DecompilerConcepts.md#conceptvarnode) that
+The Decompiler defines high-level variables in terms of [varnodes](DecompilerConcepts.md#varnodes) that
 are merged together to produce the final variable.  Some merging is speculative, which reduces the
 number of variables overall, but is not strictly necessary for valid decompilation.  The merged
 variable can be represented with two or more variables that have a smaller range (see the
-documentation on [HighVariable](DecompilerConcepts.md#concepthighvariable)).
+documentation on [HighVariable](DecompilerConcepts.md#highvariable)).
 
 
 This command is only available if the selected token is part of a high-level variable that has

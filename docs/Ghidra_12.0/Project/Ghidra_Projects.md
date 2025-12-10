@@ -32,10 +32,10 @@ shows the active project. The Ghidra Project Window's menu provides access
 to the following project operations:
 
 
-- [Create a project](../FrontEndPlugin/Creating_a_Project.md#createsharedproject)
+- [Create a project](../FrontEndPlugin/Creating_a_Project.md#creating-a-shared-project)
 - [Open an existing project](../FrontEndPlugin/Opening_a_Ghidra_Project.md)
 - [Close the project](../FrontEndPlugin/Close_Project.md)
-- [Re-open a project](../FrontEndPlugin/Re-opening_a_Project.md#reopenproject)
+- [Re-open a project](../FrontEndPlugin/Re-opening_a_Project.md#reopen-project)
 - [View a recent project](../FrontEndPlugin/Ghidra_Front_end.md#view-recent)
 - [Save the project](../FrontEndPlugin/Saving_a_Ghidra_Project.md)
 - [Archive

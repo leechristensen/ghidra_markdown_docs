@@ -113,7 +113,7 @@ check out state and version.
 
 
 This image shows that the file
-"Program_A" is associated with a shared project (note the blue border on the [file icon](../FrontEndPlugin/Ghidra_Front_end.md#fileicons)), and you
+"Program_A" is associated with a shared project (note the blue border on the [file icon](../FrontEndPlugin/Ghidra_Front_end.md#file-icons)), and you
 are now working with version 1 of 1.  The file "Program_B"
 has not been added to version control (note the plain icon and no version information). It
 is considered to be a "private" file. Private files are never visible to other users.
@@ -146,7 +146,7 @@ If your project repository is shared, a dialog is displayed to allow you to requ
 ***exclusive lock*** on the file.  An exclusive
 lock is necessary if you plan to [manipulate the memory map](../MemoryMapPlugin/Memory_Map.md) in any way,
 e.g., move or delete memory blocks, [change the program's
-language](../LanguageProviderPlugin/Languages.md#set-language), etc. An exclusive lock can be granted if no other user has the file checked
+language](../LanguageProviderPlugin/Languages.md#setting-a-programs-language), etc. An exclusive lock can be granted if no other user has the file checked
 out. While the exclusive lock exists, no other user can check out the file.
 
 
@@ -185,8 +185,8 @@ may have to be [merged](../Repository/Merge_Program_Files.md) into the
 latest version on the server.  This will be the case if another user checks in a file
 since you did a checkout on the file. Under most conditions, the merge will be automatic
 without any intervention required on your part. However, if you made changes such that a
-conflict arises, you will have to [resolve the conflict](../Repository/Merge_Program_Files.md#resolveconflicts)
-at the time of check in. When another user checks in his file, you will see [navigation markers](../CodeBrowserPlugin/CodeBrowser.md#cbnavigationmarkers)
+conflict arises, you will have to [resolve the conflict](../Repository/Merge_Program_Files.md#resolving-conflicts)
+at the time of check in. When another user checks in his file, you will see [navigation markers](../CodeBrowserPlugin/CodeBrowser.md#markers)
 for changes made since you checked out your file.  Potential conflicts are indicated
 in red. Refer to the [Merge](../Repository/Merge_Program_Files.md)
 page for more information about merging.
@@ -242,7 +242,7 @@ program.  The "5" indicates that there are 5 versions of the program in the
 repository.  The "4" indicates that your working copy of the program is based on the
 version "4" version that you checked out from the repository.  (To see the version
 numbers for your programs, check the [file's status](../FrontEndPlugin/Ghidra_Front_end.md#versionstatus) in the
-Ghidra Project Window [data tree](../FrontEndPlugin/Ghidra_Front_end.md#datatree)).   When
+Ghidra Project Window [data tree](../FrontEndPlugin/Ghidra_Front_end.md#project-data-tree)).   When
 you update, you will update to the latest version in the repository (5).  After the
 update is complete, your file status will show "Version 5 of 5" just as though you had
 *checked out* version 5. The **Update...** option allows you to have the latest
@@ -322,7 +322,7 @@ tool's icon, or to a tool icon in the tool chest.
 - If you have a [default tool](../Tool/Ghidra_Tool_Administration.md#set-tool-associations)
 specified, double click on the version that you want to open.
 - Choose the **File** → **Open...** option; the [Open Program
-dialog](../ProgramManagerPlugin/Opening_Program_Files.md#versionhistory) is displayed; from this dialog you can select a version to
+dialog](../ProgramManagerPlugin/Opening_Program_Files.md#history) is displayed; from this dialog you can select a version to
 open.
 
 
@@ -376,7 +376,7 @@ version number of the file that you have checked out.
 
 From this dialog, you can
 [check in](#check-in) your files or [undo your
-checkout](#undocheckout). Make a selection in the table, right mouse click and choose **Check In...**
+checkout](#undo-checkout). Make a selection in the table, right mouse click and choose **Check In...**
 or **Undo Checkout**. You can also click on the toolbar icon ![vcCheckIn.png](../icons/vcCheckIn.png)  to check in, or click on the icon ![vcUndoCheckOut.png](../icons/vcUndoCheckOut.png)  to undo the check out.
 
 
@@ -386,12 +386,12 @@ or **Undo Checkout**. You can also click on the toolbar icon ![vcCheckIn.png](..
 - [Ghidra
 Server](../GhidraServer/GhidraServer.md)
 - [Creating a Shared
-Project](../FrontEndPlugin/Creating_a_Project.md#createsharedproject)
+Project](../FrontEndPlugin/Creating_a_Project.md#creating-a-shared-project)
 - [Merging
 Program Files](../Repository/Merge_Program_Files.md)
 - [Open a
-Version](../ProgramManagerPlugin/Opening_Program_Files.md#versionhistory)
-- [Ghidra File Status](../FrontEndPlugin/Ghidra_Front_end.md#fileicons)
+Version](../ProgramManagerPlugin/Opening_Program_Files.md#history)
+- [Ghidra File Status](../FrontEndPlugin/Ghidra_Front_end.md#file-icons)
 - [Project
 Information](../FrontEndPlugin/Project_Info.md)
 

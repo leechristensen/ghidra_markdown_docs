@@ -52,8 +52,8 @@ The Ghidra Server starts the merge process
 by making a copy of Version **2**. Changes from **User** **A**'s checked in file
 are applied to this copy to create the new file, Version **3**. There are two types of
 merges - **automatic** and **manual**. If changes made by **User A** and **User
-B** do not conflict [automatic](#automatic) merging is done. If changes made
-by **User A** and **User B** do conflict, then **User A** must manually [resolve the conflicts](#resolveconflicts). Note that the last user checking in
+B** do not conflict [automatic](#auto-merge) merging is done. If changes made
+by **User A** and **User B** do conflict, then **User A** must manually [resolve the conflicts](#resolving-conflicts). Note that the last user checking in
 changes must resolve conflicts. A conflict results when **User A** and **User B**
 make the *same type of changes* at a location in the program.
 
@@ -66,7 +66,7 @@ correspond with the **Check in/Merge Sequence** above:
 ![](images/MultiUser.png)
 
 
-To begin the merge process, select the [Check In](../VersionControl/project_repository.md#checkin) option on the Ghidra Project Window. A progress
+To begin the merge process, select the [Check In](../VersionControl/project_repository.md#check-in) option on the Ghidra Project Window. A progress
 bar is displayed while the merge is in progress. The merge begins with a copy of the latest
 version of the file from the repository. All changes are applied to this copy. At the
 conclusion of the merge, this copy along with the applied changes will be saved in the
@@ -76,24 +76,24 @@ repository, and will become the newest version of the file.
 The merge processes program elements in the following order:
 
 
-- [Memory](#memoryauto)
-- [Program Trees](#programtreeauto)
-- [Data Types and Categories](#datatypeauto)
+- [Memory](#memory)
+- [Program Trees](#program-trees)
+- [Data Types and Categories](#data-types-and-categories)
 - [Program Context
-Registers](#programcontextregistersauto)
-- [Listing](#listingauto)
-- [Code Units](#codeunitsauto)
-- [Externals](#externalsauto)
-- [Functions](#functionsauto)
-- [Symbols](#symbolsauto)
-- [Equates](#equatesauto)
+Registers](#program-context-registers)
+- [Listing](#listing)
+- [Code Units](#code-units)
+- [Externals](#external-functions-and-labels)
+- [Functions](#functions)
+- [Symbols](#symbols)
+- [Equates](#equates)
 - [User Defined
-Properties](#userdefinedpropertiesauto)
-- [References](#referencesauto)
-- [Bookmarks](#bookmarksauto)
-- [Comments](#commentsauto)
-- [External Program Names](#externalprogramnamesauto)
-- [Property Lists](#propertyauto)
+Properties](#user-defined-properties)
+- [References](#references)
+- [Bookmarks](#bookmarks)
+- [Comments](#comments)
+- [External Program Names](#external-program-names)
+- [Property Lists](#property-lists)
 
 
 Within each program element an automatic merge is attempted first. If conflicts
@@ -144,7 +144,7 @@ element.
 ### Memory
 
 
-Program memory is organized in [memory blocks](../Glossary/glossary.md#memoryblock). The only changes to a
+Program memory is organized in [memory blocks](../Glossary/glossary.md#memory-block). The only changes to a
 memory block that can be merged are:
 
 
@@ -165,7 +165,7 @@ program becomes the new version.
 
 Comments on the memory block are *replaced* in the results program
 during the merge process. You must resolve all [memory
-conflicts](#memoryconflict) before the merge process can continue with the next program element, program
+conflicts](#memory) before the merge process can continue with the next program element, program
 trees.
 
 
@@ -175,7 +175,7 @@ trees.
 If you make **any** change to a [program tree](../ProgramTreePlugin/program_tree.md), it is marked as changed
 and may be merged. No further inspection of changes is done. If the tree was not changed in
 the latest version, then the automatic merge can be done. If the tree was changed in the
-latest version, this is considered a [conflict](#programtreeconflict) that you
+latest version, this is considered a [conflict](#program-trees) that you
 must resolve before the merge process can continue with the next program elements, data
 types and categories.
 
@@ -199,7 +199,7 @@ edited, this will **not** cause a conflict and your change can be applied automa
 during the merge process.
 
 
-[Categories](../DataTypeManagerPlugin/data_type_manager_description.md#category)
+[Categories](../DataTypeManagerPlugin/data_type_manager_description.md#working-with-categories)
 can be renamed, moved, deleted, or restructured (add/remove data types and categories).
 Note that moving a data type to a different parent category is considered a category
 change, not a data type change.
@@ -214,7 +214,7 @@ this will **not** cause a conflict and your change can be applied automatically 
 the merge process.
 
 
-All [conflicts](#datatypeconflicts) must be resolved before the merge process
+All [conflicts](#data-types-and-categories) must be resolved before the merge process
 can continue with the next program element, Program Context Registers.
 
 
@@ -233,7 +233,7 @@ Automatic merging of all the registers will happen before you are prompted to re
 any conflicting register values.
 
 
-You must resolve all [register conflicts](Merge_Program_Files.md#programcontextregistersconflict) before the
+You must resolve all [register conflicts](Merge_Program_Files.md#program-context-registers) before the
 merge process can continue with the next program element, Listing.
 
 
@@ -272,7 +272,7 @@ changed or vice versa
 
 
 You must resolve all [byte and code
-unit conflicts](Merge_Program_Files.md#codeunitsconflict) before the merge process can continue with the next program element,
+unit conflicts](Merge_Program_Files.md#code-units) before the merge process can continue with the next program element,
 Functions.
 
 
@@ -305,7 +305,7 @@ address.
 
 
 You must resolve all [external location
-conflicts](Merge_Program_Files.md#externalsconflict) before the merge process can continue with the next program element,
+conflicts](Merge_Program_Files.md#external-functions-and-labels) before the merge process can continue with the next program element,
 Functions.
 
 
@@ -345,7 +345,7 @@ values in your version and the latest version.
 
 
 You must resolve all [function
-conflicts](Merge_Program_Files.md#functionsconflict) before the merge process can continue with the next program element,
+conflicts](Merge_Program_Files.md#functions) before the merge process can continue with the next program element,
 Symbols.
 
 
@@ -380,7 +380,7 @@ unless the latest version set a different symbol to primary.
 
 
 You must resolve all [symbol
-conflicts](Merge_Program_Files.md#symbolsconflict) before the merge process can continue with the next Listing merge phase,
+conflicts](Merge_Program_Files.md#symbols) before the merge process can continue with the next Listing merge phase,
 the Address Based Listing Merge.
 
 
@@ -425,7 +425,7 @@ If an equate is changed for a scalar operand or sub-operand differently in the
 latest and your versions, then you must resolve the conflict.
 
 
-The [equate conflicts](Merge_Program_Files.md#equatesconflict) will need
+The [equate conflicts](Merge_Program_Files.md#equates) will need
 to be resolved after all of the address based auto merges complete. After the Equates
 auto merge completes, an auto merge will begin for User Defined Properties.
 
@@ -445,7 +445,7 @@ version then a user defined property conflict exists.
 
 
 The [user defined
-property conflicts](Merge_Program_Files.md#userdefinedpropertiesconflict) will need to be resolved after all of the address based auto
+property conflicts](Merge_Program_Files.md#user-defined-properties) will need to be resolved after all of the address based auto
 merges complete. After the User Defined Properties auto merge completes, an auto merge
 will begin for References.
 
@@ -481,7 +481,7 @@ version and the latest version have references that are different types (for exa
 one has memory references and the other has an external reference).
 
 
-The [reference conflicts](Merge_Program_Files.md#referencesconflict)
+The [reference conflicts](Merge_Program_Files.md#references)
 will need to be resolved after all of the address based auto merges complete. After the
 References auto merge completes, an auto merge will begin for Bookmarks.
 
@@ -513,7 +513,7 @@ resulting in a different category or description for the two versions.
 category resulting in a different description for the two versions.
 
 
-The [bookmark conflicts](Merge_Program_Files.md#bookmarksconflict) will
+The [bookmark conflicts](Merge_Program_Files.md#bookmarks) will
 need to be resolved after all of the address based auto merges complete. After the
 Bookmarks auto merge completes, an auto merge will begin for Comments.
 
@@ -528,7 +528,7 @@ removing, or updating the comment. If the latest version has a change to the sam
 comment then the conflict will need to be resolved manually.
 
 
-The [comment conflicts](Merge_Program_Files.md#commentsconflict) will
+The [comment conflicts](Merge_Program_Files.md#comments) will
 need to be resolved after all of the address based auto merges complete. After the
 Comments auto merge completes, the conflict merge will begin for address based listing
 elements (the equates, user defined properties, references, bookmarks, and comments) at
@@ -557,18 +557,18 @@ particular external program name.
 
 
 You must resolve all [external program name
-conflicts](#externalprogramnamesconflict) before the merge process can continue with the next program element, Property
+conflicts](#external-program-names) before the merge process can continue with the next program element, Property
 Lists.
 
 
 ### Property Lists
 
 
-[Property lists](../ProgramManagerPlugin/Program_Options_Dialog.md#properties)
+[Property lists](../ProgramManagerPlugin/Program_Options_Dialog.md#detailed-properties-descriptions)
 are lists of options that are saved as part of the program. You can view and edit these
 properties through the *[Program Options
 Dialog](../ProgramManagerPlugin/Program_Options_Dialog.md)*. A property will be merged automatically if it is a new property or it was
-not changed in the latest version. A [conflict](#propertylistconflict) results
+not changed in the latest version. A [conflict](#property-lists) results
 when you change a property that was either removed or changed in the latest version.
 
 
@@ -598,7 +598,7 @@ or a combined copy of both the Latest and your (Checked Out) comments.
 ### Memory
 
 
-All memory conflicts that remain after the [auto merge](#memoryauto) must be
+All memory conflicts that remain after the [auto merge](#memory) must be
 resolved.
 
 
@@ -635,7 +635,7 @@ The merge process continues with Program Trees.
 
 
 All program tree conflicts that remain after the [auto
-merge](#programtreeauto) must be resolved.
+merge](#program-trees) must be resolved.
 
 
 If you make any change to a [program tree](../ProgramTreePlugin/program_tree.md), it is marked as changed
@@ -687,7 +687,7 @@ types and categories.
 
 
 All data type or category conflicts that remain after the [auto
-merge](#datatypeauto) must be resolved.
+merge](#data-types-and-categories) must be resolved.
 
 
 If you make a change (rename, edit contents, delete) to a data type, and the same
@@ -824,7 +824,7 @@ current name of the archive.
 ### Program Context Registers
 
 
-All register value conflicts that remain after the [auto merge](Merge_Program_Files.md#programcontextregistersauto) must be resolved.
+All register value conflicts that remain after the [auto merge](Merge_Program_Files.md#program-context-registers) must be resolved.
 
 
 [Register](../RegisterPlugin/Registers.md) values can be set on an individual
@@ -940,7 +940,7 @@ not cause any of the other listings to scroll.
 
 
 The first type of Listing conflict you may encounter is a byte or code unit conflict.
-All byte and code unit conflicts that remain after the [auto merge](Merge_Program_Files.md#codeunitsauto) must be resolved.
+All byte and code unit conflicts that remain after the [auto merge](Merge_Program_Files.md#code-units) must be resolved.
 
 
 The following types of changes will result in code unit conflicts that need
@@ -983,7 +983,7 @@ addresses with the gray background in the listing indicate the code unit(s) that
 currently trying to resolve.
 
 
-Note that you will have already resolved all [data type conflicts](#datatypeconflicts) by this time; this conflict is due to
+Note that you will have already resolved all [data type conflicts](#data-types-and-categories) by this time; this conflict is due to
 different data types being applied at the same address. You are resolving *which data
 type to apply* at the address.
 
@@ -1015,7 +1015,7 @@ continues with any Function conflicts in the Listing.
 #### External Functions and Labels
 
 
-All external location conflicts that remain after the [auto merge](Merge_Program_Files.md#externalsauto) must be resolved.
+All external location conflicts that remain after the [auto merge](Merge_Program_Files.md#external-functions-and-labels) must be resolved.
 
 
 The following types of changes to external locations will result in conflicts that need
@@ -1132,7 +1132,7 @@ with any regular Function conflicts in the Listing.
 #### Functions
 
 
-All function conflicts that remain after the [auto merge](Merge_Program_Files.md#functionsauto) must be resolved.
+All function conflicts that remain after the [auto merge](Merge_Program_Files.md#functions) must be resolved.
 
 
 The following types of changes to functions will result in conflicts that need
@@ -1274,7 +1274,7 @@ with any Symbol conflicts in the Listing.
 #### Symbols
 
 
-All symbol conflicts that remain after the [auto merge](Merge_Program_Files.md#symbolsauto) must be resolved.
+All symbol conflicts that remain after the [auto merge](Merge_Program_Files.md#symbols) must be resolved.
 
 
 The symbol phase of the Listing merge will merge labels, [namespace](../SymbolTreePlugin/SymbolTree.md#namespace) symbols, class
@@ -1464,7 +1464,7 @@ for each of the address based listing elements.
 #### Equates
 
 
-All equate conflicts that remain after the [auto merge](Merge_Program_Files.md#equatesauto) must be resolved.
+All equate conflicts that remain after the [auto merge](Merge_Program_Files.md#equates) must be resolved.
 
 
 [Equates](../EquatePlugin/Equates.md) associate a name with a
@@ -1523,7 +1523,7 @@ with the User Defined Properties.
 #### User Defined Properties
 
 
-All user defined property conflicts that remain after the [auto merge](Merge_Program_Files.md#userdefinedpropertiesauto) must be
+All user defined property conflicts that remain after the [auto merge](Merge_Program_Files.md#user-defined-properties) must be
 resolved.
 
 
@@ -1596,7 +1596,7 @@ continues with the References.
 #### References
 
 
-All reference conflicts that remain after the [auto merge](Merge_Program_Files.md#referencesauto) must be resolved.
+All reference conflicts that remain after the [auto merge](Merge_Program_Files.md#references) must be resolved.
 
 
 [References](../ReferencesPlugin/References_from.md) consist of
@@ -1756,7 +1756,7 @@ with the Bookmarks.
 #### Bookmarks
 
 
-All bookmark conflicts that remain after the [auto merge](Merge_Program_Files.md#bookmarksauto) must be resolved.
+All bookmark conflicts that remain after the [auto merge](Merge_Program_Files.md#bookmarks) must be resolved.
 
 
 **Note** bookmarks are in conflict when any of the following occur:
@@ -1826,7 +1826,7 @@ resulting program. Then select the **Apply** button to continue merging.
 #### Comments
 
 
-All comment conflicts that remain after the [auto merge](Merge_Program_Files.md#commentsauto) must be resolved at each conflict
+All comment conflicts that remain after the [auto merge](Merge_Program_Files.md#comments) must be resolved at each conflict
 address.
 
 
@@ -1868,7 +1868,7 @@ process continues with External Program Names.
 ### External Program Names
 
 
-All external program name conflicts that remain after the [auto merge](Merge_Program_Files.md#externalprogramnamesauto) must be resolved.
+All external program name conflicts that remain after the [auto merge](Merge_Program_Files.md#external-program-names) must be resolved.
 
 
 A conflict occurs if :
@@ -1928,7 +1928,7 @@ to that external program name.
 ### Property Lists
 
 
-All property list conflicts that remain after the [auto merge](#propertyauto)
+All property list conflicts that remain after the [auto merge](#property-lists)
 must be resolved.
 
 
@@ -1967,17 +1967,17 @@ will contain a new version of the program file.
 
 - [Shared Project
 Repository](../VersionControl/project_repository.md#sharedproject)
-- [Check in](../VersionControl/project_repository.md#checkin)
+- [Check in](../VersionControl/project_repository.md#check-in)
 - [Memory
-Blocks](../Glossary/glossary.md#memoryblock)
+Blocks](../Glossary/glossary.md#memory-block)
 - [Program
 Trees](../ProgramTreePlugin/program_tree.md)
 - [Data Types and
 Categories](../DataTypeManagerPlugin/data_type_manager_description.md)
 - [Program
-Options](../ProgramManagerPlugin/Program_Options_Dialog.md#properties)
+Options](../ProgramManagerPlugin/Program_Options_Dialog.md#detailed-properties-descriptions)
 - [Property
-lists](../ProgramManagerPlugin/Program_Options_Dialog.md#properties)
+lists](../ProgramManagerPlugin/Program_Options_Dialog.md#detailed-properties-descriptions)
 - [Symbols](../SymbolTablePlugin/symbol_table.md)
 - [Property Viewer](../PropertyManagerPlugin/Property_Viewer.md)
 

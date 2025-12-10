@@ -612,9 +612,14 @@ class MarkdownValidator:
             # Try matching as a header anchor (slugified)
             # Convert anchor to potential header match
             # e.g., "some-header" might match "## Some Header"
-            slug_pattern = anchor.replace("-", r"[\s\-_]").replace("_", r"[\s\-_]")
-            if re.search(rf"^#+\s+.*{slug_pattern}", content, re.IGNORECASE | re.MULTILINE):
-                found = True
+            # Extract words from anchor and look for them in sequence in headings
+            # This handles bold markers, backticks, parentheses, etc.
+            words = [w for w in re.split(r"[-_]", anchor) if w]
+            if words:
+                # Build pattern allowing formatting chars between words
+                word_pattern = r"[\s\(\)\*`\-_]*".join(re.escape(w) for w in words)
+                if re.search(rf"^#+\s+.*{word_pattern}", content, re.IGNORECASE | re.MULTILINE):
+                    found = True
 
         if not found:
             if target_file:

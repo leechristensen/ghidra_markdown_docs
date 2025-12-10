@@ -32,7 +32,7 @@ the editor for a union data type.
 
 
 A Structure Editor or Union Editor can be launched from the [Data Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md),
-the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md), or the [Structure or Union Data Type Editors](#structure-editor-edit-component).
+the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md), or the [Structure or Union Data Type Editors](#editing-a-components-data-type).
 
 
 The Structure and Union Editors are composed of the following:
@@ -40,7 +40,7 @@ The Structure and Union Editors are composed of the following:
 
 - *Edit Actions*: The icon buttons at the top of the editor are used to modify this
 structure. Each button has a different [edit
-action](#structure-editor-edit-actions) associated with it. These allow the user to: apply changes, insert
+action](#edit-actions) associated with it. These allow the user to: apply changes, insert
 Undefined components, reorganize the current components, duplicate components, clear components (changes
 them to *undefined* components), delete components, create array components, and unpackage a
 structure or array component changing it into its component parts.
@@ -50,15 +50,15 @@ component's data type, edit a component's data type, edit the fields of a compon
 a cycle group or favorite.
 - *Component Table*: The upper portion of the editor contains a table with the
 structure's or union's components. Each component (or row) consists of its offset, length,
-mnemonic, data type, field name, and comment. See the [Component Fields](#structure-editor-component-fields) section for more about these
+mnemonic, data type, field name, and comment. See the [Component Fields](#component-fields) section for more about these
 fields. The data type, field name and comment are editable fields. The data type's category
 can be determined by [showing the data type
-category](#structure-editor-show-component-path). Components can be [added](#adddatatype), [inserted](#insertdatatype) or [replaced](#replacedatatype) in the table
-using [Drag and Drop](#dragndrop) or by applying a [Favorite](#structure-editor-favorite) data type. The data type for a component can also
-be changed by [cycling](#structure-editor-cycle) the data type.
+category](#showing-a-components-data-type-category). Components can be [added](#adding-a-data-type), [inserted](#inserting-a-data-type) or [replaced](#replacing-a-data-type) in the table
+using [Drag and Drop](#drag-and-drop-basics) or by applying a [Favorite](#favorites-basics) data type. The data type for a component can also
+be changed by [cycling](#cycling-a-component-data-type) the data type.
 - *Structure Information Area*: This is the area below the component table with the
 name, description, category, size, packing and alignment of the structure or union. The structure or
-union being edited can be [renamed](#structure-editor-name) from here. Its [description](#structure-editor-description) can be specified here.
+union being edited can be [renamed](#changing-the-name) from here. Its [description](#entering-a-description) can be specified here.
 - Immediately below the structure information area is a status line where status messages
 will appear.
 
@@ -92,8 +92,8 @@ Select the Undo Change icon ![Undo](../icons/edit-undo.png) in the toolbar to re
 the previous change within the editor.  The editor state maintains a stack of changes
 made within the editor.  The last change which may be reverted is described by the button's
 tooltip.  If this action is used and a change is reverted it may be re-applied by using the
-[Redo Change](#structure-editor-redo-editor-change) action.  When changes are
-[applied](#structure-editor-apply-editor-changes)
+[Redo Change](#redo-change) action.  When changes are
+[applied](#applying-changes)
 back to the original program or archive the undo/redo stack is cleared.
 
 
@@ -107,11 +107,11 @@ cause the undo/redo stack to be cleared.
 
 
 Select the Redo Change icon ![Redo](../icons/edit-redo.png) in the toolbar to re-apply
-a previous change which was just [reverted](#structure-editor-undo-editor-change).
+a previous change which was just [reverted](#undo-change).
 The last reverted change which may be re-applied is described by the button's
 tooltip.  If this action is used and a change is re-applied it may again be reverted by using the
-[Undo Change](#structure-editor-undo-editor-change) action.  When changes are
-[applied](#structure-editor-apply-editor-changes)
+[Undo Change](#undo-change) action.  When changes are
+[applied](#applying-changes)
 back to the original program or archive the undo/redo stack is cleared.
 
 
@@ -183,8 +183,8 @@ size is only permitted for non-packed structures.  For other situations the fiel
 At the bottom of the editor is a read-only Alignment
 field which conveys the actual alignment of this data type.
 All non-packed structures and unions (i.e., pack disabled) will have a default alignment of 1 (byte aligned)
-unless a [minimum alignment](#structure-editor-align) value has been specified.  For packed structures and unions
-the actual alignment value is calculated based on the [pack](#structure-editor-pack) setting,
+unless a [minimum alignment](#align-minimum) value has been specified.  For packed structures and unions
+the actual alignment value is calculated based on the [pack](#pack) setting,
 preferred alignments of the individual components,
 and the minimum alignment setting. The size of a packed structure or union will always be a multiple
 of this alignment value.  This value is always expressed in terms of 8-bit bytes.
@@ -214,7 +214,7 @@ types at specific offsets within a structure whose size has been specified. When
 the editor attempts to prevent defined components from moving
 to a different offset when performing operations like drag and drop which may consume undefined bytes.
 The default alignment for non-packed structures is 1-byte but may be overriden by setting a specific
-non-default [minimum alignment](#structure-editor-align).
+non-default [minimum alignment](#align-minimum).
 The alignment will not influence the size of a non-packed structure so it is advised
 that the size always be explicity set to a multiple of the alignment value.
 
@@ -250,7 +250,7 @@ default alignment.
 
 
 This setting controls the minimum alignment to be used when computing this data type's
-[actual alignment](#structure-editor-actualalignment).
+[actual alignment](#alignment).
 
 
 - default - Sets this data type to compute its default alignment based only on the pack setting and the alignment of
@@ -314,7 +314,7 @@ code attribute of #pragma pack() without a value is to specify a pack value of 1
 
 
 When a union is not packed (i.e., pack disabled), the union is the size of its largest component.  There is
-no alignment padding and the default alignment  is 1.  As with structures, a [minimum alignment](#structure-editor-align) may be specified to force a specific alignment.
+no alignment padding and the default alignment  is 1.  As with structures, a [minimum alignment](#align-minimum) may be specified to force a specific alignment.
 The alignment will not influence the size of a non-packed union so it is advised
 that the size always be explicity set to a multiple of the alignment value.
 
@@ -326,8 +326,8 @@ that the size always be explicity set to a multiple of the alignment value.
 
 
 In a packed union the overall size is at least the size of the largest component,
-but will be padded based on the actual computed alignment. The [minimum alignment](#structure-editor-align) is specified in the same manner as for a
-structure and affects the alignment in the same way. The [pack value](#structure-editor-pack) is specified in the same manner as within a
+but will be padded based on the actual computed alignment. The [minimum alignment](#align-minimum) is specified in the same manner as for a
+structure and affects the alignment in the same way. The [pack value](#pack) is specified in the same manner as within a
 structure, but only affects the trailing padding and overall size of the union. All elements in a
 union have an offset of zero, so the pack value doesn't affect the component offsets. If both
 a minimum alignment and pack value are specified, the minimum alignment will override the
@@ -360,7 +360,7 @@ upon the specified offset and allocation unit byte size when a placement conflic
 - The start/end byte offsets may be shared with adjacent bitfield components.
 - Unoccupied bits within a partially occupied byte are not represented by any component
 (similar to padding bytes within packed structures).
-- A separate [Bitfield Editor](#structure-bitfield-editor), for use with non-packed structures only,
+- A separate [Bitfield Editor](#bitfield-editor-non-packed-structures-only), for use with non-packed structures only,
 must be used to precisely place a bitfield component.  Adding a bitfield component via the
 structure table view via datatype text entry (e.g., char:1) provides only rough placement for non-packed
 structures since additional bytes will be introduced.
@@ -386,7 +386,7 @@ A structure may be defined with zero-element array components, also referred to 
 flexible array, which correspond to an unsized array (e.g., char[0]).  Such a component
 is created by simply specifying a zero-element array datatype as you would a sized-array component
 (see [Create
-Zero-Element / Flexible Array Component](#structure-editor-create-flexarray)).
+Zero-Element / Flexible Array Component](#create-zero-element-flexible-array-component)).
 The resulting component will not consume any space within the structure and will report a component
 size of 0. As such, it may reside at the same offset as a subsequent component and/or may have an offset
 equal to the length of the structure. When packing is enabled such a component may influence the
@@ -418,8 +418,7 @@ is inserted in a similar fashion, although in packed structures it is more appro
 on inserted component).
 
 
-### Move
-Up
+### Move Up
 
 
 A contiguous group of components can be moved up or down in the structure. Select a block
@@ -520,8 +519,7 @@ will be equal to the length of the component being cleared.
 Name and Comment.
 
 
-### Create
-Array
+### Create Array
 
 
 To create an array from a single selected component:
@@ -560,15 +558,14 @@ be the array that can fit in the selected number of bytes. Any left over (unused
 the end of the selection will become *undefined* components.
 
 
-### Create
-Zero-Element / Flexible Array Component
+### Create Zero-Element / Flexible Array Component
 
 
 To create an unsized flexible array component you must use the datatype cell edit feature
 to select/enter the datatype by name including the array-sizing-specification (e.g., char[0]).
 To initiate edit mode for a component datatype you must double-click the datatype cell for the component
 you wish to modify.  This may be an existing component or the empty row at the end of the table.
-See [Editing the DataType Field](#structure-editor-editing-datatype) for more details.
+See [Editing the DataType Field](#editing-the-datatype-field) for more details.
 
 
 ### Unpackage Component
@@ -620,7 +617,7 @@ table view (e.g., char:1).
 
 With a structure row selected in the vicinity of the desire bitfield placement, the popup
 menu action (right mouse-click) **Add Bitfield** may be selected to launch the
-[Bitfield Editor](#structure-bitfield-editor) for a new bitfield.
+[Bitfield Editor](#bitfield-editor-non-packed-structures-only) for a new bitfield.
 
 
 > **Note:** A direct text entry of a bitfield
@@ -633,7 +630,7 @@ will always be placed at a default offset.
 
 With a defined bitfield component row selected, the popup
 menu action (right mouse-click) **Edit Bitfield** may be selected to launch the
-[Bitfield Editor](#structure-bitfield-editor).
+[Bitfield Editor](#bitfield-editor-non-packed-structures-only).
 
 
 ## Component Fields
@@ -833,15 +830,14 @@ a Float.
 A bitfield may be specified by appending **:`<bitsize>`** to the end of a valid base datatype.  Valid base datatypes include
 all integer types (e.g., byte, char, int, etc.), a defined enum, or a typedef which corresponds to an integer-type or enum.
 It is important to note that specifying a bitfield in this manner works well for packed structures, however for non-packed
-structures it may be neccessary to use the [Bitfield Actions](#structure-editor-bitfield-actions) to properly define a bitfield.
+structures it may be neccessary to use the [Bitfield Actions](#bitfield-actions-non-packed-structures) to properly define a bitfield.
 
 
 For example, *int:4* defines a signed integer bitfield which is 4-bits in length.
 
 
 
-#### Effect of Changing a Component's
-Size
+#### Effect of Changing a Component's Size
 
 
 A non-packed union's size will always be the size of its largest component. If you
@@ -999,7 +995,7 @@ where there is no selection, the selection becomes a single component selection 
 that component and the popup menu will appear.
 
 
-Favorites are discussed further in [Adding a Data Type](#adddatatype), and [Replacing a Data Type](#replacedatatype).
+Favorites are discussed further in [Adding a Data Type](#adding-a-data-type), and [Replacing a Data Type](#replacing-a-data-type).
 
 
 ## Adding a Data Type
@@ -1090,7 +1086,7 @@ dropped to replace the component. This is probably because the data type being d
 won't fit in the structure in place of the original component. If editing a union or
 packed structure the data type will always fit and the drop is allowed (provided the datatype is allowed). If editing a
 non-packed structure, the component is replaced only if the new component will fit. (see
-[Effect of Changing a Component's Size](#effectofchangingdatatypesize))
+[Effect of Changing a Component's Size](#effect-of-changing-a-components-size))
 
 
 #### Contiguous Selection of Multiple Components
@@ -1127,7 +1123,7 @@ containing that component and the popup menu will appear.
 To replace a component's data type with a favorite data type, select it in the table,
 right mouse click and pick the favorite. Only favorites that will fit in place of the
 component will be enabled. (see [Effect of
-Changing a Component's Size](#effectofchangingdatatypesize))
+Changing a Component's Size](#effect-of-changing-a-components-size))
 
 
 #### Contiguous Selection of Multiple Components
@@ -1147,8 +1143,7 @@ bytes become *undefined* components for a non-packed structure.
 see Favorites Basics .
 
 
-## Showing a Component's Data Type
-Category
+## Showing a Component's Data Type Category
 
 
 Every component has a data type: Byte, Word, Float, etc.. The category is where that data
@@ -1195,7 +1190,7 @@ editor.
 The Component Table contains numeric fields such as the component's offset and length. The
 structure information area also shows the overall size and alignment of the structure. By
 default, numbers are initially shown as hex values in the Structure Editor. There is
-a [tool option](#structureeditortooloptions), **Show Numbers In Hex**, that lets
+a [tool option](#structure-and-union-editor-tool-options), **Show Numbers In Hex**, that lets
 you override the default and set whether these numbers should be displayed as decimal or hex
 values when an editor is initially displayed.
 

@@ -5,7 +5,7 @@
 
 Visual Graphs are highly integrated graphs that all share common features and
 actions. Various Graph component providers are based upon the Visual Graph API.They typically
-have both a [Primary View](#visual-graph-primary-view) and
+have both a [Primary View](#primary-view) and
 a [Satellite View](#satellite-view)
 
 

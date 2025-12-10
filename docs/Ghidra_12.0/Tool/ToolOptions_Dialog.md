@@ -224,11 +224,11 @@ mouse pointer over the component in the options panel.
 | Copy Strings Without Quotes | If selected, copying strings to the clipboard from                 the listing, decompiler, or bytes viewer will remove outer quotes. |
 | Docking Windows On Top | Selected means to show each undocked window on top of                 its parent tool window; the undocked window will not get "lost" behind its parent                 window. Unselected means that the undocked window may go behind other windows once                 it loses focus. Use the Windows menu to make the undocked window visible. |
 | Goto Dialog Memory | Selected means that the last goto query will                 remain in the dialog the next time the dialog is invoked. |
-| Max Goto Entries | Number of past entries to keep in the [Go to Address or                 Label](../Navigation/Navigation.md#go-to-address-label) dialog |
+| Max Goto Entries | Number of past entries to keep in the [Go to Address or                 Label](../Navigation/Navigation.md#go-to-address-label-or-expression) dialog |
 | Max Navigation History Size | Max number of items to retain in the navigation                 history. dialog |
 | Show Program Tabs Always | If selected, a program tab will be displayed even                 there is only one program open. |
 | Subroutine Model | Sets the default subroutine model. This setting is mainly used when creating                   call graphs. See [Block Models](../BlockModel/Block_Model.md#blockmodeldefinition) for a description of the valid Models. |
-| Use C-like Numeric Formatting for                 Addresses | Selected means to attempt to interpret the value entered in the [Go To dialog](../Navigation/Navigation.md#go-to-address-label) as a                   number as follows: interpret the value as a hex number if it starts with "0x"interpret the value as an octal number if it starts with "0"interpret the value as a binary number if it ends with a "b" |
+| Use C-like Numeric Formatting for                 Addresses | Selected means to attempt to interpret the value entered in the [Go To dialog](../Navigation/Navigation.md#go-to-address-label-or-expression) as a                   number as follows: interpret the value as a hex number if it starts with "0x"interpret the value as an octal number if it starts with "0"interpret the value as a binary number if it ends with a "b" |
 
 
 To change Tool Options,
@@ -279,7 +279,7 @@ efficient. The following two options are available:
 
 
 - [Go to Address or
-Label](../Navigation/Navigation.md#go-to-address-label)
+Label](../Navigation/Navigation.md#go-to-address-label-or-expression)
 - [Subroutine Model](../BlockModel/Block_Model.md)
 
 

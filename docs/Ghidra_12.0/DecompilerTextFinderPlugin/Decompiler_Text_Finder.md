@@ -11,7 +11,7 @@ for each function in the current program.
 The **Decompiled Function Search** dialog is shown when users execute the **Search
 Decompiled Text** action.   If *String Search* is selected, then a case insensitive text
 search is performed using the specified text.   If *Regular Expression* is selected, then
-a [Regular Expression](../Search/Regular_Expressions.md#regex-syntax)
+a [Regular Expression](../Search/Regular_Expressions.md#regular-expression-syntax)
 search is performed.  Selecting *Search Selection* will only search function entry points
 that are in the current program selection.
 

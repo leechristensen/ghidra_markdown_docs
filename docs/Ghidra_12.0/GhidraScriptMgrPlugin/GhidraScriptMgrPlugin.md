@@ -239,7 +239,7 @@ assign to the script.
 
 
 *The script key
-bindings are stored in the Tool's [Key Binding](../Tool/ToolOptions_Dialog.md#keybindings-option)
+bindings are stored in the Tool's [Key Binding](../Tool/ToolOptions_Dialog.md#key-bindings)
 options.*
 
 
@@ -257,7 +257,7 @@ dialog.
 
 
 You cannot delete scripts in the [system
-directory](#script-directories), as this may affect other users. If you attempt to delete a system script,
+directory](#script-directories-bundle-manager), as this may affect other users. If you attempt to delete a system script,
 you will receive a warning dialog.
 
 
@@ -294,8 +294,7 @@ Development` for details on how to write a script.
 Refreshes the script list by re-scanning the script directories.
 
 
-### Script Directories / Bundle
-Manager
+### Script Directories / Bundle Manager
 
 
 Allows you to add and remove directories to search for scripts and other
@@ -324,7 +323,7 @@ Opens the Ghidra help viewer on the GhidraScript API.
 
 
 - [Key
-Bindings](../Tool/ToolOptions_Dialog.md#keybindings-option)
+Bindings](../Tool/ToolOptions_Dialog.md#key-bindings)
 
 
 ---

@@ -7,9 +7,9 @@ Attributes of the Listing can be customized using the [Tool Options Dialog](../T
 attributes that can be customized:
 
 
-- [Colors and Fonts](#listing-popups)
-- [Fields, Highlights, and Selections](#listing-fields)
-- [Popups](#listing-popups)
+- [Colors and Fonts](#popups)
+- [Fields, Highlights, and Selections](#fields-highlights-selections)
+- [Popups](#popups)
 
 
 ## Color and Fonts
@@ -33,7 +33,7 @@ This panel is divided into the following sections:
 Sets the default font, size and style for all text fields in the listing. The font and
 size apply to all screen elements. The styles (bold/italic) will be used as the default for
 each screen element unless individually customized using the [Style
-Settings](#stylesetting).
+Settings](#style-settings).
 
 
 ### Screen Element
@@ -230,7 +230,7 @@ Note: this applies to structure data only. All other code units are unaffected.
 ### **Cursor Text Highlight**
 
 
-Use the following options to customize [Cursor Text Highlighting](CodeBrowser.md#cursortexthighlight):
+Use the following options to customize [Cursor Text Highlighting](CodeBrowser.md#cursor-text-highlight):
 
 
 **Enabled -** Select this checkbox to enable cursor text highlighting.
@@ -624,7 +624,7 @@ on its own line within the operand field.
 ### PCode Field
 
 
-**Display Raw [PCode](../LanguageProviderPlugin/Languages.md#codebrowserplugin-pcode)** -
+**Display Raw [PCode](../LanguageProviderPlugin/Languages.md#pcode)** -
 Option to display the raw PCode directly in the Code Browser (i.e., detailed varnode
 specifications are provided).
 

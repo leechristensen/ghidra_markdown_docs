@@ -12,8 +12,7 @@ The *About Program* dialog displays summary information about a program.
 1. From the menu-bar of the tool that has the program open, select **Help  →  About Program ...**
 
 
-## **To view information about any program in the project window
-**
+## **To view information about any program in the project window **
 
 
 1. Right click on the program and select **About...** from the popup menu.

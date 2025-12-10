@@ -27,8 +27,8 @@ selecting the Code Browser menu
 > Edit -> Options for <program>... .
 
 
-Picking the *Decompiler* section shows [Program Options](DecompilerOptions.md#programoptions)
-that only affect the Decompiler.  Picking the [Specification Extensions](DecompilerOptions.md#extensionoptions) section
+Picking the *Decompiler* section shows [Program Options](DecompilerOptions.md#program-options)
+that only affect the Decompiler.  Picking the [Specification Extensions](DecompilerOptions.md#specification-extensions) section
 shows a table of the available prototype models, call-fixups, and callother-fixups. These
 affect more than just the Decompiler but are also documented here.
 
@@ -156,7 +156,7 @@ callother-fixups.
 
 
 Every program has a *core* set of specification elements,
-loaded from the [SLEIGH Specification Files](DecompilerConcepts.md#conceptspecification), that cannot
+loaded from the [SLEIGH Specification Files](DecompilerConcepts.md#sleigh-specification-files), that cannot
 be modified or removed. Extensions, however, can be added to this core specification. Any extension
 imported from this dialog is directly associated with the active Program and is stored permanently
 with it.
@@ -256,7 +256,7 @@ The XML file describing the extension *must* have one of the tags,
 `<prototype>`, `<callfixup>`, or `<callotherfixup>`,
 as its single root element. Users can find numerous examples within the compiler
 and processor specification files that come as part of Ghidra's installation
-(see [SLEIGH Specification Files](DecompilerConcepts.md#conceptspecification)).
+(see [SLEIGH Specification Files](DecompilerConcepts.md#sleigh-specification-files)).
 
 
 In the case of **prototype** and **callfixup**

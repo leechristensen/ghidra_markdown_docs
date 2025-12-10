@@ -22,7 +22,7 @@ will open a new blank trace, initialize it with the current program's memory map
 stack, and create a thread whose program counter is initialized to the current address and
 whose registers are initialized to the register context at that address. Optionally, any other
 initialization can be done by manually modifying the trace in the UI, or using a script. The [emulator
-controls](../DebuggerControlPlugin/DebuggerControlPlugin.md#emu-actions) can then be used.
+controls](../DebuggerControlPlugin/DebuggerControlPlugin.md#emulation-actions) can then be used.
 
 
 To control the initial stack allocation, create a `STACK` block in the target

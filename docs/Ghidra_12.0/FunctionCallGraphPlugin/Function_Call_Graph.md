@@ -20,7 +20,7 @@ select the **Window** →
 
 
 The graph of function calls related to the source function being displayed can be
-explored by [adding existing function calls](#expand-collapse)
+explored by [adding existing function calls](#showhide-edges-action)
 to the initial graph display.
 
 

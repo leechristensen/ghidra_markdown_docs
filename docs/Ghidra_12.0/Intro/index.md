@@ -5,9 +5,9 @@
 ## Contents
 
 - [Introduction](Intro.md)
-- [Getting Started](Intro.md#gettingstarted)
-- [Starting Ghidra](Intro.md#startingghidra)
-- [Error Dialogs](Intro.md#errordialogs)
-- [Overview](Intro.md#overview)
+- [Getting Started](Intro.md#getting-started)
+- [Starting Ghidra](Intro.md#starting-ghidra)
+- [Error Dialogs](Intro.md#error-dialogs)
+- [Overview](Intro.md#ghidra-overview)
 - [Ghidra Functionality](GhidraFunctionality.md)
 - [Support](GhidraSupport.md)

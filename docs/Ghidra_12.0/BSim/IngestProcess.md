@@ -3,8 +3,7 @@
 # Ingesting Executables
 
 
-## Ingest
-Process
+## Ingest Process
 
 
 The process of ingesting binaries into a BSim Database server, in order to exploit
@@ -24,7 +23,7 @@ simultaneously. If a Ghidra Server is used, steps 3 and 4 are easily accomplishe
 In the following examples, we assume that a machine `localhost` is running both a Ghidra Server and a BSim PostgreSQL database
 server. On the Ghidra Server, a repository named `repo` has
 been created. On the BSim server, a database named `repo` has
-also been created. See [Command-Line Utility Reference](CommandLineReference.md#bsimcommand) for more
+also been created. See [Command-Line Utility Reference](CommandLineReference.md#bsim) for more
 details on use of **bsim** command and other supported BSim databases.
 
 
@@ -47,8 +46,7 @@ how the executables can be analyzed. For a more complete discussion of the avail
 options, look at the `analyzeHeadlessREADME.txt`.
 
 
-### Generating Features and Function
-Metadata
+### Generating Features and Function Metadata
 
 
 To generate features and metadata on an existing repository, use the **bsim generatesigs** command. Signatures may be written as
@@ -110,8 +108,7 @@ database and there are no executable categories or function tags, the BSim serve
 does not need to be running.
 
 
-### Importing Features to a BSim
-Database
+### Importing Features to a BSim Database
 
 
 Importing XML signature files into a BSim database which were previously generated is
@@ -147,8 +144,7 @@ does not need to be running for this command to succeed. But, the BSim server mu
 running.
 
 
-## Tailoring
-Analysis
+## Tailoring Analysis
 
 
 It may be necessary as part of the ingest process to alter the way that Ghidra
@@ -181,7 +177,7 @@ The relevant option group is *Program.ANALYSIS_PROPERTIES*, which contains progr
 properties for all of Ghidra's analysis passes. The example sets the specific options,
 "Decompiler Parameter ID" and "Stack", to false, which causes Ghidra to skip those
 passes. Other passes can be toggled or have their parameters altered in this way, see [“Analysis Effects on Feature
-Extraction”](IngestProcess.md#analysiseffects) for some of analysis passes that can effect BSim.
+Extraction”](IngestProcess.md#analysis-effects-on-feature-extraction) for some of analysis passes that can effect BSim.
 
 
 ### Ingesting Executable Categories
@@ -230,7 +226,7 @@ can be set within a script by using the *setDate*
 method instead of *setString*. If no *Date* category has been created, BSim will read the 'Date
 Created' option, which is normally filled in with the time at which Ghidra was created
 and analysis started. For additional discussion see [“Executable
-Categories”](DatabaseConfiguration.md#execat).
+Categories”](DatabaseConfiguration.md#executable-categories).
 
 
 ### Ingesting Function Tags
@@ -259,11 +255,10 @@ public void adjustTags(Address myaddress) throws Exception {
 If the tag did not exist before the first call to *addTag*, it will be created. Assuming the tag has been
 registered with BSim, it will now automatically be included as part of the metadata of
 any functions it was added to. For additional discussion see [“Function
-Tags”](DatabaseConfiguration.md#functiontags).
+Tags”](DatabaseConfiguration.md#function-tags).
 
 
-## Analysis
-Effects on Feature Extraction
+## Analysis Effects on Feature Extraction
 
 
 Auto-analysis *must* be performed in some form,

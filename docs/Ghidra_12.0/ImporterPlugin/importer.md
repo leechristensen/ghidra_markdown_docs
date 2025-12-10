@@ -168,7 +168,7 @@ Libraries...** menu item.
 - Use the options dialog that appears to control the library import settings.
 - Press OK on the dialog to initiate importing any discovered libraries.
 - When complete, the currently open program should have additional
-[External Programs](../ReferencesPlugin/external_program_names.md#externalnamesdialog) linked if matching libraries were found.
+[External Programs](../ReferencesPlugin/external_program_names.md#external-programs-view) linked if matching libraries were found.
 
 
 ## Other Import Actions
@@ -214,7 +214,7 @@ file without any interpretation.
 - **Language** - This field specifies the language/compiler specification that will
 be used in the resulting program. Often, this will be automatically detected from the
 file format. The [Language/Compiler Spec Chooser
-Dialog](#language-picker-dialog) can be used to enter or change the language/compiler spec that will be
+Dialog](#language-and-compiler-specification-dialog) can be used to enter or change the language/compiler spec that will be
 used.
 - **Destination Folder** - This field is used to specify the destination folder
 within the current project for where the newly imported program will be saved. If a
@@ -230,7 +230,7 @@ specified by the **Destination Folder** field.
 binaries will be mirrored in the destination folder. Any filesystem directory and file
 soft links will be mirrored as
 [Ghidra
-project folder and file links.](../FrontEndPlugin/Ghidra_Front_end.md#create-file-links).
+project folder and file links.](../FrontEndPlugin/Ghidra_Front_end.md#create-linked-folder-or-file).
 - **Options...** - This button will pop up format specific options for the
 import.
 
@@ -292,10 +292,10 @@ mirroring is enabled in the Importer Dialog***.
 Searches a user-defined path list to recursively resolve the external libraries used
 by the executable. The entire library dependency tree will be traversed in a depth-first
 manner and a program will be created for each found library (if it doesn't exist already).
-The [external references](../ReferencesPlugin/References_from.md#extrefs)
+The [external references](../ReferencesPlugin/References_from.md#external-references)
 in these program will be resolved.
 
-The "Edit Paths" button will bring up the [Library Paths Dialog](#library-paths)
+The "Edit Paths" button will bring up the [Library Paths Dialog](#library-search-path)
 
 
 #### Recursive Library Load Depth
@@ -321,7 +321,7 @@ If selected, the filesystem path layout of all imported libraries are
 mirrored in the library destination folder. Any filesystem directory and file
 soft links will be mirrored as
 [Ghidra
-project folder and file links](../FrontEndPlugin/Ghidra_Front_end.md#create-file-links). ***This option is hidden and enabled if filesystem
+project folder and file links](../FrontEndPlugin/Ghidra_Front_end.md#create-linked-folder-or-file). ***This option is hidden and enabled if filesystem
 mirroring is enabled in the Importer Dialog***.
 
 
@@ -666,7 +666,7 @@ The Library Search Path dialog is used to specify the directories, container fil
 and/or FSRLs that Ghidra should use to resolve external libraries (e.g.; *.dll, *.so) while
 importing. A "." can be added to specify the program's import location.  FSRLs can be
 added via the
-[File System Browser context menu](../FileSystemBrowserPlugin/FileSystemBrowserPlugin.md#fsb-add-library-search-path).
+[File System Browser context menu](../FileSystemBrowserPlugin/FileSystemBrowserPlugin.md#add-library-search-path).
 
 
 If importing with filesystem mirroring activated, these paths also are used to lookup
@@ -866,7 +866,7 @@ If selected, the filesystem path layout of any imported
 binaries will be mirrored in the destination folder. Any filesystem directory and file
 soft links will be mirrored as
 [Ghidra
-project folder and file links.](../FrontEndPlugin/Ghidra_Front_end.md#create-file-links)
+project folder and file links.](../FrontEndPlugin/Ghidra_Front_end.md#create-linked-folder-or-file)
 
 
 #### Project Destination

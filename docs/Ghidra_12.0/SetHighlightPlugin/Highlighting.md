@@ -18,8 +18,7 @@ code unit and click around in the browser, without losing the highlight for the 
 results.
 
 
-### **To set
-a highlight from a selection**
+### **To set a highlight from a selection**
 
 
 1. Create a selection in the Code Browser
@@ -30,8 +29,7 @@ From the right mouse popup menu of the Code Browser, select **Highlight**
 Selection**
 
 
-### **To clear a
-highlight**
+### **To clear a highlight**
 
 
 1. From the menu-bar of the Code Browser, select **Select  →  Highlight** **→** **Clear**
@@ -40,8 +38,7 @@ From the right mouse popup menu of the Code Browser, select **Highlight**
 **→** **Clear**
 
 
-### **To
-add a selection to a highlight**
+### **To add a selection to a highlight**
 
 
 1. From the menu-bar of the Code Browser, select **Select  →  Highlight** **→** **Add Selection**
@@ -61,8 +58,7 @@ From the right mouse popup menu of the Code Browser, select **Highlight**
 Selection**
 
 
-### **To
-create a selection from a highlight**
+### **To create a selection from a highlight**
 
 
 1. Create a highlight in the Code Browser
@@ -86,14 +82,13 @@ have to be contiguous. Two methods exist to allow navigation over these ranges:
 ### Using the Navigation Margin
 
 
-One or more yellow markers will appear in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#cbnavigationmargin),
+One or more yellow markers will appear in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#navigation-marker),
 where each yellow marker corresponds to an address range included in the highlight.
 Clicking on a yellow marker will cause the Code Browser to navigate to the beginning of the
 corresponding address range.
 
 
-### Using the
-Navigation Menu
+### Using the Navigation Menu
 
 
 From the menu-bar of the Code Browser, select either **Navigation  →  Previous Highlighted Range** or **Navigation  →  Next Highlighted Range**.
@@ -128,7 +123,7 @@ disabled.
 - [Selecting](../Selection/Selecting.md)
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
 - [Navigation
-Margin](../CodeBrowserPlugin/CodeBrowser.md#cbnavigationmargin)
+Margin](../CodeBrowserPlugin/CodeBrowser.md#navigation-marker)
 - [Query Results](../Search/Query_Results_Dialog.md)
 
 

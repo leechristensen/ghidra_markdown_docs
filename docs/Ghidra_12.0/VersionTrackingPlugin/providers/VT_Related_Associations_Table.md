@@ -20,8 +20,7 @@ difference between this table and the Matches Table is that this table only disp
 matches related to the current function or data.
 
 
-### Version Tracking Matches For
-Source
+### Version Tracking Matches For Source
 
 
 In the Source Tool the **Related Matches** table shows all correlator or manually
@@ -63,8 +62,7 @@ Match Table causes the Destination Tool to navigate to that selected destination
 address.
 
 
-### Version Tracking Matches For
-Destination
+### Version Tracking Matches For Destination
 
 
 The Destination Tool has its own **Related Matches** table. This has information
@@ -107,8 +105,7 @@ Note: You cannot compare Data matches or External Functions using this action, s
 if you select either of these as matches they will not be populated in the table.
 
 
-### Select Match in VT
-Matches Table
+### Select Match in VT Matches Table
 
 
 As you select various matches in either **Related Matches** table, the other

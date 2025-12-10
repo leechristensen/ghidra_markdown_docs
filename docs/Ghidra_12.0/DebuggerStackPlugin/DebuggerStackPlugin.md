@@ -9,7 +9,7 @@
 The stack window displays the current trace's execution stack, as unwound and reported by
 the target. Not all debuggers will unwind the stack, in which case, this window displays only
 the innermost frame. When emulation is used to generate the current machine state, only a
-single synthetic frame is shown. See the [Unwind Stack](#unwind-stack) action for an
+single synthetic frame is shown. See the [Unwind Stack](#unwind-stack-u) action for an
 alternative mechanism that unwinds using Ghidra's program databases and works during emulation.
 Level 0 always refers to the innermost frame, and each incremental level refers to the next
 caller in the chain — most of the time. The current frame comprises one element of the

@@ -207,7 +207,7 @@ any length but may not contain spaces. To add a label:
 
 1. Right-click and choose the **Add Label** menu option.
 2. Enter the name of the label in the text field (or accept the suggested default).
-3. Change any of the default options (see [Label Dialog](#addeditdialog))
+3. Change any of the default options (see [Label Dialog](#addedit-label-dialog))
 4. Press the **OK** button.
 
 
@@ -223,7 +223,7 @@ To change the name of a label or referenced label appearing in an operand:
 
 1. Right-click on the label, or referenced label appearing in an operand, then
 choose the **Edit Label** item from the popup menu.
-2. Enter the new name of the label in the text field in the **[Label](#addeditdialog)** dialog.
+2. Enter the new name of the label in the text field in the **[Label](#addedit-label-dialog)** dialog.
 3. Press the **OK** button.
 
 
@@ -286,7 +286,7 @@ To set the namespace:
 
 
 1. Right click on a symbol and choose the **Edit Label** menu option.
-2. Select a namespace from the *namespace* combo-box in the **[Label](#addeditdialog)** dialog.  Or, you may enter a new namespace with the label using "::" as a
+2. Select a namespace from the *namespace* combo-box in the **[Label](#addedit-label-dialog)** dialog.  Or, you may enter a new namespace with the label using "::" as a
 name separator.  If a specified namespace does not exist a simple-namespace
 will be created.
 
@@ -304,7 +304,7 @@ set an external entry point:
 
 
 1. Right click on a symbol and choose the **Edit Label** menu option.
-2. Check the *Entry Point* checkbox in the **[Label](#addeditdialog)**
+2. Check the *Entry Point* checkbox in the **[Label](#addedit-label-dialog)**
 dialog.
 
 
@@ -327,7 +327,7 @@ To make a label primary:
 
 
 1. Right click on a symbol and choose the **Edit Label** menu option.
-2. Check the *primary* checkbox in the **[Label](#addeditdialog)**
+2. Check the *primary* checkbox in the **[Label](#addedit-label-dialog)**
 dialog.
 
 
@@ -342,7 +342,7 @@ To have the operand display a different label corresponding to the primary memor
 1. Right click on the operand symbol and choose the **Set Associated Label...** menu option from the
 pop-up menu.  This action only appears if the primary reference is a memory reference.
 2. Choose a label from the drop-down list on the **[Set
-Label](#operandlabeldialog)** dialog or type in a name for a new label that will appear at the referred-to
+Label](#set-label-dialog)** dialog or type in a name for a new label that will appear at the referred-to
 address.
 
 

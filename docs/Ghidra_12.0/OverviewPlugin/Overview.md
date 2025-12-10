@@ -72,7 +72,7 @@ however, this gives a good general sense of the various regions.
 
 The legend indicates the colors that correspond to each type of program element shown in
 the overview display. The colors used may be changed via the associated
-[Options](#overviewoptions) (see below).
+[Options](#options) (see below).
 
 
 ### Options
@@ -236,7 +236,7 @@ be used to fill out the color range.
 
 - [Code
 Browser](../CodeBrowserPlugin/CodeBrowser.md)
-- [Current View](../CodeBrowserPlugin/CodeBrowser.md#view)
+- [Current View](../CodeBrowserPlugin/CodeBrowser.md#the-view)
 - *[Edit
 Options](../Tool/ToolOptions_Dialog.md)* [Dialog](../Tool/ToolOptions_Dialog.md)
 

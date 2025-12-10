@@ -78,7 +78,7 @@ executing less code, establishing a new baseline, taking the intersection of the
 Remember, the variable's storage should encode its value.
 
 
-Optionally, the specified time may also include emulation. See the [Go To Time](../DebuggerTimePlugin/DebuggerTimePlugin.md#goto-time) action for
+Optionally, the specified time may also include emulation. See the [Go To Time](../DebuggerTimePlugin/DebuggerTimePlugin.md#go-to-time) action for
 the syntax of the **Time Schedule** expression. For simple schedules, the step buttons
 provide convenient forward and backward changes to the emulation schedule. Perhaps the most
 common use of this is to see what changes from executing an isolated block of code. Ideally,
@@ -89,7 +89,7 @@ that the emulator does not depend on un-recorded state:
 1. Execute the target up to a baseline, probably using a breakpoint at the start of the
 interesting block of code.
 2. Keeping the target alive, use the [Emulator
-Control](../DebuggerControlPlugin/DebuggerControlPlugin.md#emu-actions) and/or [Go To Time](../DebuggerTimePlugin/DebuggerTimePlugin.md#goto-time) actions to
+Control](../DebuggerControlPlugin/DebuggerControlPlugin.md#emulation-actions) and/or [Go To Time](../DebuggerTimePlugin/DebuggerTimePlugin.md#go-to-time) actions to
 reach the end of the interesting block.
 3. Use this **Compare** action and select the baseline snapshot.
 

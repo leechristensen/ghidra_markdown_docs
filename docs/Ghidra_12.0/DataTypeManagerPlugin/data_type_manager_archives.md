@@ -4,7 +4,7 @@
 
 
 Data type archives are described in the
-[Data Type Manager](data_type_manager_description.md#data-type-archives-definition).
+[Data Type Manager](data_type_manager_description.md#data-type-archives).
 
 
 ## Updating Archives
@@ -190,7 +190,7 @@ button to do the revert.
 You can disassociate the source archive relationship for datatypes within a
 specific archive/program by selecting the **Disassociate Datatypes From** →  **`<Source Archive Name>`**
 popup action on the corresponding tree node within the
-[Data Type Manager](data_type_manager_description.md#data-type-archives-definition).
+[Data Type Manager](data_type_manager_description.md#data-type-archives).
 If associated datatypes are found they will be listed in the *Disassociate Data Types*
 dialog shown below.  The sample case illustrates disassociating datatypes in a
 program named **WinHelloCPP.exe** that originated from a source archive named

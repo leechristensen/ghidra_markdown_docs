@@ -11,7 +11,7 @@
 - [Save Project](Saving_a_Ghidra_Project.md)
 - [Rename Program](Ghidra_Front_end.md#rename)
 - [Archive Current Project](Archive_Project.md)
-- [Ghidra Project Window](Ghidra_Front_end.md#project-window)
+- [Ghidra Project Window](Ghidra_Front_end.md#ghidra-project-window)
 - [Restore Project](Restore_Project.md)
 - [Delete Program](Ghidra_Front_end.md#delete)
 - [Tool Connections](Connecting_Tools.md)

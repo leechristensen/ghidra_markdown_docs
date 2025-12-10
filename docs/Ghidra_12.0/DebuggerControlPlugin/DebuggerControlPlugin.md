@@ -48,7 +48,7 @@ commands are directed to the emulator.
 presents actions for controlling the integrated emulator. Breakpoint commands are directed to
 the emulator. This can be used for interpolating and extrapolating execution from the current
 snapshot, without affecting the live target. It directs edits to the integrated emulator by
-generating patch steps and appending them to the emulation schedule. See the [Go To Time](../DebuggerTimePlugin/DebuggerTimePlugin.md#goto-time) action.
+generating patch steps and appending them to the emulation schedule. See the [Go To Time](../DebuggerTimePlugin/DebuggerTimePlugin.md#go-to-time) action.
 Essentially, the change is applied in the trace's scratch space, leaving the original
 recording in tact. Due to implementation details, a thread must be selected, even if edits
 only affect memory. Additionally, the disassembly context register cannot be modified.

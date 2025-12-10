@@ -24,7 +24,7 @@ Plugins*  dialog, select the **File** →
 The *Configure Tool* dialog shows a list of plugin packages that can be added to
 the tool. Clicking the checkbox will add (or remove) all the plugins in the package to the
 tool. Clicking on the **Configure** link will bring up a dialog for adding individual
-plugins. See [Configure Tool](../Tool/Configure_Tool.md#managepluginsdialog) for more information.
+plugins. See [Configure Tool](../Tool/Configure_Tool.md#configure-tool) for more information.
 
 
 > **Note:** Adding or removing
@@ -51,8 +51,8 @@ This action will refresh the list of available plugins, based upon what is found
 
 Each tool has an *[Options](../Tool/ToolOptions_Dialog.md)*
 dialog to change [key
-bindings](../Tool/ToolOptions_Dialog.md#keybindings-option) and set [tool
-options](../Tool/ToolOptions_Dialog.md#optionsfortool). In addition to these two option categories, the dialog has a node in the
+bindings](../Tool/ToolOptions_Dialog.md#key-bindings) and set [tool
+options](../Tool/ToolOptions_Dialog.md#tool). In addition to these two option categories, the dialog has a node in the
 Options tree for each category of options that are used by plugins in the tool. If a plugin
 is removed from the tool, and no other plugin is using a set of options, then this category
 will not be displayed the next time you run the tool and bring up the *Options*
@@ -67,7 +67,7 @@ To bring up the *Options* dialog, select **Edit → Tool Options**
 
 - [Edit Plugin Path](Edit_Plugin_Path.md)
 - [Key
-Bindings](../Tool/ToolOptions_Dialog.md#keybindings-option)
+Bindings](../Tool/ToolOptions_Dialog.md#key-bindings)
 
 
 ### PKI Certificate
@@ -136,7 +136,7 @@ boxes individually. Click on the buttons to either turn all the check boxes on (
 Your Ghidra preferences file is updated to record your last opened project. The position
 of the Ghidra Project Window is also recorded so that when you run Ghidra again, the window
 position is restored. If the Project configuration has changed (tools or
-[workspaces](Ghidra_Front_end.md#workspace) that were [added](../Tool/Ghidra_Tool_Administration.md#run-tool) or [removed](../Tool/Ghidra_Tool_Administration.md#close-tool), etc.),
+[workspaces](Ghidra_Front_end.md#workspaces) that were [added](../Tool/Ghidra_Tool_Administration.md#run-tool) or [removed](../Tool/Ghidra_Tool_Administration.md#close-tool), etc.),
 the new configuration will be saved automatically.
 
 

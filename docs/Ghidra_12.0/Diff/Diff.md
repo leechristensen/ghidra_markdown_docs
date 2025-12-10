@@ -34,7 +34,7 @@ select the Open Diff View icon
 in the tool bar above the program to open a program for Diff.
 You will be prompted to select the second program and then prompted
 for Diff settings just as when
-[viewing program differences](#viewallprogramdifferences)
+[viewing program differences](#viewing-program-differences)
 .
 
 
@@ -117,7 +117,7 @@ between the two programs make sure all the check boxes in the
 The check boxes allow you to limit the types of differences that are
 determined and where differences are determined in the program.
 To learn more, see
-[Determine Program Differences Dialog](#get-differences).
+[Determine Program Differences Dialog](#determine-program-differences-dialog).
 
 
 1. Click the OK button to determine the differences.
@@ -205,15 +205,15 @@ Whenever you initiate a Program Diff the *Determine Program
 Differences* dialog allows you to control the following settings:
 
 
-- [Do Differences On](#executediffdialog-dodifferenceson)
+- [Do Differences On](#do-differences-on)
 : the types of differences to be determined and
 highlighted by the Program Diff. The **Select All** button is a
 convenience for selecting all of the check boxes for difference types.
 Likewise, the **Deselect All** button removes the check marks from
 all the difference type check boxes.
-- [Address Ranges To Diff](#executediffdialog-addressrangestodiff)
+- [Address Ranges To Diff](#address-ranges-to-diff)
 : indicates the addresses to be checked for differences.
-- [Limit To Selection](#executediffdialog-limittoselection)
+- [Limit To Selection](#limit-to-selection)
 : whether or not the Program Diff should be
 limited to the current selection in the tool's program.
 
@@ -511,7 +511,7 @@ defaults.
 
 
 The Default Diff Apply Settings can also be set by changing the
-[Diff Default Apply Settings tool options](#diffapplysettingstooloptions)
+[Diff Default Apply Settings tool options](#diff-apply-settings-tool-options)
 .
 
 
@@ -564,7 +564,7 @@ the Get Differences ![Diff16.png](../icons/Diff16.png) button.
 or
 Press the right mouse in the second program area. From the
 popup menu, select **Get Differences...**.
-2. The *[Determine Program Differences](#get-differences)*
+2. The *[Determine Program Differences](#determine-program-differences-dialog)*
 dialog is displayed.
 3. From the dialog, select the types of differences to be
 determined and the addresses to check for differences.
@@ -728,8 +728,8 @@ enabled. Select the **Set Diff Selection** icon
 ![DiffSelect16.png](../icons/DiffSelect16.png). All the
 corresponding code units with highlighted differences in the second
 program become selected. The selection of differences can then be
-[applied](#apply-differences) or
-[ignored](#ignore-selection-and-goto-next-difference).
+[applied](#applying-differences) or
+[ignored](#ignoring-differences).
 
 
 ## Applying Differences
@@ -792,7 +792,7 @@ but the bookmark would not.
 
 
 This applies the selected differences and navigates to the next difference
-in a single step (see [Apply](#apply-differences) and
+in a single step (see [Apply](#applying-differences) and
 [Next](#next-difference)). It can also control whether some
 types of differences replace what is in the tool's program or whether they
 are merged into the tool's program. Only the highlighted code units in the

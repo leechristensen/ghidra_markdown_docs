@@ -15,7 +15,7 @@ Stack unwinding can be tenuous. It relies heavily on accurate static analysis an
 functions to follow certain conventions. Thus, it's very easy to break and may frequently be
 incorrect. For hovers that include a **Frame** row, the displayed value depends on an
 accurately unwound stack. Take the value with a grain of salt, especially if the hover also
-includes a **Warnings** row. To diagnose the unwound stack, use the [Unwind Stack](../DebuggerStackPlugin/DebuggerStackPlugin.md#unwind-stack)
+includes a **Warnings** row. To diagnose the unwound stack, use the [Unwind Stack](../DebuggerStackPlugin/DebuggerStackPlugin.md#unwind-stack-u)
 action.
 
 

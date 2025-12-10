@@ -122,8 +122,8 @@ users, select users in the project, and select the **&lt;&lt;Remove** button. To
 all users (except yourself), select the **Remove All** button.
 The *Project Users* table on the right side of the
 dialog indicates user privileges:
-- *Read Only* - the user can open programs in read only mode, cannot [check out](../VersionControl/project_repository.md#checkout) files from the
-repository, and cannot [check in](../VersionControl/project_repository.md#checkin) files, and cannot [add files](../VersionControl/project_repository.md#add-to-version-control)
+- *Read Only* - the user can open programs in read only mode, cannot [check out](../VersionControl/project_repository.md#check-out) files from the
+repository, and cannot [check in](../VersionControl/project_repository.md#check-in) files, and cannot [add files](../VersionControl/project_repository.md#add-to-version-control)
 to the repository. The read only user may create a local copy of the program; the project
 repository is not affected.
 - *Read/Write* - the user can check out files from the repository and check in
@@ -157,7 +157,7 @@ Step 7. The **Finish** button is enabled when the  *Project Directory* and
 
 Before the new project is opened, if you made changes, you are asked whether to save the old
 project. If you choose to open the new project, the default tool [Code Browser](../CodeBrowserPlugin/CodeBrowser.md) is in the Tool Chest and no
-files are associated with the project that you have just created. Your current [workspace](Ghidra_Front_end.md#workspace) is named "Workspace."
+files are associated with the project that you have just created. Your current [workspace](Ghidra_Front_end.md#workspaces) is named "Workspace."
 
 
 **Related Topics:**

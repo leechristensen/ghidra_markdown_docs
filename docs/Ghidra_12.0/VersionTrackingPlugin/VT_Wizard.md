@@ -279,7 +279,7 @@ identified by the ![](images/start-here.png) icon next to their names.
 
 
 Sessions can be versioned using Ghidra's
-[Project Repository](../VersionControl/project_repository.md#projectrepository)
+[Project Repository](../VersionControl/project_repository.md#project-repository)
 mechanism mostly in the same way programs or data archives can be with some
 qualifications:
 

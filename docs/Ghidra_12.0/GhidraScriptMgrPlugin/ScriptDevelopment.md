@@ -128,7 +128,7 @@ For example:
 
 This tag indicates a top-level toolbar button should be created to launch this script
 and the image to use for the button. The Script Manager will attempt to locate the image
-in the [Script Directories](GhidraScriptMgrPlugin.md#script-directories) and
+in the [Script Directories](GhidraScriptMgrPlugin.md#script-directories-bundle-manager) and
 then in the Ghidra installation. If the image does not exists, a toolbar button will be
 created using the default Ghidra ![core.png](../icons/core.png) image.
 

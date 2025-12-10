@@ -45,8 +45,7 @@ The **Add** ![Plus.png](../icons/Plus.png) button will bring up a text dialog
 for entering a new external program name.
 
 
-### Set
-External Name Association Button
+### Set External Name Association Button
 
 
 The Set ![editbytes.gif](../icons/editbytes.gif) button brings up a *Ghidra program chooser* dialog. Choose a
@@ -57,8 +56,7 @@ is only enabled when a single external program name is selected.
 ![](images/Choose_external_prog.png)
 
 
-### Clear External Name Association
-Button
+### Clear External Name Association Button
 
 
 This Clear ![edit-delete.png](../icons/edit-delete.png)  button clears the assocated program for all the
@@ -101,7 +99,7 @@ menu.
 2. Click on the external program name that is be associated with a Ghidra program
 file.
 3. Press the **Edit** ![editbytes.gif](../icons/editbytes.gif) button.
-4. Use the *[Ghidra Program Chooser](#chooseexternalprogram)* dialog to
+4. Use the *[Ghidra Program Chooser](#set-external-name-association-button)* dialog to
 select the Ghidra file to associate to the selected program name.
 5. The Code Browser updates to indicate that the external reference has been resolved.
 (Unresolved references are shown in red.)
@@ -134,5 +132,5 @@ be deleted.
 **Related Topics:**
 
 
-- [Set External Reference](References_from.md#extrefs)
+- [Set External Reference](References_from.md#external-references)
 - [External Symbols](../SymbolTreePlugin/SymbolTree.md#externals)

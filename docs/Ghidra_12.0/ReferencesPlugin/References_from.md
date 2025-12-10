@@ -7,19 +7,19 @@ This page covers the follow topics relating to explicit forward references and t
 functionality provided by the ReferencesPlugin:
 
 
-- [Introduction](#intro)
-- [Types of References](#typesofrefs)
-- [Reference Destination Symbols](#refsymbols)
-- [Ref-Types](#reftypes)
-- [Actions for Creating and Deleting References from a Code Unit](#actions)
-- [Viewing and Editing References](#view-edit-references-from)
-- [Adding a Reference](#addref)
-- [Editing a Reference](#editref)
-- [Memory Reference Panel](#memrefpanel)
-- [External Reference Panel](#extrefpanel)
-- [Stack Reference Panel](#stackrefpanel)
-- [Register Reference Panel](#regrefpanel)
-- [Adding Memory References from a Selection](#dragndrop)
+- [Introduction](#introduction)
+- [Types of References](#types-of-references)
+- [Reference Destination Symbols](#reference-destination-symbols)
+- [Ref-Types](#ref-types)
+- [Actions for Creating and Deleting References from a Code Unit](#actions-for-creating-and-deleting-references-from-a-code-unit)
+- [Viewing and Editing References](#viewing-and-editing-references-addedit-r)
+- [Adding a Reference](#adding-a-reference)
+- [Editing a Reference](#editing-a-reference)
+- [Memory Reference Panel](#memory-reference-panel)
+- [External Reference Panel](#external-reference-panel)
+- [Stack Reference Panel](#stack-reference-panel)
+- [Register Reference Panel](#register-reference-panel)
+- [Adding Memory References from a Selection](#adding-memory-references-from-a-selection)
 
 
 ## Introduction
@@ -61,11 +61,11 @@ The following types of explicit forward references may be defined from a mnemoni
 of an instruction or data code unit:
 
 
-- [Memory Reference](#memrefs) (*includes Offset and Offcut
+- [Memory Reference](#memory-references) (*includes Offset and Offcut
 references*)
-- [External Reference](#extrefs)
-- [Stack Reference](#stackrefs)
-- [Register Reference](#regrefs)
+- [External Reference](#external-references)
+- [Stack Reference](#stack-references)
+- [Register Reference](#register-references)
 
 
 > **Note:** Ghidra does not permit mixing "types of
@@ -76,8 +76,7 @@ references" for a given mnemonic or operand.
 single reference may be placed on a given mnemonic/operand.
 
 
-### Memory
-References
+### Memory References
 
 
 All *Memory Reference* have a destination defined by a memory address within the
@@ -87,7 +86,7 @@ plus a 64-bit signed offset.
 
 
 *Memory References* are used to specify either a data access or execution flow within
-the Program.  This distinction is made by specifying an appropriate [Ref-Type](#reftypes) on the reference.  Adding and removing certain flow references
+the Program.  This distinction is made by specifying an appropriate [Ref-Type](#ref-types) on the reference.  Adding and removing certain flow references
 may change the set of instructions which make up subroutine and code blocks.  Since
 function bodies are established based upon the [Block Models](../BlockModel/Block_Model.md), it may be necessary to redefine the
 body of  [Functions](../FunctionPlugin/Functions.md) affected by a
@@ -274,11 +273,11 @@ instruction or data code unit.  The create and delete reference actions may be 
 under certain conditions.
 
 
-- [References from](#view-edit-references-from)
+- [References from](#viewing-and-editing-references-addedit-r)
 - [Add Reference from...](#add-reference-from)
-- [Create Default Reference](#create-default-reference) (menu item varies based
+- [Create Default Reference](#creating-a-default-reference-alt-r) (menu item varies based
 upon current operand)
-- [Delete References](#delete-references-from) (menu item varies based upon
+- [Delete References](#deleting-references-from-a-code-unit-delete) (menu item varies based upon
 mnemonic/operand current references)
 
 
@@ -289,7 +288,7 @@ indicated with {}'s.
 ### Add Reference From
 
 
-While there is a separate action for creating a default reference on an operand (see [Creating a Default Reference](#create-default-reference) below), an arbitrary
+While there is a separate action for creating a default reference on an operand (see [Creating a Default Reference](#creating-a-default-reference-alt-r) below), an arbitrary
 reference may be also be added directly to a mnemonic or operand by using the popup menu action
 ***References →  Add Reference from...*** .
 This will cause the [*Add Reference Dialog*](#addrefdialog) to be
@@ -340,8 +339,7 @@ differ based upon the existing reference(s):  Delete Memory References, Delete 
 Reference, Delete Register Reference, Delete External Reference.
 
 
-## Viewing and Editing References (*Add/Edit...*)
-{'R'}
+## Viewing and Editing References (*Add/Edit...*) {'R'}
 
 
 All references "from" a data or instruction code unit can be edited and/or viewed by
@@ -366,7 +364,7 @@ Using this display, you can click on either the code unit Mnemonic or an individ
 operand to highlight the corresponding references within the table below and to set the
 operand target when adding additional references.  The selected Source operand will be
 treated as the "active source operand" used for Add actions.  These operand labels
-will also act as drag-n-drop target zones for code unit selections dragged from the [Listing](../CodeBrowserPlugin/CodeBrowser.md) (see [Adding Memory References from a Selection](#dragndrop)).
+will also act as drag-n-drop target zones for code unit selections dragged from the [Listing](../CodeBrowserPlugin/CodeBrowser.md) (see [Adding Memory References from a Selection](#adding-memory-references-from-a-selection)).
 
 
 > **Note:** The table entries that match the selected source element will be gray in color.
@@ -397,7 +395,7 @@ stack reference with a specified stack frame offset.
 register.
 `External` : indicates an external reference
 - ***Label*** - Indicates the namespace-qualified symbol name associated with
-the destination (See [Reference Destination Symbols](#refsymbols)).
+the destination (See [Reference Destination Symbols](#reference-destination-symbols)).
 - ****Ref-Type*** - Identifies the type of data access or instruction flow
 associated with a reference.
 - ****Primary?*** - Allows the user to choose a single memory reference which
@@ -430,7 +428,7 @@ indicated with {}'s.
 
 ![Plus.png](../icons/Plus.png) ***Add
 Reference*** {Insert-key} - Invoking this action will launch the Add Reference Dialog
-for the current code unit (see [Adding a Reference](#addref)).
+for the current code unit (see [Adding a Reference](#adding-a-reference)).
 
 
 ![edit-delete.png](../icons/edit-delete.png) ***Delete
@@ -440,7 +438,7 @@ references.
 
 ![editbytes.gif](../icons/editbytes.gif) ***Edit
 Reference*** {Enter-key or double-click a row} - Invoking this action will popup the
-***Edit Reference Dialog*** for the selected reference (see [Editing a Reference](#editref)).  This action is  only available when a
+***Edit Reference Dialog*** for the selected reference (see [Editing a Reference](#editing-a-reference)).  This action is  only available when a
 single reference row is selected.
 
 
@@ -511,11 +509,11 @@ change.  The following sections discuss the input panels for each of the four p
 choices:
 
 
-1. [Memory Reference Panel](#memrefpanel) *(includes Offset and Offcut
+1. [Memory Reference Panel](#memory-reference-panel) *(includes Offset and Offcut
 references)*
-2. [External Reference Panel](#extrefpanel)
-3. [Stack Reference Panel](#stackrefpanel)
-4. [Register Reference Panel](#regrefpanel)
+2. [External Reference Panel](#external-reference-panel)
+3. [Stack Reference Panel](#stack-reference-panel)
+4. [Register Reference Panel](#register-reference-panel)
 
 
 Once the appropriate reference panel has been filled-in as required, the ***Add***
@@ -541,7 +539,7 @@ to the edited reference will be selected, as well as the *Type of Reference*.
 Neither the *Source* operand nor the *Type of Reference* may be changed when
 editing a reference.  If you wish to change either of these settings you must delete the
 reference and [add a new
-reference](References_from.md#addref).
+reference](References_from.md#adding-a-reference).
 
 
 The *Edit Reference Dialog* uses the same layout as the [Add
@@ -552,13 +550,13 @@ the input panels for each of the four possible choices:
 
 
 1. [Memory Reference
-Panel](References_from.md#memrefpanel) *(includes Offset and Offcut references)*
+Panel](References_from.md#memory-reference-panel) *(includes Offset and Offcut references)*
 2. [External Reference
-Panel](References_from.md#extrefpanel)
+Panel](References_from.md#external-reference-panel)
 3. [Stack Reference
-Panel](References_from.md#stackrefpanel)
+Panel](References_from.md#stack-reference-panel)
 4. [Register Reference
-Panel](References_from.md#regrefpanel)
+Panel](References_from.md#register-reference-panel)
 
 
 Once the specific reference panel settings have been modified, the ***Update***
@@ -568,7 +566,7 @@ button may be clicked to complete the operation.
 ## Memory Reference Panel
 
 
-A [Memory Reference](#memrefs) identifies a data access or instruction flow to
+A [Memory Reference](#memory-references) identifies a data access or instruction flow to
 another memory location within the same program space.    A memory reference may
 optionally be specified as an [Offset Reference](#offsetrefs) relative to a
 specified *Base Address*.  The term Offcut is used to characterize a memory
@@ -641,13 +639,13 @@ address entries are maintained for each open Program.
 
 
 Allows selection of the data access or instruction flow type associated with this
-reference (see [Ref-Types](#reftypes)).
+reference (see [Ref-Types](#ref-types)).
 
 
 ## External Reference Panel
 
 
-An [External Reference](#extrefs) identifies a memory destination within another
+An [External Reference](#external-references) identifies a memory destination within another
 Program file.  Such references are generally used to indicate a library module linkage.
 The memory location within the *External Program* is identified by either a
 *Label* or an *Address.*
@@ -691,7 +689,7 @@ prefix is assumed) offset within the default address space.
 ## Stack Reference Panel
 
 
-A [Stack Reference](#stackrefs) identifies a data access to a function
+A [Stack Reference](#stack-references) identifies a data access to a function
 parameter or local variable within the containing function's stack frame*.*
 
 
@@ -714,7 +712,7 @@ Hex value.
 
 
 Allows selection of the data access or instruction flow type associated with this
-reference (see [Ref-Types](#reftypes)).
+reference (see [Ref-Types](#ref-types)).
 
 
 ### Variable Name
@@ -731,7 +729,7 @@ variable choice.
 ## Register Reference Panel
 
 
-A [Register Reference](#regrefs) identifies a data access (i.e., value
+A [Register Reference](#register-references) identifies a data access (i.e., value
 assignment) to a function local variable within the containing function's stack
 frame*.*
 
@@ -754,7 +752,7 @@ will be established.
 
 
 Allows selection of the data access or instruction flow type associated with this
-reference (see [Ref-Types](#reftypes)).
+reference (see [Ref-Types](#ref-types)).
 
 
 ### Variable Name
@@ -770,7 +768,7 @@ keeping the initial default variable choice.
 
 
 A code unit selection from the CodeBrowser Listing may be dragged and dropped onto the
-***References Editor*** panel to create [Memory References](#memrefs) in bulk
+***References Editor*** panel to create [Memory References](#memory-references) in bulk
 for the current Source.  This capability must be used carefully since a separate reference
 will be created "to" every code unit contained within the selection.
 

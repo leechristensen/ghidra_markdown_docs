@@ -178,7 +178,7 @@ Shows the filter dialog that allows you to filter certain data types from the tr
 ## Local Menu Actions
 
 
-| **Open File               Archive...**   | This action will launch a file explorer that can be used to find and               open an existing [file data type archive](data_type_manager_description.md#file-archives) . The location               (file path) of the chosen file will be added to the [archive path](data_type_manager_description.md#file-archive-path) if it isn't already there. |
+| **Open File               Archive...**   | This action will launch a file explorer that can be used to find and               open an existing [file data type archive](data_type_manager_description.md#file-data-type-archive) . The location               (file path) of the chosen file will be added to the [archive path](data_type_manager_description.md#file-archive-path) if it isn't already there. |
 | --- | --- |
 | **Open Project               Archive...**   | This action will launch a project data type archive chooser that can be               used to open an existing project archive. Project data type archives live in the               project and can be seen in the [Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end.md) . Project data type               archives can also be opened by dragging them from the Ghidra Project Window to the *Data Type Manager* tree. |
 | **New File Archive...**   | This action is used to create a new file data type archive. A file               chooser will launched for choosing a location and name for the new file archive. The               location (file path) of the new archive will be added to the [archive path](data_type_manager_description.md#file-archive-path) if it isn't already there. |
@@ -199,8 +199,8 @@ Shows the filter dialog that allows you to filter certain data types from the tr
 
 The ***Copy*** action can be used to
 [copy
-selected data types](data_type_manager_description.md#copydatatype) and/or
-[copy selected categories](data_type_manager_description.md#copycategory).
+selected data types](data_type_manager_description.md#copying-a-data-type) and/or
+[copy selected categories](data_type_manager_description.md#copying-a-category).
 The ***Copy*** action only primes the selected nodes to be copied. The
 ***Paste*** action must be used to complete the copy. Any other
 ***Cut*** or ***Copy*** action will cancel the previous***Copy
@@ -212,12 +212,12 @@ The ***Copy*** action only primes the selected nodes to be copied. The
 
 The ***Cut*** action can be used to
 [move selected
-data types](data_type_manager_description.md#movedatatype) and/or
-[move selected categories](data_type_manager_description.md#movecategory). The
+data types](data_type_manager_description.md#moving-a-data-type) and/or
+[move selected categories](data_type_manager_description.md#moving-a-category). The
 ***Cut*** action only primes the selected nodes to be moved. The
 ***Paste*** action must be used to complete the move. Any other
 ***Cut*** or ***Copy*** action will cancel the previous
-***Cut.*** The ***Cut*** action can also be used to [replace one data type for another](data_type_manager_description.md#replacedatatype).
+***Cut.*** The ***Cut*** action can also be used to [replace one data type for another](data_type_manager_description.md#replacing-a-data-type).
 
 
 ### Delete
@@ -225,8 +225,8 @@ data types](data_type_manager_description.md#movedatatype) and/or
 
 The ***Delete*** action is used to
 [delete data
-types](data_type_manager_description.md#deletedatatype) and/or
-[delete categories](data_type_manager_description.md#deletecategory). A confirmation dialog
+types](data_type_manager_description.md#deleting-a-data-type) and/or
+[delete categories](data_type_manager_description.md#deleting-a-category). A confirmation dialog
 will appear before actually deleting the selected data types and categories.
 
 
@@ -241,7 +241,7 @@ destination for whatever nodes where selected when the ***Copy*** or
 
 
 Any conflicts encountered while pasting will be resolved according to the current
-[conflict resolution mode](#conflict-mode).
+[conflict resolution mode](#data-type-conflict-resolution-mode).
 
 
 ### Rename
@@ -249,16 +249,16 @@ Any conflicts encountered while pasting will be resolved according to the curren
 
 The ***Rename*** action is used to
 [rename a
-selected category](data_type_manager_description.md#renamecategory) or to
+selected category](data_type_manager_description.md#renaming-a-category) or to
 [rename a selected data
-type](data_type_manager_description.md#renamedatatype).
+type](data_type_manager_description.md#renaming-a-data-type).
 
 
 ### Replace Data Type...
 
 
 The ***Replace...*** action is used to
-[replace](data_type_manager_description.md#replacedatatype) a
+[replace](data_type_manager_description.md#replacing-a-data-type) a
 selected data type and all occurrences in the program.
 
 
@@ -286,8 +286,7 @@ See this page for more information on
 [source archives](data_type_manager_description.md#source-archive).
 
 
-### Apply Function Data
-Types
+### Apply Function Data Types
 
 
 You can apply all function definition data types from an archive or selected category to the currently
@@ -331,8 +330,7 @@ Once you have captured the function definitions to an archive, you can use the [
 types to another program.
 
 
-### Find Data Types by
-Name
+### Find Data Types by Name
 
 
 You can find data types with names that match a string. A separate window is

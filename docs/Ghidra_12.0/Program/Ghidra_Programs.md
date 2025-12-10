@@ -11,7 +11,7 @@ A Ghidra program is
 stored in a project folder. An assembly [language](../LanguageProviderPlugin/Languages.md)
 is associated with a program at the time it is created. The language is used for
 disassembling bytes into [instructions](../Glossary/glossary.md#instruction). Each program
-defines its own [address spaces](../Glossary/glossary.md#addressspace) and
+defines its own [address spaces](../Glossary/glossary.md#address-space) and
 [memory](../Glossary/glossary.md#memory). Various program elements can be added to the program to further
 define it as part of the reverse engineering process. Some of the elements that
 can be defined in the program are labels,

@@ -38,8 +38,7 @@ finer details, see the [Static Mappings](../DebuggerStaticMappingPlugin/Debugger
 window. Portions of the selection which cannot be mapped are omitted.
 
 
-### Transfer Dynamic Selection to
-Static
+### Transfer Dynamic Selection to Static
 
 
 This action is available when the dynamic listing has a selection. It maps the current
@@ -51,8 +50,7 @@ selection is mappable, an error is displayed in the status bar. This can happen 
 list is missing, or Ghidra could not find the program for the current module.
 
 
-### Transfer Static Selection to
-Dynamic
+### Transfer Static Selection to Dynamic
 
 
 This action is available when the static listing has a selection. It maps the current static

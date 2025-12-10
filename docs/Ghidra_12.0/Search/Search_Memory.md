@@ -311,22 +311,19 @@ table, looking to see if any of the bytes have changed. If so, the *Match Bytes*
 *Match Value* columns will display the changed values in red.
 
 
-### Toggle
-Search Controls
+### Toggle Search Controls
 
 
 This action toggles the [search controls](#search-controls) on or off.
 
 
-### Toggle Scan
-Controls
+### Toggle Scan Controls
 
 
 This action toggles the [scan controls](#scan-controls) on or off.
 
 
-### Toggle
-Options Panel
+### Toggle Options Panel
 
 
 This action toggles the [options display](#options) on or off.
@@ -339,8 +336,7 @@ This action will create a selection in the associated view from all the currentl
 selected match table rows.
 
 
-### Toggle Single Click
-Navigation
+### Toggle Single Click Navigation
 
 
 This action toggles on or off whether a single row selection change triggers
@@ -348,8 +344,7 @@ navigation in the associated view. If this option is off, the user must double-c
 row to navigate in the associated view.
 
 
-### Delete Selected
-Table Rows
+### Delete Selected Table Rows
 
 
 This action deletes all selected rows in the results match table.

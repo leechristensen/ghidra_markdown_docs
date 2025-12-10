@@ -7,7 +7,7 @@ The Byte Viewer displays bytes in memory in various formats, e.g.,
 Hex, Ascii, Octal, etc. The figure below shows the Byte Viewer
 plugin in a separate window from the
 [default
-tool](../Tool/Ghidra_Tool_Administration.md#defaulttools), the Code Browser.
+tool](../Tool/Ghidra_Tool_Administration.md#default-tool), the Code Browser.
 
 
 ![](images/ByteViewer.png)
@@ -25,7 +25,7 @@ The following paragraphs describe the Byte Viewer.
 
 This section describes the formats that Ghidra provides by
 default.  Each format is an instance of a DataFormatModel interface,
-so any [new formats that you provide](#writeyourown) will automatically show up in the Byte Viewer Options dialog that
+so any [new formats that you provide](#writing-your-own-format-plugin) will automatically show up in the Byte Viewer Options dialog that
 lists the data formats that
 may be added to your view. To add or remove a data format view
 from the tool, press the ![wrench.png](../icons/wrench.png)
@@ -36,13 +36,13 @@ Select the formats that you want and press the OK button.
 ### Hex
 
 
-The Hex view shows each byte as a two character hex value. [Change the group size](#groupsize) for the Hex format to show
+The Hex view shows each byte as a two character hex value. [Change the group size](#set-group-size) for the Hex format to show
 the bytes grouped in that size. When you add the Byte Viewer
 plugin to a tool and then open a program, the Hex view is automatically
 displayed by default.
 
 
-This view supports byte [editing](#editbytes).
+This view supports byte [editing](#editing-memory).
 
 
 ### Ascii
@@ -53,7 +53,7 @@ For those bytes that do not represent an Ascii character, the format shows
 it as a tic (".").
 
 
-This view supports byte [editing](#editbytes).
+This view supports byte [editing](#editing-memory).
 
 
 ### Address
@@ -71,7 +71,7 @@ address pointed to is not in memory (the operand is
 rendered in red).
 
 
-This view does not support [editing](#editbytes).
+This view does not support [editing](#editing-memory).
 
 
 ### Disassembled
@@ -79,13 +79,13 @@ This view does not support [editing](#editbytes).
 
 The Disassemble view shows a "box" (![](images/box.gif) ) symbol for each address that has
 undefined bytes. For those addresses that are [instructions](../Glossary/glossary.md#instruction)
-or [defined data](../Glossary/glossary.md#dataitem), the
+or [defined data](../Glossary/glossary.md#data-item), the
 view
 shows a tic ("."). With this view, you can easily see what areas of the
 program have been disassembled.
 
 
-This view does not support [editing](#editbytes).
+This view does not support [editing](#editing-memory).
 
 
 ### Hex Short
@@ -94,7 +94,7 @@ This view does not support [editing](#editbytes).
 This format shows two-byte numbers represented as an four-digit hex number.
 
 
-This view supports [editing](#editbytes). When a byte
+This view supports [editing](#editing-memory). When a byte
 is changed, both bytes associated with this address are rendered in
 red to denote the change.
 
@@ -105,7 +105,7 @@ red to denote the change.
 This format shows four-byte numbers represented as an eight-digit hex number.
 
 
-This view supports [editing](#editbytes). When a byte
+This view supports [editing](#editing-memory). When a byte
 is changed, all four bytes associated with this address are rendered in
 red to denote the change.
 
@@ -116,7 +116,7 @@ red to denote the change.
 This format shows eight-byte numbers represented as an 16-digit hex number.
 
 
-This view supports [editing](#editbytes). When a byte
+This view supports [editing](#editing-memory). When a byte
 is changed, all eight bytes associated with this address are rendered in
 red to denote the change.
 
@@ -127,7 +127,7 @@ red to denote the change.
 This format shows 16-byte numbers represented as an 32-digit hex number.
 
 
-This view supports [editing](#editbytes). When a byte
+This view supports [editing](#editing-memory). When a byte
 is changed, all 16 bytes associated with this address are rendered in
 red to denote the change.
 
@@ -138,7 +138,7 @@ red to denote the change.
 This view shows four-byte numbers represented in decimal format.
 
 
-This view does not support [editing](#editbytes).
+This view does not support [editing](#editing-memory).
 
 
 ### Octal
@@ -147,7 +147,7 @@ This view does not support [editing](#editbytes).
 The octal view shows each byte as a three character octal value.
 
 
-This view supports [editing](The_Byte_Viewer.md#editbytes).
+This view supports [editing](The_Byte_Viewer.md#editing-memory).
 
 
 ### Binary
@@ -156,7 +156,7 @@ This view supports [editing](The_Byte_Viewer.md#editbytes).
 The binary view shows each byte as an eight character binary value.
 
 
-This view supports [editing](#editbytes).
+This view supports [editing](#editing-memory).
 
 
 ## Status Fields
@@ -168,7 +168,7 @@ The  labels below the scroll pane that contains the views shows the following i
 | Start | The minimum address of Memory |
 | --- | --- |
 | End | The maximum address of Memory |
-| Offset | Displayed in decimal, the 					number of bytes added to each block of memory that is being displayed. 					This number is calculated when you set the [alignment 					address](#alignmentaddress) or the number of bytes per line. |
+| Offset | Displayed in decimal, the 					number of bytes added to each block of memory that is being displayed. 					This number is calculated when you set the [alignment 					address](#alignment-address) or the number of bytes per line. |
 | Insertion | The address of your current cursor location |
 
 

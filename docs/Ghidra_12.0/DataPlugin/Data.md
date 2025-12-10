@@ -113,16 +113,16 @@ can vary).
 | --- | --- | --- | --- |
 | Name CharsetCharsizeLayout |  |  |  |
 | --- | --- | --- | --- |
-| [String](#stringdatatypes) | settable | from charset | fixed length |
-| [String-utf8](#stringdatatypes) | UTF-8 | 1-3 | fixed length |
-| [TerminatedCString](#stringdatatypes) | settable | from charset | null-terminated |
-| [Unicode](#stringdatatypes) | UTF-16 | 2 bytes | fixed length |
-| [TerminatedUnicode](#stringdatatypes) | UTF-16 | 2 bytes | null-terminated |
-| [Unicode32](#stringdatatypes) | UTF-32 | 4 bytes | fixed length |
-| [TerminatedUnicode32](#stringdatatypes) | UTF-32 | 4 bytes | null-terminated |
-| [PascalString255](#stringdatatypes) | settable | from charset | pascal 255 max characters |
-| [PascalString](#stringdatatypes) | settable | from charset | pascal 64k max characters |
-| [PascalUnicode](#stringdatatypes) | UTF-16 | 2 bytes | pascal 64k max characters |
+| [String](#string-data-types) | settable | from charset | fixed length |
+| [String-utf8](#string-data-types) | UTF-8 | 1-3 | fixed length |
+| [TerminatedCString](#string-data-types) | settable | from charset | null-terminated |
+| [Unicode](#string-data-types) | UTF-16 | 2 bytes | fixed length |
+| [TerminatedUnicode](#string-data-types) | UTF-16 | 2 bytes | null-terminated |
+| [Unicode32](#string-data-types) | UTF-32 | 4 bytes | fixed length |
+| [TerminatedUnicode32](#string-data-types) | UTF-32 | 4 bytes | null-terminated |
+| [PascalString255](#string-data-types) | settable | from charset | pascal 255 max characters |
+| [PascalString](#string-data-types) | settable | from charset | pascal 64k max characters |
+| [PascalUnicode](#string-data-types) | UTF-16 | 2 bytes | pascal 64k max characters |
 | [Settings](#stringsettings) Charset (defaults to US-ASCII if user settable)Render non-ASCII Unicode (all, byte sequence, escape sequence)TranslationMutability (normal, volatile, constant) |  |  |  |
 
 
@@ -260,7 +260,7 @@ instance of a data type in a program.
 Depending on the data type, data may have settings available which affect the way it is
 displayed.  For built-in data-types, the available settings are indicated in the [table above](#built-in-data-types).  For example, the byte data type has a
 format option which allows the user to have the data displayed as hex, octal, etc.  The
-available settings are defined in the [Data Type Table](#datatypes) above. Data
+available settings are defined in the [Data Type Table](#data-types) above. Data
 settings can be changed for an individual data item or for all data of the same data
 type.
 

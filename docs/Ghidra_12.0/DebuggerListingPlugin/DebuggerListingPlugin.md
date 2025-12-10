@@ -61,8 +61,7 @@ present, or has disappeared, the trace is dead or terminated. A "dead" trace can
 manipulated and marked up, but it will not record any new target information.
 
 
-### Close Trace / All / Other / Dead
-Traces
+### Close Trace / All / Other / Dead Traces
 
 
 In most cases, a trace is ephemeral, but occasionally, interesting behavior is observed that
@@ -179,7 +178,7 @@ This action is always available. It automatically disassembles starting at the c
 program counter. It applies only when a "Track Program Counter" option is selected in the [Track Location](#track-location) action. Disassembly occurs whenever the program
 counter is updated, when the memory at the program counter is updated, or when navigating to a
 new context. It terminates at the first branch encountered. Disassembly can be performed
-manually using the [Disassemble](../DisassemblerPlugin/Disassembly.md#disassemble) command.
+manually using the [Disassemble](../DisassemblerPlugin/Disassembly.md#disassembly) command.
 
 
 ### Read Memory

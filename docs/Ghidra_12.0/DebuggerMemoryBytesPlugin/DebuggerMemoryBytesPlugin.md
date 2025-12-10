@@ -73,7 +73,7 @@ on.
 ### Go To (G)
 
 
-This action is equivalent to the [same action](../DebuggerListingPlugin/DebuggerListingPlugin.md#go-to) in the
+This action is equivalent to the [same action](../DebuggerListingPlugin/DebuggerListingPlugin.md#go-to-g) in the
 Dynamic Listing window.
 
 
@@ -90,7 +90,7 @@ the Dynamic Listing window.
 ### Auto-Read Memory
 
 
-This action is equivalent to the [same action](../DebuggerListingPlugin/DebuggerListingPlugin.md#auto-memory) in
+This action is equivalent to the [same action](../DebuggerListingPlugin/DebuggerListingPlugin.md#auto-read-memory) in
 the Dynamic Listing window.
 
 

@@ -125,8 +125,7 @@ right mouse-click and choose the **Collapse All** option. When you open the fold
 will see that all of its descendant folders are collapsed.
 
 
-### Merge a Folder with its Parent
-Folder
+### Merge a Folder with its Parent Folder
 
 
 You can "flatten" a folder such that all of its immediate children are moved to the
@@ -249,8 +248,7 @@ fragments and/or folders.
 The view in the code browser is controlled by the following:
 
 
-### Show Folders/ Fragments in the Code
-Browser
+### Show Folders/ Fragments in the Code Browser
 
 
 You control what you see in the right side of the Code Browser tool by adding folders
@@ -283,8 +281,7 @@ option.
 regardless of whether the folder or fragment is in the view or not.
 
 
-### Remove Folders/Fragments from the view in
-the Code Browser
+### Remove Folders/Fragments from the view in the Code Browser
 
 
 - To remove folders and fragments from the view in the code browser,

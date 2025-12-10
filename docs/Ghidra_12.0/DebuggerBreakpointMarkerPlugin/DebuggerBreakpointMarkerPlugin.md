@@ -76,8 +76,7 @@ actions to force specific commands. **NOTE:** The default parameters are not gua
 be accepted by the connected debugger.
 
 
-### Set
-Breakpoint
+### Set Breakpoint
 
 
 This menu is available on the dynamic listing when the target supports at least one
@@ -104,8 +103,7 @@ combination.
 static location, if applicable.
 
 
-### Enable
-Breakpoint
+### Enable Breakpoint
 
 
 This action is available when there is at least one disabled breakpoint at the cursor. It
@@ -119,8 +117,7 @@ This action is available when there is at least one enabled breakpoint at the cu
 disables those logical breakpoints.
 
 
-### Clear
-(Delete) Breakpoint
+### Clear (Delete) Breakpoint
 
 
 This action is available when there is at least one breakpoint (in any state) at the cursor.

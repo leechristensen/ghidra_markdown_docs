@@ -182,7 +182,7 @@ displayed within the listing.
 Type** →
 - The pull right menu lists data types that you have marked as "[favorites](../DataTypeManagerPlugin/data_type_manager_description.md#favorites)."
 - After you apply a data type, this becomes your [most
-recently used data type](#recently-used) and is shown on the menu with the 'Y' as the "hot
+recently used data type](#recently-used-data-type) and is shown on the menu with the 'Y' as the "hot
 key."
 
 
@@ -194,7 +194,7 @@ variable listing
 2. Select **Set Data Type** →
 - The pull right menu lists data types that you have marked as "[favorites](../DataTypeManagerPlugin/data_type_manager_description.md#favorites)."
 - After you apply a data type, this becomes your [most
-recently used data type](#recently-used) and is shown on the menu with the 'Y' as the "hot
+recently used data type](#recently-used-data-type) and is shown on the menu with the 'Y' as the "hot
 key."
 
 
@@ -226,7 +226,7 @@ changes. To edit a function do the following:
 1. Place the cursor on a function signature
 2. Right-mouse-click, and select *Edit Function*.
 3. Edit any attributes of the function using the dialog.
-4. Consider [committing all return/parameter details](#commitdetails)
+4. Consider [committing all return/parameter details](#commit-all-returnparameter-details)
 5. Press *OK* to save your changes.
 
 

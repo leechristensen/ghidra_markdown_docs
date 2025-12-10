@@ -56,20 +56,18 @@ item, **Add Field → All**, is
 available.
 
 
-#### **The
-Spacer Field**
+#### **The Spacer Field**
 
 
 A *spacer* field is used to take up space in the listing. Optionally,
 *spacer* fields can display some text (See [Set
-Text](#add-spacer-field)). To add a *spacer* field, right click where a space is desired and select
+Text](#the-spacer-field)). To add a *spacer* field, right click where a space is desired and select
 the **Add Field → Spacer** option
 from the popup menu. After adding the *spacer* field, adjust its size to take up
 more or less space.
 
 
-#### **        Set
-Text**
+#### ** Set Text**
 
 
 *Spacer* fields can optionally have an associated text value.  Each spacer's

@@ -7,14 +7,14 @@ Often, users need to navigate to specific locations in a program.  Ghidra provi
 several different ways to do this:
 
 
-- Enter a particular address or label ([Go To](#go-to-address-label))
+- Enter a particular address or label ([Go To](#go-to-address-label-or-expression))
 - Double-click on any displayed label or address in the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md#navigation) tool
 - Jump directly to the [Next/Previous Code
-Unit](#next-code-unit)
+Unit](#nextprevious-code-unit)
 - Use the [Navigation History](#navigation-history) to return to
 a previously visited location
 - Specify a specific [Program Start
-Location](#starting-program-location) when opening a program
+Location](#starting-program-location-options) when opening a program
 
 
 ## Go To Address, Label, or Expression
@@ -25,8 +25,8 @@ Location](#starting-program-location) when opening a program
 
 1. In the menu-bar of a tool, select **Navigation  →  Go To...**
 2. The *Go To* dialog will be displayed, as shown below:
-3. Enter either an [address](#goto-address), [label](#goto-label),
-[expression](#goto-expression), or [file offset](#goto-file-offset)
+3. Enter either an [address](#go-to-address), [label](#go-to-label),
+[expression](#go-to-expression), or [file offset](#go-to-file-offset)
 as specified below and press "OK"
 4. If the address, label, expression, or file offset is valid, the Code Browser will be
 repositioned to that location and the dialog will be dismissed
@@ -155,8 +155,7 @@ table
 | a::** | Matches any symbol that has a namespace named "a" anywhere in it's namespace                 ancestry |
 
 
-##### Wildcard Examples (With sample full symbol paths of matching and not matching
-symbols)
+##### Wildcard Examples (With sample full symbol paths of matching and not matching symbols)
 
 
 | Input   | Matches   | Does Not Match   |
@@ -455,8 +454,7 @@ navigation history stack.  The navigation history feature allows the user to re
 previous locations.
 
 
-### Go To
-Next/Previous Location
+### Go To Next/Previous Location
 
 
 To traverse the history stack:
@@ -481,8 +479,7 @@ dialog
 > **Note:** The button is only enabled after performing a
 
 
-### Go To
-Next/Previous **Function** in History
+### Go To Next/Previous **Function** in History
 
 
 These actions allow you to navigate to the next/previous functions in the history list,
@@ -550,7 +547,7 @@ to locations in the current program. If this option is off and the search locati
 found in the current program, the 'Go To' action will search other open programs, possibly
 resulting in the listing view switching to a different open program tab. By default, this
 option is on, thereby guaranteeing that the listing view will not change to a different
-program when performing a ['Go To' action](#go-to-address-label).
+program when performing a ['Go To' action](#go-to-address-label-or-expression).
 
 
 **External Navigation** - Determines the behavior for navigation to external symbols
@@ -574,7 +571,7 @@ address space that matches the current cursor location. Otherwise, it will show 
 possible addresses for the given offset. The default is on for this option.
 
 
-**Range Navigation** - Determines how [navigation of ranges](../Selection/Selecting.md#navigateoverselection) (i.e.,
+**Range Navigation** - Determines how [navigation of ranges](../Selection/Selecting.md#navigating-over-a-selection) (i.e.,
 selection ranges and highlight ranges) takes place. By default, navigating to ranges will
 place the cursor at the top of the next range. You may use this option to navigate to both
 the top and the bottom of each range being navigated.

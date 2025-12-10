@@ -11,9 +11,9 @@ Some of the formats the *Exporter* supports are:
 
 
 - [ASCII](#ascii)
-- [C/C++](#c-cpp)
-- [Ghidra Zip File (GZF)](#gzf)
-- [Ghidra Data Type Archive File (GDT)](#gdt)
+- [C/C++](#cc)
+- [Ghidra Zip File (GZF)](#ghidra-zip-file-gzf)
+- [Ghidra Data Type Archive File (GDT)](#ghidra-data-type-archive-file-gdt)
 - [HTML](#html)
 - [Intel Hex](#intel-hex)
 - [Original File](#original-file)
@@ -37,7 +37,7 @@ tool.
 
 - Right-click on the file to export in the tree.
 - From the popup menu that appears, select the **Export...** menu item.
-- Use the [Exporter Dialog](#exporter-dialog) that appears to configure the
+- Use the [Exporter Dialog](#export-dialog) that appears to configure the
 export.
 - Press the **OK** button to perform the export.
 
@@ -47,8 +47,8 @@ file may be opened in an attempt to support export formats that require an open
 file.  If the selected file requires an upgrade a warning dialog
 will be displayed and the affected export formats will not be available until an upgrade
 is perfored, however a direct packed format of the project file may still be chosen
-without performing the upgrade first (e.g., [Ghidra Zip File (GZF)](#gzf),
-[Ghidra Zip File (GZF)](#gzf)).*
+without performing the upgrade first (e.g., [Ghidra Zip File (GZF)](#ghidra-zip-file-gzf),
+[Ghidra Zip File (GZF)](#ghidra-zip-file-gzf)).*
 
 
 ### To export from the CodeBrowser tool:
@@ -61,7 +61,7 @@ without performing the upgrade first (e.g., [Ghidra Zip File (GZF)](#gzf),
 tool.
 - Invoke the action from the **File → Export
 File...** menu item.
-- Use the [Exporter Dialog](#exporter-dialog) that appears to configure the
+- Use the [Exporter Dialog](#export-dialog) that appears to configure the
 export.
 - Press the **OK** button to perform the export.
 
@@ -196,7 +196,7 @@ content and bypass any potential upgrade that may be required by other formats.
 Creates a GDT file from a Data Type Archive in your project. You may want to create a GDT file
 so that you can give it to another user who can then [import](../ImporterPlugin/importer.md) into their project or open directly
 via the Data Type Manager as a
-[File Data Type Archive](../DataTypeManagerPlugin/data_type_manager_description.md#open-file-data-type-archive).
+[File Data Type Archive](../DataTypeManagerPlugin/data_type_manager_description.md#opening-a-file-data-type-archive).
 A project Data Type Archive export of this format from the Project Window will be based on
 the current saved file content and bypass any potential upgrade that may be required by other formats.
 

@@ -8,4 +8,4 @@
 - [Vertices](Data_Graph.md#vertices)
 - [Graph Actions](Data_Graph.md#data-graph-actions)
 - [Popups](Data_Graph.md#popups)
-- [Layout](Data_Graph.md#layout)
+- [Layout](Data_Graph.md#vertex-layout)

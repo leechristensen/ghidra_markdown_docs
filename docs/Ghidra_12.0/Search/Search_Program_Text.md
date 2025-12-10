@@ -57,7 +57,7 @@ wildcards (* or ?) as needed. The * matches any character. The ? matches a singl
 character.
 - This field does
 not support *[regular
-expressions](../Glossary/glossary.md#regularexpression)*.
+expressions](../Glossary/glossary.md#regular-expression)*.
 - If you need to
 search for one of the wildcard characters, then escape the character with a backslash.
 For example, to search for any occurrence of an asterisk, you would enter `\*`
@@ -78,7 +78,7 @@ is selected
 - Defined Data Mnemoncis - search Mnemonics of defined data
 - Defined Data Values - search Values of defined data
 - The **Program Database**
-*Search Type* does not include components of  [Structures](../DataPlugin/Data.md#structuredefinition) or [Unions](../DataPlugin/Data.md#uniondefinition). Use the
+*Search Type* does not include components of  [Structures](../DataPlugin/Data.md#structure) or [Unions](../DataPlugin/Data.md#union). Use the
 **Listing Display** *Search Type* for this case. If you do want to
 search structures or unions, they
 must be open in the Code Browser.
@@ -189,7 +189,7 @@ on highlighting:
 - Highlights are displayed for the last search that you did. For example, if you bring up
 the Search Memory dialog and search for bytes, that string now becomes the new highlight
 string. Similarly, if you invoke [cursor text
-highlighting](../CodeBrowserPlugin/CodeBrowser.md#cursortexthighlight), that becomes the new highlight string.
+highlighting](../CodeBrowserPlugin/CodeBrowser.md#cursor-text-highlight), that becomes the new highlight string.
 - Highlights are displayed only for those items that you selected to search.  For
 example, you did not select *Labels* to search but a label matched the string you
 searched for.  Thus, the field for that label will not be highlighted.

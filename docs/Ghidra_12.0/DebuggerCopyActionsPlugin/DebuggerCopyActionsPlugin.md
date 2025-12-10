@@ -17,7 +17,7 @@ data and annotations from traces into programs. The actions are all accessed via
 
 
 This action requires a selection of memory in a dynamic view. It copies selected contents
-from the current trace (at the current time) into the current program. The [Copy Dialog](#dialog) is presented with the current program set as the destination.
+from the current trace (at the current time) into the current program. The [Copy Dialog](#copy-dialog) is presented with the current program set as the destination.
 
 
 ### Copy Into New Program
@@ -25,13 +25,13 @@ from the current trace (at the current time) into the current program. The [Copy
 
 This action requires a selection of memory in a dynamic view. It copies selected contents
 from the current trace (at the current time) into a new program. The [Copy
-Dialog](#dialog) is presented with **`<New Program>`** set as the destination.
+Dialog](#copy-dialog) is presented with **`<New Program>`** set as the destination.
 
 
 ### Export Trace View
 
 
-This action is available whenever a trace is open. The [Export Dialog](../ExporterPlugin/exporter.md#exporter-dialog) is presented for
+This action is available whenever a trace is open. The [Export Dialog](../ExporterPlugin/exporter.md#export-dialog) is presented for
 the current trace at the current time. This provides a mechanism for capturing a particular
 point in time from a trace to a file. The exported image can be analyzed in Ghidra or another
 tool.

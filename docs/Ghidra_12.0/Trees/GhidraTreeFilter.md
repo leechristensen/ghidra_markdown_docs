@@ -14,7 +14,7 @@ currently set to "Starts With", but you can select a different filter strategy.
 
 
 The button to the right of the filter will bring up the [Filter
-Options Dialog](#filter-options). Its icon indicates the current [Filter
+Options Dialog](#the-filter-options-dialog). Its icon indicates the current [Filter
 Strategy](#filter-strategy).
 
 
@@ -88,7 +88,7 @@ match against the nodes in a tree or the rows in a table.
 | --- | --- | --- |
 | ![page_go.png](../icons/page_go.png) | Starts With | Tree nodes will match if its name starts with the text in the filter text field.             Table rows will match if any of the columns starts with the filter text. |
 | ![page_green.png](../icons/page_green.png) | Matches Exactly | Tree nodes will match if its name exactly matches the text in the filter text             field.Table rows will match if any of the columns exactly match the filter text. |
-| ![page_excel.png](../icons/page_excel.png) | Regular Expression | Tree nodes will match if the regular expression in the filter matches the name of             the node. Table rows will match if any of the columns matches the regular expression.             See [regular             expression](../Search/Regular_Expressions.md#regex-syntax) for help. Note that the regular expression will match if the pattern it             represents is **contained** in the tree node name or table column. If you want to             match the beginning or end (i.e starts with or ends with), you must include the special             "starts with" (^) or "ends with" ($) regular expression character syntax. For example,             the regular expression "bob" will match "bobby", "hey bobby", and "bob", but the             regular expression "^bob" will match "bobby" and "bob", and "^bob$" will only match             "bob".  The **Case Sensitive** check box is disabled for regular expressions, and             the default matching mode is exact case matching.  Case insensitive matching can be             enabled by including the "(?i)" embedded flag at the beginning of your filter.  For             example, the regular expression "(?i)bob" will match items with "Bob", "bob", and             "BOB". |
+| ![page_excel.png](../icons/page_excel.png) | Regular Expression | Tree nodes will match if the regular expression in the filter matches the name of             the node. Table rows will match if any of the columns matches the regular expression.             See [regular             expression](../Search/Regular_Expressions.md#regular-expression-syntax) for help. Note that the regular expression will match if the pattern it             represents is **contained** in the tree node name or table column. If you want to             match the beginning or end (i.e starts with or ends with), you must include the special             "starts with" (^) or "ends with" ($) regular expression character syntax. For example,             the regular expression "bob" will match "bobby", "hey bobby", and "bob", but the             regular expression "^bob" will match "bobby" and "bob", and "^bob$" will only match             "bob".  The **Case Sensitive** check box is disabled for regular expressions, and             the default matching mode is exact case matching.  Case insensitive matching can be             enabled by including the "(?i)" embedded flag at the beginning of your filter.  For             example, the regular expression "(?i)bob" will match items with "Bob", "bob", and             "BOB". |
 
 
 ### Case Sensitive

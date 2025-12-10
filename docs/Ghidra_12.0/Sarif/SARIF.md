@@ -76,4 +76,4 @@ displayed are stored under Edit-&gt;Tool Options-&gt;Graph-&gt;Sarif.
 
 ---
 
-[← Previous: PDB Parser (README_PDB)](../external:docs/README_PDB.md) | [Next: Program Tree →](../ProgramTreePlugin/program_tree.md)
+[← Previous: PDB Parser (README_PDB)](../docs/README_PDB.md) | [Next: Program Tree →](../ProgramTreePlugin/program_tree.md)

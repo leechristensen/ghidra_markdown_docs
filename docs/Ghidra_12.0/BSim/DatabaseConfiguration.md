@@ -30,7 +30,7 @@ are made available to it. PostgreSQL is a robust and capable server that should 
 on minimally configured workstations up to high-end production hardware. Source for the
 BSim extension to PostgreSQL is included as part of the Ghidra installation, but the
 PostgreSQL source may need to be obtained separately by the database administrator.
-See [“Building the Server”](DatabaseConfiguration.md#postbuild)
+See [“Building the Server”](DatabaseConfiguration.md#building-the-server)
 
 
 An Elasticsearch server, which must have a BSim specific plug-in installed, runs
@@ -38,7 +38,7 @@ as a scalable database that automatically distributes itself across machines in 
 allowing individual database queries and requests to be serviced in parallel. The Elasticsearch
 BSim plug-in is included with the Ghidra installation, but the core server software must be obtained
 separately by the database administrator.
-See [“Installing the Plug-in”](DatabaseConfiguration.md#elasticinstall)
+See [“Installing the Plug-in”](DatabaseConfiguration.md#installing-the-plug-in)
 
 
 BSim clients included in the base Ghidra distribution can interface to any of these
@@ -46,8 +46,7 @@ databases. Users that just want to connect to an existing shared server via a BS
 install any server software themselves.
 
 
-## Server
-Configuration
+## Server Configuration
 
 
 ### PostgreSQL Configuration
@@ -97,7 +96,7 @@ full list of PostgreSQL software dependencies, refer to:
 Once the build has completed successfully,
 the **bsim_ctl** command-line script is ready to use
 for starting a server (see
-[“Starting and Stopping the Server”](DatabaseConfiguration.md#poststartstop)).
+[“Starting and Stopping the Server”](DatabaseConfiguration.md#starting-and-stopping-the-server)).
 The PostgreSQL server software will run out of the Ghidra installation at
 
 
@@ -113,11 +112,10 @@ on modifying the configuration values. A default configuration is provided with 
 has been tuned specifically for the BSim Database application, so in practice there may be little reason to
 modify it. But there are a few standard configuration values for the server that might need
 adjusting. See
-[“Additional Configuration”](DatabaseConfiguration.md#postadditionalconfig).
+[“Additional Configuration”](DatabaseConfiguration.md#additional-configuration).
 
 
-#### Starting and Stopping the
-Server
+#### Starting and Stopping the Server
 
 
 The basic start-up and shut-down is accomplished with the same command-line script,
@@ -145,7 +143,7 @@ The **start** command can take an optional
 a non-standard port for the PostgreSQL server to listen on. In this case, any
 subsequent reference to the BSim server, in the Ghidra client, or with the **bsim** command described below, must specify the port.
 When using the **bsim** command, a
-non-default port must be explicitly specified with the BSim **postgresql://** URL (see [“Ghidra and BSim URLs”](CommandLineReference.md#urls) for more
+non-default port must be explicitly specified with the BSim **postgresql://** URL (see [“Ghidra and BSim URLs”](CommandLineReference.md#ghidra-and-bsim-urls) for more
 details).
 
 
@@ -157,8 +155,7 @@ immediately, rolling back any transactions, and the server will shutdown
 immediately.
 
 
-#### Security and
-Authentication
+#### Security and Authentication
 
 
 BSim makes use of PostgreSQL security mechanisms to enforce privileges and
@@ -263,8 +260,7 @@ administrator) by issuing the command:
 > $(ROOT)/support/bsim_ctl changeprivilege username admin
 
 
-#### Additional
-Configuration
+#### Additional Configuration
 
 
 The relevant configuration files are at the top level of the data directory:
@@ -342,7 +338,7 @@ package has been installed on the system.
 
 A full description of how to configure an Elasticsearch cluster is beyond the scope of
 this document. In particular, the **bsim_ctl**
-command-line, as described in [“PostgreSQL Configuration”](DatabaseConfiguration.md#postconfig), does not apply to
+command-line, as described in [“PostgreSQL Configuration”](DatabaseConfiguration.md#postgresql-configuration), does not apply to
 Elasticsearch. Complete documentation for administering a database is available on-line
 from the Elasticsearch website.
 
@@ -443,7 +439,7 @@ communicates over *https*, and BSim clients
 automatically assume they are communicating with Elasticsearch when they see this
 protocol. Alternatively, the protocol may be specified as *elastic* when using the **bsim** command. Elasticsearch use by BSim assumes a
 default port of 9200 unless otherwise specified when specifying the server host. See [“Ghidra and BSim
-URLs”](CommandLineReference.md#urls) for additional information about URLs.
+URLs”](CommandLineReference.md#ghidra-and-bsim-urls) for additional information about URLs.
 
 
 #### Elasticsearch Firewall Considerations
@@ -497,7 +493,7 @@ executables and functions contained within do not need to coincide at all.
 
 
 The Ghidra GUI client specifies a BSim database with its explicit characteristics (i.e.,
-DB type, name, host/port if applicable, etc.), while the **bsim** command accepts a *bsimURL* which includes similar details (see [“Ghidra and BSim URLs”](CommandLineReference.md#urls) for more
+DB type, name, host/port if applicable, etc.), while the **bsim** command accepts a *bsimURL* which includes similar details (see [“Ghidra and BSim URLs”](CommandLineReference.md#ghidra-and-bsim-urls) for more
 details).
 
 
@@ -505,7 +501,7 @@ The *config_template* parameter passed to **bsim createdatabase** names a collec
 configuration values for the newly created database. A standard Ghidra distribution
 provides a number of predefined templates (See below) designed for specific database use
 cases. It is simplest to use a predefined template when creating a database, but it is
-possible to edit an existing template or create a new template (See [“Creating Database Templates”](DatabaseConfiguration.md#databasetemplates)).
+possible to edit an existing template or create a new template (See [“Creating Database Templates”](DatabaseConfiguration.md#creating-database-templates)).
 
 
 There are two critical database properties being determined by the template that need to
@@ -538,7 +534,7 @@ There are some weighting schemes designed for more specialized code. The **64_32
 **nosize** scheme allows better matching of 32-bit
 functions to 64-bit functions, when they are compiled from the same source. The **cpool** scheme is designed for Java byte-code or Dalvik
 executables. For more discussion of weighting, see [“Weighting
-Software Features”](FeatureWeight.md#weightingsoftware).
+Software Features”](FeatureWeight.md#weighting-software-features).
 
 
 The full template name incorporates both an index tuning and a weight scheme. Some
@@ -551,8 +547,7 @@ executables. large_32 A 32-bit weighting scheme with tuning for a large database
 and 64-bit code.
 
 
-## Tailoring BSim
-Metadata
+## Tailoring BSim Metadata
 
 
 There is some facility to tailor a specific BSim database instance so that it can ingest
@@ -628,7 +623,7 @@ command after the name of the category. Once a category is added, the correspond
 options set for any new executables will automatically read into the database as part of
 the ingest process. Previously ingested executables, assuming they have the new program
 options set, can be updated within the BSim database using one of the **bsim generateupdates** command variants. In either case, the
-relevant program options typically need to be filled by running a Ghidra script (See [“Ingesting Executable Categories”](IngestProcess.md#ingestexecat)).
+relevant program options typically need to be filled by running a Ghidra script (See [“Ingesting Executable Categories”](IngestProcess.md#ingesting-executable-categories)).
 There is currently no method for deleting a category once it has been created.
 
 
@@ -682,7 +677,7 @@ index tuning, but doing this properly is beyond the scope of this document. A **
 parameters used to set up BSim database instance. The configuration parameters are
 established for a particular database when the **bsim
 createdatabase** command is run (See [“Creating a
-Database”](DatabaseConfiguration.md#createdatabase)). The template name passed on the command-line actually identifies an
+Database”](DatabaseConfiguration.md#creating-a-database)). The template name passed on the command-line actually identifies an
 XML file-name, appended with the '.xml' suffix, in the directory:
 
 
@@ -712,7 +707,7 @@ It is easiest to copy an existing template and just edit the tags described abov
 remaining tags in the file are more dangerous to manipulate. The *`<k>`* and *`<L>`*
 tags pertain to the index tuning. The *`<weightsfile>`* tag gives the name of the weights file,
 within the same directory, which is also another XML file. It is simplest to choose from
-the existing weight files provided with the distribution. See [“Weighting Software Features”](FeatureWeight.md#weightingsoftware).
+the existing weight files provided with the distribution. See [“Weighting Software Features”](FeatureWeight.md#weighting-software-features).
 
 
 ---

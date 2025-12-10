@@ -128,6 +128,9 @@ class HTMLToMarkdownConverter:
         self.source_path = source_path  # For module-aware icon resolution
         self.output_md_path = output_md_path  # For correct relative icon paths
         self._copied_icons: set[str] = set()  # Track icons already copied
+        # Map from slugified HTML anchor names to GFM heading slugs
+        # e.g., "tailorbsim" -> "tailoring-bsim"
+        self.anchor_to_heading_slug: dict[str, str] = {}
 
     def _preprocess_html(self, html_content: str) -> str:
         """Preprocess HTML to fix common issues in Ghidra help files.
@@ -331,17 +334,26 @@ class HTMLToMarkdownConverter:
 
         # Extract ALL anchors from HTML (headings can have multiple anchors)
         # e.g., <H2><A name="Delete_Equate"></A><A name="Remove_Equate"></A>Remove Equate</H2>
-        self._extract_all_anchors(element)
+        html_anchors = self._extract_all_anchors(element)
 
-        # Get text content
+        # Get text content and normalize whitespace (HTML headings can span multiple lines)
         text = self._get_text_content(element).strip()
+        # Collapse all whitespace (including newlines) to single spaces
+        text = " ".join(text.split())
 
         if not text:
             return ""
 
         # GitHub-flavored markdown automatically generates anchors from heading text
         # e.g., "## My Section" -> anchor "#my-section"
-        # No explicit <a name="..."> tags needed - links are slugified to match
+        heading_slug = slugify(text)
+
+        # Build mapping from HTML anchor slugs to GFM heading slug
+        # This allows link resolver to convert old anchor references to correct GFM anchors
+        for html_anchor in html_anchors:
+            if html_anchor and html_anchor != heading_slug:
+                self.anchor_to_heading_slug[html_anchor] = heading_slug
+
         return f"\n\n{prefix} {text}\n\n"
 
     def _convert_paragraph(self, element: Tag) -> str:

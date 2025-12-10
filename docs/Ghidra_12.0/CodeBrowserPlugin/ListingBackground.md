@@ -83,7 +83,7 @@ options .
 
 
 You can also navigate to color ranges via the Listing's [navigation
-markers](CodeBrowser.md#cbnavigationmargin).
+markers](CodeBrowser.md#navigation-marker).
 
 
 *Provided by: *Colorizing* plugin*

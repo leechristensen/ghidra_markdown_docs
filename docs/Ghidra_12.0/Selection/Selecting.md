@@ -111,7 +111,7 @@ current cursor location use the Next Selected Range and Previous Selected Range 
 ### Using the Navigation Margin
 
 
-One or more green markers will appear in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#cbnavigationmarkers),
+One or more green markers will appear in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#markers),
 where each green marker corresponds to an address range included in the selection. Clicking
 on a green marker will cause the Code Browser to navigate to the beginning of the
 corresponding address range.
@@ -167,7 +167,7 @@ will be disabled.*
 
 
 - [Margin &
-Navigation Markers](../CodeBrowserPlugin/CodeBrowser.md#cbnavigationmarkers)
+Navigation Markers](../CodeBrowserPlugin/CodeBrowser.md#markers)
 - [Navigation](../Navigation/Navigation.md)
 - [Highlighting](../SetHighlightPlugin/Highlighting.md)
 

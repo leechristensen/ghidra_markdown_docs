@@ -84,7 +84,7 @@ The **Accept Match**
 ![flag.png](../../icons/flag.png)
 action marks a match (and all matches that have the same association) as being
 accepted.  All competing matches will become blocked.
-[There are options](VT_Apply_Options.md#match-accept-options) to auto-apply
+[There are options](VT_Apply_Options.md#accept-match-options) to auto-apply
 function names and create implied matches when accepting a match.
 
 
@@ -95,7 +95,7 @@ The **Apply Blocked Match**
 The **Apply Markup**
 ![checkmark_green.gif](../../icons/checkmark_green.gif)
 action will attempt to apply all the markup items for the match
-[according to the apply settings](VT_Apply_Options.md#match-apply-options).
+[according to the apply settings](VT_Apply_Options.md#apply-markup-options).
 If the match is not already accepted, it will first be marked as accepted.
 
 

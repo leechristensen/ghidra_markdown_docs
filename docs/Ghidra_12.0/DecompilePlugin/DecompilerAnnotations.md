@@ -9,12 +9,12 @@
 Individual **machine instructions**
 make up the biggest source of information when the
 Decompiler analyzes a function.  Instructions are translated from their
-processor-specific form into Ghidra's IR language (see [P-code](DecompilerConcepts.md#conceptpcode)),
+processor-specific form into Ghidra's IR language (see [P-code](DecompilerConcepts.md#p-code)),
 which provides both the control-flow behavior of the instruction and the detailed
 semantics describing how the processor and memory state are affected. The translation is controlled by
 the underlying processor model and, except in limited circumstances, cannot be directly altered
 from the tool. Flow Overrides (see below) can change how certain control flow is translated
-and, depending on the processor, how context registers affect p-code (see [Context Registers](DecompilerAnnotations.md#annotecontextregister)).
+and, depending on the processor, how context registers affect p-code (see [Context Registers](DecompilerAnnotations.md#context-registers)).
 
 
 Outside of the tool, users *can* modify the model specification itself.
@@ -23,7 +23,7 @@ See the document "SLEIGH: A Language for Rapid Processor Specification."
 
 Decompiling a function starts by analyzing the control flow of machine instructions.
 Control flow is traced from the first instruction, through additional instructions depending
-on their flow semantics (see [P-code Control Flow](DecompilerConcepts.md#conceptcontrolflow)).  All paths are traced through instructions with
+on their flow semantics (see [P-code Control Flow](DecompilerConcepts.md#p-code-control-flow)).  All paths are traced through instructions with
 any form of *fall-through* or *jump*
 semantics until an instruction with *terminator* semantics is
 reached, which is usually a formal *return* (return from subroutine) instruction.
@@ -83,7 +83,7 @@ may unexpectedly navigate the window away from the function.
 
 
 Control-flow behavior for a machine instruction is generally determined by its underlying
-p-code (see [P-code Control Flow](DecompilerConcepts.md#conceptcontrolflow)), but this can be changed by applying a Flow Override.
+p-code (see [P-code Control Flow](DecompilerConcepts.md#p-code-control-flow)), but this can be changed by applying a Flow Override.
 A **Flow Override** maintains the overall semantics of a branching instruction
 but changes how the branch is interpreted.  For instance, a `JMP` instruction, which traditionally
 represents a branch within a single function, can be overridden to represent a call to a new function.
@@ -292,7 +292,7 @@ instruction that reads them.  The memory location storing a local variable
 at one point of the function may be reused for different variables at other points.
 This can cause ambiguity in how the Decompiler should treat a given memory location used
 for storing local variables, which the user may want to steer. See the discussion
-in [Variable Storage](DecompilerAnnotations.md#annotestorage).
+in [Variable Storage](DecompilerAnnotations.md#variable-storage).
 
 
 ### Variable Data-types
@@ -330,7 +330,7 @@ other details about the data-type are unknown.
 
 For the Decompiler, undefined data-types, as an annotation, have the important special meaning
 that the Decompiler should let its analysis determine the final data-type presented in the
-output for the variable (see [Forcing Data-types](DecompilerAnnotations.md#annoteforcing) below).
+output for the variable (see [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types) below).
 
 
 ##### Void
@@ -432,7 +432,7 @@ For processors with more than one memory address space, pointer data-types do no
 a preferred address space and can be used to reference data in any address space.
 Where there is ambiguity, the Decompiler attempts to determine the correct address space from the context
 of its use within the function.  It is possible to create pointer data-types with an
-explicitly preferred address space, see [Address Space Pointers](DecompilerAnnotations.md#attributeaddresspointer).
+explicitly preferred address space, see [Address Space Pointers](DecompilerAnnotations.md#address-space-pointers).
 
 
 ##### Array
@@ -474,7 +474,7 @@ the access into logical pieces. See the description of the analysis option for
 Structure data-types are fully supported. The Decompiler does not automatically infer structures
 when analyzing a function; it propagates them into the function from explicitly
 annotated sources, like input parameters or global variables.  Decompiler-directed creation of
-structures can be triggered by the user (see [Auto Create Structure](DecompilerWindow.md#actionautostructure)).
+structures can be triggered by the user (see [Auto Create Structure](DecompilerWindow.md#auto-create-structure)).
 
 
 For variables that are known to be structures, or pointers to structures, the Decompiler keeps
@@ -560,7 +560,7 @@ used for structure fields.
 Depending on the number and variety of fields within the union, it may not be possible
 to fully distinguish which field is being used in a specific context. In this situation,
 the Decompiler chooses the first field from the list of best matches.  The user has the
-option of changing this choice with the [Force Field](DecompilerWindow.md#actionforcefield) action.
+option of changing this choice with the [Force Field](DecompilerWindow.md#force-field) action.
 
 
 ##### Typedefs
@@ -582,8 +582,8 @@ non-standard data-types, although the typedef and its copy are no longer interch
 The decompiler supports the following typedef properties:
 
 
-- Component Offset - See [Offset Pointers](DecompilerAnnotations.md#attributeoffsetpointer)
-- Address Space - See [Address Space Pointers](DecompilerAnnotations.md#attributeaddresspointer)
+- Component Offset - See [Offset Pointers](DecompilerAnnotations.md#offset-pointers)
+- Address Space - See [Address Space Pointers](DecompilerAnnotations.md#address-space-pointers)
 
 
 #### Pointer Attributes
@@ -652,7 +652,7 @@ underlying data-type.
 
 
 An **address space pointer** is a normal pointer data-type with a specific
-address space associated to it (See [Address Space](DecompilerConcepts.md#conceptaddressspace)).  Its created by setting
+address space associated to it (See [Address Space](DecompilerConcepts.md#address-space)).  Its created by setting
 the Address Space attribute on a typedef of a pointer. The attribute value is the name of the specific
 address space.
 
@@ -709,7 +709,7 @@ using type propagation from other sources.
 
 
 For annotations that specifically label a function's formal parameters or return value,
-the [Signature Source](DecompilerAnnotations.md#prototypesignaturesource) also affects how they're treated by the Decompiler.
+the [Signature Source](DecompilerAnnotations.md#signature-source) also affects how they're treated by the Decompiler.
 If the Signature Source is set to anything other than *DEFAULT*, there is a forced
 one-to-one correspondence between variable annotations and actual parameters in the Decompiler's
 view of the function.  This is stronger than just forcing the data-type; the existence or nonexistence of
@@ -778,7 +778,7 @@ A **stack address** is an address in the *stack frame*
 of a particular function in the Program.  Formally, a stack address is defined as an offset relative to the
 incoming value of the *stack pointer* and exists in the
 **stack** address space associated with the function. See the discussion
-in [Address Space](DecompilerConcepts.md#conceptaddressspace). A **stack annotation** then is a variable annotation
+in [Address Space](DecompilerConcepts.md#address-space). A **stack annotation** then is a variable annotation
 with a stack address as its storage location. It exists only in the scope of a
 single function and the variable must be *local* to that function.
 
@@ -828,7 +828,7 @@ register may be reused for different variables at different points of execution 
 There may be more than one annotation, for different variables, that share the same register
 storage location.
 An annotation is associated with a *first use point* that describes where
-the register first holds a value for the particular variable (see the discussion - [Varnodes in the Decompiler](DecompilerConcepts.md#conceptvarnodessa)).
+the register first holds a value for the particular variable (see the discussion - [Varnodes in the Decompiler](DecompilerConcepts.md#varnodes-in-the-decompiler)).
 The entire scope of the annotation is limited to the address regions between the first use point
 and any points where the value is read. The Decompiler may extend the scope as part of its
 *merging* process, but the full extent is not stored in the annotation.
@@ -840,7 +840,7 @@ and any points where the value is read. The Decompiler may extend the scope as p
 Variable annotations can have a *temporary register* as a storage location.
 A temporary register is not specific to a processor but is produced at various stages of
 the decompilation process. See the discussion of the **unique**
-space in [Address Space](DecompilerConcepts.md#conceptaddressspace). These registers do not have a meaningful name, and
+space in [Address Space](DecompilerConcepts.md#address-space). These registers do not have a meaningful name, and
 the specific storage address may change on successive decompilations. So, within a
 *Listing* window, this annotation is displayed as part of the function header
 with syntax like:
@@ -912,7 +912,7 @@ Ghidra records a **Signature Source** for every function,
 indicating the origin of its prototype information.  This is
 similar to the *Symbol Source* attached to Ghidra's symbol annotations
 (see the documentation for
-[Filtering](../SymbolTablePlugin/symbol_table.md#set-filter)
+[Filtering](../SymbolTablePlugin/symbol_table.md#filtering)
 in the Symbol Table).  The possible types are:
 
 
@@ -932,7 +932,7 @@ Source to be *USER_DEFINED*.
 
 If the Signature Source is set to anything other than *DEFAULT*, the
 function's prototype information is forcing on the Decompiler (see the discussion
-in [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)).
+in [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)).
 
 
 ### Discovering Parameters
@@ -940,7 +940,7 @@ in [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)).
 
 The input parameter and return value annotations of the function prototype, like
 any variable annotations, can be forcing on the Decompiler
-(see the complete discussion in [Forcing Data-types](DecompilerAnnotations.md#annoteforcing)).
+(see the complete discussion in [Forcing Data-types](DecompilerAnnotations.md#forcing-data-types)).
 But keep in mind:
 
 
@@ -988,7 +988,7 @@ section of code, the value will not change unless an instruction explicitly writ
 
 
 Mutability can be set on an entire block of memory in the Program, typically from the
-[Memory Map](../MemoryMapPlugin/Memory_Map.md#view-memory-map).
+[Memory Map](../MemoryMapPlugin/Memory_Map.md#memory-map).
 It can also be set as part of a single Variable Annotation.  From a Listing window, for instance,
 use the [Settings](../DataPlugin/Data.md#data-settings) dialog.
 
@@ -1050,7 +1050,7 @@ otherwise the annotation will not be applied.
 Ghidra can create an association between a name and a constant, called an **equate**.
 An equate is a descriptive string that is intended to replace the numeric form of the constant, and equates
 across the entire Program can be viewed from the
-[Equates Table](../EquatePlugin/Equates.md#equate-table).
+[Equates Table](../EquatePlugin/Equates.md#view-equates).
 
 
 An equate can be applied to a machine instruction with a constant
@@ -1062,7 +1062,7 @@ the equate symbol representing the original constant.
 
 
 Alternatively, an equate can be applied directly to a constant from a Decompiler window using its
-[Set Equate...](DecompilerWindow.md#actionsetequate) menu.  The constant may or may not have a corresponding instruction
+[Set Equate...](DecompilerWindow.md#set-equate) menu.  The constant may or may not have a corresponding instruction
 operand but will be displayed in Decompiler output using the descriptive string.
 
 
@@ -1080,7 +1080,7 @@ the format conversion is applied in the Decompiler output as well as in the List
 
 
 Alternately, a conversion can be applied directly to an integer constant in a
-Decompiler window using its [Convert](DecompilerWindow.md#actionconvert) menu option. The constant may or may not
+Decompiler window using its [Convert](DecompilerWindow.md#convert) menu option. The constant may or may not
 have a corresponding instruction operand but is displayed in Decompiler output using the conversion.
 
 
@@ -1109,7 +1109,7 @@ and otherwise propagate the constant.
 
 
 A *register value* is set by highlighting the region of code in a Listing window and then invoking the
-[Set Register Values...](../RegisterPlugin/Registers.md#setregistervalues) command
+[Set Register Values...](../RegisterPlugin/Registers.md#setting-register-values-over-address-ranges) command
 from the pop-up menu.  The beginning and end of a region is indicated in a Listing window with
 `assume` directives, and regions can be generally viewed from the
 [Register Manager](../RegisterPlugin/Registers.md#register-manager) window.
@@ -1153,11 +1153,11 @@ of code within that region.
 If a context register value is changed for a region that has already been disassembled, in order to see
 the affect of the change, the machine instructions in the region need to be cleared, and disassembly needs
 to be triggered again (see the documentation on the
-[Clear Plugin](../ClearPlugin/Clear.md#clear-code-bytes)).
+[Clear Plugin](../ClearPlugin/Clear.md#clear)).
 
 
 Values for a context register are set in the same way as for any other register, using the
-[Set Register Values...](../RegisterPlugin/Registers.md#setregistervalues) command
+[Set Register Values...](../RegisterPlugin/Registers.md#setting-register-values-over-address-ranges) command
 described above.  Within the
 [Register Manager](../RegisterPlugin/Registers.md#register-manager) window,
 context registers are generally grouped together under the *contextreg* pseudo-register heading.

@@ -23,7 +23,7 @@ Session is open.
 A version tracking session is created when you run the
 [Version Tracking Wizard](VT_Wizard.md).
 Once created, the session will be saved to the
-[Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end.md#project-window).
+[Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end.md#ghidra-project-window).
 As you make changes to version tracking data (i.e., matches and markup items), those
 changes are applied to the current session.
 
@@ -34,9 +34,9 @@ tree onto:
 
 - A running Version Tracking Tool, or
 - The Version Tracking Tool icon in the Ghidra Project Window's
-[Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#toolchest), or
+[Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#tool-chest), or
 - The icon of a running Version Tracking Tool in the
-[Running Tools panel](../FrontEndPlugin/Ghidra_Front_end.md#runningtools) of the Ghidra Project Window.
+[Running Tools panel](../FrontEndPlugin/Ghidra_Front_end.md#running-tools) of the Ghidra Project Window.
 
 
 You can also double-click the session file in the Ghidra Project Window.  This will
@@ -75,7 +75,7 @@ The **Create Session**
 [Version Tracking Wizard](VT_Wizard.md) to
 guide you through the process of create a new
 [version
-tracking session](Version_Tracking_Intro.md#session).
+tracking session](Version_Tracking_Intro.md#version-tracking-session).
 
 
 The **Add to Session**
@@ -86,7 +86,7 @@ guide you through the process of create adding new
 results to
 an existing
 [version
-tracking session](Version_Tracking_Intro.md#session).
+tracking session](Version_Tracking_Intro.md#version-tracking-session).
 
 
 The **Automatic Version

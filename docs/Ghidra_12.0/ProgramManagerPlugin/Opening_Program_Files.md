@@ -4,12 +4,12 @@
 
 
 Ghidra Tools can open an existing Ghidra [program](../Program/Ghidra_Programs.md) file and present it for review and
-analysis. Programs from other [viewed projects](../FrontEndPlugin/Ghidra_Front_end.md#view-project) or
-[viewed repositories](../FrontEndPlugin/Ghidra_Front_end.md#view-repository) may also be
+analysis. Programs from other [viewed projects](../FrontEndPlugin/Ghidra_Front_end.md#view-other-projects) or
+[viewed repositories](../FrontEndPlugin/Ghidra_Front_end.md#view-a-repository) may also be
 opened.
 
 
-A program can be opened in the currently displayed tool or can be displayed in a [new instance of a Tool](#cbopenfiledraganddrop).
+A program can be opened in the currently displayed tool or can be displayed in a [new instance of a Tool](#opening-a-program-in-a-new-tool-via-drag-and-drop).
 
 
 ## Opening a Program File in the Current Tool
@@ -49,7 +49,7 @@ directory/file operations. Right click on a program to get the directory/file me
 
 
 The History button on the *Open Program* dialog expands the dialog to show previous
-versions of a program (if the selected program is [shared](../Glossary/glossary.md#sharedprogram)),  allowing the user to
+versions of a program (if the selected program is [shared](../Glossary/glossary.md#shared-program)),  allowing the user to
 view a read-only previous version of the program.
 
 

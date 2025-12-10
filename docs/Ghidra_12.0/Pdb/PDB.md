@@ -13,7 +13,7 @@ A user generates a PDB file using the `/ZI or /Zi` flag (for C/C++ programs) or 
 There are two mechanisms for processing a PDB file. First, the platform-independent
 PDB Universal Reader/Analyzer, which can read a raw PDB file and apply it. Its capabilities
 are expected to be expanded in future releases.  Second, the legacy capability that uses the
-[DIA SDK](#dia) to read information from the PDB file. This mechanism can only run
+[DIA SDK](#debug-interface-access-sdk) to read information from the PDB file. This mechanism can only run
 on a Windows platform, however it creates an XML representation of information gleaned using
 the DIA SDK. These XML files can be saved and then used on Windows and non-Windows platforms
 hosting Ghidra.
@@ -35,8 +35,8 @@ PDB files can be loaded in two ways:
 
 - **File → [Load PDB File](LoadPDB.md#load-pdb-file)**
 - PDB Analyzer via **Analysis →
-[Auto Analyze](../AutoAnalysisPlugin/AutoAnalysis.md#auto-analyze)** or
-**Analysis → [One Shot](../AutoAnalysisPlugin/AutoAnalysis.md#analyze-one-shot)**.
+[Auto Analyze](../AutoAnalysisPlugin/AutoAnalysis.md#auto-analysis)** or
+**Analysis → [One Shot](../AutoAnalysisPlugin/AutoAnalysis.md#one-shot-analysis)**.
 
 
 ## Information Loaded From PDB

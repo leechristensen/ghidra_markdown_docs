@@ -5,5 +5,5 @@
 ## Contents
 
 - [Create Data](Data.md)
-- [Data Types](Data.md#datatypes)
+- [Data Types](Data.md#data-types)
 - [Data](Data.md)

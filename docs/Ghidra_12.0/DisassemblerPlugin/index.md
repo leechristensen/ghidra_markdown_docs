@@ -4,8 +4,8 @@
 
 ## Contents
 
-- [Dynamic Disassembly](Disassembly.md#disassemble)
-- [Static Disassembly](Disassembly.md#disassemble-static)
+- [Dynamic Disassembly](Disassembly.md#disassembly)
+- [Static Disassembly](Disassembly.md#static-disassembly)
 - [Disassembly](Disassembly.md)
-- [Restricted Disassembly](Disassembly.md#disassemble-restricted)
-- [Processor Options](Disassembly.md#processoroptions)
+- [Restricted Disassembly](Disassembly.md#restricted-disassembly)
+- [Processor Options](Disassembly.md#processor-options)

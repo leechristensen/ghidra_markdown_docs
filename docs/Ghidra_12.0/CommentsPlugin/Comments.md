@@ -15,7 +15,7 @@ that are supported:
 | **Repeatable**   | Displayed to the right of the instruction if there is no             EOL comment. These comments are also displayed at the "from" address of a reference to             this code unit, but only if there is no EOL or repeatable comment defined at the from             address.   |
 
 
-You can create, edit, or delete comments. You can also view a [history of comment changes](#show-comment-history) for each comment type. You may also use
+You can create, edit, or delete comments. You can also view a [history of comment changes](#displaying-comment-history) for each comment type. You may also use
 [**annotations**](../Annotations/Annotations.md) to change the display
 characteristics of data entered into the comment fields.
 
@@ -29,8 +29,7 @@ containing instruction or data is first cleared so that the individual addresses
 the listing.
 
 
-## Adding or Editing
-Comments (Set Comment)
+## Adding or Editing Comments (Set Comment)
 
 
 Comments can be added or edited using the *Set Comment(s)* dialog as follows:

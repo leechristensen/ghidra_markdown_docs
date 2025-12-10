@@ -153,7 +153,7 @@ several search results windows open.
 **Related Topics:**
 
 
-- [Tool Options](../Tool/ToolOptions_Dialog.md#optionsfortool)
+- [Tool Options](../Tool/ToolOptions_Dialog.md#tool)
 - [Ghidra Tool](../Tool/Ghidra_Tool_Administration.md)
 
 

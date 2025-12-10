@@ -1,7 +1,6 @@
 [Home](../index.md) > [VersionTrackingPlugin](index.md) > Symbol Name Match Correlator
 
-# Version Tracking Program
-Correlators
+# Version Tracking Program Correlators
 
 
 A program correlator compares two versions of a program and generates matches between
@@ -20,13 +19,13 @@ correlator's description to understand how to best use it.
 Below is a list of built-in (i.e, not discovered) program correlators.
 
 
-- [Data Match Correlators](#data-match)
-- [Function Match Correlators](#function-match)
-- [Legacy Import Correlator](#legacy-import)
-- [Implied Correlator](#implied-match)
-- [Manual Match Correlator](#manual-match)
-- [Symbol Name Match Correlator](#symbol-match)
-- [Reference Correlators that Use Match Information to Find Other Matches](#match-info)
+- [Data Match Correlators](#data-match-correlators)
+- [Function Match Correlators](#function-match-correlators)
+- [Legacy Import Correlator](#legacy-import-correlator)
+- [Implied Correlator](#implied-correlator)
+- [Manual Match Correlator](#manual-match-correlator)
+- [Symbol Name Match Correlator](#symbol-name-match-correlators)
+- [Reference Correlators that Use Match Information to Find Other Matches](#reference-correlators-that-use-match-information-to-find-other-matches)
 
 
 ## Data Match Correlators
@@ -114,8 +113,7 @@ functions aren't necessarily identical byte-for-byte. It reports 1.0 for confide
 (because it was found only once in each program).
 
 
-### Duplicate Function Instructions
-Match
+### Duplicate Function Instructions Match
 
 
 Duplicate Function Match will iterate through your source program's functions, look for

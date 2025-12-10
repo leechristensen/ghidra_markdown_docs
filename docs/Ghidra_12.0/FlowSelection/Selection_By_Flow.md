@@ -12,11 +12,11 @@ This is useful for determining how to reach a set of instructions.
 
 
 *Forward scoped flow* is the set of addresses that can only be reached by
-passing through the [Basic Block](../Glossary/glossary.md#basicblock) containing the current address.
+passing through the [Basic Block](../Glossary/glossary.md#basic-block) containing the current address.
 
 
 *Reverse scoped flow* is the set of addresses that must pass through the
-[Basic Block](../Glossary/glossary.md#basicblock) containing
+[Basic Block](../Glossary/glossary.md#basic-block) containing
 the current address.
 
 

@@ -106,9 +106,9 @@ A **Single Match** for a function occurs under the following conditions:
 Even if there are multiple potential matches in the database, the first condition may still hold
 because they all share the same base function name.
 The second condition does not need to apply if the "Always apply FID labels" option is
-toggled on (See [“Analysis Options”](FunctionID.md#analysisoptions)). The number of instructions is computed as
+toggled on (See [“Analysis Options”](FunctionID.md#analysis-options)). The number of instructions is computed as
 the *match score* and can include counts of instructions in parent or child functions.
-For details about the match score and thresholds, see [“Scoring and Disambiguation”](FunctionID.md#scoring).
+For details about the match score and thresholds, see [“Scoring and Disambiguation”](FunctionID.md#scoring-and-disambiguation).
 
 
 If there is a Single Match, the analyzer will:
@@ -182,7 +182,7 @@ Once a potential match is discovered, it is assigned a score based on:
 
 
 Once scores are assigned, potential matches are filtered based on the
-*instruction count threshold* (See [“Analysis Options”](FunctionID.md#analysisoptions)).
+*instruction count threshold* (See [“Analysis Options”](FunctionID.md#analysis-options)).
 This helps prevent small functions that randomly match database entries
 from being reported. Note however that a small
 function can still be correctly reported if its parent or child functions also have matches,

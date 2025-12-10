@@ -30,7 +30,7 @@ the *Model Statistics* table).
 5. Examine the resulting table to determine if there is a good cutoff for
 the probabilities.  Note that some of the "errors" might not actually be
 errors of the model: see the discussion in
-[Debug Model Table](#debugmodeltable).
+[Debug Model Table](#debug-model-table).
 6. If you're satisified with the performance of the model, right-click on the
 row and select *Apply Model*.  If you aren't, you can try changing the parameters
 and training again.  You can also try the *Include Bit Features* training option.
@@ -57,9 +57,9 @@ This table is the main interface for training and applying models.
 
 
 The values in this panel control the number of models trained and the data used to train them.
-The first three fields: [Number of Pre-Bytes (CSV)](#numberofprebytes),
-[Number of Initial Bytes (CSV)](#numberofinitialbytes), and
-[Start to Non-start Sampling Factors (CSV)](#starttononstartfactors) accept
+The first three fields: [Number of Pre-Bytes (CSV)](#number-of-pre-bytes-csv),
+[Number of Initial Bytes (CSV)](#number-of-initial-bytes-csv), and
+[Start to Non-start Sampling Factors (CSV)](#start-to-non-start-sampling-factors-csv) accept
 CSVs of positive integers as input (a single integer with no comma is allowed).  Models
 corresponding to all possible choices of the three values will be trained and evaluated.
 That is, if you enter two values for the *Pre-bytes* field, three values for the
@@ -100,7 +100,7 @@ set.
 
 This field allows you to specify values of context registers.  Addresses will only
 be added to the training/test sets if they agree with these values, and the disassembly
-action on the [Potential Functions Table](#functionstarttable) will apply the
+action on the [Potential Functions Table](#potential-functions-table) will apply the
 context register values first.  This field accepts CSVs of the form "creg1=x,creg2=y,...".
 For example, to restrict Thumb mode in an ARM program, you would enter "TMode=1" in this field.
 
@@ -137,9 +137,9 @@ This panel displays information about the functions in the program.
 
 
 This field displays the number of functions meeting the size bound in the
-[Minimum Function Size](#minimumfunctionsize) field.  You can use
+[Minimum Function Size](#minimum-function-size) field.  You can use
 this to ensure that the value in [Maximum Number
-of Starts](#maximumnumberofstarts) field doesn't cause all starts to be used for training (leaving
+of Starts](#maximum-number-of-starts) field doesn't cause all starts to be used for training (leaving
 none for testing).
 
 
@@ -148,16 +148,16 @@ none for testing).
 
 This value is the minimum size of an undefined address range that will be considered when
 applying the model to a program. Defaults to the value stored in the plugin options, see
-[Minimum Length of Undefined Ranges to Search](#minlengthundefinedrange).
+[Minimum Length of Undefined Ranges to Search](#minimum-length-of-undefined-ranges-to-search).
 
 
 #### Restrict Search to Aligned Addresses
 
 
 If this is checked, only addresses which are zero modulo the value in the
-[Alignment Modulus](#alignmentmodulus) combo box are searched for function starts.
+[Alignment Modulus](#alignment-modulus) combo box are searched for function starts.
 This does not affect training or testing, but can be a useful optimization when applying
-models, for instance when the [Function Alignment Table](#functionalignmenttable)
+models, for instance when the [Function Alignment Table](#function-alignment-table)
 shows that all (known) functions in the program are aligned on 16-byte boundaries.
 
 
@@ -165,7 +165,7 @@ shows that all (known) functions in the program are aligned on 16-byte boundarie
 
 
 The value in this combo box determines the modulus used when computing the values in
-the [Function Alignment Table](#functionalignmenttable).
+the [Function Alignment Table](#function-alignment-table).
 
 
 #### Function Alignment Table
@@ -188,10 +188,10 @@ Actions on these rows allow you to apply the models or see the test set failures
 This action will apply the model to the program used to train it. The addresses
 searched consist of all addresses which are loaded, initialized, marked as executable,
 and not already in a function body (this set can be modified by the user via the
-[Restrict Search to Aligned Addresses](#restrictsearchtoalignedaddresses)
-and [Minimum Length of Undefined Ranges to Search](#minlengthundefinedrange)
+[Restrict Search to Aligned Addresses](#restrict-search-to-aligned-addresses)
+and [Minimum Length of Undefined Ranges to Search](#minimum-length-of-undefined-ranges-to-search)
 options).  The results are displayed in a
-[Function Start Table](#functionstarttable).
+[Function Start Table](#potential-functions-table).
 
 
 #### Apply Model To Other Program... Action
@@ -212,7 +212,7 @@ This action will apply the model to the current selection in the program used to
 #### Debug Model Action
 
 
-This action will display a [Debug Model Table](#debugmodeltable), which shows
+This action will display a [Debug Model Table](#debug-model-table), which shows
 all of the errors encountered when applying the model to its test set.
 
 
@@ -239,7 +239,7 @@ corresponding to a row in the selection.
 ### Disassemble and Apply Context Action
 
 
-This action is similar to the [Disassemble Action](#disassembleaction), except
+This action is similar to the [Disassemble Action](#disassemble-action), except
 it sets the context register values specified before training the model at the addresses
 and then disassembles.
 
@@ -255,7 +255,7 @@ address is the start of a basic block.  This action creates functions at all suc
 
 
 This action is enabled when the selection contains exactly one row.  It displays
-a [table](#similarstartstable) of the function starts in the training set
+a [table](#similar-function-starts-table) of the function starts in the training set
 which are most similar to the bytes at the address of the row.
 
 
@@ -276,7 +276,7 @@ above the similar starts table.
 ## Debug Model Table
 
 
-This table has the same format as the [Potential Functions Table](#functionstarttable)
+This table has the same format as the [Potential Functions Table](#potential-functions-table)
 but does not have the disassembly or function-creating actions (it does have the action to
 display similar function starts).  It displays all addresses in the test set where the classifier
 made an error.  Note that some in some cases, it might be the classifier which is correct and the

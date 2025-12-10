@@ -1,7 +1,6 @@
 [Home](../index.md) > [FunctionBitPatternsExplorerPlugin](index.md) > Pattern Clipboard
 
-# Function Bit Patterns Explorer
-Plugin
+# Function Bit Patterns Explorer Plugin
 
 
 The **Function Bit Patterns Explorer Plugin** is used to discover patterns in the bytes
@@ -10,7 +9,7 @@ used to discover new functions based on the functions that have already been fou
 
 
 The explorer can also be used to analyze a collection of XML files containing the function
-start/return information for a [collection of binaries](#xml-directory). Such
+start/return information for a [collection of binaries](#directory-of-xml-files). Such
 patterns can be used to guide the **Function Start Analyzer** during auto-analysis.
 
 
@@ -138,7 +137,7 @@ Each tab displays a different view of the gathered data:
 [Context Register Information Tab](#context-register-information-tab)
 
 
-[Pattern Clipboard](#pattern-clipboard-tab)
+[Pattern Clipboard](#pattern-clipboard)
 
 
 ### Byte Sequence Tabs
@@ -222,8 +221,7 @@ that functions are aligned along a certain boundary, you don't have to search fo
 function starts in the non-aligned bytes.
 
 
-### Context Register Information
-Tab
+### Context Register Information Tab
 
 
 This tab displays all values recorded for the context registers you specified.
@@ -316,8 +314,7 @@ an action to [Mine Sequential
 Patterns](#mining-closed-sequential-patterns).
 
 
-## Mining Closed Sequential
-Patterns
+## Mining Closed Sequential Patterns
 
 
 A **Closed Sequential Pattern** is a pattern such that no proper super-pattern

@@ -4,10 +4,10 @@
 Most table headers in Ghidra support some or all of the following features:
 
 
-1. [the ability to sort one or more columns](#sortingcolumns),
-2. [the ability to hide columns](#selectcolumns),
-3. [the ability to add additional columns](#selectcolumns), and
-4. [the ability to change appearance settings for some columns](#columnsettings).
+1. [the ability to sort one or more columns](#sorting-columns),
+2. [the ability to hide columns](#choosing-columns),
+3. [the ability to add additional columns](#choosing-columns), and
+4. [the ability to change appearance settings for some columns](#column-settings).
 
 
 If you are using a table that does not offer one of the above features, and you would like

@@ -49,8 +49,7 @@ Queries are quick: For a single function, results typically come back in microse
 even for a database containing millions of functions.
 
 
-## Overview of
-Tools
+## Overview of Tools
 
 
 A BSim Database is built on top of one of three technologies: PostgreSQL,

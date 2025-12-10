@@ -48,8 +48,8 @@ snapshots and examine old breakpoints. You may also emulate from those snapshots
 target is no longer alive. By default, those historical breakpoints are disabled in the
 integrated emulator, but they can be toggled in the usual ways. In addition, the locations can
 be manipulated independently, since the emulator has its own breakpoint set. Emulated
-breakpoints can be configured with conditions expressed in Sleigh using the [Set Condition](#set-condition) action, or configured to replace the instruction's semantics
-altogether using the [Set Injection](#set-injection) action.
+breakpoints can be configured with conditions expressed in Sleigh using the [Set Condition](#set-condition-emulator) action, or configured to replace the instruction's semantics
+altogether using the [Set Injection](#set-injection-emulator) action.
 
 
 Because of the logical grouping of breakpoints, it is possible for a breakpoint to be in a
@@ -288,8 +288,7 @@ located on the conditional jump, would simply skip the instruction:
 For organizing breakpoints the manager provides the following actions:
 
 
-### Filter to
-Current Trace
+### Filter to Current Trace
 
 
 This toggle is always available. It filters the bottom table to those locations in the
@@ -297,8 +296,7 @@ current trace only. Additionally, the "Locations" column of the top table will o
 in the current trace.
 
 
-### Filter to
-Breakpoint Selection
+### Filter to Breakpoint Selection
 
 
 This action is always available. It filters the bottom table to those locations belonging to

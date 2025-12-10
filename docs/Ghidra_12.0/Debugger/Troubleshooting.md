@@ -15,7 +15,7 @@ WinDbg.
 The first place to look when you're having trouble is the debugger's terminal. If you do not
 see one, check the **Window → Terminals** menu. If there is not one there, then there
 is no back-end debugger running — unless, perhaps, you are trying to use a Recorder-based
-target. See [Plugin Configuration](#plugin-conf) if you suspect this is the
+target. See [Plugin Configuration](#plugin-configuration) if you suspect this is the
 case.
 
 

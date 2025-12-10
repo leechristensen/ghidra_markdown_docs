@@ -39,7 +39,7 @@ the version specifier for Protobuf.
   ```
 
 
-If you're using `lldb` from the Android NDK and do not have Pip, see [Setup for Android NDK](#setup-ndk)
+If you're using `lldb` from the Android NDK and do not have Pip, see [Setup for Android NDK](#setup-for-android-ndk)
 
 
 If you are offline, or would like to use our provided packages, we still use Pip, but with a
@@ -203,14 +203,14 @@ target.default-arch ...`" immediately before the "`kdp-remote ...`" command.
 ## Via SSH
 
 
-This works the same as the [GDB via SSH](../gdb/gdb.md#ssh) launcher,
+This works the same as the [GDB via SSH](../gdb/gdb.md#via-ssh) launcher,
 but runs `lldb` on a remote system via `ssh`.
 
 
 ## Android
 
 
-This has the same options as the [LLDB via SSH](#ssh) launcher, which are
+This has the same options as the [LLDB via SSH](#via-ssh) launcher, which are
 necessary for connecting to the Android debugger, but executes via the normal lldb
 mechanism.
 

@@ -30,7 +30,7 @@ specifications must be defined. BSim database specifications are managed by the 
 Manager dialog.
 
 
-The server dialog can be invoked either from main toolbar, **BSim → Manage Servers**, or using the ![Configure Filter](../icons/exec.png) button in either the [BSim Overview](#bsim-overview-dialog) or [BSim Search](#bsim-search-dialog)
+The server dialog can be invoked either from main toolbar, **BSim → Manage Servers**, or using the ![Configure Filter](../icons/exec.png) button in either the [BSim Overview](#bsim-overview-query) or [BSim Search](#bsim-similar-function-search)
 dialogs.
 
 
@@ -104,7 +104,7 @@ To invoke an overview search dialog, select **BSim → Overview...**
 
 
 To start the overview task, select a predefined BSim database server from the combo box or
-press the ![Configure Filter](../icons/exec.png) button to bring up the [Manage BSim Servers dialog](#bsim-servers-dialog). Then adjust the similarity and
+press the ![Configure Filter](../icons/exec.png) button to bring up the [Manage BSim Servers dialog](#defining-and-managing-bsim-databases). Then adjust the similarity and
 confidence settings as desired, and press the Overview button. See the settings for the [Similar Functions Search](#bsim-server) for more information about similarity and
 confidence values.
 
@@ -166,7 +166,7 @@ The standard procedure is to select an upper-bound for a function's Hit Count, s
 row in the table below that threshold, and then transfer that selection to the main Code
 Browser window by clicking on the Make a selection icon in the upper right corner of the table.
 Then, with selection active, invoke the [Search Similar
-Functions](#bsim-search-dialog).
+Functions](#bsim-similar-function-search).
 
 
 ## BSim Similar Function Search
@@ -361,7 +361,7 @@ functionality. Small functions can produce false positive matches that artificia
 confidence score, and matches to library functions increase the score even though the shared
 functionality is not significant. Proper filtering of the queried subset and of the results
 may be crucial to getting a meaningful result. See [The
-Overview Query](#bsim-overview-dialog).
+Overview Query](#bsim-overview-query).
 
 
 ### Actions
@@ -377,7 +377,7 @@ set.
 **Searched Functions**- Pops up a dialog showing a table of all searched functions and
 the match count for each.
 - ![Configure Filter](../icons/exec.png) **Post Filters** - Pops up a dialog for creating
-post search filters to further reduce the data being displayed in the table. See [BSim Filters](#bsim-filters) for a description of the filters.
+post search filters to further reduce the data being displayed in the table. See [BSim Filters](#filters) for a description of the filters.
 - ![Split](../icons/view_top_bottom.png)  **Hide/Show Executables Summary Table**- Toggles the
 Executables Summary table on or off.
 - &gt;![Navigate On Incoming Event](../icons/locationIn.gif) **Navigate on table selection**- Toggles

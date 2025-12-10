@@ -5,7 +5,7 @@
 
 The Function Tag window provides a list of function tags defined in the currently open
 program. It will also show which tags are assigned to the currently-selected function. Tags may
-be created by the user, or loaded from a predefined set (see section on [loading tags](#loading-tags) below).
+be created by the user, or loaded from a predefined set (see section on [loading tags](#loading-external-tags) below).
 
 
 To display the Function Tag window, select the **Window** → **Function Tags** option on the tool menu. Optionally, the

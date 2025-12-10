@@ -30,7 +30,7 @@ plugins.
 
 
 Save changes to your tool by clicking on the ![disk.png](../icons/disk.png) icon in the dialog's toolbar; [save your tool to a different
-name](Ghidra_Tool_Administration.md#save-tool) by clicking on the ![disk_save_as.png](../icons/disk_save_as.png) icon.
+name](Ghidra_Tool_Administration.md#save-tool-to-tool-chest) by clicking on the ![disk_save_as.png](../icons/disk_save_as.png) icon.
 
 
 #### Configuring All Plugins
@@ -108,7 +108,7 @@ Tool](Ghidra_Tool_Administration.md#create-tool)
 - [Configure the Ghidra Project
 Window](../FrontEndPlugin/Ghidra_Front_end.md)
 - [Save Tool to Tool
-Chest](Ghidra_Tool_Administration.md#save-tool)
+Chest](Ghidra_Tool_Administration.md#save-tool-to-tool-chest)
 - [Ghidra Tool
 Administration](Ghidra_Tool_Administration.md)
 

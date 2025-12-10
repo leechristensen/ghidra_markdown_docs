@@ -39,7 +39,7 @@ time, or the snapshot does not correspond to an event, then it is the snapshot c
 - Schedule - if applicable, a source snap and the stepping schedule which produces this
 snapshot. This always applies to *scratch* snapshots produced by emulation, but may
 (rarely) apply to recorded events if the stepping schedule between them is somehow known. See
-the [Go To Time](#goto-time) action for a description of the notation. *(hidden
+the [Go To Time](#go-to-time) action for a description of the notation. *(hidden
 by default)*
 - Description - a user-modifiable description of the snapshot or event. This defaults to
 the debugger's description of the event.

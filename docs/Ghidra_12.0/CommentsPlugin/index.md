@@ -4,8 +4,8 @@
 
 ## Contents
 
-- [Add or Edit Comments](Comments.md#edit-comments)
-- [Delete Comments](Comments.md#delete-comments)
-- [Navigating in Codebrowser through Comments](Comments.md#navigating-through-comments)
-- [Displaying Comment History](Comments.md#show-comment-history)
+- [Add or Edit Comments](Comments.md#adding-or-editing-comments-set-comment)
+- [Delete Comments](Comments.md#deleting-comments)
+- [Navigating in Codebrowser through Comments](Comments.md#navigating-in-the-code-browser)
+- [Displaying Comment History](Comments.md#displaying-comment-history)
 - [Comments](Comments.md)

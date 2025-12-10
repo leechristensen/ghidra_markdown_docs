@@ -19,6 +19,9 @@ class LinkResolver:
         self.html_to_md_map: dict[str, str] = {}
         # Map from help/topics/... paths to source file paths
         self.html_to_source: dict[str, Path] = {}
+        # Map from (md_path, html_anchor_slug) -> gfm_heading_slug
+        # Used to convert HTML anchor references to correct GFM heading anchors
+        self.anchor_mappings: dict[str, dict[str, str]] = {}
 
     def add_mapping(self, html_path: str, md_path: str, source_path: Optional[Path] = None) -> None:
         """Add a mapping from HTML path to Markdown path."""
@@ -29,6 +32,35 @@ class LinkResolver:
         self.html_to_md_map[html_path] = md_path
         if source_path:
             self.html_to_source[html_path] = source_path
+
+    def add_anchor_mappings(self, md_path: str, anchor_map: dict[str, str]) -> None:
+        """Add anchor mappings for a markdown file.
+
+        Args:
+            md_path: The markdown file path (e.g., "BSim/DatabaseConfiguration.md")
+            anchor_map: Dict mapping HTML anchor slugs to GFM heading slugs
+                       e.g., {"tailorbsim": "tailoring-bsim"}
+        """
+        md_path = md_path.replace("\\", "/")
+        if anchor_map:
+            self.anchor_mappings[md_path] = anchor_map
+
+    def _resolve_anchor(self, anchor_slug: str, target_md_path: str) -> str:
+        """Resolve an anchor slug to the correct GFM heading anchor.
+
+        Args:
+            anchor_slug: The slugified HTML anchor name
+            target_md_path: The target markdown file path
+
+        Returns:
+            The correct GFM anchor (may be different if HTML anchor doesn't match heading text)
+        """
+        target_md_path = target_md_path.replace("\\", "/")
+        if target_md_path in self.anchor_mappings:
+            file_anchors = self.anchor_mappings[target_md_path]
+            if anchor_slug in file_anchors:
+                return file_anchors[anchor_slug]
+        return anchor_slug
 
     def resolve_link(self, href: str, current_md_path: str) -> str:
         """
@@ -48,29 +80,34 @@ class LinkResolver:
         if href.startswith(("http://", "https://", "mailto:", "ftp://")):
             return href
 
-        # Handle anchor-only links - slugify for markdown compatibility
+        # Handle anchor-only links - slugify and resolve for markdown compatibility
         if href.startswith("#"):
             slug = slugify(href[1:])
-            return "#" + slug if slug else href
+            if slug:
+                # Resolve anchor to correct GFM heading slug for current file
+                resolved_slug = self._resolve_anchor(slug, current_md_path)
+                return "#" + resolved_slug
+            return href
 
         # Normalize the href
         href = href.replace("\\", "/")
 
         # Split off anchor if present - slugify for markdown compatibility
-        anchor = ""
+        # Note: actual anchor resolution happens in _resolve_help_path after we know target file
+        anchor_slug = ""
         if "#" in href:
             href, anchor_text = href.split("#", 1)
-            slug = slugify(anchor_text)
-            anchor = "#" + slug if slug else ""
+            anchor_slug = slugify(anchor_text)
 
         # Handle help/topics/ paths
         if href.startswith("help/topics/"):
-            return self._resolve_help_path(href, anchor, current_md_path)
+            return self._resolve_help_path(href, anchor_slug, current_md_path)
 
         # Handle help/shared/ paths (images)
         if href.startswith("help/shared/"):
             # These are shared images, keep the path structure
-            return href + anchor
+            anchor_str = "#" + anchor_slug if anchor_slug else ""
+            return href + anchor_str
 
         # Handle docs/ paths (like docs/WhatsNew.html, docs/README_PDB.html)
         if href.startswith("docs/"):
@@ -85,18 +122,24 @@ class LinkResolver:
             current_dir = Path(current_md_path).parent
             depth = len(current_dir.parts) if current_dir.parts and current_dir.parts[0] != "." else 0
             relative_prefix = "../" * depth if depth > 0 else ""
-            return f"{relative_prefix}docs/{doc_name}" + anchor
+            anchor_str = "#" + anchor_slug if anchor_slug else ""
+            return f"{relative_prefix}docs/{doc_name}" + anchor_str
 
         # Handle relative paths
-        return self._resolve_relative_path(href, anchor, current_md_path)
+        return self._resolve_relative_path(href, anchor_slug, current_md_path)
 
-    def _resolve_help_path(self, href: str, anchor: str, current_md_path: str) -> str:
+    def _resolve_help_path(self, href: str, anchor_slug: str, current_md_path: str) -> str:
         """Resolve a help/topics/... path."""
         # Check if we have a mapping for this file
         if href in self.html_to_md_map:
             md_path = self.html_to_md_map[href]
+            # Resolve anchor to correct GFM heading slug
+            resolved_anchor = ""
+            if anchor_slug:
+                resolved_slug = self._resolve_anchor(anchor_slug, md_path)
+                resolved_anchor = "#" + resolved_slug
             # Make it relative to current file
-            return self._make_relative(md_path, current_md_path) + anchor
+            return self._make_relative(md_path, current_md_path) + resolved_anchor
 
         # Try with different extensions
         for ext in [".htm", ".html", ""]:
@@ -106,7 +149,12 @@ class LinkResolver:
 
             if test_path in self.html_to_md_map:
                 md_path = self.html_to_md_map[test_path]
-                return self._make_relative(md_path, current_md_path) + anchor
+                # Resolve anchor to correct GFM heading slug
+                resolved_anchor = ""
+                if anchor_slug:
+                    resolved_slug = self._resolve_anchor(anchor_slug, md_path)
+                    resolved_anchor = "#" + resolved_slug
+                return self._make_relative(md_path, current_md_path) + resolved_anchor
 
         # No mapping found, convert path structure
         # help/topics/PluginName/File.htm -> PluginName/File.md
@@ -121,15 +169,22 @@ class LinkResolver:
             elif not path.lower().endswith(image_extensions):
                 # Only add .md if not an image file
                 path = path + ".md"
-            return self._make_relative(path, current_md_path) + anchor
+            # Resolve anchor for the target path
+            resolved_anchor = ""
+            if anchor_slug:
+                resolved_slug = self._resolve_anchor(anchor_slug, path)
+                resolved_anchor = "#" + resolved_slug
+            return self._make_relative(path, current_md_path) + resolved_anchor
 
-        return href + anchor
+        anchor_str = "#" + anchor_slug if anchor_slug else ""
+        return href + anchor_str
 
-    def _resolve_relative_path(self, href: str, anchor: str, current_md_path: str) -> str:
+    def _resolve_relative_path(self, href: str, anchor_slug: str, current_md_path: str) -> str:
         """Resolve a relative path."""
         # Handle images/ subdirectory
         if href.startswith("images/"):
-            return href + anchor
+            anchor_str = "#" + anchor_slug if anchor_slug else ""
+            return href + anchor_str
 
         # Handle relative paths that eventually reach help/topics/
         # e.g., ../../../help/topics/FrontEndPlugin/File.htm
@@ -137,12 +192,13 @@ class LinkResolver:
             # Extract the path after help/topics/
             idx = href.find("help/topics/")
             help_path = "help/topics/" + href[idx + len("help/topics/") :]
-            return self._resolve_help_path(help_path, anchor, current_md_path)
+            return self._resolve_help_path(help_path, anchor_slug, current_md_path)
 
         # Handle docs/ paths (like ../docs/README_PDB.html)
         if "docs/" in href and "README_PDB" in href:
+            anchor_str = "#" + anchor_slug if anchor_slug else ""
             # Special case for README_PDB which is in docs/ folder
-            return "../docs/README_PDB.md" + anchor
+            return "../docs/README_PDB.md" + anchor_str
 
         # Convert extension if needed
         if href.endswith(".htm"):
@@ -150,7 +206,19 @@ class LinkResolver:
         elif href.endswith(".html"):
             href = href[:-5] + ".md"
 
-        return href + anchor
+        # Resolve anchor for the target markdown file
+        # For relative links like "DatabaseConfiguration.md#tailorbsim",
+        # compute the target path and resolve the anchor
+        if anchor_slug:
+            # Compute target path relative to current directory
+            current_dir = Path(current_md_path).parent
+            target_path = str(current_dir / href).replace("\\", "/")
+            # Normalize path (resolve ..)
+            target_path = str(Path(target_path)).replace("\\", "/")
+            resolved_anchor = self._resolve_anchor(anchor_slug, target_path)
+            return href + "#" + resolved_anchor
+
+        return href
 
     def _make_relative(self, target_path: str, current_path: str) -> str:
         """Make target_path relative to current_path."""

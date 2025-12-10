@@ -13,9 +13,9 @@ projects, and different users is a long term goal for Ghidra.
 
 - [Basic Concepts](#basic-concepts)
 - [Data Type Manager Window](data_type_manager_window.md)
-- [Working With Data Type Archives](#archives)
-- [Working With Categories](#category)
-- [Working With Data Types](#data-types)
+- [Working With Data Type Archives](#working-with-data-type-archives)
+- [Working With Categories](#working-with-categories)
+- [Working With Data Types](#working-with-data-types)
 - [Managing Archives](data_type_manager_archives.md)
 
 
@@ -44,7 +44,7 @@ Project data type archives. Data type archives can be accessed within the
 is displayed as a node in the *Data Type Manager*
 tree. Archives can be opened by the user or automatically when a program is opened which
 references that archive. Data type archives can be [open for
-modification](#open-for-editing) or as read-only. Within the *Data Type Manager* window there are
+modification](#opening-a-file-data-type-archive-for-editing) or as read-only. Within the *Data Type Manager* window there are
 actions for opening, closing, renaming, and making archives modifiable.
 
 
@@ -106,7 +106,7 @@ programs.
 Within a program or data type archive, data types can be organized using categories.
 Categories are like folders in a filesystem and allow data types to be organized into a
 hierarchical structure. Categories are ignored for purposes of [data
-type synchronization](#synchronizing). In other words, the same data type might be in a category named
+type synchronization](#updating-an-archive-from-a-source-archive). In other words, the same data type might be in a category named
 "aaa" in an archive and be in a category named "bbb" in the program. As far as Ghidra is
 concerned, the different category does not constitute a data type difference.
 
@@ -133,7 +133,7 @@ One way to apply data types is to drag them from an archive and drop them on an 
 the program [Listing](../CodeBrowserPlugin/CodeBrowser.md#code-browser). This
 action will cause a copy of the data type to be added to the program and then a reference to
 the copy will be used to annotate the program element. There are other ways of applying data
-types to a program and they are described in more detail [later](#applying-datatypes).
+types to a program and they are described in more detail [later](#applying-data-types-to-a-program).
 
 
 ### Resolving Data Types
@@ -149,7 +149,7 @@ data type is equivalent, Ghidra may not be able to determine if the existing dat
 really meant to be the same as the *resolving* data type. Generally, such conflicts are
 resolved by renaming the new or moved type by appending ".conflict" to its name. For many of
 the data type actions initiated from the Data Type tree window, the specific conflict
-resolution is determined by the current [Data Type Conflict Mode](data_type_manager_window.md#conflict-mode).
+resolution is determined by the current [Data Type Conflict Mode](data_type_manager_window.md#data-type-conflict-resolution-mode).
 In the end, applying a single data type to a program can cause many new data types to be
 added to the program.
 
@@ -222,11 +222,11 @@ data type is now different from its source data type. Ghidra uses the term *reve
 throw away the changes and put the data type back to the way it is in the source archive.
 If changes are made in both the referenced data type and the source data type, the
 *revert* action will not be available because the original state is not known. In this
-case, you must either [commit](#commit), which will lose the changes in the
-source archive, or [update](#synchronizing) losing the changes in the client
+case, you must either [commit](#committing-changes-in-an-archive-to-a-source-archive), which will lose the changes in the
+source archive, or [update](#updating-an-archive-from-a-source-archive) losing the changes in the client
 archive. Currently, there is no merge capability.
 
-See [Reverting Changes](#revert-data-type) for more information.
+See [Reverting Changes](#reverting-changes) for more information.
 
 
 ### Synchronizing an Archive
@@ -234,7 +234,7 @@ See [Reverting Changes](#revert-data-type) for more information.
 
 When changes are made to data types in either the source archive or client archive, the
 archive is said to be *out-of-sync*. Ghidra provides a capability known as
-*synchronizing* to find all the data types that need to be [committed](#commit-to-archive), [updated](#update-from-archive), or [reverted](#revert-data-type) and allow the user to make a decision on each data
+*synchronizing* to find all the data types that need to be [committed](#committing-changes-to-source-archive), [updated](#updating-data-types-from-source-archive), or [reverted](#reverting-changes) and allow the user to make a decision on each data
 type.
 
 
@@ -267,7 +267,7 @@ There are two types of Data Type Archives: File and Project.
 The data types contained in an archive are organized into categories similar to the way
 files are organized into directories in a filesystem. Archives are useful for sharing data
 types with other users, or making your data types available for use in other projects.
-Normally, file archives are opened in a read-only mode, but can optionally be [opened](#open-for-editing) for editing. Project archives are normally opened for
+Normally, file archives are opened in a read-only mode, but can optionally be [opened](#opening-a-file-data-type-archive-for-editing) for editing. Project archives are normally opened for
 editing, since they support sharing and version control and therefore allow more than one
 user to modify them at a time. Only one user at a time can have a file archive opened for
 editing.
@@ -308,8 +308,7 @@ name, a dialog will appear asking if the existing archive should be over-written
 node will appear in the tree for the newly created archive.
 
 
-### Creating a New Project Data Type
-Archive
+### Creating a New Project Data Type Archive
 
 
 From the local menu ![menu16.gif](../icons/menu16.gif) , select ***New
@@ -387,11 +386,10 @@ editing that archive, this action will fail and a dialog will appear explaining 
 someone else is already editing that archive.
 
 
-### Closing a File Data Type
-Archive for Editing
+### Closing a File Data Type Archive for Editing
 
 
-When an archive that is [open for editing](#open-for-editing) no longer
+When an archive that is [open for editing](#opening-a-file-data-type-archive-for-editing) no longer
 needs to be edited, then it should be put back to a read-only mode so that other users
 can then modify it. Select the data type archive to close for editing, right-click on it
 and select the ***Close for Editing*** action. If the archive has unsaved
@@ -428,21 +426,21 @@ popup menu action while that archive is selected in the data type tree.
 Each data type archive which is open for editing maintains a
 stack of unsaved changes.  The next change which may be reverted is described by the archive's
 Undo Change popup menu item.  If this action is used and a change is reverted it may be re-applied by using the
-[Redo Change](#redo-archive-change) action.  When the data type archive is
-[saved](#save) or [closed for editing](#lock-archive) the undo/redo stack is
+[Redo Change](#redo-unsaved-archive-change) action.  When the data type archive is
+[saved](#saving-changes-to-a-data-type-archive) or [closed for editing](#closing-a-file-data-type-archive-for-editing) the undo/redo stack is
 cleared.
 
 
 ### Redo Unsaved Archive Change
 
 
-The previous [reverted](#undo-archive-change) unsaved archive change may be
+The previous [reverted](#undo-unsaved-archive-change) unsaved archive change may be
 re-applied by selecting the **Redo Change:...** popup menu action while that archive is selected in
 the data type tree.
 The next reverted change which may be re-applied is described by the archive's
 Redo Change popup menu item.  If this action is used and a change is re-applied it may again be reverted by using the
-[Undo Change](#undo-archive-change) action.  When the data type archive is
-[saved](#save) or [closed for editing](#lock-archive) the undo/redo stack is
+[Undo Change](#undo-unsaved-archive-change) action.  When the data type archive is
+[saved](#saving-changes-to-a-data-type-archive) or [closed for editing](#closing-a-file-data-type-archive-for-editing) the undo/redo stack is
 cleared.
 
 
@@ -453,7 +451,7 @@ Deleting an archive will not only remove the archive from the tree, but will
 permanently remove it from the filesystem. To delete an archive, right-click on it and
 select the ***Delete Archive*** action. An archive file must be open for editing
 before this action will appear (see [Opening a Data Type
-Archive for Editing](#open-for-editing)).
+Archive for Editing](#opening-a-file-data-type-archive-for-editing)).
 
 
 ### Removing an Invalid Data Type Archive
@@ -465,8 +463,7 @@ from the tool configuration and the current program options, you may right-click
 select the ***Remove Invalid Archive*** action.
 
 
-### Updating an Archive From a Source
-Archive
+### Updating an Archive From a Source Archive
 
 
 Datatypes within an archive that originally came from some other source archive may
@@ -762,8 +759,7 @@ keyboard by pressing Ctrl-Shift-D .  This will present you a Data Type Chooser
 Dialog that you can use to choose a type to edit.
 
 
-### Creating a new Enum from a Selection of
-Enums
+### Creating a new Enum from a Selection of Enums
 
 
 Select two or more existing enums. Select the ***Create Enum from Selection***

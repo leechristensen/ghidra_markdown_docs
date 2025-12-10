@@ -14,7 +14,7 @@ information about:
 - The running tools' sizes and positions on the screen
 - Viewed projects
 - List of recently opened projects
-- The active [workspace](Ghidra_Front_end.md#workspace)
+- The active [workspace](Ghidra_Front_end.md#workspaces)
 
 
 To save the active Ghidra project:
@@ -30,11 +30,11 @@ To save the active Ghidra project:
 
 
 - [Ghidra Projects](../Project/Ghidra_Projects.md)
-- [Ghidra Project Window](Ghidra_Front_end.md#project-window)
+- [Ghidra Project Window](Ghidra_Front_end.md#ghidra-project-window)
 - [Code Browser
 Options](../CodeBrowserPlugin/CodeBrowserOptions.md)
 - [Tool Options](../Tool/ToolOptions_Dialog.md)
-- [Exit Ghidra](Ghidra_Front_end_Menus.md#exit-ghidra)
+- [Exit Ghidra](Ghidra_Front_end_Menus.md#exiting-ghidra)
 
 
 ---

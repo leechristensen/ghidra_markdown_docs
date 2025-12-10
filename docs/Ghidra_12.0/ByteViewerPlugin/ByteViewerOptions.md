@@ -59,8 +59,8 @@ on the Options dialog.
 **Related Topics:**
 
 
-- [Tool Options](../Tool/ToolOptions_Dialog.md#optionsfortool)
-- [Key Bindings](../Tool/ToolOptions_Dialog.md#keybindings-option)
+- [Tool Options](../Tool/ToolOptions_Dialog.md#tool)
+- [Key Bindings](../Tool/ToolOptions_Dialog.md#key-bindings)
 - [Byte Viewer](The_Byte_Viewer.md)
 
 

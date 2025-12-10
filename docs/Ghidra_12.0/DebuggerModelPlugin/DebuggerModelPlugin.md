@@ -20,12 +20,12 @@ For targets implementing features not natively built into the Debugger, the Mode
 Terminal windows are essential.
 
 
-The model window consists of three [togglable](#pane-toggles) panes: Objects
+The model window consists of three [togglable](#show-objects-tree) panes: Objects
 Tree, Elements Table, and Attributes Table. At the top is a path entry field, which identifies
 the current object. Each pane can be hidden, and the whole window can be cloned, allowing users
 to customize multiple views. When docked to the side of the Debugger UI, it is common to hide
 both tables, so that the Object tree is not obscured. Users who like to see register values in
-the tree should enable [Show Primitives in Tree](#show-primitives).
+the tree should enable [Show Primitives in Tree](#show-primitives-in-tree).
 
 
 ## Objects Tree Pane
@@ -76,7 +76,7 @@ the current register values for the containing thread. The values for each succe
 are those recovered by the debugger unwinding the stack. Please see the back-end debugger's
 documentation for any caveats that may apply. Unwinding is often an imperfect science.
 **NOTE:** Because targets often record register values as primitive attributes, they may
-not appear in the tree pane by default. Use the Attributes pane, or toggle [Show Primitives in Tree](#show-primitives) in the local drop-down menu.
+not appear in the tree pane by default. Use the Attributes pane, or toggle [Show Primitives in Tree](#show-primitives-in-tree) in the local drop-down menu.
 
 
 ### Node Display and Selection
@@ -86,7 +86,7 @@ Most often, each node is displayed by its name. A target may specify the display
 usually to make it match what appears in its terminal or to present a useful summary of that
 object. When a child is a link, the tree displays its key followed by its value in italics.
 When a child is a primitive, it is not displayed in the tree by default. This can be toggled
-using [Show Primitives in Tree](#show-primitives), in which case, it displays the
+using [Show Primitives in Tree](#show-primitives-in-tree), in which case, it displays the
 key followed by the primitive value. Clicking an object will select it and cause the other two
 panes to display the detailed contents of that node, including its primitive values, if any.
 Double-clicking an object may have one of 3 effects, in order of precedence:

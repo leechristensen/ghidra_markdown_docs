@@ -47,16 +47,14 @@ interact with the target, stepping at the p-code level implies you are no longer
 present."
 
 
-### Emulate
-Trace p-code Backward
+### Emulate Trace p-code Backward
 
 
 This action is available when the current coordinates have some positive number of p-code
 ticks. It steps the trace backward to the previous p-code tick.
 
 
-### Emulate
-Trace p-code Forward
+### Emulate Trace p-code Forward
 
 
 This action is available when a thread is selected. It steps the current thread forward to

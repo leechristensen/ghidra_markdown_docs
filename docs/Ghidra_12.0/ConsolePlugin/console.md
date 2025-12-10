@@ -39,7 +39,7 @@ This action clears all content in the *Console* component.
 
 This action shows a dialog that allows you to search for all occurrences
 of some text.  The dialog supports
-[Regular Expressions](../Search/Regular_Expressions.md#regex-syntax).
+[Regular Expressions](../Search/Regular_Expressions.md#regular-expression-syntax).
 While the dialog is open, all matching text is highlighted.  If the cursor is in a match,
 then the highlight color for that match will be different than the rest.
 

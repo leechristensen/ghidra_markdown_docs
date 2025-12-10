@@ -64,7 +64,7 @@ respond.
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
 - [View Defined Strings](../ViewStringsPlugin/ViewStringsPlugin.md)
 - [Translate Strings Plugin](../TranslateStringsPlugin/TranslateStringsPlugin.md)
-- [Search For Encoded Strings](../Search/Search_for_Strings.md#encoded-strings-dialog)
+- [Search For Encoded Strings](../Search/Search_for_Strings.md#search-for-encoded-strings)
 
 
 ---

@@ -8,7 +8,7 @@ window is useful for navigating to a resultant location or selecting some number
 locations for another operation that requires a selection. The information displayed in each
 column may differ depending on the search operation that populated the window. However, the
 window's capabilities are the same. The image below shows the results of a search. You will
-also see the *Search Results* window when you do a [Go To](../Navigation/Navigation.md#go-to-address-label) for matching a wildcard
+also see the *Search Results* window when you do a [Go To](../Navigation/Navigation.md#go-to-address-label-or-expression) for matching a wildcard
 entry.
 
 
@@ -26,7 +26,7 @@ being displayed.
 The tool has an option for the maximum number of search results. The search will stop after
 this number has been exceeded. To see more search results,
 [increase your search
-limit](Search_Program_Text.md#searchlimit).
+limit](Search_Program_Text.md#search-limit-option).
 
 
 ### Navigation
@@ -53,7 +53,7 @@ were found.
 ### Renaming Windows
 
 
-*see [Docking Windows - Renaming Windows](../DockingWindows/Docking_Windows.md#renaming-windows)*
+*see [Docking Windows - Renaming Windows](../DockingWindows/Docking_Windows.md#renaming-components)*
 
 
 ## Actions
@@ -111,7 +111,7 @@ You may also use this action to trigger navigation when single-clicking a table 
 - [Tool
 Options](../Tool/ToolOptions_Dialog.md)
 - [Text Search](Search_Program_Text.md)
-- [Go To](../Navigation/Navigation.md#go-to-address-label)
+- [Go To](../Navigation/Navigation.md#go-to-address-label-or-expression)
 
 
 ---

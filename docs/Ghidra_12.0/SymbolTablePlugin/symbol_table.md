@@ -55,7 +55,7 @@ Display options will be reflected in the Symbol Table.
 
 The filter text field allows you to filter the list of symbols. By default it will do a
 **"Contains"** filter, but you can change that behavior to be **"Starts With"**,
-**"Matches Exactly"**, or **"Regular Expression"**. See [Filter Options](../Trees/GhidraTreeFilter.md#filters) for more details on the
+**"Matches Exactly"**, or **"Regular Expression"**. See [Filter Options](../Trees/GhidraTreeFilter.md#ghidra-tree-and-table-filters) for more details on the
 various filter text strategies.
 
 
@@ -255,7 +255,7 @@ to use one of these filters, the appropriate symbol type filter must also be sel
 Advanced filters that do not have any of their associated type filters set, are
 disabled. Advanced filters can be tricky to use because each filter only applies to a
 subset of the types and has no effect on the other selected types during the
-query.  See the [examples](#examples) below for more information.
+query.  See the [examples](#sample-queries) below for more information.
 
 
 - **Externals -** Accepts only those symbols which are external.
@@ -409,7 +409,7 @@ would have been the same if neither was selected.
 
 - [Labels](../LabelMgrPlugin/Labels.md)
 - [Listing
-Display Options](../CodeBrowserPlugin/CodeBrowserOptions.md#listing-display)
+Display Options](../CodeBrowserPlugin/CodeBrowserOptions.md#color-and-fonts)
 
 
 ---

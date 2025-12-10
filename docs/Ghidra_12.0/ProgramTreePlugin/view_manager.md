@@ -5,7 +5,7 @@
 
 Program Trees are used to organize programs into a tree structure. Nodes within the a
 program tree can be used to navigate to the corresponding address in the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md). Also, the program tree can be
-used to restrict the view (set of addresses) that are displayed in the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md). The Program Tree Manager allows you to [create](#create-default-tree-view) , [delete](#delete-tree-view), [rename](#rename-tree-view), and [close](#close-tree-view) program tree
+used to restrict the view (set of addresses) that are displayed in the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md). The Program Tree Manager allows you to [create](#create-a-default-program-tree) , [delete](#delete-a-program-tree), [rename](#rename-a-program-tree), and [close](#close-a-program-tree) program tree
 views.
 
 
@@ -65,7 +65,7 @@ fragments.  The toggle is **Off** by default.
 *Provided by: *ProgramTreePlugin**
 
 
-### Close a  Program Tree
+### Close a Program Tree
 
 
 To close a program tree, right-mouse click on the tab of that program tree and choose the "Close" option.
@@ -79,7 +79,7 @@ Re-open the program tree by selecting it from the list of views described above.
 last program tree..
 
 
-### Rename a  Program Tree
+### Rename a Program Tree
 
 
 To rename a program tree,

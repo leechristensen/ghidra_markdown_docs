@@ -40,7 +40,7 @@ You automatically connect tools when you:
 
 
 - drag the icon for one running tool onto another running tool, OR
-- drag the icon from the [Tool Chest](Ghidra_Front_end.md#toolchest) onto the
+- drag the icon from the [Tool Chest](Ghidra_Front_end.md#tool-chest) onto the
 icon for the running tool.
 
 
@@ -101,15 +101,14 @@ just as though you had dragged and dropped the tool icons to do the automatic co
 for all events by clicking on the Disconnect All button.
 
 
-#### Some Notes on
-Connecting Tools:
+#### Some Notes on Connecting Tools:
 
 
 1. Because of the basic premise of connections, connected Tools should have the same
 program [opened](../ProgramManagerPlugin/Opening_Program_Files.md).  For
 example, tracking program locations between two tools each showing a different program
 will probably not be very useful.
-2. Tools running in different [workspaces](Ghidra_Front_end.md#workspace)
+2. Tools running in different [workspaces](Ghidra_Front_end.md#workspaces)
 may be connected. Even though tools may not be visible because they are not in your
 active workspace, they can still be connected to tools that are running in other
 workspaces.

@@ -68,7 +68,7 @@ organization changes.
 
 
 When you [import a Program](../ImporterPlugin/importer.md) or [create a new
-tree](view_manager.md#create-default-tree-view), a *default tree organization* is created; a fragment is created for each of
+tree](view_manager.md#create-a-default-program-tree), a *default tree organization* is created; a fragment is created for each of
 the memory blocks. The fragment name is the same as the memory block name.
 
 

@@ -186,7 +186,7 @@ details are provided as a sequence of p-code operations, referred to as a
 **Callother-Fixup**, which is substituted for the
 CALLOTHER operation during decompilation, or by other Analyzers that use p-code.
 Callother-Fixups are applied by Ghidra for specific processor or compiler variants,
-and a user can choose to apply them to an individual Program (see [Specification Extensions](DecompilerOptions.md#extensionoptions)).
+and a user can choose to apply them to an individual Program (see [Specification Extensions](DecompilerOptions.md#specification-extensions)).
 
 
 #### Internal Decompiler Functions
@@ -326,7 +326,7 @@ is no corresponding HighVariable.
 **Merging** is the part of the analysis process where
 the Decompiler decides what varnodes get grouped together to create the final
 HighVariables in the output.  Each varnode's scope (see the discussion in
-[Varnodes in the Decompiler](DecompilerConcepts.md#conceptvarnodessa)) provides the fundamental restriction on this process.
+[Varnodes in the Decompiler](DecompilerConcepts.md#varnodes-in-the-decompiler)) provides the fundamental restriction on this process.
 Two varnodes cannot be merged if their scopes intersect.  But this leaves a lot of
 leeway in what varnodes *can* be merged.
 
@@ -344,7 +344,7 @@ speculatively merges variables that share the same data-type. Beyond this, the D
 prioritizes variable pairs that are read and written within the same instruction and
 then pairs that are *near* each other in the control flow of the function.
 To a limited extent, users are able to control this kind of merging
-(see [Split Out As New Variable](DecompilerWindow.md#actionisolate)).
+(see [Split Out As New Variable](DecompilerWindow.md#split-out-as-new-variable)).
 
 
 ### Prototype Model
@@ -365,7 +365,7 @@ use of multiple models.  Subsequently, each distinct model has a name like **__s
 **__thiscall**. The Decompiler makes use of the prototype model, as assigned to the function by the user or
 discovered in some other way, when performing its analysis of parameters.
 It is possible for users to extend the set of prototype models available to a Program
-(see [Specification Extensions](DecompilerOptions.md#extensionoptions)).
+(see [Specification Extensions](DecompilerOptions.md#specification-extensions)).
 
 
 A prototype model is typically used as a whole and is assigned by name to individual functions.  But some of
@@ -385,14 +385,14 @@ to be that of input parameter.
 If the parameter
 is stored on the stack, the storage location is viewed as a constant offset in the **stack**
 space, where the offset is relative to the incoming value of *stack pointer*
-(see the discussion in [Address Space](DecompilerConcepts.md#conceptaddressspace)).
+(see the discussion in [Address Space](DecompilerConcepts.md#address-space)).
 
 
 The *return value* for the function, unless it is passed back on the stack, is also stored at a single
 memory location.  It is guaranteed to be at that location only at points where the function is exited.  There may be multiple exit
 points, but they all share the same return value storage location.  For return values passed back on the stack, compilers
 generally implement a special input register to hold the location where the value will be stored.  See the
-discussion of [Auto-Parameters](DecompilerConcepts.md#conceptautoparameters) and the **__return_storage_ptr__** below.
+discussion of [Auto-Parameters](DecompilerConcepts.md#auto-parameters) and the **__return_storage_ptr__** below.
 
 
 #### Auto-Parameters
@@ -503,7 +503,7 @@ processor variant.
 Changing any of the specification files described here is not recommended.
 To make additions to either the *compiler specification*
 or the *processor specification* files, see
-[Specification Extensions](DecompilerOptions.md#extensionoptions), which describes a safe and portable way
+[Specification Extensions](DecompilerOptions.md#specification-extensions), which describes a safe and portable way
 to add specific elements.
 
 

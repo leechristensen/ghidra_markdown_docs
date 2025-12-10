@@ -1,7 +1,6 @@
 [Home](../index.md) > [FunctionGraphPlugin](index.md) > Zooming
 
-# Function Graph
-Plugin
+# Function Graph Plugin
 
 
 | ![](images/FunctionGraphWindow.png) |
@@ -12,7 +11,7 @@ The Function Graph Plugin is a simple graph display that shows the code blocks o
 function containing the cursor in the [Listing](../CodeBrowserPlugin/CodeBrowser.md).
 
 
-The display consists of the [Primary View](#primary-view) and the [Satellite View](../VisualGraph/Visual_Graph.md#satellite-view). There is also a group of [actions](#function-graph-actions) that apply to the entire graph.
+The display consists of the [Primary View](#primary-view) and the [Satellite View](../VisualGraph/Visual_Graph.md#satellite-view). There is also a group of [actions](#graph-actions) that apply to the entire graph.
 
 
 > **Tip:** Ctrl-Space will toggle
@@ -23,7 +22,7 @@ Function Graph action's key binding can be changed in the tool options.
 ## Primary View
 
 
-The Primary View displays the [Vertices (or Blocks)](#vertices) and [Edges (or Control Flow)](#edges) of the graph. From this view you can interact with
+The Primary View displays the [Vertices (or Blocks)](#vertices-blocks) and [Edges (or Control Flow)](#edges) of the graph. From this view you can interact with
 blocks, both for editing and arrangement.
 
 
@@ -100,7 +99,7 @@ the screen that will select any blocks contained therein when the action is fini
 ### Navigating Blocks
 
 
-If you double-click a block header, then the [Zoom Level](#zoom) of the
+If you double-click a block header, then the [Zoom Level](#zooming) of the
 Primary View will change. If the block is not at full zoom (1:1), then the zoom level will
 be changed to full zoom. Otherwise, the zoom level will be changed to fully zoomed out. If
 you are zoomed past the [interaction threshold](#interaction-threshold), then
@@ -117,9 +116,9 @@ header.
 ### Block Information
 
 
-You can hover over a block to get descriptive information. Depending upon the [Zoom Level](#zoom) of the primary view, you will get different hovers. When zoomed past
+You can hover over a block to get descriptive information. Depending upon the [Zoom Level](#zooming) of the primary view, you will get different hovers. When zoomed past
 the interaction threshold, the hover action will trigger a popup window showing a preview
-of the block. At full zoom, you will only receive popup windows [as determined by the listing](../CodeBrowserPlugin/CodeBrowser.md#mousehover)
+of the block. At full zoom, you will only receive popup windows [as determined by the listing](../CodeBrowserPlugin/CodeBrowser.md#mouse-hover)
 inside of the block. You may disable [popups](#popups) as desired.
 
 
@@ -222,7 +221,7 @@ non-grouped vertex, this action will not edit the label at the start address of 
 vertex.
 
 
-The ![shape_ungroup.png](../icons/shape_ungroup.png) button will [ungroup](#vertex-grouping-ungroup) the
+The ![shape_ungroup.png](../icons/shape_ungroup.png) button will [ungroup](#the-ungrouping-process) the
 given vertex.
 
 
@@ -241,7 +240,7 @@ action adds to the *existing* group node chosen all other selected vertices.
 
 
 The regroup ![edit-redo.png](../icons/edit-redo.png) button is included in the header of any **uncollapsed** vertex,
-which is a vertex that is the member of a group, where that group has been [ungrouped](#vertex-grouping-ungroup). This action will **regroup** (or collapse) all
+which is a vertex that is the member of a group, where that group has been [ungrouped](#the-ungrouping-process). This action will **regroup** (or collapse) all
 vertices in the same group as the vertex containing the action. To regroup is to convert
 all members of a given group back into a single grouped vertex.
 
@@ -605,14 +604,14 @@ be undone!
 At **full zoom**, or **block level zoom**, each block is rendered at its natural
 size, which is the same scale as Ghidra's primary [Listing](../CodeBrowserPlugin/CodeBrowser.md). From that point, which is a 1:1
 zoom level, you can zoom out in order to fit more of the graph into the display. See
-[Visual Graph Zooming](../VisualGraph/Visual_Graph.md#zoom) for
+[Visual Graph Zooming](../VisualGraph/Visual_Graph.md#zooming) for
 more information on graph zooming.
 
 
 ### Vertex Quick Zoom
 
 
-If you double-click a block header, then the [Zoom Level](#zoom) of the
+If you double-click a block header, then the [Zoom Level](#zooming) of the
 Primary View will change. If the block is not at full zoom (1:1), then the zoom level will
 be changed to full zoom. Otherwise, the zoom level will be changed to fully zoomed out. If
 you are zoomed past the [interaction threshold](#interaction-threshold), then
@@ -645,8 +644,8 @@ and actions.
 
 
 - [Satellite View](../VisualGraph/Visual_Graph.md#satellite-view)
-- [Panning](../VisualGraph/Visual_Graph.md#pan)
-- [Zooming](../VisualGraph/Visual_Graph.md#zoom)
+- [Panning](../VisualGraph/Visual_Graph.md#panning)
+- [Zooming](../VisualGraph/Visual_Graph.md#zooming)
 - [Interaction Threshold](../VisualGraph/Visual_Graph.md#interaction-threshold)
 
 

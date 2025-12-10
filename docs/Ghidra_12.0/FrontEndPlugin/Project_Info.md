@@ -164,7 +164,7 @@ to Shared...** button.
 ![](images/NonSharedProjectInfo.png)
 
 
-The steps to converting your project are the same as those described for [Change Shared Project Information](#change-shared-project-info). However, at [Step 9](#step9) above you will get a dialog that warns you about losing version history
+The steps to converting your project are the same as those described for [Change Shared Project Information](#changing-shared-project-information). However, at [Step 9](#step9) above you will get a dialog that warns you about losing version history
 on versioned files. From the warning dialog, click on the **Convert** button to complete
 the conversion process.
 

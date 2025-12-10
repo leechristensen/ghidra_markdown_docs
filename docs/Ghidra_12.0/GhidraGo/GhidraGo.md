@@ -6,12 +6,12 @@
 ## Table of Contents
 
 
-- [Introduction](#general)
-- [Configure GhidraGo Plugin](#plugin)
-- [Configure Protocol Handler (Platform Specific)](#configure)
-- [Windows](#windows)
-- [Linux](#linux)
-- [Mac](#mac)
+- [Introduction](#ghidrago-introduction)
+- [Configure GhidraGo Plugin](#configure-ghidrago-plugin)
+- [Configure Protocol Handler (Platform Specific)](#configure-protocol-handler-platform-specific)
+- [Windows](#windows-protocol-handler-configuration)
+- [Linux](#linux-protocol-handler-configuration)
+- [Mac](#mac-protocol-handler-configuration)
 
 
 
@@ -144,7 +144,7 @@ paste the following:
 GhidraGo (run it once).
 
 
-([Back to Top](#top))
+([Back to Top](#ghidrago-readme))
 
 
 

@@ -91,7 +91,7 @@ and retain their active status across sessions of Ghidra.
 
 This brings up a dialog that allows the user to detach an already-attached
 Function ID database. None of the databases delivered with Ghidra can be detached;
-they can only be deactivated (see [“Choose active FidDbs...”](FunctionIDPlugin.md#chooseactivemenu)). Detaching a
+they can only be deactivated (see [“Choose active FidDbs...”](FunctionIDPlugin.md#choose-active-fiddbs)). Detaching a
 database removes it from use in searching, and also causes the user preference
 system to forget about the existence of this database.
 
@@ -148,7 +148,7 @@ most commonly called within the library. This list can be used to create a
 All functions going into a single Function ID *Library* must already be imported and analyzed
 somewhere within a single Ghidra repository (shared or non-shared). Multiple libraries contained within
 the same database can be ingested in different phases, but a single library must be written to the database
-in a single pass. The ingest dialog (see [“Populate FidDb from programs...”](FunctionIDPlugin.md#populatedialog)) specifies a single subfolder as
+in a single pass. The ingest dialog (see [“Populate FidDb from programs...”](FunctionIDPlugin.md#populate-fiddb-from-programs)) specifies a single subfolder as
 the root for the library. The process acts recursively, so there can be additional directory hierarchy under the root,
 but all programs to be included in the library must be under the one root.
 
@@ -233,7 +233,7 @@ too few instructions that don't exceed this threshold will simply not be reporte
 
 For users experiencing too many false positives, the instruction count threshold
 is the easiest thing to adjust. It is fully controllable
-by the user as an Analysis option (See [“Analysis Options”](FunctionID.md#analysisoptions)), and increasing
+by the user as an Analysis option (See [“Analysis Options”](FunctionID.md#analysis-options)), and increasing
 it will directly reduce the false positive rate, at the expense of missing some *true*
 matches whose scores now fall below the threshold.
 
@@ -269,7 +269,7 @@ a particular function.
 These strategies can all be toggled for *individual function records* in the database.
 To do this manually from the Code Browser, the user needs to search for the specific records they want to
 change using the *Debug Search Window* and then make changes from its
-*Result Window*. For details see [“Debug Search Window”](FunctionIDDebug.md#debugsearch).
+*Result Window*. For details see [“Debug Search Window”](FunctionIDDebug.md#debug-search-window).
 
 
 Strategies can also be toggled by running a Ghidra script.

@@ -18,7 +18,7 @@ The Stack Frame Editor is composed of the following:
 
 
 - *Edit Actions*: The icon buttons at the top of the editor are used to modify this
-stack frame. Each button has a different [edit action](#stack-editor-edit-actions)
+stack frame. Each button has a different [edit action](#edit-actions)
 associated with it. These allow the user to: apply changes, clear defined stack variables
 (changes them to undefined bytes), delete stack bytes, and change a stack variable data type
 to an array.
@@ -28,16 +28,16 @@ component's data type, edit a component's data type, edit the fields of a compon
 apply a cycle group or favorite.
 - *Component Table*: The upper portion of the editor contains a table with the stack
 frame's stack variables and undefined bytes. Each component (or row) consists of its offset,
-length, data type, variable name, and comment. See the [Component Fields](#stack-editor-component-fields) section for more about these fields.
+length, data type, variable name, and comment. See the [Component Fields](#component-fields) section for more about these fields.
 The offset, data type, name and comment are editable fields. The data type's category can be
-determined by [showing the data type category](#stack-editor-show-component-path).
-Stack variables can be [defined](#adddatatype) or [modified](#replacedatatype) in the table using [Drag and Drop](#dragndrop) or
-by applying a [Favorite](#stack-editor-favorite) data type. The data type for a
-stack variable can also be changed by [cycling](#stack-editor-cycle) the data
+determined by [showing the data type category](#showing-a-stack-variables-data-type-category).
+Stack variables can be [defined](#creating-a-stack-variable) or [modified](#replacing-a-stack-variables-data-type) in the table using [Drag and Drop](#drag-and-drop-basics) or
+by applying a [Favorite](#favorites-basics) data type. The data type for a
+stack variable can also be changed by [cycling](#cycling-a-component-data-type) the data
 type.
 - *Stack Frame Information Area*: This is the area below the table with the stack frame
 size, return address offset, local size, parameter offset and parameter size for the stack
-frame. The [local size](#stack-editor-local-size), [parameter offset](#stack-editor-parameter-offset) and [parameter size](#stack-editor-parameter-size) can be modified here.
+frame. The [local size](#changing-the-local-size), [parameter offset](#changing-the-parameter-offset) and [parameter size](#changing-the-parameter-size) can be modified here.
 - Immediately below the stack frame information area is a status line where status messages
 will appear.
 
@@ -114,8 +114,7 @@ button.
 3. The components are removed from the stack frame.
 
 
-### Clear
-Stack Variable(s)
+### Clear Stack Variable(s)
 
 
 Clearing a component removes the current stack variable defined at that offset in the
@@ -132,8 +131,7 @@ To clear stack variables in the stack frame:
 will be equal to the length of the component being cleared.
 
 
-### Change Stack
-Variable's Data Type To Array
+### Change Stack Variable's Data Type To Array
 
 
 To create an array data type for a single selected component:
@@ -329,8 +327,7 @@ If the data type can be various sizes, like a Pointer or CString, then the user 
 prompted for the appropriate size.
 
 
-#### Affect of Changing a Component's
-Size
+#### Affect of Changing a Component's Size
 
 
 The new component must be less than or equal to the original component's size plus any
@@ -445,8 +442,8 @@ where there is no selection, the selection becomes a single component selection 
 component and the popup menu will appear.
 
 
-Favorites are discussed further in [Creating a Stack Variable](#adddatatype), and
-[Replacing a Stack Variable's Data Type](#replacedatatype).
+Favorites are discussed further in [Creating a Stack Variable](#creating-a-stack-variable), and
+[Replacing a Stack Variable's Data Type](#replacing-a-stack-variables-data-type).
 
 
 ## Creating a Stack Variable
@@ -501,7 +498,7 @@ the data type being dropped won't fit at that offset in the stack frame or the d
 variable length (for example, "string"). If you get a small rectangular box, then the data
 type can be dropped. Dropping the data type will replace the variable's data type that is
 currently at that offset on the stack. (see [Affect
-of Changing a Component's Size](#affectofchangingdatatypesize))
+of Changing a Component's Size](#affect-of-changing-a-components-size))
 
 
 > **Note:** For information about drag and drop with
@@ -522,15 +519,14 @@ containing that component and the popup menu will appear.
 To replace a component's data type with a favorite data type, select it in the table,
 right mouse click and pick the favorite. Only favorites that will fit in place of the
 component will be enabled. (see [Affect of Changing
-a Component's Size](#affectofchangingdatatypesize))
+a Component's Size](#affect-of-changing-a-components-size))
 
 
 > **Note:** For information about Pointers as a Favorite,
 see Favorites Basics .
 
 
-## Showing a Stack Variable's Data Type
-Category
+## Showing a Stack Variable's Data Type Category
 
 
 Every component has a data type: Byte, Word, Float, etc.. The category is where that data
@@ -571,7 +567,7 @@ The Component Table contains numeric fields which display that component's stack
 length in the Stack Frame Editor. By default stack offsets and lengths are initially shown in
 hexadecimal. Numbers in the stack information area (such as Frame Size, Return Address Offset,
 Local Size, Parameter Offset, and Parameter Size) are also shown in hexadecimal by default.
-There is a [tool option](#stackeditortooloptions), **Show Numbers In Hex**, that
+There is a [tool option](#stack-editor-tool-options), **Show Numbers In Hex**, that
 lets you override the default and set whether numbers should be displayed in hexadecimal when
 an editor is intially displayed.
 

@@ -3,7 +3,7 @@
 # Search for Address Tables
 
 
-The **Search for Address Tables** feature searches the program for possible [address tables](../Glossary/glossary.md#addresstable). The search can span
+The **Search for Address Tables** feature searches the program for possible [address tables](../Glossary/glossary.md#address-table). The search can span
 the entire program or be limited to a selection. The results are presented in list form,
 allowing the user to make tables and disassemble the addresses in those tables.
 

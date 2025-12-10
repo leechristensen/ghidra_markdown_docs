@@ -64,16 +64,14 @@ The default panel view is time vs. address. The toggle button serves as both the
 switch views and to refresh the display.
 
 
-### Toggle Process
-Trace
+### Toggle Process Trace
 
 
 By default, as new objects are added to a debugger trace, they appear in the table and
 panel. The behavior can be toggled on or off at the user's discretion.
 
 
-### Toggle Apply
-Filter
+### Toggle Apply Filter
 
 
 This button determines whether the table filter affects the plot panel. When toggled on,

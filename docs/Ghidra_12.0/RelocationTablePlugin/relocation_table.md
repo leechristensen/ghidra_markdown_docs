@@ -14,7 +14,7 @@ the [Automatic Importer](../ImporterPlugin/importer.md).
 | --- |
 
 
-## **Displaying the  Relocation Table**
+## **Displaying the Relocation Table**
 
 
 From the window menu of a tool, select **Relocation Table**

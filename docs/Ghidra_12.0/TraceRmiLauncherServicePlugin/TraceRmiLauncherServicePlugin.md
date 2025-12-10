@@ -11,7 +11,7 @@ these work on Linux, too). For Windows, we provide a launcher based on the Windo
 sub-topic.
 
 
-Each launcher automates the creation of a Trace RMI [acceptor](../TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md#connect-accept),
+Each launcher automates the creation of a Trace RMI [acceptor](../TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md#connect-by-accept),
 executes the back-end shell script in a Terminal, then waits for the resulting target trace. In
 contrast to the previous system, the Terminal is the first and most basic interface presented.
 Even if just about everything else goes wrong, the terminal should still be faithfully

@@ -6,13 +6,13 @@ to automatically create matches, accept the most likely matches, and apply marku
 correlators are run in this order if the associated [options](VT_AutoVT.md#auto-version-tracking-options) are set:
 
 
-- [Exact Symbol Name Correlator](VT_Correlators.md#symbol-match)
-- [Exact Data Correlator](VT_Correlators.md#data-match)
+- [Exact Symbol Name Correlator](VT_Correlators.md#symbol-name-match-correlators)
+- [Exact Data Correlator](VT_Correlators.md#data-match-correlators)
 - [Exact Function Bytes Correlator](VT_Correlators.md#exact-function-bytes-match)
 - [Exact Function Instructions Correlator](VT_Correlators.md#exact-function-instructions-match)
 - [Exact Function Mnemonics Correlator](VT_Correlators.md#exact-function-mnemonics-match)
 - [Duplicate Function Instructions Correlator](VT_Correlators.md#duplicate-function-instructions-match)
-- [Data Reference Correlator](VT_Correlators.md#data-ref), [Function Reference Correlator](VT_Correlators.md#func-ref), **OR** [Combined Function and Data Reference Correlator](VT_Correlators.md#comb-func-data-ref)
+- [Data Reference Correlator](VT_Correlators.md#data-reference-correlator), [Function Reference Correlator](VT_Correlators.md#function-reference-correlator), **OR** [Combined Function and Data Reference Correlator](VT_Correlators.md#combined-function-and-data-reference-correlator)
 
 
 If the Create Implied Matches option is set, Implied Matches will be created whenever

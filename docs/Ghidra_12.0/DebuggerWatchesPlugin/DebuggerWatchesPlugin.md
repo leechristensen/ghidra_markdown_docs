@@ -74,7 +74,7 @@ is on, and the variable is modifiable. Edits may be directed toward a live targe
 or the emulator. If the value has changed since the last navigation event, this cell is
 rendered in red.
 - Type - the user-modifiable type of the watch. Note the type is not marked up in the
-trace. Clicking the [Apply Data Type](#apply-data-type) action will apply it to
+trace. Clicking the [Apply Data Type](#apply-data-to-listing) action will apply it to
 the current trace, if possible.
 - Representation - the value of the watch as interpreted by the selected data type. If the
 value is an address, i.e., Type is a pointer, then double-clicking this cell will navigate

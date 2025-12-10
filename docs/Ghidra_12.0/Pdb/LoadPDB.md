@@ -68,7 +68,7 @@ existing PDB files.
 ![](images/SymbolServerConfig_Screenshot.png)
 - The **Local Symbol Storage** location is required to be able to search.  If missing, set it to
 a directory where Ghidra can store PDB files.
-- [Add](#symbolserverconfig-add) additional search locations by clicking the ![Plus2.png](../icons/Plus2.png) button.
+- [Add](#add) additional search locations by clicking the ![Plus2.png](../icons/Plus2.png) button.
 - Save any changes to the configuration by clicking the ![disk.png](../icons/disk.png) button.
 - Search locations can be disabled by toggling the **enabled** checkbox at the beginning of the row.
 - A typical configuration: ![](images/SymbolServerConfig_Configured.png)
@@ -172,7 +172,7 @@ These options control which PDB parser will be used and any options used during 
 
 - If you are connecting to a Symbol Server that requires user authentication using PKI,
 you must first set your PKI Certificate before attempting to download from the server. See
-[PKI Certificate](../FrontEndPlugin/Ghidra_Front_end_Menus.md#set-pki-certificate) for more details.
+[PKI Certificate](../FrontEndPlugin/Ghidra_Front_end_Menus.md#pki-certificate) for more details.
 
 
 **Related Topics:**
@@ -183,4 +183,4 @@ you must first set your PKI Certificate before attempting to download from the s
 
 ---
 
-[← Previous: PDB](PDB.md) | [Next: PDB Parser (README_PDB) →](../external:docs/README_PDB.md)
+[← Previous: PDB](PDB.md) | [Next: PDB Parser (README_PDB) →](../docs/README_PDB.md)

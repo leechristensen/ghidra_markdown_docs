@@ -7,12 +7,12 @@ Disassembly is the process of translating bytes into assembly language instructi
 Ghidra supports three different disassembly actions:
 
 
-- [Disassembly](#disassemble)
+- [Disassembly](#disassembly)
 - [Disassembler Options](#disassembler-options)
-- [Static Disassembly](#disassemble-static)
-- [Restricted Disassembly](#disassemble-restricted)
-- [Disassemble ARM / Thumb](#disassemble-arm)
-- [Processor Options](#processoroptions)
+- [Static Disassembly](#static-disassembly)
+- [Restricted Disassembly](#restricted-disassembly)
+- [Disassemble ARM / Thumb](#disassemble-arm-thumb)
+- [Processor Options](#processor-options)
 - [Modify Instruction Flow](#modify-instruction-flow)
 - [Modify Instruction Length](#modify-instruction-length)
 

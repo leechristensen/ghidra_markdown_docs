@@ -6,8 +6,8 @@
 The Function ID Debug Plug-in allows users to inspect the individual records in a Function ID database.
 This functionality is generally only useful to users building their own databases.  Users can look up
 individual records based on name or hash, but currently the
-plug-in is not capable of modifying records.  The only exceptions are the [“Specialized Mitigation”](FunctionIDPlugin.md#specialmitigate)
-strategies, which can be modified using the [“Debug Search Window”](FunctionIDDebug.md#debugsearch).
+plug-in is not capable of modifying records.  The only exceptions are the [“Specialized Mitigation”](FunctionIDPlugin.md#specialized-mitigation)
+strategies, which can be modified using the [“Debug Search Window”](FunctionIDDebug.md#debug-search-window).
 
 
 ## Enabling the Plug-in
@@ -95,7 +95,7 @@ Properties include the mitigation strategies described in “Specialized Mitigat
 The *Result Window* supports a small number of actions under the
 **Edit** menu that allow the user to change the
 mitigation strategies for a read/write database.  Strategies are described in
-[“Specialized Mitigation”](FunctionIDPlugin.md#specialmitigate).  When a menu action is invoked, all records
+[“Specialized Mitigation”](FunctionIDPlugin.md#specialized-mitigation).  When a menu action is invoked, all records
 displayed in the current Result Window are affected.  Currently there is no way
 to select a subset of records to effect.  The actions all set or clear a specific
 strategy.

@@ -180,13 +180,12 @@ that highlighted block. If there aren't any more highlighted areas below the cur
 location, a message is displayed in the tool's status area to indicate this.
 
 
-The [Next/Previous Area Marker](#dual-listing-next-previous-area-marker)
+The [Next/Previous Area Marker](#nextprevious-area-marker)
 allows the user to choose the type of highlighted areas that you go to when
 navigating.
 
 
-#### Go To Previous Highlighted
-Area
+#### Go To Previous Highlighted Area
 
 
 The Listing View provides an icon (![view-sort-descending.png](../icons/view-sort-descending.png))
@@ -202,7 +201,7 @@ that highlighted block. If there aren't any more highlighted areas above the cur
 location, a message is displayed in the tool's status area to indicate this.
 
 
-The [Next/Previous Area Marker](#dual-listing-next-previous-area-marker)
+The [Next/Previous Area Marker](#nextprevious-area-marker)
 allows the user to choose the type of highlighted areas that you go to when
 navigating.
 

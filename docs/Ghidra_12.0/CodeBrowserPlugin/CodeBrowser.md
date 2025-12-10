@@ -111,7 +111,7 @@ display "[more]" to indicate that one or more cross-reference addresses are not 
 dialog containing all the Xrefs to appear.
 
 
-This differs from the [**Show References to ...**](../LocationReferencesPlugin/Location_References.md#locationreferencesplugin) feature in that the Xrefs dialog is simply a display
+This differs from the [**Show References to ...**](../LocationReferencesPlugin/Location_References.md#location-references-dialog) feature in that the Xrefs dialog is simply a display
 of what already exists in the database, whereas **Show References to ...** will
 perform a search to find references additional to what is in the database.
 
@@ -234,7 +234,7 @@ The markers shown in the Marker Popup Menu are
 described below:
 
 
-| Analysis Bookmarks | [Bookmarks](../BookmarkPlugin/Bookmarks.md) inserted by the auto analysis process. Indicates information about where functions and [address tables](../Glossary/glossary.md#addresstable) were             created. |
+| Analysis Bookmarks | [Bookmarks](../BookmarkPlugin/Bookmarks.md) inserted by the auto analysis process. Indicates information about where functions and [address tables](../Glossary/glossary.md#address-table) were             created. |
 | --- | --- |
 | Changes: Conflicting | Areas where you and others have made conflicting changes. |
 | Changes: Latest Version | Areas where changes exist in the latest version made by another             user. |

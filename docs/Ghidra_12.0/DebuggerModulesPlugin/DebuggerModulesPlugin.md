@@ -77,8 +77,7 @@ corresponding action whenever the relevant table is updated. By default, it auto
 using Modules.
 
 
-### Map
-Identically
+### Map Identically
 
 
 This action is available when both a trace and a program are opened. It maps the current
@@ -145,30 +144,27 @@ It behaves like Map Sections, except that it will propose the selected section b
 block containing the cursor in the static listing.
 
 
-### Import Missing
-Module
+### Import Missing Module
 
 
 This action is offered to resolve a "missing module" console message. Such a message is
 reported in the [Debug
 Console](../DebuggerConsolePlugin/DebuggerConsolePlugin.md) when the cursor in the [Dynamic Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md) cannot be
 synchronized to the static listing for lack of a module mapping. This action is equivalent to
-[Import From File System](#import-from-fs) on the missing module.
+[Import From File System](#import-from-file-system) on the missing module.
 
 
-### Map Missing
-Module
+### Map Missing Module
 
 
 This action is offered to resolve a "missing module" console message. Such a message is
 reported in the [Debug
 Console](../DebuggerConsolePlugin/DebuggerConsolePlugin.md) when the cursor in the [Dynamic Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md) cannot be
 synchronized to the static listing for lack of a module mapping. This action is equivalent to
-[Map Module To](#map-module-to) on the missing module.
+[Map Module To](#map-module-to-current-program) on the missing module.
 
 
-### Retry Map
-Missing Program
+### Retry Map Missing Program
 
 
 This action is offered to resolve a "missing program" console message. Such a message is
@@ -178,8 +174,7 @@ This action is equivalent to [Map Modules](#map-modules), but considering only t
 missing program and launched trace.
 
 
-### Map
-Missing Program to Current Module
+### Map Missing Program to Current Module
 
 
 This action is offered to resolve a "missing program" console message. Such a message is
@@ -208,8 +203,7 @@ debuggers do not offer section information, and even for those that do, it can b
 retrieve it. The visibility of the section table is controlled by toggling this action.
 
 
-### Filter Sections by
-Module
+### Filter Sections by Module
 
 
 This action is always available. By default the bottom table displays all sections in the
@@ -217,8 +211,7 @@ current trace. When this toggle is enabled, and at least one module is selected,
 table will only include sections contained by a selected module.
 
 
-### Select
-Addresses
+### Select Addresses
 
 
 This action is available when at least one module or section is selected. It selects all

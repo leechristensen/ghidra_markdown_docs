@@ -102,7 +102,7 @@ descriptive name for the information displayed on that row.
 The ![In](../icons/locationIn.gif) *Dynamic Update* toggle indicates whether the
 window should update when you change the location in the Code Browser.  By default, the
 toggle is selected. As you change your
-[location](../CodeBrowserPlugin/CodeBrowser.md#location) in the Code
+[location](../CodeBrowserPlugin/CodeBrowser.md#cursor) in the Code
 Browser, the window will be updated to show the info for the new location.  If you turn
 off the toggle, the window does not update; the next time you choose *Instruction
 Info*, a new tab is displayed in the *Instruction Info* window.

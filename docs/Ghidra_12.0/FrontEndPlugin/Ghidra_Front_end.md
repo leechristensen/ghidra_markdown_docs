@@ -3,12 +3,12 @@
 # Ghidra Project Window
 
 
-The Project Window is displayed when you run Ghidra. From this window, you manage your [projects](../Project/Ghidra_Projects.md), [workspaces](#workspace), [Programs](../Program/Ghidra_Programs.md),  and [tools](../Tool/Ghidra_Tool_Administration.md). If you are running Ghidra for
+The Project Window is displayed when you run Ghidra. From this window, you manage your [projects](../Project/Ghidra_Projects.md), [workspaces](#workspaces), [Programs](../Program/Ghidra_Programs.md),  and [tools](../Tool/Ghidra_Tool_Administration.md). If you are running Ghidra for
 the first time, you will need to create a [new project](Creating_a_Project.md) to
 get started.
 
 
-The Project Window is a tool and may be [configured](Ghidra_Front_end_Menus.md#configure) with "special" [plugins](../Tool/Ghidra_Tool_Administration.md#plugins) that provide general
+The Project Window is a tool and may be [configured](Ghidra_Front_end_Menus.md#configure-project-window) with "special" [plugins](../Tool/Ghidra_Tool_Administration.md#plugins) that provide general
 capabilities that may be required at a high level. By default, the Project Window contains
 plugins for [importing](../ImporterPlugin/importer.md) and [exporting Programs](../ExporterPlugin/exporter.md),
 [archiving a project](Archive_Project.md), and [restoring an archived project](Restore_Project.md). These plugins may be added to other
@@ -26,23 +26,23 @@ providing these options can be added to other tools.
 The following sections describe the Project Window:
 
 
-- [Tool Chest](#toolchest)
-- [Active Project Panel](#activeprojectpanel)
-- [Read-Only Project Data Panel](#readonlyprojectdatapanel)
-- [Workspaces](#workspace)
-- [Running Tools](#runningtools)
+- [Tool Chest](#tool-chest)
+- [Active Project Panel](#active-project)
+- [Read-Only Project Data Panel](#read-only-project-data)
+- [Workspaces](#workspaces)
+- [Running Tools](#running-tools)
 - [Project Repository](../VersionControl/project_repository.md)
-- [Ghidra Server Connection Status](#connectionstatus)
-- [Data Tree](#projectdatatree)
-- [Data Table](#projectdatatable)
-- [File Icons](#fileicons)
-- [Ghidra URL Formats](#ghidraurlformats)
-- [Console](#statuswindow)
-- [Configure Project Window](Ghidra_Front_end_Menus.md#configure)
-- [Edit Menu Options](Ghidra_Front_end_Menus.md#editmenuoptions)
+- [Ghidra Server Connection Status](#ghidra-server-connection-status)
+- [Data Tree](#project-data-tree)
+- [Data Table](#project-data-table)
+- [File Icons](#file-icons)
+- [Ghidra URL Formats](#ghidra-url-formats)
+- [Console](#console)
+- [Configure Project Window](Ghidra_Front_end_Menus.md#configure-project-window)
+- [Edit Menu Options](Ghidra_Front_end_Menus.md#edit-menu-options)
 - [Manage Tools](../Tool/Ghidra_Tool_Administration.md)
-- [Getting Help](#gettinghelp)
-- [Exit Ghidra](Ghidra_Front_end_Menus.md#exit-ghidra)
+- [Getting Help](#getting-help)
+- [Exit Ghidra](Ghidra_Front_end_Menus.md#exiting-ghidra)
 
 
 ## Tool Chest
@@ -57,7 +57,7 @@ represents each tool in your Tool Chest.
 
 
 You can launch a tool by clicking on the icon. You can launch a tool with a Program by
-dragging a Program file from the [Project data tree](#projectdatatree) and
+dragging a Program file from the [Project data tree](#project-data-tree) and
 dropping it on the tool icon in the Tool Chest.
 
 
@@ -80,10 +80,10 @@ actions on program files or datatype archives.
 
 
 The data tree shows all files in the project orgnanized into folders and sub-folders.
-[Icons for files](#fileicons) indicate whether they are under [version control](../VersionControl/project_repository.md#versioning) and whether
+[Icons for files](#file-icons) indicate whether they are under [version control](../VersionControl/project_repository.md#versioning) and whether
 you have the file [checked out](../VersionControl/project_repository.md#samplecheckouticon).
 In addition, unique icons are used to reflect content-type and if it corresponds to
-a link-file referring to another file or folder (see [creating links](#paste-link)).
+a link-file referring to another file or folder (see [creating links](#paste-copied-folder-or-file-as-a-link)).
 Open this view by activating the project window "Tree View" tab.  Within the tree view
 internally linked-folders may be expanded to reveal the linked content which corresponds
 to another folder within the project.
@@ -153,7 +153,7 @@ To create a Link use the following steps from the source project data tree:
 option.
 
 
-See [Create Linked Folder or File](#create-file-links) for more information
+See [Create Linked Folder or File](#create-linked-folder-or-file) for more information
 about links and creating external links.
 
 
@@ -288,7 +288,7 @@ option.  The real file or folder will be selected within the tree if possible.
 
 The data table shows all files in the project in a table sorted by some attribute
 of the file. In the example above, the files are sorted on file type.
-[Icons for files](#fileicons)
+[Icons for files](#file-icons)
 indicate whether they are under [version control](../VersionControl/project_repository.md#versioning) and whether
 you have the file [checked out](../VersionControl/project_repository.md#samplecheckouticon).
 To open this view, active the "Table View" tab.
@@ -375,7 +375,7 @@ the read-only state of a file while it is in use.
 
 - To launch a tool with a specific file, drag a file to the tool icon in the Tool
 Chest.
-- To open a file in a *running tool*, drag a file to the tool icon in the [Running Tools](#runningtools) tool bar, OR drag the file to the tool window.
+- To open a file in a *running tool*, drag a file to the tool icon in the [Running Tools](#running-tools) tool bar, OR drag the file to the tool window.
 
 
 #### Open a File in the Default Tool
@@ -385,7 +385,7 @@ Chest.
 "default,"](../Tool/Ghidra_Tool_Administration.md#set-tool-associations) double click on the Program that you want to open, OR right mouse click on
 the file and choose **Open in Default Tool.**  Either a new tool will be launched
 or an existing running tool will be reused based upon the Tool option setting (see
-[Front-End Tool Options](../Tool/ToolOptions_Dialog.md#front-end-tool-options).
+[Front-End Tool Options](../Tool/ToolOptions_Dialog.md#tool).
 
 
 #### Open a File With a Specific Tool
@@ -405,8 +405,8 @@ The ![Refresh](../icons/reload3.png) button on the
 tool bar refreshes the list of files in the selected folders. This is a way to sync the
 project folder/file structure with the project repository. The list of files and folders
 in the Project Data Tree is updated. This button is enabled only for selected folders.
-You can also refresh folders from a [viewed project](#view-project) or
-[viewed repository](#view-repository).
+You can also refresh folders from a [viewed project](#view-other-projects) or
+[viewed repository](#view-a-repository).
 
 
 #### About
@@ -435,7 +435,7 @@ The Project Data Tree shows icons for the following types of files:
 
 | ![program_obj.png](../icons/program_obj.png) | -   | [Program](../Program/Ghidra_Programs.md)   |
 | --- | --- | --- |
-| ![closedBookBlue.png](../icons/closedBookBlue.png) | -   | [Data Type Archive](../DataTypeManagerPlugin/data_type_manager_description.md#projectdatatypearchive) (a data type file             stored in the project)   |
+| ![closedBookBlue.png](../icons/closedBookBlue.png) | -   | [Data Type Archive](../DataTypeManagerPlugin/data_type_manager_description.md#project-data-type-archive) (a data type file             stored in the project)   |
 | ![video-x-generic16.png](../icons/video-x-generic16.png) | -   | Debugger Trace Data   |
 | ![start-here_16.png](../icons/start-here_16.png) | -   | Version Tracking Session Data   |
 
@@ -446,14 +446,14 @@ files in the following states:
 
 | File Status | Sample Icon | Description |
 | --- | --- | --- |
-| [Versioned File](../VersionControl/project_repository.md#versioncontrol) not               checked out. | ![](images/VersionedFileIcon.png) | The program named "Example" is versioned as indicated by                the light purple background. It is not checked out , since there is no circle with a                check mark. Version 1 is the latest version, as indicated by "(1)";                 the version will be the latest version when the file is not checked out. |
-| Versioned File is [Checked out](../VersionControl/project_repository.md#checkout) exclusively                by you. | ![](images/VersionedFileCOnoServer.png) | Version 1 of the program named "Example" is checked out, as indicated                by "(1 of 1)"; Version 1 is the latest version. The blue check mark icon indicates                that the file is checked out with an [exclusive](../VersionControl/project_repository.md#exclusivelock) lock.   If your project is not associated with a Ghidra Server,                you will always have the latest version checked out and the check out will always                be exclusive,  since the project is not shared. |
+| [Versioned File](../VersionControl/project_repository.md#version-control) not               checked out. | ![](images/VersionedFileIcon.png) | The program named "Example" is versioned as indicated by                the light purple background. It is not checked out , since there is no circle with a                check mark. Version 1 is the latest version, as indicated by "(1)";                 the version will be the latest version when the file is not checked out. |
+| Versioned File is [Checked out](../VersionControl/project_repository.md#check-out) exclusively                by you. | ![](images/VersionedFileCOnoServer.png) | Version 1 of the program named "Example" is checked out, as indicated                by "(1 of 1)"; Version 1 is the latest version. The blue check mark icon indicates                that the file is checked out with an [exclusive](../VersionControl/project_repository.md#exclusivelock) lock.   If your project is not associated with a Ghidra Server,                you will always have the latest version checked out and the check out will always                be exclusive,  since the project is not shared. |
 | Versioned File is Checked Out; the project is associated with a               Ghidra Server | ![](images/VersionedFileCOwithServer.png) | Version 3 of the program named "Example" is checked out; Version 3 is the latest               version on the server, as indicated by "(3 of 3)" and the green circle with a                check mark. The asterisk indicates you have changes to the file which have not been                checked in yet. |
 | Versioned File is Checked Out; the project is associated with a               Ghidra Server. A newer version exists on the server. | ![](images/CheckedOutNotLatest.png) | Version 2 of the program named "Example" is checked out; a Version 3               has been created since Version 2 was checked out, as indicated by "(2 of 3)" and               the magenta circle with a check mark. The asterisk indicates you have changes to the                file which have not been checked in yet. |
 | Private File | ![](images/PrivateFileIcon.png) | A program named "Example" is               not under version control, exists only on your local machine, and is not visible to               other users. |
-| File Link | ![](images/AbsoluteFileLinkIcon.png) | A file link named "Example" which refers to               a Program at */data/example* .   File links may reference another file using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidraurlformats) below.               A file link may appear with various icon states which correspond to version control.               File links only support a single version and may not be modified. |
+| File Link | ![](images/AbsoluteFileLinkIcon.png) | A file link named "Example" which refers to               a Program at */data/example* .   File links may reference another file using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidra-url-formats) below.               A file link may appear with various icon states which correspond to version control.               File links only support a single version and may not be modified. |
 | File Link (Broken) | ![](images/AbsoluteBrokenFileLinkIcon.png) | A file link named "Example" which refers to               a Program at */data/example* and is in a "Broken" state.  Hovering the mouse 			  on this node will display a tooltip which indicates the reason for the broken state.  			  External file links will never show a broken link state since they are not evaluated for such conditions. |
-| Folder Link | ![](images/AbsoluteFolderLinkIcon.png) | A folder link named "Example" which refers               to a folder at */data/example* .   Folder links may reference another folder using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidraurlformats) below.               Since a folder link is stored as a file, it may appear with various icon states which                correspond to version control.  Folder links only support a single version and may not                be modified.  The tree may permit expanding such nodes to reveal their linked-content  			  as files and sub-folders. |
+| Folder Link | ![](images/AbsoluteFolderLinkIcon.png) | A folder link named "Example" which refers               to a folder at */data/example* .   Folder links may reference another folder using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidra-url-formats) below.               Since a folder link is stored as a file, it may appear with various icon states which                correspond to version control.  Folder links only support a single version and may not                be modified.  The tree may permit expanding such nodes to reveal their linked-content  			  as files and sub-folders. |
 | Folder Link (Broken) | ![](images/AbsoluteBrokenFolderLinkIcon.png) | A folder link named "Example" which refers to               a folder at */data/example* and is in a "Broken" state.  Hovering the mouse 			  on this node will display a tooltip which indicates the reason for the broken state.   			  External folder links will never show a broken link state since they are not evaluated for such conditions. |
 | Hijacked File | ![](images/hijack_file.png) | The private file "Example" exists on your                computer, but another user added "Example" to version control, which               caused the private file to appear as *hijacked* , (i.e., the file can be saved "as               is" using " **Save As** " since you do not have the file checked out that is on                the Ghidra Server.) Hijacked files may also result from a checkout that was [terminated](../VersionControl/project_repository.md#terminatecheckout) . The *shared* version of "Example" will not be visible in your project until you [undo the               hijack](../VersionControl/project_repository.md#undo-hijack) .  You can also either rename the hijacked "Example", move it to               another folder, delete it, or use the **Undo Hijack** [action](../VersionControl/project_repository.md#undo-hijack) . Then the               shared "Example" will appear in your data tree as a versioned file. |
 
@@ -665,7 +665,7 @@ same file in the viewed project.
 ## Workspaces
 
 
-A workspace contains a set of [running tools](#runningtools), and the tools'
+A workspace contains a set of [running tools](#running-tools), and the tools'
 opened data. A workspace is analogous to a virtual desktop. When you switch to another
 workspace, you switch to a different set of running tools. The tools from the other workspace
 remain running, but are not visible until you switch back to that workspace.
@@ -676,8 +676,8 @@ another workspace by choosing a name from the list. The default workspace, named
 "Workspace,"  is created in the project.
 
 
-The workspace state, i.e., [running tools](#runningtools), [tool connections](Connecting_Tools.md), [tool configuration](../Tool/Configure_Tool.md), etc.,  is maintained when
-you [exit Ghidra](Ghidra_Front_end_Menus.md#exit-ghidra) or [close the Project](Close_Project.md).
+The workspace state, i.e., [running tools](#running-tools), [tool connections](Connecting_Tools.md), [tool configuration](../Tool/Configure_Tool.md), etc.,  is maintained when
+you [exit Ghidra](Ghidra_Front_end_Menus.md#exiting-ghidra) or [close the Project](Close_Project.md).
 
 
 - To create a new workspace,
@@ -735,7 +735,7 @@ from the Running Tools panel, right mouse click on the icon for the tool and cho
 **Close** option.
 
 
-To [connect running tools](Connecting_Tools.md#automatictoolconnection),
+To [connect running tools](Connecting_Tools.md#automatic-tool-connection),
 drag one icon onto another icon. Those tools are connected for all [tool events](Connecting_Tools.md#toolevents).
 
 
@@ -749,7 +749,7 @@ different workspaces may be connected.
 If your project is associated with a Ghidra Server, then below the *Running Tools*
 panel you will see a connection status panel that shows the name of the [Project Repository](../VersionControl/project_repository.md), your access
 privileges, and an indication of whether you are currently connected to the Ghidra
-Server.  The [status button](../VersionControl/project_repository.md#connecttoserver), ![connected.gif](../icons/connected.gif) indicates that your
+Server.  The [status button](../VersionControl/project_repository.md#connect-to-the-server), ![connected.gif](../icons/connected.gif) indicates that your
 project repository is connected to the Ghidra Server; the status button, ![disconnected.gif](../icons/disconnected.gif) indicates that
 your project repository is associated with a Ghidra Server but it is not connected to
 it.
@@ -768,7 +768,7 @@ list](Creating_a_Project.md#useraccesslist). This list controls what users have 
 administrative privilege in the project, the option for **Project → Edit Project Access List** will
 be enabled. The dialog displayed when you select this option shows a panel that is the same
 as the one you see in the [New Project
-Wizard](Creating_a_Project.md#createsharedproject) when you set up the user list for new project. As in the New Project Wizard, this
+Wizard](Creating_a_Project.md#creating-a-shared-project) when you set up the user list for new project. As in the New Project Wizard, this
 dialog allows you to add and remove users, and change users' privileges in the project.
 
 
@@ -886,7 +886,7 @@ information about the Ghidra application.
 - [Import Program](../ImporterPlugin/importer.md)
 - [Export Program](../ExporterPlugin/exporter.md)
 - [Welcome to Ghidra Help](../Misc/Welcome_to_Ghidra_Help.md)
-- [Create a Shared Project](Creating_a_Project.md#createsharedproject)
+- [Create a Shared Project](Creating_a_Project.md#creating-a-shared-project)
 - [Project Repository](../VersionControl/project_repository.md)
 - [Project Info dialog](Project_Info.md)
 

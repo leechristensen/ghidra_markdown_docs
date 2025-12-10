@@ -5,10 +5,10 @@
 ## Contents
 
 - [BSim Search](BSimSearch.md)
-- [Enabling the BSim Search Plugin](BSimSearch.md#adding-bsim-plugin)
-- [Defining And Managing BSim Database Definitions](BSimSearch.md#bsim-servers-dialog)
-- [Overview Query](BSimSearch.md#bsim-overview-dialog)
+- [Enabling the BSim Search Plugin](BSimSearch.md#enabling-the-bsim-search-plugin)
+- [Defining And Managing BSim Database Definitions](BSimSearch.md#defining-and-managing-bsim-databases)
+- [Overview Query](BSimSearch.md#bsim-overview-query)
 - [Overview Query Results](BSimSearch.md#bsim-overview-results)
-- [Similar Function Search](BSimSearch.md#bsim-search-dialog)
-- [Similar Function Search Results](BSimSearch.md#similar-functions-results)
-- [Authentication](BSimSearch.md#bsim-authentication)
+- [Similar Function Search](BSimSearch.md#bsim-similar-function-search)
+- [Similar Function Search Results](BSimSearch.md#similar-function-search-results)
+- [Authentication](BSimSearch.md#authentication)

@@ -1,7 +1,6 @@
 [Home](../index.md) > [BSim](index.md) > BSim Command (bsim)
 
-# Command-Line Utility
-Reference
+# Command-Line Utility Reference
 
 
 ## `bsim_ctl`
@@ -133,7 +132,7 @@ authentication.
 
 
 See [“Ghidra and BSim
-URLs”](CommandLineReference.md#urls) below for details about specifying *ghidraURL* and *bsimURL*
+URLs”](CommandLineReference.md#ghidra-and-bsim-urls) below for details about specifying *ghidraURL* and *bsimURL*
 properly. See [“Database
 Configuration”](DatabaseConfiguration.md) for guidance on the various BSim Databases which are
 supported.
@@ -283,8 +282,7 @@ below for specific formatting details. It is important to note that local *ghidr
 *file* URLs never include a double-slash after the protocol (i.e, "://").
 
 
-### Ghidra Server/Project
-Repository URLs
+### Ghidra Server/Project Repository URLs
 
 
 BSim command-line tools, as well as the Ghidra GUI, utilize a URL to specify the

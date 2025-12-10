@@ -103,11 +103,11 @@ launch that tool.
 
 
 - [Ghidra Project Window](Ghidra_Front_end.md)
-- [Configure Ghidra Project Window](Ghidra_Front_end_Menus.md#configure)
+- [Configure Ghidra Project Window](Ghidra_Front_end_Menus.md#configure-project-window)
 - [Configure Tool](../Tool/Configure_Tool.md)
 - [Manage Data
 Types](../DataTypeManagerPlugin/data_type_manager_description.md)
-- [Built in Data Types](../DataPlugin/Data.md#datatypes)
+- [Built in Data Types](../DataPlugin/Data.md#data-types)
 - [Plugins](../Tool/Ghidra_Tool_Administration.md#plugins)
 
 

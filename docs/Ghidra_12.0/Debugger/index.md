@@ -6,5 +6,5 @@
 
 - [Debugger](Debugger.md)
 - [Getting Started](GettingStarted.md)
-- [Launching a Target](GettingStarted.md#launching)
+- [Launching a Target](GettingStarted.md#launching-a-target)
 - [Troubleshooting](Troubleshooting.md)

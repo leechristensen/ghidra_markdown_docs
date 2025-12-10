@@ -1,7 +1,6 @@
 [Home](../index.md) > [FrontEndPlugin](index.md) > Reopen Project
 
-# Reopen
-Project
+# Reopen Project
 
 
 Ghidra maintains a list of the projects that you recently opened. These are

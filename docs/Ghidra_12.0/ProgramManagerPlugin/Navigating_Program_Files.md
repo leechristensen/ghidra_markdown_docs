@@ -57,13 +57,12 @@ like it to appear.
 Next and Previous
 
 
-### Go To Next Program and Go To Previous
-Program Actions
+### Go To Next Program and Go To Previous Program Actions
 
 
 The next and previous actions are only available via keybindings, which by default are
 **Control-F8** and **Control-F9** for previous and next, respectively. You may change
-these bindings from the [Key Bindings Options](../Tool/ToolOptions_Dialog.md#keybindings-option).
+these bindings from the [Key Bindings Options](../Tool/ToolOptions_Dialog.md#key-bindings).
 
 
 The next and previous actions allow you to move between open tabs. For example, when the

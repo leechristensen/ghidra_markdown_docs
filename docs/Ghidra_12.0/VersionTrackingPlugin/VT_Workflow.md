@@ -11,8 +11,8 @@ available in this document:
 
 1. [Preconditions](#preconditions)
 2. [Correlators](#correlators)
-3. [Example Work Flow](#workflow)
-4. [Workflow FAQ](#faq)
+3. [Example Work Flow](#example-work-flow-match-all-possible-functions-between-two-binaries)
+4. [Workflow FAQ](#workflow-faq)
 5. [Common Problems](#common-problems)
 
 
@@ -22,7 +22,7 @@ available in this document:
 One of the first items you run across in the Version Tracking Wizard is the [Precondition
 Panel](VT_Wizard.md#preconditions-panel). This panel is described in more detail as part of the [Version Tracking Wizard Help](VT_Wizard.md).
 However, it is also mentioned here as an important initial step in the Version
-Tracking process. In the past, users trying to match functions and pull relevant [markup](Version_Tracking_Intro.md#intro-markup-items)
+Tracking process. In the past, users trying to match functions and pull relevant [markup](Version_Tracking_Intro.md#version-tracking-markup-items)
 such as labels and comments into a new version of a binary, would encounter problems if one
 or both of the binaries were not sufficiently analyzed or had major analysis problems.
 Users were given no indication that these issues were a direct result of having a poorly
@@ -91,7 +91,7 @@ correlators.**
 
 
 Another one of the "obvious" correlators is the [Symbol Match
-Correlator](VT_Correlators.md#symbol-match). If you have unique matching symbols there is a high likelihood that the
+Correlator](VT_Correlators.md#symbol-name-match-correlators). If you have unique matching symbols there is a high likelihood that the
 corresponding functions or data will be a match. However, it is not immediately apparent,
 without visiting them individually, whether these matches are exactly the same in both
 versions of the binary. The markup items such as labels, comments, data types, and
@@ -151,13 +151,12 @@ do not use "exact" methods of matching so it is important to be careful when acc
 matches or applying markup.
 
 
-## Example Work Flow - Match All Possible Functions Between Two
-Binaries
+## Example Work Flow - Match All Possible Functions Between Two Binaries
 
 
 1. Open an empty version tracking tool ([more info](../Tool/Ghidra_Tool_Administration.md#run-tool))
 2. Enable the [Version
-Tracking Accept Match Option](providers/VT_Apply_Options.md#match-accept-options) to **Auto Create Implied Matches**
+Tracking Accept Match Option](providers/VT_Apply_Options.md#accept-match-options) to **Auto Create Implied Matches**
 3. Temporarily set the [Match
 Table Filter](providers/VT_Matches_Table.md#match-filters) to remove **Implied Matches**, **Accepted Matches**, and
 **Blocked** matches from the Match Table so they are not accidentally selected in the
@@ -168,11 +167,11 @@ it in its own location. Configure it to [**Show
 Only Unaccepted Functions**](providers/VT_Functions_Table.md#show-unmatched-functions). This will allow the user to continually see the list of
 functions they need to still match.
 5. [Create a new
-session](VT_Wizard.md#new-session) by specifying your source and destination programs and then running the
+session](VT_Wizard.md#creating-a-new-session) by specifying your source and destination programs and then running the
 precondition checks. This will give you a session that initially has no version tracking
 matches. You will then Add to the Existing Session to begin getting matches.
 6. [Add
-to the existing session](VT_Wizard.md#wizard-add-to-session), choosing the [Exact
+to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Exact
 Function Bytes Correlator](VT_Correlators.md#exact-function-bytes-match).
 After the correlator is finished, in the matched table:
 - Press **CTRL-A** to select all matches currently listed in the table
@@ -184,22 +183,22 @@ It is up to personal preference whether to use this option. In large binaries it
 up processing time. However, it is sometimes useful to have duplicate information for
 verification of results.
 7. [Add
-to the existing session](VT_Wizard.md#wizard-add-to-session), choosing the [Exact
+to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Exact
 Function Instructions Correlator](VT_Correlators.md#exact-function-instructions-match).
 After the correlator is finished, in the matched table:
 - Press **CTRL-A** to select all matches currently listed in the table
 - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 8. [Add
-to the existing session](VT_Wizard.md#wizard-add-to-session), choosing the [Exact Data Match
+to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Exact Data Match
 Correlator](VT_Correlators.md#exact-data-match) .
 After the correlator is finished, in the matched table:
 - Press **CTRL-A** to select all matches currently listed in the table
 - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 9. [Add
-to the existing session](VT_Wizard.md#wizard-add-to-session), choosing the [Symbol Match
-Correlator](VT_Correlators.md#symbol-match) .
+to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Symbol Match
+Correlator](VT_Correlators.md#symbol-name-match-correlators) .
 After the correlator is finished, in the matched table:
 - First use the [Match
 Table Filter](providers/VT_Matches_Table.md#match-filters) to only show Imported and Analysis symbol types (this is assuming
@@ -212,14 +211,14 @@ markup
 - If desired, inspect to see if there are other symbol matches to individually or
 automatically match depending on score/confidence/etc...
 10. [Add
-to the existing session](VT_Wizard.md#wizard-add-to-session), choosing the [Duplicate
+to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Duplicate
 Function Instruction Match Correlator](VT_Correlators.md#duplicate-function-instructions-match)
 - Use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to figure out which ones match
 - **Use the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon
 to accept and apply markup for each match individually.
 11. [Add
-to the existing session](VT_Wizard.md#wizard-add-to-session), choosing the [Duplicate
+to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Duplicate
 Data Match Correlator](VT_Correlators.md#duplicate-data-match)
 - Use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to figure out which ones match
@@ -275,7 +274,7 @@ references to strings as Possible Implied Matches. Users can use this table to m
 from Implied Matches. This will cause a match to be placed in the Match table with the type
 Implied Match. However, the user still has to accept or apply the match. There is also an
 [Version
-Tracking Accept Match Option](providers/VT_Apply_Options.md#match-accept-options) to automatically generate Implied Matches whenever a
+Tracking Accept Match Option](providers/VT_Apply_Options.md#accept-match-options) to automatically generate Implied Matches whenever a
 function match is Applied or Accepted. The user still has to Accept or Apply the matches.
 The determination to use the automatic generation of Implied Matches or the Implied Match
 Table depends on how likely the match is to be correct and how closely aligned the match
