@@ -75,6 +75,7 @@ selected functions.
 ### Functions Table Filter
 
 
+<a name="functions-filter"></a>
 The **Functions Filter** action filters functions from the tables
 based upon the chosen state of the action.   You can change the state of the
 filter from the actions toolbar using the drop-down menu.
@@ -84,14 +85,17 @@ filter from the actions toolbar using the drop-down menu.
 This list below shows the available filter states:
 
 
-- **Show All Functions** (![function.png](../../icons/function.png)) -
+- <a name="show-all-functions"></a>
+**Show All Functions** (![function.png](../../icons/function.png)) -
 Shows all functions found in the source and destination programs.
-- **Show Only Unmatched Functions** (![filter_matched.png](../../icons/filter_matched.png)) -
+- <a name="show-unmatched-functions"></a>
+**Show Only Unmatched Functions** (![filter_matched.png](../../icons/filter_matched.png)) -
 Shows only functions in the source and destination programs that are
 not part of any match.  This is
 useful for showing functions that were not matched by any of the
 [program correlators](../VT_Correlators.md).
-- **Show Only Unaccepted Match Functions**
+- <a name="show-unaccepted-functions"></a>
+**Show Only Unaccepted Match Functions**
 ([Accepted]) -
 Shows only functions in the source and destination programs that
 are not part of **an accepted match**.  This means that the functions

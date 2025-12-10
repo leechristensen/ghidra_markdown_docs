@@ -37,7 +37,7 @@ point, the plugin generally takes over, reacting to user and target events, acce
 requests, and generally keeping Ghidra and the back end synchronized.
 
 
-The list of launchers can be accessed in either of two places:
+<a name="launch-tracermi"></a>The list of launchers can be accessed in either of two places:
 1) In the **Debugger → Configure and Launch ...** menu or more conveniently from the
 **Launch** button in the main toolbar. This is the blue bug ![Debugger](../icons/debugger.png)
 button near the top center. The **Configure and Launch ...** menu lists all available
@@ -132,7 +132,7 @@ an orange border) then closing the window will, in fact, destroy the Terminal.
 ## Development and Diagnostic Launchers
 
 
-We currently provide a launcher for Trace RMI API exploration and
+<a name="python-raw"></a>We currently provide a launcher for Trace RMI API exploration and
 development: The "`raw python`" launcher runs Python in a Terminal window, connects a
 Trace RMI client back to Ghidra, then starts a blank trace. Once running, it presents the
 Python interpreter, with the `ghidratrace` and `ghidratrace.client` packages

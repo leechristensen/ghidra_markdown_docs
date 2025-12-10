@@ -245,9 +245,9 @@ Copy this into the same place in the Android NDK's build of Python.
 5. There are also three native modules that need to be copied from the official Python's
 `DLLs\` directory to the same in the NDK's build. This is to support SSL for
 downloading packages from PyPI: (Substitue the ??'s appropriately.)
-- `_ssl.pyd`
-- `libssl-??.dll`
-- `libcrypto-??.dll`
+  - `_ssl.pyd`
+  - `libssl-??.dll`
+  - `libcrypto-??.dll`
 6. We should now have enough to bootstrap the NDK's Python with Pip. Again at the Windows
 Command Prompt or Powershell:
   ```

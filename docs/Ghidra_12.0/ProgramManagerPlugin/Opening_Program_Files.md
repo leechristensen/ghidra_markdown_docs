@@ -29,7 +29,7 @@ This allows selection of any file that is part of the active project.
 2. Click the **OK** button *OR* double click on the program to open.
 
 
-The selected program is opened and displayed in the tool.  More than one program can be opened at the same time, but only one
+The selected program is opened and displayed in the tool.  <a name="multipleprograms"></a>More than one program can be opened at the same time, but only one
 of them can be *active* at a time. The Code Browser window shows a tab for each
 program that you have opened. Select a tab to make that program the active one, as shown in
 the image below.
@@ -105,7 +105,7 @@ unless you check it out.
 
 If you are working in a [shared project](../VersionControl/project_repository.md), AND if you plan to make
 drastic changes to memory, e.g., add or remove memory blocks, select the checkbox on the
-dialog to obtain an [exclusive lock](../VersionControl/project_repository.md#exclusivelock) on the
+dialog to obtain an [exclusive lock](../VersionControl/project_repository.md#check-out) on the
 program file.
 
 

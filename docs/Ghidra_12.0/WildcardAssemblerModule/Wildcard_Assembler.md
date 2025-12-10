@@ -31,16 +31,16 @@ limited by filtering the wildcard by appending specific syntax after the wildcar
 
 
 - **Numeric Filter:**
-- Appending `[..]` e.g., `MOV RAX, `Q1[..]``, will constrain
+  - Appending `[..]` e.g., `MOV RAX, `Q1[..]``, will constrain
 the wildcarded token to only numeric values (and not registers or other strings).
-- Appending `[0x0..0x100]` (where 0x0 and 0x100 are arbitrary hexadecimal
+  - Appending `[0x0..0x100]` (where 0x0 and 0x100 are arbitrary hexadecimal
 values with the smaller number first) will constrain the wildcarded token to only
 numeric values between the two given values. This can be used to ensure that the
 returned encodings can hold values of a desired size. Multiple non-contiguous ranges
 can be specified by separating them with commas (e.g.
 `[0x0..0x5,0x1000..0x4000]`)
 - **Regex Filter:**
-- Appending `/ABCD` where ABCD is an arbitrary regular expression will
+  - Appending `/ABCD` where ABCD is an arbitrary regular expression will
 constrain the wildcarded token to only be string tokens matching the given regular
 expression. This is most likely used for filtering register names; for example
 appending `/(sp)|(lr)` to a wildcard in a register position in ARM assembly

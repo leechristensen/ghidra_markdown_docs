@@ -86,7 +86,7 @@ menu.
 3. Select an action name to either set a key binding or change the existing key
 binding.
 4. Click in the text field and type the key or keystroke combination (e.g., Ctrl x).
-- When a key is mapped to multiple actions, the action name is listed below the
+  - When a key is mapped to multiple actions, the action name is listed below the
 text field.
 5. Click on the **OK** or **Apply**
 button.
@@ -119,6 +119,7 @@ button.
 
 
 Import/Export Key Bindings
+<a name="import"></a>
 
 
 ### Import Key Bindings
@@ -227,7 +228,7 @@ mouse pointer over the component in the options panel.
 | Max Goto Entries | Number of past entries to keep in the [Go to Address or                 Label](../Navigation/Navigation.md#go-to-address-label-or-expression) dialog |
 | Max Navigation History Size | Max number of items to retain in the navigation                 history. dialog |
 | Show Program Tabs Always | If selected, a program tab will be displayed even                 there is only one program open. |
-| Subroutine Model | Sets the default subroutine model. This setting is mainly used when creating                   call graphs. See [Block Models](../BlockModel/Block_Model.md#blockmodeldefinition) for a description of the valid Models. |
+| Subroutine Model | Sets the default subroutine model. This setting is mainly used when creating                   call graphs. See [Block Models](../BlockModel/Block_Model.md#block-model) for a description of the valid Models. |
 | Use C-like Numeric Formatting for                 Addresses | Selected means to attempt to interpret the value entered in the [Go To dialog](../Navigation/Navigation.md#go-to-address-label-or-expression) as a                   number as follows: interpret the value as a hex number if it starts with "0x"interpret the value as an octal number if it starts with "0"interpret the value as a binary number if it ends with a "b" |
 
 
@@ -271,8 +272,8 @@ efficient. The following two options are available:
 
 | **Option** | **Description** |
 | --- | --- |
-| Program Cache Size | This options                 specifies the maximum number of programs to keep open in the cache. |
-| Program Cache Duration |  |
+| Program Cache Size | <a name="program-cache-size"></a> This options                 specifies the maximum number of programs to keep open in the cache. |
+| Program Cache Duration | <a name="program-cache-duration"></a> |
 
 
 **Related Topics:**

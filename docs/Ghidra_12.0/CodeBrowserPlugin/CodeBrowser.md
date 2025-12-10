@@ -103,6 +103,9 @@ program may be opened and positioned within the CodeBrowser. See the tool [Edit 
 certain Navigation behaviors.
 
 
+<a name="show-xrefs"></a>
+
+
 In the XRef field, sometimes there are too many addresses to display so the field will
 display "[more]" to indicate that one or more cross-reference addresses are not shown.
 
@@ -121,7 +124,7 @@ and a preview of the instruction at that address. Clicking on any row in the tab
 the browser to navigate to that address
 
 
-### Refresh
+### Refresh ![Refresh](../icons/reload3.png)
 
 
 This action will refresh the table of references. This button will appear disabled
@@ -130,7 +133,7 @@ stale, then the button will become color filled, as it is here. You may push the
 button for a refresh in either state.
 
 
-### Show Thunk Xrefs
+### Show Thunk Xrefs ![ThunkFunction.gif](../icons/ThunkFunction.gif)
 
 
 Available when viewing all Xrefs to a particular function, this toolbar action
@@ -142,7 +145,7 @@ the dialog.  Alternatively, when toggled off, you will only see those Xrefs that
 point to the function used to launch the dialog.
 
 
-### Delete Reference
+### Delete Reference ![Delete](../icons/edit-delete.png)
 
 
 This action will delete all selected references from the database.  This differs
@@ -191,7 +194,7 @@ Markers
 
 Margin Markers appear on the left side of the Listing and are used to
 indicate locations within the currently displayed code. There are two types of Margin Markers
-- *Point Markers* and *Area Markers*. **Point Markers** are used to
+      - *Point Markers* and *Area Markers*. **Point Markers** are used to
 indicate individual addresses (Ex: bookmarks, search results, breakpoints, etc) and are
 displayed using icons. **Area Markers** are used to indicate a range of addresses
 (Ex: areas in the program that have been changed) and are displayed using a colored vertical
@@ -205,7 +208,7 @@ Navigation Markers appear on the right side of the listing and are used to
 indicate locations within the overall view. These markers provide an overview of all the
 markers and an easy way to navigate to them. Navigation Markers are displayed as colored bars
 where each color represents a different type of marker. To see the color assignments bring up
-the [Marker Popup Menu](#markerpopupmenu) as described below.
+the [Marker Popup Menu](#navigation-marker) as described below.
 
 
 To navigate the browser to the actual location of a marker, left-click on the
@@ -218,7 +221,7 @@ display Point Markers while the right area displays Area Markers. This prevents 
 markers from being hidden by the Area markers.
 
 
-You can control what is displayed in the
+<a name="markerpopupmenu"></a>You can control what is displayed in the
 Navigation Marker area by right-mouse clicking in the margin; a popup menu is displayed, as
 shown in the image below. Turn markers on and off by clicking on the appropriate menu
 item.
@@ -230,7 +233,7 @@ item.
 Marker Popup Menu
 
 
-The markers shown in the Marker Popup Menu are
+<a name="markers"></a> The markers shown in the Marker Popup Menu are
 described below:
 
 
@@ -252,7 +255,7 @@ described below:
 appropriately when some plugin adds/removes new marker types.
 
 
-Another way to control the display of Navigation
+<a name="navigation-markers"></a>Another way to control the display of Navigation
 Markers is to set the options in Navigation Markers panel of the [Edit Options](../Tool/ToolOptions_Dialog.md) dialog, as shown below. Select
 the *Navigation Markers* node in the Options tree. Click the appropriate checkbox to
 turn the marker on or off.
@@ -430,10 +433,10 @@ are disabled.
 ![](images/MouseHoverButton.png)
 
 
-#### Mouse Hover Enabled
+#### Mouse Hover Enabled ![hoverOn.gif](../icons/hoverOn.gif)
 
 
-#### Mouse Hover Disabled
+#### Mouse Hover Disabled ![hoverOff.gif](../icons/hoverOff.gif)
 
 
 ## Opening/Closing Structures and Arrays
@@ -513,11 +516,11 @@ In addition to the control widget in the display, there are also several actions
 can be used to control the display of function variables.
 
 
-- **Show/Hide All Variables** - This toggle
+- <a name="show-all-variables"></a>**Show/Hide All Variables** - This toggle
 action can be used to globally control whether or not function variables are displayed.
 Individual functions can still be toggled on or off, but this sets the default for all
 functions.
-- **Show/Hide Variables** - This action toggles
+- <a name="show-variables"></a>**Show/Hide Variables** - This action toggles
 the display of the variables. If they are showing, this will turn them off. And if they
 are not showing, this action will turn them on. The default keybinding is
 `Space` so if you are on a function or variable, pressing the space bar will
@@ -545,7 +548,7 @@ Cursor Text Highlight
 
 
 This feature has additional functionality when used on registers. In this case, the
-highlight can be restricted to show the "Scope" of a register. The "Scope" of a register starts where the register is assigned a value and ends at the
+highlight can be restricted to show the "Scope" of a register. The "Scope"<a name="scope"></a> of a register starts where the register is assigned a value and ends at the
 last use of the register before it is written with another value (when a register is both
 read and written, then it will be shown as a read).
 

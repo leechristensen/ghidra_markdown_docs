@@ -57,7 +57,7 @@ If you choose to edit the settings you will be taken to the options dialog shown
 below.
 
 
-![](images/ProcessorManualOptions.png)
+<a name="processor-manual-options"></a> ![](images/ProcessorManualOptions.png)
 
 
 | Options Name | Description |

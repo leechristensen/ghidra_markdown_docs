@@ -82,7 +82,7 @@ from outside the program. Most programs have a single "main" entry point. (Usual
 label "Entry".) Shared libraries (DLLs) usually have many entry points, one for each function
 in the library. Since the "entry point" property is really associated with an address and not
 a particular label, all labels at an address share this property.
-- **Primary -** Indicates that this label will be the one used to
+- **<a name="primary"></a>Primary -** Indicates that this label will be the one used to
 represent the address everywhere the address is displayed, such as in the operand field of an
 instruction. Since multiple labels can be associated with an address, one and only one must
 be designated as primary.
@@ -383,7 +383,7 @@ modification date (i.e., oldest date first). You can also reorder the columns by
 header to another column position.
 
 
-To seach for label history for a past or present label
+<a name="show-all-history"></a> To seach for label history for a past or present label
 name:
 
 
@@ -395,13 +395,13 @@ name:
 
 1. A dialog is displayed so that you can enter a label name (or part of a label
 name)
-- Enter a string you would like to see matches for.
-- To display the label history for all the label changes, leave the field blank.
+  - Enter a string you would like to see matches for.
+  - To display the label history for all the label changes, leave the field blank.
 2. Select the OK button or press the `<Enter>` key in the text field.
-- If label history was found, a dialog similar to the one shown above is displayed
+  - If label history was found, a dialog similar to the one shown above is displayed
 with the addition of an "Address" column. The input dialog remains displayed if no
 label history was found.
-- From the label history dialog, you can navigate to each address by clicking on the
+  - From the label history dialog, you can navigate to each address by clicking on the
 row in the table.
 
 

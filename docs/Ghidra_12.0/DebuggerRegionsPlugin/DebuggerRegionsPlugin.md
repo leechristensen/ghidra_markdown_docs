@@ -73,14 +73,14 @@ It behaves like Map Regions, except that it will propose the selected region be 
 block containing the cursor in the static listing.
 
 
-### Select Addresses
+### Select Addresses ![Addresses](../icons/text_align_justify.png)
 
 
 This action is available when at least one region is selected. It selects all addresses in
 the dynamic listing contained by the selected regions.
 
 
-### Select Rows
+### Select Rows ![Rows](../icons/table_go.png)
 
 
 This action is available when the dynamic listing's cursor is at a valid location. It

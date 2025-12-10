@@ -64,18 +64,18 @@ text that has been typed.
 3. Select one of the choices from the "Apply To" list. **Current Location** is the
 default choice unless a selection is made, in which case the **Current Selection**
 option will be set. The other option is **Entire Program.**
-1. **Current Location**: When selected the equate will be applied to the scalar
+  1. **Current Location**: When selected the equate will be applied to the scalar
 value at the current location of your cursor only.
-2. **Current Selection**: When selected the equate will be applied to all of the
+  2. **Current Selection**: When selected the equate will be applied to all of the
 scalar values in your current selection that match the value of the scalar that you
 originally clicked. When you make a selection in your program this button will become
 enabled. If you do not make a selection then it will not be enabled and the option will
 be grayed out. Note that scalars in your selection that already have an equate set will
 not be affected by this unless you also select the overwrite option.
-3. **Entire Program**: When selected the equate will be applied to all of the
+  3. **Entire Program**: When selected the equate will be applied to all of the
 scalar values in the entire program that also match the value of the scalar that you
 originally right-mouse-clicked on.
-4. **Overwrite existing equates**: This option is only enabled when setting equates
+  4. **Overwrite existing equates**: This option is only enabled when setting equates
 in a selection or the whole program. If this option is selected, all scalars and all
 named equates in the selection or entire program, depending on which option is
 selected, will be set with the user-given equate name. If the overwrite option is not
@@ -126,14 +126,14 @@ To rename an Equate:
 2. Select one of the choices from the "Apply To" list. **Current Location** is the
 default choice unless a selection is made, in which case the **Current Selection**
 option will be set. The other option is **Entire Program.**
-1. **Current Location**: When selected the equate will be applied to the scalar
+  1. **Current Location**: When selected the equate will be applied to the scalar
 value at the current location of your cursor only.
-2. **Current Selection**: When selected the equate will be applied to all of the
+  2. **Current Selection**: When selected the equate will be applied to all of the
 scalar values in your current selection that match the value of the scalar that you
 originally clicked. When you make a selection in your program this button will become
 enabled. If you do not make a selection then it will not be enabled and the option will
 be grayed out.
-3. **Entire Program**: When selected the equate will be applied to all of the
+  3. **Entire Program**: When selected the equate will be applied to all of the
 scalar values in the entire program that match the value of the scalar that you
 originally clicked. Scalars that already have an equate set that is different from the
 one you selected will not be affected.
@@ -204,7 +204,7 @@ To apply an enum to the selection:
 2. A dialog similar to the one below should appear. Select the enum that you want to be
 applied to the selection. The data type must be an enum for the action to work.
 ![Apply Enum Popup](images/ApplyEnum.png)
-- *Apply to sub-operands* - Applies the enum to scalars within operands.
+  - *Apply to sub-operands* - Applies the enum to scalars within operands.
 Once the data type is selected, the scalars in the selection will have equates applied
 to them as shown below.
 ![Apply Enum Popup](images/AfterApplyEnum.png)

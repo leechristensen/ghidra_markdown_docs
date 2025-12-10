@@ -11,7 +11,7 @@ The Function Call Graph Plugin is a simple graph display that shows incoming and
 outgoing calls (as edges) for the function containing the current address, also known as
 the *Source Function*, in the
 Listing.  This display provides some context for how a function is used within the
-program.   The functions are organized by [Level](#level).
+program.   The functions are organized by [Level](#terms).
 
 
 To show the Function Call Graph provider window,
@@ -37,7 +37,7 @@ its previous state.
 - **Source Function**: the function that contains the current address in
 the Listing.   This function is considered the center of the graph, with all
 other callers/callees added to the graph at a new level.
-- **Level**: Each function node in the graph belongs to a
+- <a name="level"></a>**Level**: Each function node in the graph belongs to a
 level.   The source function is at level 1; the source function's incoming
 calls are at level 2; the source function's outgoing calls are also at level 2.
 Organizing functions by level allows the user to quickly see how many hops, or
@@ -54,7 +54,7 @@ upon the selected node's direction:  for *In* nodes, the newly added nodes
 will be those nodes that **call** the selected node; for *Out* nodes, the
 newly added nodes will be those nodes **called by** the selected node.
 - **Direct Edges**: An edge (a call) between two adjacent levels.
-- **Indirect Edges**: An edge (a call)
+- <a name="indirect-edges"></a>**Indirect Edges**: An edge (a call)
 between two	non-adjacent levels or an edge within the same level.   These
 edges are rendered with less emphasis than *direct edges*.
 
@@ -103,7 +103,7 @@ replaced with a warning icon, as so:
 ### Show/Hide Level Edges Action
 
 
-All functions that relate to the [Level](#level) of
+All functions that relate to the [Level](#terms) of
 the selected function will be shown, **not just calls to the selected
 function.**
 
@@ -201,7 +201,7 @@ The **Use Animation** option signals to the graph whether to animate mutative gr
 operations and navigations.
 
 
-The **Use Condensed Layout** option signals to the
+<a name="layout-compressing"></a>The **Use Condensed Layout** option signals to the
 graph to bring vertices as close together as possible when laying out the graph. Using this
 option to fit as many vertices on the screen as possible. Disable this option to make the
 overall layout of the graph more aesthetic.

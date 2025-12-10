@@ -68,11 +68,11 @@ of each address table that was created, at all of the addresses contained in tho
 and at the top of the indexes to the tables if there are any.
 3. If necessary, enter an offset (number of addresses to be skipped) to be added to the
 starting address(es) (offset multiplied by 4, the address size).
-- For one address table, the entered offset cannot be greater than one less than the
+  - For one address table, the entered offset cannot be greater than one less than the
 length of the possible table.
-- For multiple address tables, the offset value cannot be greater than one less than
+  - For multiple address tables, the offset value cannot be greater than one less than
 the length of the smallest selected table.
-- The field next to *Offset* shows the adjusted start address for the table;
+  - The field next to *Offset* shows the adjusted start address for the table;
 this field cannot be edited. It is empty for multiple table selections.
 4. Select the **Make Table** button.
 5. An address table gets created at the location you chose, containing defined addresses
@@ -98,13 +98,13 @@ selected address tables.
 ## Actions
 
 
-### Make Selection
+### Make Selection ![Make Selection](../icons/stack.png)
 
 
 *See [Make Selection](Query_Results_Dialog.md#make-selection)*.
 
 
-### Selection Navigation
+### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
 
 
 *See [Selection Navigation](Query_Results_Dialog.md#selection-navigation)*.

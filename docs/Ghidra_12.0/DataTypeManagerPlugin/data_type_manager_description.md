@@ -48,7 +48,7 @@ modification](#opening-a-file-data-type-archive-for-editing) or as read-only. Wi
 actions for opening, closing, renaming, and making archives modifiable.
 
 
-### Built-In Data Type Archive
+### Built-In Data Type Archive ![closedBookBrown.png](../icons/closedBookBrown.png)
 
 
 The "Built-in" archive is a special archive that is always available in the
@@ -62,7 +62,7 @@ or jar files are added while Ghidra is running, there is a refresh action which 
 add the new data types to the "built-in" archive.
 
 
-### File Data Type Archive
+### File Data Type Archive ![closedBookGreen.png](../icons/closedBookGreen.png)
 
 
 File data type archives (or simply: file archives) store data types in files and have
@@ -71,7 +71,7 @@ be open by more than one user at the same time (assuming it is located on a shar
 filesystem), but only one of those users can have it open for modification.
 
 
-### Project Data Type Archive
+### Project Data Type Archive ![closedBookBlue.png](../icons/closedBookBlue.png)
 
 
 Project data type archives (or simply: project archives) store data types in Ghidra
@@ -81,7 +81,7 @@ archives can be versioned and shared in a multi-user environment just like progr
 the same "check-in/checkout" semantics for updating and sharing changes.
 
 
-### Data Types in a Program
+### Data Types in a Program ![closedBookRed.png](../icons/closedBookRed.png)
 
 
 Besides being stored in archives, data types are also stored inside programs.
@@ -100,7 +100,7 @@ times are maintained to facilitate keeping data types consistent across archives
 programs.
 
 
-### Categories
+### Categories ![closedFolder.png](../icons/closedFolder.png)
 
 
 Within a program or data type archive, data types can be organized using categories.
@@ -130,7 +130,7 @@ locations. They can also be used to describe function parameters and local varia
 
 
 One way to apply data types is to drag them from an archive and drop them on an element in
-the program [Listing](../CodeBrowserPlugin/CodeBrowser.md#code-browser). This
+the program [Listing](../CodeBrowserPlugin/CodeBrowser.md#listing-view). This
 action will cause a copy of the data type to be added to the program and then a reference to
 the copy will be used to annotate the program element. There are other ways of applying data
 types to a program and they are described in more detail [later](#applying-data-types-to-a-program).
@@ -572,7 +572,7 @@ Name&gt;.*** &lt;
 
 
 The full set of version control actions from the front-end project window are available
-when right-clicking on a project archive. See the [Version Control](../VersionControl/project_repository.md#versioncontrol) section of
+when right-clicking on a project archive. See the [Version Control](../VersionControl/project_repository.md#version-control) section of
 the Project Window for more information.
 
 
@@ -666,9 +666,9 @@ always live in the root category of an archive and they can't be renamed.
 Data types can be applied in several different ways:
 
 
-| 1. **Drag-N-Drop** | Data types can be dragged directly onto various                 locations in the [Listing](../CodeBrowserPlugin/CodeBrowser.md#code-browser) view. If dropped                 onto undefined bytes, a new Data object is created. If dropped onto a function, the                 return type can be set, etc. |
+| 1. **Drag-N-Drop** | Data types can be dragged directly onto various                 locations in the [Listing](../CodeBrowserPlugin/CodeBrowser.md#listing-view) view. If dropped                 onto undefined bytes, a new Data object is created. If dropped onto a function, the                 return type can be set, etc. |
 | --- | --- |
-| 2. **Favorites** | Data types can be set to be a favorite. This                 causes a popup menu action to be generated for that data type whenever the mouse is                 right-clicked over the appropriate location in the [Listing](../CodeBrowserPlugin/CodeBrowser.md#code-browser) view. |
+| 2. **Favorites** | Data types can be set to be a favorite. This                 causes a popup menu action to be generated for that data type whenever the mouse is                 right-clicked over the appropriate location in the [Listing](../CodeBrowserPlugin/CodeBrowser.md#listing-view) view. |
 | 3. **Last Used** | Whenever a data type is applied to a program it is                 remembered as the "last used" data type and can be easily applied to other                 locations using a key binding or popup menu actions. |
 
 
@@ -733,8 +733,8 @@ within the same category where the base datatype is defined.  When defining a
 pointer or typedef for a selected datatype from the Built-in Data Type Manager it will be created within the root category of the active program's datatype manager.
 
 
-Structures can also be created directly in the [Listing](../CodeBrowserPlugin/CodeBrowser.md#code-browser) view. See [creating structures in
-the Browser](../DataPlugin/Data.md#structuredefinition) for details.
+Structures can also be created directly in the [Listing](../CodeBrowserPlugin/CodeBrowser.md#listing-view) view. See [creating structures in
+the Browser](../DataPlugin/Data.md#structure) for details.
 
 
 ### Renaming a Data Type
@@ -883,7 +883,7 @@ you to choose the replacement data type.
 ### Setting Favorite Data Types
 
 
-Data types can be marked as *favorites* such that they show up in the **[Data](../DataPlugin/Data.md#favorites)** option menu and the **[Set Data Type](../FunctionPlugin/Variables.md#datatype)** popup action menu in the
+Data types can be marked as *favorites* such that they show up in the **[Data](../DataPlugin/Data.md#favorites)** option menu and the **[Set Data Type](../FunctionPlugin/Variables.md#define-variable-data-type-or-function-return-type)** popup action menu in the
 Browser. This is a quick way to apply a data type to the Program. The default Code
 Browser has most of the well-known types in the ***BuiltInTypes*** category
 marked as a favorite.
@@ -924,7 +924,7 @@ merge processing, which normal Data Settings do not support.
 
 
 The Typedef Settings may be modified via the Settings dialog in the same way data type Default Settings
-are changed for listing Data (see [Changing Default Settings for Data](../DataPlugin/Data.md#default-settings)).
+are changed for listing Data (see [Changing Default Settings for Data](../DataPlugin/Data.md#changing-data-settings)).
 In addition to this popup action on listing Data, the dialog may be displayed from the *Data Type Manager*
 tree by right-clicking on a data type and selecting the **Settings...** action.  Typedef-specific settings
 are only supported as default settings for a typedef and may not be overridden at the component or data level.
@@ -965,9 +965,9 @@ be better modeled as a Pointer.
 **Related Topics:**
 
 
-- [Data Types](../DataPlugin/Data.md#datatypes)
+- [Data Types](../DataPlugin/Data.md#data-types)
 - [Edit Plugin Path](../FrontEndPlugin/Edit_Plugin_Path.md)
-- [Apply Data Types](../DataPlugin/Data.md#applydatatype)
+- [Apply Data Types](../DataPlugin/Data.md#applying-data-type)
 - [Edit Structure](../DataTypeEditors/StructureEditor.md)
 
 

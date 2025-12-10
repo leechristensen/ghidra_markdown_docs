@@ -3,7 +3,7 @@
 # Ghidra Tool Administration
 
 
-A Ghidra Tool is a collection of building blocks, called ***Plugins***.  You can create tools by combining different Plugins
+A Ghidra Tool is a collection of building blocks, called <a name="plugins"></a>***Plugins***.  You can create tools by combining different Plugins
 that cooperate with one another to achieve certain functionality. You can add tools to the Tool
 Chest or configure them to share data and resources with other tools.  Ghidra provides a
 set of Plugins, but you may create your own Plugins to add more functionality to your
@@ -90,7 +90,7 @@ To save a tool to a different name, or to change the icon,
 2. Enter a new tool name (the current tool name is shown in the *Tool Name* field
 by default).
 3. Choose an icon from the list of icons ... OR
-- Click on the file chooser button (**...**) to choose a
+  - Click on the file chooser button (**...**) to choose a
 filename from the file system.
 4. Click on the **Save** button; if this is a new tool that you
 are adding to your tool chest, the Tool Chest panel will show the icon for the tool; icon
@@ -383,7 +383,7 @@ task. You can still interact with the program while the task is running.
 ![](images/Progress.png)
 
 
-There may be times when a task is "modal" such
+<a name="taskdialog"></a>There may be times when a task is "modal" such
 that no user interaction with the program is allowed until either the task completes or
 you cancel it. A dialog is displayed to indicate what task is running and to allow you to
 cancel it. Depending on the task, the dialog may or may not show a progress

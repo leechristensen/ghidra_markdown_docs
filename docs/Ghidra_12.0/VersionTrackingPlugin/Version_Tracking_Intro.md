@@ -91,7 +91,7 @@ created by the correlators are correct.
 
 
 When the you determine that a match is valid, then you can
-[accept](providers/VT_Matches_Table.md#accept-match)
+[accept](providers/VT_Matches_Table.md#match-table-actions)
 the match, which will block conflicting, related matches.  When you apply markup for a
 given match, then that match is automatically accepted.  Finally, you cannot apply
 markup for a match that has been blocked by another already accepted match.

@@ -1,5 +1,8 @@
 [Home](../index.md) > [Search](index.md) > Search and Replace
 
+<a name="search-and-replace"></a>
+
+
 # Search And Replace
 
 
@@ -12,9 +15,9 @@ element, or enum values.
 
 
 By default, the search matches the text anywhere in an element ("contains"), but it has
-full [regular expression](Search_Formats.md#regularexpressions) support where
+full [regular expression](Search_Formats.md#examples-encoding-is-utf-16-case-sensitive-is-on-escape-sequences-is-off-big-endian) support where
 users can easily perform a "starts with" or "ends with" search. Regular expression capture
-groups are also supported which allows for complex replacing of disjoint strings. See the [examples](#examples) section below for details.
+groups are also supported which allows for complex replacing of disjoint strings. See the [examples](#navigation) section below for details.
 
 
 To initiate a search and replace operation, select **Search**  → **Search and Replace** from the main tool menu.
@@ -70,7 +73,7 @@ strings.
 
 
 If selected, the search text will be interpreted as a regular expression. This
-allows for complex search and replace operations. See the general section on [regular expressions](Search_Formats.md#regularexpressions) for more information. If
+allows for complex search and replace operations. See the general section on [regular expressions](Search_Formats.md#examples-encoding-is-utf-16-case-sensitive-is-on-escape-sequences-is-off-big-endian) for more information. If
 you want to anything other than a "contains" search, you must use a regular expression.
 See below for examples on how to do this.
 
@@ -124,6 +127,9 @@ to the database.)
 - **Parameters** - Search the names of function parameters.
 - **Program Trees** - Search the names of modules and fragments defined in program
 trees.
+
+
+<a name="search-and-replace-results"></a>
 
 
 ## Results Window
@@ -220,6 +226,9 @@ Press this button to apply all items in the table, regardless of what is
 selected.
 
 
+<a name="apply-selected"></a>
+
+
 #### Apply Selected Action
 
 
@@ -227,6 +236,9 @@ Press the ![Done](../icons/tick.png) toolbar button or use the
 popup action **Execute Selected Action(s)** to apply just the selected entries in
 the table. If only one item is selected when this is done, the selected item will
 move to the next item in the table to facilitate a one at a time workflow.
+
+
+<a name="auto-delete"></a>
 
 
 > **Note:** There is also a popup toggle action
@@ -244,6 +256,9 @@ if possible.
 Double clicking (or pressing return key) will also attempt to navigate the tool to the
 selected item. In addition, if the item is related to a datatype, an editor for that
 datatype will be shown.
+
+
+<a name="examples"></a>
 
 
 ## Search Examples

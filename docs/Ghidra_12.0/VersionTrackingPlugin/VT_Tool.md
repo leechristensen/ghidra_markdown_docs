@@ -70,7 +70,7 @@ functionality.
 ## Version Tracking Tool Actions
 
 
-The **Create Session**
+<a name="create-session"></a>The **Create Session**
 ![start-here_16.png](../icons/start-here_16.png) action will launch the
 [Version Tracking Wizard](VT_Wizard.md) to
 guide you through the process of create a new
@@ -78,7 +78,7 @@ guide you through the process of create a new
 tracking session](Version_Tracking_Intro.md#version-tracking-session).
 
 
-The **Add to Session**
+<a name="add-to-session"></a>The **Add to Session**
 ![Plus.png](../icons/Plus.png) action will launch the
 [Version Tracking Wizard](VT_Wizard.md) to
 guide you through the process of create adding new
@@ -89,7 +89,7 @@ an existing
 tracking session](Version_Tracking_Intro.md#version-tracking-session).
 
 
-The **Automatic Version
+<a name="automatic-version-tracking"></a> The **Automatic Version
 Tracking** ![wizard.png](../icons/wizard.png) action will launch
 [Auto Version Tracking](VT_AutoVT.md) to
 try and automatically create and accept the most likely matches .
@@ -137,7 +137,7 @@ Tracking Tool.
 - **Undo** - Performs an undo of the last edit (e.g., accepting a
 match, applying markup, etc).
 - **Redo** - Performs a redo of the previous undo action.
-- **Reset Source and Destination Tools** -
+- <a name="reset-tools"></a>**Reset Source and Destination Tools** -
 Will reset the sub-tools to be the default configurations.  This
 is useful if you have made changes (layout, size, etc.)
 to the tools and would like to undo those changes.

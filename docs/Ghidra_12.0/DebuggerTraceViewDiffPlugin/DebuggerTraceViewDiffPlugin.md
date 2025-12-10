@@ -6,7 +6,7 @@
 ![](images/DebuggerTraceViewDiffPlugin.png)
 
 
-A common strategy in dynamic analysis is to compare machine
+<a name="toggle-header"></a>A common strategy in dynamic analysis is to compare machine
 state between two points in time. To this end, the "trace diff" plugin extends the [Dynamic Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md) to provide
 side-by-side comparison of bytes between points in time. When active, listings for both times
 are displayed, and the byte value differences between them are highlighted. **NOTE:** This

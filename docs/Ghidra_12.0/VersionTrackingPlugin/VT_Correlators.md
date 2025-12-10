@@ -20,12 +20,26 @@ Below is a list of built-in (i.e, not discovered) program correlators.
 
 
 - [Data Match Correlators](#data-match-correlators)
+  - [Exact Data Match](#exact-data-match)
+  - [Duplicate Data Match](#duplicate-data-match)
+  - [Similar Data Match](#similar-data-match)
 - [Function Match Correlators](#function-match-correlators)
+  - [Exact Function Bytes Match](#exact-function-bytes-match)
+  - [Exact Function Instructions Match](#exact-function-instructions-match)
+  - [Duplicate Function Instructions
+Match](#duplicate-function-instructions-match)
+  - [Exact Function Mnemonics Match](#exact-function-mnemonics-match)
 - [Legacy Import Correlator](#legacy-import-correlator)
 - [Implied Correlator](#implied-correlator)
 - [Manual Match Correlator](#manual-match-correlator)
 - [Symbol Name Match Correlator](#symbol-name-match-correlators)
+  - [Exact Symbol Name Match](#exact-symbol-name-match)
+  - [Duplicate Exact Symbol Name Match](#duplicate-exact-symbol-name-match)
+  - [Similar Symbol Name Match](#similar-symbol-name-match)
 - [Reference Correlators that Use Match Information to Find Other Matches](#reference-correlators-that-use-match-information-to-find-other-matches)
+  - [Data Reference Correlator](#data-reference-correlator)
+  - [Function Reference Correlator](#function-reference-correlator)
+  - [Combined Function and Data Reference Correlator](#combined-function-and-data-reference-correlator)
 
 
 ## Data Match Correlators

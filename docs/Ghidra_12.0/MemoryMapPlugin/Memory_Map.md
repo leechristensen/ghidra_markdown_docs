@@ -16,19 +16,19 @@ modifications to the memory map.
 Ghidra supports three different block types through the Memory Map window:
 
 
-1. ***Default** -* The normal block type that can be
+1. <a name="defaulttype"></a>***Default** -* The normal block type that can be
 *Initialized*, *File Bytes* or *Uninitialized*.
-- *Initialized* - The block has an initial value
+  - <a name="initializedblock"></a>*Initialized* - The block has an initial value
 specified for all bytes
-- *File Bytes* - An initialized block whose data corresponds
+  - <a name="filebytesblock"></a>*File Bytes* - An initialized block whose data corresponds
 to a specified range within an existing loaded File Bytes instance.
-- *Uninitialized* - The block has no initial
+  - <a name="uninitializedblock"></a>*Uninitialized* - The block has no initial
 value specified for the bytes
-2. ***Bit Mapped*** - The block provides a
+2. <a name="bitmappedtype"></a>***Bit Mapped*** - The block provides a
 bit-addressable map onto other blocks. This is useful when a processor can indirectly access
 individual bits within memory using an alternative byte address.  Such blocks have a fixed
 mapping of 8-bytes to 1-source-byte..
-3. ***Byte Mapped*** - The block provides a
+3. <a name="bytemappedtype"></a>***Byte Mapped*** - The block provides a
 byte-addressable map onto other blocks.  This can be useful when a range of
 bytes can be accessed via an alternative address range.  While the default mapping
 is 1-byte to 1-source-byte (1:1), other decimations are permitted specified using a
@@ -40,7 +40,7 @@ by importers.  At this point in time there is no capability provided by the Memo
 new File Bytes instance.
 
 
-**Overlay** - Each of the above memory block types may
+<a name="overlaytype"></a>**Overlay** - Each of the above memory block types may
 optionally be created as an *Overlay* block.  One or more memory blocks may be defined
 within the same overlay address space where the **Overlayed Space** is reflected in the memory map table.
 Overlay blocks can serve various
@@ -100,8 +100,8 @@ facilitate analysis.
 of the overlayed physical memory space.  This field will be empty for non-overlay blocks.
 
 
-***Type -*** Indicates whether the block is a [Default](#defaulttype),
-[Bit Mapped](#bitmappedtype) or [Byte Mapped](#bytemappedtype) type of block.
+***Type -*** Indicates whether the block is a [Default](#memory-map),
+[Bit Mapped](#memory-map) or [Byte Mapped](#memory-map) type of block.
 
 
 ***Initialized * -*** Indicates whether the block has been initialized with values;
@@ -208,7 +208,7 @@ The memory block operations are available through the icons on the header of the
 window, or select a block in the table, right mouse click, and choose an option.
 
 
-### ** Add**
+### ** Add** ![Plus.png](../icons/Plus.png)
 
 
 Select **Add** to bring up the *Add Memory Block* dialog.  Fill in the
@@ -273,6 +273,11 @@ Mapped or Byte Mapped***.
 - ***Default*** - A normal memory block within the processor's address
 space.  These blocks cannot overlap any other default block.  Default blocks
 can be one of the following types:
+  - **Initialized** - Specify a value and a new block will be created
+using that value for every byte in the block.
+  - **Uninitialized** - An uninitialized block will be created.
+  - **File Bytes** - Select from a list of imported files and enter
+a starting offset for that file.  Those bytes will be the initial value for the block.
 - ***Bit Mapped -*** This is a block that allows bit addressing of a section
 of bytes in memory.  For example, the first bit of the byte at memory location
 0x1000 might also be addressed as BIT:0. The second bit at the same byte would then be
@@ -301,7 +306,7 @@ to the left value (e.g., 2:4).
 | --- |
 
 
-### Move
+### Move ![move.png](../icons/move.png)
 
 
 Select **Move** to bring up the *Move Memory Block* dialog. The *Move*
@@ -344,10 +349,10 @@ following conditions:*
 
 - *The changes specified would result in an overlap with the original block or any
 other existing block.*
-- *The block is an [Overlay](#overlaytype) block.*
+- *The block is an [Overlay](#memory-map) block.*
 
 
-### Split
+### Split ![verticalSplit.png](../icons/verticalSplit.png)
 
 
 Select **Split** to bring up the *Split Block* Dialog. The *Split* action
@@ -405,7 +410,7 @@ it can be changed by editing this field
 be split.*
 
 
-### Expand Up
+### Expand Up ![collapse.gif](../icons/collapse.gif)
 
 
 Select **Expand Up** to bring up the *Expand Block Up* Dialog. The *Expand
@@ -432,11 +437,11 @@ be before the current start address.
 entered here which will cause a corresponding change in the start address.
 
 
-*[Overlay](#overlaytype) type
+*[Overlay](#memory-map) type
 blocks cannot be expanded.*
 
 
-### Expand Down
+### Expand Down ![expand.gif](../icons/expand.gif)
 
 
 Select **Expand Down** to bring up the *Expand Block Down* Dialog. The *Expand
@@ -464,11 +469,11 @@ the current end address.
 entered here which will cause a corresponding change in the end address.
 
 
-*[Overlay](#overlaytype) type
+*[Overlay](#memory-map) type
 blocks cannot be expanded.*
 
 
-### Merge
+### Merge ![Merge.png](../icons/Merge.png)
 
 
 The *Merge* action is enabled when two or more memory blocks are selected.  It
@@ -490,7 +495,7 @@ initialization state can be merged.
 Overlay type blocks cannot be merged.
 
 
-### Delete
+### Delete ![edit-delete.png](../icons/edit-delete.png)
 
 
 The *Delete* action is enabled when one or more memory blocks are selected.
@@ -509,7 +514,7 @@ corresponding overlay address space will also be removed if no other overlay blo
 exist within that space.*
 
 
-### Set Image Base
+### Set Image Base ![house.png](../icons/house.png)
 
 
 The *Set Image Base* action allows you to change the base address of a
@@ -531,7 +536,7 @@ To change the image base, enter a new image base in the text field and click on 
 | --- |
 
 
-### Auto Updating Selection by Location
+### Auto Updating Selection by Location ![locationIn.gif](../icons/locationIn.gif)
 
 
 The ![locationIn.gif](../icons/locationIn.gif)   button controls whether a memory

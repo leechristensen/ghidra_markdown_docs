@@ -73,13 +73,13 @@ The filter text field will accept basic globbing characters such as '*****' and
 selected, in which case you should use standard regular expression syntax.
 
 
-## Viewing Symbol References
+## Viewing Symbol References ![table_go.png](../icons/table_go.png)
 
 
 See [Symbol References](symbol_references.md)
 
 
-## Deleting Symbols
+## Deleting Symbols ![edit-delete.png](../icons/edit-delete.png)
 
 
 You can use the *Symbol Table* to delete symbols from the program.
@@ -103,7 +103,7 @@ automatically be created and assigned those references.*
 reassigned to the primary the symbol.*
 
 
-## Making a Selection
+## Making a Selection ![Make Selection](../icons/stack.png)
 
 
 You can make a selection that corresponds to the symbol addresses that are selected in the
@@ -116,11 +116,11 @@ To make a selection:
 1. Select the symbols in the Symbol Table (hold the `<Ctrl>` key down to add to the
 selection) to be added to the selection.
 2. Right-mouse-click and select "Make Selection" from the popup menu.
-- Or, click the ![Make Selection](../icons/stack.png)  button in the *Symbol
+  - Or, click the ![Make Selection](../icons/stack.png)  button in the *Symbol
 Table* toolbar.
 
 
-## Making a Selection
+## Making a Selection ![Make Selection](../icons/stack.png)
 
 
 When selected, the Symbol Table will select the row in the table that corresponds to the
@@ -199,7 +199,7 @@ Filter* dialog.
 
 The Symbol Table Filter dialog consists of three sets of filters - Symbol
 Source, Symbol Types, and miscellaneous *[Advanced
-filters](#advancedfilters)* which are not initially shown.  The Symbol Types are further divided
+filters](#filtering)* which are not initially shown.  The Symbol Types are further divided
 into label symbols and non-label symbols.  This grouping is for informational purposes
 only. For most situations, only the Source and Type filters need to be set.  This will
 generate a query that will include all symbols that have one of the selected sources AND have
@@ -248,7 +248,7 @@ Use the ***Select All*** button to select all symbol types and the
 ***Clear All*** to de-select all types.
 
 
-**Advanced Symbol Filters -** Advanced
+<a name="advancedfilters"></a>**Advanced Symbol Filters -** Advanced
 filters are used to further refine a query to only include symbols that meet various specific
 criteria. Each of the advanced filters only applies to a subset of the symbol types, so
 to use one of these filters, the appropriate symbol type filter must also be selected.

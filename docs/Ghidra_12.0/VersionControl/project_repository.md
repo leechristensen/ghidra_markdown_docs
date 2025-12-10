@@ -4,11 +4,11 @@
 
 
 Ghidra supports the concept of a *project repository* such that files in the repository
-can be *versioned*.  Versioning allows you to track file
+can be *versioned*.  <a name="versioning"></a>Versioning allows you to track file
 changes over the life of the project.  The repository supports check out, check in,
 version history, and viewing what is checked out. When you check in your file, a new version is
 created. The project repository can be used with or without a [Ghidra Server](../GhidraServer/GhidraServer.md). If the project is associated
-with a Ghidra Server, the project is *shared*, meaning that
+with a Ghidra Server, the project is *<a name="sharedproject"></a>shared*, meaning that
 the *files in the project* are accessible by multiple users concurrently. The [Project Access
 List](../FrontEndPlugin/Ghidra_Front_end.md#edit-project-access-list) defines which users are allowed to access the shared repository.  When you [create a new project](../FrontEndPlugin/Creating_a_Project.md), you can
 specify whether it should be associated with a Ghidra Server.
@@ -89,7 +89,7 @@ version control features is the same regardless of whether your project reposito
 shared.
 
 
-### Add to Version Control
+### Add to Version Control ![vcAdd.png](../icons/vcAdd.png)
 
 
 Add a file (or multiple files at once) to version control by selecting the file in the
@@ -112,9 +112,9 @@ check out state and version.
 ![](images/CheckedOut.png)
 
 
-This image shows that the file
+<a name="samplecheckouticon"></a>This image shows that the file
 "Program_A" is associated with a shared project (note the blue border on the [file icon](../FrontEndPlugin/Ghidra_Front_end.md#file-icons)), and you
-are now working with version 1 of 1.  The file "Program_B"
+are now working with version 1 of 1. <a name="privatefile"></a> The file "Program_B"
 has not been added to version control (note the plain icon and no version information). It
 is considered to be a "private" file. Private files are never visible to other users.
 
@@ -130,7 +130,7 @@ the file was checked out, and the date that is was last modified. An asterisk wi
 on the file icon to indicate that changes have been made but not checked in.
 
 
-### Check Out
+### Check Out ![vcCheckOut.png](../icons/vcCheckOut.png)
 
 
 To check out a file, select the file in the Ghidra Project Window. You can either
@@ -139,11 +139,14 @@ bar, or right mouse click on the file and choose the **Check Out...**
 option.
 
 
+<a name="checkoutdialog"></a>
+
+
 ![](images/CheckOutFile.png)
 
 
 If your project repository is shared, a dialog is displayed to allow you to request an
-***exclusive lock*** on the file.  An exclusive
+<a name="exclusivelock"></a> ***exclusive lock*** on the file.  An exclusive
 lock is necessary if you plan to [manipulate the memory map](../MemoryMapPlugin/Memory_Map.md) in any way,
 e.g., move or delete memory blocks, [change the program's
 language](../LanguageProviderPlugin/Languages.md#setting-a-programs-language), etc. An exclusive lock can be granted if no other user has the file checked
@@ -153,7 +156,7 @@ out. While the exclusive lock exists, no other user can check out the file.
 > **Note:** The exclusive lock is implied for a non-shared project repository.
 
 
-### Check In
+### Check In ![vcCheckIn.png](../icons/vcCheckIn.png)
 
 
 After you have made your changes and saved them, you are ready to check in your file.
@@ -192,7 +195,7 @@ in red. Refer to the [Merge](../Repository/Merge_Program_Files.md)
 page for more information about merging.
 
 
-### Undo Checkout
+### Undo Checkout ![vcUndoCheckOut.png](../icons/vcUndoCheckOut.png)
 
 
 You may want to undo your checkout such that you lose all your changes, and your file
@@ -226,7 +229,7 @@ store.  This is done to ensure any folder name changes or removals within a shar
 repository are properly reflected while connected and avoid showing old/stale folders.
 
 
-### Update
+### Update ![vcMerge.png](../icons/vcMerge.png)
 
 
 While you are working on a program in a shared project repository, you may want to
@@ -241,7 +244,7 @@ Consider this scenario:  Suppose you are working on version 4 of 5 of a
 program.  The "5" indicates that there are 5 versions of the program in the
 repository.  The "4" indicates that your working copy of the program is based on the
 version "4" version that you checked out from the repository.  (To see the version
-numbers for your programs, check the [file's status](../FrontEndPlugin/Ghidra_Front_end.md#versionstatus) in the
+numbers for your programs, check the [file's status](../FrontEndPlugin/Ghidra_Front_end.md#file-icons) in the
 Ghidra Project Window [data tree](../FrontEndPlugin/Ghidra_Front_end.md#project-data-tree)).   When
 you update, you will update to the latest version in the repository (5).  After the
 update is complete, your file status will show "Version 5 of 5" just as though you had
@@ -263,13 +266,13 @@ tool where you have the file opened.
 > **Note:** The update action is not applicable in a non-shared project repository.
 
 
-### Undo Hijack
+### Undo Hijack ![undo_hijack.png](../icons/undo_hijack.png)
 
 
 A file becomes "hijacked" when it exists locally as a private file in your project
 *and* a file of the same name exists in the repository.  This will happen when
 user another adds a file to version control while you have a private file of the same name
-in your shared project. It can also happen if your checkout of the file is [terminated](#terminatecheckout).  The [file icon](../FrontEndPlugin/Ghidra_Front_end.md#hijackedfile) in the Ghidra
+in your shared project. It can also happen if your checkout of the file is [terminated](#view-checkouts).  The [file icon](../FrontEndPlugin/Ghidra_Front_end.md#hijackedfile) in the Ghidra
 Project Window changes to indicate that it is hijacked. To undo the hijack:
 
 
@@ -329,10 +332,10 @@ open.
 ### Delete
 
 
-You can delete the first and last version if you are the owner, or if you are an [administrator](../FrontEndPlugin/Creating_a_Project.md#admin) in the
+You can delete the first and last version if you are the owner, or if you are an [administrator](../FrontEndPlugin/Creating_a_Project.md#creating-a-shared-project) in the
 project, *and* if the file is not checked out.  If the user who has the file
 checked out is not available to either undo his checkout or check in his file, the
-administrator may [terminate the checkout](#terminatecheckout) in order to
+administrator may [terminate the checkout](#view-checkouts) in order to
 delete the version.
 
 
@@ -351,7 +354,7 @@ version number of the file that you have checked out.
 
 
 If you have administrative privileges in the project repository, you can terminate the
-checkout. Right mouse click on the version and choose the **Terminate Checkout** option. A dialog is displayed to confirm the
+checkout. Right mouse click on the version and choose the **<a name="terminatecheckout"></a>Terminate Checkout** option. A dialog is displayed to confirm the
 terminate checkout action. The administrator may need to do this if users who have files
 checked out are no longer working on the project. If your checkout is terminated, the file
 becomes [hijacked](../FrontEndPlugin/Ghidra_Front_end.md#hijackedfile).
@@ -374,8 +377,8 @@ the file. *Checkout Date* is when you checked out the file.  *Version* is the
 version number of the file that you have checked out.
 
 
-From this dialog, you can
-[check in](#check-in) your files or [undo your
+<a name="undo-checkout"></a> <a name="check-in"></a>From this dialog, you can
+[check in](#find-checkouts) your files or [undo your
 checkout](#undo-checkout). Make a selection in the table, right mouse click and choose **Check In...**
 or **Undo Checkout**. You can also click on the toolbar icon ![vcCheckIn.png](../icons/vcCheckIn.png)  to check in, or click on the icon ![vcUndoCheckOut.png](../icons/vcUndoCheckOut.png)  to undo the check out.
 

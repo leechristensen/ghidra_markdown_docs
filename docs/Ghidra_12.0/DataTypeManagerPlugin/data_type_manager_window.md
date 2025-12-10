@@ -117,6 +117,9 @@ names. You may turn this feature off if you find that your search yields too man
 for data types that have common names, such as `byte`.
 
 
+<a name="filter-name-only"></a>
+
+
 The **Filter on Name Only** action, when toggled on, will trigger the
 filter field to search only using data type names.  When toggled off, filtering will
 be done using the display text of the node, which may include additional information, such
@@ -162,7 +165,7 @@ to be more complete than the other in its field specification.
 ## Local Toolbar Actions
 
 
-![Left Alternate](../icons/left.alternate.png)  /
+<a name="navigation-actions"></a> ![Left Alternate](../icons/left.alternate.png)  /
 ![Right Alternate](../icons/right.alternate.png) -
 Navigates forward and backward in the stack of visited data types.
 
@@ -171,7 +174,7 @@ Navigates forward and backward in the stack of visited data types.
 tree nodes, except for the root node.
 
 
-![Configure Filter](../icons/exec.png) -
+<a name="show-filter"></a>![Configure Filter](../icons/exec.png) -
 Shows the filter dialog that allows you to filter certain data types from the tree.
 
 
@@ -183,12 +186,12 @@ Shows the filter dialog that allows you to filter certain data types from the tr
 | **Open Project               Archive...**   | This action will launch a project data type archive chooser that can be               used to open an existing project archive. Project data type archives live in the               project and can be seen in the [Ghidra Project Window](../FrontEndPlugin/Ghidra_Front_end.md) . Project data type               archives can also be opened by dragging them from the Ghidra Project Window to the *Data Type Manager* tree. |
 | **New File Archive...**   | This action is used to create a new file data type archive. A file               chooser will launched for choosing a location and name for the new file archive. The               location (file path) of the new archive will be added to the [archive path](data_type_manager_description.md#file-archive-path) if it isn't already there. |
 | **New Project               Archive...**   | This action is used to create a new project data type archive. A project               window browser will be launched for choosing a location in the project and a name for               the new project archive. |
-| **Standard Archive**   | This menu option will have a               sub-menu item for all file archives contained within the Ghidra installation. Only               those archives contained within a module *data/typeinfo* subdirectory will be included. If               contained within a contrib module, the contrib name will also be displayed. |
-| **Recently Opened Archive** | This menu option will               have a sub-menu item for all recently opened file archives. Choosing one of the               recently open archives actions will open that archive. |
-| **Refresh BuiltIn               Types**   | This action will search for new [Built-in](data_type_manager_description.md#built-in) data types in the classpath. This is only useful if               somehow new data type java classes have been added since Ghidra was started. |
-| **Preview Window**   | This action will show a preview window in the lower                 part of the data types window. This preview window will be updated with a preview                 of the selected data type node. To close the preview window, simply click the **Preview Window** action again. Below is a picture of the data type manager                 with the preview window open. |
+| **Standard Archive**   | <a name="standard-archives"></a> This menu option will have a               sub-menu item for all file archives contained within the Ghidra installation. Only               those archives contained within a module *data/typeinfo* subdirectory will be included. If               contained within a contrib module, the contrib name will also be displayed. |
+| **Recently Opened Archive** | <a name="recent-archives"></a> This menu option will               have a sub-menu item for all recently opened file archives. Choosing one of the               recently open archives actions will open that archive. |
+| **Refresh BuiltIn               Types**   | <a name="refresh-builtintypes"></a> This action will search for new [Built-in](data_type_manager_description.md#built-in) data types in the classpath. This is only useful if               somehow new data type java classes have been added since Ghidra was started. |
+| **Preview Window**   | <a name="preview-window"></a> This action will show a preview window in the lower                 part of the data types window. This preview window will be updated with a preview                 of the selected data type node. To close the preview window, simply click the **Preview Window** action again. Below is a picture of the data type manager                 with the preview window open. |
 | **Find Data Types by Name...**   | This action will prompt for a search string and then launch a new *Find Data Type* window with its filter set               to the search string. |
-| **Edit Archive               Paths...**   | This action will launch a dialog that               can be used to add, remove, or reorder the directories used for searching for a file               archive. Ghidra programs only store the name of the archive. Each directory in the [archive path](data_type_manager_description.md#file-archive-path) is searched in order, looking for a file               archive with that name. See the section on [editing archive paths.](data_type_manager_archives.md#edit-data-type-archive-paths)   |
+| **Edit Archive               Paths...**   | <a name="edit-archive-paths"></a> This action will launch a dialog that               can be used to add, remove, or reorder the directories used for searching for a file               archive. Ghidra programs only store the name of the archive. Each directory in the [archive path](data_type_manager_description.md#file-archive-path) is searched in order, looking for a file               archive with that name. See the section on [editing archive paths.](data_type_manager_archives.md#edit-data-type-archive-paths)   |
 
 
 ## Miscellaneous Actions
@@ -435,8 +438,8 @@ for each enclosed structure or pointed to type
 
 
 - [Data Type Manager](data_type_manager_description.md)
-- [Data Types](../DataPlugin/Data.md#datatypes)
-- [Apply Data Types](../DataPlugin/Data.md#applydatatype)
+- [Data Types](../DataPlugin/Data.md#data-types)
+- [Apply Data Types](../DataPlugin/Data.md#applying-data-type)
 - [Edit Structure](../DataTypeEditors/StructureEditor.md)
 
 

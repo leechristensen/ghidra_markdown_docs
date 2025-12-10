@@ -44,21 +44,21 @@ different packages, they must be explicitly imported. Failure to do so will resu
 Python `NameError`.
 
 
-## Clear
+## Clear ![erase16.png](../icons/erase16.png)
 
 
 This command clears the interpreter's display.  Its effect is purely visual.
 It does not affect the state of the interpreter in any way.
 
 
-## Interrupt
+## Interrupt ![dialog-cancel.png](../icons/dialog-cancel.png)
 
 
 This command issues a keyboard interrupt to the interpreter, which can be used to interrupt
 long running commands or loops.
 
 
-## Reset
+## Reset ![reload3.png](../icons/reload3.png)
 
 
 This command resets the interpreter, which clears the display and resets all state.

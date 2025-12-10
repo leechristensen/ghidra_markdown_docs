@@ -6,7 +6,7 @@
 ![](images/DebuggerMemoryBytesPlugin.png)
 
 
-The memory, or dynamic bytes, window is analogous to Ghidra's
+<a name="toggle-header"></a>The memory, or dynamic bytes, window is analogous to Ghidra's
 bytes window for static analysis, but in the dynamic context. It displays memory contents from
 a target. More precisely, it displays recorded memory contents in a trace. In most use cases,
 that trace is "at the present," meaning it is the most recent memory from a live target.

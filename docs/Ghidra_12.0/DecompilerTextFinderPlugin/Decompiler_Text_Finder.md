@@ -43,7 +43,9 @@ column.
 | --- |
 
 
-### Select Functions Action
+### Select Functions Action [Functions]
+
+<a name="select-functions"></a>
 
 
 This action will create a program selection for each function entry point for each function

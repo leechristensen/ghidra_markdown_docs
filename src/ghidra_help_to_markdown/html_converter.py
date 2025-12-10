@@ -131,6 +131,8 @@ class HTMLToMarkdownConverter:
         # Map from slugified HTML anchor names to GFM heading slugs
         # e.g., "tailorbsim" -> "tailoring-bsim"
         self.anchor_to_heading_slug: dict[str, str] = {}
+        # Track current heading slug for mapping orphan anchors (on non-heading elements)
+        self.current_heading_slug: str = ""
 
     def _preprocess_html(self, html_content: str) -> str:
         """Preprocess HTML to fix common issues in Ghidra help files.
@@ -167,6 +169,7 @@ class HTMLToMarkdownConverter:
         self.image_stats = ImageStats()
         self.code_block_stats = CodeBlockStats()
         self.table_stats = TableStats()
+        self.current_heading_slug = ""
 
         # Convert the content
         markdown = self._convert_element(body)
@@ -344,15 +347,31 @@ class HTMLToMarkdownConverter:
         if not text:
             return ""
 
+        # Check for images in the heading (e.g., <H2>Clear <IMG src="..."></H2>)
+        # These should be included after the heading text
+        heading_images = []
+        for img in element.find_all("img"):
+            img_md = self._convert_image(img)
+            if img_md:
+                heading_images.append(img_md)
+
         # GitHub-flavored markdown automatically generates anchors from heading text
         # e.g., "## My Section" -> anchor "#my-section"
         heading_slug = slugify(text)
+
+        # Update current heading slug for orphan anchor mapping
+        self.current_heading_slug = heading_slug
 
         # Build mapping from HTML anchor slugs to GFM heading slug
         # This allows link resolver to convert old anchor references to correct GFM anchors
         for html_anchor in html_anchors:
             if html_anchor and html_anchor != heading_slug:
                 self.anchor_to_heading_slug[html_anchor] = heading_slug
+
+        # Include any images found in the heading
+        if heading_images:
+            images_str = " " + " ".join(heading_images)
+            return f"\n\n{prefix} {text}{images_str}\n\n"
 
         return f"\n\n{prefix} {text}\n\n"
 
@@ -405,11 +424,20 @@ class HTMLToMarkdownConverter:
             slug_name = slugify(name)
             if slug_name:
                 self.anchors.append(slug_name)
+                # Map orphan anchor to current heading (if we have one and it's different)
+                if self.current_heading_slug and slug_name != self.current_heading_slug:
+                    self.anchor_to_heading_slug[slug_name] = self.current_heading_slug
             # Named anchors can also contain content that needs to be converted
             # e.g., <A name="foo"><B>Title</B> Description</A>
             content = self._convert_children(element).strip()
-            # Just return the content - links to anchors should point to nearby headings
-            # which GFM auto-anchors based on heading text
+            # Emit HTML anchor tag to preserve link target for non-heading anchors
+            # (headings get auto-anchors from GFM, but table cells, spans, etc. don't)
+            if slug_name:
+                # Add newline after anchor if content starts with a heading
+                # to avoid "anchor on same line as header" rendering issue
+                if content.startswith("#") or content.startswith("\n#"):
+                    return f'<a name="{slug_name}"></a>\n\n{content}'
+                return f'<a name="{slug_name}"></a>{content}'
             return content
 
         # Regular link
@@ -735,6 +763,22 @@ class HTMLToMarkdownConverter:
                             if line.strip():
                                 item += "\n  " + line
                     items.append(item)
+            elif isinstance(child, Tag) and child.name.lower() in ("ul", "ol"):
+                # Handle nested list that's a sibling of <li> elements (technically invalid HTML
+                # but Ghidra uses this pattern). Convert the nested list and indent it.
+                nested_content = self._convert_list(child).strip()
+                if nested_content:
+                    # Indent each line of the nested list
+                    indented_lines = []
+                    for line in nested_content.split("\n"):
+                        if line.strip():
+                            indented_lines.append("  " + line)
+                    if indented_lines:
+                        # Append to the previous item (if any) so it renders as a nested list
+                        if items:
+                            items[-1] += "\n" + "\n".join(indented_lines)
+                        else:
+                            items.append("\n".join(indented_lines))
 
         return "\n\n" + "\n".join(items) + "\n\n"
 
@@ -918,7 +962,11 @@ class HTMLToMarkdownConverter:
                     href = child.get("href", "")
                     name = child.get("name")
                     if name:
-                        # Named anchor - skip
+                        # Named anchor - emit HTML anchor tag to preserve link target
+                        slug_name = slugify(name)
+                        if slug_name:
+                            self.anchors.append(slug_name)
+                            result.append(f'<a name="{slug_name}"></a>')
                         continue
                     # Check for image inside link
                     img = child.find("img")
@@ -1024,11 +1072,22 @@ class HTMLToMarkdownConverter:
             text = self._extract_callout_text(element)
             return f"\n\n> **Warning:** {text}\n\n"
         elif "informalexample" in classes:
-            # Check if this contains a code block (pre tag)
-            pre = element.find("pre")
+            # Check if this contains a definition list (variablelist) FIRST
+            # These need to be fully converted to preserve anchors and structure
+            # Must check before pre because nested informalexample divs inside dd elements contain pre tags
+            dl = element.find("dl")
+            if dl:
+                return self._convert_children(element)
+            # Check if this directly contains a code block (pre tag)
+            pre = element.find("pre", recursive=False)
             if pre:
                 # Convert as code block
                 return self._convert_code(pre)
+            # Check nested divs for direct pre children (code blocks inside wrapper divs)
+            for child_div in element.find_all("div", recursive=False):
+                pre = child_div.find("pre", recursive=False)
+                if pre:
+                    return self._convert_code(pre)
             # Otherwise treat as a note-like block
             text = self._extract_callout_text(element)
             return f"\n\n> {text}\n\n"
@@ -1072,6 +1131,9 @@ class HTMLToMarkdownConverter:
             slug_name = slugify(name)
             if slug_name:
                 self.anchors.append(slug_name)
+                # Map orphan anchor to current heading
+                if self.current_heading_slug and slug_name != self.current_heading_slug:
+                    self.anchor_to_heading_slug[slug_name] = self.current_heading_slug
                 return slug_name
 
         # Check for anchor child
@@ -1082,6 +1144,9 @@ class HTMLToMarkdownConverter:
                 slug_name = slugify(name)
                 if slug_name:
                     self.anchors.append(slug_name)
+                    # Map orphan anchor to current heading
+                    if self.current_heading_slug and slug_name != self.current_heading_slug:
+                        self.anchor_to_heading_slug[slug_name] = self.current_heading_slug
                     return slug_name
 
         return None
@@ -1163,9 +1228,15 @@ class HTMLToMarkdownConverter:
                 # Preserve code block content (only rstrip)
                 cleaned_lines.append(line.rstrip())
             else:
-                # For regular content, strip both leading and trailing whitespace
-                # This prevents HTML source indentation from creating markdown code blocks
-                cleaned_lines.append(line.strip())
+                # Check if this is a list item (may have indentation for nested lists)
+                stripped = line.lstrip()
+                if stripped.startswith("- ") or stripped.startswith("* ") or re.match(r"\d+\. ", stripped):
+                    # Preserve list item indentation, only rstrip
+                    cleaned_lines.append(line.rstrip())
+                else:
+                    # For regular content, strip both leading and trailing whitespace
+                    # This prevents HTML source indentation from creating markdown code blocks
+                    cleaned_lines.append(line.strip())
 
         markdown = "\n".join(cleaned_lines)
 

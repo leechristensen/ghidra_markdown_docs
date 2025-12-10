@@ -10,7 +10,7 @@ in the program. You can click on the address column and navigate to the string i
 
 This plugin is ***not*** intended to be used to locate undefined strings. Please see
 [Search for Strings](../Search/Search_for_Strings.md) or
-[Search for Encoded Strings](../Search/Search_for_Strings.md#encoded-strings-dialog) for this
+[Search for Encoded Strings](../Search/Search_for_Strings.md#search-for-encoded-strings) for this
 feature.
 
 
@@ -24,7 +24,7 @@ string instance.
 - Location - address where string is found.  Double click in this column to navigate to the string.
 - String Value - raw value of string.
 - String Representation - formatted representation of the string (see
-[String Settings](../DataPlugin/Data.md#stringsettings) for formatting settings)
+[String Settings](../DataPlugin/Data.md#string-data-types) for formatting settings)
 or the translated value of the string.  Double click in this column to change the string's
 representation into a value of your choice.  This is the
 same as using the **Translate  →
@@ -95,7 +95,7 @@ The **Default Settings...** action allows changing the settings for all instance
 of a specific data type.
 
 
-For more information, see [string settings](../DataPlugin/Data.md#stringsettings).
+For more information, see [string settings](../DataPlugin/Data.md#string-data-types).
 
 
 ### Translate
@@ -123,4 +123,4 @@ options](../CodeBrowserPlugin/CodeBrowserOptions.md#operands-field)
 - [Listing](../CodeBrowserPlugin/CodeBrowser.md)
 - [Translate
 Strings Plugin](../TranslateStringsPlugin/TranslateStringsPlugin.md)
-- [String data types](../DataPlugin/Data.md#stringdatatypes)
+- [String data types](../DataPlugin/Data.md#string-data-types)

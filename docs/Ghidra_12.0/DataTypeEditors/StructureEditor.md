@@ -410,7 +410,7 @@ menu for the component table. To display the popup menu, right mouse click on th
 table. There are also short-cut keys associated with each of the edit actions.
 
 
-### Insert Undefined Byte
+### Insert Undefined Byte ![Plus.png](../icons/Plus.png)
 
 
 Within a non-packed structure *undefined* components are inserted before the current selection by clicking the ![Plus.png](../icons/Plus.png) **Insert Undefined Byte** button.  Within a packed structure an *undefined1* datatype component
@@ -418,7 +418,7 @@ is inserted in a similar fashion, although in packed structures it is more appro
 on inserted component).
 
 
-### Move Up
+### Move Up ![up.png](../icons/up.png)
 
 
 A contiguous group of components can be moved up or down in the structure. Select a block
@@ -428,7 +428,7 @@ that was immediately above the group is now below it. This can be done until the
 selected components is at the beginning of the structure (offset 0).
 
 
-### Move Down
+### Move Down ![down.png](../icons/down.png)
 
 
 Select a block of one or more components. Press the ![down.png](../icons/down.png)
@@ -437,7 +437,7 @@ that immediately followed them is now before them. The selected components can b
 until they are at the end of the structure.
 
 
-### **Duplicate Component**
+### **Duplicate Component** ![DuplicateData.png](../icons/DuplicateData.png)
 
 
 To duplicate a component within a structure or union:
@@ -456,7 +456,7 @@ consumed by the new copy of the component.  If action is performed on the last c
 length will grow as needed.
 
 
-### **Duplicate Multiple of Component...**
+### **Duplicate Multiple of Component...** ![MultiDuplicateData.png](../icons/MultiDuplicateData.png)
 
 
 To create multiple copies of a component:
@@ -465,7 +465,7 @@ To create multiple copies of a component:
 1. Select the component.
 2. Press the ![MultiDuplicateData.png](../icons/MultiDuplicateData.png) **Duplicate Multiple of
 Component...** button.
-3. The number of duplicates
+3. <a name="structure-editor-duplicates-numberinputdialog"></a> The number of duplicates
 dialog appears. In a non-packed structure, you can only indicate as many duplicates as will
 fit in place of *undefined* bytes unless duplicating the last component in which case the
 structure will grow as needed.  The last component added will become the selected component.
@@ -480,7 +480,7 @@ button.
 selected one.
 
 
-### Delete Component(s)
+### Delete Component(s) ![edit-delete.png](../icons/edit-delete.png)
 
 
 One or more components can be deleted from a structure or union. Deleting components in a
@@ -497,7 +497,7 @@ button.
 3. The components are removed from the structure or union.
 
 
-### Clear Component(s)
+### Clear Component(s) ![erase16.png](../icons/erase16.png)
 
 
 Clearing a component changes it into an *undefined* components that take up the same
@@ -519,7 +519,7 @@ will be equal to the length of the component being cleared.
 Name and Comment.
 
 
-### Create Array
+### Create Array ![Array.png](../icons/Array.png)
 
 
 To create an array from a single selected component:
@@ -527,7 +527,7 @@ To create an array from a single selected component:
 
 1. Select a component in the table.
 2. Press the ![Array.png](../icons/Array.png) **Create Array** button.
-3. A dialog pops up to request
+3. <a name="structure-editor-elements-numberinputdialog"></a> A dialog pops up to request
 the number of elements in the array.
 
 
@@ -558,7 +558,7 @@ be the array that can fit in the selected number of bytes. Any left over (unused
 the end of the selection will become *undefined* components.
 
 
-### Create Zero-Element / Flexible Array Component
+### Create Zero-Element / Flexible Array Component ![Array.png](../icons/Array.png)
 
 
 To create an unsized flexible array component you must use the datatype cell edit feature
@@ -568,7 +568,7 @@ you wish to modify.  This may be an existing component or the empty row at the e
 See [Editing the DataType Field](#editing-the-datatype-field) for more details.
 
 
-### Unpackage Component
+### Unpackage Component ![Unpackage.gif](../icons/Unpackage.gif)
 
 
 Unpackaging takes a single component and replaces it with its own component parts. When
@@ -579,7 +579,7 @@ structure struct_1 was composed of a Float and a DWord, then unpackaging it woul
 struct_1 component with a Float component and a DWord component.
 
 
-### Create Structure From Selection
+### Create Structure From Selection ![cstruct.png](../icons/cstruct.png)
 
 
 Creating a structure from a selection takes a contiguous selection of components in the
@@ -776,7 +776,7 @@ not change its size.
 Examples of datatypes which may be specified, include:
 
 
-**Basic Data Type**
+<a name="structure-editor-basic-data-type"></a>**Basic Data Type**
 
 
 This can be any fixed-length built-in data type (e.g., byte, word, etc.), structure, union, typedef, or enum.
@@ -806,7 +806,7 @@ the use of a 16-bit pointer.
 **Array**
 
 
-A single or multidimensional array of any [basic data type](#structure-editor-basic-data-type) may be specified.
+A single or multidimensional array of any [basic data type](#editing-the-datatype-field) may be specified.
 
 
 For example, *dword[2][4]* is an array with 2 elements, where each element is an array
@@ -1013,7 +1013,7 @@ Drag a data type from the data type manager to the empty row at the end of the c
 table and drop it. The data type is added to the end of the structure in the editor.
 
 
-If the data type can be various
+<a name="structure-editor-bytes-numberinputdialog"></a>If the data type can be various
 sizes, the user is prompted for the desired size. The following illustrates the dialog due
 to the drag and drop of a string.
 

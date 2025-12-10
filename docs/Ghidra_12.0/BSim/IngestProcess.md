@@ -288,18 +288,40 @@ introduce some amount of noise.
 Analyzers which can affect features include:
 
 
-> Call-Fixup
-Installer This controls how the decompiler works with prologue, epilogue, and other
+**Call-Fixup
+Installer**
+
+
+This controls how the decompiler works with prologue, epilogue, and other
 special compiler bookkeeping functions. There is little reason to turn this
-off. Decompiler Parameter
-ID This does a global analysis of how individual functions are passing parameters
+off.
+
+
+**Decompiler Parameter
+ID**
+
+
+This does a global analysis of how individual functions are passing parameters
 which may affect the features for some functions, although in most cases the
-effect will be small. Currently it's safest to turn this off. Known Functions That Do No
-Return This identifies certain common functions that do not return to the caller.
+effect will be small. Currently it's safest to turn this off.
+
+
+**Known Functions That Do No
+Return**
+
+
+This identifies certain common functions that do not return to the caller.
 This can have a limited effect on features of functions that call these routines.
-There is little reason to turn this off. Shared Return
-Calls This identifies common compiler optimizations where a subfunction is accessed
-via a jump instruction rather than a call . Misidentifying these
+There is little reason to turn this off.
+
+
+**Shared Return
+Calls**
+
+
+This identifies common compiler optimizations where a subfunction is accessed
+via a **jump** instruction rather than a
+**call**. Misidentifying these
 instructions can have a big effect on extracted features. There are only a
 limited set of circumstances where it makes sense to turn this Analyzer off.
 
@@ -311,11 +333,26 @@ not* have an effect on features, anything that changes decompilation will
 likely change the extracted features. These settings include:
 
 
-> Call-Fixup , Inline , No Return Toggling these settings in a function prototype will affect the features of
-any calling function. Read-only
-Settings Memory blocks or individual data items can be marked as read-only , causing the decompiler to propagate the
-underlying value as a constant. Register
-Settings Its possible to mark registers as holding specific values for specific
+**Call-Fixup**, **Inline**, **No Return**
+
+
+Toggling these settings in a function prototype will affect the features of
+any calling function.
+
+
+**Read-only
+Settings**
+
+
+Memory blocks or individual data items can be marked as *read-only*, causing the decompiler to propagate the
+underlying value as a constant.
+
+
+**Register
+Settings**
+
+
+Its possible to mark registers as holding specific values for specific
 functions. The decompiler will respect this and likely propagate the
 constant.
 

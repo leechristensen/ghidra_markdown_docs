@@ -6,7 +6,7 @@
 When you open a Project, your active project is [closed](Close_Project.md); the
 project identified in the *Open a Ghidra Project* dialog will be opened.  If the
 active project has been modified since it was last saved, Ghidra will prompt you to save the
-active project before closing it. The project window is restored with any [plugins](../Tool/Ghidra_Tool_Administration.md#plugins) it had when you last
+active project before closing it. The project window is restored with any [plugins](../Tool/Ghidra_Tool_Administration.md#ghidra-tool-administration) it had when you last
 saved the project. Tools that were running when you last saved the project are launched;
 programs that the tools had open are opened. The last active [workspace](Ghidra_Front_end.md#workspaces) from this project now shows up as the active
 workspace. Other [viewed projects](Ghidra_Front_end.md#read-only-project-data)
@@ -44,7 +44,7 @@ system imposes on file names.  A Ghidra Project name must have the .gpr extensi
 
 
 1. Click the **Open Project** button. The selected project appears in the Ghidra Project
-Window. If you are opening a [shared project](../VersionControl/project_repository.md#sharedproject), Ghidra
+Window. If you are opening a [shared project](../VersionControl/project_repository.md#project-repository), Ghidra
 attempts to [connect
 to the Ghidra Server](../VersionControl/project_repository.md#connect-to-the-server). You may have to enter a password, depending on the type of
 user authentication the Ghidra Server is using.

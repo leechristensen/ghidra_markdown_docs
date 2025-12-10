@@ -79,6 +79,9 @@ single reference may be placed on a given mnemonic/operand.
 ### Memory References
 
 
+<a name="offsetrefs"></a>
+
+
 All *Memory Reference* have a destination defined by a memory address within the
 current program.  A variation of the typical memory reference is the *Offset
 Reference* which permits the destination address to be specified as some base memory address
@@ -91,6 +94,9 @@ may change the set of instructions which make up subroutine and code blocks.  S
 function bodies are established based upon the [Block Models](../BlockModel/Block_Model.md), it may be necessary to redefine the
 body of  [Functions](../FunctionPlugin/Functions.md) affected by a
 new flow reference.
+
+
+<a name="offcut-references"></a><a name="offcutrefs"></a>
 
 
 Any *Memory Reference* can be characterized as an *Offcut Reference* if its
@@ -426,35 +432,35 @@ For those actions with a default key-binding or mouse-click-binding, this has be
 indicated with {}'s.
 
 
-![Plus.png](../icons/Plus.png) ***Add
+<a name="add-reference"></a>![Plus.png](../icons/Plus.png) ***Add
 Reference*** {Insert-key} - Invoking this action will launch the Add Reference Dialog
 for the current code unit (see [Adding a Reference](#adding-a-reference)).
 
 
-![edit-delete.png](../icons/edit-delete.png) ***Delete
+<a name="delete-references"></a>![edit-delete.png](../icons/edit-delete.png) ***Delete
 References*** {Delete-key} - Invoking this action will delete all selected
 references.
 
 
-![editbytes.gif](../icons/editbytes.gif) ***Edit
+<a name="edit-reference"></a>![editbytes.gif](../icons/editbytes.gif) ***Edit
 Reference*** {Enter-key or double-click a row} - Invoking this action will popup the
 ***Edit Reference Dialog*** for the selected reference (see [Editing a Reference](#editing-a-reference)).  This action is  only available when a
 single reference row is selected.
 
 
-![Make Selection](../icons/stack.png) ***Select
+<a name="select-destinations"></a>![Make Selection](../icons/stack.png) ***Select
 Memory Reference Destination*** - With one or more memory references selected in the
 table, invoking this action will cause the corresponding locations within the [Listing](../CodeBrowserPlugin/CodeBrowser.md) to become selected.
 
 
-![locationIn.gif](../icons/locationIn.gif)
+<a name="follow-location-changes"></a>![locationIn.gif](../icons/locationIn.gif)
 ***Follow Tool Location Changes*** - Once enabled (i.e., button pushed-in), any
 location change within the tool (e.g., Listing panel)  will cause the currently
 displayed  *source* code unit and associated references to reflect the new
 location.
 
 
-![locationOut.gif](../icons/locationOut.gif)
+<a name="goto-selected-destination"></a>![locationOut.gif](../icons/locationOut.gif)
 ***Send Location Change for Selected Reference Destination*** - Once enabled (i.e.,
 button pushed-in), selecting a single row within the references table will send a location
 change to the tool corresponding to the selected *destination*.  This will have
@@ -464,14 +470,14 @@ corresponding program and scrolling to the corresponding external label within t
 program.
 
 
-***![go-home.png](../icons/go-home.png) GoTo
+***<a name="goto-source-location"></a>![go-home.png](../icons/go-home.png) GoTo
 Reference Source Location*** - Invoking this action will send a location change to the
 tool corresponding to the *source* code unit.  This will have the effect of
 scrolling the [Listing](../CodeBrowserPlugin/CodeBrowser.md) to
 the current *source* code unit.
 
 
-## Adding a Reference
+## Adding a Reference ![Plus.png](../icons/Plus.png)
 
 
 Invoking the ***Add...*** action from the ***References Editor*** window will
@@ -529,7 +535,7 @@ within the Listing and hitting the "*Delete*" key.  Keep in mind that when a va
 is deleted, any explicit bindings to that variable will be cleared.
 
 
-## Editing a Reference
+## Editing a Reference ![editbytes.gif](../icons/editbytes.gif)
 
 
 Invoking the ***Edit...*** action from the ***References Editor*** window will
@@ -568,10 +574,10 @@ button may be clicked to complete the operation.
 
 A [Memory Reference](#memory-references) identifies a data access or instruction flow to
 another memory location within the same program space.    A memory reference may
-optionally be specified as an [Offset Reference](#offsetrefs) relative to a
+optionally be specified as an [Offset Reference](#memory-references) relative to a
 specified *Base Address*.  The term Offcut is used to characterize a memory
 reference or its resulting label whose destination address does not correspond to the start
-of a data or instruction code unit (see [Offcut References](#offcutrefs)).
+of a data or instruction code unit (see [Offcut References](#memory-references)).
 
 
 Below is an image of the *Memory Reference Panel* as it might appear in the *Add

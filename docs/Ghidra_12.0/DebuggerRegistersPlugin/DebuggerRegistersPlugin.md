@@ -69,7 +69,7 @@ is not contained in a region of memory known to the debugger. To prevent this be
 [Force Full View](../DebuggerRegionsPlugin/DebuggerRegionsPlugin.md).
 
 
-### Select Registers
+### Select Registers ![Registers](../icons/select-registers.png)
 
 
 This displays a dialog for selecting which registers to display in the table.
@@ -99,7 +99,7 @@ data type assigned. It permits the adjustment of that data type's settings, e.g.
 decimal vs hexadecimal. The settings are saved to the trace's data unit for the register.
 
 
-### Enable Edits
+### Enable Edits ![Edits](../icons/editbytes.gif)
 
 
 This toggle is a write protector for machine state. To modify register values, this toggle

@@ -14,7 +14,7 @@ that allow you to change the active program.
 *Program Tabs*
 
 
-When there are more open programs than room to display their
+<a name="hidden-tabs"></a> When there are more open programs than room to display their
 respective tabs, then a button is displayed to access those programs. This button displays the
 number of hidden programs.
 
@@ -25,7 +25,7 @@ number of hidden programs.
 *Program Tabs 'More Button'*
 
 
-To access these hidden programs, click the button to display
+<a name="more-tabs-button"></a> To access these hidden programs, click the button to display
 a menu for selecting programs.
 
 
@@ -35,7 +35,7 @@ a menu for selecting programs.
 *Program Tabs With Popup Window*
 
 
-The popup window displayed allows you to select a tab
+<a name="hidden-tab-popup-window"></a> The popup window displayed allows you to select a tab
 by clicking a program name, or by using the **up** and **down arrow** keys to select a
 program name and then pressing the **Enter** key to choose the selected program. Also,
 typing text data will filter the displayed program list. You can close the popup window without
@@ -85,14 +85,14 @@ Program** action, except that it moves the highlight to the left instead of the
 right.
 
 
-The operation of tab highlighting varies slightly depending upon the existence of [hidden tabs](#hidden-tabs). Without hidden tabs, the highlighting, when starting
+The operation of tab highlighting varies slightly depending upon the existence of [hidden tabs](#navigating-programs). Without hidden tabs, the highlighting, when starting
 from the first or last available tab, will wrap around to the other side of the tab list.
 In this mode, you may highlight tabs with no limits with no program being activated until
 you stop.
 
 
-Contrastingly, if there are [hidden tabs](#hidden-tabs), then when the first
-or last tab is highlighted, then the next successive highlight action will trigger the [more tabs button](#more-tabs-button) to be executed.
+Contrastingly, if there are [hidden tabs](#navigating-programs), then when the first
+or last tab is highlighted, then the next successive highlight action will trigger the [more tabs button](#navigating-programs) to be executed.
 
 
 Go to Program...
@@ -101,7 +101,7 @@ Go to Program...
 ### Go To Program... Action
 
 
-The **Go To Program...** action will show the program selection popup window when executed. This menu
+The **Go To Program...** action will show the <a name="hidden-tab-popup-window"></a>program selection popup window when executed. This menu
 allows you to pick a program to go to.
 
 

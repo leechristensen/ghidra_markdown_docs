@@ -106,7 +106,7 @@ stack (like the X86 processor), the stack would look something like this:
 
 
 Structures, Unions, and Arrays can be used to define variables as well as the built in
-primitive [data types](../DataPlugin/Data.md#datatypes).  To define
+primitive [data types](../DataPlugin/Data.md#data-types).  To define
 structures, see [Data Structure
 Editor](../DataTypeEditors/StructureEditor.md)
 
@@ -165,8 +165,8 @@ local variable comes into scope for the same storage location. Local stack varia
 ## Define Variable Data Type or Function Return Type
 
 
-Variables can be annotated with one of the [built in](../DataPlugin/Data.md#datatypes) or [user
-defined data types](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes).  The undefined or previously defined variable will be redefined
+Variables can be annotated with one of the [built in](../DataPlugin/Data.md#data-types) or [user
+defined data types](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types).  The undefined or previously defined variable will be redefined
 to the new data type.
 
 
@@ -180,8 +180,8 @@ displayed within the listing.
 1. Right mouse click on the return type or parameter within the function signature
 2. If the cursor is over the return type, Select **Set Data Type** →  ; if the cursor is over a parameter, select **Set Data
 Type** →
-- The pull right menu lists data types that you have marked as "[favorites](../DataTypeManagerPlugin/data_type_manager_description.md#favorites)."
-- After you apply a data type, this becomes your [most
+  - The pull right menu lists data types that you have marked as "[favorites](../DataTypeManagerPlugin/data_type_manager_description.md#setting-favorite-data-types)."
+  - After you apply a data type, this becomes your [most
 recently used data type](#recently-used-data-type) and is shown on the menu with the 'Y' as the "hot
 key."
 
@@ -192,8 +192,8 @@ variable listing
 
 1. Right mouse click on a parameter, `<RETURN>` or local variable
 2. Select **Set Data Type** →
-- The pull right menu lists data types that you have marked as "[favorites](../DataTypeManagerPlugin/data_type_manager_description.md#favorites)."
-- After you apply a data type, this becomes your [most
+  - The pull right menu lists data types that you have marked as "[favorites](../DataTypeManagerPlugin/data_type_manager_description.md#setting-favorite-data-types)."
+  - After you apply a data type, this becomes your [most
 recently used data type](#recently-used-data-type) and is shown on the menu with the 'Y' as the "hot
 key."
 
@@ -207,7 +207,7 @@ window (drag and drop)
 3. Drag and Drop the data type onto the target parameter, `<RETURN>` or local variable in the Code Browser
 
 
-- [Assigned Quick key](../DataPlugin/Data.md#datacyclegroups),
+- [Assigned Quick key](../DataPlugin/Data.md#cycle-groups),
 
 
 - Place the cursor on the target parameter, `<RETURN>` or local variable
@@ -421,7 +421,7 @@ within the register, up to the size of the register.
 Once you have defined a function, you can make a function signature definition which is a
 new data type that can be applied to another function so that it has the same signature. The
 data type appears under the [program
-node](../DataTypeManagerPlugin/data_type_manager_window.md#programrootnode) in the *[Manage Data
+node](../DataTypeManagerPlugin/data_type_manager_window.md#the-data-type-tree) in the *[Manage Data
 Types](../DataTypeManagerPlugin/data_type_manager_description.md)* window.
 
 
@@ -504,7 +504,7 @@ To remove a function variable comment,
 
 The data menu shows an option for the data type that was most recently used. By default, the
 "hot key" assigned to this option is 'y,' however, you can change the key assignment through
-the [key bindings panel](../Tool/ToolOptions_Dialog.md#keybindings-option)
+the [key bindings panel](../Tool/ToolOptions_Dialog.md#key-bindings)
 on the [Edit Options dialog](../Tool/ToolOptions_Dialog.md).
 
 

@@ -231,19 +231,19 @@ make that object this window's current object. That is, it will select it in the
 the tables to display its contents.
 
 
-### Show Objects Tree
+### Show Objects Tree ![Objects](../icons/function_graph.png)
 
 
 This button toggles the display of the Objects tree pane.
 
 
-### Show Elements Table
+### Show Elements Table ![Elements](../icons/table-e.png)
 
 
 This button toggles the display of the Elements table.
 
 
-### Show Attributes Table
+### Show Attributes Table ![Attributes](../icons/table-a.png)
 
 
 This button toggles the display of the Attributes table.
@@ -289,7 +289,7 @@ panes, new nodes and rows are added for any hidden items. For the elements table
 add a multitude of new columns.
 
 
-### Clone Window
+### Clone Window ![Clone](../icons/camera-photo.png)
 
 
 This copies the Model window in its current configuration to a new Model window. The cloned

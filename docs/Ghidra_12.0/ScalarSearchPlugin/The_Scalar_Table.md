@@ -113,19 +113,19 @@ upon their signed value**.
 ## Actions
 
 
-### Make Selection
+### Make Selection ![Make Selection](../icons/stack.png)
 
 
 *See [Make Selection](../Search/Query_Results_Dialog.md#make-selection)*
 
 
-### Selection Navigation
+### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
 
 
 *See [Selection Navigation](../Search/Query_Results_Dialog.md#selection-navigation)*
 
 
-### Remove Items
+### Remove Items ![table_delete.png](../icons/table_delete.png)
 
 
 *See [Remove Items](../Search/Query_Results_Dialog.md#remove-items)*

@@ -4,7 +4,7 @@
 
 
 The Ghidra Server provides file access to multiple users enabling a team to collaborate on a
-single effort. It provides network storage for [shared project repositories](../VersionControl/project_repository.md#sharedproject) while controlling user
+single effort. It provides network storage for [shared project repositories](../VersionControl/project_repository.md#project-repository) while controlling user
 access. Together the Ghidra Server and the shared project repository allow multiple users to
 concurrently:
 
@@ -82,16 +82,16 @@ The merge processes program elements in the following order:
 - [Program Context
 Registers](#program-context-registers)
 - [Listing](#listing)
-- [Code Units](#code-units)
-- [Externals](#external-functions-and-labels)
-- [Functions](#functions)
-- [Symbols](#symbols)
-- [Equates](#equates)
-- [User Defined
+  - [Code Units](#code-units)
+  - [Externals](#external-functions-and-labels)
+  - [Functions](#functions)
+  - [Symbols](#symbols)
+  - [Equates](#equates)
+  - [User Defined
 Properties](#user-defined-properties)
-- [References](#references)
-- [Bookmarks](#bookmarks)
-- [Comments](#comments)
+  - [References](#references)
+  - [Bookmarks](#bookmarks)
+  - [Comments](#comments)
 - [External Program Names](#external-program-names)
 - [Property Lists](#property-lists)
 
@@ -154,7 +154,7 @@ memory block that can be merged are:
 
 
 You can make changes to the memory structure (add a block, remove a block,
-etc.) only when you have checked out the program with an [exclusive lock](../VersionControl/project_repository.md#exclusivelock). This restriction prevents
+etc.) only when you have checked out the program with an [exclusive lock](../VersionControl/project_repository.md#check-out). This restriction prevents
 drastic changes in memory that could potentially have a major impact on other users.
 Typically, all users working on the same program should agree on memory structure changes
 and then have one user make them. An exclusive lock prevents anyone else from checking out
@@ -300,7 +300,7 @@ also set the data type or change the label into an external function.
 changes to the function.
 Conflicts could be:
 - - another variable at the same offsets on the stack frame
-- another register variable with the same named register and first use
+  - another register variable with the same named register and first use
 address.
 
 
@@ -328,7 +328,7 @@ its stack frame.
 return type offset, etc. as long as the latest version didn't also change the same part
 of the function.
 - If a variable name conflicts with a variable or symbol of the same name in the
-function's [namespace](../SymbolTreePlugin/SymbolTree.md#namespace) of the latest
+function's [namespace](../SymbolTreePlugin/SymbolTree.md#display) of the latest
 version, that variable will automatically be renamed to a conflict name. This
 eliminates the name conflict.
 - Making changes to existing parameters such as the name, data type, or description
@@ -337,10 +337,10 @@ if the latest version didn't change the same part of the parameter.
 to the latest version.
 Conflicts could be:
 - - another variable at the same offsets on the stack frame
-- another register variable with the same named register and first use
+  - another register variable with the same named register and first use
 address.
-- another symbol with the same name in the function's namespace
-- the name, datatype, or comment for a local variable is changed to different
+  - another symbol with the same name in the function's namespace
+  - the name, datatype, or comment for a local variable is changed to different
 values in your version and the latest version.
 
 
@@ -794,7 +794,7 @@ After all data type and category conflicts are resolved, the merge process
 continues with Program Context Registers.
 
 
-For data types a source archive
+<a name="sourcearchiveconflict"></a>For data types a source archive
 conflict can occur if the name of an associated source archive changes to a different name
 in each of the two programs being merged. In the following, the "helloProgram" in the
 "SampleProject" (as indicated by the Merge Tool title) has a data type that originated from
@@ -889,7 +889,7 @@ before moving to the next conflict and eventually completing the merge process.
 #### Listing Conflict Window
 
 
-Listing conflicts are presented in a Merge Listing
+<a name="mergelistingwindow"></a>Listing conflicts are presented in a Merge Listing
 Window. The Merge Listing Window displays four program listings:
 
 
@@ -1042,17 +1042,17 @@ conflict.
 - If you change a piece of stack information and the latest version changes the same
 piece of stack information to a different value.
 Stack information includes:
-- return address offset
-- parameter offset
-- stack purge size
+  - return address offset
+  - parameter offset
+  - stack purge size
 - If you change a piece of parameter information and the latest version changes the
 same piece of parameter information to a different value.
 Parameter information includes:
-- name
-- data type
-- comment
-- offset
-- register
+  - name
+  - data type
+  - comment
+  - offset
+  - register
 
 
 Example 1 : The following image illustrates a possible Add conflict. In this case,
@@ -1141,9 +1141,9 @@ resolving between your checked out version and the latest version in the reposit
 
 - If you create or change a function causing its body to overlap one or more functions
 that are defined in the latest version.
-- Functions with bodies that have addresses in common are said to *overlap*
+  - Functions with bodies that have addresses in common are said to *overlap*
 if their entry points and bodies are not exactly the same.
-- In this case you must choose which version's function(s) to keep.
+  - In this case you must choose which version's function(s) to keep.
 - If an existing function is removed in your version and changed in the latest
 version in any way or vice versa.
 - If both versions add a function with the same entry point, but all parts of the
@@ -1156,35 +1156,35 @@ parameters in any way.
 - If you change a piece of function information and the latest version changes the same
 piece of function information to a different value.
 Function information includes:
-- name
-- body
-- return data type
+  - name
+  - body
+  - return data type
 For example, if one changes the function's name and the other changes the return
 type, then both changes occur without a conflict. If both change the name, this is a
 conflict.
 - If you change a piece of stack information and the latest version changes the same
 piece of stack information to a different value.
 Stack information includes:
-- return address offset
-- parameter offset
-- local size
-- stack purge size
+  - return address offset
+  - parameter offset
+  - local size
+  - stack purge size
 - If you change a piece of parameter information and the latest version changes the
 same piece of parameter information to a different value.
 Parameter information includes:
-- name
-- data type
-- comment
-- offset
-- register
+  - name
+  - data type
+  - comment
+  - offset
+  - register
 - If you change a piece of local variable information and the latest version changes
 the same piece of local variable information to a different value.
 Local variable information includes:
-- name
-- data type
-- comment
-- offset
-- register
+  - name
+  - data type
+  - comment
+  - offset
+  - register
 
 
 Example 1 : The following image illustrates a function parameter with multiple
@@ -1277,7 +1277,7 @@ with any Symbol conflicts in the Listing.
 All symbol conflicts that remain after the [auto merge](Merge_Program_Files.md#symbols) must be resolved.
 
 
-The symbol phase of the Listing merge will merge labels, [namespace](../SymbolTreePlugin/SymbolTree.md#namespace) symbols, class
+The symbol phase of the Listing merge will merge labels, [namespace](../SymbolTreePlugin/SymbolTree.md#display) symbols, class
 symbols, and external symbols.
 
 The following are the types of symbol conflicts that require manual resolution:
@@ -1605,7 +1605,7 @@ references in your checked out version and the latest version are compared for e
 mnemonic and operand at an address to determine if a conflict exists.
 
 
-References conflict if the two versions of the
+<a name="referenceconflict"></a>References conflict if the two versions of the
 program (your version and the latest version) have a reference at the same address and
 operand, but they are different types of references (memory, stack, register,
 external). References can also conflict when they are the same type if both versions
@@ -1661,7 +1661,7 @@ versa.
 - Your version and the latest version both changed a reference and it now differs
 in one of the ways they can conflict as indicated above.
 - Your version and the latest version both added the same type of reference with
-the same from and to addresses, but differed such that they [conflict](#referenceconflict).
+the same from and to addresses, but differed such that they [conflict](#references).
 - Your version and the latest version both set the primary reference, but not to
 the same reference.
 
@@ -1966,7 +1966,7 @@ will contain a new version of the program file.
 
 
 - [Shared Project
-Repository](../VersionControl/project_repository.md#sharedproject)
+Repository](../VersionControl/project_repository.md#project-repository)
 - [Check in](../VersionControl/project_repository.md#check-in)
 - [Memory
 Blocks](../Glossary/glossary.md#memory-block)

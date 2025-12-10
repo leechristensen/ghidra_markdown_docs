@@ -19,7 +19,7 @@ Below is a image of the **Accept Match Options**:
 
 
 The following items will happen when a
-[match is accepted](VT_Matches_Table.md#accept-match):
+[match is accepted](VT_Matches_Table.md#match-table-actions):
 
 
 | Name | Description | Default Value |
@@ -40,18 +40,18 @@ Below is a image of the **Apply Markup Options**:
 
 The table below contains the markup items and their default actions taken
 when
-[Apply Markup](VT_Matches_Table.md#apply-markup) is executed on a match.  Each type of markup has different
+[Apply Markup](VT_Matches_Table.md#match-table-actions) is executed on a match.  Each type of markup has different
 available actions.  These are:
 
 
 
 - **Data Match Data Type Markup**:
-- **Do Not Apply** - Do not apply markup to the destination program.
-- **Replace First Data Only** - Replace the markup in the destination
+  - **Do Not Apply** - Do not apply markup to the destination program.
+  - **Replace First Data Only** - Replace the markup in the destination
 with that from the source program. The replace will fail if any instructions
 or defined data, other than a defined data at the destination address, would
 be overwritten by the replace.
-- **Replace All Data** - Replace the markup in the destination
+  - **Replace All Data** - Replace the markup in the destination
 with that from the source program. The replace will fail if any instructions
 would be overwritten by the replace.
 **Important**: After doing Replace All Data,
@@ -59,48 +59,48 @@ the *Reset Mark-up* action will only be able to restore the single
 Data item that was originally at the Destination Address. Any other
 Data items that were replaced by this action will not be restored by
 *Reset Mark-up*.
-- **Replace Undefined Data Only** - Only replace undefined bytes in the destination
+  - **Replace Undefined Data Only** - Only replace undefined bytes in the destination
 with the markup item's data type in the source program. Otherwise, do nothing.
 - **Label Markup**:
-- **Do Not Apply** - Do not apply markup to the destination program
-- **Add** - Adds the labels from the source program to those already
+  - **Do Not Apply** - Do not apply markup to the destination program
+  - **Add** - Adds the labels from the source program to those already
 at the address in the destination program.
-- **Add As Primary** - Adds the labels from the source program to
+  - **Add As Primary** - Adds the labels from the source program to
 those already at the address in the destination program. Sets the
 primary label in the destination program to whatever label was the
 primary one in the source program.
-- **Replace All** - Replaces all the labels at the address in
+  - **Replace All** - Replaces all the labels at the address in
 the destination program with those from the source program.
-- **Replace Default Only** - Only apply labels from the
+  - **Replace Default Only** - Only apply labels from the
 source program to the destination program when the label
 in the destination program is a default label.
 - **Function Name Markup**:
-- **Do Not Apply** - Do not apply markup to the destination program
-- **Add** - Adds the function name from the source program to the one already
+  - **Do Not Apply** - Do not apply markup to the destination program
+  - **Add** - Adds the function name from the source program to the one already
 at the address in the destination program.
-- **Add As Primary** - Adds the function name from the source program to
+  - **Add As Primary** - Adds the function name from the source program to
 the one already at the address in the destination program. Sets the
 primary label in the destination program to whatever label was the
 primary one in the source program.
-- **Replace Always** - Always apply markup to from the source
+  - **Replace Always** - Always apply markup to from the source
 program to the destination program.
-- **Replace Default Only** - Only apply markup from the
+  - **Replace Default Only** - Only apply markup from the
 source program to the destination program when the label
 in the destination program is a default label.
 - **Function Signature Markup**:
 Applying function signature markup applies the function signature except for the names,
 which are controlled by the parameter names markup.
-- **Do Not Apply** - Do not apply markup to the destination program.
-- **Replace** - Always replace the markup in the destination
+  - **Do Not Apply** - Do not apply markup to the destination program.
+  - **Replace** - Always replace the markup in the destination
 with that from the source program.
-- **Replace When Same Parameter Count** - Only replace the function signature in the
+  - **Replace When Same Parameter Count** - Only replace the function signature in the
 destination with that from the source program when the number of parameters in the
 source signature match the number of parameters in the destination signature.
 - **Comment Markup**:
-- **Do Not Apply** - Do not apply markup to the destination program.
-- **Add To Existing** - Append the markup from the source program
+  - **Do Not Apply** - Do not apply markup to the destination program.
+  - **Add To Existing** - Append the markup from the source program
 to the destination program.
-- **Replace Existing** - Replace the markup in the destination program with
+  - **Replace Existing** - Replace the markup in the destination program with
 the markup from the source program.
 
 

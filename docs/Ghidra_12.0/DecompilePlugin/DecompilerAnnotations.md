@@ -95,25 +95,51 @@ analysis of a function. This can have a significant impact on results. The
 types of possible Flow Overrides include:
 
 
-> BRANCH Override Treats the primary CALL or RETURN behavior of the instruction as if it were a BRANCH within the function.  For CALL instructions,
+**BRANCH Override**
+
+
+Treats the primary *CALL* or *RETURN*
+behavior of the instruction as if it were a *BRANCH*
+within the function.  For *CALL* instructions,
 the call target becomes the branch destination,
 and the instruction is no longer assumed
-to fall through. RETURN instructions become an
+to fall through. *RETURN* instructions become an
 indirect branch, and the Decompiler will attempt to recover branch
-destinations using switch analysis. CALL Override Treats the primary BRANCH or RETURN behavior of the instruction as if it were a CALL .
-A BRANCH becomes a fall through instruction, and the destination address becomes
+destinations using *switch* analysis.
+
+
+**CALL Override**
+
+
+Treats the primary *BRANCH* or *RETURN*
+behavior of the instruction as if it were a *CALL*.
+A *BRANCH* becomes a fall through instruction, and the destination address becomes
 the call target, which may no longer be considered part of the function.  The computed
-address for an indirect BRANCH or RETURN instruction becomes
-the target address of an indirect CALL . CALL_RETURN Override Treats the primary BRANCH or RETURN behavior of the instruction as if it executed a CALL followed
-by a RETURN operation.
-The destination address of a BRANCH becomes the call target,
+address for an indirect *BRANCH* or *RETURN* instruction becomes
+the target address of an indirect *CALL*.
+
+
+**CALL_RETURN Override**
+
+
+Treats the primary *BRANCH* or *RETURN*
+behavior of the instruction as if it executed a *CALL* followed
+by a *RETURN* operation.
+The destination address of a *BRANCH* becomes the call target,
 which may no longer be considered part of the function.  The computed address for
-an indirect BRANCH or RETURN instruction becomes
-the target address of an indirect CALL . RETURN Override Treats an indirect BRANCH or CALL instruction as if it were a RETURN instruction, terminating
+an indirect *BRANCH* or *RETURN* instruction becomes
+the target address of an indirect *CALL*.
+
+
+**RETURN Override**
+
+
+Treats an indirect *BRANCH* or *CALL*
+instruction as if it were a *RETURN* instruction, terminating
 the control-flow path within the function. The computed destination address is
 considered part of the return mechanism of the function and may no longer be
 explicitly displayed in the output.
-An indirect BRANCH no longer invokes switch analysis during
+An indirect *BRANCH* no longer invokes switch analysis during
 decompilation.
 
 
@@ -166,7 +192,7 @@ comments, but only if they are attached to the *entry point*
 of the function. In this case, they are displayed first in the Decompiler output,
 along with WARNING comments, before the function declaration.  Other comment
 types can be configured to be part of Decompiler output by changing the
-Decompiler display options (see [Display <kind-of> Comments](DecompilerOptions.md#commentoptions)).
+Decompiler display options (see [Display <kind-of> Comments](DecompilerOptions.md#display-options)).
 
 
 > **Warning:** Unlike a Listing window, the Decompiler does not alter how a comment is
@@ -257,9 +283,18 @@ the Decompiler is attempting to produce. The Decompiler does not currently
 have an option that checks for this. Users should be aware of:
 
 
-> Illegal Characters Ghidra symbols allow almost every printable character except
-a space in a symbol name; punctuation and keywords can be incorporated. Duplicate Symbols Ghidra allows different functions to have the same name, even within the same
-namespace, in order to model languages that support function overloading .
+Illegal Characters
+
+
+Ghidra symbols allow almost every printable character except
+a space in a symbol name; punctuation and keywords can be incorporated.
+
+
+Duplicate Symbols
+
+
+Ghidra allows different functions to have the same name, even within the same
+namespace, in order to model languages that support *function overloading*.
 In most languages, such functions would be expected to have distinct prototypes to allow
 the symbols to be distinguished in context.   Ghidra and the Decompiler, however, do not check
 for this, as prototypes may not be known.
@@ -465,7 +500,7 @@ of the access from the start of the array, and the second integer indicates the 
 
 If more then one element is being accessed simultaneously, the Decompiler may try to split
 the access into logical pieces. See the description of the analysis option for
-[Splitting Array Accesses](DecompilerOptions.md#analysissplitarray).
+[Splitting Array Accesses](DecompilerOptions.md#analysis-options).
 
 
 ##### Structure
@@ -501,7 +536,7 @@ of the access from the start of the structure, and the second integer indicates 
 
 If more than one field is being accessed simultaneously, the Decompiler may try to split
 the access into logical pieces. See the description of the analysis option for
-[Splitting Structure Accesses](DecompilerOptions.md#analysissplitstruct).
+[Splitting Structure Accesses](DecompilerOptions.md#analysis-options).
 
 
 ##### Enumeration
@@ -867,42 +902,108 @@ the function prototype may include only partial information and may be built up 
 elements include:
 
 
-> Input Parameters Each formal input to the function can have a Variable Annotation that describes its name, data-type,
+**Input Parameters**
+
+
+Each formal input to the function can have a Variable Annotation that describes its name, data-type,
 and storage location. The storage location applies at the moment control flow enters the function.
 If annotations exist, they are shown
-in a Listing window as part of the Function header, and they usually correspond directly with symbols in the function declaration produced by the Decompiler. Return Value The value returned by a function can have a special Variable Annotation that describes its data-type
+in a Listing window as part of the Function header, and they usually correspond directly with symbols in the
+*function declaration* produced by the Decompiler.
+
+
+**Return Value**
+
+
+The value returned by a function can have a special Variable Annotation that describes its data-type
 and storage location. The storage location applies at the moment control flow exits the function. If it exists, the annotation is shown
-in a Listing window as part of the Function header with the name <RETURN> , and it usually
-corresponds directly with the return value in the function declaration produced by
-the Decompiler. Auto-Parameters Specific prototypes may require auto-parameters like this or __return_storage_ptr__ .  These are special input parameters
+in a Listing window as part of the Function header with the name `<RETURN>`, and it usually
+corresponds directly with the return value in the *function declaration* produced by
+the Decompiler.
+
+
+**Auto-Parameters**
+
+
+Specific prototypes may require auto-parameters like **this**
+or **__return_storage_ptr__**.  These are special input parameters
 that compilers may use to implement specific high-level language concepts. See the discussion
-in Auto-Parameters . Within Ghidra, auto-parameters are automatically created by the Function Editor Dialog if the desired prototype requires them.
+in [Auto-Parameters](DecompilerConcepts.md#auto-parameters). Within Ghidra, auto-parameters are automatically created by the
+[Function Editor Dialog](../FunctionPlugin/Variables.md#edit-function)
+if the desired prototype requires them.
 Within a Listing window, auto-parameters look like other parameter annotations, but the storage field shows the
-string (auto) .  Decompiler output will generally display auto-parameters as explicit variables
-rather than hiding them. Calling Convention The calling convention used by the function is specified as part of the function prototype. The convention
-is specified by name, referring to the formal Prototype Model that describes how storage
+string `(auto)`.  Decompiler output will generally display auto-parameters as explicit variables
+rather than hiding them.
+
+
+**Calling Convention**
+
+
+The calling convention used by the function is specified as part of the function prototype. The convention
+is specified by name, referring to the formal [Prototype Model](DecompilerConcepts.md#prototype-model) that describes how storage
 locations are selected for individual parameters along with other information about how the compiler treats
 the function. Available models are determined by the processor and compiler, but may be extended by the user
-(see Specification Extensions ). In the absence of input parameter and return value annotations, the Decompiler will use the prototype model as
-part of its analysis to discover the input parameters and the return value of the function. The name unknown is reserved to indicate that nothing is known about the calling convention.  If
-set to unknown , depending on context, the Decompiler may assign the calling convention based on
-the Prototype Evaluation option (see Prototype Evaluation ), or it
-may use the default calling convention for the architecture. Variable Arguments Functions have a boolean property called variable arguments , which can be turned on
+(see [Specification Extensions](DecompilerOptions.md#specification-extensions)).
+
+
+In the absence of input parameter and return value annotations, the Decompiler will use the prototype model as
+part of its analysis to *discover* the input parameters and the return value of the function.
+
+
+The name **unknown** is reserved to indicate that nothing is known about the calling convention.  If
+set to **unknown**, depending on context, the Decompiler may assign the calling convention based on
+the *Prototype Evaluation* option (see [Prototype Evaluation](DecompilerOptions.md#program-options)), or it
+may use the default calling convention for the architecture.
+
+
+**Variable Arguments**
+
+
+Functions have a boolean property called **variable arguments**, which can be turned on
 if the function is capable of being passed a variable number of inputs.  This property informs the Decompiler that
 the function may take additional parameters beyond any with an explicit variable annotation.
-This affects decompilation of any function which calls the variable arguments function, allowing
-the Decompiler to discover unlisted parameters at a given call site. No Return A function can be marked with the no return property, meaning that once
+This affects decompilation of any function which calls the *variable arguments* function, allowing
+the Decompiler to discover unlisted parameters at a given call site.
+
+
+**No Return**
+
+
+A function can be marked with the **no return** property, meaning that once
 a call is made to the function, execution will never return to the caller. The Decompiler uses this to
-compute the correct control flow in any calling functions. In-Line If the in-line property is turned on for a particular function,
+compute the correct control flow in any calling functions.
+
+
+**In-Line**
+
+
+If the **in-line** property is turned on for a particular function,
 it directs the Decompiler to inline the effects of the function into the decompilation of any of its calling functions.
 The function will no longer appear as a direct function call in the decompilation, but all of its data flow
-will be incorporated into the calling function. This is useful for bookkeeping functions, where it is important for the Decompiler to see its effects on the calling function.  Functions that set up the stack frame for a caller or
-functions that look up or dispatch a switch destination are typical examples that should be marked in-line . Call-fixup This property is similar in spirit to marking a function as in-line .
-A call-fixup directs the Decompiler to replace any call to the function with a specific
+will be incorporated into the calling function.
+
+
+This is useful for *bookkeeping* functions, where it is important for the Decompiler to
+*see* its effects on the calling function.  Functions that set up the stack frame for a caller or
+functions that look up or dispatch a switch destination are typical examples that should be marked *in-line*.
+
+
+**Call-fixup**
+
+
+This property is similar in spirit to marking a function as *in-line*.
+A **call-fixup** directs the Decompiler to replace any call to the function with a specific
 chunk of raw p-code.  The decompilation of any calling function no longer shows the function call, but the chunk
-of p-code incorporates the called function's effects. Call-fixups are more flexible than just inlining a function.  The call-fixup chunk can be tailored to incorporate all of,
-just a part of, or something different to the behavior of the function. Call-fixups are specified by name.  The name and associated p-code chunk are typically defined in the compiler specification for the Program. Users can extend the available set
-of call-fixups (see Specification Extensions ).
+of p-code incorporates the called function's effects.
+
+
+Call-fixups are more flexible than just inlining a function.  The call-fixup chunk can be tailored to incorporate all of,
+just a part of, or something different to the behavior of the function.
+
+
+Call-fixups are specified by name.  The name and associated p-code chunk are typically defined in the
+*compiler specification* for the Program. Users can extend the available set
+of call-fixups (see [Specification Extensions](DecompilerOptions.md#specification-extensions)).
 
 
 ### Signature Source
@@ -990,7 +1091,7 @@ section of code, the value will not change unless an instruction explicitly writ
 Mutability can be set on an entire block of memory in the Program, typically from the
 [Memory Map](../MemoryMapPlugin/Memory_Map.md#memory-map).
 It can also be set as part of a single Variable Annotation.  From a Listing window, for instance,
-use the [Settings](../DataPlugin/Data.md#data-settings) dialog.
+use the [Settings](../DataPlugin/Data.md#changing-data-settings) dialog.
 
 
 ### Read-only
@@ -1017,7 +1118,7 @@ so that the its position within the code and any sequence of accesses is clearly
 Any access, either read or write, will always be displayed, even if the value is not directly
 used by the function. The token representing the variable will be displayed using the
 **Special** color, highlighting that the access is volatile
-(See [Color for <token>](DecompilerOptions.md#displaytokencolor)).
+(See [Color for <token>](DecompilerOptions.md#display-options)).
 
 
 ```

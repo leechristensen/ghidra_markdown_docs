@@ -29,7 +29,7 @@ looks in several locations:
 The directories are located at:
 - - *[user settings]/Extensions* - Installed/uninstalled from
 this dialog
-- *[installation dir]/Ghidra/Extensions/* - Installed/uninstalled from
+  - *[installation dir]/Ghidra/Extensions/* - Installed/uninstalled from
 filesystem manually
 - Extensions Archive Directory: This is where archive files (zips) that are bundled with
 the distribution are stored. It is

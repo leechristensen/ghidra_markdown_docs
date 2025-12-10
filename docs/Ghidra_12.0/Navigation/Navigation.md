@@ -73,7 +73,7 @@ Example #1 - Unambiguous address
 1. Set the current location to BLOCK1:00001000
 2. Goto address "5"
 3. The destination is not ambiguous:
-- The BLOCK1 block has an address "5" so the listing will move to address 5.
+  - The BLOCK1 block has an address "5" so the listing will move to address 5.
 
 
 Example #2 - Ambiguous Address
@@ -82,8 +82,8 @@ Example #2 - Ambiguous Address
 1. Set the current location to BLOCK3:00000080
 2. Goto address "5"
 3. The destination is ambiguous because:
-- The BLOCK3 block does not have an address "5"
-- Both the BLOCK1 and BLOCK2 blocks have an address "5"
+  - The BLOCK3 block does not have an address "5"
+  - Both the BLOCK1 and BLOCK2 blocks have an address "5"
 4. A *[Query Results](../Search/Query_Results_Dialog.md)*
 dialog will be displayed as shown in the image below.
 
@@ -258,9 +258,9 @@ the dialog.
 
 
 1. Entering an invalid address or non-existing label
-- The dialog displays *"This is not a query, label, or address."*
+  - The dialog displays *"This is not a query, label, or address."*
 2. Specifying a query that has no results
-- The dialog displays *"No results for ..."*, where "..." is the query
+  - The dialog displays *"No results for ..."*, where "..." is the query
 string.
 
 
@@ -599,7 +599,7 @@ will try to find a preferred symbol, then it will look for the lowest code block
 finally lowest overall address
 
 
-**Start Symbols** - A comma separated list of symbol
+**<a name="start-symbols"></a>Start Symbols** - A comma separated list of symbol
 names to be used as the starting location for the program if the "Preferred Symbol Name"
 option is selected above. The first matching symbol found will be used as the starting
 location for newly opened programs.
@@ -620,11 +620,11 @@ completed.
 
 **Ask To Reposition Program** - If selected, the user will be prompted if they would
 like the program to be positioned to any newly discovered starting symbols as specified in
-the [Start Symbols](#start-symbols) option.
+the [Start Symbols](#starting-program-location-options) option.
 
 
 **Auto Reposition If Not Moved** - If selected, the program will automatically be
-reposition to any newly discovered starting symbols as specified in the [Start Symbols](#start-symbols) option, provided the user has not manually moved the
+reposition to any newly discovered starting symbols as specified in the [Start Symbols](#starting-program-location-options) option, provided the user has not manually moved the
 cursor off the starting location address. If they have manually moved the cursor, then the
 behavior will revert to the setting of the "Ask To Reposition Program" option above.
 

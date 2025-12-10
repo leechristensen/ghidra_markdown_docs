@@ -72,7 +72,7 @@ For example, `"@category categoryA.categoryB"`.
 **`@importpackage`**
 
 
-This tag is used to declare [inter-bundle dependencies](../BundleManager/BundleManager.md#inter-bundle-dependency) as a comma separated list of Java packages. The complete syntax is that
+This tag is used to declare [inter-bundle dependencies](../BundleManager/BundleManager.md#inter-bundle-run-time-dependency) as a comma separated list of Java packages. The complete syntax is that
 of the [`Import-Package` attribute](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#framework.module.importpackage) in an OSGi bundle manifest.
 
 

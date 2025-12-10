@@ -362,7 +362,7 @@ The default demangler options are:
 | Use Standard Text Replacements | Use text simplifications in demangled output, for example to use standard c++  				typedefs. Using this option will produce shorter demangled output in some cases. The simplifications are defined inGhidra/Features/GnuDemangler/data/default.gnu.demangler.replacements.txtThis file can be edited.  Also new files can be added with more simplifications. 				Each new file must end with.gnu.demangler.replacements.txtand must  				reside inside of a module'sdatadirectory. |
 
 
-**The GNU Demangler** adds the following analysis options:
+<a name="gnu-demangler-options"></a>**The GNU Demangler** adds the following analysis options:
 
 
 
@@ -407,7 +407,7 @@ which demanglers get called, as well as which options are used.
 Started By: New defined functions
 
 
-**The Microsoft Demangler** adds the following analysis option:
+<a name="microsoft-demangler-options"></a>**The Microsoft Demangler** adds the following analysis option:
 
 
 

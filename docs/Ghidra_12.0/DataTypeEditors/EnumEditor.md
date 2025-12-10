@@ -44,7 +44,7 @@ When you make any change to the enum, the
 ## Edit an Enum Entry
 
 
-To edit an entry in the enum table,
+<a name="enum-entry"></a>To edit an entry in the enum table,
 select an entry; double click in the field that you want to change,
 OR press **F2**.
 A cell editor is displayed; enter the value   (press the `<Enter>` key).

@@ -63,12 +63,40 @@ the **RETURN** key, with the cursor and focus still in the desired field.
 #### Search Fields
 
 
-> Function ID This is the internal row ID for function records in the database. Name This searches through function names. Searches here will match any record
-whose name contains the search string. Domain Path This searches through domain paths. A domain path is the file path, relative to the project root, of a program containing the
+**Function ID**
+
+
+This is the internal row ID for function records in the database.
+
+
+**Name**
+
+
+This searches through function names. Searches here will match any record
+whose name contains the search string.
+
+
+**Domain Path**
+
+
+This searches through domain paths. A **domain path**
+is the file path, relative to the project root, of a program containing the
 function described by a particular record. Searches here will match any
-record whose domain path contains the search string. FH This searches for records matching the full hash . The
+record whose domain path contains the search string.
+
+
+**FH**
+
+
+This searches for records matching the *full hash*. The
 text field expects a 64-bit value. The hash can be entered as a hexadecimal string
-by prepending with "0x". XH This searches for records matching the specific hash . The
+by prepending with "0x".
+
+
+**XH**
+
+
+This searches for records matching the *specific hash*. The
 text field expects a 64-bit value. The hash can be entered as a hexadecimal string
 by prepending with "0x".
 
@@ -82,11 +110,39 @@ to the search fields described above. In addition to these, each record/row list
 other columns:
 
 
-> Library This is the library containing the function Code Unit Size This is the number of (scoring) instructions in the function's body.
-See “Scoring and Disambiguation” . Spec. + Size This is the number of distinct constant operands fed into
-the specific hash. Warn This lists any special properties that have been toggled for the particular record.  The
+**Library**
+
+
+This is the library containing the function
+
+
+**Code Unit Size**
+
+
+This is the number of (scoring) instructions in the function's body.
+See [“Scoring and Disambiguation”](FunctionID.md#scoring-and-disambiguation).
+
+
+**Spec. + Size**
+
+
+This is the number of distinct constant operands fed into
+the specific hash.
+
+
+**Warn**
+
+
+This lists any special properties that have been toggled for the particular record.  The
 column is presented as a string of single character codes, corresponding to each possible property.
-Properties include the mitigation strategies described in “Specialized Mitigation” . F - Auto Pass: The record automatically fails. P - Auto Fail: The record automatically passes. S - Force Specific: Specific hash must match for record to be considered. R - Force Relation: A parent or child must match for record to be considered. U - The function body was unterminated (analysis error).
+Properties include the mitigation strategies described in [“Specialized Mitigation”](FunctionIDPlugin.md#specialized-mitigation).
+
+
+- F - Auto Pass: The record automatically fails.
+- P - Auto Fail: The record automatically passes.
+- S - Force Specific: Specific hash must match for record to be considered.
+- R - Force Relation: A parent or child must match for record to be considered.
+- U - The function body was unterminated (analysis error).
 
 
 ##### Edit Menu
@@ -101,7 +157,34 @@ to select a subset of records to effect.  The actions all set or clear a specifi
 strategy.
 
 
-> Set/Clear auto-fail Toggle the Auto Fail strategy. Set/Clear auto-pass Toggle the Auto Pass strategy. Set/Clear force-specific Toggle the Force Specific strategy. Set/Clear force-relation Toggle the Force Relation strategy. Save changes Changes made using the Edit menu are
+**Set/Clear auto-fail**
+
+
+Toggle the *Auto Fail* strategy.
+
+
+**Set/Clear auto-pass**
+
+
+Toggle the *Auto Pass* strategy.
+
+
+**Set/Clear force-specific**
+
+
+Toggle the *Force Specific* strategy.
+
+
+**Set/Clear force-relation**
+
+
+Toggle the *Force Relation* strategy.
+
+
+**Save changes**
+
+
+Changes made using the **Edit** menu are
 not immediately saved back to the underlying database until this
 action is invoked.
 

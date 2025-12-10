@@ -19,7 +19,7 @@ References…**
 button
 
 
-## References To
+## References To ![references_to.gif](../icons/references_to.gif)
 
 
 ![](images/Refs_To.png)
@@ -74,7 +74,7 @@ one of the following:
 *Address* which is the source of the reference.
 
 
-## Instructions From
+## Instructions From ![I.gif](../icons/I.gif)
 
 
 ![](images/Instr_From.png)
@@ -131,7 +131,7 @@ following:
 *Address* which is the source of the reference.
 
 
-## Data From
+## Data From ![D.gif](../icons/D.gif)
 
 
 ![](images/Data_From.png)
@@ -168,7 +168,7 @@ corresponding subroutine/function.
 which is the source of the reference.
 
 
-## Delete Reference
+## Delete Reference ![Delete](../icons/edit-delete.png)
 
 
 This action will delete all selected references from the database.

@@ -183,7 +183,7 @@ displayed in that particular window.
 
 
 ![page_edit.png](../icons/page_edit.png)
-- button
+ - button
 
 
 Exports the decompiled result of the current function to a file. A file chooser
@@ -204,7 +204,7 @@ the [Export](../ExporterPlugin/exporter.md) dialog.
 
 
 ![camera-photo.png](../icons/camera-photo.png)
-- button
+ - button
 
 
 Creates a new *Snapshot* window.  The *Snapshot* window
@@ -217,7 +217,7 @@ follow but continues to display the original function (see [Snapshot Windows](De
 
 
 ![reload3.png](../icons/reload3.png)
-- button
+ - button
 
 
 Triggers a re-decompilation of the current function displayed in the window.
@@ -235,27 +235,27 @@ aid for plug-in developers.
 
 
 ![Unreachable](../icons/eliminateUnreachable.png)
-- toggle button
+ - toggle button
 
 
-Quickly turn off the [Eliminate unreachable code](DecompilerOptions.md#analysisunreachable) decompiler setting.
+Quickly turn off the [Eliminate unreachable code](DecompilerOptions.md#analysis-options) decompiler setting.
 
 
 ### Respect Read-only Flags
 
 
 ![Readonly](../icons/readOnly.png)
-- toggle button
+ - toggle button
 
 
-Quickly turn off the [Respect read-only flags](DecompilerOptions.md#analysisreadonly) decompiler setting.
+Quickly turn off the [Respect read-only flags](DecompilerOptions.md#analysis-options) decompiler setting.
 
 
 ### Copy
 
 
 ![page_white_copy.png](../icons/page_white_copy.png)
-- button
+ - button
 
 
 Copies the currently selected text in the Decompiler window to the clipboard.
@@ -346,18 +346,48 @@ This action is performed by clicking twice on the desired token with the *left*
 mouse button.
 
 
-> Function Symbols Double-clicking a called function name causes the
+**Function Symbols**
+
+
+Double-clicking a called function name causes the
 window itself to navigate away from its current function to the called function, triggering
-a new decompilation if necessary and changing its display. Global Variables Double-clicking a global
-variable name does not have any effect on the Decompiler window itself,
-but Listing or other windows may navigate to the
-storage address of the global variable. Constants Double-clicking a token representing a constant causes the constant to be treated
+a new decompilation if necessary and changing its display.
+
+
+**Global Variables**
+
+
+Double-clicking a global
+variable name does *not* have any effect on the Decompiler window itself,
+but Listing or *other* windows may navigate to the
+storage address of the global variable.
+
+
+**Constants**
+
+
+Double-clicking a token representing a constant causes the constant to be treated
 as an address, and a navigation event to that address is generated. The Decompiler
-window itself navigates depending again on whether the address represents a new function or not. Labels Double-clicking the label within a goto statement causes the window to navigate
+window itself navigates depending again on whether the address represents a new function or not.
+
+
+**Labels**
+
+
+Double-clicking the label within a *goto* statement causes the window to navigate
 to the target of the goto, within the function. The cursor is set and the window view is adjusted if
-necessary to ensure that the target is visible. Braces Double-clicking a '{' or '}' token, causes the window to navigate to the matching brace
+necessary to ensure that the target is visible.
+
+
+**Braces**
+
+
+Double-clicking a '{' or '}' token, causes the window to navigate to the *matching* brace
 within the window. The cursor is set and the window view is adjusted if
-necessary to ensure that the matching brace is visible. Braces may also be navigated via the keyboard .
+necessary to ensure that the matching brace is visible.
+
+
+Braces may also be navigated [via the keyboard](DecompilerWindow.md#go-to-nextprevious-brace).
 
 
 ### Ctrl-Double-Click
@@ -479,11 +509,20 @@ to further refine the new *structure* definition
 (see [Rename Variable](DecompilerWindow.md#rename-variable)).
 
 
-> Auto Fill in Structure If the selected variable is already a pointer to a structure ,
+**Auto Fill in Structure**
+
+
+If the selected variable is already a pointer to a *structure*,
 this action fills in new information about the structure on top of the existing
 structure definition. Depending on how the pointer is used in the current function,
-new fields may be added and the data-type of undefined fields
-may be changed, but other existing parts of the structure definition are preserved. Auto Fill in Class Structure If the selected variable is the this parameter for
+new fields may be added and the data-type of *undefined* fields
+may be changed, but other existing parts of the structure definition are preserved.
+
+
+**Auto Fill in Class Structure**
+
+
+If the selected variable is the **this** parameter for
 a class method, the menu title for this action reflects this, but the action is the same.
 The class's structure definition is filled in with any new information.
 
@@ -505,9 +544,24 @@ A Decompiler window can display all comment types, but this may be affected by t
 (see [Comments](DecompilerAnnotations.md#comments)).
 
 
-> Set Plate Comment... Brings up the dialog for setting or editing a Plate comment. Set Pre Comment... Brings up the dialog for setting or editing a Pre comment. Set... Brings up the dialog for setting or editing a comment based on the selected token.
-A Plate comment is edited if the token is part
-of the function's header. A Pre comment is edited otherwise.
+**Set Plate Comment...**
+
+
+Brings up the dialog for setting or editing a *Plate* comment.
+
+
+**Set Pre Comment...**
+
+
+Brings up the dialog for setting or editing a *Pre* comment.
+
+
+**Set...**
+
+
+Brings up the dialog for setting or editing a comment based on the selected token.
+A *Plate* comment is edited if the token is part
+of the function's header. A *Pre* comment is edited otherwise.
 
 
 ### Commit Local Names
@@ -722,26 +776,70 @@ output variables.  The operations and variables chain together to form data-flow
 *paths*.
 
 
-> Def-Use Highlight the single token where the selected variable was last written (def),
+**Def-Use**
+
+
+Highlight the single token where the selected variable was last written (def),
 and highlight all the tokens where that single value is read (use). The written token,
 generally where the variable is on the left-hand side of an assignment expression,
 is highlighted in a different color.  If the variable is written on multiple merging
-control-flow paths, no written token is highlighted. In the following example, the token representing the first write to the
-variable a is selected when Def-Use is chosen. Forward Slice Highlight all variable tokens where the value at that point in the function is
+control-flow paths, no written token is highlighted.
+
+
+In the following example, the token representing the first write to the
+variable *a* is selected when Def-Use is chosen.
+
+
+![](images/Defuse.png)
+
+
+**Forward Slice**
+
+
+Highlight all variable tokens where the value at that point in the function is
 directly affected by the value at the selected variable token.
 A token is highlighted if there is a direct data-flow path
 starting from the selected point and ending at the token. A call operation is not
-considered a direct data-flow path from its input parameters to its output value. In the following example, the token b , the output of max_alpha , is selected when Forward Slice is chosen. Backward Slice Highlight all variable tokens where the value at that point in the function
+considered a direct data-flow path from its input parameters to its output value.
+
+
+In the following example, the token *b*, the output of
+*max_alpha*, is selected when Forward Slice is chosen.
+
+
+![](images/ForwardSlice.png)
+
+
+**Backward Slice**
+
+
+Highlight all variable tokens where the value at that point in the function
 directly affects the value at the selected variable token.
 A token is highlighted if there is a direct data-flow path
 starting from the token and ending at the selected point.
 A call operation is not considered a direct data-flow path from its input parameters
-to its output value. Forward Operator Slice Highlight every operator token that manipulates a value directly affected by the
-value at the selected variable token.  Along each direct data-flow path that starts at the selected point, each token representing an operation is highlighted, along with
+to its output value.
+
+
+**Forward Operator Slice**
+
+
+Highlight every operator token that manipulates a value directly affected by the
+value at the selected variable token.  Along each direct data-flow path that
+*starts*
+at the selected point, each token representing an operation is highlighted, along with
 any explicit variable read or written by the operation.  A call operation is not
 considered a direct data-flow path from its input parameters to its output value.
-This is an alternate presentation of the slice displayed by the Forward Slice action. Backward Operator Slice Highlight every operator token that manipulates a value that directly affects the
-value at the selected variable token.  Along each direct data-flow path that ends at the selected point, each token representing an operation is highlighted, along with
+This is an alternate presentation of the slice displayed by the Forward Slice action.
+
+
+**Backward Operator Slice**
+
+
+Highlight every operator token that manipulates a value that directly affects the
+value at the selected variable token.  Along each direct data-flow path that
+*ends*
+at the selected point, each token representing an operation is highlighted, along with
 any explicit variable read or written by the operation. A call operation is not
 considered a direct data-flow path from its input parameters to its output value.
 This is an alternate presentation of the slice displayed by the Backward Slice action.
@@ -757,14 +855,35 @@ The color and text being highlighted is controlled by the user and will persist 
 explicitly removes the highlight.
 
 
-> Set Highlight Apply a secondary highlight to all text matching the text of the token under
+**Set Highlight**
+
+
+Apply a secondary highlight to all text matching the text of the token under
 the cursor.  A color is chosen randomly for the Ghidra session.  If the same highlight
-is removed and then reactivated later in the session, the same color will be used. Set Highlight... Apply a secondary highlight to all text matching the text of the token under
-the cursor, as in the Set Highlight action above.
+is removed and then reactivated later in the session, the same color will be used.
+
+
+**Set Highlight...**
+
+
+Apply a secondary highlight to all text matching the text of the token under
+the cursor, as in the *Set Highlight* action above.
 A Color Chooser dialog is shown allowing the user to select the specific color
 for the highlight. The dialog is initialized with a random color or with the color
-previously applied to the same token. Remove Highlight Remove the existing secondary highlight applied to the token under the cursor.
-Other highlights are not affected. Remove All Highlights Remove all secondary highlights in the current function. Highlights in other
+previously applied to the same token.
+
+
+**Remove Highlight**
+
+
+Remove the existing secondary highlight applied to the token under the cursor.
+Other highlights are not affected.
+
+
+**Remove All Highlights**
+
+
+Remove all secondary highlights in the current function. Highlights in other
 functions are not affected.
 
 
@@ -867,7 +986,7 @@ The selected constant must have had either a [Convert](DecompilerWindow.md#conve
 [Set Equate...](DecompilerWindow.md#set-equate) command applied to it.  After applying this command,
 the conversion is no longer applied, and the selected constant will be displayed
 using the decompiler's default strategy, which depends on the data-type of the constant and
-other display settings (See [Integer format](DecompilerOptions.md#displayintegerformat)).
+other display settings (See [Integer format](DecompilerOptions.md#display-options)).
 
 
 ### Remove Signature Override

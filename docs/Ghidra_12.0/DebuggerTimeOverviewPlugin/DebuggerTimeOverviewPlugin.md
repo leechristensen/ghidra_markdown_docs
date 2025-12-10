@@ -16,7 +16,7 @@ delays (although these are dictated, in part, by the numbering schema for events
 ## Navigation
 
 
-### Zoom
+### Zoom ![In](../icons/zoom_in.png)
 
 
 Clicking and dragging over a region of the Trace Overview causes that span to be displayed
@@ -24,7 +24,7 @@ uncompressed in the Trace Selection. The same action can also be applied to the 
 itself, resulting in a more detailed zoom.
 
 
-### Move
+### Move ![In](../icons/zoom_in.png)
 
 
 Shift click & drag on the Trace Selection allows the user to move forward and backward

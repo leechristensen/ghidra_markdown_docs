@@ -96,7 +96,7 @@ and a description of that status.
 | Replaced | ![](../images/ApplyReplace.png) |   | The destination value was applied by replacing it with the source value. |
 | Don't Care | ![asterisk_orange.png](../../icons/asterisk_orange.png) |   | The user set this markup item to indicate that we don't care about it  			        		and it should be ignored when applying the match for this item. |
 | Don't Know | ![unknown.gif](../../icons/unknown.gif) |   | The user set this markup item to indicate that we don't know if it is correct 			        		or if it should be applied  			        		and therefore it should be ignored when applying the match for this item. |
-| Conflict | ![cache.png](../../icons/cache.png) |   | The user applied another markup item for this match that conflicts with 			        		this markup item and prevents it from being applied. |
+| <a name="conflict-status"></a> Conflict | ![cache.png](../../icons/cache.png) |   | The user applied another markup item for this match that conflicts with 			        		this markup item and prevents it from being applied. |
 | Reject | ![dialog-cancel.png](../../icons/dialog-cancel.png) |   | The user rejected this markup item and it should be ignored 			        		when applying the match for this item. |
 | Failed | ![edit-delete.png](../../icons/edit-delete.png) |   | An attempt to apply this markup item failed.  			        		If you hover over the icon in the markup item table a tooltip will appear with  			        		more information about the failure. |
 
@@ -110,17 +110,17 @@ listing. The table below lists these actions.
 
 | Action | Icon | Description |
 | --- | --- | --- |
-|  | ![checkmark_green.gif](../../icons/checkmark_green.gif) | This action applies the selected markup items using the current apply 			        		match option for each markup type. For each selected markup item this  			        		action will force (or try to cause) the option to be applied.  			        		For example, if the option for a selected markup type is set to  			        		"Do Not Apply", this action would cause an add or replace to be 			        		performed depending on the item. |
-|  | ![Plus.png](../../icons/Plus.png) | This action applies the source value for each selected markup item  			        		by adding it to the destination value. If possible the source markup  			        		item becomes the primary one. |
-|  | ![Plus.png](../../icons/Plus.png) | This action applies the source value for each selected markup item by adding it  			        		to the destination value. The destination markup item remains the primary one. |
-|  | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value only if the  			        		destination value is a default value. |
-|  | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value if the only  			        		defined data being replaced is the Data item at the destination address.  			        		If there is more than one defined data in the destination program that  			        		would be replaced by the source data type, then no replace will occur. |
-|  | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value. For data this  			        		will replace all defined data that is currently in the way of the 			        		source data type being created.   Important: For Data markup that is replaced,  			        		theReset Mark-upaction will only be able to restore the single  			        		Data item that was originally at the Destination Address. Any other  			        		Data items that were replaced by this action will not be restored byReset Mark-up. |
-|  | ![asterisk_orange.png](../../icons/asterisk_orange.png) | This action sets the status of this markup item to Don't Care. This indicates that 			        		we don't care about this markup item and it shouldn't be applied when the match 			        		is applied. |
-|  | ![unknown.gif](../../icons/unknown.gif) | This action sets the status of this markup item to Don't Know. This indicates that 			        		we don't know if this markup item is correct or don't know if it should be applied 			        		when the match is applied. |
-|  | ![dialog-cancel.png](../../icons/dialog-cancel.png) | This action sets the status of this markup item to rejected. Once a markup item is  			        		rejected, it will be ignored when applying the match for this item. |
-|  | ![edit-rename.png](../../icons/edit-rename.png) | This action provides an edit address dialog that allows you to specify a destination  			        		address for any markup item that doesn't already have an address as indicated by "No Address". 			        		It also allows you to change the destination address if the one specified for the markup item 			        		is incorrect. In some circumstances you can't edit the destination address and an 			        		information dialog indicating why it's not editable will be displayed instead. |
-|  | ![undo-apply.png](../../icons/undo-apply.png) | This action resets the markup item back to its original unapplied state and  			        		restores the markup in the destination program back to its original state if 			        		necessary. |
+| <a name="apply-markup-item-using-options-and-forcing"></a> | ![checkmark_green.gif](../../icons/checkmark_green.gif) | This action applies the selected markup items using the current apply 			        		match option for each markup type. For each selected markup item this  			        		action will force (or try to cause) the option to be applied.  			        		For example, if the option for a selected markup type is set to  			        		"Do Not Apply", this action would cause an add or replace to be 			        		performed depending on the item. |
+| <a name="add-as-primary-markup-item"></a> | ![Plus.png](../../icons/Plus.png) | This action applies the source value for each selected markup item  			        		by adding it to the destination value. If possible the source markup  			        		item becomes the primary one. |
+| <a name="add-markup-item"></a> | ![Plus.png](../../icons/Plus.png) | This action applies the source value for each selected markup item by adding it  			        		to the destination value. The destination markup item remains the primary one. |
+| <a name="replace-default-markup-item"></a> | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value only if the  			        		destination value is a default value. |
+| <a name="replace-first-markup-item"></a> | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value if the only  			        		defined data being replaced is the Data item at the destination address.  			        		If there is more than one defined data in the destination program that  			        		would be replaced by the source data type, then no replace will occur. |
+| <a name="replace-markup-item"></a> | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value. For data this  			        		will replace all defined data that is currently in the way of the 			        		source data type being created.   Important: For Data markup that is replaced,  			        		theReset Mark-upaction will only be able to restore the single  			        		Data item that was originally at the Destination Address. Any other  			        		Data items that were replaced by this action will not be restored byReset Mark-up. |
+| <a name="tag-markup-item-dont-care"></a> | ![asterisk_orange.png](../../icons/asterisk_orange.png) | This action sets the status of this markup item to Don't Care. This indicates that 			        		we don't care about this markup item and it shouldn't be applied when the match 			        		is applied. |
+| <a name="tag-markup-item-dont-know"></a> | ![unknown.gif](../../icons/unknown.gif) | This action sets the status of this markup item to Don't Know. This indicates that 			        		we don't know if this markup item is correct or don't know if it should be applied 			        		when the match is applied. |
+| <a name="tag-markup-item-rejected"></a> | ![dialog-cancel.png](../../icons/dialog-cancel.png) | This action sets the status of this markup item to rejected. Once a markup item is  			        		rejected, it will be ignored when applying the match for this item. |
+| <a name="edit-markup-item-destination-address"></a> | ![edit-rename.png](../../icons/edit-rename.png) | This action provides an edit address dialog that allows you to specify a destination  			        		address for any markup item that doesn't already have an address as indicated by "No Address". 			        		It also allows you to change the destination address if the one specified for the markup item 			        		is incorrect. In some circumstances you can't edit the destination address and an 			        		information dialog indicating why it's not editable will be displayed instead. |
+| <a name="reset-markup-item"></a> | ![undo-apply.png](../../icons/undo-apply.png) | This action resets the markup item back to its original unapplied state and  			        		restores the markup in the destination program back to its original state if 			        		necessary. |
 
 
 ## Markup Items Filters
@@ -203,11 +203,15 @@ positioned above the destination listing.
 ### Dual Listing Actions
 
 
+<a name="toggle-dual-listing-visibility"></a>
 The **Toggle Dual Listing Visibility** ![application_tile_horizontal.png](../../icons/application_tile_horizontal.png)
 
 
 | ![](../images/VersionTrackingMarkupItemsTableOnly.png) |
 | --- |
+
+
+<a name="markup-item-menu-actions"></a>
 
 
 From the toolbar menu ![menu16.gif](../../icons/menu16.gif)

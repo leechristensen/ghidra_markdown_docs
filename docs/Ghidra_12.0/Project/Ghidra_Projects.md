@@ -4,7 +4,7 @@
 
 
 A Ghidra project maintains information for a particular reverse engineering
-(RE) effort. The RE effort involves using tools built with [plugins](../Tool/Ghidra_Tool_Administration.md#plugins)
+(RE) effort. The RE effort involves using tools built with [plugins](../Tool/Ghidra_Tool_Administration.md#ghidra-tool-administration)
 to analyze target software. Tools are accessible across projects and not
 associated with any one project in particular.  However,  the target
 software is imported into a Ghidra project as [programs](../Program/Ghidra_Programs.md).
@@ -13,7 +13,7 @@ maintains these programs for multiple users.
 
 
 The latest release of Ghidra introduces the concept of a [project
-repository](../VersionControl/project_repository.md) that contains files that are [versioned](../VersionControl/project_repository.md#versioning),
+repository](../VersionControl/project_repository.md) that contains files that are [versioned](../VersionControl/project_repository.md#project-repository),
 shared, or private.  A shared project is associated with a Ghidra
 Server that manages the files in the repository. Multiple users in the
 project can add files, access files on the server and create new versions of the

@@ -6,17 +6,17 @@
 The **New Project** option creates a new project. When you create a new project, Ghidra
 will close your current project, create the new project, and update the Ghidra Project Window
 with the newly created project. The *New Project* wizard takes you through the steps to
-create either a non-shared project or a shared project. The [shared project](../VersionControl/project_repository.md#sharedproject) can be
+create either a non-shared project or a shared project. The [shared project](../VersionControl/project_repository.md#project-repository) can be
 *shared* with others, meaning that the project will be associated with a repository on a
 server that other users can access.
 
 
-To create a new non-shared project:
+<a name="createnonsharedproject"></a>To create a new non-shared project:
 
 
 1. Select the **File → New
 Project...** menu option from the Ghidra Project Window.
-2. The  first panel of the *New Project* wizard is
+2. The <a name="selectprojecttype"></a> first panel of the *New Project* wizard is
 displayed, where you choose the project type.
 
 
@@ -53,7 +53,7 @@ section assumes the following:
 - You have a Ghidra Server that is set up to manage the project repository that you are
 going to access.
 - You have been added to the server's list of known users.
-- If you are associating your project with an *existing* project repository, the [Administrator](#admin) of the project has added you as a user to the project
+- If you are associating your project with an *existing* project repository, the [Administrator](#creating-a-shared-project) of the project has added you as a user to the project
 repository.
 - You know the name and port number of the Ghidra Server.
 - If the Ghidra Server is using PKI Authentication, you have a PKI Certificate.
@@ -72,7 +72,7 @@ panel.
 ![](images/SelectSharedProjectType.png)
 
 
-1. Activate the **Next &gt;&gt;** button.
+1. <a name="serverinfo"></a>Activate the **Next &gt;&gt;** button.
 
 
 ![](images/ServerInfo.png)
@@ -89,6 +89,9 @@ the server and port number from that project are used as default values.)
 you fail to connect to the Ghidra Server.
 
 
+<a name="selectrepository"></a>
+
+
 ![](images/RepositoryNamePanel.png)
 
 
@@ -98,17 +101,18 @@ This list may differ based upon your login credentials.
 By default, the *Existing Repository* radio button is
 selected because of the existing repositories found on the server.  Only those repositories
 you have been granted access to will be included in this list.
-- To use an existing repository, leave the radio button selected, and select a
+  - To use an existing repository, leave the radio button selected, and select a
 repository name from the list of *Repository Names*.
-- To create a *new* repository, select the *Create Repository* radio button;
+  - To create a *new* repository, select the *Create Repository* radio button;
 the *Repository Name* field becomes enabled. Enter the name of the new
 repository.  This option will be disabled if you have logged into the Ghidra Server
 in anonymous mode.
 2. Activate the **Next&gt;&gt;** button. If you selected the *Create Repository* radio
 button, then the following sample *Project Access* panel to specify user access is
-displayed. If you are creating a new shared repository, you are by default the [Administrator](#admin) in the project. You are not allowed to change your own access.
+displayed. If you are creating a new shared repository, you are by default the [Administrator](#creating-a-shared-project) in the project. You are not allowed to change your own access.
 If the server has been configured with anonymous mode enabled, an additional checkbox
 control will appear allowing you to grant anonymous access to this new repository.
+<a name="useraccesslist"></a>
 
 
 ![](images/UsersPanel.png)
@@ -120,25 +124,25 @@ icon. To add users, select users from *Known Users*, select the
 **Add&gt;&gt;** button. Add all users by selecting the **Add All** button. To remove
 users, select users in the project, and select the **&lt;&lt;Remove** button. To remove
 all users (except yourself), select the **Remove All** button.
-The *Project Users* table on the right side of the
+<a name="userprivileges"></a>The *Project Users* table on the right side of the
 dialog indicates user privileges:
-- *Read Only* - the user can open programs in read only mode, cannot [check out](../VersionControl/project_repository.md#check-out) files from the
+  - *Read Only* - the user can open programs in read only mode, cannot [check out](../VersionControl/project_repository.md#check-out) files from the
 repository, and cannot [check in](../VersionControl/project_repository.md#check-in) files, and cannot [add files](../VersionControl/project_repository.md#add-to-version-control)
 to the repository. The read only user may create a local copy of the program; the project
 repository is not affected.
-- *Read/Write* - the user can check out files from the repository and check in
+  - *Read/Write* - the user can check out files from the repository and check in
 files into the repository, and add new files to the repository.
-- *Admin* - the user has read/write privileges as well as the
+  - *Admin<a name="admin"></a>* - the user has read/write privileges as well as the
 ability to add users to and remove users from the project; the Admin can assign
 administrative privileges to other users. The project must have at least one
 administrative user. The administrator also can [terminate a check
-out](../VersionControl/project_repository.md#terminatecheckout).
+out](../VersionControl/project_repository.md#view-checkouts).
 > **Note:** If you are creating a
 project against an existing repository, then you will not see the Project
 Access panel as part of the New Project wizard.  After you have opened the
 shared project, and if you are an administrator in the existing repository, then you
 can display and modify user privileges by choosing the Project Edit Project Access List... option .
-2. Active the **Next&gt;&gt;** button;  you must next
+2. Active the **Next&gt;&gt;** button; <a name="selectprojectlocation"></a> you must next
 specify where to create your project that will be associated with the project repository.
 Typically, you would specify a directory on your local file system.
 

@@ -48,11 +48,11 @@ the selected data type is applied will be highlighted.
 
 1. Right-mouse anywhere on the code unit*
 2. Select whichever of the following is available from the popup menu:
-- Select **References  →  Show References to**
+  - Select **References  →  Show References to**
 from the popup menu.
-- Select **References  →  Find References to**
+  - Select **References  →  Find References to**
 from the popup menu.
-- Select **References  →  Find Uses of**
+  - Select **References  →  Find Uses of**
 from the popup menu.
 
 
@@ -79,19 +79,19 @@ This title displays the item that is the destination of all the references
 in the *Reference(s)* table.
 
 
-The ![go-home.png](../icons/go-home.png) button will
+<a name="home"></a>The ![go-home.png](../icons/go-home.png) button will
 cause the code browser to return the cursor to the location from which the dialog was
 launched.
 
 
-The ![Refresh](../icons/reload3.png) button will
+<a name="refresh"></a>The ![Refresh](../icons/reload3.png) button will
 refresh the table of references. This button will appear disabled when the data is not
 stale. However, if Ghidra detects that the data *may* be stale, then the button will
 become color filled, as it is here. You may push the button for a refresh in either
 state.
 
 
-The ![Make Selection](../icons/stack.png) button
+<a name="select"></a>The ![Make Selection](../icons/stack.png) button
 will create a selection in the code browser with the reference entries selected in the
 table. You may also access this feature by right-clicking an item in the table and
 selecting **Make Selection**.
@@ -101,14 +101,14 @@ selecting **Make Selection**.
 Then, click from the menu bar Select Program Highlight Entire Selection
 
 
-The ![tag_yellow.png](../icons/tag_yellow.png)
+<a name="highlight"></a>The ![tag_yellow.png](../icons/tag_yellow.png)
 button toggles the highlighting of the matching references.   In this case, the
 term highlight refers to the background color of the item in the Listing and not
 a [Program Selection
 Highlight](../SetHighlightPlugin/Highlighting.md).
 
 
-The ![Delete](../icons/edit-delete.png)
+<a name="delete-reference"></a>The ![Delete](../icons/edit-delete.png)
 button deletes the selected reference(s).  This will delete the reference from the database.
 
 
@@ -148,7 +148,7 @@ selection in the Code Browser from the entries in the table:
 
 1. Click on an entry in the table, or Ctrl-click to select multiple entries.
 2. Right mouse click and choose **Make** **Selection**.
-- The current selection in the Code Browser is set to include the addresses that
+  - The current selection in the Code Browser is set to include the addresses that
 you selected in the Address table.
 
 

@@ -90,6 +90,11 @@ rights/privileges in order to register the DLL in the Windows registry.
 
 
 1. Start a command prompt as an administrator:
+  - Click Windows Start menu, enter CMD in the search box to locate CMD program.
+  - Right-click on CMD program and then click Run as administrator.
+  - If the User Account Control dialog box appears, confirm that the action it displays is
+what you want, and then click Yes to continue.  You may be prompted for an
+Admin password to elevate permissions.
 2. At the prompt within the displayed CMD window, navigate to the parent folder that
 contains the 64-bit version of *msdia140.dll* or specify the full path of the DLL to
 regsvr32 command below.

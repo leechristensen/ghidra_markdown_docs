@@ -36,6 +36,9 @@ it.
 saved.
 
 
+<a name="close-program"></a>
+
+
 > **Tip:** If the
 listing window is open and multiple programs are open, the program names are displayed on tabs
 across the top of the listing window.  Programs can be closed by selecting the appropriate

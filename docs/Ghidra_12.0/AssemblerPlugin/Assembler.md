@@ -96,7 +96,7 @@ input fields remain on screen.
 **Related Topics:**
 
 
-- [Listing View](../CodeBrowserPlugin/CodeBrowser.md#code-browser)
+- [Listing View](../CodeBrowserPlugin/CodeBrowser.md#listing-view)
 
 
 ---

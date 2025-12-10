@@ -114,21 +114,69 @@ to populate the database.
 #### Dialog Fields
 
 
-> Fid Database Pick the database to populate. Users must select from attached databases that are writable. Library Family Name The name of the library being ingested. This is the identifier that will be inserted
-as part of the comment when a match is found for functions in this library. Library Version The formal version string for the library.  This is frequently the <major>.<minor>.<patch> syntax but can be anything provided to distinguish between different versions of the same library. Library Variant Any other string for distinguishing libraries that doesn't fit in the formal Version string.  This frequently holds compiler settings. Base Library This is an optional setting for cross-linking with an existing library already
+**Fid Database**
+
+
+Pick the database to populate. Users must select from attached databases that are writable.
+
+
+**Library Family Name**
+
+
+The name of the library being ingested. This is the identifier that will be inserted
+as part of the comment when a match is found for functions in this library.
+
+
+**Library Version**
+
+
+The formal version string for the library.  This is frequently the
+*`<major>`.`<minor>`.`<patch>`*
+syntax but can be anything provided to distinguish between different versions of the same library.
+
+
+**Library Variant**
+
+
+Any other string for distinguishing libraries that doesn't fit in the formal
+*Version* string.  This frequently holds compiler settings.
+
+
+**Base Library**
+
+
+This is an optional setting for cross-linking with an existing library already
 ingested in the database.  In the event that the user wants to incorporate parent/child
 relationships into this library from another related library, they can set this option
 to point at the other library. The library must already be ingested (from a previous use
 of this command) into the same database. The Function ID ingest process will match parents
-and children across the libraries via function symbols. Root Folder This specifies the set of programs from which the new library
+and children across the libraries via function symbols.
+
+
+**Root Folder**
+
+
+This specifies the set of programs from which the new library
 will be populated. The user can select any subfolder in the current Ghidra project. The
 ingest process will recursively search through all programs beneath this folder and,
-for each program, will collect any functions it contains. Language This is the required 4-field Ghidra Language ID (i.e. x86:LE:64:default )
+for each program, will collect any functions it contains.
+
+
+**Language**
+
+
+This is the required 4-field Ghidra Language ID (i.e. *x86:LE:64:default*)
 specifying exactly what processor the new language will contain. While scanning during ingest,
-any program that does not match this program model will be automatically skipped. Common Symbol File This is an optional parameter that provides a list of common function symbols to
+any program that does not match this program model will be automatically skipped.
+
+
+**Common Symbol File**
+
+
+This is an optional parameter that provides a list of common function symbols to
 the ingest process. The parameter, if present, is a path to a text file that contains
 the list of function symbols, one per line. The ingest process excludes these functions
-from consideration as disambiguating child functions. (See “False Positives” )
+from consideration as disambiguating child functions. (See [“False Positives”](FunctionIDPlugin.md#false-positives))
 
 
 Once all fields have been filled, clicking **OK** causes all selected
@@ -204,14 +252,23 @@ False positives for the most part only happen with small functions.
 There are two related causes with Function ID:
 
 
-> Tiny Functions If a function consists of only a few instructions, it can be
-matched randomly if there are enough entries
+**Tiny Functions**
+
+
+If a function consists of only a few instructions, it can be
+matched *randomly* if there are enough entries
 in the database. The fewer operations a function performs, the
-more likely an unrelated function is to do those exact same things. Code Idioms A set of functions that are effectively
+more likely an unrelated function is to do those exact same things.
+
+
+**Code Idioms**
+
+
+A set of functions that are effectively
 identical can have different names and be used in unrelated contexts.
-Functions such as destructors are typical: one might
+Functions such as *destructors* are typical: one might
 check that a particular structure field is non-zero, and then pass that
-field to free .  Another destructor may
+field to `free`.  Another destructor may
 perform the exact same sequence, but was designed for a completely unrelated structure.
 
 
@@ -251,15 +308,36 @@ possible to turn on one of several mitigation strategies that target the offendi
 directly. These strategies include:
 
 
-> Force Specific If this is set on an entry, the specific hash must match before the
+**Force Specific**
+
+
+If this is set on an entry, the specific hash must match before the
 system will consider the entry as a potential match. This is useful when
-a code idiom contains a known constant that the full hash would usually miss. Force Relation This is probably the most useful specialized strategy. It forces
+a code idiom contains a known constant that the full hash would usually miss.
+
+
+**Force Relation**
+
+
+This is probably the most useful specialized strategy. It forces
 at least one parent or child match to be present before the system considers the base
 function as a potential match. So even if an idiom is big, this forces a search
-for an additional confirmation. Auto Fail This is a strategy of last resort. If an obnoxious code idiom can't be
+for an additional confirmation.
+
+
+**Auto Fail**
+
+
+This is a strategy of last resort. If an obnoxious code idiom can't be
 eliminated any other way, this forces the particular database entry to
-never be considered as a match. Auto Pass This strategy is different from the others, in that it applies to function
-entries whose scores are slightly too low .
+never be considered as a match.
+
+
+**Auto Pass**
+
+
+This strategy is different from the others, in that it applies to function
+entries whose scores are slightly too *low*.
 If a low scoring function has an instruction sequence that is deemed unique enough,
 this strategy causes any potential match to automatically pass the threshold.
 This provides an alternative to lowering the instruction count threshold to include

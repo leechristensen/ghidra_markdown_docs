@@ -55,9 +55,18 @@ class LinkResolver:
         Returns:
             The correct GFM anchor (may be different if HTML anchor doesn't match heading text)
         """
+        import os.path
+
+        # Normalize path - convert backslashes to forward slashes and resolve .. components
         target_md_path = target_md_path.replace("\\", "/")
-        if target_md_path in self.anchor_mappings:
-            file_anchors = self.anchor_mappings[target_md_path]
+        # Use os.path.normpath to resolve .. components, then convert back to forward slashes
+        normalized_path = os.path.normpath(target_md_path).replace("\\", "/")
+        # Remove leading ./ if present
+        if normalized_path.startswith("./"):
+            normalized_path = normalized_path[2:]
+
+        if normalized_path in self.anchor_mappings:
+            file_anchors = self.anchor_mappings[normalized_path]
             if anchor_slug in file_anchors:
                 return file_anchors[anchor_slug]
         return anchor_slug

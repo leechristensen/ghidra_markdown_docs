@@ -313,15 +313,15 @@ To Graph Calls Using the default model,
 2. A new graph window is created
 
 
-To Graph Calls Using a specific model*,
+<a name="graph-calls-using-model"></a>To Graph Calls Using a specific model*,
 
 
 1. Select **Graph →  Calls Using Model →** &lt;***a Call Model***&gt;
 2. Select one of
-- Isolated Entry Model
-- Multiple Entry Model
-- Overlapped Code Model
-- Partitioned Code Model
+  - Isolated Entry Model
+  - Multiple Entry Model
+  - Overlapped Code Model
+  - Partitioned Code Model
 3. A new graph window is created
 
 
@@ -352,9 +352,9 @@ To graph Data References,
 1. Select the data to start from in the listing
 Select **Graph →  Data →**
 Select one of
-- To References - selected data and all references to it
-- From References - selected data all references from it
-- To/From References - selected data and all references to and from it
+  - To References - selected data and all references to it
+  - From References - selected data all references from it
+  - To/From References - selected data and all references to and from it
 A new graph window is created with the selected data and the specified references.
 By default this includes one layer of references but this may be adjusted in the options
 as specified above, or dynamically using the [Add References

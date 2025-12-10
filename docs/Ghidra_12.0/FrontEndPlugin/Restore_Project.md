@@ -27,13 +27,13 @@ project to restore and where to restore it.
 2. - *Archive File:* Specify the full path for the archive file to be
 restored. Use the browse button ("**. . .**") to locate the archive (*.gar)
 file.
-- The *Restore
+  - The *Restore
 Directory* and *Project Name* fields are automatically filled in when you use the
 browse button ("**. . .**") to the right of the *Archive File* field to select
 the archive file.
-- *Restore Directory:* The project directory where the new project will be
+  - *Restore Directory:* The project directory where the new project will be
 created.
-- *Project Name:* The name of the new project.
+  - *Project Name:* The name of the new project.
 
 
 1. Press the **OK** button.
@@ -41,13 +41,13 @@ created.
 project,  the *Project Exists* dialog is displayed, as shown below.
 | ![](images/ProjectExists.png) |
 | --- |
-- Specify a different *Restore Directory* or a *Project Name* that doesn't exist
+  - Specify a different *Restore Directory* or a *Project Name* that doesn't exist
 and try again.
 
 
 1. The 'In Progress' dialog is displayed indicating the archive is restoring. When the restore
 is complete, this dialog will disappear and the newly restored project appears in the [Ghidra Project Window](Ghidra_Front_end.md).
-- To cancel the restore operation click on the **Cancel** button. Any
+  - To cancel the restore operation click on the **Cancel** button. Any
 files that were created during the restore are removed as a result of the
 cancellation.
 

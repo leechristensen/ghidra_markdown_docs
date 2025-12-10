@@ -5,7 +5,7 @@
 
 The *Byte Viewer* panel in the Options dialog for the Byte Viewer
 tool has configurable items for colors and font.
-The Byte Viewer options determines
+<a name="bvconfigurationoptionsbyteviewer"></a>The Byte Viewer options determines
 the colors, font, and   header configuration. To view the options, select
 **Edit** → **Tool Options**
 and then select the *Byte Viewer*node in the Options tree.
@@ -22,7 +22,7 @@ color and font.
 | --- | --- |
 | Current View Cursor Color | Used in the view that has focus |
 | Cursor Color | Used in the views that do not have focus |
-| Edit Cursor Color | Used to indicate changed bytes in memory; this color is 			                used as the cursor color in those views that support editing |
+| Edit Cursor Color <a name="editcolor"></a> | Used to indicate changed bytes in memory; this color is 			                used as the cursor color in those views that support editing |
 | Font | Font specified for all views |
 | Highlight Cursor Line | Highlights the line containing the cursor |
 | Highlight Cursor Line Color | The color of the highlight for the line containing the cursor |
@@ -30,7 +30,7 @@ color and font.
 | Middle-Mouse Color | The color when the user middle-mouses in the Byte Viewer |
 
 
-- To change the color,
+- To change the color,<a name="editcolorsandfont"></a>
 
 
 1. From the Byte Viewer menu select **Edit** →

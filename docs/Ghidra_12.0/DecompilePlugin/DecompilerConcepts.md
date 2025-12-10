@@ -31,22 +31,49 @@ to accomplish this, and beyond the raw translation of machine instructions to p-
 can add additional spaces. Address space definitions that are common across many different processors include:
 
 
-> ram A space that models memory accessible via the processor's main data bus. Depending on
-the architecture, different spaces might be substituted for ram ,
-such as separate code and data spaces. register A space that models the processor's general purpose registers.  Ghidra still uses
+**ram**
+
+
+A space that models memory accessible via the processor's main data bus. Depending on
+the architecture, different spaces might be substituted for *ram*,
+such as separate *code* and *data* spaces.
+
+
+**register**
+
+
+A space that models the processor's general purpose registers.  Ghidra still uses
 the standard names to refer to registers for the processor, but internally each register maps to a
-specific address in this space. unique A space dedicated to temporary registers.
+specific address in this space.
+
+
+**unique**
+
+
+A space dedicated to *temporary* registers.
 It is used to hold intermediate values when modeling instruction behavior, and the Decompiler
 uses it to allocate space for variables that don't directly correspond to the low level
-processor state.  The name unique is reserved for this purpose and
-is present in all processor models. stack A space that represents bytes explicitly indexed through a stack pointer .
+processor state.  The name *unique* is reserved for this purpose and
+is present in all processor models.
+
+
+**stack**
+
+
+A space that represents bytes explicitly indexed through a *stack pointer*.
 This is an example of an address space added by the Decompiler beyond what the raw processor
-model defines.  The stack space is a logical construction representing the set of bytes a
+model defines.  The *stack* space is a logical construction representing the set of bytes a
 single function might access through its stack pointer.  Each stack address represents
-the offset of a byte in some underlying space (usually ram ) relative
+the offset of a byte in some underlying space (usually *ram*) relative
 to the initial value of the stack pointer upon entry to the function. The stack space is
 always referenced in the context of a single function, and in this sense, each function
-can be viewed as having its own distinct stack space. constant A special space for encoding constants in p-code.
+can be viewed as having its own distinct stack space.
+
+
+**constant**
+
+
+A special space for encoding constants in p-code.
 For complete generality, even constants that the processor might manipulate are
 assigned to their own address space.  For an address in the constant
 space, the index itself represents the constant.
@@ -199,11 +226,117 @@ possible. The Decompiler resorts to a functional syntax for these kinds
 of p-code operations, displaying them as if they were built-in functions for the language.
 
 
+`SUB41(x,c)` - Truncation operation - SUBPIECE
+
+
+- The digit '4' indicates the size of the input operand 'x' in bytes.
+- The digit '1' indicates the size of the output value in bytes.
+- The parameter 'x' is the value being truncated.
+- The parameter 'c' is the number of least significant bytes being truncated.
+
+
 ```
 
 	    SUB42(0xaabbccdd,1) = 0xbbcc
 
 ```
+
+
+Extract a contiguous subset of the bytes from 'x'.
+When 'c' is 0, the operation is a simple integer truncation.
+
+
+- `SUB41(x,0)`
+truncates from a 4-byte integer to a 1-byte (**char**
+or **byte**) integer.
+- `SUB42(x,0)`
+truncates from a 4-byte integer to a 2-byte (**short**) integer.
+- `SUB84(x,4)` extracts the high 4 bytes from the 8 byte integer.
+
+
+`CONCAT31(x,y)` - Concatenation operator - PIECE
+
+
+- The digit '3' indicates the size of the input operand 'x' in bytes.
+- The digit '1' indicates the size of the input operand 'y' in bytes.
+- The parameters 'x' and 'y' hold the values being concatenated.
+
+
+```
+
+	    CONCAT31(0xaabbcc,0xdd) = 0xaabbccdd
+
+```
+
+
+Concatenate the bytes in 'x' with the bytes in 'y'.  'x' becomes the most significant
+bytes, and 'y' the least significant bytes, in the result.
+
+
+`ZEXT14(x)` - Zero-extension operator - INT_ZEXT
+
+
+- The digit '1' indicates the size of the input operand 'x' in bytes.
+- The digit '4' indicates the size of the output in bytes.
+
+
+```
+
+	    ZEXT24(0xaabb) = 0x0000aabb
+
+```
+
+
+Extend the operand 'x' to a larger size by appending zero bytes, which become the most
+significant bytes of the result.
+
+
+`SEXT14(x)` - Sign-extension operator - INT_SEXT
+
+
+- The digit '1' indicates the size of the input operand 'x' in bytes.
+- The digit '4' indicates the size of the output in bytes.
+
+
+```
+
+	    SEXT48(0xaabbccdd) = 0xffffffffaabbccdd
+
+```
+
+
+Extend the operand 'x' to a larger size by duplicating the *sign*
+bit of 'x' into the most significant bytes of the result.
+
+
+`SBORROW4(x,y)` - Test for signed borrow operator - INT_SBORROW
+
+
+- The digit '4' indicates the size of both input operands 'x' and 'y' in bytes.
+
+
+Return *true* if there is an arithmetic overflow when subtracting 'y' from 'x'
+as signed integers.
+
+
+`CARRY4(x,y)` - Test for unsigned overflow operator - INT_CARRY
+
+
+- The digit '4' indicates the size of both input operands 'x' and 'y' in bytes.
+
+
+Return *true* if there is an arithmetic overflow when adding 'x' and 'y'
+as unsigned integers.
+
+
+`SCARRY4(x,y)` - Test for signed overflow operator - INT_SCARRY
+
+
+- The digit '4' indicates the size of both input operands 'x' and 'y' in bytes.
+
+
+Return *true* if there is an arithmetic overflow when adding 'x' and 'y'
+as signed integers.
 
 
 ## The HighFunction
@@ -410,13 +543,26 @@ they would not be present in the original source.
 Ghidra explicitly defines two auto-parameters:
 
 
-> this Within Object Oriented languages, a function defined as a class method often has a this parameter pointing to an instantiation of the
-class' structure data-type.  Within Ghidra, functions with the __thiscall calling convention are automatically assigned a this parameter.
-If the function is part of a class namespace and the class has an associated structure, the this parameter will be a pointer to the structure, otherwise
-it will be a pointer to the void data-type. __return_storage_ptr__ Most calling conventions allow the value returned by a function, if it is large enough, to be passed back
+**this**
+
+
+Within Object Oriented languages, a function defined as a class *method*
+often has a **this** parameter pointing to an instantiation of the
+class' structure data-type.  Within Ghidra, functions with the **__thiscall**
+calling convention are automatically assigned a **this** parameter.
+If the function is part of a class namespace and the class has an associated structure, the
+**this** parameter will be a pointer to the structure, otherwise
+it will be a pointer to the **void** data-type.
+
+
+**__return_storage_ptr__**
+
+
+Most calling conventions allow the value returned by a function, if it is large enough, to be passed back
 on the stack instead of in a register. This is usually implemented by having the calling function
-pass an additional input parameter that holds a pointer to the location on
-the stack where the return value should be stored.  Ghidra labels this special parameter as __return_storage_ptr__ , which will be a pointer to the
+pass an additional *input* parameter that holds a pointer to the location on
+the stack where the return value should be stored.  Ghidra labels this special parameter as
+**__return_storage_ptr__**, which will be a pointer to the
 data-type of the return value.
 
 
@@ -485,15 +631,41 @@ There are several types of specification files that are distinguishable by their
 These include:
 
 
-> SLEIGH files - *.slaspec or *.sinc These are the human readable SLEIGH language files. A single specification is
-rooted in one of the *.slaspec files, which may recursively include
-one or more *.sinc files.  The format of these files is described
-in the document "SLEIGH: A Language for Rapid Processor Specification." Compiled SLEIGH files - *.sla This is a compiled form of a single SLEIGH specification.  It is produced
-automatically by Ghidra from the corresponding *.slaspec . Compiler specification files - *.cspec These files contain configuration for a specific compiler.  Analysis of Programs whose
+**SLEIGH files** - *.slaspec or *.sinc
+
+
+These are the human readable SLEIGH language files. A single specification is
+rooted in one of the `*.slaspec` files, which may recursively include
+one or more `*.sinc` files.  The format of these files is described
+in the document "SLEIGH: A Language for Rapid Processor Specification."
+
+
+**Compiled SLEIGH files** - *.sla
+
+
+This is a compiled form of a single SLEIGH specification.  It is produced
+automatically by Ghidra from the corresponding `*.slaspec`.
+
+
+**Compiler specification files** - *.cspec
+
+
+These files contain configuration for a specific compiler.  Analysis of Programs whose
 executable content was produced using this compiler benefits from this information.
 The file is an XML document with tags describing details of data organization and
 other conventions used by the compiler.  In particular, the compiler specification
-contains tags: <prototype> - describing a specific calling convention <callfixup> - describing a Call-fixup <callotherfixup> - describing a Callother-fixup Processor specification files - *.pspec These files contain configuration information that is specific to a particular
+contains tags:
+
+
+- `<prototype>` - describing a specific calling convention
+- `<callfixup>` - describing a Call-fixup
+- `<callotherfixup>` - describing a Callother-fixup
+
+
+**Processor specification files** - *.pspec
+
+
+These files contain configuration information that is specific to a particular
 processor variant.
 
 

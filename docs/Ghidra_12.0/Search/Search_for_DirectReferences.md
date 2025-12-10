@@ -87,13 +87,13 @@ alignment.
 ## Actions
 
 
-### Make Selection
+### Make Selection ![Make Selection](../icons/stack.png)
 
 
 *See [Make Selection](Query_Results_Dialog.md#make-selection)*.
 
 
-### Selection Navigation
+### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
 
 
 *See [Selection Navigation](Query_Results_Dialog.md#selection-navigation)*.

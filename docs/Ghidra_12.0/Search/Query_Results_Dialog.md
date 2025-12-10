@@ -59,7 +59,7 @@ were found.
 ## Actions
 
 
-### Make Selection
+### Make Selection ![Make Selection](../icons/stack.png)
 
 
 A selection in the Listing can be created from the entries in the results table.
@@ -88,7 +88,7 @@ the tool bar, or right mouse click and choose **Make Selection**.
 4. The current selection will be set to the address of all the highlighted items.
 
 
-### Remove Items
+### Remove Items ![table_delete.png](../icons/table_delete.png)
 
 
 You can remove entries from the table via this action.  Items are **only** removed
@@ -96,7 +96,7 @@ from the table--no program data is changed.  This can be useful when you wish to
 exclude results that are of no interest to you.
 
 
-### Selection Navigation
+### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
 
 
 This action causes the Listing to navigate to the address represented by a row when

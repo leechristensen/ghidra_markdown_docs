@@ -68,27 +68,60 @@ aren't limited to): Renaming Variables Setting Data-types Commenting Setting a F
 Some of the primary capabilities of the Decompiler include:
 
 
-> Recovering Expressions The Decompiler does full data-flow analysis which allows it to
+**Recovering Expressions**
+
+
+The Decompiler does full data-flow analysis which allows it to
 perform slicing on functions: complicated expressions, which have been split into
 distinct operations/instructions and then mixed together with
 other instructions by the compiling/optimizing process, are
-reconstituted back into a single line. Recovering High-Level Scoped Variables The Decompiler understands how compilers
+reconstituted back into a single line.
+
+
+**Recovering High-Level Scoped Variables**
+
+
+The Decompiler understands how compilers
 use processor stacks and registers to implement variables with
 different scopes within a function. Data-flow analysis allows it to
 follow what was originally a single variable as it moves from
 the stack, into a register, into a different register, etc. Thus
 it can effectively recover the original program's concept of a
 variable, minimizing the need to introduce artificial variables
-in the output. Recovering Function Parameters The Decompiler understands the parameter-passing conventions of
+in the output.
+
+
+**Recovering Function Parameters**
+
+
+The Decompiler understands the parameter-passing conventions of
 the compiler and can reconstruct the original form of
-function calls. Using Data-type, Name, and Signature Annotations The Decompiler automatically pulls in
+function calls.
+
+
+**Using Data-type, Name, and Signature Annotations**
+
+
+The Decompiler automatically pulls in
 all the different data types and variable names that the user
 has applied to functions, and the C output is altered to reflect
 this. High-level variables are appropriately named, structure
 fields and array indices are calculated and displayed with
 correct syntax, constant char pointers are replaced with
-appropriate quoted strings, etc. Propagating Local Data-types The Decompiler infers the data-type of unlabeled variables
-by propagating information from other sources throughout a function. Recovering Structure Definitions The Decompiler can be used to create structures that match the usage
+appropriate quoted strings, etc.
+
+
+**Propagating Local Data-types**
+
+
+The Decompiler infers the data-type of unlabeled variables
+by propagating information from other sources throughout a function.
+
+
+**Recovering Structure Definitions**
+
+
+The Decompiler can be used to create structures that match the usage
 pattern of particular functions and variables, automatically discovering
 component offsets and data-types.
 

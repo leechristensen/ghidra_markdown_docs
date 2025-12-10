@@ -15,7 +15,7 @@ data*.  In general, the term "data" refers to defined data.
 Data is created by applying *Data Types* to bytes in
 memory.  Data Types interpret bytes as values and provide a visual interpretation of
 those bytes based on the Data Type used, e.g., a four byte IEEE floating point number or a
-two byte [little endian](../Glossary/glossary.md#littleendian)
+two byte [little endian](../Glossary/glossary.md#little-endian)
 word.  Ghidra comes packaged with a set of "Built-in" Data types (e.g., byte, word, float,
 etc).  Ghidra also provides the capability of creating "User-defined" Data types
 (structure, array, typedef, etc) and supports dynamic data types whose structure depends on the
@@ -94,7 +94,7 @@ can vary).
 | ulong | Unsigned |  |  |
 | longlong | Signed |  |  |
 | ulonglong | Unsigned |  |  |
-| Settings *(may vary)* Endian (default, big, little)Format (hex, decimal, octal, binary, ascii)Mnemonic-style (default, assembly, C)Mutability (normal, volatile, constant)Padding (unpadded, padded) *Additional character type [Settings](#stringsettings) : Charset (defaults to US-ASCII if user settable)Render non-ASCII Unicode (all, byte sequence, escape sequence) |  |  |  |
+| Settings *(may vary)* Endian (default, big, little)Format (hex, decimal, octal, binary, ascii)Mnemonic-style (default, assembly, C)Mutability (normal, volatile, constant)Padding (unpadded, padded) *Additional character type [Settings](#string-data-types) : Charset (defaults to US-ASCII if user settable)Render non-ASCII Unicode (all, byte sequence, escape sequence) |  |  |  |
 
 
 | **Miscellaneous - Dynamic Size Types**   *size determined by data organization within compiler specification* |  |  |  |
@@ -123,7 +123,7 @@ can vary).
 | [PascalString255](#string-data-types) | settable | from charset | pascal 255 max characters |
 | [PascalString](#string-data-types) | settable | from charset | pascal 64k max characters |
 | [PascalUnicode](#string-data-types) | UTF-16 | 2 bytes | pascal 64k max characters |
-| [Settings](#stringsettings) Charset (defaults to US-ASCII if user settable)Render non-ASCII Unicode (all, byte sequence, escape sequence)TranslationMutability (normal, volatile, constant) |  |  |  |
+| [Settings](#string-data-types) Charset (defaults to US-ASCII if user settable)Render non-ASCII Unicode (all, byte sequence, escape sequence)TranslationMutability (normal, volatile, constant) |  |  |  |
 
 
 ### User-Defined Data Types
@@ -147,7 +147,7 @@ can vary).
 
 Data is created by *applying* a data type to undefined bytes in memory.  There
 are numerous ways to apply data types.  A status message indicating whether or not data
-was created is displayed in the tool's [status area](../Tool/Ghidra_Tool_Administration.md#toolstatus).
+was created is displayed in the tool's [status area](../Tool/Ghidra_Tool_Administration.md#tool-status-components).
 
 
 ![](../shared/note.yellow.png) Regardless of how a data type is applied, data is
@@ -209,7 +209,7 @@ type, continue pressing the "hot key" until you reach the data type again.
 
 A *Favorite* data type is a data type that you use frequently and want to apply
 from the Data popup menu.  By default Ghidra sets most commonly-used data types as
-Favorites.  However, any data type can be [configured](../DataTypeManagerPlugin/data_type_manager_description.md#favorites)
+Favorites.  However, any data type can be [configured](../DataTypeManagerPlugin/data_type_manager_description.md#setting-favorite-data-types)
 to be a favorite.
 
 
@@ -265,7 +265,7 @@ settings can be changed for an individual data item or for all data of the same 
 type.
 
 
-To change the settings of a single data item:
+<a name="data-settings"></a>To change the settings of a single data item:
 
 
 1. Place the cursor on the data item
@@ -290,7 +290,7 @@ press **OK**.  To reset a setting to its default value, set the **Use Default**
 checkbox.
 
 
-The *default* settings for a given data type can
+<a name="default-settings"></a>The *default* settings for a given data type can
 be changed.  When a default setting has been changed, every data item *currently*
 using the default setting for that data type will use the new default value.  Data items
 that have a modified value for that setting will not be affected.
@@ -333,7 +333,7 @@ default settings for either the typedef or its underlying data type doesn't affe
 default settings of the underlying data type or typedef respectively.
 
 
-To change the data settings for multiple data
+<a name="data-settings-onselection"></a>To change the data settings for multiple data
 items:
 
 
@@ -361,7 +361,7 @@ settings to be changed without affecting others.
 
 
 Ghidra provides two mechanisms to create and modify Structures.  The [Data
-Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes) can be used to create structures without applying them immediately.
+Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types) can be used to create structures without applying them immediately.
 It can also be used to edit them.  Alternatively, structures can be created and
 modified *directly* in the browser.
 
@@ -452,7 +452,7 @@ will show the full Structure Editor:
 
 
 Unlike structures, unions can only be created using the [Union Editor](../DataTypeEditors/StructureEditor.md) in the [Data
-Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes).  Once a union has been created, it can be applied like any other data
+Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types).  Once a union has been created, it can be applied like any other data
 type.
 
 
@@ -461,7 +461,7 @@ type.
 
 An Enum (*Enumeration*) data type is a C-style data type that allows the substitution
 of a value for a more meaningful name.  Enums are created from the [Data
-Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes) using the [Enum
+Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types) using the [Enum
 Editor](../DataTypeEditors/EnumEditor.md).    When you apply the enum to a program, the name of the enum
 appears in the mnemonic field and the named value corresponding to the byte at that location
 appears in the operand field.
@@ -502,7 +502,7 @@ To apply an untyped pointer:
 1. Place the cursor over an undefined
 data
 2. Press the '**p**' Quick-Key
-- or -
+             - or -
 Drag a Pointer data type from the *Data Type Manager* window
 3. A default-sized pointer is created
 4. If a valid address can be formed at the
@@ -546,14 +546,14 @@ the array is specified when the array is created.  Arrays can also be
 multi-dimensional.  In this case, the innermost dimension is created first.
 
 
-To create an array,
+<a name="create-array"></a><a name="define-array"></a>To create an array,
 
 
 1. Place the cursor at the address where you want to create an array
 2. Create one data item of the base data type for the array.  Any data type is valid,
 including structures
 3. Press the '[' Quick-Key,
-- or -
+           - or -
 Press mouse-right on the data item and choose **Data** →
 **Create Array**
 4. A dialog will prompt you for the number of elements in the array.  It will be
@@ -569,7 +569,7 @@ To create a multi-dimensional array:
 1. Create an array using the inner dimension for the number of elements
 2. Place the cursor over the new array
 3. Press the '[' Quick-Key,
-- or -
+           - or -
 Press mouse-right on the array and choose **Data** →
 **Create Array**
 4. Enter the number of elements for the next dimension, and press **OK**
@@ -587,7 +587,7 @@ how such a pointer should be interpretted.
 Typedefs are created
 using the Data Type Manager and applied like any other data type (See
 [Creating New
-User Defined Data Types](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes)).
+User Defined Data Types](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types)).
 
 
 ### Void
@@ -596,7 +596,7 @@ User Defined Data Types](../DataTypeManagerPlugin/data_type_manager_description.
 A *void* data type can only be used as the return type (i.e., `<RETURN>` variable)
 of a function and can be specified from
 the [Function Editor](../FunctionPlugin/Variables.md#edit-function),
-[Set Data Type](../FunctionPlugin/Variables.md#datatype) popup action menu,
+[Set Data Type](../FunctionPlugin/Variables.md#define-variable-data-type-or-function-return-type) popup action menu,
 as well as from the Data Type Manager using *drag-and-drop*.
 
 
@@ -620,7 +620,7 @@ Variable length byte/int sequences that encode a single character, such as UTF-8
 or UTF-16.
 
 
-**Size of a string**
+**<a name="stringlayouts"></a>Size of a string**
 
 
 The extent of the string is determined by:
@@ -651,7 +651,7 @@ to construct itself.  In this case the string will be displayed in red to indica
 there is an issue.
 
 
-**Character sets**
+**<a name="stringcharsets"></a>Character sets**
 
 
 Character sets define how characters are represented as byte values, and how byte
@@ -673,28 +673,28 @@ The following character sets are always available:
 
 
 - US-ASCII
-- limited to values between 0-127.
+  - limited to values between 0-127.
 ISO-8859-1 (Latin 1)
-- see also windows-1252.
+  - see also windows-1252.
 UTF-8
-- variable length 1-3 byte Unicode encoding.
+  - variable length 1-3 byte Unicode encoding.
 only Unicode values greater than 007F cause multi-byte sequences,
 otherwise indistinguishable from US-ASCII.
 UTF-16, UTF-16BE, UTF-16LE
-- 2 byte Unicode encoding.
+  - 2 byte Unicode encoding.
 variable length, 2 or 4 bytes
 UTF-32, UTF-32BE, UTF-32LE
-- 4 byte Unicode encoding.
+  - 4 byte Unicode encoding.
 
 
 Other character sets that are typically implemented in the Java JVM:
 
 
 - IBM437
-- old school extended ASCII.
+  - old school extended ASCII.
 Windows-1252
 GB2312
-- Chinese
+  - Chinese
 variable length 1-2 bytes
 Many many more...
 
@@ -736,7 +736,7 @@ TerminatedCStrings, on the other hand, create multiple strings for the selected 
 beginning a new string at each terminator.
 
 
-**Settings for string instances**
+**<a name="stringsettings"></a>Settings for string instances**
 
 
 Each string instance has settings that can be customized to change the way the
@@ -744,17 +744,17 @@ string is decoded and how it is rendered when displayed.
 
 
 - Charset
-- Any of the currently available java.nio.charsets.
+  - Any of the currently available java.nio.charsets.
 Defaults to US-ASCII
 See charset_info.xml to customize display order or character size.
 Not available on string types that have "UTF*" or "Unicode" in the
 name.
 Render non-ASCII Unicode
-- all - attempt to render the character (display font may or may not provide it)
+  - all - attempt to render the character (display font may or may not provide it)
 byte sequence - show the bytes that make up the problematic character
 escape sequence - show as an escape sequence - "\u1234"
 Translation
-- Toggles display of translated string value on and off.
+  - Toggles display of translated string value on and off.
 Same as popup menu action **Data | Translate | Toggle show translated value**.
 
 
@@ -762,16 +762,16 @@ Same as popup menu action **Data | Translate | Toggle show translated value**.
 
 
 Dynamic data types adapt to the underlying bytes to which they are applied.  These
-data types can only be created by [writing](../DataTypeManagerPlugin/data_type_manager_description.md#createdatatypes)
+data types can only be created by [writing](../DataTypeManagerPlugin/data_type_manager_description.md#creating-new-user-defined-data-types)
 a new Java class. For example, an IP header packet that has a header, body, and terminator
 might be a good candidate for writing a Dynamic data type. The header might specify the
 length of the body. The Dynamic data type can change its size and structure based on the
 information stored in the IP header.
 
 
-The PE (Windows Portable Executable) data type is another example of a
+<a name="pe"></a>The PE (Windows Portable Executable) data type is another example of a
 dynamic data type that manufactures new data types. When you apply the PE data type, it
-creates (1) a new [category](../DataTypeManagerPlugin/data_type_manager_description.md#category)
+creates (1) a new [category](../DataTypeManagerPlugin/data_type_manager_description.md#working-with-categories)
 (using the address as the name) in the program data type manager, (2) a structure for the DOS
 header, and (3) a structure, PE, that contains the DOS header.  In order for the PE data
 type to be successfully applied, you must import a DOS program as binary file.. The size of the structure varies

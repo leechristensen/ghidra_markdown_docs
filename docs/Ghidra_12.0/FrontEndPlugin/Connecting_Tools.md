@@ -4,7 +4,7 @@
 
 
 Ghidra Tools that share data and interact dynamically are said to be *connected*.
-Tools are connected via *tool events*. Tools generate events when
+Tools are connected via *tool events*.<a name="toolevents"></a> Tools generate events when
 you:
 
 
@@ -18,7 +18,7 @@ A main reason to connect tools is to have one tool track Program location or sel
 another tool.
 
 
-A tool may generate events that only another tool of this type can process, e.g., the Code Browser in one tool produces and consumes an edit event
+A tool may generate events that only another tool of this type can process,<a name="specialtoolevent"></a> e.g., the Code Browser in one tool produces and consumes an edit event
 that is appropriate for a Code Browser in another tool. Thus, tools can be connected for only
 those events that they have in common.
 

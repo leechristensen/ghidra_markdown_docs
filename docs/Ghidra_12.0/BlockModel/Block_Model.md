@@ -3,7 +3,7 @@
 # Block Model
 
 
-A *Block Model* partitions the code into address
+<a name="blockmodeldefinition"></a>A *Block Model* partitions the code into address
 ranges based on some set of rules.  The most obvious partitioning is by subroutine.
 There are four Subroutine Models (i.e., Call Block Models).  Each subroutine model defines
 a subroutine slightly differently.  The primary differences are based on number of entry
@@ -23,16 +23,16 @@ subroutine which contains a single entry point.
 | Partitioned Code* | P | 1 | No | any |
 
 
-- ***Isolated Entry Model**** - A subroutine
+- <a name="isolated-entry-model"></a> ***Isolated Entry Model**** - A subroutine
 must have only one entry point but may share code with another subroutine.  The
 subroutine body will stop if another called or source entry point is encountered.
-- ***Multiple Entry Model*** - A subroutine may
+- <a name="multiple-entry-model"></a> ***Multiple Entry Model*** - A subroutine may
 have multiple entry points and may not overlap code from other subroutines.
-- ***Overlapped Code Model**** - A subroutine
+- <a name="overlapped-code-model"></a> ***Overlapped Code Model**** - A subroutine
 is all code accessible from a single entry point and terminates at returns.  Code may be
 shared with other subroutines.  Each subroutine is defined to include the overlapping
 code as part of its body.
-- ***Partitioned Code Model**** - There is
+- <a name="partitioned-code-model"></a> ***Partitioned Code Model**** - There is
 exactly one entry point which may have any type of source flow.  Each instruction
 belongs to exactly one subroutine (code is not shared).
 
@@ -44,7 +44,7 @@ subroutine model is generally used by those plugins and actions which do not pro
 subroutine model choice (e.g., subroutine selection, call graph, symbol table, etc.).*
 
 
-There is a more primitive *Block Model* called a
+<a name="basicblockdefinition"></a>There is a more primitive *Block Model* called a
 Basic (or Simple) Block Model.  Such blocks generally consist of small runs of
 instructions partitioned based on change in instruction flow.  Jump and Branch
 instructions will cause the execution flow to change, creating a new block.

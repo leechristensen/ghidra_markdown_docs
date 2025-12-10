@@ -7,6 +7,9 @@ except that the properties are saved as part of the Program, versus part of the 
 Properties are settings related to a program.
 
 
+<a name="optionssampleimage"></a>
+
+
 ![](images/ProgramOptionsDialog.png)
 
 
@@ -78,7 +81,7 @@ following paragraphs.
 ### Date Editor
 
 
-The [sample image](#optionssampleimage) above shows an option for *Date
+The [sample image](#program-options-dialog) above shows an option for *Date
 Created*. Click on the browse button (**...**) to the right of the field that shows
 the date. The date editor is displayed as shown below.
 

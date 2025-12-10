@@ -18,7 +18,7 @@ button ([more
 info](../Tool/Ghidra_Tool_Administration.md#run-tool))
 - Press the **Create Session** ![start-here_16.png](../icons/start-here_16.png)
 action from within the
-[Version Tracking Tool](VT_Tool.md#create-session)
+[Version Tracking Tool](VT_Tool.md#version-tracking-tool-actions)
 
 
 ### New Version Tracking Session Panel
@@ -82,7 +82,7 @@ To add to an existing session you can:
 
 - Press the **Add to Session** ![Plus.png](../icons/Plus.png)
 action from within the
-[Version Tracking Tool](VT_Tool.md#add-to-session)
+[Version Tracking Tool](VT_Tool.md#version-tracking-tool-actions)
 
 
 The wizard panels that appear can vary depending on which options are selected on
@@ -195,11 +195,11 @@ disabled whenever the option is not the currently selected radio button.
 When you have a Source Tool selection, the list will initially contain the same
 address ranges as the selection. Otherwise, it will contain the address ranges for
 the current memory in the source program.
-- Press the **Add Range** ![Plus.png](../icons/Plus.png)
+  - Press the **Add Range** ![Plus.png](../icons/Plus.png)
 button to add another address range to those already in the list.
-- Press the **Remove Range** ![list-remove.png](../icons/list-remove.png)
+  - Press the **Remove Range** ![list-remove.png](../icons/list-remove.png)
 button to remove all addresses from the list that fall within a specific range.
-- Pressing the **Remove Selected Range(s)** button will remove any
+  - Pressing the **Remove Selected Range(s)** button will remove any
 address ranges from the Address Ranges list that are currently selected.
 > **Note:** NOTE: This button will be disabled if the Specify My Own Address Ranges option
 isn't selected or if there isn't an address range selected in the list.
@@ -240,11 +240,11 @@ disabled whenever the option is not the currently selected radio button.
 When you have a Destination Tool selection, the list will initially contain the same
 address ranges as the selection. Otherwise, it will contain the address ranges for
 the current memory in the destination program.
-- Press the **Add Range** ![Plus.png](../icons/Plus.png)
+  - Press the **Add Range** ![Plus.png](../icons/Plus.png)
 button to add another address range to those already in the list.
-- Press the **Remove Range** ![list-remove.png](../icons/list-remove.png)
+  - Press the **Remove Range** ![list-remove.png](../icons/list-remove.png)
 button to remove all addresses from the list that fall within a specific range.
-- Pressing the **Remove Selected Range(s)** button will remove any
+  - Pressing the **Remove Selected Range(s)** button will remove any
 address ranges from the Address Ranges list that are currently selected.
 > **Note:** NOTE: This button will be disabled if the Specify My Own Address Ranges option
 isn't selected or if there isn't an address range selected in the list.

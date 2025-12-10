@@ -17,14 +17,14 @@ To display the Symbol Tree, select the icon ![sitemap_color.png](../icons/sitema
 ## Display
 
 
-The root of the Symbol Tree is the *Global* *namespace*. A *Namespace*  defines a scope, such that symbol names are unique
+The root of the Symbol Tree is the *Global* *namespace*. A *<a name="namespace"></a>Namespace*  defines a scope, such that symbol names are unique
 *within* a namespace. The types of namespaces that Ghidra supports are **Global**,
-**External**, **Function**, **Class**, and  "generic"
+**External**, **Function**, **Class**, and <a name="genericnamespace"></a> "generic"
 **Namespaces** that reside in the global namespace. Every namespace has an associated
 symbol.
 
 
-- The **Imports** category contains symbols that represent
+- The **<a name="externals"></a>Imports** category contains symbols that represent
 external library namespaces which in turn contain anything considered to be "external" to
 the program such as external locations/functions. The library name "`<EXTERNAL>`" is
 reserved to hold those external symbols which have not yet been associated with a specific
@@ -39,21 +39,21 @@ variable symbols.
 namespaces or label symbols. Class namespaces reside in the global namespace.
 - The **Namespace** category contains generic namespaces that reside in the Global
 namespace, and may contain class, function, label, or other namespaces.
-- The [import](../ImporterPlugin/importer.md) process creates a
+  - The [import](../ImporterPlugin/importer.md) process creates a
 namespace (under the *Namespace* category) for each external library it
 encounters. (The name is created as _`<library name>`, e.g., _USER32.DLL,  to
 avoid naming collisions with the external library symbols, under *Externals*,
 e.g., USER32.DLL.)
-- Based upon the importer capability and/or analysis, external locations or functions
+  - Based upon the importer capability and/or analysis, external locations or functions
 may be associated with a *Library* namespace.  You will find these external
 location/function symbols under the *Imports* category node.
-- Any function node (internal or external) may be expanded to show parameters. In
+  - Any function node (internal or external) may be expanded to show parameters. In
 addition, various popup function actions are available to modify the function. An
 external location may be converted to a function using the *Create External
 Function* popup action.
 
 
-When the label or function category has many elements, the
+<a name="groupnode"></a>When the label or function category has many elements, the
 Symbol Tree will show *group nodes* that represent groups of symbols in order to reduce
 the "clutter" in the tree. In the sample image above, the *Labels* category contains a
 group node (indicated by the ![openFolderGroup.png](../icons/openFolderGroup.png) icon). The
@@ -272,11 +272,11 @@ To delete a symbol, make a selection of symbols, right mouse click and choose th
 
 To make a [selection](../Selection/Selecting.md) (in the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)) corresponding to selected
 symbols in the Symbol Tree, right mouse click and choose the **Make Selection** option. If
-you select a [group node](#groupnode) for the **Make Selection** option, all
+you select a [group node](#display) for the **Make Selection** option, all
 symbols in that group are selected in the Code Browser.
 
 
-## Navigation
+## Navigation ![locationIn.gif](../icons/locationIn.gif)
 
 
 ### Navigating to Locations within the Program
@@ -341,7 +341,7 @@ in the current selection.  The table's features are similar to the
 Pressing the ![Clone](../icons/camera-photo.png)
 
 
-### Symbol Tree Clone Action
+### Symbol Tree Clone Action ![Clone](../icons/camera-photo.png)
 
 
 Creates a new disconnected snapshot (cloned) view of the Symbol Tree.  This action is on

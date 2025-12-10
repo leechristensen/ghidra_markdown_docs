@@ -38,7 +38,7 @@ This window provides actions for finding, adding, and removing mappings. **NOTE:
 "modify" an entry, delete and re-add it.
 
 
-### Select Rows
+### Select Rows ![Rows](../icons/table_go.png)
 
 
 This action is available when the active listing's (dynamic or static) cursor is at a valid
@@ -46,7 +46,7 @@ location. It selects the mapping containing that cursor. If the active listing h
 it selects all mappings intersecting that selection.
 
 
-### Add Mapping
+### Add Mapping ![Add](../icons/add.png)
 
 
 This action is always available. It presents a dialog to manually add a mapping. When one
@@ -56,7 +56,7 @@ cursor as the corresponding minimum address. The default lifespan is "from now o
 the current snap to infinity.
 
 
-### Remove Mapping
+### Remove Mapping ![Delete](../icons/delete.png)
 
 
 This action is available when at least one mapping is selected. It removes those

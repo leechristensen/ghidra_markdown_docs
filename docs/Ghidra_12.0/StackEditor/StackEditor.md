@@ -35,7 +35,8 @@ Stack variables can be [defined](#creating-a-stack-variable) or [modified](#repl
 by applying a [Favorite](#favorites-basics) data type. The data type for a
 stack variable can also be changed by [cycling](#cycling-a-component-data-type) the data
 type.
-- *Stack Frame Information Area*: This is the area below the table with the stack frame
+- <a name="stack-editor-frame-size"></a> <a name="stack-editor-return-address-offset"></a>
+*Stack Frame Information Area*: This is the area below the table with the stack frame
 size, return address offset, local size, parameter offset and parameter size for the stack
 frame. The [local size](#changing-the-local-size), [parameter offset](#changing-the-parameter-offset) and [parameter size](#changing-the-parameter-size) can be modified here.
 - Immediately below the stack frame information area is a status line where status messages
@@ -96,7 +97,7 @@ menu for the component table. To display the popup menu, right mouse click on th
 table. There are also short-cut keys associated with each of the edit actions.
 
 
-### Delete Stack Frame Byte(s)
+### Delete Stack Frame Byte(s) ![edit-delete.png](../icons/edit-delete.png)
 
 
 A contiguous selection of components can be deleted to reduce the local size or parameter
@@ -114,7 +115,7 @@ button.
 3. The components are removed from the stack frame.
 
 
-### Clear Stack Variable(s)
+### Clear Stack Variable(s) ![erase16.png](../icons/erase16.png)
 
 
 Clearing a component removes the current stack variable defined at that offset in the
@@ -131,7 +132,7 @@ To clear stack variables in the stack frame:
 will be equal to the length of the component being cleared.
 
 
-### Change Stack Variable's Data Type To Array
+### Change Stack Variable's Data Type To Array ![Array.png](../icons/Array.png)
 
 
 To create an array data type for a single selected component:
@@ -139,7 +140,7 @@ To create an array data type for a single selected component:
 
 1. Select a component in the table.
 2. Press the ![Array.png](../icons/Array.png) **Create Array** button.
-3. A dialog pops up to request the
+3. <a name="stack-editor-elements-numberinputdialog"></a> A dialog pops up to request the
 number of elements in the array.
 
 
@@ -389,7 +390,7 @@ To cycle a component's data type:
 type in the cycle group that fits will be applied. For example, the **b** key will
 add a Byte; the **f** key will add a Float; the **apostrophe** key will add an
 Ascii.
-- If the current data type is already in that cycle group, then the next data type in
+  - If the current data type is already in that cycle group, then the next data type in
 the cycle group that fits will be applied. For example, if the current data type is a
 Byte, pressing the **b** key twice would change it to DWord.
 

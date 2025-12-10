@@ -33,7 +33,7 @@ describe features of the Program Tree.
 ### Create Folders and Fragments
 
 
-- To create a new folder,
+- <a name="create-folder"></a>To create a new folder,
 
 
 1. Select a folder in the Program Tree.
@@ -45,7 +45,7 @@ displayed immediately so that you can change the name of the folder you just cre
 Names are unique across all folders.
 
 
-- To create a new fragment,
+- <a name="create-fragment"></a>To create a new fragment,
 
 
 1. Select a folder in the Program Tree,
@@ -63,7 +63,7 @@ code units from the Code Browser and drop them onto the empty node. The icon cha
 indicate that the fragment is not empty.
 
 
-To create a new fragment via drag and drop,
+<a name="createnewfrag"></a>To create a new fragment via drag and drop,
 
 
 1. Drag code units from the Code Browser.
@@ -212,7 +212,7 @@ To automatically rename a fragment,
 2. Right mouse click and choose **Auto Rename**.
 
 
-To  automatically rename a fragment to any label in
+To <a name="renamefragmenttolabel"></a> automatically rename a fragment to any label in
 the fragment from the Code Browser,
 
 
@@ -256,18 +256,18 @@ and fragments to your view.
 
 
 - Select a fragment that is not in the view (indicated by ![codeNotInView.gif](../icons/codeNotInView.gif)),
-1. Right mouse-click and choose the **Go To in View**
+  1. Right mouse-click and choose the **Go To in View**
 option.
-2. The code units in this fragment now appear in the Code Browser. The fragment's
+  2. The code units in this fragment now appear in the Code Browser. The fragment's
 icon in the Program Tree changes to ![codeInView.gif](../icons/codeInView.gif) to indicate
 that it is part of the view. The cursor in the Code Browser is moved to the minimum
 address of the fragment or folder.
 - Select an open folder that is not in the view (indicated by ![openSmallFolder.png](../icons/openSmallFolder.png)),
-1. Right mouse-click and choose the **Go To in View** option.
-2. All of the descendant folders and fragments are added to the view.
-- The folder's icon in the Program Tree changes to ![openFolderInView.png](../icons/openFolderInView.png).
-- If the folder is closed and is in the view, then the icon is ![closedFolderInView.png](../icons/closedFolderInView.png).
-- If a closed folder not in the view has descendants that *are* in the
+  1. Right mouse-click and choose the **Go To in View** option.
+  2. All of the descendant folders and fragments are added to the view.
+    - The folder's icon in the Program Tree changes to ![openFolderInView.png](../icons/openFolderInView.png).
+    - If the folder is closed and is in the view, then the icon is ![closedFolderInView.png](../icons/closedFolderInView.png).
+    - If a closed folder not in the view has descendants that *are* in the
 view, the icon is ![closedDescendantsInView.png](../icons/closedDescendantsInView.png).
 - When you add a folder to the view, the cursor in the browser moves to the first code
 unit in the first fragment of the folder. When you add a fragment to the view, the cursor
@@ -285,10 +285,10 @@ regardless of whether the folder or fragment is in the view or not.
 
 
 - To remove folders and fragments from the view in the code browser,
-1. Select a folder or fragment that is in the view.
-2. Right mouse-click, and choose the **Remove from View**
+  1. Select a folder or fragment that is in the view.
+  2. Right mouse-click, and choose the **Remove from View**
 option.
-- The icon for the folder or fragment updates to indicate that it is no longer in
+    - The icon for the folder or fragment updates to indicate that it is no longer in
 the view. The code browser updates its view accordingly.
 - You can remove multiple folders and fragments by selecting those folders and fragments
 that are marked as being in the view, and choosing the **Remove from
@@ -299,8 +299,8 @@ View** option.
 
 
 - To set the view in the code browser with folders and fragments,
-1. Select a folder or fragment (or select multiple folders and fragments),
-2. Right mouse-click and choose the **Set View** option. The code browser now
+  1. Select a folder or fragment (or select multiple folders and fragments),
+  2. Right mouse-click and choose the **Set View** option. The code browser now
 shows the code units for these folders and fragments.
 
 
@@ -308,8 +308,8 @@ shows the code units for these folders and fragments.
 
 
 - To add a folder or fragment to the view in the code browser,
-1. Select a folder or fragment (or select multiple folders and fragments),
-2. Right mouse-click and choose the **Add to View** option. The code browser now
+  1. Select a folder or fragment (or select multiple folders and fragments),
+  2. Right mouse-click and choose the **Add to View** option. The code browser now
 shows the code units for these folders and fragments.
 
 

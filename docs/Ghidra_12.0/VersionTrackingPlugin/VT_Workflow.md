@@ -164,7 +164,7 @@ next few steps
 4. **(Optional)** Bring up the [Version Tracking
 Functions Table](providers/VT_Functions_Table.md) and either tab it with the [Match Table](providers/VT_Matches_Table.md) or dock
 it in its own location. Configure it to [**Show
-Only Unaccepted Functions**](providers/VT_Functions_Table.md#show-unmatched-functions). This will allow the user to continually see the list of
+Only Unaccepted Functions**](providers/VT_Functions_Table.md#functions-table-filter). This will allow the user to continually see the list of
 functions they need to still match.
 5. [Create a new
 session](VT_Wizard.md#creating-a-new-session) by specifying your source and destination programs and then running the
@@ -174,8 +174,8 @@ matches. You will then Add to the Existing Session to begin getting matches.
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Exact
 Function Bytes Correlator](VT_Correlators.md#exact-function-bytes-match).
 After the correlator is finished, in the matched table:
-- Press **CTRL-A** to select all matches currently listed in the table
-- **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
+  - Press **CTRL-A** to select all matches currently listed in the table
+  - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 > **Note:** NOTE: For any of the following runs, there is an option to Exclude Accepted
 Matches so that the correlator being run will not report matches that are already made.
@@ -186,61 +186,61 @@ verification of results.
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Exact
 Function Instructions Correlator](VT_Correlators.md#exact-function-instructions-match).
 After the correlator is finished, in the matched table:
-- Press **CTRL-A** to select all matches currently listed in the table
-- **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
+  - Press **CTRL-A** to select all matches currently listed in the table
+  - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 8. [Add
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Exact Data Match
 Correlator](VT_Correlators.md#exact-data-match) .
 After the correlator is finished, in the matched table:
-- Press **CTRL-A** to select all matches currently listed in the table
-- **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
+  - Press **CTRL-A** to select all matches currently listed in the table
+  - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 9. [Add
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Symbol Match
 Correlator](VT_Correlators.md#symbol-name-match-correlators) .
 After the correlator is finished, in the matched table:
-- First use the [Match
+  - First use the [Match
 Table Filter](providers/VT_Matches_Table.md#match-filters) to only show Imported and Analysis symbol types (this is assuming
 these types do not have user generated parameters or comments)
-- Press **CTRL-A** to select all matches currently listed in the table
-- Choose **Accept** to accept the matches but not pull over any markup - there
+  - Press **CTRL-A** to select all matches currently listed in the table
+  - Choose **Accept** to accept the matches but not pull over any markup - there
 probably isn't any user markup and actually it is better to take the newest analysis
 markup
-- Edit the filter to show all symbol types again
-- If desired, inspect to see if there are other symbol matches to individually or
+  - Edit the filter to show all symbol types again
+  - If desired, inspect to see if there are other symbol matches to individually or
 automatically match depending on score/confidence/etc...
 10. [Add
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Duplicate
 Function Instruction Match Correlator](VT_Correlators.md#duplicate-function-instructions-match)
-- Use the [Related
+  - Use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to figure out which ones match
-- **Use the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon
+  - **Use the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon
 to accept and apply markup for each match individually.
 11. [Add
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Duplicate
 Data Match Correlator](VT_Correlators.md#duplicate-data-match)
-- Use the [Related
+  - Use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to figure out which ones match
-- **Use the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon
+  - **Use the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon
 to accept and apply markup for each match individually.
 12. Run any other correlators available but don't do anything with their matches yet.
-- Reset the [Match
+  - Reset the [Match
 Table Filter](providers/VT_Matches_Table.md#match-filters) to show **Implied Matches** and **Blocked** matches in the Match
 Table.
-- Sort the Match Table in various ways to help determine any likely matches. Here is a
+  - Sort the Match Table in various ways to help determine any likely matches. Here is a
 list of useful ways to sort the table
-- Primary sort by **Score** and secondary sort by **Confidence** - if both
+    - Primary sort by **Score** and secondary sort by **Confidence** - if both
 are high it is a good indication of a good match
-- By **Votes** - high number of votes means the match has many of the same
+    - By **Votes** - high number of votes means the match has many of the same
 Implied Match suggestions
-- By **Length Delta** - 0 implies matching length Source and Destination
+    - By **Length Delta** - 0 implies matching length Source and Destination
 match
-- By **Source Address** to see if more than one algorithm reports the same
+    - By **Source Address** to see if more than one algorithm reports the same
 match
-- To help determine valid matches, use the [Related
+  - To help determine valid matches, use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to see all correlated matches for a particular match item.
-- Use the **Accept** ![flag.png](../icons/flag.png) icon to individually
+  - Use the **Accept** ![flag.png](../icons/flag.png) icon to individually
 accept matches once they are determined.
 13. Use the [Version Tracking
 Functions Table](providers/VT_Functions_Table.md) to see what is left and manually match them using this table.

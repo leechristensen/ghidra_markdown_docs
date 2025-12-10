@@ -13,7 +13,7 @@ Marker Margin) shows the Bookmark's type and comment.
 The type refers to how the bookmark was added. Ghidra supplies five types of bookmarks:
 
 
-| Bookmark Types |  |  |
+| <a name="bookmarktype"></a> Bookmark Types |  |  |
 | --- | --- | --- |
 | Type (icon) | How Bookmark is Added | Navigator Color |
 | --- | --- | --- |
@@ -114,7 +114,7 @@ entered, the combo box is updated.
 ![](images/BookmarksFilter.png)
 
 
-The list of Bookmarks displayed can be filtered by clicking
+<a name="filter-dialog"></a>The list of Bookmarks displayed can be filtered by clicking
 the Filter button ![view-filter.png](../icons/view-filter.png) in the toolbar of the Bookmark
 Window. The displayed bookmarks will correspond to the selected checkboxes in the *Bookmark
 Filter* dialog.
@@ -177,7 +177,7 @@ a checkmark ( ).
 filter dialog by saving the tool.
 
 
-In addition to filtering on the type of bookmarks you
+<a name="filter-textfield"></a> In addition to filtering on the type of bookmarks you
 may also filter the contents of the bookmark table by entering text into the filter text
 field found at the bottom of the bookmark table. This filter will include only those
 Bookmarks whose Category or Description contain the specified text. For example, to show

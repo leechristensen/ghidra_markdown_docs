@@ -12,8 +12,23 @@ Namespace.  A function definition consists of:
 - An entry point address or external location symbol
 - A body of instructions (*does not apply to External Functions*)
 - A function signature/prototype specification, consisting of:
+  1. Function Name (*same as primary label at entry point*)
+  2. Calling Convention (*available conventions defined by active compiler-spec*)
+  3. Return data type (*with storage*)
+  4. Parameter arguments (*with storage*)
 - Optional function attributes, including:
+  1. Varargs enablement
+  2. No-Return enablement (*if enabled, calls to function will not return and can prevent fallthrough from call*)
+  3. Inline enablement (*if enabled, callers will inline function code*)
+  4. Custom Storage enablement (*if enabled, return and parameter storage to be explicitly defined*)
+  5. Call Fixup
 - Additional function listing markup (*does not apply to External Functions*):
+  1. Local variables (*with storage*)
+  2. Parameter and local variable references from instructions
+  3. Code and data references from instructions
+  4. Comments
+  5. Optional function repeatable comment
+  6. [Function Tags](../FunctionTagPlugin/function_tag_window.md)
 
 
 When displayed in the browser, a function includes:
@@ -83,7 +98,7 @@ defined, place the cursor on the first instruction within the function and choos
 main menu.*
 
 
-The symbol at the entry point is used as the name of the
+<a name="new-function-name"></a>The symbol at the entry point is used as the name of the
 function. If no symbol exists at the entry point a default label starting with **FUN_** is created. Prior to creating the function, the symbol may have
 started with **SUB_** if it was a default symbol and there
 were call references to it. If a symbol does exist at the entry, a dialog is displayed so
@@ -99,7 +114,7 @@ In stack-based processors, *Create Function* will try to identify parameters and
 local variables used by the function. By default, the variables data type will be
 *Undefined**N*** where ***N*** is the size (in bytes) of the stack reference.
 See [Function Signature and Variables](Variables.md) on how to modify the stack
-variables. See [Stack References](../ReferencesPlugin/References_from.md#stackrefs) on how to add stack variables.
+variables. See [Stack References](../ReferencesPlugin/References_from.md#stack-references) on how to add stack variables.
 
 
 **Select** →  **Subroutines** will display the scope
@@ -230,7 +245,7 @@ may be modified using the **Function** → [Edit
 Function...](Variables.md#edit-function) popup action on the selected function node.
 
 
-Creating an [External Reference](../ReferencesPlugin/References_from.md#extrefpanel)
+Creating an [External Reference](../ReferencesPlugin/References_from.md#external-reference-panel)
 is currently the only mechanism within the Ghidra GUI
 to establish an *External Location*.  Once an *External Location* has been established, it can be
 converted to a function (see above).  This limitation should hopefully be resolved in
@@ -300,7 +315,7 @@ popup menu item
 
 
 When a function is deleted, all stack and register references from instructions within the
-function body are removed. The function comment (which is really the [plate comment](../Glossary/glossary.md#platecomment) for that address) remains
+function body are removed. The function comment (which is really the [plate comment](../Glossary/glossary.md#plate-comment) for that address) remains
 intact if you had made changes to it, or if the plate comment existed before the function was
 created.
 
@@ -343,7 +358,7 @@ Purge...** popup menu item
 When a repeatable comment exists at the entry point of a function, the repeatable comment
 is displayed in the *Function Repeatable Comment* field rather than the *EOL
 Comment* field. See [Edit
-Comments](../CommentsPlugin/Comments.md#edit-comments) for more information on comments.
+Comments](../CommentsPlugin/Comments.md#adding-or-editing-comments-set-comment) for more information on comments.
 
 
 ## Stack Depth Change
@@ -411,7 +426,7 @@ or
 - [Function Signature and Variables](Variables.md)
 - [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md)
 - [Stack
-References](../ReferencesPlugin/References_from.md#stackrefs)
+References](../ReferencesPlugin/References_from.md#stack-references)
 - [Comments](../CommentsPlugin/Comments.md)
 
 

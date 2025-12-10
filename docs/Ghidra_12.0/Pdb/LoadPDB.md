@@ -16,7 +16,33 @@ matching PDB symbol file.
 
 
 - Microsoft symbol servers / symbol storage directories:
-- Unorganized directories:
+  - Organize symbol files (typically PDB files) into a directory hierarchy using information
+from the symbol file being stored.
+  - <a name="onelevel-symboldirectory"></a>In a single-level symbol server directory hierarchy, a symbol file named `myprogram.pdb` might be stored
+as:
+    - `myprogram.pdb/012345670123012301230123456789AB1/myprogram.pdb`.
+    - `myprogram.pdb` is the name of the file and the name of the initial subdirectory off the root of the server.
+    - `012345670123012301230123456789AB` is the 32 character hexadecimal value (made up for this example) of the GUID
+"01234567-0123-0123-0123-0123456789AB" of the PDB file.
+      - This value might instead be a 8 character hexadecimal value of the ID of the symbol file if it was created by an older version of the tool chain.
+    - `1` is the hexadecimal value of the 'age' (build number) of the PDB file. Note: most PDB files will have an age value of 1.
+  - <a name="twolevel-symboldirectory"></a>In a two-level symbol server directory hierarchy, the same symbol file would be stored
+as: `my/myprogram.pdb/012345670123012301230123456789AB1/myprogram.pdb`, where the
+first two letters of the symbol file's name are used to create a bucketing directory called "my" where all symbol files starting with
+"my" are stored.
+    - A two-level symbol server directory hierarchy is indicated by the presence of a file called `index2.txt` in the root directory of
+the hierarchy.
+  - Symbol storage directories are expected to have a `pingme.txt` file and a special directory called `000admin`.
+  - Compressed symbol files (`*.pd_`):
+    - Microsoft symbol server tools can compress symbol files to save space.  The compressed file is stored in place of the original file, renamed
+to have a trailing underscore ("_") character in the file extension.
+    - Before use, Ghidra will decompress the file into the **Local Symbol Storage** directory, using whatever organization scheme
+that directory is configured with to store the uncompressed version of the file.
+  - Remote symbol files hosted on a HTTP server will be copied to and stored in the configured **Local Symbol Storage** directory before they
+can be used.
+- <a name="unorganized-symboldirectory"></a>Unorganized directories:
+  - Symbol files are matched by their filename and the GUID / ID / age values extracted from
+the information inside the PDB symbol file.
 
 
 ## Menu Actions
@@ -40,6 +66,7 @@ symbol server search locations, if you need to force load a non-exact PDB file, 
 - The **PDB Location** field will either have the path of an existing matching PDB file, or
 it will prompt the user to use the browse button to select a file or use the
 **Advanced** screen to search for the file.
+  - A `PDB.XML` file can be selected using the browse button.  This will limit the selected parser to be the MSDIA parser.
 - Use the information displayed in the **Program PDB Information** panel to help you decide
 which PDB file to choose.
 - If needed, click the **Advanced** button:
@@ -68,13 +95,15 @@ existing PDB files.
 ![](images/SymbolServerConfig_Screenshot.png)
 - The **Local Symbol Storage** location is required to be able to search.  If missing, set it to
 a directory where Ghidra can store PDB files.
+  - For example, `/home/your_id/Symbols` or `C:\Users\your_name\Symbols`.
+  - If the location is a new empty directory, the user will be prompted to initialize the directory as a Microsoft symbol storage directory.
 - [Add](#add) additional search locations by clicking the ![Plus2.png](../icons/Plus2.png) button.
 - Save any changes to the configuration by clicking the ![disk.png](../icons/disk.png) button.
 - Search locations can be disabled by toggling the **enabled** checkbox at the beginning of the row.
 - A typical configuration: ![](images/SymbolServerConfig_Configured.png)
 
 
-#### (Add)
+#### (Add) ![Plus2.png](../icons/Plus2.png)
 
 
 Allows the user to add a location to the search path list.  Pick from the offered types of locations, or pick
@@ -85,8 +114,8 @@ a predefined location.
 
 
 - **Directory** - allows the user to pick an existing directory that will be searched for symbol files.
-See [level 1](#onelevel-symboldirectory)/[level 2](#twolevel-symboldirectory) or
-[unorganized](#unorganized-symboldirectory) directory descriptions.
+See [level 1](#symbol-servers-and-symbol-storage)/[level 2](#symbol-servers-and-symbol-storage) or
+[unorganized](#symbol-servers-and-symbol-storage) directory descriptions.
 - **URL** - allows the user to enter a HTTP or HTTPS URL to a web-based symbol server.
 - **Program's Import Location** - automatically references the directory from
 which the program was imported. This option first searches for the 'official'
@@ -102,26 +131,26 @@ All items listed after the menu dividing line are automatically added from resou
 is located in the `Ghidra/Configurations/Public_Release/data` directory under the Ghidra install directory.
 
 
-#### (Delete)
+#### (Delete) ![error.png](../icons/error.png)
 
 
 Deletes the currently selected locations from the **Additional Search Paths** table.
 
 
-#### (Up/Down)
+#### (Up/Down) ![up.png](../icons/up.png) ![down.png](../icons/down.png)
 
 
 Moves the currently selected item up or down in the **Additional Search Paths** table.
 
 
-#### (Refresh)
+#### (Refresh) ![reload3.png](../icons/reload3.png)
 
 
 Updates the status column of the locations listed in the **Additional Search Paths**
 table.  Symbol servers or storage locations that are unreachable or misconfigured will show an error status in that column.
 
 
-#### (Save)
+#### (Save) ![disk.png](../icons/disk.png)
 
 
 Saves the currently displayed search and storage locations to the preferences file.  This is shared between all Ghidra tools.

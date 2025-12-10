@@ -622,6 +622,26 @@ class MarkdownValidator:
                     found = True
 
         if not found:
+            # Try matching by slugifying all headings and comparing to the anchor
+            # This handles cases like "## Add/Edit Label Dialog" -> "addedit-label-dialog"
+            heading_pattern = re.compile(r"^#+\s+(.+)$", re.MULTILINE)
+            for match in heading_pattern.finditer(content):
+                heading_text = match.group(1).strip()
+                # Remove markdown image syntax ![alt](src) from heading text
+                heading_text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", heading_text)
+                # Remove markdown formatting from heading text
+                heading_text = re.sub(r"[*_`\[\]()]", "", heading_text)
+                # Slugify the heading text (same algorithm as GFM)
+                slug = heading_text.lower()
+                slug = re.sub(r"[\s_]+", "-", slug)
+                slug = re.sub(r"[^a-z0-9-]", "", slug)
+                slug = re.sub(r"-+", "-", slug)
+                slug = slug.strip("-")
+                if slug == anchor:
+                    found = True
+                    break
+
+        if not found:
             if target_file:
                 msg = f"Broken anchor in {target_file}#{anchor}"
             else:

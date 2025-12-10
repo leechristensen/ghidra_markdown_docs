@@ -105,7 +105,7 @@ Note: You cannot compare Data matches or External Functions using this action, s
 if you select either of these as matches they will not be populated in the table.
 
 
-### Select Match in VT Matches Table
+### Select Match in VT Matches Table ![Make Selection](../../icons/stack.png)
 
 
 As you select various matches in either **Related Matches** table, the other

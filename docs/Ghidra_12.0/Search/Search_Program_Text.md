@@ -47,7 +47,7 @@ selected, as the Search All Fields does not apply to the Program Database . The 
 ### Incremental Search
 
 
-To search for text strings incrementally,
+<a name="incrementalsearch"></a>To search for text strings incrementally,
 
 
 1. Select the **Search** → **Program Text** from the Code Browser
@@ -55,34 +55,34 @@ tool menu.
 2. In the *Search for* field, enter the string for which you want to search, using
 wildcards (* or ?) as needed. The * matches any character. The ? matches a single
 character.
-- This field does
+  - This field does
 not support *[regular
 expressions](../Glossary/glossary.md#regular-expression)*.
-- If you need to
+  - If you need to
 search for one of the wildcard characters, then escape the character with a backslash.
 For example, to search for any occurrence of an asterisk, you would enter `\*`
 as the search string.
-- Use the combo box next to the *Search for* field to view the list of search
+  - Use the combo box next to the *Search for* field to view the list of search
 strings that you previously entered.
-- If you have selected text within
+  - If you have selected text within
 a single field, then if you invoke the dialog, it will automatically load that text into the
 *Search for* text box for your convenience.
 3. Select the options for where in the Program to search.
-- Functions - search function headers, comments, signature, variable types, variable
+  - Functions - search function headers, comments, signature, variable types, variable
 names, and comments on variables
-- Comments - search Plate, Pre-, Post-, End of Line Comments, and Repeatable; by default this check box
+  - Comments - search Plate, Pre-, Post-, End of Line Comments, and Repeatable; by default this check box
 is selected
-- Labels - search Labels
-- Instruction Mnemonics - search the Mnemonics of instructions
-- Instruction Operands - search the Operands of instructions
-- Defined Data Mnemoncis - search Mnemonics of defined data
-- Defined Data Values - search Values of defined data
-- The **Program Database**
+  - Labels - search Labels
+  - Instruction Mnemonics - search the Mnemonics of instructions
+  - Instruction Operands - search the Operands of instructions
+  - Defined Data Mnemoncis - search Mnemonics of defined data
+  - Defined Data Values - search Values of defined data
+  - The **Program Database**
 *Search Type* does not include components of  [Structures](../DataPlugin/Data.md#structure) or [Unions](../DataPlugin/Data.md#union). Use the
 **Listing Display** *Search Type* for this case. If you do want to
 search structures or unions, they
 must be open in the Code Browser.
-- If you have made a selection and it
+  - If you have made a selection and it
 has been loaded into the *Search for* text box then the dialog will
 automatically select the field that the text was found in as your choice of
 *Field* to search. You have the option to add more or remove this selection
@@ -98,12 +98,12 @@ then deselect the check box.
 7. Click on the **Next** or **Previous** button to search
 forwards or backwards in the program, (or from the *Search for* field,
 press the **`<Enter>`** key to search forward).
-- The start of the search operation begins at your current location in the Code
+  - The start of the search operation begins at your current location in the Code
 Browser.
 8. If a match is found, the current location in the Code Browser is moved to the location
 of the match. If no match is found, then a "Not found" message is displayed in the
 dialog.
-9. If you mouse click in the Code Browser to move focus
+9. <a name="repeat-text-search"></a>If you mouse click in the Code Browser to move focus
 there, you can choose **Search** → **Repeat Text Search** to go to the next match found.
 
 
@@ -131,9 +131,9 @@ progress, therefore, the "View Results" question dialog will not be displayed.
 
 
 1. Follow the Steps 1 through 6 for [searching
-incrementally](#incrementalsearch). (Skip Step 4 as *Direction* is irrelevant in this case.)
+incrementally](#incremental-search). (Skip Step 4 as *Direction* is irrelevant in this case.)
 2. Click on the **Search All** button.
-3. The *[Query
+3. <a name="searchallresults"></a>The *[Query
 Results](Query_Results_Dialog.md)* display shows all the matches.
 
 

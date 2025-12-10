@@ -3,12 +3,15 @@
 # Configure Tool
 
 
-The *Configure Tool* dialog allows you to add/remove plugin packages or individual [Plugins](Ghidra_Tool_Administration.md#plugins) from a tool. To
+The *Configure Tool* dialog allows you to add/remove plugin packages or individual [Plugins](Ghidra_Tool_Administration.md#ghidra-tool-administration) from a tool. To
 display the *Configure Tool* dialog, select **File**  → **Configure**.This dialog is also displayed when you [create a new
 tool](Ghidra_Tool_Administration.md#create-tool).
 
 
 ![](images/ConfigTool.png)
+
+
+<a name="stepstoconfiguretool"></a>
 
 
 The *Configure Tool* dialog shows a list of plugin packages that can be added to
@@ -29,14 +32,14 @@ plugins.
 #### Saving
 
 
-Save changes to your tool by clicking on the ![disk.png](../icons/disk.png) icon in the dialog's toolbar; [save your tool to a different
+<a name="savetool"></a> Save changes to your tool by clicking on the ![disk.png](../icons/disk.png) icon in the dialog's toolbar; [save your tool to a different
 name](Ghidra_Tool_Administration.md#save-tool-to-tool-chest) by clicking on the ![disk_save_as.png](../icons/disk_save_as.png) icon.
 
 
 #### Configuring All Plugins
 
 
-To Configure all plugins regardless of package,
+<a name="configureallplugins"></a> To Configure all plugins regardless of package,
 select the ![plugin.png](../icons/plugin.png) icon in the dialog's toolbar and the
 *Configure Plugins* dialog will appear with all plugins in its plugin table.
 
@@ -68,13 +71,13 @@ The plugin table shows the following information for each plugin:
 
 - Checkbox to indicate whether the plugin is in the tool;
 - A status icon:
-- none     - the plugin is good.  It has help and
+  - none     - the plugin is good.  It has help and
 been reasonably tested.
-- ![warning.png](../icons/warning.png)          -
+  - ![warning.png](../icons/warning.png)          -
 the plugin is useable, but has not been fully tested and/or not
 documented.
-- ![Strong Warning](../icons/software-update-urgent.png)          - the
-plugin is under development and may not be usable
+  - ![Strong Warning](../icons/software-update-urgent.png)          - the
+<a name="developmentplugin"></a> plugin is under development and may not be usable
 at all. Not included with production distribution.
 - Plugin name: the name is displayed in red when some other plugin depends on this
 plugin;
@@ -83,7 +86,7 @@ plugin;
 of a Code Browser or Byte Viewer, etc.
 
 
-The *Search Filter* allows you to narrow the list of
+The *<a name="searchfilter"></a> Search Filter* allows you to narrow the list of
 plugins displayed in the table. Only those plugins whose name or description contains the
 string that you enter as the filter will be displayed. As you type, the table is updated
 to reflect the filter.

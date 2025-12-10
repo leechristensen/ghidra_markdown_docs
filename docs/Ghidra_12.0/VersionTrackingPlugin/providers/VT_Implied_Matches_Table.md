@@ -57,18 +57,18 @@ correlation of references made by some other match.
 ## Implied Match Table Actions
 
 
-**Navigate References** ![locationOut.gif](../../icons/locationOut.gif) When this action toggled on, selecting a row in the
+<a name="navigate-references"></a>**Navigate References** ![locationOut.gif](../../icons/locationOut.gif) When this action toggled on, selecting a row in the
 implied matches table will cause the [sub-tools](../VT_Tool.md#version-tracking-sub-tools)
 to navigate to the **From Address** of the references used to create the selected
 implied match.
 
 
-**Navigate Match** ![locationIn.gif](../../icons/locationIn.gif) When this action toggled on, selecting a row in the
+<a name="navigate-match"></a>**Navigate Match** ![locationIn.gif](../../icons/locationIn.gif) When this action toggled on, selecting a row in the
 implied matches table will cause the [sub-tools](../VT_Tool.md#version-tracking-sub-tools)
 to navigate to the source and destination addresses of the selected implied match.
 
 
-The **Accept Implied Match** ![flag.png](../../icons/flag.png) action creates a match in the Matches Table if one
+<a name="accept-implied-match"></a>The **Accept Implied Match** ![flag.png](../../icons/flag.png) action creates a match in the Matches Table if one
 does not already exist, and then sets its status as 'Accepted'. Note, the Implied Matches
 shown in the table are not saved unless this action is applied.
 

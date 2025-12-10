@@ -32,6 +32,12 @@ tags are selected, functions containing ANY of the tags will be displayed.
 
 
 - **Action Buttons**
+  - →
+Assigns the selected tag(s) to the current function
+  - →
+Removes the selected tag(s) from the current function
+  - ![Delete](../icons/edit-delete.png)
+Deletes the selected tag(s) from the program and removes them from all functions
 
 
 ## Tag Operations

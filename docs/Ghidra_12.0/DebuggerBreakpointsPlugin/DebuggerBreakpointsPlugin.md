@@ -73,6 +73,12 @@ The top table, which lists logical breakpoints, has the following columns:
 - State - displays an icon indicating the state of the breakpoint. If rendered in grey, the
 breakpoint has no locations, i.e., it is ineffective. If rendered with an exclamation mark
 overlay, the breakpoint is inconsistent. Clicking the icon toggles the breakpoint.
+  - ![Enabled](../icons/breakpoint-enable.png) **Enabled:** The
+logical breakpoint, including all its locations, is enabled.
+  - ![Disabled](../icons/breakpoint-disable.png) **Disabled:** The
+logical breakpoint, including all its locations, is disabled.
+  - ![Mixed](../icons/breakpoint-mixed.png) **Mixed:** ([Listing](../DebuggerBreakpointMarkerPlugin/DebuggerBreakpointMarkerPlugin.md)
+only) Two logical breakpoints at the same address have different states.
 - Name - gives the user-defined name of the breakpoint. This cell is only populated and
 modifiable when the breakpoint is bookmarked in a program, since the name is associated with
 the static location.
@@ -97,6 +103,12 @@ The bottom table, which lists breakpoint locations, has the following columns:
 - State - displays an icon indicating the state of the location. If rendered with an
 exclamation mark overlay, the location does not agree with its logical breakpoint, or it
 cannot be bookmarked. Clicking the icon toggles the location.
+  - ![Enabled](../icons/breakpoint-enable.png) **Enabled:** The
+location is enabled.
+  - ![Disabled](../icons/breakpoint-disable.png) **Disabled:** The
+location is disabled.
+  - ![Mixed](../icons/breakpoint-mixed.png) **Mixed:** ([Listing](../DebuggerBreakpointMarkerPlugin/DebuggerBreakpointMarkerPlugin.md)
+only) Two locations at the same address have different states.
 - Name - displays the name given to the location by the connected debugger. This field is
 user modifiable.
 - Address - gives the dynamic address of this location.
@@ -117,7 +129,7 @@ following actions to that end. Breakpoints can also be managed via the [Breakpoi
 Marker Actions](../DebuggerBreakpointMarkerPlugin/DebuggerBreakpointMarkerPlugin.md) in the listings.
 
 
-### Set Breakpoint
+### Set Breakpoint ![Add](../icons/add.png)
 
 
 This is a dropdown of actions provided by the back-end debugger, usually for setting
@@ -126,35 +138,35 @@ the Listings. If no such actions are available, or there is no live target, this
 disabled.
 
 
-### Enable
+### Enable ![Enable](../icons/breakpoint-enable.png)
 
 
 This action is available when one or more breakpoints or locations are selected. It enables
 each selected breakpoint. For any breakpoint that is already enabled, no action is taken.
 
 
-### Enable All Breakpoints
+### Enable All Breakpoints ![All](../icons/breakpoints-enable-all.png)
 
 
 This action is always available. It enables every breakpoint. For any breakpoint that is
 already enabled, no action is taken.
 
 
-### Disable
+### Disable ![Disable](../icons/breakpoint-disable.png)
 
 
 This action is available when one or more breakpoints or locations are selected. It disables
 each selected breakpoint. For any breakpoint that is already disabled, no action is taken.
 
 
-### Disable All Breakpoints
+### Disable All Breakpoints ![All](../icons/breakpoints-disable-all.png)
 
 
 This action is always available. It disables every breakpoint. For any breakpoint that is
 already disabled, no action is taken.
 
 
-### Make Breakpoints Effective
+### Make Breakpoints Effective ![Effective](../icons/breakpoints-make-effective.png)
 
 
 This action is available whenever there are mapped breakpoints with 0 locations, i.e., it
@@ -163,14 +175,14 @@ breakpoints where possible. This action is also offered as a resolution in the c
 appears in the log any time this action is available.
 
 
-### Clear
+### Clear ![Clear](../icons/breakpoint-clear.png)
 
 
 This action is available when one or more breakpoints or locations are selected. It clears
 (deletes) each selected breakpoint.
 
 
-### Clear All Breakpoints
+### Clear All Breakpoints ![All](../icons/breakpoints-clear-all.png)
 
 
 This action is always available. Use with caution! It deletes every
@@ -288,7 +300,7 @@ located on the conditional jump, would simply skip the instruction:
 For organizing breakpoints the manager provides the following actions:
 
 
-### Filter to Current Trace
+### Filter to Current Trace ![Trace](../icons/video-x-generic16.png)
 
 
 This toggle is always available. It filters the bottom table to those locations in the
@@ -296,7 +308,7 @@ current trace only. Additionally, the "Locations" column of the top table will o
 in the current trace.
 
 
-### Filter to Breakpoint Selection
+### Filter to Breakpoint Selection ![Filter](../icons/filter_off.png)
 
 
 This action is always available. It filters the bottom table to those locations belonging to

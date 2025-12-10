@@ -7,7 +7,7 @@
 
 
 The nested code layout use the
-Decompiler to arrange the
+<a name="helptopicsdecompileplugindecompilerhtm"></a>Decompiler to arrange the
 code blocks of a function in a way that mimics the nesting of the source code as seen
 in the decompiled function.   As an example, any code block that must pass through an
 `if` statement will be nested below and to the right of the code block that

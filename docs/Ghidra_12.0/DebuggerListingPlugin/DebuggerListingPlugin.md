@@ -6,7 +6,7 @@
 ![](images/DebuggerListingPlugin.png)
 
 
-The dynamic listing is analogous to Ghidra's listing for static
+<a name="toggle-header"></a>The dynamic listing is analogous to Ghidra's listing for static
 analysis, but in the dynamic context. It displays annotated memory contents from a target. More
 precisely, it displays recorded memory contents in a trace. In most use cases, that trace is
 "at the present," meaning it is the most recent memory from a live target. Multiple listings

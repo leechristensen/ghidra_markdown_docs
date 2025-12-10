@@ -7,7 +7,7 @@ The *Browser Field Formatter* is used to control how the fields in a listing are
 displayed by the Listing. The format specifies which fields are displayed, the order of fields,
 and the width of each field. The formatter is not normally displayed by default, but can be
 accessed at anytime by clicking on the
-![field.header.down.png](../icons/field.header.down.png) icon located in the Listing's toolbar.  When the formatter is
+![field.header.down.png](../icons/field.header.down.png)<a name="toggle-header"></a> icon located in the Listing's toolbar.  When the formatter is
 visible, the button becomes depressed, and can be clicked to hide the formatter.
 
 
@@ -100,7 +100,7 @@ far to the left as possible to fill up any empty space. So if a field is moved o
 row, all the fields to its right, move left to fill in the empty space. If a field is
 dropped before another field, that field and all the fields to its right are moved to the
 right to make room for the new field. *Spacer* fields can be inserted before a field
-to move it further to the right.
+to move it further to the right. <a name="codebrowser-label"></a>
 
 
 ### **Disabling Fields**

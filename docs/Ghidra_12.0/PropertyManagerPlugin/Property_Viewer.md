@@ -3,7 +3,7 @@
 # Property Viewer
 
 
-The Property Viewer window shows all of the properties in a Program. Properties are assigned to a code unit and can store values at addresses. [Plugins](../Tool/Ghidra_Tool_Administration.md#plugins) can define their own
+The Property Viewer window shows all of the properties in a Program. Properties<a name="property"></a> are assigned to a code unit and can store values at addresses. [Plugins](../Tool/Ghidra_Tool_Administration.md#ghidra-tool-administration) can define their own
 properties for storing plugin specific information at an address. The display provides a
 convenient way to see all the properties that exist in the Program. When you select a property,
 the [navigation
@@ -30,13 +30,13 @@ location.
 ![](images/Markers.png)
 
 
-To delete all properties in the Program,
+<a name="deleteproperties"></a>To delete all properties in the Program,
 
 
 1. Select a property to delete.
 2. Right mouse-click and select **Delete**.
-- The property will be removed from the list of properties in the dialog.
-- To undo the delete, select the ![Undo](../icons/edit-undo.png)button on the tool.
+  - The property will be removed from the list of properties in the dialog.
+  - To undo the delete, select the ![Undo](../icons/edit-undo.png)button on the tool.
 
 
 *Provided by: *PropertyManagerPlugin**

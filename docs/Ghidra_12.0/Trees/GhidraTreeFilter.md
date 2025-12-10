@@ -3,7 +3,7 @@
 
 Most trees and tables in Ghidra support filtering and have a text filter located at the
 bottom of the tree or table.   Tables also support the concept of
-[Column Filters](#column-filters) described below.
+[Column Filters](#multi-term-filter-examples) described below.
 
 
 Below is an example from the Data Type Manager. The filter is
@@ -225,6 +225,9 @@ the only record that satisfies all three conditions (similar to the '`OR`'
 discussion, only files satisfying all three properties will be selected).
 
 
+<a name="column-filters"></a>
+
+
 ## Ghidra Table Column Filters
 
 
@@ -300,21 +303,21 @@ last condition in a column filter, the column filter will be deleted.
 Toolbar actions
 
 
-- **Save Filter ![disk.png](../icons/disk.png)** - Saves the current dialog
+- <a name="save-filter"></a>**Save Filter ![disk.png](../icons/disk.png)** - Saves the current dialog
 configuration to the tool. A dialog will appear that will allow you to name the
 filter
-- **Load Filter ![Open Folder](../icons/openSmallFolder.png)** - Pops up a dialog with
+- <a name="load-filter"></a>**Load Filter ![Open Folder](../icons/openSmallFolder.png)** - Pops up a dialog with
 a list of saved filters. Selecting one will load that filter into the dialog.
 
 
 Dialog actions
 
 
-- **Apply** - Applies the dialog's filter to the table. Only enabled if all the
+- <a name="apply-button"></a>**Apply** - Applies the dialog's filter to the table. Only enabled if all the
 conditions in the dialog are valid.
-- **Dismiss** - Closes the filter dialog. Any currently applied filter remains in
+- <a name="dismiss-button"></a>**Dismiss** - Closes the filter dialog. Any currently applied filter remains in
 effect.
-- **Clear Filter** - Removes any currently applied column filter from the table and
+- <a name="clear-filter-button"></a>**Clear Filter** - Removes any currently applied column filter from the table and
 resets the dialog to its initial state.
 
 

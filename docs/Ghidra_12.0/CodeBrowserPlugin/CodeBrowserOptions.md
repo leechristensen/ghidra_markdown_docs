@@ -240,8 +240,8 @@ Use the following options to customize [Cursor Text Highlighting](CodeBrowser.md
 to highlight text (Left, Right, Middle).
 
 
-**Scope Register Operand** - Check this box to
-enable [Scoped highlighting](CodeBrowser.md#scope) of registers within the
+**Scope Register Operand<a name="scoperegisteroperand"></a>** - Check this box to
+enable [Scoped highlighting](CodeBrowser.md#cursor-text-highlight) of registers within the
 operand field. If turned off, cursor highlighted text within an operand field is treated
 the same as text in other fields.
 
@@ -582,7 +582,7 @@ becomes "call .text:printf".
 
 
 **Show Offcut Information -** Shows additional information for
-[offcut references](../ReferencesPlugin/References_from.md#offcut-references),
+[offcut references](../ReferencesPlugin/References_from.md#memory-references),
 such as the original address, followed by the offset.  For example, the
 string "foo_bar", with an offcut reference to "bar" would look like:
 

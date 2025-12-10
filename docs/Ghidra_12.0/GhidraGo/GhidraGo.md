@@ -7,11 +7,12 @@
 
 
 - [Introduction](#ghidrago-introduction)
+  - [Example](#example-of-using-ghidrago-cli)
 - [Configure GhidraGo Plugin](#configure-ghidrago-plugin)
 - [Configure Protocol Handler (Platform Specific)](#configure-protocol-handler-platform-specific)
-- [Windows](#windows-protocol-handler-configuration)
-- [Linux](#linux-protocol-handler-configuration)
-- [Mac](#mac-protocol-handler-configuration)
+  - [Windows](#windows-protocol-handler-configuration)
+  - [Linux](#linux-protocol-handler-configuration)
+  - [Mac](#mac-protocol-handler-configuration)
 
 
 

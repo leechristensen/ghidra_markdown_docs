@@ -21,14 +21,14 @@ color.
 ![](images/Console.png)
 
 
-## Scroll Lock
+## Scroll Lock ![lock.png](../icons/lock.png)
 
 
 This action stops the console from automatically scrolling as new output is
 appended.
 
 
-## Clear
+## Clear ![erase16.png](../icons/erase16.png)
 
 
 This action clears all content in the *Console* component.

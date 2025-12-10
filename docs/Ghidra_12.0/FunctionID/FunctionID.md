@@ -47,9 +47,18 @@ Both schemes hash the individual instructions of the function body in address or
 differ in the amount of information they include from each instruction.
 
 
-> full hash This hash includes the mnemonic and some of the addressing mode information
+**full hash**
+
+
+This hash includes the mnemonic and some of the addressing mode information
 from an instruction. Specific register operands are also included as
-part of the hash, but the specific value of constant operands are not. specific hash This hash includes everything used in the full hash but may also include
+part of the hash, but the specific value of constant operands are not.
+
+
+**specific hash**
+
+
+This hash includes everything used in the full hash but may also include
 the specific values of any constant operands. A heuristic is employed that
 attempts to determine if the constant is not part of an address, in which
 case the value is accumulated into the hash.
@@ -78,9 +87,26 @@ which are intended to be recognizable named software components
 that get linked into larger programs. A **Library** has the following meta-data.
 
 
-> Name This is a general descriptive name for the library. Version If there is a formal version number for the library, this
-field will hold this value as a string. Variant Version information that cannot be encoded in the formal Version field
-can be encoded in this field. This is used typically for compiler settings , which affect Function ID
+**Name**
+
+
+This is a general descriptive name for the library.
+
+
+**Version**
+
+
+If there is a formal version number for the library, this
+field will hold this value as a string.
+
+
+**Variant**
+
+
+Version information that cannot be encoded in the formal
+*Version* field
+can be encoded in this field. This is used typically for
+*compiler settings*, which affect Function ID
 hashes but don't make sense in a version string describing the
 source code.
 
@@ -145,17 +171,39 @@ toggle whether the analyzer is active or not, and if
 presents some configurable options for the analyzer.
 
 
-> Instruction count threshold This is the primary threshold a potential
+**Instruction count threshold**
+
+
+This is the **primary threshold** a potential
 match must exceed in order to be reported by
-the analyzer. This defends against false positives caused by randomly matching
+the analyzer. This defends against
+*false positives* caused by randomly matching
 small functions. Roughly,
 the score counts the number of instructions in the
-function plus instructions in any matching parent or child. Multiple match threshold In general for a single function, if there are multiple potential matches
+function plus instructions in any matching parent or child.
+
+
+**Multiple match threshold**
+
+
+In general for a single function, if there are multiple potential matches
 all with different names, this is a good sign that the matches are random,
 and the analyzer will not report a match. But if the match score exceeds
-this threshold, the analyzer will report a Multiple Match .
-(See “Multiple Matches” ) Always apply FID labels If this toggle is on, the analyzer will report matches even if there is
-already an imported or user defined name for the function. Create Analysis Bookmarks The analyzer will only create bookmarks for matches if this toggle is on.
+this threshold, the analyzer will report a *Multiple Match*.
+(See [“Multiple Matches”](FunctionID.md#multiple-matches))
+
+
+**Always apply FID labels**
+
+
+If this toggle is on, the analyzer will report matches even if there is
+already an imported or user defined name for the function.
+
+
+**Create Analysis Bookmarks**
+
+
+The analyzer will only create bookmarks for matches if this toggle is on.
 This does not affect insertion of comments and symbols.
 
 

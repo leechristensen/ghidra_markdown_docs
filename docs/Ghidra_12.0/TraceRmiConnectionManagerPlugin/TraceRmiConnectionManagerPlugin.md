@@ -42,7 +42,7 @@ icon.
 ## Actions
 
 
-### Connect Outbound
+### Connect Outbound ![Outbound](../icons/connect-outbound.png)
 
 
 Connect to a back end. The back end plays the role of TCP server while Ghidra plays the TCP
@@ -55,7 +55,7 @@ have it listen first.
 ![](images/ConnectDialog.png)
 
 
-### Connect by Accept
+### Connect by Accept ![Accept](../icons/connect-accept.png)
 
 
 Accept a single connection from a back end. Ghidra plays the role of TCP server, and the

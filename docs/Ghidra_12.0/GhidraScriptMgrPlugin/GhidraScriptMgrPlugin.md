@@ -98,7 +98,7 @@ binding, etc.
 ## Script Manager Actions
 
 
-### Run Script
+### Run Script ![play.png](../icons/play.png)
 
 
 Runs the selected script. If the script source file or any source in
@@ -110,7 +110,7 @@ errors will be displayed in the [Console](../ConsolePlugin/console.md) and an er
 ![](images/Console.png)
 
 
-### Run Last Script
+### Run Last Script ![play_again.png](../icons/play_again.png)
 
 
 Runs the last run script. This action is available as a keybinding from
@@ -134,7 +134,7 @@ the Enter key to selected the highlighted list element.
 ![](images/ScriptQuickLaunchDialog.png)
 
 
-### Edit Script
+### Edit Script ![accessories-text-editor.png](../icons/accessories-text-editor.png)
 
 
 Edits the selected script. For more information on script meta data, see [Ghidra Script Development](ScriptDevelopment.md#meta-data)
@@ -143,7 +143,7 @@ Edits the selected script. For more information on script meta data, see [Ghidra
 ![](images/Edit_Script.png)
 
 
-#### Refresh
+#### Refresh ![Refresh](../icons/reload3.png)
 
 
 Will load the contents of the current script from the file on the
@@ -151,14 +151,14 @@ filesystem. This action is useful if you have edited the script outside of Ghidr
 would like to have the editor update to show those changes.
 
 
-#### Save
+#### Save ![disk.png](../icons/disk.png)
 
 
 Saves the changed script back to the original file. The *Save*
 option is only enabled when changes have been made.
 
 
-#### Save As...
+#### Save As... ![disk_save_as.png](../icons/disk_save_as.png)
 
 
 Saves the script (with any changes) to a new script file. The default
@@ -171,20 +171,20 @@ filename.
 ![](images/SaveAs.png)
 
 
-#### Undo
+#### Undo ![Undo](../icons/edit-undo.png)
 
 
 Undo reverts the editor to the state prior to the last edit. You can undo
 up to 50 edits.
 
 
-#### Redo
+#### Redo ![Redo](../icons/edit-redo.png)
 
 
 Redo returns the last edit back into the editor.
 
 
-#### Select Font
+#### Select Font ![text_lowercase.png](../icons/text_lowercase.png)
 
 
 Changes the font for all open editors. It will also set the default font
@@ -195,7 +195,7 @@ size, and style.
 ![](images/Select_Font.png)
 
 
-### Edit Script with Eclipse
+### Edit Script with Eclipse ![eclipse.png](../icons/eclipse.png)
 
 
 Edits the selected script in Eclipse using the GhidraDev plugin.
@@ -212,7 +212,7 @@ on developing Ghidra scripts in Eclipse, see
 Extensions/Eclipse/GhidraDev/GhidraDev_README.html.*
 
 
-### Edit Script with Visual Studio Code
+### Edit Script with Visual Studio Code ![vscode.png](../icons/vscode.png)
 
 
 Edits the selected script in Visual Studio Code.
@@ -225,7 +225,7 @@ Code Integration](../VSCodeIntegration/VSCodeIntegration.md) options if Visual S
 location.*
 
 
-### Assign Key Binding
+### Assign Key Binding ![key.png](../icons/key.png)
 
 
 Allows you to assign a key binding the selected script.
@@ -243,7 +243,7 @@ bindings are stored in the Tool's [Key Binding](../Tool/ToolOptions_Dialog.md#ke
 options.*
 
 
-### Delete Script
+### Delete Script ![table_row_delete.png](../icons/table_row_delete.png)
 
 
 Deletes the selected script. You will receive a confirmation
@@ -261,7 +261,7 @@ directory](#script-directories-bundle-manager), as this may affect other users. 
 you will receive a warning dialog.
 
 
-### Rename Script
+### Rename Script ![textfield_rename.png](../icons/textfield_rename.png)
 
 
 Renames the selected script. When selecting *Rename*, Ghidra will
@@ -271,7 +271,7 @@ prompt for a new filename.
 ![](images/Rename.png)
 
 
-### Create New Script
+### Create New Script ![script_add.png](../icons/script_add.png)
 
 
 Creates a new empty script and displays it in a Script Editor.
@@ -288,13 +288,13 @@ See `Ghidra Script
 Development` for details on how to write a script.
 
 
-### Refresh Script List
+### Refresh Script List ![Refresh](../icons/reload3.png)
 
 
 Refreshes the script list by re-scanning the script directories.
 
 
-### Script Directories / Bundle Manager
+### Script Directories / Bundle Manager ![text_list_bullets.png](../icons/text_list_bullets.png)
 
 
 Allows you to add and remove directories to search for scripts and other
@@ -310,7 +310,7 @@ For more information on Ghidra's dynamic module support, see [Ghidra Bundles](..
 ![](images/Script_Dirs.png)
 
 
-### Help
+### Help ![red-cross.png](../icons/red-cross.png)
 
 
 Opens the Ghidra help viewer on the GhidraScript API.

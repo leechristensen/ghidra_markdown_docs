@@ -50,6 +50,9 @@ option.
 This dialog has the following keyboard shortcut behavior:
 
 
+<a name="comments-option"></a>
+
+
 - When the *Enter accepts comment* checkbox is not selected, pressing **Enter**
 simply adds newlines to the text; when the checkbox is selected, pressing **Enter**
 will close the dialog and accept the current text without adding a newline.
@@ -103,13 +106,13 @@ To view the history of changes,
 1. Right-click on the comment that you would like to view the history.
 2. Choose **Comments →  Show History
 for `<comment type>`...**.
-- If you are not over a specific comment, right mouse click and choose
+  - If you are not over a specific comment, right mouse click and choose
 **Comments →  Show
 History...**.
 3. A dialog containing a tab for each of the comment types is displayed.
-- If the comment does not contain history, then "No History Found" is shown in the
+  - If the comment does not contain history, then "No History Found" is shown in the
 tabbed panel for that comment.
-- Select a tab to view comment history for that comment type.
+  - Select a tab to view comment history for that comment type.
 
 
 > **Note:** Only comments that are placed at the start

@@ -5,7 +5,7 @@
 
 The Plugin Path is a preference that indicates where Ghidra should search for Java classes
 outside of the standard installation locations.  User developed Java classes can be used
-to extend Ghidra with additional [plugins](../Tool/Ghidra_Tool_Administration.md#plugins) and [data types](../DataTypeManagerPlugin/data_type_manager_description.md).
+to extend Ghidra with additional [plugins](../Tool/Ghidra_Tool_Administration.md#ghidra-tool-administration) and [data types](../DataTypeManagerPlugin/data_type_manager_description.md).
 
 
 
@@ -13,6 +13,9 @@ to extend Ghidra with additional [plugins](../Tool/Ghidra_Tool_Administration.md
 
 > **Tip:** All plugins discovered by Ghidra can be displayed in the Configure dialog for all tools. All known data
 types are shown in the Data Type Manager display.
+
+
+<a name="editpluginpathdialog"></a>
 
 
 | ![](images/EditPluginPath.png) |
@@ -39,17 +42,17 @@ To add a Plugin Path,
 
 
 1. From the Ghidra Project Window, select **Edit →  Plugin Path...**
-2. The *Edit Plugin Path* [dialog](#editpluginpathdialog) is displayed; in
+2. The *Edit Plugin Path* [dialog](#edit-plugin-path) is displayed; in
 the *Directory or Jar File Name* field
-- Select the **Add Jar...** or **Add Dir...** button to choose either a jar
+  - Select the **Add Jar...** or **Add Dir...** button to choose either a jar
 file or directory from the file system.
-- Locate and select the appropriate jar file or directory within the file chooser
+  - Locate and select the appropriate jar file or directory within the file chooser
 dialog.
-- Select the **Add Jar,** or **Add
+  - Select the **Add Jar,** or **Add
 Dir** button within the file chooser dialog.
 3. Select the **Apply** or **OK** button from the *Edit Plugin Path* dialog.
-- **Apply** applies the changes and leaves the dialog up.
-- **OK** applies the changes and dismisses the dialog.
+  - **Apply** applies the changes and leaves the dialog up.
+  - **OK** applies the changes and dismisses the dialog.
 
 
 ### Change the Search Order
@@ -86,8 +89,8 @@ class that is loaded is the one that you will be using when you run Ghidra.
 
 1. Clear the *User Plugin Jar Directory* field.
 2. Select the **Apply or OK** button**.**
-- **Apply** applies the changes and leaves the dialog up.
-- **OK** applies the changes and dismisses the dialog.
+  - **Apply** applies the changes and leaves the dialog up.
+  - **OK** applies the changes and dismisses the dialog.
 
 
 > **Note:** When you click on the Apply or OK button, your preferences file in your <user settings> folder is updated immediately.
@@ -108,7 +111,7 @@ launch that tool.
 - [Manage Data
 Types](../DataTypeManagerPlugin/data_type_manager_description.md)
 - [Built in Data Types](../DataPlugin/Data.md#data-types)
-- [Plugins](../Tool/Ghidra_Tool_Administration.md#plugins)
+- [Plugins](../Tool/Ghidra_Tool_Administration.md#ghidra-tool-administration)
 
 
 ---

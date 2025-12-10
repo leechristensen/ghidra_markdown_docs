@@ -11,11 +11,11 @@ be copied.
 The Code Browser supports the following copy formats:
 
 
-- [Labels and Comments](#labelscomments)
-- [Formatted Code](#formattedcode)
-- [Byte String](#bytestring)
-- [Byte String (no spaces)](#bytestring-nospaces)
-- [GhidraURL](#ghidraurl)
+- [Labels and Comments](#listing)
+- [Formatted Code](#listing)
+- [Byte String](#listing)
+- [Byte String (no spaces)](#listing)
+- [GhidraURL](#listing)
 
 
 The default copy operation in the Code Browser (achieved by executing the [*Copy*](#copy) command), however, will copy either selected text or the specific field
@@ -26,11 +26,11 @@ under the cursor, depending upon the current selection and cursor location in th
 - If there is no selection, then a copy **may** take place, depending upon the field under
 the cursor (this works for the Code Browser only). The following list of fields support
 copying:
-- Operand Field Reference
-- Label Field
-- Comment Field
-- Address Field
-- Bytes Field
+  - Operand Field Reference
+  - Label Field
+  - Comment Field
+  - Address Field
+  - Bytes Field
 
 
 To do the default copy, make a selection in the Code Browser, right mouse click and choose
@@ -58,7 +58,7 @@ clipboard. Data copied onto the system clipboard may be accepted by other applic
 ## Default Operations
 
 
-### Copy
+### Copy ![page_white_copy.png](../icons/page_white_copy.png)
 
 
 Copies the currently selected items. The behavior will be dependent on the specific window
@@ -68,7 +68,7 @@ application. The copy action can be triggered via the context menu that appears 
 right-click.
 
 
-### Paste
+### Paste ![page_paste.png](../icons/page_paste.png)
 
 
 Pastes the clipboard contents to the current location. The behavior will be dependent on
@@ -117,22 +117,22 @@ appears as follows:
 The Code Browser **Listing** window can copy the following formats:
 
 
-- **Formatted Code** - Copies text from the selected
+- **Formatted Code<a name="formattedcode"></a>** - Copies text from the selected
 blocks in the Code Browser to the clipboard. The spacing and formatting are preserved as
 much as possible. The plain text can easily be pasted into a text processor. **This is the
 default copy format**.
-- **Labels and Comments**  - Copies the labels and
+- **Labels and Comments** <a name="labelscomments"></a> - Copies the labels and
 comments from the selected blocks in the Code Browser to the clipboard. These can be pasted
 to another part of the program or to another open Code Browser, however, there is no
 external application that will paste the labels and comments. If you are pasting labels at
 a location where a default label exists, then the default label will be removed. Also, a
 default label cannot be pasted. Trying to paste a default label will result in no
 change.
-- **Byte String** - Copies the bytes from the selected blocks
+- **Byte String<a name="bytestring"></a>** - Copies the bytes from the selected blocks
 in the Code Browser to the clipboard as text. These can be pasted to another part of the
 program (provided the area pasted to is undefined) or to an external application that
 supports pasting byte strings. Often, hex editors will be able to paste this format.
-- **Byte String (No Spaces)**  - This is the same as
+- **Byte String (No Spaces)** <a name="bytestring-nospaces"></a> - This is the same as
 the Byte String format, except there are no delimiting spaces between bytes.
 - **Data** - Copies a the values of all the selected data objects to the clipboard as
 text. This option ignores any compound data objects such as structures, unions, or arrays.
@@ -154,7 +154,7 @@ function, for example: `main + 0x2`
 - **Byte Source Offset** - Copies the byte source offset from the start of the file for
 each address in the current selection. If the address is not backed by a file,
 `<NO_OFFSET>` is copied.
-- **GhidraURL**  - Creates a GhidraURL for the address under the
+- **GhidraURL** <a name="ghidraurl"></a> - Creates a GhidraURL for the address under the
 cursor then copies that URL to the clipboard.
 
 

@@ -67,7 +67,7 @@ This action is available from a module's or section's pop-up menu. It prompts th
 import the module from the local file system into Ghidra as a static image.
 
 
-### Auto-Map
+### Auto-Map ![Auto](../icons/conf.png)
 
 
 This action is always available. It automatically maps trace memory to static images, using
@@ -77,7 +77,7 @@ corresponding action whenever the relevant table is updated. By default, it auto
 using Modules.
 
 
-### Map Identically
+### Map Identically ![Identically](../icons/doubleArrow.png)
 
 
 This action is available when both a trace and a program are opened. It maps the current
@@ -86,7 +86,7 @@ is a suitable mapping when the current program is loaded in the trace *without
 relocation*. It is also a fallback worth trying in the absence of a module list.
 
 
-### Map Manually
+### Map Manually ![Manual](../icons/program_obj.png)
 
 
 This action is always available. It simply displays the [Static Mappings](../DebuggerStaticMappingPlugin/DebuggerStaticMappingPlugin.md)
@@ -144,7 +144,7 @@ It behaves like Map Sections, except that it will propose the selected section b
 block containing the cursor in the static listing.
 
 
-### Import Missing Module
+### Import Missing Module ![Import](../icons/imported_bookmark.gif)
 
 
 This action is offered to resolve a "missing module" console message. Such a message is
@@ -154,7 +154,7 @@ synchronized to the static listing for lack of a module mapping. This action is 
 [Import From File System](#import-from-file-system) on the missing module.
 
 
-### Map Missing Module
+### Map Missing Module ![Modules](../icons/modules.png)
 
 
 This action is offered to resolve a "missing module" console message. Such a message is
@@ -164,7 +164,7 @@ synchronized to the static listing for lack of a module mapping. This action is 
 [Map Module To](#map-module-to-current-program) on the missing module.
 
 
-### Retry Map Missing Program
+### Retry Map Missing Program ![Auto](../icons/conf.png)
 
 
 This action is offered to resolve a "missing program" console message. Such a message is
@@ -174,7 +174,7 @@ This action is equivalent to [Map Modules](#map-modules), but considering only t
 missing program and launched trace.
 
 
-### Map Missing Program to Current Module
+### Map Missing Program to Current Module ![Modules](../icons/modules.png)
 
 
 This action is offered to resolve a "missing program" console message. Such a message is
@@ -185,7 +185,7 @@ containing the cursor in the [Dynamic Listing](../DebuggerListingPlugin/Debugger
 to map it to the missing program.
 
 
-### Map Missing Program Identically
+### Map Missing Program Identically ![Identically](../icons/doubleArrow.png)
 
 
 This action is offered to resolve a "missing program" console message. Such a message is
@@ -195,7 +195,7 @@ This action is equivalent to [Map Identically](#map-identically), but for the
 missing program and launched trace.
 
 
-### Show Sections Table
+### Show Sections Table ![Sections](../icons/table-s.png)
 
 
 This actions is always available. By default the sections table (bottom) is showing. Some
@@ -203,7 +203,7 @@ debuggers do not offer section information, and even for those that do, it can b
 retrieve it. The visibility of the section table is controlled by toggling this action.
 
 
-### Filter Sections by Module
+### Filter Sections by Module ![Filter](../icons/filter_off.png)
 
 
 This action is always available. By default the bottom table displays all sections in the
@@ -211,7 +211,7 @@ current trace. When this toggle is enabled, and at least one module is selected,
 table will only include sections contained by a selected module.
 
 
-### Select Addresses
+### Select Addresses ![Addresses](../icons/text_align_justify.png)
 
 
 This action is available when at least one module or section is selected. It selects all
@@ -219,7 +219,7 @@ addresses in the [Dynamic
 Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md) contained by the selected modules or sections.
 
 
-### Select Rows
+### Select Rows ![Rows](../icons/table_go.png)
 
 
 This action is available when the [Dynamic Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md)'s cursor is

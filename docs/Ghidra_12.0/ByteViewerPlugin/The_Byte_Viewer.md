@@ -168,7 +168,7 @@ The  labels below the scroll pane that contains the views shows the following i
 | Start | The minimum address of Memory |
 | --- | --- |
 | End | The maximum address of Memory |
-| Offset | Displayed in decimal, the 					number of bytes added to each block of memory that is being displayed. 					This number is calculated when you set the [alignment 					address](#alignment-address) or the number of bytes per line. |
+| <a name="offsetfield"></a> Offset | Displayed in decimal, the 					number of bytes added to each block of memory that is being displayed. 					This number is calculated when you set the [alignment 					address](#alignment-address) or the number of bytes per line. |
 | Insertion | The address of your current cursor location |
 
 
@@ -192,7 +192,7 @@ tool.
 
 
 Changed bytes are rendered in red.
-This color can be changed via the [Byte Viewer Edit Options](ByteViewerOptions.md#editcolorsandfont) by double-clicking on
+This color can be changed via the [Byte Viewer Edit Options](ByteViewerOptions.md#colors-and-font) by double-clicking on
 the *[Edit Color](ByteViewerOptions.md#editcolor)*
 field.
 
@@ -217,7 +217,7 @@ in one Byte Viewer, the other will reflect those changes in red.
 ## Cursor Colors
 
 
-The format view that currently has focus shows its cursor in magenta. (Cursor colors can be changed via the [Options](ByteViewerOptions.md#editcolorsandfont) dialog) If
+The format view that currently has focus shows its cursor in magenta. (Cursor colors can be changed via the [Options](ByteViewerOptions.md#colors-and-font) dialog) If
 the byte editing is enabled and the view that is in focus supports
 editing,
 then the cursor is red.

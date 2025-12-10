@@ -42,6 +42,8 @@ keybinding is assigned to them.
 
 ## Actions Dialog
 
+<a name="actionchooserdialog"></a>
+
 
 The Actions Dialog displays a list of all actions (or commands) relevant to the
 currently focused component window or dialog and allows the user to select and invoke any

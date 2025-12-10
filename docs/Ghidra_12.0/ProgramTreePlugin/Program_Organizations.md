@@ -18,9 +18,9 @@ follows:
 the selected folder or fragment.
 2. For each code block create a new folder; use the code block name as the name of the
 folder.
-- If you selected a folder to modularize, new folders are created under the selected
+  - If you selected a folder to modularize, new folders are created under the selected
 folder.
-- If you selected a fragment to modularize, a new folder is created using the
+  - If you selected a fragment to modularize, a new folder is created using the
 fragment name. Folders for the code blocks are created under this folder.
 3. For each code block from Step 2, use the selected block model to gather code blocks
 that overlap the address set of the code block.

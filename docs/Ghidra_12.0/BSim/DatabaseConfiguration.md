@@ -182,27 +182,58 @@ during database ingest and maintenance. This method is established for a server 
 initial **start** command.
 
 
-> trust bsim_ctl start /path/to/datadir
---auth trust This is currently the default. No authentication is performed and privilege
-is granted based on the user name presented. Masquerading is possible. password bsim_ctl start /path/to/datadir
---auth password Users are authenticated via password. A default password 'changeme' is
+**trust**
+
+
+`bsim_ctl start /path/to/datadir
+--auth trust`
+
+
+This is currently the default. No authentication is performed and privilege
+is granted based on the user name presented. Masquerading is possible.
+
+
+**password**
+
+
+`bsim_ctl start /path/to/datadir
+--auth password`
+
+
+Users are authenticated via password. A default password 'changeme' is
 established when the new user is created. Passwords can be changed by the user
-from the BSim client or can be reset by an administrator via the resetpassword command. pki bsim_ctl start /path/to/datadir --auth pki
---cafile "/path/to/rootcert" Users are authenticated by PKI certificates. Upon initialization, the BSim
-server must be provided (via the --cafile option) a file containing the public keys
+from the BSim client or can be reset by an administrator via the **resetpassword** command.
+
+
+**pki**
+
+
+`bsim_ctl start /path/to/datadir --auth pki
+--cafile "/path/to/rootcert"`
+
+
+Users are authenticated by PKI certificates. Upon initialization, the BSim
+server must be provided (via the **--cafile** option) a file containing the public keys
 for the certificate authorities used to issue user's certificates. The file
 consists of the authoritative certificates in PEM format concatenated
-together. BSim users must register their certificate with the Ghidra client using the Edit->Set PKI Certificate... menu
+together.
+
+
+BSim users must register their certificate with the Ghidra client using the
+*Edit-&gt;Set PKI Certificate...* menu
 option from the Project dialog. The BSim client will automatically submit the
 certificate to a server that requests it, and the password to unlock it will be
 requested as needed. This is the same mechanism used to a access a PKI
 protected Ghidra server, and if a user needs access to both a BSim server and
 Ghidra server that are PKI protected, the servers should probably be configured
 with the same certificate authorities so that they will accept the same
-certificate from the user. With PKI authentication enabled, at the time a new user role is established
+certificate from the user.
+
+
+With PKI authentication enabled, at the time a new user role is established
 with the server, the X.509 Distinguished Name, as bound to the user's
-certificate, must be associated with the user name via the --dn option. See “Adding Users to the
-Database” .
+certificate, must be associated with the user name via the **--dn** option. See [“Adding Users to the
+Database”](#adding-users-to-the-database).
 
 
 The authentication method should be established once, the first time the **start** command is issued for the server on an
@@ -272,13 +303,28 @@ The relevant configuration files are at the top level of the data directory:
 The most important configuration parameters in `postgresql.conf` are:
 
 
-> shared_buffers This controls the amount of RAM available for caching database pages across
+**shared_buffers**
+
+
+This controls the amount of RAM available for caching database pages across
 all connections to the server. The default should be reasonable in most
 situations, but for large databases or many simultaneous connections it might
-make sense to increase this. max_wal_size , checkpoint_timeout These control how often the server forces database pages to be written back
+make sense to increase this.
+
+
+**max_wal_size**, **checkpoint_timeout**
+
+
+These control how often the server forces database pages to be written back
 out to the file-system. The defaults are set to minimize disk writes when
 ingesting large numbers of records in one session. There should be little
-reason to change these values. ssl_min_protocol_version This controls the minimum SSL/TLS protocol version used when the server negotiates a connection.
+reason to change these values.
+
+
+**ssl_min_protocol_version**
+
+
+This controls the minimum SSL/TLS protocol version used when the server negotiates a connection.
 The current default is 'TLSv1.2'
 
 
@@ -541,9 +587,36 @@ The full template name incorporates both an index tuning and a weight scheme. So
 common examples of template names:
 
 
-> medium_32 A medium index tuning with a weighting scheme designed for 32-bit
-executables. medium_64 A medium index tuning with a weighting scheme designed for 64-bit
-executables. large_32 A 32-bit weighting scheme with tuning for a large database size. medium_cpool A medium index tuning with a weighting scheme for Java executables. medium_nosize A medium index tuning with a weighting scheme allowing matches between 32-bit
+**medium_32**
+
+
+A medium index tuning with a weighting scheme designed for 32-bit
+executables.
+
+
+**medium_64**
+
+
+A medium index tuning with a weighting scheme designed for 64-bit
+executables.
+
+
+**large_32**
+
+
+A 32-bit weighting scheme with tuning for a large database size.
+
+
+**medium_cpool**
+
+
+A medium index tuning with a weighting scheme for Java executables.
+
+
+**medium_nosize**
+
+
+A medium index tuning with a weighting scheme allowing matches between 32-bit
 and 64-bit code.
 
 

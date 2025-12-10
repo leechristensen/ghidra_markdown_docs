@@ -21,13 +21,13 @@ Window
 
 
 - Version
-- For example, "8.1"
-- If "Dev" is included in version name, this version is a pre-release build
+  - For example, "8.1"
+  - If "Dev" is included in version name, this version is a pre-release build
 - Java Version
-- For example, "11.0.1"
-- Version of Java being used to run Ghidra.
+  - For example, "11.0.1"
+  - Version of Java being used to run Ghidra.
 - Build date
-- For example, "2019-Jan-18"
+  - For example, "2019-Jan-18"
 
 
 ## User Agreement

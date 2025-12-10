@@ -10,7 +10,7 @@ file in various formats.
 Some of the formats the *Exporter* supports are:
 
 
-- [ASCII](#ascii)
+<a name="exporter-formats"></a>- [ASCII](#ascii)
 - [C/C++](#cc)
 - [Ghidra Zip File (GZF)](#ghidra-zip-file-gzf)
 - [Ghidra Data Type Archive File (GDT)](#ghidra-data-type-archive-file-gdt)
@@ -78,7 +78,7 @@ The Export Dialog is used to configure the export of the chosen program.
 ### Dialog Fields
 
 
-- **Format** - This field is a drop-down list containing all the valid [export file formats](#exporter-formats) that could be used to export the
+- **Format** - This field is a drop-down list containing all the valid [export file formats](#exporting-files) that could be used to export the
 program. By default, the last used format will be auto-selected.
 - **Output File** - This field specifies the output file for the export. By
 default, the output file's name will be the name of the program and the output folder
@@ -301,7 +301,7 @@ The XML Exporter creates XML files that conform to Ghidra's Program DTD. You can
 re-import files in this format using the [XML Importer](../ImporterPlugin/importer.md).
 
 
-*The
+<a name="xml-options"></a> *The
 XML Options are identical the [XML Importer Options](../ImporterPlugin/importer.md#xml-options).*
 
 
@@ -312,7 +312,7 @@ The SARIF Exporter creates SARIF files that conform to Ghidra's Program DTD. You
 re-import files in this format using the [SARIF Importer](../ImporterPlugin/importer.md).
 
 
-*The
+<a name="sarif-options"></a> *The
 SARIF Options are identical the [SARIF Importer Options](../ImporterPlugin/importer.md#sarif-options).*
 
 

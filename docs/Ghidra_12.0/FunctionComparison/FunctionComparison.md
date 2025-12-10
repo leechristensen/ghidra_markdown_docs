@@ -1,3 +1,6 @@
+<a name="function-comparison"></a>
+
+
 # Function Comparison Window
 
 
@@ -6,6 +9,9 @@ functions in a simple side-by-side panel.
 
 
 ![](images/FunctionComparisonWindow.png)
+
+
+<a name="function-comparison-actions"></a>
 
 
 To Compare Functions, select one or more functions from the Listing, Decompiler or the
@@ -63,7 +69,7 @@ the matching code unit. When the cursor moves into a code unit that is unmatched
 cursor in the other listing will not move since it doesn't have a matching code unit.
 
 
-### Cursor Arrow
+### Cursor Arrow ![cursor_arrow_flipped.gif](../icons/cursor_arrow_flipped.gif)
 
 
 The left side margin of each listing can display a cursor arrow ![cursor_arrow_flipped.gif](../icons/cursor_arrow_flipped.gif) that indicates the code unit with the current cursor
@@ -106,7 +112,7 @@ the toolbar.
 
 This will display the Field Header above the left Listing. For more information on how
 to manipulate the fields, see the help for the [Code Browser
-Header](../CodeBrowserPlugin/Browser_Field_Formatter.md#toggle-header).
+Header](../CodeBrowserPlugin/Browser_Field_Formatter.md#browser-field-formatter).
 
 
 #### Show Listings Side-by-Side
@@ -409,7 +415,7 @@ above the listing panels to change what is being compared.
 The following toolbar options are available:
 
 
-### Add To Existing Comparison
+### Add To Existing Comparison ![](images/AddToComparisonIcon.png)
 
 
 Allows the user to add functions to the current comparison window. When
@@ -425,26 +431,26 @@ button; the selected functions will be available in both the left and right
 sides of the comparison window.
 
 
-### Remove Function From Comparison
+### Remove Function From Comparison ![](images/RemoveFromComparisonIcon.png)
 
 
 Removes the function in the focused panel from the comparison. This
 will remove the function from both the source and target selection pulldowns.
 
 
-### Go To Next Function
+### Go To Next Function ![](images/NavNextIcon.png)
 
 
 Navigates to the next available function in the selection pulldown
 
 
-### Go To Previous Function
+### Go To Previous Function ![](images/NavPreviousIcon.png)
 
 
 Navigates to the previous available function in the selection pulldown
 
 
-### Navigate To Selected Function
+### Navigate To Selected Function ![Navigate On Incoming Event](../icons/locationIn.gif)
 
 
 When toggled **on**, the function comparison panels become navigable,

@@ -25,23 +25,23 @@ The ***SelectionTypes*** and their descriptions are as follows:
 | --- | --- |
 | Selection Type | Description |
 | --- | --- |
-| Program Changes | Select all program changes. |
+| <a name="select-program-changes"></a> Program Changes | Select all program changes. |
 | All Flows From | This follows all program flows from the cursor location if no selection                         or from the selected code units if there is a selection. Select All Flows                         will traverse all branches conditional and unconditional. All the code                         units that are traversed are selected. |
 | All Flows To | This selects all program flows to the cursor location if no selection                         or to the selected code units if there is a selection. Select All Flows To                         will traverse all branches conditional and unconditional. All the code                         units that are traversed are selected. In other words, this follows all program flows backwards from the                          location or selection. |
 | Limited Flows From | The types of program flows to be followed in this case are based on                         options configured on theSelection by Flow                         Options tab. Limited Flows only follows the indicated types of program                         flows from the cursor location if no selection or from the selected code                         units if there is a selection. All the code units that are traversed are                         selected. |
 | Limited Flows To | The types of program flows to be followed in this case are based on                         options configured on theSelection by Flow                         Options tab. Limited Flows To only follows the indicated types of program                         flows to the cursor location if no selection or to the selected code                         units if there is a selection. All the code units that are traversed are                         selected. In other words, this follows the types of program flows, as indicated                           by the options, backwards from the location or selection. |
 | Subroutine | If there is no selection, this selects the code units of the subroutine                         that contains the current cursor location. If there is a selection, this                         selects all the subroutines that contain the selected code units. |
-| Dead Subroutines | Selects the code units of all                       subroutines that not directly referenced, also known as "dead" code. |
+| <a name="select-dead-subroutine"></a> Dead Subroutines | Selects the code units of all                       subroutines that not directly referenced, also known as "dead" code. |
 | Function | If there is no selection, this selects the code units of the function                         that contains the current cursor location. If there is a selection, this                         selects all the functions that contain the selected code units. |
 | All in View | Selects all code units being displayed in the browser view. |
 | Clear Selection | Clears the current selection in the browser view. |
-| Complement | Changes the selection to everything in the current view that                       is not in the current selection.   |
-| Mark and Select | Creates a selection in a two step process. The first time                       the action is invoked, the current location is marked. The second time the                       action is invoked, a selection is created from the marked location to the                       current location.   |
-| Data | Selects all the defined data in the                       current program if there isn't a selection. Otherwise, it selects the defined                       data within the current selection. |
-| Instructions | Selects all the instructions in the                       current program if there isn't a selection. Otherwise, it selects the                       instructions within the current selection. |
-| Undefined                       Data | Selects all the undefined data in                       the current program if there isn't a selection. Otherwise, it selects the                       undefined data within the current selection. |
-| Forward                       Refs | Selects all addresses that the                       current address is referring to. |
-| Back                       Refs | Selects all addresses that refer to                       the current address. |
+| <a name="select-complement"></a> Complement | Changes the selection to everything in the current view that                       is not in the current selection.   |
+| <a name="mark-and-select"></a> Mark and Select | Creates a selection in a two step process. The first time                       the action is invoked, the current location is marked. The second time the                       action is invoked, a selection is created from the marked location to the                       current location.   |
+| <a name="data"></a> Data | Selects all the defined data in the                       current program if there isn't a selection. Otherwise, it selects the defined                       data within the current selection. |
+| <a name="instructions"></a> Instructions | Selects all the instructions in the                       current program if there isn't a selection. Otherwise, it selects the                       instructions within the current selection. |
+| <a name="undefined"></a> Undefined                       Data | Selects all the undefined data in                       the current program if there isn't a selection. Otherwise, it selects the                       undefined data within the current selection. |
+| <a name="forward"></a> Forward                       Refs | Selects all addresses that the                       current address is referring to. |
+| <a name="backward"></a> Back                       Refs | Selects all addresses that refer to                       the current address. |
 
 
 Selections are meant to be temporary. For example, a left mouse click outside a selection in

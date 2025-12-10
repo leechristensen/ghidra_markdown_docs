@@ -3,10 +3,10 @@
 # Ghidra Glossary
 
 
-[A](#a)  [B](#b)  [C](#c)  [D](#d)  [E](#e)  [F](#f)  [G](#g)  [H](#h)  [I](#i)  J  [K](#k)  [L](#l)  [M](#m)  [N](#n)  [O](#o)  [P](#p)  Q  [R](#r)  [S](#s)  [T](#t)  [U](#u)  [V](#v)  [W](#w)  [X](#x)  Y  Z
+[A](#ghidra-glossary)  [B](#b)  [C](#byte-viewer)  [D](#cycle-group)  [E](#dynamic-data-type)  [F](#external-reference)  [G](#function-signature)  [H](#gzf)  [I](#history)  J  [K](#isolated-entry-model)  [L](#key-binding)  [M](#local-symbol)  [N](#multi-user)  [O](#ne)  [P](#overlay)  Q  [R](#property)  [S](#running-tools)  [T](#symbol-tree)  [U](#toolbar-local-and-global)  [V](#user-authentication)  [W](#viewed-project)  [X](#workspace)  Y  Z
 
 
-**A**
+<a name="a"></a>**A**
 
 
 ## Action
@@ -166,7 +166,7 @@ Individual program elements displayed by the Code Browser's listing window.
 A Ghidra component used to display and edit the bytes in a program.
 
 
-**C**
+<a name="c"></a>**C**
 
 
 ## Call Block Model
@@ -286,7 +286,7 @@ A sequence of data types applied using the same action repeatedly (i.e.
 byte-&gt;word-&gt;dword-&gt;qword).
 
 
-**D**
+<a name="d"></a>**D**
 
 
 ## Data (item)
@@ -403,7 +403,7 @@ Data types whose structure varies depending on the data bytes on which they are
 applied.
 
 
-**E**
+<a name="e"></a>**E**
 
 
 ## ELF
@@ -456,7 +456,7 @@ etc).
 A reference from a location in one program to a location in another program.
 
 
-**F**
+<a name="f"></a>**F**
 
 
 ## Fall Through Address
@@ -518,7 +518,7 @@ register variables.
 The name, return type, and parameters of a function.
 
 
-**G**
+<a name="g"></a>**G**
 
 
 ## Ghidra
@@ -567,7 +567,7 @@ The global namespace is the default namespace.
 File extension given to Ghidra program database files that have been "zipped up".
 
 
-**H**
+<a name="h"></a>**H**
 
 
 ## Hex Short
@@ -617,7 +617,7 @@ A more permanent type of selection.
 List of changes made to labels or comments.
 
 
-**I**
+<a name="i"></a>**I**
 
 
 ## IDA Pro
@@ -646,7 +646,7 @@ values are unknown.
 
 
 Display options for *individual* data items in Ghidra. For example one byte can be
-displayed as decimal while another is displayed as hex.  Also see [Data Type Default Settings](../DataPlugin/Data.md#default-settings).
+displayed as decimal while another is displayed as hex.  Also see [Data Type Default Settings](../DataPlugin/Data.md#changing-data-settings).
 
 
 ## Instruction
@@ -669,7 +669,7 @@ point, but may share code with another subroutine.  The subroutine body will st
 another is called or a source entry point is encountered.
 
 
-**K**
+<a name="k"></a>**K**
 
 
 ## Key Binding
@@ -678,7 +678,7 @@ another is called or a source entry point is encountered.
 Keyboard shortcut for invoking Ghidra functionality.
 
 
-**L**
+<a name="l"></a>**L**
 
 
 ## Label
@@ -724,7 +724,7 @@ A menu that is associated with a specific Ghidra docking window.
 A symbol that is local to a particular function.
 
 
-**M**
+<a name="m"></a>**M**
 
 
 ## Marker
@@ -811,7 +811,7 @@ Term used when multiple users are working together using shared projects and
 programs.
 
 
-**N**
+<a name="n"></a>**N**
 
 
 ## Name Space
@@ -827,7 +827,7 @@ Abbreviation for New Executable.  File format used by Windows 3.1.x  operating
 systems for storing executable programs.
 
 
-**O**
+<a name="o"></a>**O**
 
 
 ## Offcut
@@ -867,7 +867,7 @@ represent a memory range its' use has significant limitations for the decompiler
 analysis which may be unable to determine when an overlay should be referenced.
 
 
-**P**
+<a name="p"></a>**P**
 
 
 ## Partitioned Code Model
@@ -1018,7 +1018,7 @@ A storage mechanism used by plugins to store information in a program at specifi
 addresses.
 
 
-**R**
+<a name="r"></a>**R**
 
 
 ## Read-Only Project
@@ -1069,7 +1069,7 @@ An area on the [Ghidra Project Window](#ghidra-project-window) that displays a
 list of icons which represent [Tools](#tool) currently in use.
 
 
-**S**
+<a name="s"></a>**S**
 
 
 ## Scalar
@@ -1199,7 +1199,7 @@ all the label information.
 Ghidra GUI module used to display symbols in a tree structure.
 
 
-**T**
+<a name="t"></a>**T**
 
 
 ## Tabbed Window
@@ -1255,7 +1255,7 @@ A popup description that appears when the mouse is hovered over a GUI item.
 An icon bar used to invoke Ghidra functionality.
 
 
-**U**
+<a name="u"></a>**U**
 
 
 ## Unconditional Call
@@ -1309,7 +1309,7 @@ server.  The list contains usernames and permissions.
 The process of verifying the identity of a client user to the server.
 
 
-**V**
+<a name="v"></a>**V**
 
 
 ## Version Control
@@ -1339,7 +1339,7 @@ A project that has been open as read-only.  Projects that you do not own can on
 be opened as a Viewed Project.
 
 
-**W**
+<a name="w"></a>**W**
 
 
 ## Workspace
@@ -1348,7 +1348,7 @@ be opened as a Viewed Project.
 A virtual Ghidra desktop for a set of [running tools](#running-tools).
 
 
-**X**
+<a name="x"></a>**X**
 
 
 ## XREF

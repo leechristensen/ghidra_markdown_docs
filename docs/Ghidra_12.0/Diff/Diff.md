@@ -213,7 +213,7 @@ Likewise, the **Deselect All** button removes the check marks from
 all the difference type check boxes.
 - [Address Ranges To Diff](#address-ranges-to-diff)
 : indicates the addresses to be checked for differences.
-- [Limit To Selection](#limit-to-selection)
+  - [Limit To Selection](#limit-to-selection)
 : whether or not the Program Diff should be
 limited to the current selection in the tool's program.
 
@@ -326,8 +326,8 @@ comment type is not exactly the same for the two programs.
 Properties differ.
 
 
-**Functions**
-- detect any code units where the functions differ.
+**Functions<a name="executediffdialog-dodifferenceson-functions"></a>**
+        - detect any code units where the functions differ.
 
 
 Possible differences are:
@@ -346,8 +346,8 @@ parameters differ.)
 - Function tags differ.
 
 
-**Source Map**
-- detect any addresses where the source map information is different.
+**Source Map<a name="executediffdialog-dodifferenceson-sourcemap"></a>**
+      - detect any addresses where the source map information is different.
 
 
 When the *Determine Program Differences* dialog is initially
@@ -451,7 +451,7 @@ adding this type of difference from the second program to what is
 already in the tool's program. For Labels, this will not change which
 label is set to primary.
 - **Merge & Set Primary**
-- (Only available for Labels) merges labels from program 2 into the current
+          - (Only available for Labels) merges labels from program 2 into the current
 program and sets the primary label as it is in program 2, if possible.
 
 
@@ -496,7 +496,7 @@ to the program by plugins.
 **References** - **Memory, External, & Stack** references.
 
 
-The
+<a name="save-default-diff-apply-settings"></a>The
 *Diff Apply Settings* toolbar has a **Save as Default** icon
 ![disk.png](../icons/disk.png) to save your
 current Diff Apply Settings to the tool as your new defaults. When you
@@ -515,7 +515,8 @@ The Default Diff Apply Settings can also be set by changing the
 .
 
 
-The *Diff Apply Settings* toolbar menu
+<a name="set-all-to-ignore"></a> <a name="set-all-to-replace"></a>
+<a name="set-all-to-merge"></a> The *Diff Apply Settings* toolbar menu
 ![menu16.gif](../icons/menu16.gif) also has actions for changing
 all the apply settings at once. They are:
 
@@ -537,7 +538,7 @@ to **Replace**. Labels will be set to **Merge & Set Primary**.
 ---
 
 
-## Getting New Differences
+## Getting New Differences ![Diff16.png](../icons/Diff16.png)
 
 
 There are several reasons to get new program differences.

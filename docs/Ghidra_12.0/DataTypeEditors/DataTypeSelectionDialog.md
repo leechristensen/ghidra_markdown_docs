@@ -14,6 +14,9 @@ As you type text in the field, any potential matches will be displayed in the co
 window, which is described below.
 
 
+<a name="searchmode"></a>
+
+
 The way matches are determined depends upon the search
 mode you are in.  The current mode is displayed at the right side of the text field,
 indicated with a single character.   Hovering over the character will show a tool tip

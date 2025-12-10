@@ -1,12 +1,15 @@
 [Home](../index.md) > [Search](index.md) > Memory
 
+<a name="memory-search"></a>
+
+
 # Search Memory
 
 
 The memory search feature locates sequences of bytes in program memory. The search is
 based on user entered values which can be specified in a variety of formats such as hex,
 binary, string, and decimal values. The hex and binary formats support "wildcards" which can
-match any bit or nibbles depending on the format. String search also supports the use of [regular expression](Search_Formats.md#regularexpressions) searches.
+match any bit or nibbles depending on the format. String search also supports the use of [regular expression](Search_Formats.md#examples-encoding-is-utf-16-case-sensitive-is-on-escape-sequences-is-off-big-endian) searches.
 
 
 To create a new memory search window, select **Search**  → **Memory** from the main tool menu or use the default keybinding
@@ -22,16 +25,19 @@ for all transient windows.)
 ## Contents
 
 
-- [Memory Search Window](#memory-search-window)
-- [Search Controls](#search-controls)
-- [Scan Controls](#scan-controls)
-- [Results Table](#results-table)
-- [Options](#options)
-- [Search Formats](#search-formats)
-- [Actions](#actions)
-- [Combining Searches](#combining-searches)
-- [Repeating Last Search Forwards/Backwards](#repeating-searches)
-- [Highlight Search Options](#highlight-options)
+- [Memory Search Window](#contents)
+  - [Search Controls](#memory-search-window)
+  - [Scan Controls](#selection-only-checkbox)
+  - [Results Table](#scan-option-radio-buttons)
+  - [Options](#results-table)
+- [Search Formats](#memory-regions)
+- [Actions](#search-formats)
+- [Combining Searches](#delete-selected-table-rows)
+- [Repeating Last Search Forwards/Backwards](#b-a)
+- [Highlight Search Options](#search-memory-backwards)
+
+
+<a name="memory-search-window"></a>
 
 
 ## Memory Search Window
@@ -51,6 +57,9 @@ incremented, or were decremented.
 
 
 *Memory Search Window*
+
+
+<a name="search-controls"></a>
 
 
 ### Search Controls
@@ -95,7 +104,7 @@ Pressing the search button will initiate a search. When the results table is emp
 the only choice is to do an initial search. If there are current results showing in the
 table, a drop-down will appear at the back of the button, allowing the user to combine
 new search results with the existing results using set operations. See the
-[*Combining Searches*](#combining-searches) section
+[*Combining Searches*](#delete-selected-table-rows) section
 below for more details.
 
 
@@ -114,6 +123,9 @@ If there is a current selection, then this checkbox will be enabled and provide 
 user with the option to restrict the search to only the selected addresses. Note that
 there is an action that controls whether this option will be selected automatically if
 a selection exists.
+
+
+<a name="scan-controls"></a>
 
 
 ### Scan Controls
@@ -168,6 +180,9 @@ update the bytes for each search result and show them in red without reducing th
 of results.
 
 
+<a name="results-table"></a>
+
+
 ### Results Table
 
 
@@ -187,6 +202,8 @@ determined by the *Search Format*. Note that not all formats have a meaningful
 value, in which case the column value will be empty.
 - **Label:** Displays any labels that are present at the match address.
 - **Code Unit:** Displays the instruction or data that the match address.
+
+<a name="options"></a>
 
 
 ### Options
@@ -270,6 +287,9 @@ part of a loaded executable binary. On by default.
 file header data. Off by default.
 
 
+<a name="search-formats"></a>
+
+
 ## Search Formats
 
 
@@ -282,10 +302,16 @@ See the page on [Search Formats](Search_Formats.md) for full details on each
 format.
 
 
+<a name="actions"></a>
+
+
 ## Actions
 
 
-### Incremental Search Forward
+<a name="search-next"></a>
+
+
+### Incremental Search Forward ![Down](../icons/down.png)
 
 
 This action searches forward in memory, starting at the address just after the current
@@ -294,7 +320,10 @@ search space is reached. It does not "wrap". If a match is found, it is added to
 current table of results.
 
 
-### Incremental Search Backwards
+<a name="search-previous"></a>
+
+
+### Incremental Search Backwards ![Up](../icons/up.png)
 
 
 This action searches backwards in memory, starting at the address just before the
@@ -303,7 +332,10 @@ the search space is reached. It does not "wrap". If a match is found, it is adde
 the current table of results.
 
 
-### Refresh
+<a name="refresh-values"></a>
+
+
+### Refresh ![Refresh](../icons/reload3.png)
 
 
 This action will read the bytes again from memory for every match in the results
@@ -311,32 +343,41 @@ table, looking to see if any of the bytes have changed. If so, the *Match Bytes*
 *Match Value* columns will display the changed values in red.
 
 
-### Toggle Search Controls
+<a name="toggle-search"></a>
 
 
-This action toggles the [search controls](#search-controls) on or off.
+### Toggle Search Controls ![Search](../icons/view_top_bottom.png)
 
 
-### Toggle Scan Controls
+This action toggles the [search controls](#memory-search-window) on or off.
 
 
-This action toggles the [scan controls](#scan-controls) on or off.
+<a name="toggle-scan"></a>
 
 
-### Toggle Options Panel
+### Toggle Scan Controls ![Scan](../icons/view_bottom.png)
 
 
-This action toggles the [options display](#options) on or off.
+This action toggles the [scan controls](#selection-only-checkbox) on or off.
 
 
-### Make Selection
+<a name="toggle-options"></a>
+
+
+### Toggle Options Panel ![Options](../icons/view_left_right.png)
+
+
+This action toggles the [options display](#results-table) on or off.
+
+
+### Make Selection ![Selection](../icons/stack.png)
 
 
 This action will create a selection in the associated view from all the currently
 selected match table rows.
 
 
-### Toggle Single Click Navigation
+### Toggle Single Click Navigation ![In](../icons/locationIn.gif)
 
 
 This action toggles on or off whether a single row selection change triggers
@@ -344,10 +385,13 @@ navigation in the associated view. If this option is off, the user must double-c
 row to navigate in the associated view.
 
 
-### Delete Selected Table Rows
+### Delete Selected Table Rows ![Row](../icons/table_delete.png)
 
 
 This action deletes all selected rows in the results match table.
+
+
+<a name="combining-searches"></a>
 
 
 ## Combining Searches
@@ -421,12 +465,18 @@ values of 3. The sets are mutually exclusive, so the intersection would be empty
 Explaining how to take advantage of these options is beyond the scope of this document.
 
 
+<a name="repeating-searches"></a>
+
+
 ## Search Forward/Backwards Using Global Actions
 
 
-Once at least one search has been executed using the [*Memory Search Window*](#memory-search-window), the search can be repeated in an
+Once at least one search has been executed using the [*Memory Search Window*](#contents), the search can be repeated in an
 incremental fashion outside a search window using global actions in the main tool menu or
 their assigned default keybindings.
+
+
+<a name="repeat-search-forwards"></a>
 
 
 ### Search Memory Forwards:
@@ -439,6 +489,9 @@ location. To execute this action, select **Search**  → **Search Memory Forward
 **F3** (the default keybinding.)
 
 
+<a name="repeat-search-backwards"></a>
+
+
 ### Search Memory Backwards:
 
 
@@ -447,6 +500,9 @@ searching backwards in memory starting at the cursor location in the associated 
 display. If a match is found, the cursor in the Listing will be placed on the found match
 location. To execute this action, select **Search**  → **Search Memory Backwards** from the main tool menu or press
 **`<Shift>`F3** (the default keybinding.)
+
+
+<a name="highlight-options"></a>
 
 
 ## Highlight Search Options

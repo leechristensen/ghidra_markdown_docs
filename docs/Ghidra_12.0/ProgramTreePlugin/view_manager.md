@@ -16,7 +16,7 @@ views.
 The following paragraphs describe features of the Program Tree Manager.
 
 
-### Create a Default Program Tree
+### Create a Default Program Tree ![layout_add.png](../icons/layout_add.png)
 
 
 A default tree has a fragment for each memory block in the program; the fragments are
@@ -39,7 +39,7 @@ Tree(1)."
 *Provided by: *ProgramTreePlugin**
 
 
-### Open Program Tree
+### Open Program Tree ![openFolder.png](../icons/openFolder.png)
 
 
 You can see a list of existing Program Trees in the Program by selecting the ![preferences-system-windows.png](../icons/preferences-system-windows.png) icon. Select
@@ -51,7 +51,7 @@ pane.
 *Provided by: *ProgramTreePlugin**
 
 
-### Select Fragments Corresponding to a Program Location
+### Select Fragments Corresponding to a Program Location ![locationIn.gif](../icons/locationIn.gif)
 
 
 The icon  ![locationIn.gif](../icons/locationIn.gif)

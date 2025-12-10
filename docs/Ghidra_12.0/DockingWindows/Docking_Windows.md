@@ -39,7 +39,7 @@ apply only to this component. Hovering the mouse over an icon causes a tool tip 
 displayed. The tool tip give a hint as to what the action will do if you select the icon.
 
 
-### Menu Icon
+### Menu Icon ![menu16.gif](../icons/menu16.gif)
 
 
 The menu icon will appear if the dockable component has a local menu.  As with the
@@ -47,7 +47,7 @@ local toolbar, the local menu item applies only to this component. Mouse click o
 show the menu.
 
 
-### Close Icon
+### Close Icon ![](../shared/close16.gif)
 
 
 Select ![](../shared/close16.gif) to hide the dockable component.

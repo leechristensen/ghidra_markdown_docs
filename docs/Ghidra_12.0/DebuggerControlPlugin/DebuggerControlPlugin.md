@@ -62,7 +62,7 @@ only when the current trace has an associated live target. Commands are directed
 object or a suitable substitute.
 
 
-### Resume
+### Resume ![Resume](../icons/resume.png)
 
 
 Allow the current target to resume execution. Other debuggers may call this "continue" or
@@ -70,7 +70,7 @@ Allow the current target to resume execution. Other debuggers may call this "con
 terminated. This is available when the target is currently stopped.
 
 
-### Interrupt
+### Interrupt ![Interrupt](../icons/interrupt.png)
 
 
 Interrupt the current target's execution. Other debuggers may call this "break," "suspend,"
@@ -78,7 +78,7 @@ or "stop." If successful, the target enters the "stopped" state. This is availab
 target is currently running.
 
 
-### Kill
+### Kill ![Kill](../icons/kill.png)
 
 
 Kill the current target. Other debuggers may call this "terminate" or "stop." This may
@@ -86,7 +86,7 @@ consequently close the current trace. If successful, the target enters the "term
 This is always available for a live target.
 
 
-### Disconnect
+### Disconnect ![Disconnect](../icons/disconnect.png)
 
 
 Disconnect from the current target's debugger. This usually causes the connected debugger to
@@ -94,14 +94,14 @@ terminate and likely kill its targets. This may consequently close the current t
 perhaps others). This is always available for a live target.
 
 
-### Step Into
+### Step Into ![Into](../icons/stepinto.png)
 
 
 Step the current target to the next instruction. This is available when the target is
 currently stopped. If successful the target may briefly enter the "running" state.
 
 
-### Step Over
+### Step Over ![Over](../icons/stepover.png)
 
 
 Step the current target to the next instruction in the current subroutine. This is available
@@ -109,7 +109,7 @@ when the target is currently stopped. If successful the target may briefly enter
 state.
 
 
-### Step Out
+### Step Out ![Finish](../icons/stepout.png)
 
 
 Allow the current target to finish the current subroutine, pausing after. This is available
@@ -117,7 +117,7 @@ when the target is currently stopped. If successful the target may briefly enter
 state.
 
 
-### Step Extended (Repeat Last)
+### Step Extended (Repeat Last) ![Last](../icons/steplast.png)
 
 
 Perform a target-defined step, perhaps the last (possibly custom) step. This is available
@@ -132,7 +132,7 @@ These actions are visible when a **Control Trace** mode is selected. They are av
 when there is an active trace.
 
 
-### Snapshot Backward
+### Snapshot Backward ![Backward](../icons/2leftarrow.png)
 
 
 This activates the previous snapshot. All windows displaying machine state will show that
@@ -140,7 +140,7 @@ recorded in the activated snapshot. This is available only when there exists a s
 previous to the current.
 
 
-### Snapshot Forward
+### Snapshot Forward ![Forward](../icons/2rightarrow.png)
 
 
 This activates the next snapshot. All windows displaying machine state will show that
@@ -156,7 +156,7 @@ available when there is an active trace. Commands are directed to the integrated
 the current trace.
 
 
-### Resume
+### Resume ![Resume](../icons/resume.png)
 
 
 Allow the emulator to resume execution. This is available when no other integrated emulator
@@ -168,7 +168,7 @@ system calls are not yet supported. It could also start executing from unmapped 
 an infinite loop. If it seems to carry on too long, interrupt it and examine.
 
 
-### Interrupt
+### Interrupt ![Interrupt](../icons/interrupt.png)
 
 
 Interrupt the currently-running emulator. This is available when any integrated emulator is
@@ -177,7 +177,7 @@ Canceling the dialog for an emulation task will also interrupt the emulator. Upo
 the emulation schedule is noted and the snapshot displayed in the GUI.
 
 
-### Step Back
+### Step Back ![Back](../icons/stepback.png)
 
 
 Steps the emulator to the previous instruction, by flow. This is available when the current
@@ -187,7 +187,7 @@ not common, if emulation to the current snapshot took a good bit of time, then s
 backward will likely take about the same amount of time.
 
 
-### Step Into
+### Step Into ![Into](../icons/stepinto.png)
 
 
 Steps the emulator to the next instruction, by flow. This is available when there is an
@@ -197,7 +197,7 @@ current snapshot and advance it a single step. Note that "Step Over" is not curr
 by the emulator.
 
 
-### Skip Over
+### Skip Over ![Over](../icons/skipover.png)
 
 
 Skips the emulator over the current instruction, ignoring flow. This is available when there

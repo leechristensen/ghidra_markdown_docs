@@ -64,13 +64,13 @@ be automatically labeled.
 
 
 - **Defined** - shows an icon that indicates the status of the string.
-- ![font.png](../icons/font.png) - indicates a string that has already
+  - ![font.png](../icons/font.png) - indicates a string that has already
 been defined.
-- ![magnifier.png](../icons/magnifier.png) - indicates a string that is not
+  - ![magnifier.png](../icons/magnifier.png) - indicates a string that is not
 defined.
-- ![dialog-warning.png](../icons/dialog-warning.png) - indicates a string that
+  - ![dialog-warning.png](../icons/dialog-warning.png) - indicates a string that
 has been partially defined at some offset.
-- ![dialog-warning_red.png](../icons/dialog-warning_red.png) - indicates a string
+  - ![dialog-warning_red.png](../icons/dialog-warning_red.png) - indicates a string
 that conflicts with an instruction or some other data already defined at that
 address.
 - **Location** - The address of the found string.
@@ -143,7 +143,7 @@ hidden/shown using the / toggle button at the end of the text filter.
 ## Actions
 
 
-### Refresh
+### Refresh ![Refresh](../icons/reload3.png)
 
 
 This action will cause the table to reload. The table attempts to keep the table up to
@@ -153,14 +153,14 @@ string. A refresh will force the table to completely reload, resulting in accura
 results.
 
 
-### Make Selection
+### Make Selection ![Make Selection](../icons/stack.png)
 
 
 *See [Make
 Selection](Query_Results_Dialog.md#make-selection)*.
 
 
-### Selection Navigation
+### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
 
 
 *See [Selection

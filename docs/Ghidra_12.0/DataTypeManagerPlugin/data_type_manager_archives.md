@@ -310,8 +310,8 @@ either the up or down arrows to move the path up or down in the list respectivel
 
 
 - [Data Type Manager](data_type_manager_description.md)
-- [Data Types](../DataPlugin/Data.md#datatypes)
-- [Apply Data Types](../DataPlugin/Data.md#applydatatype)
+- [Data Types](../DataPlugin/Data.md#data-types)
+- [Apply Data Types](../DataPlugin/Data.md#applying-data-type)
 - [Edit Structure](../DataTypeEditors/StructureEditor.md)
 
 

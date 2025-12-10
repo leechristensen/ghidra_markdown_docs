@@ -5,7 +5,7 @@
 
 
 You can configure your [Project Window](Ghidra_Front_end.md)  just as you
-would another tool, however, only a subset of the Ghidra [Plugins](../Tool/Ghidra_Tool_Administration.md#plugins) will be included in the
+would another tool, however, only a subset of the Ghidra [Plugins](../Tool/Ghidra_Tool_Administration.md#ghidra-tool-administration) will be included in the
 list of available Plugins, as these Plugins are the only ones that may be added to the
 Project Window. These Plugins are "marked" as providing general capabilities that may be
 required at a high level, such as [importing
@@ -75,7 +75,7 @@ Bindings](../Tool/ToolOptions_Dialog.md#key-bindings)
 
 The Ghidra Server can be set up to perform user authentication using PKI
 certificates.  When the Ghidra Server is in this authentication mode, you must set
-your PKI Certificate before you attempt to open a [project repository](../VersionControl/project_repository.md) or create a new [shared project](../VersionControl/project_repository.md#sharedproject)
+your PKI Certificate before you attempt to open a [project repository](../VersionControl/project_repository.md) or create a new [shared project](../VersionControl/project_repository.md#project-repository)
 associated with this server.
 
 
@@ -120,7 +120,7 @@ to the read-only file.
 | --- |
 
 
-If you have made any changes to Programs, then a dialog is
+<a name="savedatadialog"></a>If you have made any changes to Programs, then a dialog is
 displayed to prompt you to save changes. After the programs, all other files that have been
 changed and not saved are listed.
 
@@ -150,5 +150,5 @@ the new configuration will be saved automatically.
 - [Archive Project](Archive_Project.md)
 - [Restore Project](Restore_Project.md)
 - [Tool Options Dialog](../Tool/ToolOptions_Dialog.md)
-- [Plugins](../Tool/Ghidra_Tool_Administration.md#plugins)
+- [Plugins](../Tool/Ghidra_Tool_Administration.md#ghidra-tool-administration)
 - [Configure Ghidra Tool](../Tool/Configure_Tool.md)

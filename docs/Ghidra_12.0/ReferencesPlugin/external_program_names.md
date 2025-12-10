@@ -4,7 +4,7 @@
 An external reference is a reference to a location in another program. The reference
 destination includes the name of some program. To use an external reference to navigate, the
 external program name must be associated with an existing program file in the Ghidra project.
-If the association has been defined, then the external reference is said
+<a name="resolve"></a>If the association has been defined, then the external reference is said
 to have been ***resolved***. The *External Programs* view manages the associations
 between external program names and program files. The table shows all external program names
 and their associated links to program files. Use the *External Programs* view to add
@@ -121,7 +121,7 @@ menu.
 menu.
 2. Click on the external program name to be removed.
 3. Press the Delete ![edit-delete.png](../icons/edit-delete.png)  button.
-- If external references still exist, a dialog is displayed indicating that the
+  - If external references still exist, a dialog is displayed indicating that the
 external program name cannot be deleted.  All external references to that external program name must be deleted before it can
 be deleted.
 
@@ -133,4 +133,4 @@ be deleted.
 
 
 - [Set External Reference](References_from.md#external-references)
-- [External Symbols](../SymbolTreePlugin/SymbolTree.md#externals)
+- [External Symbols](../SymbolTreePlugin/SymbolTree.md#display)

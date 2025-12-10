@@ -51,27 +51,27 @@ enclosed objects are selected in the table.
 ## Navigation
 
 
-### Zoom
+### Zoom ![In](../icons/zoom_in.png)
 
 
 The four zoom buttons either contract or expand the view along the time or address axes.
 
 
-### Toggle Layout
+### Toggle Layout ![Refresh](../icons/view-refresh.png)
 
 
 The default panel view is time vs. address. The toggle button serves as both the way to
 switch views and to refresh the display.
 
 
-### Toggle Process Trace
+### Toggle Process Trace ![Sync](../icons/sync_enabled.png)
 
 
 By default, as new objects are added to a debugger trace, they appear in the table and
 panel. The behavior can be toggled on or off at the user's discretion.
 
 
-### Toggle Apply Filter
+### Toggle Apply Filter ![Filter](../icons/filter_off.png)
 
 
 This button determines whether the table filter affects the plot panel. When toggled on,
