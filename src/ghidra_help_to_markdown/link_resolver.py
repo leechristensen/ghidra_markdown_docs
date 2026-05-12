@@ -300,10 +300,13 @@ class LinkResolver:
 
         # Handle help/shared/ images
         if src.startswith("help/shared/"):
-            # Convert to relative path from current location
-            # These will be copied to a shared/ folder in output
+            # Convert to relative path from current location.
+            # These will be copied to a shared/ folder in output root.
+            # Compute correct ../ count based on current file's depth so paths work
+            # for both top-level files (Module/File.md → ../shared/) and deeper ones
+            # (Module/subdir/File.md → ../../shared/), e.g. VersionTrackingPlugin/providers/*.
             filename = Path(src).name
-            return f"../shared/{filename}"
+            return self._make_relative(f"shared/{filename}", current_md_path)
 
         # Handle help/topics/*/images/ paths
         if src.startswith("help/topics/"):

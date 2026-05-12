@@ -294,6 +294,8 @@ class HTMLToMarkdownConverter:
             return self._convert_list(element)
         elif tag_name == "li":
             return self._convert_list_item(element)
+        elif tag_name == "dl":
+            return self._convert_definition_list(element)
         elif tag_name == "table":
             return self._convert_table(element)
         elif tag_name in ("pre", "code"):
@@ -314,6 +316,11 @@ class HTMLToMarkdownConverter:
             return ""  # Skip these
         elif tag_name == "tt":
             return self._convert_inline_code(element)
+        elif tag_name == "u":
+            # Markdown has no native underline; pass through as HTML.
+            # GFM renders inline <u> correctly. ~80 uses in corpus for emphasis.
+            content = self._convert_children(element).strip()
+            return f"<u>{content}</u>" if content else ""
         elif tag_name == "center":
             # Just process children, markdown doesn't have center
             return self._convert_children(element)
@@ -448,7 +455,12 @@ class HTMLToMarkdownConverter:
             # Image link or empty
             img = element.find("img")
             if img:
-                return self._convert_image(img)
+                img_md = self._convert_image(img)
+                if href and img_md.startswith("!["):
+                    # Clickable image: wrap markdown image in a link
+                    href = href.replace("/#", "#")
+                    return f"[{img_md}]({href})"
+                return img_md
             return ""
 
         if not href:
@@ -631,7 +643,7 @@ class HTMLToMarkdownConverter:
         if src.startswith("Icons.") or src.startswith("icon."):
             # Try to resolve to actual icon file
             if self.icon_resolver:
-                resolved_path = self.icon_resolver.resolve(src)
+                resolved_path = self.icon_resolver.resolve(src, self.source_path)
                 if resolved_path:
                     # Copy icon to output directory and return markdown reference
                     icon_ref = self._copy_icon_to_output(resolved_path)
@@ -785,6 +797,66 @@ class HTMLToMarkdownConverter:
     def _convert_list_item(self, element: Tag) -> str:
         """Convert a list item (handled by _convert_list)."""
         return self._convert_children(element)
+
+    def _convert_definition_list(self, element: Tag) -> str:
+        """Convert a <dl> definition list to pandoc-style markdown.
+
+        Pandoc syntax:
+            term
+            :   definition text
+
+            continuation paragraph of the same definition
+
+            next term
+            :   next definition
+
+        Multiple <dt> in a row before a <dd> produce multiple terms for the same definition.
+        Definition continuation paragraphs are indented 4 spaces; the first line uses ":   ".
+        """
+        pairs: list[tuple[list[str], list[str]]] = []  # [(terms, definitions)]
+        current_terms: list[str] = []
+
+        for child in element.children:
+            if not isinstance(child, Tag):
+                continue
+            name = child.name.lower()
+            if name == "dt":
+                term = self._get_text_content(child).strip()
+                term = " ".join(term.split())  # collapse whitespace
+                if term:
+                    current_terms.append(term)
+            elif name == "dd":
+                if not current_terms:
+                    # <dd> with no preceding <dt>; skip orphan
+                    continue
+                definition = self._convert_children(child).strip()
+                pairs.append((current_terms, [definition]))
+                current_terms = []
+
+        if not pairs:
+            return ""
+
+        out_lines: list[str] = [""]
+        for terms, definitions in pairs:
+            for term in terms:
+                out_lines.append(term)
+            for definition in definitions:
+                if not definition:
+                    out_lines.append(":")
+                    continue
+                lines = definition.split("\n")
+                first = True
+                for line in lines:
+                    if first and line.strip():
+                        out_lines.append(f":   {line}")
+                        first = False
+                    elif line.strip():
+                        out_lines.append(f"    {line}")
+                    else:
+                        out_lines.append("")
+            out_lines.append("")  # blank line between pairs
+        out_lines.append("")
+        return "\n".join(out_lines)
 
     def _get_direct_table_rows(self, table: Tag) -> list:
         """Get only the direct rows of a table, not rows from nested tables.
@@ -966,7 +1038,14 @@ class HTMLToMarkdownConverter:
                         slug_name = slugify(name)
                         if slug_name:
                             self.anchors.append(slug_name)
+                            if self.current_heading_slug and slug_name != self.current_heading_slug:
+                                self.anchor_to_heading_slug[slug_name] = self.current_heading_slug
                             result.append(f'<a name="{slug_name}"></a>')
+                        # Emit the anchor's children too — text inside <a name="x">Text</a>
+                        # is real content and must not be dropped (12 instances in corpus).
+                        inner_text = child.get_text(strip=True)
+                        if inner_text:
+                            result.append(escape_angle_brackets(inner_text))
                         continue
                     # Check for image inside link
                     img = child.find("img")

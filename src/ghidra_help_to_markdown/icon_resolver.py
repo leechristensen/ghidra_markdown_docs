@@ -1,249 +1,199 @@
-"""
-Icon resolver for Ghidra help documentation.
+"""Icon resolver backed by Ghidra's own help utilities.
 
-Resolves programmatic icon references (like Icons.ADD_ICON or icon.bsim.connected)
-to actual image file paths by parsing:
-1. Icons.java - Maps field names (ADD_ICON) to icon IDs (icon.add)
-2. *.theme.properties - Maps icon IDs to filenames (Plus2.png)
-3. */src/main/resources/images/ - Actual icon files
+Replaces the old heuristic resolver (which parsed ``Icons.java`` and
+``*.theme.properties`` from the source tree). All resolution now goes
+through ``help.HelpBuildUtils.locateImageReference`` which is the same
+function Ghidra's build uses. For runtime icons that resolve to a URL
+inside a jar (e.g. ``jar:file:.../Gui.jar!/images/Plus2.png``) the bytes
+are extracted into a per-session cache directory so the rest of the
+pipeline can treat them as ordinary files.
+
+If pyghidra isn't started yet, callers should call
+``ghidra_session.start(install_dir)`` first. The resolver itself is just
+a thin Python facade over the Java APIs.
 """
 
-import re
+from __future__ import annotations
+
+import logging
+import shutil
+import tempfile
 from pathlib import Path
 from typing import Optional
 
+from . import ghidra_session
+
+_log = logging.getLogger(__name__)
+
 
 class IconResolver:
-    """Resolve Ghidra icon references to actual image files."""
+    """Resolve Ghidra icon/image references to real files on disk."""
 
-    # Fallback mappings for composite icons that can't be resolved directly
-    # These icons are defined as EMPTY_ICON{...} with transformations
-    COMPOSITE_ICON_FALLBACKS = {
-        "icon.undo": "edit-undo.png",
-        "icon.redo": "edit-redo.png",
-    }
-
-    def __init__(self, ghidra_root: Path) -> None:
-        """
-        Initialize the icon resolver.
+    def __init__(self, ghidra_root: Path, install_dir: Optional[Path] = None) -> None:
+        """Initialize the resolver.
 
         Args:
-            ghidra_root: Path to the Ghidra repository root
+            ghidra_root: Path to the Ghidra source tree being converted.
+                Retained for compatibility with the previous resolver's
+                signature; not used directly by the JVM-backed paths.
+            install_dir: Path to an installed Ghidra (the same install
+                already passed to ``ghidra_session.start``). Required so
+                we can look up icons even if start() hasn't been called yet.
         """
         self.ghidra_root = ghidra_root
-        self.icons_field_to_id: dict[str, str] = {}  # ADD_ICON → icon.add
-        self.id_to_filename: dict[str, str] = {}  # icon.add → Plus2.png
-        self.filename_to_path: dict[str, list[Path]] = {}  # Plus2.png → [full paths]
-        self._load_mappings()
+        self.install_dir = install_dir
 
-    def _load_mappings(self) -> None:
-        """Load all icon mappings from the Ghidra codebase."""
-        self._parse_icons_java()
-        self._parse_theme_properties()
-        self._find_icon_files()
+        if not ghidra_session.is_started():
+            if install_dir is None:
+                raise RuntimeError(
+                    "IconResolver requires either an already-started pyghidra "
+                    "session or install_dir= to start one"
+                )
+            ghidra_session.start(install_dir)
 
-    def _parse_icons_java(self) -> None:
-        """Parse Icons.java to extract field name → icon.id mappings."""
-        icons_java = self.ghidra_root / "Ghidra/Framework/Gui/src/main/java/resources/Icons.java"
-        if not icons_java.exists():
-            return
+        self._help_build_utils = ghidra_session.jclass("help.HelpBuildUtils")
+        self._jpaths = ghidra_session.jclass("java.nio.file.Paths")
 
-        content = icons_java.read_text(encoding="utf-8")
-
-        # Match: public static final Icon ADD_ICON = new GIcon("icon.add");
-        pattern = re.compile(r'public\s+static\s+final\s+Icon\s+(\w+)\s*=\s*new\s+GIcon\s*\(\s*"([^"]+)"\s*\)')
-
-        for match in pattern.finditer(content):
-            field_name = match.group(1)  # ADD_ICON
-            icon_id = match.group(2)  # icon.add
-            self.icons_field_to_id[field_name] = icon_id
-
-    def _parse_theme_properties(self) -> None:
-        """Parse all theme.properties files to extract icon.id → filename mappings."""
-        # Find all theme properties files
-        for props_file in self.ghidra_root.glob("Ghidra/**/data/*.theme.properties"):
-            self._parse_properties_file(props_file)
-
-    def _parse_properties_file(self, props_file: Path) -> None:
-        """Parse a single theme.properties file."""
-        try:
-            content = props_file.read_text(encoding="utf-8")
-        except Exception:
-            return
-
-        # Skip section headers and comments, parse icon.* = value lines
-        for line in content.split("\n"):
-            line = line.strip()
-
-            # Skip comments and section headers
-            if not line or line.startswith("//") or line.startswith("["):
-                continue
-
-            # Parse: icon.add = Plus2.png
-            if line.startswith("icon.") and "=" in line:
-                parts = line.split("=", 1)
-                if len(parts) == 2:
-                    icon_id = parts[0].strip()
-                    value = parts[1].strip()
-
-                    # Handle transformations like: icon.arrow.down.right = viewmagfit.png[rotate(90)]
-                    # Extract just the filename
-                    if "[" in value:
-                        value = value.split("[")[0].strip()
-
-                    # Handle icon aliases like: icon.base.delete = icon.delete
-                    # We'll resolve these later
-                    self.id_to_filename[icon_id] = value
-
-        # Resolve icon aliases (icon.base.delete = icon.delete)
-        self._resolve_icon_aliases()
-
-    def _resolve_icon_aliases(self) -> None:
-        """Resolve icon aliases that point to other icons."""
-        max_iterations = 10  # Prevent infinite loops
-        for _ in range(max_iterations):
-            changed = False
-            for icon_id, value in list(self.id_to_filename.items()):
-                # If value is another icon reference, resolve it
-                if value.startswith("icon."):
-                    if value in self.id_to_filename:
-                        resolved = self.id_to_filename[value]
-                        if not resolved.startswith("icon."):
-                            self.id_to_filename[icon_id] = resolved
-                            changed = True
-            if not changed:
-                break
-
-    def _find_icon_files(self) -> None:
-        """Build an index of filename → actual file paths (list for duplicates)."""
-        # Search all resources/images directories
-        for img_dir in self.ghidra_root.glob("Ghidra/**/src/main/resources/images"):
-            for img_file in img_dir.glob("**/*"):
-                if img_file.is_file():
-                    # Store all paths per filename to handle duplicates
-                    if img_file.name not in self.filename_to_path:
-                        self.filename_to_path[img_file.name] = []
-                    self.filename_to_path[img_file.name].append(img_file)
-
-    def resolve(self, src: str) -> Optional[Path]:
-        """
-        Resolve an icon reference to an actual file path.
-
-        Args:
-            src: Icon reference like "Icons.ADD_ICON" or "icon.bsim.connected"
-
-        Returns:
-            Path to the actual icon file, or None if not found
-        """
-        icon_id = None
-
-        # Handle Icons.FIELD_NAME format
-        if src.startswith("Icons."):
-            field_name = src[6:]  # Remove "Icons." prefix
-            icon_id = self.icons_field_to_id.get(field_name)
-        # Handle icon.id format directly
-        elif src.startswith("icon."):
-            icon_id = src
-
-        if not icon_id:
-            return None
-
-        # Look up the filename for this icon ID
-        filename = self.id_to_filename.get(icon_id)
-        if not filename:
-            return None
-
-        # Check for composite icon fallbacks before skipping EMPTY_ICON definitions
-        if icon_id in self.COMPOSITE_ICON_FALLBACKS:
-            fallback_filename = self.COMPOSITE_ICON_FALLBACKS[icon_id]
-            paths = self.filename_to_path.get(fallback_filename)
-            if paths:
-                return paths[0]
-
-        # Handle complex icon definitions (EMPTY_ICON {...} {...})
-        # Just skip these for now
-        if filename.startswith("EMPTY_ICON") or "{" in filename:
-            return None
-
-        # Look up the actual file path (return first match)
-        paths = self.filename_to_path.get(filename)
-        return paths[0] if paths else None
-
-    def resolve_by_filename(self, filename: str, source_path: Optional[Path] = None) -> Optional[Path]:
-        """
-        Resolve an icon by filename, preferring icons from the same module.
-
-        Args:
-            filename: Icon filename (e.g., "editbytes.gif")
-            source_path: Optional source help file path for module-aware resolution
-
-        Returns:
-            Path to the icon file, or None if not found
-        """
-        paths = self.filename_to_path.get(filename)
-        if not paths:
-            return None
-
-        if len(paths) == 1:
-            return paths[0]
-
-        # Multiple paths - try to match module from source path
-        if source_path:
-            # Extract module path: Ghidra/Features/{Module}/src/main/help/...
-            # Looking for:         Ghidra/Features/{Module}/src/main/resources/images/
-            source_str = str(source_path).replace("\\", "/")
-            if "/src/main/help/" in source_str:
-                module_prefix = source_str.split("/src/main/help/")[0]
-                for path in paths:
-                    path_str = str(path).replace("\\", "/")
-                    if module_prefix in path_str:
-                        return path
-
-        # Fall back to first available
-        return paths[0]
+        # Per-session cache for icons extracted from jars. Lives until the
+        # process exits; callers don't need to clean it up.
+        self._cache_dir = Path(tempfile.mkdtemp(prefix="ghidra-icons-"))
+        self._cache: dict[str, Optional[Path]] = {}
 
     def get_stats(self) -> dict:
-        """Get statistics about loaded icon mappings."""
+        """Compatibility shim — the JVM resolver doesn't maintain table sizes."""
         return {
-            "icons_field_to_id": len(self.icons_field_to_id),
-            "id_to_filename": len(self.id_to_filename),
-            "filename_to_path": len(self.filename_to_path),
+            "icons_field_to_id": 0,
+            "id_to_filename": 0,
+            "filename_to_path": 0,
         }
 
+    def resolve(self, src: str, source_path: Optional[Path] = None) -> Optional[Path]:
+        """Resolve an icon reference to an on-disk Path.
 
-if __name__ == "__main__":
-    # Test the icon resolver
-    import sys
+        Handles three input forms in one call (whatever ``locateImageReference``
+        accepts): programmatic refs like ``Icons.ADD_ICON`` / ``icon.add``,
+        relative refs like ``images/foo.png``, and absolute URLs.
 
-    if len(sys.argv) < 2:
-        print("Usage: python -m ghidra_help_to_markdown.icon_resolver <ghidra_root>")
-        sys.exit(1)
+        Args:
+            src: The HTML ``src`` value (icon ref, relative path, or URL).
+            source_path: Path to the source HTML file that contains the
+                reference. Required for relative-path resolution; for
+                programmatic refs, any plausible help file path works.
 
-    ghidra_root = Path(sys.argv[1])
-    resolver = IconResolver(ghidra_root)
+        Returns:
+            Filesystem ``Path`` to the resolved icon, or ``None`` if the
+            reference is invalid, remote, or a synthesized icon with no
+            extractable image.
+        """
+        cache_key = f"{source_path}|{src}"
+        if cache_key in self._cache:
+            return self._cache[cache_key]
 
-    print("Icon Resolver Statistics:")
-    stats = resolver.get_stats()
-    for key, value in stats.items():
-        print(f"  {key}: {value}")
+        # Need *some* source path for HelpBuildUtils to anchor relative refs.
+        # For pure programmatic refs the value isn't actually consulted.
+        if source_path is None:
+            source_path = self.ghidra_root / "Ghidra/Features/Base/src/main/help/help/topics/About/About_Ghidra.html"
 
-    # Test some common icons
-    test_icons = [
-        "Icons.ADD_ICON",
-        "Icons.DELETE_ICON",
-        "Icons.CONFIGURE_FILTER_ICON",
-        "Icons.INFO_ICON",
-        "icon.bsim.connected",
-        "icon.bsim.disconnected",
-        "icon.bsim.query.dialog.provider",
-        "icon.undo",
-        "icon.redo",
-    ]
+        resolved = self._resolve_via_jvm(src, source_path)
+        self._cache[cache_key] = resolved
+        return resolved
 
-    print("\nTest resolutions:")
-    for icon in test_icons:
-        resolved = resolver.resolve(icon)
-        if resolved:
-            print(f"  {icon} -> {resolved.name}")
-        else:
-            print(f"  {icon} -> NOT FOUND")
+    def resolve_by_filename(self, filename: str, source_path: Optional[Path] = None) -> Optional[Path]:
+        """Compatibility wrapper for callers that have only a bare filename.
+
+        Reconstructs the original HTML ``src`` form (``images/<filename>``) and
+        delegates to :meth:`resolve`.
+        """
+        if not filename:
+            return None
+        return self.resolve(f"images/{filename}", source_path)
+
+    def _resolve_via_jvm(self, src: str, source_path: Path) -> Optional[Path]:
+        try:
+            jsrc = self._jpaths.get(str(source_path))
+            location = self._help_build_utils.locateImageReference(jsrc, src)
+        except Exception as exc:  # noqa: BLE001
+            _log.debug("locateImageReference threw on %r: %s", src, exc)
+            return None
+
+        if location is None:
+            return None
+        try:
+            if bool(location.isInvalidRuntimeImage()):
+                return None
+            if bool(location.isRemote()):
+                return None
+        except Exception:  # noqa: BLE001
+            pass
+
+        # Filesystem-resolved path takes priority — `images/foo.png` and
+        # `help/shared/note.png` come back this way.
+        resolved_path = location.getResolvedPath()
+        if resolved_path is not None:
+            fs_path = Path(str(resolved_path))
+            if fs_path.exists():
+                return fs_path
+
+        # Runtime icons resolve to a jar: URI. Extract once into the cache.
+        uri = location.getResolvedUri()
+        if uri is not None:
+            uri_str = str(uri)
+            if uri_str.startswith("jar:") or uri_str.startswith("file:"):
+                extracted = self._extract_uri(uri_str, src)
+                if extracted is not None:
+                    return extracted
+
+        # Fallback: classpath lookup. Ghidra's runtime resolves jar-root
+        # resources like "images/icon_link.gif" via ResourceManager when the
+        # filesystem-relative resolve(sourceFile, ref) fails. Mirror that here
+        # so HTML refs to shared (non-topic-local) images survive conversion.
+        # Programmatic refs (Icons.X / icon.X) are already handled above, skip
+        # them here so we don't double-process.
+        if not src.startswith(("Icons.", "icon.")):
+            try:
+                resource_manager = ghidra_session.jclass("resources.ResourceManager")
+                cp_url = resource_manager.getResource(src)
+                if cp_url is not None:
+                    return self._extract_uri(str(cp_url), src)
+            except Exception as exc:  # noqa: BLE001
+                _log.debug("ResourceManager.getResource failed on %r: %s", src, exc)
+
+        return None
+
+    def _extract_uri(self, uri_str: str, src: str) -> Optional[Path]:
+        """Copy the content at ``uri_str`` into the per-session cache."""
+        # Derive a stable filename from the URI's tail to avoid collisions
+        # between icons that share the same logical name across jars.
+        name = uri_str.rsplit("/", 1)[-1].rsplit("!", 1)[-1].lstrip("/")
+        if not name:
+            name = "icon.png"
+        cache_path = self._cache_dir / name
+        if cache_path.exists():
+            return cache_path
+
+        URL = ghidra_session.jclass("java.net.URL")  # noqa: N806
+        Files = ghidra_session.jclass("java.nio.file.Files")  # noqa: N806
+        StandardCopyOption = ghidra_session.jclass("java.nio.file.StandardCopyOption")  # noqa: N806
+        try:
+            url = URL(uri_str)
+            stream = url.openStream()
+            try:
+                Files.copy(
+                    stream,
+                    self._jpaths.get(str(cache_path)),
+                    StandardCopyOption.REPLACE_EXISTING,
+                )
+            finally:
+                stream.close()
+        except Exception as exc:  # noqa: BLE001
+            _log.debug("failed to extract %r for %r: %s", uri_str, src, exc)
+            return None
+
+        if cache_path.exists():
+            return cache_path
+        return None
+
+    def cleanup_cache(self) -> None:
+        """Remove the per-session icon cache. Called at program shutdown."""
+        if self._cache_dir.exists():
+            shutil.rmtree(self._cache_dir, ignore_errors=True)
