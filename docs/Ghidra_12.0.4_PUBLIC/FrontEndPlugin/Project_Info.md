@@ -15,7 +15,7 @@ To access *Project Information*, select **Project** → **View Project Info...**
 functionality for a shared project:
 
 
-![](images/SharedProjectInfo.png)
+![Shared Project Info](images/SharedProjectInfo.png)
 
 
 The *Project Location* shows the directory where your project resides, the type of project storage
@@ -30,7 +30,7 @@ of the repository associated with your project.
 
 
 The connection button indicates whether you are
-connected to the server. (If you were connected, the button would show as ![connected.gif](../icons/connected.gif)    You can click on the button to attempt to
+connected to the server. (If you were connected, the button would show as ![Connected](../icons/connected.gif)    You can click on the button to attempt to
 connect to the server.)
 
 
@@ -39,7 +39,7 @@ Access Level](Creating_a_Project.md#creating-a-shared-project) indicates your pr
 The User Access Level is only displayed while in a connected state.
 
 
-<a name="indexed-filesystem"></a>
+<a name="indexed_filesystem"></a>
 
 > **Note:** As
 of version 5.5 Ghidra utilizes
@@ -87,15 +87,14 @@ displays the project's current server name and port number.  If desired, use th
 panel to change the server name and/or port number.
 
 
-![](images/ChangeServerInfoPanel.png)
+![Change Server Info Panel](images/ChangeServerInfoPanel.png)
 
 
 1. <a name="changerepository"></a>Press the **Next &gt;&gt;** button to
 connect to the specified server and port.
 > **Note:** If you
 are changing the Ghidra Server name or port number and you fail to connect, refer to the Troubleshooting page.
-2. Once connected to the specified server and port, the *Change Shared
-Project Information* wizard displays repository information.  By default, the
+2. Once connected to the specified server and port, the *Change Shared Project Information* wizard displays repository information.  By default, the
 *Existing Repository* radio button is selected because of the existing repositories
 found on the server.
   - To use an existing repository, leave the radio button selected, and select a
@@ -105,7 +104,7 @@ button; the *Repository Name* field becomes enabled. Enter the name of the new
 repository.
 
 
-![](images/ChangeRepositoryPanel.png)
+![Change Repository Panel](images/ChangeRepositoryPanel.png)
 
 
 1. <a name="setupusers"></a>Press the **Next&gt;&gt;** button.  If you selected
@@ -115,16 +114,15 @@ repository, you are by default the [Administrator](Creating_a_Project.md#creatin
 in the project. You are not allowed to change your access.
 
 
-![](images/ChangeAccessList.png)
+![Change Access List](images/ChangeAccessList.png)
 
 
 1. Users that are known to the server are listed in the *Known Users* area. Users
-that are part of the project are marked with the ![user.png](../icons/user.png)
+that are part of the project are marked with the ![User](../icons/user.png)
 icon. To add users, select users from *Known Users*, select the
 **Add&gt;&gt;** button. Add all users by selecting the **Add All** button. To remove
 users, select users in the project, and select the **&lt;&lt;Remove** button. To remove
-all users (except yourself), select the **Remove All** button. The *Project
-Users* table on the right side of the dialog indicates [user privileges](Creating_a_Project.md#creating-a-shared-project).
+all users (except yourself), select the **Remove All** button. The *Project Users* table on the right side of the dialog indicates [user privileges](Creating_a_Project.md#creating-a-shared-project).
 
 
 > **Note:** If you are
@@ -162,11 +160,10 @@ version history for files under local version control after you
 convert your project.
 
 
-You can convert your non-shared project to a shared project by clicking on the **Convert
-to Shared...** button.
+You can convert your non-shared project to a shared project by clicking on the **Convert to Shared...** button.
 
 
-![](images/NonSharedProjectInfo.png)
+![Non Shared Project Info](images/NonSharedProjectInfo.png)
 
 
 The steps to converting your project are the same as those described for [Change Shared Project Information](#changing-shared-project-information). However, at [Step 9](#changing-shared-project-information) above you will get a dialog that warns you about losing version history

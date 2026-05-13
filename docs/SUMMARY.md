@@ -1,0 +1,2 @@
+- [Home](index.md)
+- [Ghidra 12.0.4 PUBLIC](Ghidra_12.0.4_PUBLIC/)

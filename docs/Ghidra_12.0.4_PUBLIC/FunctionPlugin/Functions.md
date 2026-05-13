@@ -69,17 +69,13 @@ To Create a Function,
 2. Right-mouse-click, select the **Create Function** popup menu item
 
 
-*As part of creating a function, function parameters
-and local variables may also be created. See [Variables](Variables.md) for the
-operations on variables.*
+*As part of creating a function, function parameters and local variables may also be created. See [Variables](Variables.md) for the operations on variables.*
 
 
 *Functions may be automatically created via [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md).*
 
 
-*If a function starts with an unconditional jump
-instruction, the function will be created as a [Thunk Function](#thunk-functions)
-if possible.*
+*If a function starts with an unconditional jump instruction, the function will be created as a [Thunk Function](#thunk-functions) if possible.*
 
 
 The entry point for the function is the address at the current cursor location when there
@@ -92,13 +88,10 @@ selection, *Create Function* will follow the control flow from the entry point t
 determine the function body. The resulting code may not be contiguous.
 
 
-*To see the body of the function that has been
-defined, place the cursor on the first instruction within the function and choose
-**Select** →  **Functions** from the Code Browser's
-main menu.*
+*To see the body of the function that has been defined, place the cursor on the first instruction within the function and choose **Select** → **Functions** from the Code Browser's main menu.*
 
 
-<a name="new-function-name"></a>The symbol at the entry point is used as the name of the
+<a name="new_function_name"></a>The symbol at the entry point is used as the name of the
 function. If no symbol exists at the entry point a default label starting with **FUN_** is created. Prior to creating the function, the symbol may have
 started with **SUB_** if it was a default symbol and there
 were call references to it. If a symbol does exist at the entry, a dialog is displayed so
@@ -112,7 +105,7 @@ If the symbol name is changed, the function name displayed will also change. [Re
 
 In stack-based processors, *Create Function* will try to identify parameters and
 local variables used by the function. By default, the variables data type will be
-*Undefined**N*** where ***N*** is the size (in bytes) of the stack reference.
+*Undefined**N*\** where *\**N*\** is the size (in bytes) of the stack reference.
 See [Function Signature and Variables](Variables.md) on how to modify the stack
 variables. See [Stack References](../ReferencesPlugin/References_from.md#stack-references) on how to add stack variables.
 
@@ -156,9 +149,7 @@ The cursor can be on any field at the entry point of the function.
 2. Right-mouse-click, select the **Function** → **Re-create Function** popup menu item
 
 
-*Recreating a function will kick off auto-analysis
-on the function if there are any changes to the function's body.  New parameters or
-locals may be created since more code may now be part of the function's body. See [Variables](Variables.md) for the operations on variables.*
+*Recreating a function will kick off auto-analysis on the function if there are any changes to the function's body. New parameters or locals may be created since more code may now be part of the function's body. See [Variables](Variables.md) for the operations on variables.*
 
 
 ## Thunk Functions
@@ -201,8 +192,7 @@ Convert a normal Function to a Thunk Function:
 1. Place the cursor in the Code Browser at the top of an already defined *thunk*
 function.
 The cursor can be on any field at the entry point of the function.
-2. Right-mouse-click, select the **Function** → **Set
-Thunked Function...** popup menu item
+2. Right-mouse-click, select the **Function** → **Set Thunked Function...** popup menu item
 3. The user will be prompted to specify the *thunked* function by label or address. The
 specified location must correspond to an existing function.
 
@@ -213,8 +203,7 @@ To Revert a Thunk Function (i.e., revert a Thunk Function to a normal Function):
 1. Place the cursor in the Code Browser at the top of an already defined *thunk*
 function.
 The cursor can be on any field at the entry point of the function.
-2. Right-mouse-click, select the **Function** → **Revert
-Thunk Function...** popup menu item
+2. Right-mouse-click, select the **Function** → **Revert Thunk Function...** popup menu item
 3. The user will be prompted to confirm the action.
 
 
@@ -347,8 +336,7 @@ To change the function purge:
 
 
 - Right mouse-click on the function header
-- Select the **Function** → **Edit Function
-Purge...** popup menu item
+- Select the **Function** → **Edit Function Purge...** popup menu item
 - Enter the new function purge size in the dialog that appears
 
 
@@ -356,8 +344,7 @@ Purge...** popup menu item
 
 
 When a repeatable comment exists at the entry point of a function, the repeatable comment
-is displayed in the *Function Repeatable Comment* field rather than the *EOL
-Comment* field. See [Edit
+is displayed in the *Function Repeatable Comment* field rather than the *EOL Comment* field. See [Edit
 Comments](../CommentsPlugin/Comments.md#adding-or-editing-comments-set-comment) for more information on comments.
 
 
@@ -383,7 +370,7 @@ call instruction, the default stack depth change will be based on the function p
 of the called function.
 
 
-![](images/SetStackDepthChange.png)
+![Set Stack Depth Change](images/SetStackDepthChange.png)
 
 
 - Enter the desired change in stack depth. This can be either decimal or hexadecimal.
@@ -396,7 +383,7 @@ purge at the called function (**Global**). Choose **Local** to set the stack dep
 change or **Global** to set the function purge.
 
 
-![](images/StackDepthChangeOrFunctionPurge.png)
+![Stack Depth Change Or Function Purge](images/StackDepthChangeOrFunctionPurge.png)
 
 
 ### Remove Stack Depth Change
@@ -417,7 +404,7 @@ or
 - Select *Remove Stack Depth Change* from the popup menu.
 
 
-*Provided By: *Functions* plugin*
+Provided By: *Functions* plugin
 
 
 **Related Topics:**

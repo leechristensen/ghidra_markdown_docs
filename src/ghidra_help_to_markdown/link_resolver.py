@@ -263,18 +263,9 @@ class LinkResolver:
 
     def transform_markdown_links(self, markdown: str, current_md_path: str) -> str:
         """Transform all links in a Markdown document."""
-        # Pattern for markdown links: [text](url)
-        link_pattern = re.compile(r"\[([^\]]*)\]\(([^)]+)\)")
-
-        def replace_link(match: re.Match[str]) -> str:
-            text = match.group(1)
-            href = match.group(2)
-            new_href = self.resolve_link(href, current_md_path)
-            return f"[{text}]({new_href})"
-
-        markdown = link_pattern.sub(replace_link, markdown)
-
-        # Pattern for image links: ![alt](src)
+        # Process images first so their src is resolved before any wrapping link
+        # is matched (the outer link can then be matched cleanly with a
+        # balanced-bracket pattern below).
         img_pattern = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 
         def replace_img(match: re.Match[str]) -> str:
@@ -284,6 +275,21 @@ class LinkResolver:
             return f"![{alt}]({new_src})"
 
         markdown = img_pattern.sub(replace_img, markdown)
+
+        # Pattern for markdown links: [text](url). The text portion allows one
+        # level of nested [...] (so [![alt](src)](href) is matched as a single
+        # link whose text contains the image), otherwise an image-in-link
+        # pattern would match only the inner image and leave the outer href
+        # unresolved.
+        link_pattern = re.compile(r"\[((?:[^\[\]]|\[[^\[\]]*\])*)\]\(([^)]+)\)")
+
+        def replace_link(match: re.Match[str]) -> str:
+            text = match.group(1)
+            href = match.group(2)
+            new_href = self.resolve_link(href, current_md_path)
+            return f"[{text}]({new_href})"
+
+        markdown = link_pattern.sub(replace_link, markdown)
 
         return markdown
 

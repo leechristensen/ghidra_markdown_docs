@@ -20,8 +20,7 @@ the old project to your current project.
 
 To open a project, choose it from a list of projects in the default project directory.
 If the project has been opened before, then the project will appear in the [Reopen](Re-opening_a_Project.md) list.  If the project is being shared by others, it
-may not reside in the default project directory.  Use the browse button, on the *Open a
-Ghidra Project* dialog, to locate the target project.
+may not reside in the default project directory.  Use the browse button, on the *Open a Ghidra Project* dialog, to locate the target project.
 
 
 To open a project:
@@ -31,10 +30,10 @@ To open a project:
 appears.
 
 
-![](images/OpenProject.png)
+![Open Project](images/OpenProject.png)
 
 
-1. The dialog box filter defaults to *.gpr (project file extension). Select the project
+1. The dialog box filter defaults to \*.gpr (project file extension). Select the project
 from the *Open a Ghidra Project* dialog.
 
 
@@ -50,12 +49,12 @@ to the Ghidra Server](../VersionControl/project_repository.md#connect-to-the-ser
 user authentication the Ghidra Server is using.
 
 
-![](images/ProjectWindow.png)
+![Project Window](images/ProjectWindow.png)
 
 
-If this were a shared project, the connection status button (![connected.gif](../icons/connected.gif)) would be displayed, indicating that the project was
+If this were a shared project, the connection status button (![Connected](../icons/connected.gif)) would be displayed, indicating that the project was
 successfully connected to the server. If the project failed to connect to the server, the
-status button would appear as ![disconnected.gif](../icons/disconnected.gif).
+status button would appear as ![Disconnected](../icons/disconnected.gif).
 If the server comes up after you have opened the shared project, you can click
 on status button to attempt to connect to the server. You can still work offline in a shared
 project, however, you will not be able to do any check outs or check ins.

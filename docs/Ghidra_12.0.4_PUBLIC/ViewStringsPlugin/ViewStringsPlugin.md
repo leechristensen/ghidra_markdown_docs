@@ -5,10 +5,10 @@ The View Defined Strings plugin will display all strings that have been explicit
 in the program. You can click on the address column and navigate to the string in the [Listing](../CodeBrowserPlugin/CodeBrowser.md).
 
 
-![](images/Defined_String_Table.png)
+![Defined String Table](images/Defined_String_Table.png)
 
 
-This plugin is ***not*** intended to be used to locate undefined strings. Please see
+This plugin is *\**not*\** intended to be used to locate undefined strings. Please see
 [Search for Strings](../Search/Search_for_Strings.md) or
 [Search for Encoded Strings](../Search/Search_for_Strings.md#search-for-encoded-strings) for this
 feature.
@@ -27,8 +27,7 @@ string instance.
 [String Settings](../DataPlugin/Data.md#string-data-types) for formatting settings)
 or the translated value of the string.  Double click in this column to change the string's
 representation into a value of your choice.  This is the
-same as using the **Translate  →
-Manual** menu item.
+same as using the **Translate → Manual** menu item.
 - Data Type - mnemonic or data type for the string type.
 - Is Ascii - boolean flag that indicates the string has non-ASCII characters.
 - Has Encoding Error - boolean flag that indicates the string had byte(s) that could not be converted by the character set.
@@ -53,8 +52,7 @@ on the tool bar to make a selection in the Code Browser. To make a selection,
 
 
 1. Select the rows containing the desired strings in the table.
-2. Right mouse click and select the ![Make Selection](../icons/text_align_justify.png) **Make
-Selection** option, OR select the ![Make Selection](../icons/text_align_justify.png)button on
+2. Right mouse click and select the ![Make Selection](../icons/text_align_justify.png) **Make Selection** option, OR select the ![Make Selection](../icons/text_align_justify.png)button on
 the tool bar.
 
 
@@ -102,15 +100,14 @@ For more information, see [string settings](../DataPlugin/Data.md#string-data-ty
 
 
 Each string value can have a translated version of the value associated with it.  The
-translated value will be displayed in **»chevrons«** in the **String
-Representation** column.
+translated value will be displayed in **»chevrons«** in the **String Representation** column.
 
 
 For more information, see [Translate Strings Plugin](../TranslateStringsPlugin/TranslateStringsPlugin.md)
 help.
 
 
-*Provided by: *View Strings* Plugin*
+Provided by: *View Strings* Plugin
 
 
 **Related Topics:**

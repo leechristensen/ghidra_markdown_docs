@@ -9,19 +9,17 @@ project and open the project selected from the Reopen menu. The project that was
 opened is placed first in the list.
 
 
-![](images/ReopenProject.png)
+![Reopen Project](images/ReopenProject.png)
 
 
 To reopen a project:
 
 
-- Select **File →
-Reopen → *directory
-path/project_name*** where ***directory_path/project_name*** indicates the project
+- Select **File → Reopen → *directory path/project_name\*** where *\**directory_path/project_name*\** indicates the project
 from the list that you wish to reopen.
 
 
-Ghidra will close any active project. It then opens ***project_name*** and restores
+Ghidra will close any active project. It then opens *\**project_name*\** and restores
 all of the project's configurations.
 
 

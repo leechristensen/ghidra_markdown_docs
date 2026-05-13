@@ -1,8 +1,9 @@
+[Home](../../index.md) > [VersionTrackingPlugin](../index.md) > Functions Table
+
 # Version Tracking Functions Table
 
 
-| ![](../images/FunctionsTable.png) |
-| --- |
+![Functions Table](../images/FunctionsTable.png)
 
 
 The functions table shows a list of all functions in the source program and the
@@ -37,13 +38,13 @@ well as the number of functions filtered-out of the table, if any filters are ap
 ### Create Manual Match
 
 
-The **Create Manual Match** action (![Plus.png](../../icons/Plus.png)
+The **Create Manual Match** action (![Plus](../../icons/Plus.png)
 
 
 ### Create And Accept Manual Match
 
 
-The **Create And Accept Manual Match** action (![flag.png](../../icons/flag.png)) allows the user to create a match for the
+The **Create And Accept Manual Match** action (![Flag](../../icons/flag.png)) allows the user to create a match for the
 selected function in source table to the selected function in the destination table and then automatically accept it.
 The action will be disabled if you do not have a single function selected in both
 tables.
@@ -52,7 +53,7 @@ tables.
 ### Create And Apply Manual Match
 
 
-The **Create And Apply Manual Match** action (![checkmark_green.gif](../../icons/checkmark_green.gif)) allows the user to create a match for the
+The **Create And Apply Manual Match** action (![Checkmark Green](../../icons/checkmark_green.gif)) allows the user to create a match for the
 selected function in source table to the selected function in the destination table and then accept it and then automatically apply
 any appropriate markup items from the source to the destination program.
 The action will be disabled if you do not have a single function selected in both
@@ -73,26 +74,26 @@ selected functions.
 ### Functions Table Filter
 
 
-<a name="functions-filter"></a>
+<a name="functions_filter"></a>
 The **Functions Filter** action filters functions from the tables
 based upon the chosen state of the action.   You can change the state of the
 filter from the actions toolbar using the drop-down menu.
-(![](../images/ActionsMenu_DropDown.png)).
+(![Actions Menu Drop Down](../images/ActionsMenu_DropDown.png)).
 
 
 This list below shows the available filter states:
 
 
-- <a name="show-all-functions"></a>
-**Show All Functions** (![function.png](../../icons/function.png)) -
+- <a name="show_all_functions"></a>
+**Show All Functions** (![Function](../../icons/function.png)) -
 Shows all functions found in the source and destination programs.
-- <a name="show-unmatched-functions"></a>
-**Show Only Unmatched Functions** (![filter_matched.png](../../icons/filter_matched.png)) -
+- <a name="show_unmatched_functions"></a>
+**Show Only Unmatched Functions** (![Filter Matched](../../icons/filter_matched.png)) -
 Shows only functions in the source and destination programs that are
 not part of any match.  This is
 useful for showing functions that were not matched by any of the
 [program correlators](../VT_Correlators.md).
-- <a name="show-unaccepted-functions"></a>
+- <a name="show_unaccepted_functions"></a>
 **Show Only Unaccepted Match Functions**
 ([Accepted]) -
 Shows only functions in the source and destination programs that
@@ -107,7 +108,7 @@ that you have not yet accepted as being part of a valid match.
 
 The
 **Toggle Visibility of Dual Comparison Views** action
-(![application_tile_horizontal.png](../../icons/application_tile_horizontal.png)) will
+(![Application Tile Horizontal](../../icons/application_tile_horizontal.png)) will
 toggle whether or not a function comparison panel is displayed below the source
 and destination function tables. As you select a function in the source or destination
 table, it is displayed in the function comparison panel so you can visually compare
@@ -129,7 +130,7 @@ is contained in any column, then that column will remain in the table; otherwise
 the row will be filtered out.
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -139,3 +140,8 @@ the row will be filtered out.
 - [Version Tracking Tool](../VT_Tool.md)
 - [Version Tracking Introduction](../Version_Tracking_Intro.md)
 - [Function Comparison Window](../../FunctionComparison/FunctionComparison.md)
+
+
+---
+
+[← Previous: Markup Items Table](VT_Markup_Table.md) | [Next: Related Matches Table →](VT_Related_Associations_Table.md)

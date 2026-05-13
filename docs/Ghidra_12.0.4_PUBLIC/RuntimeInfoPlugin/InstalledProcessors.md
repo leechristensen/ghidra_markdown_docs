@@ -11,5 +11,4 @@ active Ghidra application supports.
 To display the Installed Processors dialog:
 
 
-- From the Project Window, Select **Help →
-Installed Processors** from the menu.
+- From the Project Window, Select **Help → Installed Processors** from the menu.

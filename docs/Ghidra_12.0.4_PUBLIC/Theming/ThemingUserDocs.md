@@ -1,3 +1,5 @@
+[Home](../index.md) > [Theming](index.md) > User's Guide
+
 # Themes
 
 
@@ -19,8 +21,7 @@ file that can be given to other users who can them import them into their applic
 
 
 **NOTE:** The `<user settings>` directory is platform/configuration
-specific. Its value can be found in the Ghidra Front End GUI, under `Help ->
-Runtime Information -> Application Layout -> Settings Directory`
+specific. Its value can be found in the Ghidra Front End GUI, under `Help -> Runtime Information -> Application Layout -> Settings Directory`
 
 
 ## Theme Chooser Dialog
@@ -30,7 +31,7 @@ The Theme Chooser allows users to switch themes.
 
 
 
-![](images/ThemeChooserDialog.png)
+![Theme Chooser Dialog](images/ThemeChooserDialog.png)
 
 
 The Theme Chooser dialog displays a list of all the known themes, both built-in and custom.
@@ -45,7 +46,7 @@ can also double click on a theme to switch to that theme and exit the dialog.
 The Theme Editor Dialog is the primary means for creating and editing themes.
 
 
-![](images/ThemeEditorDialog.png)
+![Theme Editor Dialog](images/ThemeEditorDialog.png)
 
 
 The Theme Editor Dialog consists of a Look And Feel drop-down and a tabbed set of tables that
@@ -99,9 +100,9 @@ theme or supplying a new name to save it as a new theme.
 ### Theme Editor actions
 
 
-- <a name="increment-fonts"></a>[Increment] Increment All Fonts - Increases all fonts in the system by one.
-- <a name="decrement-fonts"></a>[Decrement] Decrement All Fonts - Decreases all fonts in the system by one.
-- <a name="reload-theme"></a>![Refresh](../icons/reload3.png) Reload Theme - Restores all color, font, and icon values back to the original theme values.
+- <a name="increment_fonts"></a>[Increment] Increment All Fonts - Increases all fonts in the system by one.
+- <a name="decrement_fonts"></a>[Decrement] Decrement All Fonts - Decreases all fonts in the system by one.
+- <a name="reload_theme"></a>![Refresh](../icons/reload3.png) Reload Theme - Restores all color, font, and icon values back to the original theme values.
 
 
 ### Color Editor
@@ -110,7 +111,7 @@ theme or supplying a new name to save it as a new theme.
 When you double-click on a color value, the Edit Color dialog appears.
 
 
-![](images/ColorEditor.png)
+![Color Editor](images/ColorEditor.png)
 
 
 Any change you make in the editor is applied to the application immediately. If you press
@@ -124,7 +125,7 @@ will revert back to the original color.
 When you double-click on a font value, the Edit Font dialog appears.
 
 
-![](images/FontEditor.png)
+![Font Editor](images/FontEditor.png)
 
 
 Any change you make in the editor is applied to the application immediately. If you press
@@ -138,7 +139,7 @@ will revert back to the original font.
 When you double-click on an Icon value, the Edit Icon dialog appears.
 
 
-![](images/IconEditor.png)
+![Icon Editor](images/IconEditor.png)
 
 
 The Edit Icon dialog has a drop-down text field where you can find any existing icon on
@@ -193,7 +194,7 @@ right-click the one the row in the able you want to reset, then choose the
 
 To reset all values back to the original values established by the current theme,
 invoke the [Theme Editor Dialog](#theme-editor-dialog). To activate this
-action, press the refresh button ![reload3.png](../icons/reload3.png) in the top
+action, press the refresh button ![Reload3](../icons/reload3.png) in the top
 right corner of the Theme Editor dialog.
 
 
@@ -201,8 +202,7 @@ right corner of the Theme Editor dialog.
 ### Toggle Showing System Values
 
 
-Toggles whether the given table shows system ID values (e.g, those starting with `
-laf.` or `system.`.  By default these values are hidden.
+Toggles whether the given table shows system ID values (e.g, those starting with `laf.` or `system.`.  By default these values are hidden.
 
 
 ### Saving Themes
@@ -266,19 +266,7 @@ defaults or dark defaults. Finally, there is a list of overridden property "name
 lines. The format is:
 
 
-`
-
-name = [theme name]
-Look and Feel = [Look and Feel name]
-useDarkDefaults = [true or false]
-
-[theme id 1]= [color, icon, or font value]
-[theme id 2]= [color, icon, or font value]
-[theme id 3]= [color, icon, or font value]
-[theme id 4]= [color, icon, or font value]
-...
-
-`
+`name = [theme name] Look and Feel = [Look and Feel name] useDarkDefaults = [true or false] [theme id 1]= [color, icon, or font value] [theme id 2]= [color, icon, or font value] [theme id 3]= [color, icon, or font value] [theme id 4]= [color, icon, or font value] ...`
 
 
 Example:
@@ -321,7 +309,7 @@ and icons also support specifying modifiers. For a complete description of how t
 these values, see the [Developer Documentation](ThemingDeveloperDocs.md#theme-property-values).
 
 
-*Provided by: *Theme Manager**
+Provided by: *Theme Manager*
 
 
 **Related Topics:**
@@ -330,3 +318,8 @@ these values, see the [Developer Documentation](ThemingDeveloperDocs.md#theme-pr
 - [Theming Overview](ThemingOverview.md)
 - [Theming Developer's Guide](ThemingDeveloperDocs.md)
 - [Theming Architecture](ThemingInternals.md)
+
+
+---
+
+[← Previous: Theming](ThemingOverview.md) | [Next: Developer's Guide →](ThemingDeveloperDocs.md)

@@ -1,6 +1,6 @@
 [Home](../index.md) > [ValidateProgram](index.md) > Program Validator
 
-<a name="top-of-page"></a>
+<a name="top_of_page"></a>
 
 
 # Validate Program
@@ -18,14 +18,14 @@ validators helps to show potential problem areas after analysis has run.
 ## Program Validator
 
 
-You can launch the Validate Program window by using the **Analysis →  Validate {Current Program}** menu item.
+You can launch the Validate Program window by using the **Analysis → Validate {Current Program}** menu item.
 
 
 This command option will open the **Validate Program** window providing a list of
 program validators to run.
 
 
-![](images/ValidateProgram.png)
+![Validate Program](images/ValidateProgram.png)
 
 *"Validate Program" Dialog*
 
@@ -46,7 +46,7 @@ can see the warnings or errors encountered in the text area below the validator 
 example, this test program had one warning:
 
 
-![](images/ValidateProgramDone.png)
+![Validate Program Done](images/ValidateProgramDone.png)
 
 *Results after running validators*
 

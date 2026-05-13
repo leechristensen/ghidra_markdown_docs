@@ -5,7 +5,7 @@ The Data Type Chooser Dialog allows you to choose data types in the system by ty
 in or by choosing from a tree of data type managers.
 
 
-![](images/Dialog.png)
+![Dialog](images/Dialog.png)
 
 *Data Type Chooser Dialog*
 
@@ -31,7 +31,7 @@ You can also change the search mode using **Ctrl Down** and **Ctrl Up** to
 change the mode forward and backward, respectively.
 
 
-![](images/Dialog_SearchMode.png)
+![Dialog Search Mode](images/Dialog_SearchMode.png)
 
 *Data Type Chooser Dialog*
 
@@ -45,7 +45,7 @@ performs the best with the 'starts with' setting.   For a large number of data t
 this is the recommended search setting.
 
 
-![](../shared/note.yellow.png)The text used to match is
+![Note.Yellow](../shared/note.yellow.png)The text used to match is
 based on the cursor position in the field.  All text from the beginning up to the
 cursor position will be used for the match.  This allows you to arrow left and right
 to control the matching list.
@@ -79,7 +79,7 @@ change the position of the caret within the text in the text field.
 Single match in completion window
 
 
-![](images/Dialog_Single_Match.png)
+![Dialog Single Match](images/Dialog_Single_Match.png)
 
 *Single Potential Match*
 
@@ -91,7 +91,7 @@ there is only one potential match.
 Multiple matches in completion
 
 
-![](images/Dialog_Multiple_Match.png)
+![Dialog Multiple Match](images/Dialog_Multiple_Match.png)
 
 *Multiple Potential Matches*
 
@@ -112,7 +112,7 @@ a `word` pointer by appending an '`*`' to the text "word" in the text
 field of the **Data Type Chooser Dialog**, as in the picture below.
 
 
-![](images/Dialog_Create_Pointer.png)
+![Dialog Create Pointer](images/Dialog_Create_Pointer.png)
 
 *Create a Pointer Type*
 
@@ -130,7 +130,7 @@ respectively.
 DataType Browser Tree
 
 
-![](images/Dialog_Select_Tree.png)
+![Dialog Select Tree](images/Dialog_Select_Tree.png)
 
 *Data Type Browse Tree*
 

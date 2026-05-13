@@ -6,50 +6,49 @@
 Displays a table of reference-related information. When a symbol is selected in the
 *Symbol Table*, the *Symbol References* table updates to display the reference
 information for that symbol.  The type of references displayed is controlled by the three
-toggle buttons in the toolbar: ***References To***,***Instructions From***, and
-***Data From***.
+toggle buttons in the toolbar: **\*References To\***,**\*Instructions From\***, and
+**\*Data From\***.
 
 
 ## **Displaying the Symbol References component**
 
 
-- From the menu-bar of a tool, select Window**→  Symbol
-References…**
-- From the tool-bar of a tool, click on the ![table_go.png](../icons/table_go.png)
+- From the menu-bar of a tool, select Window**→ Symbol References…**
+- From the tool-bar of a tool, click on the ![Table Go](../icons/table_go.png)
 button
 
 
-## References To ![references_to.gif](../icons/references_to.gif)
+## References To ![References To](../icons/references_to.gif)
 
 
-![](images/Refs_To.png)
+![Refs To](images/Refs_To.png)
 
 
 Displays all references to the selected symbol.   If the number of references to
 the symbol is less than the total number of references to the address, then the "References
-To" label above the References table would show "***`<symbol reference count>`***
-of ***`<total reference count>`***".  The following data columns are
+To" label above the References table would show "**\*`<symbol reference count>`\***
+of *\**`<total reference count>`*\**".  The following data columns are
 displayed in the *Symbol References* table:
 
 
-***Address-*** the address which corresponds to the code unit which references
+**\*Address-\*** the address which corresponds to the code unit which references
 the selected symbol.  Clicking on this address will generate a location event and
 cause the tool (e.g., Code Browser) to re-position to this address.
 
 
-***Label -*** displays the name of the primary symbol at the *from* address
+**\*Label -\*** displays the name of the primary symbol at the *from* address
 of the reference to the selected symbol. Clicking on this name will generate a location
 event and cause the tool (e.g., Code Browser) to re-position to the corresponding
 label.
 
 
-***Subroutine*** - displays the name of the subroutine/function containing the
+**\*Subroutine\*** - displays the name of the subroutine/function containing the
 *from* address of the reference to the selected symbol. Clicking on this name will
 generate a location event and cause the tool (e.g., Code Browser) to re-position to the
 corresponding subroutine/function.
 
 
-***Access -*** indicates the type of reference.  This column will display
+**\*Access -\*** indicates the type of reference.  This column will display
 one of the following:
 
 
@@ -70,14 +69,14 @@ one of the following:
 *Unknown* - all other reference types
 
 
-***Preview -*** preview of the instruction or data located at
+**\*Preview -\*** preview of the instruction or data located at
 *Address* which is the source of the reference.
 
 
-## Instructions From ![I.gif](../icons/I.gif)
+## Instructions From ![I](../icons/I.gif)
 
 
-![](images/Instr_From.png)
+![Instr From](images/Instr_From.png)
 
 
 If the selected symbol corresponds to an entry point of a subroutine or function, all
@@ -86,26 +85,26 @@ the selected symbol is not a subroutine/function entry point, the list will be e
 The following data columns are displayed in the References table:
 
 
-***Address -*** the address which corresponds to the instruction within the
+**\*Address -\*** the address which corresponds to the instruction within the
 subroutine/function which is the source of the reference.  Clicking on this address
 will generate a location event and cause the tool (e.g., Code Browser) to re-position to
 this address.
 
 
-***Label -*** displays the name of the primary symbol at the *from* address
+**\*Label -\*** displays the name of the primary symbol at the *from* address
 of the reference to the selected symbol. Clicking on this name will generate a location
 event and cause the tool (e.g., Code Browser) to re-position to the corresponding
 label.
 
 
-***Subroutine*** - displays the name of the subroutine/function containing the
+**\*Subroutine\*** - displays the name of the subroutine/function containing the
 *from* address of the reference to the selected symbol. Clicking on this name will
 generate a location event and cause the tool (e.g., Code Browser) to re-position to the
 corresponding subroutine/function.
 
 
-***Access -*** indicates the type of code access associated with the
-reference.  Code access will generally be limited to a flow* type reference unless it
+**\*Access -\*** indicates the type of code access associated with the
+reference.  Code access will generally be limited to a flow\* type reference unless it
 is the target of self-modifying code.   This column will display one of the
 following:
 
@@ -118,23 +117,23 @@ following:
 
 *Data* - general data access
 
-*Branch* - conditional jump*
+*Branch* - conditional jump\*
 
-*Jump* - unconditional jump*
+*Jump* - unconditional jump\*
 
-*Call* - subroutine/function call*
+*Call* - subroutine/function call\*
 
 *Unknown* - all other reference types
 
 
-***Preview -*** preview of the instruction or data located at
+**\*Preview -\*** preview of the instruction or data located at
 *Address* which is the source of the reference.
 
 
-## Data From ![D.gif](../icons/D.gif)
+## Data From ![D](../icons/D.gif)
 
 
-![](images/Data_From.png)
+![Data From](images/Data_From.png)
 
 
 If the selected symbol corresponds to an entry point of a subroutine or function, all data
@@ -143,28 +142,28 @@ selected symbol is not a subroutine/function entry point, the list will be empty
 following data columns are displayed in the References table:
 
 
-***Address -*** the address which corresponds to the instruction within the
+**\*Address -\*** the address which corresponds to the instruction within the
 subroutine/function which is the source of the reference.  Clicking on this address
 will generate a location event and cause the tool (e.g., Code Browser) to re-position to
 this address.
 
 
-***Label -*** displays the name of the primary symbol at the *from* address
+**\*Label -\*** displays the name of the primary symbol at the *from* address
 of the reference to the selected symbol. Clicking on this name will generate a location
 event and cause the tool (e.g., Code Browser) to re-position to the corresponding
 label.
 
 
-***Subroutine*** - displays the name of the subroutine/function containing the
+**\*Subroutine\*** - displays the name of the subroutine/function containing the
 *from* address of the reference to the selected symbol. Clicking on this name will
 generate a location event and cause the tool (e.g., Code Browser) to re-position to the
 corresponding subroutine/function.
 
 
-***Access -*** indicates the data type.
+**\*Access -\*** indicates the data type.
 
 
-***Preview -*** preview of the instruction or data located at *Address*
+**\*Preview -\*** preview of the instruction or data located at *Address*
 which is the source of the reference.
 
 
@@ -174,7 +173,7 @@ which is the source of the reference.
 This action will delete all selected references from the database.
 
 
-*Provided by: *Symbol Table Plugin**
+Provided by: *Symbol Table Plugin*
 
 
 **Related Topics:**

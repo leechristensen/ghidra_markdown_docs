@@ -4,14 +4,12 @@
 
 
 The fallthrough address on an instruction is the address of the *next* instruction that
-will be executed. You can change the fallthrough address by using the *Set Fallthrough
-Address* dialog, as shown below. By default, an instruction's fallthrough address (or lack
+will be executed. You can change the fallthrough address by using the *Set Fallthrough Address* dialog, as shown below. By default, an instruction's fallthrough address (or lack
 thereof) is determined by the language processor. For example, a "return" or a "jump"
 instruction does not have a fallthrough address.
 
 
-| ![](images/SetFallThrough.png) |
-| --- |
+![Set Fall Through](images/SetFallThrough.png)
 
 
 ### Set a Fallthrough Address
@@ -19,8 +17,7 @@ instruction does not have a fallthrough address.
 
 The dialog shows the default fallthrough address of the instruction. The radio buttons
 below the *Fallthrough Address* field indicate whether the address is the default
-fallthrough or user defined. When the **Default** button is selected, the *Fallthrough
-Address* field is disabled. If an instruction has no default fallthrough (e.g., "jump"),
+fallthrough or user defined. When the **Default** button is selected, the *Fallthrough Address* field is disabled. If an instruction has no default fallthrough (e.g., "jump"),
 the Fallthrough Address field is empty. Choose the **User** button to enter a new
 fallthrough address. When the **User** button is selected, the *Fallthrough*
 *Address* field is updated as you move the cursor in the Code Browser.
@@ -43,7 +40,7 @@ the Code Browser at the address of the new fallthrough.
 select the OK button to change the fallthrough and dismiss the dialog.
 
 
-You can see the effects of setting the fallthrough address by selecting the [limited flows from option](../Selection/Selecting.md#select-limited-flows-from); the
+You can see the effects of setting the fallthrough address by selecting the [limited flows from option](../Selection/Selecting.md#selecting); the
 instructions that are skipped over via setting the fallthrough address are not included in
 the selection.
 
@@ -92,7 +89,7 @@ or position the cursor at an instruction whose fallthrough address was overridde
 for a single instruction if the instruction's fallthrough address was not overridden.
 
 
-*Provided by: *FallthroughPlugin**
+Provided by: *FallthroughPlugin*
 
 
 **Related Topics:**

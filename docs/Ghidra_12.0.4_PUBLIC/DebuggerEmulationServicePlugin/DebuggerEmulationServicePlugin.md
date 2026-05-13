@@ -1,3 +1,5 @@
+[Home](../index.md) > [DebuggerEmulationServicePlugin](index.md) > Emulation
+
 # Debugger: Emulation Service
 
 
@@ -58,3 +60,8 @@ recommended when you change the emulator configuration, when you change the Slei
 emulated breakpoint, or when you patch the trace database. If you do not invalidate the cache,
 the effects of your change may not appear, since the trace manager may recall a cached snapshot
 instead of actually emulating.
+
+
+---
+
+[← Previous: Trace Management](../DebuggerTraceManagerServicePlugin/DebuggerTraceManagerServicePlugin.md) | [Next: Memory →](../DebuggerMemoryBytesPlugin/DebuggerMemoryBytesPlugin.md)

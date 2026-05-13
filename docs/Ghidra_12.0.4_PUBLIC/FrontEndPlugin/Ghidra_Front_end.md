@@ -20,7 +20,7 @@ and restoring a project will show up only in the Ghidra Project window, even tho
 providing these options can be added to other tools.
 
 
-![](images/ProjectWindow.png)
+![Project Window](images/ProjectWindow.png)
 
 
 The following sections describe the Project Window:
@@ -76,7 +76,7 @@ actions on program files or datatype archives.
 ### Project Data Tree
 
 
-![](images/ProjectDataTree.png)
+![Project Data Tree](images/ProjectDataTree.png)
 
 
 The data tree shows all files in the project orgnanized into folders and sub-folders.
@@ -283,7 +283,7 @@ option.  The real file or folder will be selected within the tree if possible.
 ### Project Data Table
 
 
-![](images/ProjectDataTable.png)
+![Project Data Table](images/ProjectDataTable.png)
 
 
 The data table shows all files in the project in a table sorted by some attribute
@@ -301,8 +301,7 @@ To open this view, active the "Table View" tab.
 
 
 Deleting folders is a recursive operation, so all descendant folders and files are
-also deleted. **This is a *permanent*
-operation.**  To delete a folder or file,
+also deleted. **This is a *permanent* operation.**  To delete a folder or file,
 
 
 1. Select the folder or file or select multiple folders and files.
@@ -395,7 +394,7 @@ or an existing running tool will be reused based upon the Tool option setting (s
 
 
 1. Select the file.
-2. Right mouse click and choose **Open With** → &lt;***tool*** ***name***&gt;.
+2. Right mouse click and choose **Open With** → &lt;**\*tool\*** **\*name\***&gt;.
 
 
 #### Refresh
@@ -433,11 +432,11 @@ for details.
 The Project Data Tree shows icons for the following types of files:
 
 
-| ![program_obj.png](../icons/program_obj.png) | -   | [Program](../Program/Ghidra_Programs.md)   |
+| ![Program Obj](../icons/program_obj.png) | -   | [Program](../Program/Ghidra_Programs.md)   |
 | --- | --- | --- |
-| ![closedBookBlue.png](../icons/closedBookBlue.png) | -   | [Data Type Archive](../DataTypeManagerPlugin/data_type_manager_description.md#project-data-type-archive) (a data type file             stored in the project)   |
-| ![video-x-generic16.png](../icons/video-x-generic16.png) | -   | Debugger Trace Data   |
-| ![start-here_16.png](../icons/start-here_16.png) | -   | Version Tracking Session Data   |
+| ![Closed Book Blue](../icons/closedBookBlue.png) | -   | [Data Type Archive](../DataTypeManagerPlugin/data_type_manager_description.md#project-data-type-archive) (a data type file             stored in the project)   |
+| ![Video X Generic16](../icons/video-x-generic16.png) | -   | Debugger Trace Data   |
+| ![Start Here 16](../icons/start-here_16.png) | -   | Version Tracking Session Data   |
 
 
 <a name="versionstatus"></a>The Project Data Tree shows modifications to these icons for
@@ -446,16 +445,16 @@ files in the following states:
 
 | File Status | Sample Icon | Description |
 | --- | --- | --- |
-| [Versioned File](../VersionControl/project_repository.md#version-control) not               checked out. | ![](images/VersionedFileIcon.png) | The program named "Example" is versioned as indicated by                the light purple background. It is not checked out , since there is no circle with a                check mark. Version 1 is the latest version, as indicated by "(1)";                 the version will be the latest version when the file is not checked out. |
-| Versioned File is [Checked out](../VersionControl/project_repository.md#check-out) exclusively                by you. | ![](images/VersionedFileCOnoServer.png) | Version 1 of the program named "Example" is checked out, as indicated                by "(1 of 1)"; Version 1 is the latest version. The blue check mark icon indicates                that the file is checked out with an [exclusive](../VersionControl/project_repository.md#check-out) lock.   If your project is not associated with a Ghidra Server,                you will always have the latest version checked out and the check out will always                be exclusive,  since the project is not shared. |
-| Versioned File is Checked Out; the project is associated with a               Ghidra Server | ![](images/VersionedFileCOwithServer.png) | Version 3 of the program named "Example" is checked out; Version 3 is the latest               version on the server, as indicated by "(3 of 3)" and the green circle with a                check mark. The asterisk indicates you have changes to the file which have not been                checked in yet. |
-| Versioned File is Checked Out; the project is associated with a               Ghidra Server. A newer version exists on the server. | ![](images/CheckedOutNotLatest.png) | Version 2 of the program named "Example" is checked out; a Version 3               has been created since Version 2 was checked out, as indicated by "(2 of 3)" and               the magenta circle with a check mark. The asterisk indicates you have changes to the                file which have not been checked in yet. |
-| Private File | ![](images/PrivateFileIcon.png) | <a name="privatefile"></a> A program named "Example" is               not under version control, exists only on your local machine, and is not visible to               other users. |
-| File Link | ![](images/AbsoluteFileLinkIcon.png) | <a name="filelink"></a> A file link named "Example" which refers to               a Program at */data/example* .   File links may reference another file using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidra-url-formats) below.               A file link may appear with various icon states which correspond to version control.               File links only support a single version and may not be modified. |
-| File Link (Broken) | ![](images/AbsoluteBrokenFileLinkIcon.png) | <a name="brokenfilelink"></a> A file link named "Example" which refers to               a Program at */data/example* and is in a "Broken" state.  Hovering the mouse 			  on this node will display a tooltip which indicates the reason for the broken state.  			  External file links will never show a broken link state since they are not evaluated for such conditions. |
-| Folder Link | ![](images/AbsoluteFolderLinkIcon.png) | <a name="folderlink"></a> A folder link named "Example" which refers               to a folder at */data/example* .   Folder links may reference another folder using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidra-url-formats) below.               Since a folder link is stored as a file, it may appear with various icon states which                correspond to version control.  Folder links only support a single version and may not                be modified.  The tree may permit expanding such nodes to reveal their linked-content  			  as files and sub-folders. |
-| Folder Link (Broken) | ![](images/AbsoluteBrokenFolderLinkIcon.png) | <a name="brokenfolderlink"></a> A folder link named "Example" which refers to               a folder at */data/example* and is in a "Broken" state.  Hovering the mouse 			  on this node will display a tooltip which indicates the reason for the broken state.   			  External folder links will never show a broken link state since they are not evaluated for such conditions. |
-| Hijacked File | ![](images/hijack_file.png) | <a name="hijackedfile"></a> The private file "Example" exists on your                computer, but another user added "Example" to version control, which               caused the private file to appear as *hijacked* , (i.e., the file can be saved "as               is" using " **Save As** " since you do not have the file checked out that is on                the Ghidra Server.) Hijacked files may also result from a checkout that was [terminated](../VersionControl/project_repository.md#view-checkouts) . The *shared* version of "Example" will not be visible in your project until you [undo the               hijack](../VersionControl/project_repository.md#undo-hijack) .  You can also either rename the hijacked "Example", move it to               another folder, delete it, or use the **Undo Hijack** [action](../VersionControl/project_repository.md#undo-hijack) . Then the               shared "Example" will appear in your data tree as a versioned file. |
+| [Versioned File](../VersionControl/project_repository.md#version-control) not               checked out. | ![Versioned File Icon](images/VersionedFileIcon.png) | The program named "Example" is versioned as indicated by                the light purple background. It is not checked out , since there is no circle with a                check mark. Version 1 is the latest version, as indicated by "(1)";                 the version will be the latest version when the file is not checked out. |
+| Versioned File is [Checked out](../VersionControl/project_repository.md#check-out) exclusively                by you. | ![Versioned File Cono Server](images/VersionedFileCOnoServer.png) | Version 1 of the program named "Example" is checked out, as indicated                by "(1 of 1)"; Version 1 is the latest version. The blue check mark icon indicates                that the file is checked out with an [exclusive](../VersionControl/project_repository.md#check-out) lock.   If your project is not associated with a Ghidra Server,                you will always have the latest version checked out and the check out will always                be exclusive,  since the project is not shared. |
+| Versioned File is Checked Out; the project is associated with a               Ghidra Server | ![Versioned File Cowith Server](images/VersionedFileCOwithServer.png) | Version 3 of the program named "Example" is checked out; Version 3 is the latest               version on the server, as indicated by "(3 of 3)" and the green circle with a                check mark. The asterisk indicates you have changes to the file which have not been                checked in yet. |
+| Versioned File is Checked Out; the project is associated with a               Ghidra Server. A newer version exists on the server. | ![Checked Out Not Latest](images/CheckedOutNotLatest.png) | Version 2 of the program named "Example" is checked out; a Version 3               has been created since Version 2 was checked out, as indicated by "(2 of 3)" and               the magenta circle with a check mark. The asterisk indicates you have changes to the                file which have not been checked in yet. |
+| Private File | ![Private File Icon](images/PrivateFileIcon.png) | <a name="privatefile"></a> A program named "Example" is               not under version control, exists only on your local machine, and is not visible to               other users. |
+| File Link | ![Absolute File Link Icon](images/AbsoluteFileLinkIcon.png) | <a name="filelink"></a> A file link named "Example" which refers to               a Program at */data/example* .   File links may reference another file using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidra-url-formats) below.               A file link may appear with various icon states which correspond to version control.               File links only support a single version and may not be modified. |
+| File Link (Broken) | ![Absolute Broken File Link Icon](images/AbsoluteBrokenFileLinkIcon.png) | <a name="brokenfilelink"></a> A file link named "Example" which refers to               a Program at */data/example* and is in a "Broken" state.  Hovering the mouse 			  on this node will display a tooltip which indicates the reason for the broken state.  			  External file links will never show a broken link state since they are not evaluated for such conditions. |
+| Folder Link | ![Absolute Folder Link Icon](images/AbsoluteFolderLinkIcon.png) | <a name="folderlink"></a> A folder link named "Example" which refers               to a folder at */data/example* .   Folder links may reference another folder using either an               1) absolute file path within the same project, 2) a relative file path within               the same project, 3) a shared repository Ghidra URL, or 4) a local project Ghidra URL.               See [Ghidra URL formats](#ghidra-url-formats) below.               Since a folder link is stored as a file, it may appear with various icon states which                correspond to version control.  Folder links only support a single version and may not                be modified.  The tree may permit expanding such nodes to reveal their linked-content  			  as files and sub-folders. |
+| Folder Link (Broken) | ![Absolute Broken Folder Link Icon](images/AbsoluteBrokenFolderLinkIcon.png) | <a name="brokenfolderlink"></a> A folder link named "Example" which refers to               a folder at */data/example* and is in a "Broken" state.  Hovering the mouse 			  on this node will display a tooltip which indicates the reason for the broken state.   			  External folder links will never show a broken link state since they are not evaluated for such conditions. |
+| Hijacked File | ![Hijack File](images/hijack_file.png) | <a name="hijackedfile"></a> The private file "Example" exists on your                computer, but another user added "Example" to version control, which               caused the private file to appear as *hijacked* , (i.e., the file can be saved "as               is" using " **Save As** " since you do not have the file checked out that is on                the Ghidra Server.) Hijacked files may also result from a checkout that was [terminated](../VersionControl/project_repository.md#view-checkouts) . The *shared* version of "Example" will not be visible in your project until you [undo the               hijack](../VersionControl/project_repository.md#undo-hijack) .  You can also either rename the hijacked "Example", move it to               another folder, delete it, or use the **Undo Hijack** [action](../VersionControl/project_repository.md#undo-hijack) . Then the               shared "Example" will appear in your data tree as a versioned file. |
 
 
 ### Ghidra URL Formats
@@ -468,8 +467,7 @@ The format of a remote *Ghidra Server URL* is distinctly different from a
 **Remote Ghidra Server Repository**
 
 
-| `ghidra://<hostname>[:<port>]/<repository_name>[/<folder_or_file_path>]` |
-| --- |
+`ghidra://<hostname>[:<port>]/<repository_name>[/<folder_or_file_path>]`
 
 
 If the default Ghidra Server port (13100) is in use it is not specified by the URL.
@@ -480,12 +478,11 @@ The *hostname* may specify either a Fully Qualified Domain Name (FQDN, e.g.,
 **Local Ghidra Project**
 
 
-| `ghidra:[/<directory_path>]/<project_name>[?/<folder_or_file_path>]` |
-| --- |
+`ghidra:[/<directory_path>]/<project_name>[?/<folder_or_file_path>]`
 
 
 For local project URLs, the absolute directory path containing the project
-**.gpr* locator file is specified with the project name but excludes any *.gpr/.rep* suffix.
+*\*.gpr* locator file is specified with the project name but excludes any *.gpr/.rep* suffix.
 The folder or file path within the project is conveyed with a URL query so the '?' is required.
 
 
@@ -502,8 +499,7 @@ Project's data folders.
 To view the data from another project:
 
 
-1. Select **Project →
-View Project...**
+1. Select **Project → View Project...**
 2. A file chooser is displayed; the default location is the projects folder in the
 installation folder.
 3. Choose a project; the file extension is "gpr."
@@ -514,8 +510,7 @@ project.
 this project.
 
 
-| ![](images/ViewOtherProjects.png) |
-| --- |
+![View Other Projects](images/ViewOtherProjects.png)
 
 
 You can copy and paste folders (via menus or drag and drop) and files from the other
@@ -543,8 +538,7 @@ the Ghidra Server is unsuccessful, then the only files available to you are your
 To view the data from a server-based repository:
 
 
-1. Select **Project →
-View Repository...**
+1. Select **Project → View Repository...**
 2. A repository chooser is displayed; allowing you to specify a Ghidra Server
 network address and select one of its repositories...
 3. Enter the Ghidra Server address and port.  The default port is 13100.
@@ -570,9 +564,7 @@ Ghidra maintains a list of Projects and remote Repositories that were recently v
 To view a recently opened project or repository,
 
 
-1. Select **Project →
-View Recent →
-&lt;*project path or repository URL*&gt;**
+1. Select **Project → View Recent → &lt;*project path or repository URL*&gt;**
 2. Select a project or repository from the menu.
   - If the project/repository is not in the view, a new tab is created in the "READ-ONLY Project
 Data" panel in the Project Window; the tab shows the name of the project or repository URL.
@@ -582,7 +574,7 @@ Data" panel in the Project Window; the tab shows the name of the project or repo
 ### Close View
 
 
-To close a view, select **Project****→****Close View****→****&lt;*project path/repository URL*&gt;,**
+To close a view, select **Project** **→** **Close View** **→** **&lt;*project path/repository URL*&gt;,**
 OR click on the small 'X' on the specific view tab, OR right mouse click on the
 corresponding view tab and choose the **Close**
 option.
@@ -594,7 +586,7 @@ The tab is removed from the "READ-ONLY Project Data" panel in the Project Window
 ### Close All Read-Only Views
 
 
-To close all read-only views at once, select **Project****→****Close View****→****Close All Read-Only Views.**
+To close all read-only views at once, select **Project** **→** **Close View** **→** **Close All Read-Only Views.**
 
 
 The tabbed pane for read-only Project data is removed from the Project Window.
@@ -655,7 +647,7 @@ The project window below shows a Program file-link "Program1" which is linked to
 same file in the viewed project.
 
 
-![](images/LinkOtherProject.png)
+![Link Other Project](images/LinkOtherProject.png)
 
 
 A folder or file link will show its referenced location with either
@@ -680,11 +672,10 @@ The workspace state, i.e., [running tools](#running-tools), [tool connections](C
 you [exit Ghidra](Ghidra_Front_end_Menus.md#exiting-ghidra) or [close the Project](Close_Project.md).
 
 
-- <a name="add-workspace"></a>To create a new workspace,
+- <a name="add_workspace"></a>To create a new workspace,
 
 
-1. Select **Project →
-Workspace → Add...**
+1. Select **Project → Workspace → Add...**
 2. A dialog is displayed; enter a new workspace name. Duplicate workspace names are not
 allowed.
 3. Click on the **OK** button; the newly created workspace becomes
@@ -694,19 +685,19 @@ the current workspace; the name is added to the list of workspaces in the combo 
 number is appended to the name to make it unique.
 
 
-- <a name="rename-workspace"></a>To rename the current workspace,
+- <a name="rename_workspace"></a>To rename the current workspace,
 
 
-1. Select **Project****→ Workspace → Rename...**
+1. Select **Project** **→ Workspace → Rename...**
 2. A dialog is displayed.
 3. Enter the new name for the current workspace. Duplicate workspace names are not
 allowed. The list of workspace names is updated to reflect the new name.
 
 
-- <a name="delete-workspace"></a>To delete the current workspace,
+- <a name="delete_workspace"></a>To delete the current workspace,
 
 
-1. Select **Project****→ Workspace → Delete...**
+1. Select **Project** **→ Workspace → Delete...**
 2. A dialog is displayed to confirm your delete request.
 3. Choose the **Delete** button to delete the workspace.
   - Tools in the workspace are closed.
@@ -717,10 +708,10 @@ the last one, then the default workspace ("Workspace") becomes the current
 workspace.
 
 
-- <a name="switch-workspace"></a>To switch workspaces,
+- <a name="switch_workspace"></a>To switch workspaces,
 
 
-1. Select **Project****→ Workspace → Switch...**
+1. Select **Project** **→ Workspace → Switch...**
 2. Switches sequentially through the list of workspaces (in creation order),
 wrapping back to the first after the last has been reached.
   - For example: WS1, WS2, WS3, then WS1.
@@ -750,8 +741,8 @@ different workspaces may be connected.
 If your project is associated with a Ghidra Server, then below the *Running Tools*
 panel you will see a connection status panel that shows the name of the [Project Repository](../VersionControl/project_repository.md), your access
 privileges, and an indication of whether you are currently connected to the Ghidra
-Server.  The [status button](../VersionControl/project_repository.md#connect-to-the-server), ![connected.gif](../icons/connected.gif) indicates that your
-project repository is connected to the Ghidra Server; the status button, ![disconnected.gif](../icons/disconnected.gif) indicates that
+Server.  The [status button](../VersionControl/project_repository.md#connect-to-the-server), ![Connected](../icons/connected.gif) indicates that your
+project repository is connected to the Ghidra Server; the status button, ![Disconnected](../icons/disconnected.gif) indicates that
 your project repository is associated with a Ghidra Server but it is not connected to
 it.
 
@@ -773,7 +764,7 @@ Wizard](Creating_a_Project.md#creating-a-shared-project) when you set up the use
 dialog allows you to add and remove users, and change users' privileges in the project.
 
 
-![](images/EditProjectAccessList.png)
+![Edit Project Access List](images/EditProjectAccessList.png)
 
 
 > **Note:** In order for a user to
@@ -787,7 +778,7 @@ this full dialog and make edits. Instead, the option for Project View Project Ac
 the following dialog and allow the user to view the project users and their current access privileges only.
 
 
-![](images/ViewProjectAccessPanel.png)
+![View Project Access Panel](images/ViewProjectAccessPanel.png)
 
 
 ## Change Password
@@ -799,14 +790,14 @@ you want to change your password. A dialog is displayed to confirm your request,
 below.
 
 
-![](images/ConfirmChangePassword.png)
+![Confirm Change Password](images/ConfirmChangePassword.png)
 
 
 If you select **Continue**, a dialog is displayed for you to enter your
 new password, and to re-enter your password.
 
 
-![](images/ChangePassword.png)
+![Change Password](images/ChangePassword.png)
 
 
 > **Note:** When you initially
@@ -817,10 +808,10 @@ a command shell on the server system using the svrAdmin command.  Refer to the 
 directory for use of this administration command.
 
 
-## Console ![monitor.png](../icons/monitor.png)
+## Console ![Monitor](../icons/monitor.png)
 
 
-Click on the console icon ![monitor.png](../icons/monitor.png)  to display the system console.
+Click on the console icon ![Monitor](../icons/monitor.png)  to display the system console.
 
 
 Log messages, including the standard output and error streams, are redirected to the
@@ -830,12 +821,12 @@ the Ghidra console.
 
 
 Errors and other informational messages are logged to a file in
-`<user settings>`/***ghidraUser.log***.  Messages are appended to the file every
+`<user settings>`/*\**ghidraUser.log*\**.  Messages are appended to the file every
 time you launch Ghidra.  Once the log file has reached 500KB in size, however, it will
-be rolled to a backup file named ***ghidraUser.log.0***.  Older backup files are
+be rolled to a backup file named *\**ghidraUser.log.0*\**.  Older backup files are
 similarly rolled to another file with a one-up digit suffix as well.  Ghidra stores a
-maximum of three backup files (***ghidraUser.log.0***,
-***ghidraUser.log.1***, ***ghidraUser.log.2***) at a time.  The log
+maximum of three backup files (*\**ghidraUser.log.0*\**,
+*\**ghidraUser.log.1*\**, *\**ghidraUser.log.2*\**) at a time.  The log
 files can be used by Ghidra developers for troubleshooting.
 
 

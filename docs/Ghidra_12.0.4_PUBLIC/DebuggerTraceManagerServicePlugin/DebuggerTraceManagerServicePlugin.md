@@ -1,3 +1,5 @@
+[Home](../index.md) > [DebuggerTraceManagerServicePlugin](index.md) > Trace Management
+
 # Debugger: Trace Management
 
 
@@ -72,3 +74,8 @@ also restored.
 This toggle is always available. If a target terminates with this toggle enabled, and it was
 being recorded into a trace, that trace is automatically closed. If Save by Default is active,
 the trace is saved.
+
+
+---
+
+[← Previous: Threads](../DebuggerThreadsPlugin/DebuggerThreadsPlugin.md) | [Next: Emulation →](../DebuggerEmulationServicePlugin/DebuggerEmulationServicePlugin.md)

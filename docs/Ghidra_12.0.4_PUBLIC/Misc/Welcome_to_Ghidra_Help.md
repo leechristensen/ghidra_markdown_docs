@@ -1,7 +1,7 @@
 # Welcome to Ghidra Help...
 
 
-![GHIDRA_1.png](../icons/GHIDRA_1.png)
+![Ghidra 1](../icons/GHIDRA_1.png)
 
 
 Ghidra provides context sensitive help on menu items, dialogs, buttons,

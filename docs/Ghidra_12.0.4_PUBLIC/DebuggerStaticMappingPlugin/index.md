@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Static Mappings](DebuggerStaticMappingPlugin.md)

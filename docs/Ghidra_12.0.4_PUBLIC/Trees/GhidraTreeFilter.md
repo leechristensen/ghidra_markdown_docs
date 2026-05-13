@@ -10,7 +10,7 @@ Below is an example from the Data Type Manager. The filter is
 currently set to "Starts With", but you can select a different filter strategy.
 
 
-![](images/Filter.png)
+![Filter](images/Filter.png)
 
 
 The button to the right of the filter will bring up the [Filter
@@ -74,7 +74,7 @@ The Filter Options Dialog is used to control how the text in the filter text fie
 to perform filtering on the tree or table.
 
 
-![](images/FilterOptions.png)
+![Filter Options](images/FilterOptions.png)
 
 
 ### Filter Strategy
@@ -84,11 +84,11 @@ The filter strategy specifies how the text in the filter text field will be used
 match against the nodes in a tree or the rows in a table.
 
 
-| ![page_code.png](../icons/page_code.png) | Contains | Tree nodes will match if its name contains the text in the filter text field. Table               rows will match if any of the columns contains the filter text. Multiple words in the text field                 are treated as separate patterns andALLpatterns must match for the node or                 row to be accepted. For example, if the text field contained "foo bar", then the                 table will match if at least one column contains a "foo" and at least one column                 contains a "bar". |
+| ![Page Code](../icons/page_code.png) | Contains | Tree nodes will match if its name contains the text in the filter text field. Table               rows will match if any of the columns contains the filter text. Multiple words in the text field                 are treated as separate patterns andALLpatterns must match for the node or                 row to be accepted. For example, if the text field contained "foo bar", then the                 table will match if at least one column contains a "foo" and at least one column                 contains a "bar". |
 | --- | --- | --- |
-| ![page_go.png](../icons/page_go.png) | Starts With | Tree nodes will match if its name starts with the text in the filter text field.             Table rows will match if any of the columns starts with the filter text. |
-| ![page_green.png](../icons/page_green.png) | Matches Exactly | Tree nodes will match if its name exactly matches the text in the filter text             field.Table rows will match if any of the columns exactly match the filter text. |
-| ![page_excel.png](../icons/page_excel.png) | Regular Expression | Tree nodes will match if the regular expression in the filter matches the name of             the node. Table rows will match if any of the columns matches the regular expression.             See [regular             expression](../Search/Regular_Expressions.md#regular-expression-syntax) for help. Note that the regular expression will match if the pattern it             represents is **contained** in the tree node name or table column. If you want to             match the beginning or end (i.e starts with or ends with), you must include the special             "starts with" (^) or "ends with" ($) regular expression character syntax. For example,             the regular expression "bob" will match "bobby", "hey bobby", and "bob", but the             regular expression "^bob" will match "bobby" and "bob", and "^bob$" will only match             "bob".  The **Case Sensitive** check box is disabled for regular expressions, and             the default matching mode is exact case matching.  Case insensitive matching can be             enabled by including the "(?i)" embedded flag at the beginning of your filter.  For             example, the regular expression "(?i)bob" will match items with "Bob", "bob", and             "BOB". |
+| ![Page Go](../icons/page_go.png) | Starts With | Tree nodes will match if its name starts with the text in the filter text field.             Table rows will match if any of the columns starts with the filter text. |
+| ![Page Green](../icons/page_green.png) | Matches Exactly | Tree nodes will match if its name exactly matches the text in the filter text             field.Table rows will match if any of the columns exactly match the filter text. |
+| ![Page Excel](../icons/page_excel.png) | Regular Expression | Tree nodes will match if the regular expression in the filter matches the name of             the node. Table rows will match if any of the columns matches the regular expression.             See [regular             expression](../Search/Regular_Expressions.md#regular-expression-syntax) for help. Note that the regular expression will match if the pattern it             represents is **contained** in the tree node name or table column. If you want to             match the beginning or end (i.e starts with or ends with), you must include the special             "starts with" (^) or "ends with" ($) regular expression character syntax. For example,             the regular expression "bob" will match "bobby", "hey bobby", and "bob", but the             regular expression "^bob" will match "bobby" and "bob", and "^bob$" will only match             "bob".  The **Case Sensitive** check box is disabled for regular expressions, and             the default matching mode is exact case matching.  Case insensitive matching can be             enabled by including the "(?i)" embedded flag at the beginning of your filter.  For             example, the regular expression "(?i)bob" will match items with "Bob", "bob", and             "BOB". |
 
 
 ### Case Sensitive
@@ -103,8 +103,8 @@ option has no effect when the "Regular Expression" strategy is selected.
 
 
 Selecting the allow globbing checkbox will cause the filter to interpret the globbing
-chars "*" and "?" as wildcards. The "*" char will match any number of characters while the
-"?" character will match a single character. For example "ab*g" will match "abxg" and
+chars "\*" and "?" as wildcards. The "\*" char will match any number of characters while the
+"?" character will match a single character. For example "ab\*g" will match "abxg" and
 "abxxg" and so on. The text "ab?g" will match "abxg" but not "abxxg". NOTE: This option has
 no effect when the "Regular Expression" strategy is selected.
 
@@ -161,15 +161,14 @@ Ghidra defaults to a comma separator for multiple terms; you may select a differ
 delimiter character from the following:
 
 
-[space] ~ ` ! @ # $ % ^ & * - _ + = | : ; , .
+[space] ~ \` ! @ # $ % ^ & \* - _ + = | : ; , .
 
 
 Whitespace preceding and trailing the delimiter is automatically removed.
 
 
 In situations were the delimiter appears in your filter term, wrap the term in
-double-quotes to protect the expression. For example, '`bob | "cat | dog" |
-jane`' will be split (assume the '`|`' delimiter) into three terms --
+double-quotes to protect the expression. For example, '`bob | "cat | dog" | jane`' will be split (assume the '`|`' delimiter) into three terms --
 `bob`, `cat | dog`, and `jane`. (Note that both the
 delimiter character and the spaces in the '`cat | dog`' term persists; the
 entire quoted string was parsed as a string literal.) Typically, this situation can be
@@ -192,7 +191,7 @@ However, if you're looking for data that matches all the terms of your filter, s
 overall acceptance by the filter.
 
 
-![](../shared/note.yellow.png) Using delimiters that otherwise have a
+![Note.Yellow](../shared/note.yellow.png) Using delimiters that otherwise have a
 logical definition -- '`+`', or '`|`', for example -- have
 *no* semantic value in this application; they are simply tokens for input string
 processing.
@@ -225,7 +224,7 @@ the only record that satisfies all three conditions (similar to the '`OR`'
 discussion, only files satisfying all three properties will be selected).
 
 
-<a name="column-filters"></a>
+<a name="column_filters"></a>
 
 
 ## Ghidra Table Column Filters
@@ -241,19 +240,18 @@ slow to calculate and they are better filtered by using a range filter, as is av
 using column filters.
 
 
-![](images/TableColumnFilter.png)
+![Table Column Filter](images/TableColumnFilter.png)
 
 
-The ![filter_off.png](../icons/filter_off.png) button in lower right corner will bring up
+The ![Filter Off](../icons/filter_off.png) button in lower right corner will bring up
 the Column Filter Dialog.
 
 
-![](images/TableColumnFilterDialog.png)
+![Table Column Filter Dialog](images/TableColumnFilterDialog.png)
 
 
 This dialog describes a filter that will
-narrow the list of functions to those whose *name starts with "FUN_00" or contains
-"401"* **and** *the Function Size is at least 80*.
+narrow the list of functions to those whose *name starts with "FUN_00" or contains "401"* **and** *the Function Size is at least 80*.
 
 
 ### Filters Panel
@@ -284,16 +282,16 @@ against. This component will change depending on the column type.
 Panel Actions:
 
 
-- **Add a new AND column filter** - The "![Plus.png](../icons/Plus.png) Add AND
+- **Add a new AND column filter** - The "![Plus](../icons/Plus.png) Add AND
 condition" button in the bottom right will add a new column filter that will be "ANDed"
 to any previous conditions. It will default to the first column with a default constraint
 applicable for that columns type.
-- **Add a new OR column filter** - The "![Plus.png](../icons/Plus.png) Add OR
+- **Add a new OR column filter** - The "![Plus](../icons/Plus.png) Add OR
 condition" button in the bottom right will add a new column filter that will be "ORed"
 with any previous conditions. It will default to the first column with a default
 constraint applicable for that columns type. Note that AND conditions have higher
 precedence than OR conditions.
-- **Add an additional constraint to a column filter** - The ![Plus.png](../icons/Plus.png) button all the way on the right of the column filter will add an
+- **Add an additional constraint to a column filter** - The ![Plus](../icons/Plus.png) button all the way on the right of the column filter will add an
 additional constraint condition.
 - **Delete a column condition** - The ![Delete](../icons/edit-delete.png)
 button at the end of a condition will delete that condition. If that condition was the
@@ -303,21 +301,21 @@ last condition in a column filter, the column filter will be deleted.
 Toolbar actions
 
 
-- <a name="save-filter"></a>**Save Filter ![disk.png](../icons/disk.png)** - Saves the current dialog
+- <a name="save_filter"></a>**Save Filter ![Disk](../icons/disk.png)** - Saves the current dialog
 configuration to the tool. A dialog will appear that will allow you to name the
 filter
-- <a name="load-filter"></a>**Load Filter ![Open Folder](../icons/openSmallFolder.png)** - Pops up a dialog with
+- <a name="load_filter"></a>**Load Filter ![Open Folder](../icons/openSmallFolder.png)** - Pops up a dialog with
 a list of saved filters. Selecting one will load that filter into the dialog.
 
 
 Dialog actions
 
 
-- <a name="apply-button"></a>**Apply** - Applies the dialog's filter to the table. Only enabled if all the
+- <a name="apply_button"></a>**Apply** - Applies the dialog's filter to the table. Only enabled if all the
 conditions in the dialog are valid.
-- <a name="dismiss-button"></a>**Dismiss** - Closes the filter dialog. Any currently applied filter remains in
+- <a name="dismiss_button"></a>**Dismiss** - Closes the filter dialog. Any currently applied filter remains in
 effect.
-- <a name="clear-filter-button"></a>**Clear Filter** - Removes any currently applied column filter from the table and
+- <a name="clear_filter_button"></a>**Clear Filter** - Removes any currently applied column filter from the table and
 resets the dialog to its initial state.
 
 
@@ -384,11 +382,11 @@ values.
 After applying the filter shown above, the table would appear as follows:
 
 
-![](images/TableColumnFilterAfterFilterApplied.png)
+![Table Column Filter After Filter Applied](images/TableColumnFilterAfterFilterApplied.png)
 
 
 Notice that the headers for both the **Label** and **Function Size** columns have
-the ![view-filter.png](../icons/view-filter.png) icon. This indicates that there is an applied
+the ![View Filter](../icons/view-filter.png) icon. This indicates that there is an applied
 column based filter and those columns are the ones whose values are affected by the
 filter.
 

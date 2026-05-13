@@ -192,13 +192,24 @@ class MarkdownValidator:
                         )
                     )
 
-            # Check for unclosed inline formatting
-            # Count asterisks/underscores for bold/italic
+            # Check for unmatched bold markers. Replace code spans with a
+            # placeholder FIRST — backslashes inside a code span are literal,
+            # not markdown escapes, so we mustn't conflate them. Then strip
+            # backslash-escaped specials in the remaining text so they don't
+            # count toward emphasis pairing.
             stripped = line.strip()
             if stripped and not stripped.startswith("|"):  # Skip table rows
-                # Check for unmatched bold markers
-                bold_count = len(re.findall(r"(?<!\*)\*\*(?!\*)", stripped))
-                if bold_count % 2 != 0:
+                non_code = re.sub(r"```.+?```", "X", stripped)
+                non_code = re.sub(r"``.+?``", "X", non_code)
+                non_code = re.sub(r"`[^`]+`", "X", non_code)
+                non_code = re.sub(r"\\[\\`*]", "", non_code)
+
+                # Count non-overlapping `**` runs. A `****` boundary
+                # (bold-close + bold-open) reads as 2 markers; `***`
+                # (bold + italic-open) reads as 1 bold + 1 italic, so the
+                # bold count is 1 — both correct for pairing.
+                bold_markers = len(re.findall(r"\*\*", non_code))
+                if bold_markers % 2 != 0:
                     result.issues.append(
                         ValidationIssue(
                             file=md_file,
@@ -209,9 +220,9 @@ class MarkdownValidator:
                         )
                     )
 
-                # Check for unmatched backticks (inline code)
-                backtick_count = stripped.count("`") - stripped.count("```") * 3
-                if backtick_count % 2 != 0:
+                # Inline-code backticks: anything still in non_code is a lone
+                # backtick that didn't pair on this line.
+                if "`" in non_code:
                     result.issues.append(
                         ValidationIssue(
                             file=md_file,

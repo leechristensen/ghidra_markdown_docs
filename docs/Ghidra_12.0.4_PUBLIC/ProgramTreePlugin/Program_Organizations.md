@@ -32,10 +32,10 @@ the folder contains.
 
 
 To organize a folder or fragment by modularization and block model, right mouse click on a
-folder or fragment in the [Program Tree](program_tree.md) and choose **Modularize By** → **Subroutine** → ***`<block model name>`.***
+folder or fragment in the [Program Tree](program_tree.md) and choose **Modularize By** → **Subroutine** → **\*`<block model name>`.\***
 
 
-*Provided by: *ModularizeAlgorithmPlugin**
+Provided by: *ModularizeAlgorithmPlugin*
 
 
 ## Dominance Tree Modularization
@@ -53,8 +53,7 @@ This action modularizes the program tree by placing code blocks in a folder that
 longest possible call tree path that calls that block.  For example, blocks
 at `Level 0`
 are not called by any other code; blocks at `Level 30` are blocks that have
-a call tree path to them that contains 30 nodes.  Note that the nodes at `Level
-30` may have shorter paths that reach them, but the longest of all the paths
+a call tree path to them that contains 30 nodes.  Note that the nodes at `Level 30` may have shorter paths that reach them, but the longest of all the paths
 is 30 nodes.
 
 
@@ -72,7 +71,7 @@ tree](view_manager.md#create-a-default-program-tree), a *default tree organizati
 the memory blocks. The fragment name is the same as the memory block name.
 
 
-*Provided by: *ProgramTreePlugin**
+Provided by: *ProgramTreePlugin*
 
 
 **Related Topics:**

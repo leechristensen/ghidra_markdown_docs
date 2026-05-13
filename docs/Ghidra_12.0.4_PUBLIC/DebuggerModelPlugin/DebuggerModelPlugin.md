@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerModelPlugin](index.md) > Model
+
 # Debugger: Model Objects
 
 
-![](images/DebuggerModelPlugin.png)
+![Debugger Model Plugin](images/DebuggerModelPlugin.png)
 
 
 The Model window permits the user to inspect the trace's object database. It also provides
@@ -135,8 +137,7 @@ to infinity. Others, e.g., threads will have lives indicating their first and la
 observations. Rarely, an object may have multiple disjoint lifespans.
 - Plot - This is a visual plot of the "life" of the object. It is hidden by default. The
 header for this column contains a caret that shows the Debugger UI's current snapshot within
-this plot. Clicking or dragging in that header while in **Control Trace** or **Control
-Emulator** [mode](../DebuggerControlPlugin/DebuggerControlPlugin.md#control-mode) will
+this plot. Clicking or dragging in that header while in **Control Trace** or **Control Emulator** [mode](../DebuggerControlPlugin/DebuggerControlPlugin.md#control-mode) will
 activate the clicked snapshot, allowing quick navigation through time. To suppress this
 behavior, i.e., so that you can reposition or sort the column, hold **SHIFT** while
 clicking or dragging.
@@ -296,3 +297,8 @@ only *connected* window. When an object or snapshot is activated in the Debugger
 connected window tracks along, setting its current object and/or snapshot to match the
 Debugger's. Any disconnected windows remain unaffected, but changes to the model itself are
 still displayed.
+
+
+---
+
+[← Previous: Copy Actions](../DebuggerCopyActionsPlugin/DebuggerCopyActionsPlugin.md) | [Next: Threads →](../DebuggerThreadsPlugin/DebuggerThreadsPlugin.md)

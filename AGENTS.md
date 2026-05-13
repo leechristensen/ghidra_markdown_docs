@@ -46,6 +46,13 @@ uv run ghidra-help-to-markdown /path/to/ghidra-source ./docs \
 # Validate output for broken links
 uv run ghidra-docs-validator ./docs/Ghidra_12.0.4_PUBLIC
 
+# Strict link/anchor check — wraps `mkdocs build --strict`. Fails on ANY
+# warning or error (broken nav reference, missing fragment, unknown
+# file). REQUIRED after any code change that affects converter output
+# or any hand-edit under `docs/`. CI runs this on every push/PR via
+# `.github/workflows/ci.yml`, against a fresh end-to-end conversion.
+./scripts/check_links.sh
+
 # Lint and format
 uv run ruff check --fix src/
 uv run ruff format src/

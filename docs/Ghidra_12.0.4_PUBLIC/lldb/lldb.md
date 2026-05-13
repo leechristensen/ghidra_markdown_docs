@@ -1,9 +1,10 @@
+[Home](../index.md) > [lldb](index.md) > Via SSH
+
 # Debugger Launchers: LLDB
 
 
 Integration with LLDB is achieved using a plugin for LLDB's Python Scripting Bridge. It is
-well-suited for debuging user-space targets on a variety of platforms. It is the *de
-facto* debugger for macOS. It can be obtained by installing Xcode from the App Store.
+well-suited for debuging user-space targets on a variety of platforms. It is the *de facto* debugger for macOS. It can be obtained by installing Xcode from the App Store.
 Though it may require a bit more careful configuration, it can also be obtained from other
 repositories like `brew`.
 
@@ -70,8 +71,7 @@ are still getting import errors, check the version that LLDB embeds:
 
 
 Note the version and ensure that you are invoking Pip with that version. Supposing
-`sys.version` indicates 3.10, you should invoke Pip using `python3.10 -m
-pip`.
+`sys.version` indicates 3.10, you should invoke Pip using `python3.10 -m pip`.
 
 
 ### Options
@@ -145,8 +145,7 @@ not map or synchronize correctly.
 - **Host**: The host name of the target stub.
 - **Port**: The TCP port of the target stub.
 - **Architecture** (optional): If the stub does not describe its architecture to LLDB,
-you must set it before connecting. This is passed as is to "`settings set
-target.default-arch ...`" immediately before the "`gdb-remote ...`" command.
+you must set it before connecting. This is passed as is to "`settings set target.default-arch ...`" immediately before the "`gdb-remote ...`" command.
 - **`lldb` command**: This works the same as in LLDB.
 
 
@@ -175,8 +174,7 @@ Thus, it can be used without a current program.
 
 On your local system, follow the steps given in [LLDB Setup](#setup). Before
 connecting to the target kernel, you must force an NMI on the target to ready the connection.
-On actual hardware, this is typically achieved by some button sequence, e.g. **L/R-Options +
-Power** or **Command+Option+Control+Shift+Esc**. In a VM, you may have to pause the VM and
+On actual hardware, this is typically achieved by some button sequence, e.g. **L/R-Options + Power** or **Command+Option+Control+Shift+Esc**. In a VM, you may have to pause the VM and
 modify its state. For example, by cd'ing to the VM's container and issuing the command:
 
 
@@ -193,8 +191,7 @@ modify its state. For example, by cd'ing to the VM's container and issuing the c
 
 - **Host**: The host IP of the target kernel.
 - **Architecture** (optional): If the kernel does not describe its architecture to LLDB,
-you must set it before connecting. This is passed as is to "`settings set
-target.default-arch ...`" immediately before the "`kdp-remote ...`" command.
+you must set it before connecting. This is passed as is to "`settings set target.default-arch ...`" immediately before the "`kdp-remote ...`" command.
 - **`lldb` command**: This works the same as in LLDB.
 
 
@@ -252,5 +249,9 @@ Command Prompt or Powershell:
   PS> C:\path\to\android-ndk\...\python -m ensurepip
   PS> C:\path\to\android-ndk\...\python -m pip install ...
   ```
-See the [Setup](#setup) section for the arguments to pass to `pip install
-...`.
+See the [Setup](#setup) section for the arguments to pass to `pip install ...`.
+
+
+---
+
+[← Previous: Remote](lldb.md) | [Next: GDB Integration →](../gdb/gdb.md)

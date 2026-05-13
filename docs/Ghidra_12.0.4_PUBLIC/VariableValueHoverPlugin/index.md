@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Variable Hovers](VariableValueHoverPlugin.md)

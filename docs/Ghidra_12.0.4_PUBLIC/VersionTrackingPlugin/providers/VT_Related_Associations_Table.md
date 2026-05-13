@@ -1,3 +1,5 @@
+[Home](../../index.md) > [VersionTrackingPlugin](../index.md) > Related Matches Table
+
 # Version Tracking Related Matches Table
 
 
@@ -32,27 +34,18 @@ The following image shows an example **Related Matches** table from a Version
 Tracking Source Tool.
 
 
-| ![](../images/OneToManySource.png) |
-| --- |
+![One To Many Source](../images/OneToManySource.png)
 
 
 The information above the table indicates the name and address for the current tool's
 function or data. In the Source Tool if the cursor is within a function then the
 information above the table shows the current source function's name and entry point
-address. *In this case, our cursor is in the function **addPerson** in the Source
-Tool.*
+address. *In this case, our cursor is in the function **addPerson** in the Source Tool.*
 
 
 The table itself contains a row for each of the matches (if any) for the current function
 or data. Each table row shows the name and address of each possible match in the
-Destination Tool, along with other match information. *In this case, correlators have
-found more than one potential match to the current function in the Source Tool. These
-matches might be entirely different functions or the same function but found with
-different correlators. In this example, the user decided that "addPerson" in the source
-program matched function **addPerson** in the destination program. It has already been
-accepted by the user as the correct match. Therefore both rows that indicate a match to
-the same destination function are marked accepted. By definition, there can only be one
-accepted match per function.*
+Destination Tool, along with other match information. *In this case, correlators have found more than one potential match to the current function in the Source Tool. These matches might be entirely different functions or the same function but found with different correlators. In this example, the user decided that "addPerson" in the source program matched function **addPerson** in the destination program. It has already been accepted by the user as the correct match. Therefore both rows that indicate a match to the same destination function are marked accepted. By definition, there can only be one accepted match per function.*
 
 
 > **Tip:** Selecting a row in the Related
@@ -70,13 +63,10 @@ shows the related matches in the Destination Tool that are related to what was s
 above in the Source Tool's table.
 
 
-| ![](../images/OneToManyDestination.png) |
-| --- |
+![One To Many Destination](../images/OneToManyDestination.png)
 
 
-*In this case the Destination Tool's cursor is in function **addPerson**. There
-are two matches displayed in the table which are to the same source address but were
-arrived at by different correlation algorithms.*
+*In this case the Destination Tool's cursor is in function **addPerson**. There are two matches displayed in the table which are to the same source address but were arrived at by different correlation algorithms.*
 
 
 > **Tip:** Selecting a row in this table
@@ -129,7 +119,7 @@ table will update to show the items for that match and the markup items will be 
 with colors in the listings.
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -140,3 +130,8 @@ Tracking Matches Table](VT_Matches_Table.md)
 - [Version Tracking Tool](../VT_Tool.md)
 - [Version Tracking
 Introduction](../Version_Tracking_Intro.md)
+
+
+---
+
+[← Previous: Functions Table](VT_Functions_Table.md) | [Next: Implied Matches Table →](VT_Implied_Matches_Table.md)

@@ -34,14 +34,13 @@ To archive the current project:
 
 1. Close any tools that are running. (You cannot archive a project that has running
 tools.)
-2. From the [Ghidra Project Window](Ghidra_Front_end.md), select **File → Archive Current
-Project...**
+2. From the [Ghidra Project Window](Ghidra_Front_end.md), select **File → Archive Current Project...**
 3. From the *Archive Current Project* dialog, specify the *Archive File* where the
 project is to be saved. The default location of the archive file  is your projects
 directory.
 
 
-![](images/ArchiveProject.png)
+![Archive Project](images/ArchiveProject.png)
 
 
 > **Note:** The file
@@ -53,7 +52,7 @@ name must end with a '.gar' extension.
 displayed.
 
 
-![](images/ArchiveFileExists.png)
+![Archive File Exists](images/ArchiveFileExists.png)
 
 
 Decide whether you want to overwrite the existing archive file. Select **Yes** if you
@@ -75,7 +74,7 @@ appear. Also, the failure is indicated in the [Ghidra Project
 Window](Ghidra_Front_end.md)'s message area.
 
 
-*Provided by: *Project Archiver* Plugin*
+Provided by: *Project Archiver* Plugin
 
 
 **Related Topics:**

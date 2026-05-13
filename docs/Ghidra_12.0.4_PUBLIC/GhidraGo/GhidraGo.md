@@ -1,3 +1,5 @@
+[Home](../index.md) > [GhidraGo](index.md) > GhidraGo
+
 # GhidraGo README
 
 
@@ -97,7 +99,7 @@ will execute the ghidraGo CLI with that hyperlink as the first argument. The
 configuration is platform specific.
 
 
-*NOTE: changes to your path to ghidra, such as upgrading ghidra to a new version,
+\*NOTE: changes to your path to ghidra, such as upgrading ghidra to a new version,
 will require the path you set in this configuration to be updated.
 
 
@@ -148,3 +150,8 @@ GhidraGo (run it once).
 
 
 Last modified: Oct 26 2023
+
+
+---
+
+[← Previous: Headless Analyzer](../HeadlessAnalyzer/HeadlessAnalyzer.md) | [Next: Keyboard Navigation →](../KeyboardNavigation/KeyboardNavigation.md)

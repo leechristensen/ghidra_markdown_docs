@@ -9,14 +9,13 @@ used to restrict the view (set of addresses) that are displayed in the [Code Bro
 views.
 
 
-| ![](images/ViewManager.png) |
-| --- |
+![View Manager](images/ViewManager.png)
 
 
 The following paragraphs describe features of the Program Tree Manager.
 
 
-### Create a Default Program Tree ![layout_add.png](../icons/layout_add.png)
+### Create a Default Program Tree ![Layout Add](../icons/layout_add.png)
 
 
 A default tree has a fragment for each memory block in the program; the fragments are
@@ -30,31 +29,31 @@ program. When you re-open the project, the Program Tree Manager will show the v
 when you last closed the project.
 
 
-You can create a new default program tree by selecting the ![layout_add.png](../icons/layout_add.png) icon. A new tab is displayed with
+You can create a new default program tree by selecting the ![Layout Add](../icons/layout_add.png) icon. A new tab is displayed with
 the default name of the view, "Program Tree." If a view named "Program Tree" exists, then the
 name has a one-up number appended to it to ensure the name is unique, e.g., "Program
 Tree(1)."
 
 
-*Provided by: *ProgramTreePlugin**
+Provided by: *ProgramTreePlugin*
 
 
-### Open Program Tree ![openFolder.png](../icons/openFolder.png)
+### Open Program Tree ![Open Folder](../icons/openFolder.png)
 
 
-You can see a list of existing Program Trees in the Program by selecting the ![preferences-system-windows.png](../icons/preferences-system-windows.png) icon. Select
+You can see a list of existing Program Trees in the Program by selecting the ![Preferences System Windows](../icons/preferences-system-windows.png) icon. Select
 the program tree name from the popup menu; a tab is created in the panel for this tree, if
 one does not already exist. The selected tree becomes the current tree in the tabbed
 pane.
 
 
-*Provided by: *ProgramTreePlugin**
+Provided by: *ProgramTreePlugin*
 
 
-### Select Fragments Corresponding to a Program Location ![locationIn.gif](../icons/locationIn.gif)
+### Select Fragments Corresponding to a Program Location ![Location In](../icons/locationIn.gif)
 
 
-The icon  ![locationIn.gif](../icons/locationIn.gif)
+The icon  ![Location In](../icons/locationIn.gif)
 is a toggle button that controls whether the fragment(s) that correspond to the location in
 the code browser should be selected in the Program Tree.  **On** means to select the
 fragment(s) that contain the address of the location. While the button is **On**, the
@@ -62,7 +61,7 @@ Program Tree will track the location in the browser by selecting the appropriate
 fragments.  The toggle is **Off** by default.
 
 
-*Provided by: *ProgramTreePlugin**
+Provided by: *ProgramTreePlugin*
 
 
 ### Close a Program Tree
@@ -128,7 +127,7 @@ To switch to another tree view, either click on another tab, OR select a program
 from the list of program trees.
 
 
-*Provided By: *View Manager Plugin**
+Provided By: *View Manager Plugin*
 
 
 Related Topics:

@@ -16,10 +16,10 @@ The following dialog illustrates updating datatypes from a source archive named
 **MyArchive** to the program **WinHello.CPP.exe**.
 
 
-![](images/UpdateDialog.png)
+![Update Dialog](images/UpdateDialog.png)
 
 
-The *Update**DataTypes* dialog displays a
+The *Update* *DataTypes* dialog displays a
 table that lists all the data types that have been changed in the source archive. The table
 consists of the following columns:
 
@@ -74,10 +74,10 @@ The following dialog illustrates committing datatypes from a program named
 **WinHelloCPP.exe** to a source archive named **MyArchive**.
 
 
-![](images/CommitDialog.png)
+![Commit Dialog](images/CommitDialog.png)
 
 
-The *Commit**DataTypes* dialog displays a
+The *Commit* *DataTypes* dialog displays a
 table that lists all the data types that have been changed in the local archive. The table
 consists of the following columns:
 
@@ -134,7 +134,7 @@ an archive. The following dialog illustrates reverting datatypes from a program 
 **WinHelloCPP.exe** from a source archive named **MyArchive**.
 
 
-![](images/RevertDialog.png)
+![Revert Dialog](images/RevertDialog.png)
 
 
 The *Revert DataTypes* dialog displays a
@@ -197,7 +197,7 @@ program named **WinHelloCPP.exe** that originated from a source archive named
 **MyArchive**.
 
 
-![](images/DisassociateDialog.png)
+![Disassociate Dialog](images/DisassociateDialog.png)
 
 
 The *Disassociate DataTypes* dialog
@@ -272,8 +272,7 @@ source archive.
 
 To refresh sync indicators for datatypes associated with a particular source archive,
 right-click on the node that contains the datatypes and select
-**Refresh Sync Indicators For** *→
-**`<Source Archive Name>`.***
+**Refresh Sync Indicators For** *→ **`<Source Archive Name>`.*\**
 
 
 ## Edit Data Type Archive Paths
@@ -281,11 +280,10 @@ right-click on the node that contains the datatypes and select
 
 The *Edit Data Type Archive Paths* dialog is
 displayed when the **Edit Archive Paths** action is
-invoked from the drop down menu in the *Manage Data
-Types* window.
+invoked from the drop down menu in the *Manage Data Types* window.
 
 
-![](images/EditPaths.png)
+![Edit Paths](images/EditPaths.png)
 
 
 From this dialog, users can add,
@@ -303,7 +301,7 @@ either the up or down arrows to move the path up or down in the list respectivel
 - **$USER_HOME** - The user's home directory.
 
 
-*Provided by: *DataTypeManagerPlugin**
+Provided by: *DataTypeManagerPlugin*
 
 
 **Related Topics:**

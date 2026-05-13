@@ -1,3 +1,5 @@
+[Home](../index.md) > [VersionTrackingPlugin](index.md) > Version Tracking
+
 # Version Tracking Introduction
 
 
@@ -140,7 +142,7 @@ version tracking.
 - [Version Tracking Wizard](VT_Wizard.md)
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -151,3 +153,8 @@ version tracking.
 - [Version Tracking Wizard](VT_Wizard.md)
 [Version Tracking Matches Table](providers/VT_Matches_Table.md)
 [Version Markup Items Table](providers/VT_Markup_Table.md)
+
+
+---
+
+[← Previous: Plug-in Functionality](../FunctionID/FunctionIDDebug.md) | [Next: Workflow →](VT_Workflow.md)

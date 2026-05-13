@@ -1,3 +1,5 @@
+[Home](../index.md) > [jpda](index.md) > Local
+
 # Debugger Launchers: Java
 
 
@@ -86,3 +88,8 @@ Identical to that for the java launcher.
 - **Timeout**: How long to wait for a connection attempt.
 - **JShell cmd**: If desired, the path to the jshell binary that will host
 execution.
+
+
+---
+
+[← Previous: Attach by JDWP](jpda.md) | [Next: LLDB Integration →](../lldb/lldb.md)

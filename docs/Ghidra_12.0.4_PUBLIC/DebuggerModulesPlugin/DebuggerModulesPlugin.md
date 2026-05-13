@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerModulesPlugin](index.md) > Modules and Sections
+
 # Debugger: Modules and Sections
 
 
-![](images/DebuggerModulesPlugin.png)
+![Debugger Modules Plugin](images/DebuggerModulesPlugin.png)
 
 
 The concept of a module may vary from platform to platform, but in most cases, it refers to
@@ -80,8 +82,7 @@ using Modules.
 
 This action is available when both a trace and a program are opened. It maps the current
 trace to the current program using identical addresses. This action ignores the module list. It
-is a suitable mapping when the current program is loaded in the trace *without
-relocation*. It is also a fallback worth trying in the absence of a module list.
+is a suitable mapping when the current program is loaded in the trace *without relocation*. It is also a fallback worth trying in the absence of a module list.
 
 
 ### Map Manually ![Manual](../icons/program_obj.png)
@@ -103,7 +104,7 @@ the user can cause the mapper to re-use the memorized mapping in future sessions
 module name is saved to the program database.
 
 
-![](images/DebuggerModuleMapProposalDialog.png)
+![Debugger Module Map Proposal Dialog](images/DebuggerModuleMapProposalDialog.png)
 
 
 ### Map Module to Current Program
@@ -123,7 +124,7 @@ blocks matching the selected sections and proposes new mappings. Users who prefe
 Modules should also consider setting [Auto-Map](#auto-map) to use Sections.
 
 
-![](images/DebuggerSectionMapProposalDialog.png)
+![Debugger Section Map Proposal Dialog](images/DebuggerSectionMapProposalDialog.png)
 
 
 ### Map Sections to Current Program
@@ -224,3 +225,8 @@ This action is available when the [Dynamic Listing](../DebuggerListingPlugin/Deb
 at a valid location. It selects the module and section, if applicable, containing that cursor.
 If the dynamic listing has a selection, it selects all modules and sections intersecting that
 selection.
+
+
+---
+
+[← Previous: Time](../DebuggerTimePlugin/DebuggerTimePlugin.md) | [Next: Static Mappings →](../DebuggerStaticMappingPlugin/DebuggerStaticMappingPlugin.md)

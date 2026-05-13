@@ -86,17 +86,69 @@ class RuntimeHelp:
     # TOC enumeration
 
     def walk_toc(self) -> list[RuntimeTOCEntry]:
-        """Return the merged TOC as a list of top-level entries with children."""
-        toc_view = self._helpset.getNavigatorView("TOC")
-        tree = toc_view.getDataAsTree()
+        """Return the TOC merged across every loaded HelpSet.
+
+        The master HelpSet's `getNavigatorView("TOC").getDataAsTree()` only
+        returns the master module's local TOC.xml — sub-helpsets (Theming,
+        Version Tracking, Wildcard Assembler, …) each ship their own TOC.xml
+        with the full path from root and `mergetype="javax.help.SortMerge"`,
+        expecting JavaHelp to merge them. Ghidra's GHelpSet doesn't honor that
+        at runtime, so we merge manually: walk each helpset's TOC and dedupe
+        nodes by `toc_id` (which Ghidra requires to be globally unique).
+        """
         top: list[RuntimeTOCEntry] = []
-        children = tree.children()
-        while children.hasMoreElements():
-            node = children.nextElement()
-            entry = self._node_to_entry(node)
-            if entry is not None:
-                top.append(entry)
+        by_id: dict[str, RuntimeTOCEntry] = {}
+        for hs in self._collect_helpsets():
+            tv = hs.getNavigatorView("TOC")
+            if tv is None:
+                continue
+            tree = tv.getDataAsTree()
+            children = tree.children()
+            while children.hasMoreElements():
+                node = children.nextElement()
+                entry = self._node_to_entry(node)
+                if entry is not None:
+                    self._merge_toc_entry(entry, top, by_id)
         return top
+
+    def _merge_toc_entry(
+        self,
+        entry: RuntimeTOCEntry,
+        siblings: list[RuntimeTOCEntry],
+        by_id: dict[str, RuntimeTOCEntry],
+    ) -> None:
+        """Insert `entry` into `siblings`, merging children with any pre-existing
+        entry that shares the same `toc_id`. Entries without an id are added as
+        separate nodes (they're typically synthetic grouping nodes)."""
+        if entry.id and entry.id in by_id:
+            target = by_id[entry.id]
+            # Prefer richer data when the existing slot is sparse (e.g. master had
+            # a grouping node with no target; sub-helpset has the same id with a
+            # target URL).
+            if not target.target_id and entry.target_id:
+                target.target_id = entry.target_id
+                target.target_url = entry.target_url
+                target.inner_path = entry.inner_path
+                target.anchor = entry.anchor
+                target.is_external = entry.is_external
+            for child in entry.children:
+                self._merge_toc_entry(child, target.children, by_id)
+            return
+
+        new_entry = RuntimeTOCEntry(
+            id=entry.id,
+            text=entry.text,
+            target_id=entry.target_id,
+            target_url=entry.target_url,
+            inner_path=entry.inner_path,
+            anchor=entry.anchor,
+            is_external=entry.is_external,
+        )
+        siblings.append(new_entry)
+        if new_entry.id:
+            by_id[new_entry.id] = new_entry
+        for child in entry.children:
+            self._merge_toc_entry(child, new_entry.children, by_id)
 
     def _node_to_entry(self, node: Any) -> Optional[RuntimeTOCEntry]:  # noqa: ANN401
         obj = node.getUserObject()

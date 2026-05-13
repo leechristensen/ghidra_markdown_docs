@@ -16,7 +16,7 @@ modifications to the memory map.
 Ghidra supports three different block types through the Memory Map window:
 
 
-1. <a name="defaulttype"></a>***Default** -* The normal block type that can be
+1. <a name="defaulttype"></a>*\**Default** -* The normal block type that can be
 *Initialized*, *File Bytes* or *Uninitialized*.
   - <a name="initializedblock"></a>*Initialized* - The block has an initial value
 specified for all bytes
@@ -24,11 +24,11 @@ specified for all bytes
 to a specified range within an existing loaded File Bytes instance.
   - <a name="uninitializedblock"></a>*Uninitialized* - The block has no initial
 value specified for the bytes
-2. <a name="bitmappedtype"></a>***Bit Mapped*** - The block provides a
+2. <a name="bitmappedtype"></a>*\**Bit Mapped*\** - The block provides a
 bit-addressable map onto other blocks. This is useful when a processor can indirectly access
 individual bits within memory using an alternative byte address.  Such blocks have a fixed
 mapping of 8-bytes to 1-source-byte..
-3. <a name="bytemappedtype"></a>***Byte Mapped*** - The block provides a
+3. <a name="bytemappedtype"></a>*\**Byte Mapped*\** - The block provides a
 byte-addressable map onto other blocks.  This can be useful when a range of
 bytes can be accessed via an alternative address range.  While the default mapping
 is 1-byte to 1-source-byte (1:1), other decimations are permitted specified using a
@@ -50,12 +50,11 @@ do not relocate with image base changes and have some limitations in conjunction
 decompilation and analysis.
 
 
-To view the *Memory Map*, select **Window →
-Memory Map** from the main tool menu, or click on the  ![memory16.gif](../icons/memory16.gif)  icon in the tool bar.  Note that the current Image Base Address is
+To view the *Memory Map*, select **Window → Memory Map** from the main tool menu, or click on the  ![Memory16](../icons/memory16.gif)  icon in the tool bar.  Note that the current Image Base Address is
 specified within the title bar.
 
 
-![](images/MemoryMap.png)
+![Memory Map](images/MemoryMap.png)
 
 
 Each row displays information about one of the memory blocks.  The following summarizes
@@ -66,49 +65,49 @@ the information about each block.
 modified to alter the memory block specification (such fields are marked with an '*').
 
 
-***Name **** - Name of the memory block.
+**\*Name \*\*** - Name of the memory block.
 
 
-***Start -*** The starting address (in hex) of the memory block.  For overlay blocks
+*\**Start -*\** The starting address (in hex) of the memory block.  For overlay blocks
 this will reflect an overlay address which includes the name of the overlay address space.
 
 
-***End -*** The ending address (in hex) of the memory block.  For overlay blocks
+**\*End -\*** The ending address (in hex) of the memory block.  For overlay blocks
 this will reflect an overlay address which includes the name of the overlay address space.
 
 
-***Length -*** The length (in hex) of the memory block.
+*\**Length -*\** The length (in hex) of the memory block.
 
 
-***R * -*** Indicates read permission.
+*\**R \* -*\** Indicates read permission.
 
 
-***W * -*** Indicates write permission.
+*\**W \* -*\** Indicates write permission.
 
 
-***X * -*** Indicates execute permission.
+*\**X \* -*\** Indicates execute permission.
 
 
-**Volatile *** - Indicates a region of volatile I/O Memory.
+**Volatile \*** - Indicates a region of volatile I/O Memory.
 
 
-**Artificial *** - Indicates an artificial memory block which has been fabricated to
+**Artificial \*** - Indicates an artificial memory block which has been fabricated to
 facilitate analysis.
 
 
-***Overlayed Space -*** If the block is an overlay block this column indicates the name
+*\**Overlayed Space -*\** If the block is an overlay block this column indicates the name
 of the overlayed physical memory space.  This field will be empty for non-overlay blocks.
 
 
-***Type -*** Indicates whether the block is a [Default](#memory-map),
+*\**Type -*\** Indicates whether the block is a [Default](#memory-map),
 [Bit Mapped](#memory-map) or [Byte Mapped](#memory-map) type of block.
 
 
-***Initialized * -*** Indicates whether the block has been initialized with values;
+*\**Initialized \* -*\** Indicates whether the block has been initialized with values;
 this property applies to Default and Overlay blocks.
 
 
-***Byte Source -*** Provides information about the source of the bytes in this
+*\**Byte Source -*\** Provides information about the source of the bytes in this
 block. A block is made up of one or more sub-blocks. Each sub-block is listed by its type,
 size, and other type-specific information. For example, if the bytes were originally imported
 from a file, then the file name and the offset into that file is displayed. If the bytes are
@@ -116,10 +115,10 @@ mapped to another region of memory, then the start address for the mapping will 
 displayed.
 
 
-***Source -*** Description of block origination.
+*\**Source -*\** Description of block origination.
 
 
-***Comment * -*** User added comment about this memory block.
+*\**Comment \* -*\** User added comment about this memory block.
 
 
 ## Rename Overlay Address Space
@@ -208,21 +207,20 @@ The memory block operations are available through the icons on the header of the
 window, or select a block in the table, right mouse click, and choose an option.
 
 
-### ** Add** ![Plus.png](../icons/Plus.png)
+### **Add** ![Plus](../icons/Plus.png)
 
 
 Select **Add** to bring up the *Add Memory Block* dialog.  Fill in the
 requested information and select the **OK** button.
 
 
-| ![](images/AddMemoryBlock.png) |
-| --- |
+![Add Memory Block](images/AddMemoryBlock.png)
 
 
-***Block Name*** - Enter the name of the new memory block.
+**\*Block Name\*** - Enter the name of the new memory block.
 
 
-***Start Address*** - Enter the start address
+**\*Start Address\*** - Enter the start address
 (or [Address Expression](../Misc/AddressExpressions.md))
 of the new memory block.  If
 the program language defines multiple address spaces, the address space must also be
@@ -232,19 +230,19 @@ space should be selected.  A block within the default address space may not span
 the current Image Base Address.
 
 
-***Length -*** Enter the length of the new memory block.
+**\*Length -\*** Enter the length of the new memory block.
 
 
-***Comment -*** Enter a comment for the block if desired.
+*\**Comment -*\** Enter a comment for the block if desired.
 
 
-***Read*** - Sets the read permission.
+**\*Read\*** - Sets the read permission.
 
 
-***Write*** - Sets the write permission.
+*\**Write*\** - Sets the write permission.
 
 
-***Execute*** - Sets the execute permission.
+**\*Execute\*** - Sets the execute permission.
 
 
 **Volatile** - Marks a block as volatile I/O memory.
@@ -266,11 +264,10 @@ this **Overlay** option.  This use case will force the creation of a new unique 
 address space.
 
 
-***Block Types*** - Select the block type from the combo box: ***Default, Bit
-Mapped or Byte Mapped***.
+**\*Block Types\*** - Select the block type from the combo box: *\**Default, Bit Mapped or Byte Mapped*\**.
 
 
-- ***Default*** - A normal memory block within the processor's address
+- *\**Default*\** - A normal memory block within the processor's address
 space.  These blocks cannot overlap any other default block.  Default blocks
 can be one of the following types:
   - **Initialized** - Specify a value and a new block will be created
@@ -278,7 +275,7 @@ using that value for every byte in the block.
   - **Uninitialized** - An uninitialized block will be created.
   - **File Bytes** - Select from a list of imported files and enter
 a starting offset for that file.  Those bytes will be the initial value for the block.
-- ***Bit Mapped -*** This is a block that allows bit addressing of a section
+- **\*Bit Mapped -\*** This is a block that allows bit addressing of a section
 of bytes in memory.  For example, the first bit of the byte at memory location
 0x1000 might also be addressed as BIT:0. The second bit at the same byte would then be
 addressed as BIT:1 and so on.
@@ -286,27 +283,24 @@ addressed as BIT:1 and so on.
 *Start Addr* of (BIT:) 0000, and a *Source Address* of 00008100.  Note
 that bit-mapped addresses are assigned from least significant bit to most
 significant bit.
-| ![](images/BitOverlayAddresses.png) |
-| --- |
+![Bit Overlay Addresses](images/BitOverlayAddresses.png)
 This is used to model certain processors that allow this sort of addressing such as
 the INTEL 8051. When a Bit Mapped block is created you must specify the byte address on
 which the bit addressing will be based.
 
 
-- ***Byte Mapped*** - This is a block that allows access to a range of
+- **\*Byte Mapped\*** - This is a block that allows access to a range of
 bytes in memory using an alternative address.  A *Source Address* must
 be specified which corresponds to the source of the actual bytes for this block, although all or part of the
 mapping may correspond to an uninitialized block or no block at all.  The default mapping ratio
-is 1-byte to 1-source-byte (1:1), although other decimations may be specified using a mapping ratio.  When specifying a *Mapping
-Ratio* both values must be in the range 1..127 where the right (source-byte count) value must be greater-than-or-equal
+is 1-byte to 1-source-byte (1:1), although other decimations may be specified using a mapping ratio.  When specifying a *Mapping Ratio* both values must be in the range 1..127 where the right (source-byte count) value must be greater-than-or-equal
 to the left value (e.g., 2:4).
 
 
-| ![](images/AddMappedBlock.png) |
-| --- |
+![Add Mapped Block](images/AddMappedBlock.png)
 
 
-### Move ![move.png](../icons/move.png)
+### Move ![Move](../icons/move.png)
 
 
 Select **Move** to bring up the *Move Memory Block* dialog. The *Move*
@@ -314,45 +308,42 @@ action is enabled when exactly one memory block is selected.  Enter either a ne
 or end address to cause the block to be moved.
 
 
-| ![](images/MoveMemory.png) |
-| --- |
+![Move Memory](images/MoveMemory.png)
 
 
-***Name -*** Name of the memory block to be moved (not editable).
+**\*Name -\*** Name of the memory block to be moved (not editable).
 
 
-***Start Address -*** Current starting address of the block to be moved (not
+**\*Start Address -\*** Current starting address of the block to be moved (not
 editable).
 
 
-***End Address -*** Current ending address of the block to be moved (not
+**\*End Address -\*** Current ending address of the block to be moved (not
 editable).
 
 
-***Length -*** Length of the memory block to be moved (not editable).
+**\*Length -\*** Length of the memory block to be moved (not editable).
 
 
-***New Start Address -*** Enter the new starting address
+**\*New Start Address -\*** Enter the new starting address
 (or [Address Expression](../Misc/AddressExpressions.md))
 for the block.
 The NEW ending address will be computed.
 
 
-***New End Address -*** Enter the new ending address
+**\*New End Address -\*** Enter the new ending address
 (or [Address Expression](../Misc/AddressExpressions.md))
 for the block. The NEW starting address will be computed.
 
 
-*You cannot move a block under the
-following conditions:*
+*You cannot move a block under the following conditions:*
 
 
-- *The changes specified would result in an overlap with the original block or any
-other existing block.*
+- *The changes specified would result in an overlap with the original block or any other existing block.*
 - *The block is an [Overlay](#memory-map) block.*
 
 
-### Split ![verticalSplit.png](../icons/verticalSplit.png)
+### Split ![Vertical Split](../icons/verticalSplit.png)
 
 
 Select **Split** to bring up the *Split Block* Dialog. The *Split* action
@@ -371,109 +362,100 @@ for the second block (new block), or
 - Enter a length for the second block (new block).
 
 
-| ![](images/SplitMemoryBlock.png) |
-| --- |
+![Split Memory Block](images/SplitMemoryBlock.png)
 
 
 **Block to Split**
 
 
-***Block Name -*** Name of block being split (not editable)
+*\**Block Name -*\** Name of block being split (not editable)
 
 
-***Start Address -*** Start address of block being split (not editable)
+*\**Start Address -*\** Start address of block being split (not editable)
 
 
-***End Address -*** New end address of the original block
+*\**End Address -*\** New end address of the original block
 
 
-***Block Length -*** New length of original block
+*\**Block Length -*\** New length of original block
 
 
 **New Block**
 
 
-***Block Name -*** Name of new block.  Default name will be provided, but
+**\*Block Name -\*** Name of new block.  Default name will be provided, but
 it can be changed by editing this field
 
 
-***Start Address -*** Start address for the new split block
+**\*Start Address -\*** Start address for the new split block
 
 
-***End Address -*** End address of the original block (not editable)
+*\**End Address -*\** End address of the original block (not editable)
 
 
-***Block Length -*** Length of new split block
+**\*Block Length -\*** Length of new split block
 
 
-*Overlay type blocks cannot
-be split.*
+*Overlay type blocks cannot be split.*
 
 
-### Expand Up ![collapse.gif](../icons/collapse.gif)
+### Expand Up ![Collapse](../icons/collapse.gif)
 
 
-Select **Expand Up** to bring up the *Expand Block Up* Dialog. The *Expand
-Up* action is enabled when exactly one memory block is selected.  Use the *Expand
-Block Up* Dialog to cause a memory block to grow by adding additional bytes BEFORE the
+Select **Expand Up** to bring up the *Expand Block Up* Dialog. The *Expand Up* action is enabled when exactly one memory block is selected.  Use the *Expand Block Up* Dialog to cause a memory block to grow by adding additional bytes BEFORE the
 memory block.  The block can be expanded by either entering a new start address or a
 new length.
 
 
-| ![](images/MemoryExpandUp.png) |
-| --- |
+![Memory Expand Up](images/MemoryExpandUp.png)
 
 
-***New Start Address -*** A new start address
+**\*New Start Address -\*** A new start address
 (or [Address Expression](../Misc/AddressExpressions.md))
 can be entered here.  It must
 be before the current start address.
 
 
-***End Address -*** Displays the end address of the block (not editable).
+*\**End Address -*\** Displays the end address of the block (not editable).
 
 
-***Block Length -*** Displays the length of the block.  A new value can be
+*\**Block Length -*\** Displays the length of the block.  A new value can be
 entered here which will cause a corresponding change in the start address.
 
 
-*[Overlay](#memory-map) type
-blocks cannot be expanded.*
+*[Overlay](#memory-map) type blocks cannot be expanded.*
 
 
-### Expand Down ![expand.gif](../icons/expand.gif)
+### Expand Down ![Expand](../icons/expand.gif)
 
 
-Select **Expand Down** to bring up the *Expand Block Down* Dialog. The *Expand
-Down* action is enabled when exactly one memory block is selected.  Use the
+Select **Expand Down** to bring up the *Expand Block Down* Dialog. The *Expand Down* action is enabled when exactly one memory block is selected.  Use the
 *Expand Block Down* Dialog to cause a memory block to grow by adding additional bytes
 AFTER the memory block. The block can be expanded by either entering a new end address or a
 new length.
 
 
-| ![](images/MemoryExpandDown.png) |
-| --- |
+![Memory Expand Down](images/MemoryExpandDown.png)
 
 
-***Start Address -*** Displays the start address of the block (not
+*\**Start Address -*\** Displays the start address of the block (not
 editable).
 
 
-***New End Address -*** A new end address
+**\*New End Address -\*** A new end address
 (or [Address Expression](../Misc/AddressExpressions.md))
 can be entered here. It must be after
 the current end address.
 
 
-***Block Length -*** Displays the length of the block.  A new value can be
+*\**Block Length -*\** Displays the length of the block.  A new value can be
 entered here which will cause a corresponding change in the end address.
 
 
-*[Overlay](#memory-map) type
-blocks cannot be expanded.*
+*[Overlay](#memory-map) type blocks cannot be expanded.*
 
 
-### Merge ![Merge.png](../icons/Merge.png)
+### Merge ![Merge](../icons/Merge.png)
 
 
 The *Merge* action is enabled when two or more memory blocks are selected.  It
@@ -481,9 +463,7 @@ attempts to merge all selected blocks into one block.  Any "gaps" will be "fill
 with 0s.
 
 
-*Caution should be used because a VERY
-large memory block can be created if the memory blocks being merged are far apart in the
-address space.*  Ghidra will display a warning if a really large block is about to
+*Caution should be used because a VERY large memory block can be created if the memory blocks being merged are far apart in the address space.*  Ghidra will display a warning if a really large block is about to
 be created.  Disregarding the warning may cause Ghidra to fail with an "out of memory"
 error.
 
@@ -495,7 +475,7 @@ initialization state can be merged.
 Overlay type blocks cannot be merged.
 
 
-### Delete ![edit-delete.png](../icons/edit-delete.png)
+### Delete ![Edit Delete](../icons/edit-delete.png)
 
 
 The *Delete* action is enabled when one or more memory blocks are selected.
@@ -509,12 +489,10 @@ symbols, references, instructions, etc., the delete operation may take a while t
 You can cancel the delete operation at any time.
 
 
-*When removing an overlay memory block the
-corresponding overlay address space will also be removed if no other overlay blocks
-exist within that space.*
+*When removing an overlay memory block the corresponding overlay address space will also be removed if no other overlay blocks exist within that space.*
 
 
-### Set Image Base ![house.png](../icons/house.png)
+### Set Image Base ![House](../icons/house.png)
 
 
 The *Set Image Base* action allows you to change the base address of a
@@ -532,19 +510,18 @@ To change the image base, enter a new image base in the text field and click on 
 *OK* button.
 
 
-|  |
-| --- |
+![Set Image Base Dialog](images/SetImageBaseDialog.png)
 
 
-### Auto Updating Selection by Location ![locationIn.gif](../icons/locationIn.gif)
+### Auto Updating Selection by Location ![Location In](../icons/locationIn.gif)
 
 
-The ![locationIn.gif](../icons/locationIn.gif)   button controls whether a memory
+The ![Location In](../icons/locationIn.gif)   button controls whether a memory
 block is selected in the Memory Map table when the global program location changes such
 as when you click in the CodeBrowser, Byte Viewer, or Decompiler.
 
 
-*Provided by: *Memory Map* Plugin*
+Provided by: *Memory Map* Plugin
 
 
 ---

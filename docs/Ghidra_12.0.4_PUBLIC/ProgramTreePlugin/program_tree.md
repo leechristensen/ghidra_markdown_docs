@@ -23,8 +23,7 @@ on a [Block Model](../BlockModel/Block_Model.md). The following paragraphs
 describe features of the Program Tree.
 
 
-| ![](images/ViewManager.png) |
-| --- |
+![View Manager](images/ViewManager.png)
 
 
 ## Folders and Fragments
@@ -33,7 +32,7 @@ describe features of the Program Tree.
 ### Create Folders and Fragments
 
 
-- <a name="create-folder"></a>To create a new folder,
+- <a name="create_folder"></a>To create a new folder,
 
 
 1. Select a folder in the Program Tree.
@@ -45,7 +44,7 @@ displayed immediately so that you can change the name of the folder you just cre
 Names are unique across all folders.
 
 
-- <a name="create-fragment"></a>To create a new fragment,
+- <a name="create_fragment"></a>To create a new fragment,
 
 
 1. Select a folder in the Program Tree,
@@ -194,7 +193,7 @@ All descendants of the folder are rearranged such that they appear in alphabetic
 order. This is a recursive operation.
 
 
-*Provided By:  *ModuleSortPlugin**
+Provided By:  *ModuleSortPlugin*
 
 
 ### Auto Rename on a Fragment
@@ -220,7 +219,7 @@ the fragment from the Code Browser,
 2. Right mouse click and choose **Rename Fragment to Label**.
 
 
-*Provided By: *AutoRenamePlugin**
+Provided By: *AutoRenamePlugin*
 
 
 ### Select Addresses in a Folder or Fragment
@@ -239,7 +238,7 @@ Browser's selection.
 fragments and/or folders.
 
 
-*Provided By: *ProgramTreeSelectionPlugin**
+Provided By: *ProgramTreeSelectionPlugin*
 
 
 ## Control the View in the Code Browser
@@ -255,20 +254,20 @@ You control what you see in the right side of the Code Browser tool by adding fo
 and fragments to your view.
 
 
-- Select a fragment that is not in the view (indicated by ![codeNotInView.gif](../icons/codeNotInView.gif)),
+- Select a fragment that is not in the view (indicated by ![Code Not In View](../icons/codeNotInView.gif)),
   1. Right mouse-click and choose the **Go To in View**
 option.
   2. The code units in this fragment now appear in the Code Browser. The fragment's
-icon in the Program Tree changes to ![codeInView.gif](../icons/codeInView.gif) to indicate
+icon in the Program Tree changes to ![Code In View](../icons/codeInView.gif) to indicate
 that it is part of the view. The cursor in the Code Browser is moved to the minimum
 address of the fragment or folder.
-- Select an open folder that is not in the view (indicated by ![openSmallFolder.png](../icons/openSmallFolder.png)),
+- Select an open folder that is not in the view (indicated by ![Open Small Folder](../icons/openSmallFolder.png)),
   1. Right mouse-click and choose the **Go To in View** option.
   2. All of the descendant folders and fragments are added to the view.
-    - The folder's icon in the Program Tree changes to ![openFolderInView.png](../icons/openFolderInView.png).
-    - If the folder is closed and is in the view, then the icon is ![closedFolderInView.png](../icons/closedFolderInView.png).
+    - The folder's icon in the Program Tree changes to ![Open Folder In View](../icons/openFolderInView.png).
+    - If the folder is closed and is in the view, then the icon is ![Closed Folder In View](../icons/closedFolderInView.png).
     - If a closed folder not in the view has descendants that *are* in the
-view, the icon is ![closedDescendantsInView.png](../icons/closedDescendantsInView.png).
+view, the icon is ![Closed Descendants In View](../icons/closedDescendantsInView.png).
 - When you add a folder to the view, the cursor in the browser moves to the first code
 unit in the first fragment of the folder. When you add a fragment to the view, the cursor
 in the browser moves to the first code unit in this fragment.
@@ -291,8 +290,7 @@ option.
     - The icon for the folder or fragment updates to indicate that it is no longer in
 the view. The code browser updates its view accordingly.
 - You can remove multiple folders and fragments by selecting those folders and fragments
-that are marked as being in the view, and choosing the **Remove from
-View** option.
+that are marked as being in the view, and choosing the **Remove from View** option.
 
 
 ### Set the View in the Code Browser with Folders/Fragments
@@ -419,15 +417,15 @@ folder or fragment, you will not get a valid drop target.
 
 - Using Drag and Drop, you can reorder the elements within a folder. As you drag between
 nodes in the Program Tree, the cursor will change to indicate that a reordering
-operation  is possible; you will see a solid bar between the nodes (![dragMoveCursor.gif](../icons/dragMoveCursor.gif)). When you release the mouse, the dragged folder or fragment
+operation  is possible; you will see a solid bar between the nodes (![Drag Move Cursor](../icons/dragMoveCursor.gif)). When you release the mouse, the dragged folder or fragment
 will be repositioned at this location, i.e., *between* the two nodes where you
 released the mouse.
 - If you are dragging to a different parent,  in addition to the reorder, the
-drop operation will also cause the dragged fragment or folder to be ***moved*** to
+drop operation will also cause the dragged fragment or folder to be *\**moved*\** to
 the parent of the destination drop site. To make a copy of the folder or fragment, hold
-down the Ctrl key while you are dragging. The cursor will change to ![dragCopyCursor.gif](../icons/dragCopyCursor.gif) depending on where the cursor is.  If you release the
+down the Ctrl key while you are dragging. The cursor will change to ![Drag Copy Cursor](../icons/dragCopyCursor.gif) depending on where the cursor is.  If you release the
 mouse when the cursor indicates a potential reorder operation, the dragged folder or
-fragment is ***copied*** to the ***parent*** of the destination drop site,
+fragment is **\*copied\*** to the *\**parent*\** of the destination drop site,
 and is placed between the two nodes where you released the mouse. (Note that if the dragged
 folder or fragment already exists in the parent, then you will not get a valid drop target
 for reordering purposes.)
@@ -455,7 +453,7 @@ however, if the delete operation is not allowed on a particular folder or fragme
 will get a notification of why the delete failed.
 
 
-*Provided By: *Program Tree Plugin**
+Provided By: *Program Tree Plugin*
 
 
 **Related Topics:**

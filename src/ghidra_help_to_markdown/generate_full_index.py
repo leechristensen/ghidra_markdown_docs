@@ -127,11 +127,13 @@ def generate_full_index(docs_dir: Path) -> str:
         if not headers:
             continue
 
-        # Add each header as a sub-item
-        base_indent = entry["indent"] + 2  # Indent under the document entry
+        # Add each header as a sub-item. Use 4 spaces per nesting level —
+        # python-markdown (mkdocs's renderer) treats 2-space indentation as
+        # sibling list items and flattens the structure.
+        base_indent = entry["indent"] + 4  # Indent under the document entry
         for level, text, slug in headers:
             # Create indentation: base + extra for nested headers
-            header_indent = base_indent + (level - 1) * 2
+            header_indent = base_indent + (level - 1) * 4
             indent_str = " " * header_indent
 
             # Build the link

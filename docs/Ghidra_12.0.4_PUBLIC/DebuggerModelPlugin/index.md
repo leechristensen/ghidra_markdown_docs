@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Model](DebuggerModelPlugin.md)

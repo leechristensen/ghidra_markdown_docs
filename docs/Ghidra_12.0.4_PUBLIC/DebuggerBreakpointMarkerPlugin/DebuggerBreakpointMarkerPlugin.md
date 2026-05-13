@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerBreakpointMarkerPlugin](index.md) > In the Listings
+
 # Debugger: Breakpoints in the Listings
 
 
-![](images/DebuggerBreakpointMarkerPlugin.png)
+![Debugger Breakpoint Marker Plugin](images/DebuggerBreakpointMarkerPlugin.png)
 
 
 For a description of how breakpoints are managed logically in Ghidra, please read about the
@@ -22,7 +24,7 @@ colored grey, and disabled breakpoints have no background at all.
 ## In the Function Graph
 
 
-![](images/DebuggerFunctionGraphBreakpointMargin.png)
+![Debugger Function Graph Breakpoint Margin](images/DebuggerFunctionGraphBreakpointMargin.png)
 
 
 When active in the Debugger, the [Function Graph](../FunctionGraphPlugin/Function_Graph.md) will display
@@ -35,7 +37,7 @@ mixed state. Double clicking in the margin will set or toggle a breakpoint at th
 ## In the Decompiler
 
 
-![](images/DebuggerDecompilerBreakpointMargin.png)
+![Debugger Decompiler Breakpoint Margin](images/DebuggerDecompilerBreakpointMargin.png)
 
 
 When active in the Debugger, the [Decompiler](../DecompilePlugin/DecompilerIntro.md) will display breakpoints in
@@ -86,7 +88,7 @@ Selecting one of the actions will display a prompt allowing adjustments to the p
 before issuing the command.
 
 
-![](images/DebuggerPlaceBreakpointDialog.png)
+![Debugger Place Breakpoint Dialog](images/DebuggerPlaceBreakpointDialog.png)
 
 
 - Address - the address of the breakpoint. It defaults to the address of the instruction or
@@ -120,3 +122,8 @@ disables those logical breakpoints.
 
 This action is available when there is at least one breakpoint (in any state) at the cursor.
 It deletes those logical breakpoints.
+
+
+---
+
+[← Previous: Breakpoints](../DebuggerBreakpointsPlugin/DebuggerBreakpointsPlugin.md) | [Next: Memory Regions →](../DebuggerRegionsPlugin/DebuggerRegionsPlugin.md)

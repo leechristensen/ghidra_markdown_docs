@@ -16,13 +16,13 @@ Saves the changed program back to the original program file. The **Save** option
 enabled when changes have been made. To perform this action:
 
 
-1. From the Ghidra Tool's menu, select **File →  Save**.
+1. From the Ghidra Tool's menu, select **File → Save**.
 
 
 or
 
 
-Select the Save icon ![disk.png](../icons/disk.png) in
+Select the Save icon ![Disk](../icons/disk.png) in
 the tool bar at the top of the Ghidra Tool.
 
 
@@ -34,11 +34,11 @@ program that is active in the tool.  When selecting **Save As...**, Ghidra will
 for a filename. To perform this action:
 
 
-1. From the Ghidra Tool's menu, select **File →  Save As...**.
+1. From the Ghidra Tool's menu, select **File → Save As...**.
 2. The *Save As...* dialog appears.
 
 
-![](images/SaveProgramAs.png)
+![Save Program As](images/SaveProgramAs.png)
 
 
 1. Select the folder for saving the program and enter the new *Name* of the
@@ -59,10 +59,10 @@ Saves any currently open programs. If any program has never been saved before, G
 prompt for a filename.
 
 
-1. From the Ghidra Tool's menu, select **File →  Save All**.
+1. From the Ghidra Tool's menu, select **File → Save All**.
 
 
-*Provided by: *Program Manager* Plugin*
+Provided by: *Program Manager* Plugin
 
 
 **Related Topics:**

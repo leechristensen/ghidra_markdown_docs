@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Wildcard Assembler](Wildcard_Assembler.md)

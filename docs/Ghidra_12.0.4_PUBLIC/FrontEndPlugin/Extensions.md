@@ -11,8 +11,7 @@ when Ghidra is restarted. The extension installation dialog can
 be opened by selecting the **Install Extensions** option on the project **File** menu.
 
 
-| ![](images/ConfigureExtensions.png) |
-| --- |
+![Configure Extensions](images/ConfigureExtensions.png)
 
 
 ## Dialog Components
@@ -69,7 +68,7 @@ the dialog.
 ### Tools Panel
 
 
-- ![Plus.png](../icons/Plus.png)  Allows the user to install a
+- ![Plus](../icons/Plus.png)  Allows the user to install a
 new extension. An extension can be any folder or zip file that contains an
 *extensions.properties* file. When one of these is selected, it will be copied to the
 extension installation folder and extracted (if it is a zip).

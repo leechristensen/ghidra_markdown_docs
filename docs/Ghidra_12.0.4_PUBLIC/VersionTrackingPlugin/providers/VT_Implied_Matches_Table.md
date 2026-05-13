@@ -1,3 +1,5 @@
+[Home](../../index.md) > [VersionTrackingPlugin](../index.md) > Implied Matches Table
+
 # Version Tracking Implied Matches Table
 
 
@@ -13,8 +15,7 @@ match is created it is listed as a "Possible Implied Match". For those implied m
 don't already have a corresponding existing match, the user can created new matches.
 
 
-| ![](../images/ImpliedMatchesTable.png) |
-| --- |
+![Implied Matches Table](../images/ImpliedMatchesTable.png)
 
 
 In the example shown above, the matches table has a match selected for a function named
@@ -55,18 +56,18 @@ correlation of references made by some other match.
 ## Implied Match Table Actions
 
 
-<a name="navigate-references"></a>**Navigate References** ![locationOut.gif](../../icons/locationOut.gif) When this action toggled on, selecting a row in the
+<a name="navigate_references"></a>**Navigate References** ![Location Out](../../icons/locationOut.gif) When this action toggled on, selecting a row in the
 implied matches table will cause the [sub-tools](../VT_Tool.md#version-tracking-sub-tools)
 to navigate to the **From Address** of the references used to create the selected
 implied match.
 
 
-<a name="navigate-match"></a>**Navigate Match** ![locationIn.gif](../../icons/locationIn.gif) When this action toggled on, selecting a row in the
+<a name="navigate_match"></a>**Navigate Match** ![Location In](../../icons/locationIn.gif) When this action toggled on, selecting a row in the
 implied matches table will cause the [sub-tools](../VT_Tool.md#version-tracking-sub-tools)
 to navigate to the source and destination addresses of the selected implied match.
 
 
-<a name="accept-implied-match"></a>The **Accept Implied Match** ![flag.png](../../icons/flag.png) action creates a match in the Matches Table if one
+<a name="accept_implied_match"></a>The **Accept Implied Match** ![Flag](../../icons/flag.png) action creates a match in the Matches Table if one
 does not already exist, and then sets its status as 'Accepted'. Note, the Implied Matches
 shown in the table are not saved unless this action is applied.
 
@@ -77,7 +78,7 @@ shown in the table are not saved unless this action is applied.
 The text filter allows filtering on any text displayed in the table.
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -88,3 +89,8 @@ Tracking Matches Table](VT_Matches_Table.md)
 - [Version Tracking Tool](../VT_Tool.md)
 - [Version Tracking
 Introduction](../Version_Tracking_Intro.md)
+
+
+---
+
+[← Previous: Related Matches Table](VT_Related_Associations_Table.md) | [Next: Wildcard Assembler →](../../WildcardAssemblerModule/Wildcard_Assembler.md)

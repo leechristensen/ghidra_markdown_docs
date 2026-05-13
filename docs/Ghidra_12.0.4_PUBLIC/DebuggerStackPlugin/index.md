@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Stack](DebuggerStackPlugin.md)

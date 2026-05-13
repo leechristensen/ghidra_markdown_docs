@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Control and Machine State](DebuggerControlPlugin.md)

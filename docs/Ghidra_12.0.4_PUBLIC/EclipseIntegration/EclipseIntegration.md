@@ -11,7 +11,7 @@ it has not been opened already, Ghidra must know the installation location of Ec
 
 
 The Eclipse installation location and communication ports can be configured in the Front End
-tool's ***Eclipse Integration*** options.  If an attempt is made to launch Eclipse from
+tool's *\**Eclipse Integration*\** options.  If an attempt is made to launch Eclipse from
 Ghidra and these things are not configured correctly, the user will be taken to Eclipse
 Integration options automatically.
 
@@ -33,9 +33,9 @@ Integration options automatically.
 
 
 For more information on installing and using the GhidraDev Eclipse plugin, see
-***Extensions/Eclipse/GhidraDev/GhidraDev_README.html***
+*\**Extensions/Eclipse/GhidraDev/GhidraDev_README.html*\**
 
 
 ---
 
-[← Previous: Configuration Options](../CodeBrowserPlugin/CodeBrowserOptions.md) | [Next: Entropy Overview →](../OverviewPlugin/Overview.md)
+[← Previous: Program Differences](../Diff/Diff.md) | [Next: Entropy Overview →](../OverviewPlugin/Overview.md)

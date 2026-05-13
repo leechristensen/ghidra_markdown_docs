@@ -1,3 +1,5 @@
+[Home](../index.md) > [BSim](index.md) > Comparing Feature Vectors
+
 # Features and Weights
 
 
@@ -156,3 +158,8 @@ to achieve a high confidence for a small function, for single matches viewed in
 isolation. Of course a medium to low confidence threshold may be enough to produce a
 unique match if the database is small, and a medium to high confidence threshold may
 still produce occasional false positives even if the database is very large.
+
+
+---
+
+[← Previous: Weighting Software Features](FeatureWeight.md) | [Next: BSim Feature Visualizer →](../BSimFeatureVisualizerPlugin/BSimFeatureVisualizerPlugin.md)

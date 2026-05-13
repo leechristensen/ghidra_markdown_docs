@@ -11,11 +11,10 @@ programs.  The Docking Windows feature allows users to customize the layout of 
 ## The Basic Dockable Component
 
 
-The image below shows a tool with three ***Dockable Components***:  *Program
-Trees*, *Listing,* and *Data Type Manager*.
+The image below shows a tool with three **\*Dockable Components\***:  *Program Trees*, *Listing,* and *Data Type Manager*.
 
 
-![](images/Tool.png)
+![Tool](images/Tool.png)
 
 
 Each component consist of several common parts:
@@ -39,7 +38,7 @@ apply only to this component. Hovering the mouse over an icon causes a tool tip 
 displayed. The tool tip give a hint as to what the action will do if you select the icon.
 
 
-### Menu Icon ![menu16.gif](../icons/menu16.gif)
+### Menu Icon ![Menu16](../icons/menu16.gif)
 
 
 The menu icon will appear if the dockable component has a local menu.  As with the
@@ -47,10 +46,10 @@ local toolbar, the local menu item applies only to this component. Mouse click o
 show the menu.
 
 
-### Close Icon ![](../shared/close16.gif)
+### Close Icon ![Close16](../shared/close16.gif)
 
 
-Select ![](../shared/close16.gif) to hide the dockable component.
+Select ![Close16](../shared/close16.gif) to hide the dockable component.
 The component will be removed until you select the component's name from the
 tool's *[Window](#windows-menu)* menu.  Some components, such
 as search results, are transient and are permanently removed when you close
@@ -70,11 +69,11 @@ The work area contains the specific GUI component that is being managed.
 fit their needs. There are three ways components can be arranged in a tool:
 
 
-1. ***Docked with other components***: components are side-by-side (or top to
+1. *\**Docked with other components*\**: components are side-by-side (or top to
 bottom) with another component.
-2. ***Stacked with other components***: components share the same space and tabs
+2. *\**Stacked with other components*\**: components share the same space and tabs
 are used to display them one at a time.
-3. ***In their own window***: a component can be placed in its own window.
+3. *\**In their own window*\**: a component can be placed in its own window.
 
 
 ### Moving Components
@@ -87,25 +86,25 @@ mouse button is released at that location.
 
 
 
-![](images/invalid.png)    Invalid Location -
+![Invalid](images/invalid.png)    Invalid Location -
 releasing here will cancel the drag operation.
 
-![](images/leftArrow.png)   Will move the component to the
+![Left Arrow](images/leftArrow.png)   Will move the component to the
 left of the component that the mouse cursor is over.
 
-![](images/rightArrow.png)    Will move the component
+![Right Arrow](images/rightArrow.png)    Will move the component
 to the right of the component that the mouse cursor is over.
 
-![](images/upArrow.png)   Will move the component above the
+![Up Arrow](images/upArrow.png)   Will move the component above the
 component that the mouse cursor is over.
 
-![downArrow.png](../icons/downArrow.png)   Will move the component below
+![Down Arrow](../icons/downArrow.png)   Will move the component below
 the component that the mouse cursor is over.
 
-![](images/hover.stack.png)   Will stack the component with
+![Hover.Stack](images/hover.stack.png)   Will stack the component with
 the component that the mouse is over, creating a tabbed pane effect.
 
-![window.png](../icons/window.png)    Will place the component
+![Window](../icons/window.png)    Will place the component
 in a new window.
 
 
@@ -120,7 +119,7 @@ the component being moved.
 
 
 Docked components are separated by thin borders.  When the mouse is moved over a
-border which separates two docked components, the cursor will change to a resize ![](images/resize.png) icon. To change the relative size of the components, press the
+border which separates two docked components, the cursor will change to a resize ![Resize](images/resize.png) icon. To change the relative size of the components, press the
 left mouse button while over a border and drag the border in the appropriate direction.
 
 
@@ -147,7 +146,7 @@ sub-menus.   For example the following snapshot of a window menu indicates ther
 several search results windows open.
 
 
-![](images/Window_Menu.png)
+![Window Menu](images/Window_Menu.png)
 
 
 **Related Topics:**

@@ -8,10 +8,10 @@ organized by the following categories: *Externals*, *Function*, *Labels*,
 *Classes*, and *Namespaces*.
 
 
-To display the Symbol Tree, select the icon ![sitemap_color.png](../icons/sitemap_color.png) on the tool bar, OR select the option **Window** →  ![sitemap_color.png](../icons/sitemap_color.png) **Symbol Tree**.
+To display the Symbol Tree, select the icon ![Sitemap Color](../icons/sitemap_color.png) on the tool bar, OR select the option **Window** →  ![Sitemap Color](../icons/sitemap_color.png) **Symbol Tree**.
 
 
-![](images/SymbolTree.png)
+![Symbol Tree](images/SymbolTree.png)
 
 
 ## Display
@@ -49,14 +49,13 @@ may be associated with a *Library* namespace.  You will find these external
 location/function symbols under the *Imports* category node.
   - Any function node (internal or external) may be expanded to show parameters. In
 addition, various popup function actions are available to modify the function. An
-external location may be converted to a function using the *Create External
-Function* popup action.
+external location may be converted to a function using the *Create External Function* popup action.
 
 
 <a name="groupnode"></a>When the label or function category has many elements, the
 Symbol Tree will show *group nodes* that represent groups of symbols in order to reduce
 the "clutter" in the tree. In the sample image above, the *Labels* category contains a
-group node (indicated by the ![openFolderGroup.png](../icons/openFolderGroup.png) icon). The
+group node (indicated by the ![Open Folder Group](../icons/openFolderGroup.png) icon). The
 *group node* shows the common prefix for all the symbols in the group. The tool tip
 will display the total number of nodes in the group.
 
@@ -98,8 +97,7 @@ tree.
 You can *Set the External Program* associated with a external library. Once the name
 is associated with a program (or library), external references to a function or address in
 that library will allow navigation or viewing of code. Right mouse click on the Library node
-in the *Imports* folder that you want to associate with a program and choose the **Set
-External Program** option. A program chooser dialog is displayed which shows the programs
+in the *Imports* folder that you want to associate with a program and choose the **Set External Program** option. A program chooser dialog is displayed which shows the programs
 in your project. You can then click on a program to select it and then click on the OK button
 to associate that program with your named library.
 
@@ -117,8 +115,7 @@ Otherwise you can type the name in the field or choose it from the combo box lis
 named library, will
 be filled in if there is an associated program in the project. Otherwise, it can be selected via the
 *Edit* button, which displays a chooser dialog. Either a *Label*, an
-*Address*, or both must be specified for the External Location. If you check the *Make
-External Function* box, then an external function will be created. Otherwise, if you don't
+*Address*, or both must be specified for the External Location. If you check the *Make External Function* box, then an external function will be created. Otherwise, if you don't
 check the box, a non-function external location gets created.  The ability to associate a
 data type with the location is not yet supported. Press the *Create* button to create the
 external location.
@@ -129,7 +126,7 @@ and is in "TestLibrary" at address 01001234. The library name, TestLibrary, is
 associated with "libraryA" in the project.
 
 
-![](images/CreateExternalLocation.png)
+![Create External Location](images/CreateExternalLocation.png)
 
 
 ## Edit External Location
@@ -138,14 +135,12 @@ associated with "libraryA" in the project.
 You can edit the external location and associated library details for any *External Location*
 symbol within the symbol tree (including locations which have been converted to an external function).
 Right mouse click on
-the external location/function node in the symbol tree under Imports and choose the **Edit External
-Location** action.
+the external location/function node in the symbol tree under Imports and choose the **Edit External Location** action.
 
 
 The Edit External Location dialog will default to the current
 values for the location being edited. You can change the *External Program Name* in the
-field or by selecting a different one from the combo box list. The *External Program
-Path*, which is the program in the project corresponding to the named library, will be filled in if
+field or by selecting a different one from the combo box list. The *External Program Path*, which is the program in the project corresponding to the named library, will be filled in if
 there is an associated program. Otherwise, it can be selected via the *Edit* button,
 which displays a chooser dialog. You can modify the *Label* and/or *Address* for
 the location being edited. Either a *Label*, an *Address*, or both must be
@@ -160,7 +155,7 @@ or has never been demangled or changed the *Original Label* and *Restore* button
 
 
 
-![](images/EditExternalLocation.png)
+![Edit External Location](images/EditExternalLocation.png)
 
 
 ## Show References to
@@ -221,7 +216,7 @@ lists the valid move operations for each symbol type:
 
 
 - Global namespace Labels can be moved to a class or other namespace; labels can be moved
-to a function ***if*** *the* *address* *of the label is*
+to a function *\**if*\** *the* *address* *of the label is*
 *contained in the function body*.
 - Labels within a Function namespace can be moved to a class or to another namespace that
 is not a function namespace.
@@ -256,8 +251,7 @@ select the **Paste** option.
 *Namespaces*  as a drop site or paste destination is equivalent to the root
 node (Global), as the Functions, Labels, Classes, and Namespaces are just groupings of
 function, label, class, and namespace symbols in the global namespace.
-3. A label in the global namespace can be moved to a function ***if*** *the
-label's address is contained in the function body.*
+3. A label in the global namespace can be moved to a function **\*if\*** *the label's address is contained in the function body.*
 
 
 ## Delete Symbols
@@ -276,23 +270,23 @@ you select a [group node](#display) for the **Make Selection** option, all
 symbols in that group are selected in the Code Browser.
 
 
-## Navigation ![locationIn.gif](../icons/locationIn.gif)
+## Navigation ![Location In](../icons/locationIn.gif)
 
 
 ### Navigating to Locations within the Program
 
 
-The ![locationIn.gif](../icons/locationIn.gif)   button controls whether a symbol is
-selected in the Symbol Tree when you click in the Code Browser.  While the ![locationIn.gif](../icons/locationIn.gif)   button is selected, if the location from the Code
+The ![Location In](../icons/locationIn.gif)   button controls whether a symbol is
+selected in the Symbol Tree when you click in the Code Browser.  While the ![Location In](../icons/locationIn.gif)   button is selected, if the location from the Code
 Browser can be interpreted as a symbol, the symbol is automatically selected in the Symbol
 Tree.  This toggle state is off by default; to turn on this feature, click on the
-icon.  The state of the ![locationIn.gif](../icons/locationIn.gif)   button is
+icon.  The state of the ![Location In](../icons/locationIn.gif)   button is
 saved when you close the project or exit Ghidra and restored when you reopen the
 project.
 
 
 The Symbol Tree allows you to navigate within the Code Browser when you mouse click on a
-symbol in the tree. The ![locationIn.gif](../icons/locationIn.gif)   button applies only
+symbol in the tree. The ![Location In](../icons/locationIn.gif)   button applies only
 to locations coming from the Code Browser and has no effect when you click in the tree.
 
 
@@ -321,8 +315,8 @@ symbol you had selected.
 To include namespace names in the display of labels and names within the Code Browser,
 select **Edit**  →  **Tool Options...** from the
 tool menu.   This will display the *Options* dialog.  Within the
-***Options*** tree, navigate to the folder node ***Listing Fields***.
-The ***Display Namespace*** option in the right-hand panel should be checked to
+*\**Options*\** tree, navigate to the folder node **\*Listing Fields\***.
+The *\**Display Namespace*\** option in the right-hand panel should be checked to
 include the namespace names within the Listing  (see [CodeBrowser Options](../CodeBrowserPlugin/CodeBrowserOptions.md)).
 
 
@@ -362,7 +356,7 @@ in the tree with a disabled icon.  A disabled node will no longer show any child
 This action is used to re-enable categories that were previously disabled.
 
 
-*Provided By: *SymbolTreePlugin**
+Provided By: *SymbolTreePlugin*
 
 
 **Related Topics:**

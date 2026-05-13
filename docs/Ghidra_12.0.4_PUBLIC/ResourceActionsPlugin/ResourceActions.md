@@ -41,7 +41,7 @@ Given a selected embedded image object, this will write the embedded
 resource's exact bytes to the specified file.
 
 
-*Provided by: *Resource Actions Plugin**
+Provided by: *Resource Actions Plugin*
 
 
 **Related Topics:**

@@ -26,7 +26,7 @@ Sorting a table on a particular column is as easy as left-clicking that column. 
 sorted column is denoted by an icon that shows the sort direction.
 
 
-![](../shared/note.yellow.png)
+![Note.Yellow](../shared/note.yellow.png)
 If you click a table column header and no sorting takes place, then that particular
 table does not support sorting on columns.
 
@@ -49,7 +49,7 @@ multiple columns:
 
 
 
-![](images/MultipleColumnSortDialog.png)
+![Multiple Column Sort Dialog](images/MultipleColumnSortDialog.png)
 
 
 With multiple sorted columns, you may change the direction of any individual
@@ -71,7 +71,7 @@ columns.
 ## Choosing Columns
 
 
-![](images/SelectColumnsDialog.png)
+![Select Columns Dialog](images/SelectColumnsDialog.png)
 
 
 The **Select Columns** dialog allows you to change the columns visible for a given
@@ -89,7 +89,7 @@ Some columns allow you to alter the settings of the column, which will change ho
 column displays its data.  As an example, consider the **Bytes Settings** dialog below:
 
 
-![](images/BytesSettingsDialog.png)
+![Bytes Settings Dialog](images/BytesSettingsDialog.png)
 
 
 This dialog allows you to change various features of the bytes column, such as endianness
@@ -128,7 +128,7 @@ contain the table's column names.
 
 
 
-![](../shared/note.yellow.png)This action uses the current
+![Note.Yellow](../shared/note.yellow.png)This action uses the current
 table selection when deciding what to export.  If no row is selected, then  no data is
 exported.  To select all rows, use the **Select All** action or press **Ctrl-A** on
 the keyboard.

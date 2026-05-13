@@ -8,34 +8,34 @@ these tabs to change the active program. Also, as described below, there are var
 that allow you to change the active program.
 
 
-![](images/ProgramTabs_No_Hidden.png)
+![Program Tabs No Hidden](images/ProgramTabs_No_Hidden.png)
 
 
 *Program Tabs*
 
 
-<a name="hidden-tabs"></a> When there are more open programs than room to display their
+<a name="hidden_tabs"></a> When there are more open programs than room to display their
 respective tabs, then a button is displayed to access those programs. This button displays the
 number of hidden programs.
 
 
-![](images/ProgramTabs_With_Hidden_More_Button.png)
+![Program Tabs With Hidden More Button](images/ProgramTabs_With_Hidden_More_Button.png)
 
 
 *Program Tabs 'More Button'*
 
 
-<a name="more-tabs-button"></a> To access these hidden programs, click the button to display
+<a name="more_tabs_button"></a> To access these hidden programs, click the button to display
 a menu for selecting programs.
 
 
-![](images/ProgramTabs_With_Hidden_Popup_Window.png)
+![Program Tabs With Hidden Popup Window](images/ProgramTabs_With_Hidden_Popup_Window.png)
 
 
 *Program Tabs With Popup Window*
 
 
-<a name="hidden-tab-popup-window"></a> The popup window displayed allows you to select a tab
+<a name="hidden_tab_popup_window"></a> The popup window displayed allows you to select a tab
 by clicking a program name, or by using the **up** and **down arrow** keys to select a
 program name and then pressing the **Enter** key to choose the selected program. Also,
 typing text data will filter the displayed program list. You can close the popup window without
@@ -70,7 +70,7 @@ The next and previous actions allow you to move between open tabs. For example, 
 highlighted.
 
 
-![](images/ProgramTabs_With_Highlighted_Tab.png)
+![Program Tabs With Highlighted Tab](images/ProgramTabs_With_Highlighted_Tab.png)
 
 
 *Next Tab Highlighted*
@@ -80,8 +80,7 @@ After a brief pause, the highlighted tab will become the active program. Quick, 
 executions of the action will continue to move the highlighted tab to the right.
 
 
-The **Go To Previous Program** action works in the same way as the **Go To Next
-Program** action, except that it moves the highlight to the left instead of the
+The **Go To Previous Program** action works in the same way as the **Go To Next Program** action, except that it moves the highlight to the left instead of the
 right.
 
 
@@ -101,11 +100,11 @@ Go to Program...
 ### Go To Program... Action
 
 
-The **Go To Program...** action will show the <a name="hidden-tab-popup-window"></a>program selection popup window when executed. This menu
+The **Go To Program...** action will show the <a name="hidden_tab_popup_window"></a>program selection popup window when executed. This menu
 allows you to pick a program to go to.
 
 
-![](images/ProgramTabs_With_Hidden_Go_to_Program.png)
+![Program Tabs With Hidden Go To Program](images/ProgramTabs_With_Hidden_Go_to_Program.png)
 
 
 *Go To Program Popup Window*
@@ -133,7 +132,7 @@ To execute this action, from the Tool menu, select **Navigation → Go To Last A
 
 
 
-*Provided by: *Program Manager* Plugin*
+Provided by: *Program Manager* Plugin
 
 
 **Related Topics:**

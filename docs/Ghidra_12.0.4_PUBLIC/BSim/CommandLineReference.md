@@ -1,3 +1,5 @@
+[Home](../index.md) > [BSim](index.md) > BSim Command (bsim)
+
 # Command-Line Utility Reference
 
 
@@ -51,8 +53,7 @@ be ignored. The PostgreSQL server will be restarted with the already established
 settings. To actually change the settings, use the **changeauth** command before restarting.
 
 
-**--auth|-a***`<type>`* - specifies the authentication type (**pki |
-password | trust**) for a new database: *trust* for no authentication, *password* for password authentication, and *pki* for authentication using public key certificates.
+**--auth|-a** *`<type>`* - specifies the authentication type (**pki | password | trust**) for a new database: *trust* for no authentication, *password* for password authentication, and *pki* for authentication using public key certificates.
 With the *pki* setting, both the **--cafile** and the **--dn** options also need to be provided; additionally
 the **--cert** option must be provided unless
 the **--noLocalAuth** option is also
@@ -64,18 +65,18 @@ the **--auth** option causes
 authentication to not be required for local connections, i.e. localhost.
 
 
-**--cafile***&lt;/cafile-path&gt;* - specifies an absolute path to a
-certificate authority file and is required for **--auth pki**. This file should contain the
+**--cafile** *&lt;/cafile-path&gt;* - specifies an absolute path to a
+certificate authority file and is required for **--auth pki**. This file should contain the
 certificates the PostgreSQL server will use to authenticate in PEM format
 concatenated together.
 
 
-**--dn***&lt;distinguished-name&gt;* - specifies the Distinguished
+**--dn** *&lt;distinguished-name&gt;* - specifies the Distinguished
 Name for the admin user and is required for
-**--auth pki**.
+**--auth pki**.
 
 
-**--port|-p***`<portnum>`* - specifies the port the PostgreSQL server will
+**--port|-p** *`<portnum>`* - specifies the port the PostgreSQL server will
 listen on. For port numbers other than the default 5432, URLs and other
 command-lines must explicitly specify the port, when connecting to the server. This
 option only effects the initial start of a server. For subsequent (re)starts this
@@ -104,8 +105,8 @@ must be running. New users are given *user*
 (read-only) privileges, unless a subsequent **changeprivilege** command is used.
 
 
-**--dn***&lt;distinguished-name&gt;* - specifies the Distinguished Name of the new user,
-which is required if the database enabled **--auth pki**. This option can be used to provide a
+**--dn** *&lt;distinguished-name&gt;* - specifies the Distinguished Name of the new user,
+which is required if the database enabled **--auth pki**. This option can be used to provide a
 Distinguished Name to a preexisting user, if the PostgreSQL server's authentication
 strategy is changed.
 
@@ -122,26 +123,25 @@ the same meaning as for the **start**
 command.
 
 
-**--port|-p***`<portnum>`* - changes the port the PostgreSQL server will
+**--port|-p** *`<portnum>`* - changes the port the PostgreSQL server will
 listen on. If this option is not present, the server will continue to listen on the
 same port.
 
 
-**--auth|-a***`<type>`* - changes the authentication type (**pki |
-password | trust**) used by the PostgreSQL server. No change is made if the
+**--auth|-a** *`<type>`* - changes the authentication type (**pki | password | trust**) used by the PostgreSQL server. No change is made if the
 option is not present. If the option is present, omitting the **--noLocalAuth** causes local connections to require
 authentication. This command does not affect the presence or absence of passwords
 or Distinguished Names for existing users.
 
 
-**--cafile***&lt;/cafile-path&gt;* - specifies an absolute path to a
-certificate authority file and is required for **--auth pki**. This file should contain the
+**--cafile** *&lt;/cafile-path&gt;* - specifies an absolute path to a
+certificate authority file and is required for **--auth pki**. This file should contain the
 certificates the PostgreSQL server will use to authenticate in PEM format
 concatenated together.
 
 
-**--dn***&lt;distinguished-name&gt;* - specifies the Distinguished Name for the admin
-user and is required for **--auth pki**.
+**--dn** *&lt;distinguished-name&gt;* - specifies the Distinguished Name for the admin
+user and is required for **--auth pki**.
 
 resetpassword
 :   Reset the password for a user. A single user must be specified, and the
@@ -157,15 +157,15 @@ running.
 PostgreSQL server: **start**, **adduser**, **dropuser**, **resetpassword**, and **changeprivilege**.
 
 
-**--port|-p***`<portnum>`* - specifies the port on which to connect with
+**--port|-p** *`<portnum>`* - specifies the port on which to connect with
 the PostgreSQL server.
 
 
-**--user|-u***`<username>`* - specifies a user name to use when connecting
+**--user|-u** *`<username>`* - specifies a user name to use when connecting
 to the PostgreSQL server.
 
 
-**--cert***&lt;/certfile-path&gt;* - provides the absolute file path to the
+**--cert** *&lt;/certfile-path&gt;* - provides the absolute file path to the
 user's certificate when connecting to a PostgreSQL server that requires PKI
 authentication.
 
@@ -234,8 +234,7 @@ if a standard template will not suffice.
 
 Supported configuration templates (**config_template**) are defined within the Ghidra
 installation in XML form. The following configurations are currently defined:
-(**large_32, medium_32, medium_64, medium_cpool,
-medium_nosize**).
+(**large_32, medium_32, medium_64, medium_cpool, medium_nosize**).
 
 
 **--name|-n** - specifies a formal, more
@@ -324,7 +323,7 @@ directory and/or committed to a specified BSim database specified with the **--b
 specified, a BSim URL must be specified to which the data will be committed.
 
 
-The **--config|-c***&lt;config-template&gt;* option may be specified when generating
+The **--config|-c** *&lt;config-template&gt;* option may be specified when generating
 XML "sigs_" signature files in the absence of a BSim database (see
 **createdatabase** for supported configurations). The generated files
 will be written to the specified XML storage directory. Creation of the signature
@@ -347,7 +346,7 @@ repository and a path to a directory containing the "sigs_" XML files to commit 
 required.
 
 
-**--override***`<ghidraURL>`* - causes any Ghidra repository/project URL,
+**--override** *`<ghidraURL>`* - causes any Ghidra repository/project URL,
 describing the storage repository and path of executables that was recorded in the
 "sigs_" XML files during signature generation, to be overridden during the commit
 operation with the specified Ghidra URL.
@@ -363,7 +362,7 @@ storage directory and/or committed to a specified BSim database specified with t
 specified, a BSim URL must be specified to which the data will be committed.
 
 
-The **--config|-c***&lt;config-template&gt;* option may be specified when generating
+The **--config|-c** *&lt;config-template&gt;* option may be specified when generating
 XML "update_" files in the absence of a BSim database (see
 **createdatabase** for supported configurations). The generated files
 will be written to the specified XML storage directory. Creation of the update
@@ -548,19 +547,18 @@ executable.
 commands.
 
 
-**--user|-u***`<username>`* - specifies a user to masquerade as when connecting
+**--user|-u** *`<username>`* - specifies a user to masquerade as when connecting
 to the server.
 
 
-**--cert***&lt;certfile-path&gt;* - provides a path to the user's certificate when
+**--cert** *&lt;certfile-path&gt;* - provides a path to the user's certificate when
 connecting to a server that requires PKI authentication.
 
 
 ## Ghidra and BSim URLs
 
 
-Ghidra utilizes Universal Resource Locators (URLs) to identify both *Ghidra
-Server/Project Repositories* and *BSim Databases*. See the corresponding sections
+Ghidra utilizes Universal Resource Locators (URLs) to identify both *Ghidra Server/Project Repositories* and *BSim Databases*. See the corresponding sections
 below for specific formatting details. It is important to note that local *ghidra* and
 *file* URLs never include a double-slash after the protocol (i.e, "://").
 
@@ -600,7 +598,7 @@ The *hostname* may specify either a Fully Qualified Domain Name (FQDN, e.g.,
 
 
 For local project URLs, the absolute directory path containing the project
-**.gpr* locator file must be specified with the project name. The project name
+*\*.gpr* locator file must be specified with the project name. The project name
 should exclude any *.gpr/.rep* suffix. Only the '/' character should be used as a
 directory separator. In addition, when running on Windows, the directory path should
 include its drive designation preceded by a '/' (e.g., `ghidra:/C:/mydir/myproject?/folderA/folderB`).
@@ -637,7 +635,12 @@ in controlled situations where console password prompts cannot be handled.  Hand
 the password prompt is preferred.
 
 
-For local *file* URLs, the absolute path the H2 database **.mv.db* file
-must be specified without the **.mv.db* extension. Only the '/' character should be
+For local *file* URLs, the absolute path the H2 database *\*.mv.db* file
+must be specified without the *\*.mv.db* extension. Only the '/' character should be
 used as a directory separator. In addition, when running on Windows, the directory path
 should include its drive designation preceded by a '/' (e.g., `file:/C:/mydir/mydb`).
+
+
+---
+
+[← Previous: BSim Control (bsim_ctl)](CommandLineReference.md) | [Next: Function Bit Patterns Explorer →](../FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin.md)

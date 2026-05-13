@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerRegistersPlugin](index.md) > Registers
+
 # Debugger: Registers
 
 
-![](images/DebuggerRegistersPlugin.png)
+![Debugger Registers Plugin](images/DebuggerRegistersPlugin.png)
 
 
 Registers refer to the target processor's register banks. In multi-threaded environments, it
@@ -43,8 +45,7 @@ selected memory space. This field is user modifiable when the **Enable Edits** t
 on, and the register is modifiable. Edits may be directed toward a live target, the trace, or
 the emulator. Values changed by the last event are displayed in red.
 - Type - the type of the register as marked up in the trace. There is generally no default
-here. Either the user or some automation may set the type. Changes to this field *do
-not* affect the target. The selected type is saved to the trace for the current and
+here. Either the user or some automation may set the type. Changes to this field *do not* affect the target. The selected type is saved to the trace for the current and
 future snapshots.
 - Representation - the value of the register as interpreted by its data type. If the value
 is an address, double-clicking this field will navigate to it. This field is user modifiable
@@ -73,7 +74,7 @@ is not contained in a region of memory known to the debugger. To prevent this be
 This displays a dialog for selecting which registers to display in the table.
 
 
-![](images/DebuggerAvailableRegistersDialog.png)
+![Debugger Available Registers Dialog](images/DebuggerAvailableRegistersDialog.png)
 
 
 The dialog provides more information about each register, displays a potentially larger set
@@ -111,3 +112,8 @@ Plugin](../DebuggerControlPlugin/DebuggerControlPlugin.md).
 This button is analogous to the "snapshot" action of other Ghidra windows. It generates a
 clone of this window. The clone will no longer follow the current thread, but it will follow
 the current time.
+
+
+---
+
+[← Previous: Memory](../DebuggerMemoryBytesPlugin/DebuggerMemoryBytesPlugin.md) | [Next: Dynamic Listing →](../DebuggerListingPlugin/DebuggerListingPlugin.md)

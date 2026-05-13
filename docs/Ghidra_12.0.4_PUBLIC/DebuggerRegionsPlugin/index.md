@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Memory Regions](DebuggerRegionsPlugin.md)

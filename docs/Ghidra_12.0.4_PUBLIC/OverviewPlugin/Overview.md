@@ -9,7 +9,7 @@ that present various overviews for a program.
 
 
 
-![](images/OverviewPanel.png)
+![Overview Panel](images/OverviewPanel.png)
 
 
 Each horizontal slice in
@@ -67,7 +67,7 @@ however, this gives a good general sense of the various regions.
 ### Legend
 
 
-![](images/AddressTypeOverviewLegend.png)
+![Address Type Overview Legend](images/AddressTypeOverviewLegend.png)
 
 
 The legend indicates the colors that correspond to each type of program element shown in
@@ -90,7 +90,7 @@ dialog:
 - Uninitialized Color - color for memory that is not initialized
 
 
-To view the options, select **Edit  → Tool Options**... on
+To view the options, select **Edit → Tool Options**... on
 the tool, then choose the **Overview** node in the options tree. To change a color, double
 click on the color bar in the *Overview* *Options* panel. Choose the color from the
 color chooser dialog.
@@ -118,7 +118,7 @@ size of 1024 bytes per chunk. By calculating a histogram of all possible byte va
 in that chunk. The **entropy** of this probability distribution is defined as:
 
 
-![](images/Equation.png)
+![Equation](images/Equation.png)
 
 
 This gives a single value, between 0.0 and 8.0, describing the amount of variation in
@@ -147,24 +147,24 @@ stand out clearly.
 Entropy can easily distinguish between these common data encodings.
 
 
-- ***x86 Machine Code***: A specific instruction set like the Intel x86 has a
+- *\**x86 Machine Code*\**: A specific instruction set like the Intel x86 has a
 very characteristic entropy range, which is well short of compression schemes, but packs
 more information per byte typically than ASCII. Different coding styles, compilers, etc.
 may have a consistent impact on the exact range of entropy values, but in general any
 block of machine code is easy to pick out.
-- ***ARM/THUMB Machine Code***: There are two machine code specifications for
+- *\**ARM/THUMB Machine Code*\**: There are two machine code specifications for
 ARM chips: ARM instructions and THUMB instructions. These both have entropy ranges
 similar to x86 machine code, but the ranges for ARM vs THUMB are distinguishable. ARM
 instructions, which must use 4 bytes per instruction, are slightly more wasteful in their
 encoding than THUMB, and this stands out in their entropy range.
-- ***ASCII***: Entropy scores for ASCII encoded strings show its characteristic
+- *\**ASCII*\**: Entropy scores for ASCII encoded strings show its characteristic
 waste of the high bit in each byte and other biases for English letter frequency, null
 terminators, etc.
-- ***Unicode UTF16***: The *wide character* format often used to encode
+- *\**Unicode UTF16*\**: The *wide character* format often used to encode
 Unicode characters is particularly wasteful, with every other byte encoded as 0 for
 typical English strings. This shows up as a characteristic range of low entropy
 values.
-- ***Compression/Encryption***: Data that has been compressed and/or encrypted
+- *\**Compression/Encryption*\**: Data that has been compressed and/or encrypted
 typically shows very little bias at all in the byte values, and this corresponds to
 entropy scores very close to the maximum value of 8.0. Although entropy generally has
 little chance of distinguishing between different *kinds* of compression or
@@ -175,7 +175,7 @@ typically found in a program.
 ### Color Palette Legend
 
 
-![](images/EntropyLegend.png)
+![Entropy Legend](images/EntropyLegend.png)
 
 
 Each color in the main bar encodes a specific entropy value, which can be determined by
@@ -191,7 +191,7 @@ palette. Each defined color range also has a label describing that range.
 ### Configuring the Entropy Window
 
 
-![](images/EntropyOptions.png)
+![Entropy Options](images/EntropyOptions.png)
 
 
 Select the **Tool Options...** entry of the Code Browser **Edit** menu, and then choose
@@ -214,8 +214,7 @@ region of similarly encoded data.
 
 The Entropy window color palette supports up to 5 different highlighted ranges. For each
 of the 5 slots, this option presents a drop menu of common entropy ranges that can be
-selected. These include: **x86 code**, **ARM code**, **THUMB code**, **PowerPC
-code**, **ASCII strings**, **Compressed**, and **Unicode UTF16**. Slots that are
+selected. These include: **x86 code**, **ARM code**, **THUMB code**, **PowerPC code**, **ASCII strings**, **Compressed**, and **Unicode UTF16**. Slots that are
 unused can be set to **None**.
 
 
@@ -228,7 +227,7 @@ steep gradient, connecting this color with the bounding colors within the base p
 be used to fill out the color range.
 
 
-*Provided By: *OverviewPlugin**
+Provided By: *OverviewPlugin*
 
 
 **Related Topics:**
@@ -237,8 +236,7 @@ be used to fill out the color range.
 - [Code
 Browser](../CodeBrowserPlugin/CodeBrowser.md)
 - [Current View](../CodeBrowserPlugin/CodeBrowser.md#the-view)
-- *[Edit
-Options](../Tool/ToolOptions_Dialog.md)* [Dialog](../Tool/ToolOptions_Dialog.md)
+- *[Edit Options](../Tool/ToolOptions_Dialog.md)* [Dialog](../Tool/ToolOptions_Dialog.md)
 
 
 ---

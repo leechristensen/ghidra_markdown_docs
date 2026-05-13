@@ -1,3 +1,5 @@
+[Home](../index.md) > [BSimFeatureVisualizerPlugin](index.md) > BSim Feature Visualizer
+
 # BSim Feature Visualizer Plugin
 
 
@@ -127,7 +129,7 @@ complicate token highlighting.
 ### Removing Decompiler Highlights
 
 
-Click the ![error.png](../icons/error.png) in the upper right corner of the table to clear any
+Click the ![Error](../icons/error.png) in the upper right corner of the table to clear any
 decompiler highlights added by this plugin.  Other decompiler highlights are unaffected.
 
 
@@ -167,3 +169,8 @@ trying to decompile a function before quitting.
 
 If selected, the decompiler highlights will be applied whenever the selected row in the
 BSim Feature Table changes.
+
+
+---
+
+[← Previous: Comparing Feature Vectors](../BSim/FeatureWeight.md) | [Next: Command-Line Utility Reference →](../BSim/CommandLineReference.md)

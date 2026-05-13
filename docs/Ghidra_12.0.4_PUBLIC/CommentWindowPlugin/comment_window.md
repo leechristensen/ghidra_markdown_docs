@@ -5,8 +5,7 @@ The **Comment Window** provides a list of comments defined in the currently open
 the **Comment Window**, select the **Window** → **Comments** from the tool menu.
 
 
-| ![](images/CommentsWindow.png) |
-| --- |
+![Comments Window](images/CommentsWindow.png)
 
 
 This window has three columns. The **Location** column shows the comment's address.
@@ -31,7 +30,7 @@ click on ![Make Selection](../icons/text_align_justify.png), or right mouse clic
 **Make Selection**.
 
 
-*Provided By: *CommentWindowPlugin**
+Provided By: *CommentWindowPlugin*
 
 
 **Related Topics:**

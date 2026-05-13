@@ -1,8 +1,9 @@
+[Home](../index.md) > [DataGraphPlugin](index.md) > Layout
+
 # Data Graph
 
 
-| ![](images/DataGraph.png) |
-| --- |
+![Data Graph](images/DataGraph.png)
 
 
 The data graph is a graph display that shows data objects in memory. Each data vertex
@@ -81,8 +82,7 @@ reference from or to code. In the data graph, code vertices are terminal vertice
 showing the function name and offset into or out of that function.
 
 
-| ![](images/CodeVertex.png) |
-| --- |
+![Code Vertex](images/CodeVertex.png)
 
 
 In the image above, the graph is showing two references to the same string.
@@ -122,15 +122,15 @@ from that vertex are also removed.
 The following toolbar actions are available on a data vertex.
 
 
-- <a name="expand-all"></a>![Expand All](../icons/expand_all.png) **Expand All** -
+- <a name="expand_all"></a>![Expand All](../icons/expand_all.png) **Expand All** -
 Expands all expandable sub-data elements recursively contained in the data object. Note
 that this action is not available if the data has no sub-data elements.
-- <a name="collapse-all"></a>![Collapse All](../icons/collapse_all.png) **Collapse All**
+- <a name="collapse_all"></a>![Collapse All](../icons/collapse_all.png) **Collapse All**
             - Collapses all expanded sub-data elements. Note that this action is not available if the
 data has no sub-data elements.
-- <a name="delete-vertex"></a>[Close] **Delete Vertex** - Removes this vertex and all vertices
+- <a name="delete_vertex"></a>[Close] **Delete Vertex** - Removes this vertex and all vertices
 that descend from this vertex.
-- <a name="reset-location"></a>![Refresh](../icons/reload3.png) **Restore Location** - Moves the vertex
+- <a name="reset_location"></a>![Refresh](../icons/reload3.png) **Restore Location** - Moves the vertex
 to its preferred location (only shows up if the vertex was manually moved).
 
 
@@ -138,23 +138,23 @@ to its preferred location (only shows up if the vertex was manually moved).
 mouse is positioned when the popup is triggered.
 
 
-- <a name="add-outgoing"></a>**Add All Outgoing References** - All outgoing references
+- <a name="add_outgoing"></a>**Add All Outgoing References** - All outgoing references
 from this data element or its sub-elements will generate a new vertex in the graph, if
 not already present.
-- <a name="add-incoming"></a>**Add All Incoming References** - The program will be
+- <a name="add_incoming"></a>**Add All Incoming References** - The program will be
 searched for any references to this data element or its sub-elents and a new vertex be
 created each discovered reference, if not already present.
-- <a name="expand-fully"></a>**Expand Fully** - If the mouse is over an
+- <a name="expand_fully"></a>**Expand Fully** - If the mouse is over an
 expandable row in data vertex, the vertex and all it's child elements will be fully
 expanded.
-- <a name="original-source"></a>**Set Original Source** - Makes this the original source
+- <a name="original_source"></a>**Set Original Source** - Makes this the original source
 root vertex. All other vertices are reorganized and laid out as if they were discovered
 by following references from this vertex.See [Vertex
 Layout.](#vertex-layout)
-- <a name="delete-selected"></a>**Delete Selected Vertices** - Deletes the selected
+- <a name="delete_selected"></a>**Delete Selected Vertices** - Deletes the selected
 vertices and any descendants vertices (vertices that were discovered via exploring from
 that vertex.)
-- <a name="show-popups"></a>**Show Popups** - If selected, hovering over data rows in a data
+- <a name="show_popups"></a>**Show Popups** - If selected, hovering over data rows in a data
 vertex will show additional information for the data in that row.
 
 
@@ -195,17 +195,17 @@ off by default, but can be turn on via a popup action.
 ### Toolbar Actions
 
 
-- <a name="relayout-graph"></a>![Reset](../icons/reload3.png) **Refresh Layout** - All manually positioned
+- <a name="relayout_graph"></a>![Reset](../icons/reload3.png) **Refresh Layout** - All manually positioned
 vertices will be reset and the graph will relayout to its automated locations.
-- <a name="select-home-vertex"></a>![Home](../icons/go-home.png) **Go To Source Vertex** - The original source vertex will be selected
+- <a name="select_home_vertex"></a>![Home](../icons/go-home.png) **Go To Source Vertex** - The original source vertex will be selected
 and centered in the graph.
-- <a name="navigate-in"></a>![Navigate On Incoming Event](../icons/locationIn.gif) **Navigate In** - If selected, the graph will
+- <a name="navigate_in"></a>![Navigate On Incoming Event](../icons/locationIn.gif) **Navigate In** - If selected, the graph will
 listen for tool location events and select the vertex that contains the location address,
 is one exists.
-- <a name="navigate-out"></a>![Navigate On Outgoing Event](../icons/locationOut.gif) **Navigate Out** - If selected, the graph will
+- <a name="navigate_out"></a>![Navigate On Outgoing Event](../icons/locationOut.gif) **Navigate Out** - If selected, the graph will
 generate tool location events when vertices are selected or rows within a vertex are
 selected.
-- <a name="expanded-format"></a>![Format](../icons/view_detailed_16.png) **Expanded Format** - If selected,
+- <a name="expanded_format"></a>![Format](../icons/view_detailed_16.png) **Expanded Format** - If selected,
 vertices will show more information for each row in the display. In compact mode, a data
 row will generally show the field name and its value. In expanded mode, a data row will
 generally show the datatype, field name, and its value.
@@ -225,4 +225,9 @@ and actions.
 - [Interaction Threshold](../VisualGraph/Visual_Graph.md#interaction-threshold)
 
 
-*Provided by: *Data Graph Plugin**
+Provided by: *Data Graph Plugin*
+
+
+---
+
+[← Previous: Popups](Data_Graph.md) | [Next: Function Graph →](../FunctionGraphPlugin/Function_Graph.md)

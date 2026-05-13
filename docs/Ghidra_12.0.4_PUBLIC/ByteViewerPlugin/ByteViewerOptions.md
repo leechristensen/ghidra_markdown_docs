@@ -1,3 +1,5 @@
+[Home](../index.md) > [ByteViewerPlugin](index.md) > Configuration Options
+
 # Configuration Options for the Byte Viewer
 
 
@@ -60,3 +62,8 @@ on the Options dialog.
 - [Tool Options](../Tool/ToolOptions_Dialog.md#tool)
 - [Key Bindings](../Tool/ToolOptions_Dialog.md#key-bindings)
 - [Byte Viewer](The_Byte_Viewer.md)
+
+
+---
+
+[← Previous: Byte Editing](The_Byte_Viewer.md) | [Next: Decompiler →](../DecompilePlugin/DecompilerIntro.md)

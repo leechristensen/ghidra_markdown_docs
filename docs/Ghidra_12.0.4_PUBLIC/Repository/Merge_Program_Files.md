@@ -32,13 +32,11 @@ and makes changes.
 5. **User B** checks in his changed file,
 creating Version **2** in the project repository. Because no other versions were
 created since **User B** originally checked out his file, Version **2** can be
-created automatically. This new version will be the changed file created by **User
-B** (Step 4). In this case, merging is not involved in the check in process.
+created automatically. This new version will be the changed file created by **User B** (Step 4). In this case, merging is not involved in the check in process.
 6. **User A** completes his changes and
 checks in the file.
 7. During the check in process, the Ghidra
-Server determines that a new version of the program file has been added since **User
-A** originally checked out the file (Step 3). The latest version of the file
+Server determines that a new version of the program file has been added since **User A** originally checked out the file (Step 3). The latest version of the file
 contained in the repository, Version **2**, is not the same file that **User A**
 had checked out, Version **1**. A merge is required since a new version of the file
 was added to the repository after User **A** checked out the file.
@@ -51,8 +49,7 @@ required at check in. This is the only time a merge is required.
 The Ghidra Server starts the merge process
 by making a copy of Version **2**. Changes from **User** **A**'s checked in file
 are applied to this copy to create the new file, Version **3**. There are two types of
-merges - **automatic** and **manual**. If changes made by **User A** and **User
-B** do not conflict [automatic](#auto-merge) merging is done. If changes made
+merges - **automatic** and **manual**. If changes made by **User A** and **User B** do not conflict [automatic](#auto-merge) merging is done. If changes made
 by **User A** and **User B** do conflict, then **User A** must manually [resolve the conflicts](#resolving-conflicts). Note that the last user checking in
 changes must resolve conflicts. A conflict results when **User A** and **User B**
 make the *same type of changes* at a location in the program.
@@ -63,7 +60,7 @@ described above. The sequence of events are numbered in parentheses in the diagr
 correspond with the **Check in/Merge Sequence** above:
 
 
-![](images/MultiUser.png)
+![Multi User](images/MultiUser.png)
 
 
 To begin the merge process, select the [Check In](../VersionControl/project_repository.md#check-in) option on the Ghidra Project Window. A progress
@@ -103,8 +100,7 @@ resolve conflicts, as required. Once the Program Tree has been merged, with all 
 resolved, the merge of Data Types and Categories begins.
 
 
-If you cancel the merge at any time, you are canceling the entire *check
-in* process and your file remains checked out. None of the changes that was made as a result
+If you cancel the merge at any time, you are canceling the entire *check in* process and your file remains checked out. None of the changes that was made as a result
 of the merge is applied to the program that you have checked out.
 
 
@@ -113,14 +109,14 @@ status is displayed in the merge tool. The following image shows an example of t
 when the merge process is auto merging code units.
 
 
-![](images/AutoMergeCodeUnits.png)
+![Auto Merge Code Units](images/AutoMergeCodeUnits.png)
 
 
 At this point the Memory, Program Trees, Data Types and Program
-Context phases have already completed as indicated by the Completed icon, ![checkmark_green.gif](../icons/checkmark_green.gif). The Bytes & Code Units sub-phase of the Listing
-is currently In Progress, ![right.png](../icons/right.png). The Progress In Current Phase progress bar provides the user with an
+Context phases have already completed as indicated by the Completed icon, ![Checkmark Green](../icons/checkmark_green.gif). The Bytes & Code Units sub-phase of the Listing
+is currently In Progress, ![Right](../icons/right.png). The Progress In Current Phase progress bar provides the user with an
 idea of how much of the phase has completed. The other sub-phases of Listing, the External
-Programs and Property Lists have not been merged yet as indicated by the Pending icon, ![label.png](../icons/label.png). The message below the current phase progress bar gives
+Programs and Property Lists have not been merged yet as indicated by the Pending icon, ![Label](../icons/label.png). The message below the current phase progress bar gives
 additional information about what is currently happening in the phase.
 
 
@@ -566,8 +562,7 @@ Lists.
 
 [Property lists](../ProgramManagerPlugin/Program_Options_Dialog.md#detailed-properties-descriptions)
 are lists of options that are saved as part of the program. You can view and edit these
-properties through the *[Program Options
-Dialog](../ProgramManagerPlugin/Program_Options_Dialog.md)*. A property will be merged automatically if it is a new property or it was
+properties through the *[Program Options Dialog](../ProgramManagerPlugin/Program_Options_Dialog.md)*. A property will be merged automatically if it is a new property or it was
 not changed in the latest version. A [conflict](#property-lists) results
 when you change a property that was either removed or changed in the latest version.
 
@@ -617,7 +612,7 @@ that you had originally checked out) is shown as ".text" (radio button for
 *Original*).
 
 
-![](images/MemoryConflict.png)
+![Memory Conflict](images/MemoryConflict.png)
 
 
 To resolve the conflict, you must select a radio button. After you select a radio
@@ -649,12 +644,11 @@ the latest version, and not lose anyone else's changes. The image below shows th
 scenario:
 
 
-![](images/ProgramTreeConflict.png)
+![Program Tree Conflict](images/ProgramTreeConflict.png)
 
 
 The conflict resolution panel shows what kind of change it is, name change versus a
-structure change; the checkbox indicates the change in *Latest Version* and *Current
-Checked Out Version*. In this example, another user changed the name of a program tree
+structure change; the checkbox indicates the change in *Latest Version* and *Current Checked Out Version*. In this example, another user changed the name of a program tree
 to "Tree3_XXX" (*Latest*). You changed the name of the same program tree to "MY TREE
 3" (*Checked Out*). The original name of the tree was "Tree Three" (*Original*).
 The *Resolve Tree Name Conflict* area of the panel shows radio buttons for each
@@ -730,7 +724,7 @@ doesn't cause a conflict. If you had only **renamed** the data type (without
 would not have been a conflict.
 
 
-![](images/DataTypeConflict.png)
+![Data Type Conflict](images/DataTypeConflict.png)
 
 
 These are the options to resolve the conflict:
@@ -773,7 +767,7 @@ In the latest version:
 **moved** /MISC  →  /Category1/Cateogry2/Category3/MISC
 
 
-![](images/CategoryConflict.png)
+![Category Conflict](images/CategoryConflict.png)
 
 
 The options to resolve the conflict are:
@@ -803,7 +797,7 @@ type archive was renamed to "TestArchiveTwo". Before someone checked in the Late
 the source archive had been renamed "TestArchiveOne".
 
 
-![](images/DataTypeSourceConflict.png)
+![Data Type Source Conflict](images/DataTypeSourceConflict.png)
 
 
 Name: This is the name of the
@@ -849,7 +843,7 @@ program listings. The affected addresses are also indicated by the gray
 background in the program listings.
 
 
-![](images/RegConflict.png)
+![Reg Conflict](images/RegConflict.png)
 
 
 > **Tip:** The scrolled listings allow you to
@@ -904,9 +898,8 @@ The following shows the Merge Listing Window and describes (in red
 text) some of the features of the conflict window.
 
 
-The *![Merge.png](../icons/Merge.png) Merge Listing* on the top left side of the
-window indicates that you are in the Listing phase of the merge. The *Resolve Byte / Code
-Unit Conflict* area title indicates you are in the Code Unit phase of Listing Merge.
+The *![Merge](../icons/Merge.png) Merge Listing* on the top left side of the
+window indicates that you are in the Listing phase of the merge. The *Resolve Byte / Code Unit Conflict* area title indicates you are in the Code Unit phase of Listing Merge.
 This area provides the following information:
 
 
@@ -917,22 +910,22 @@ This area provides the following information:
 merge
 
 
-![](images/ListingMergeDescriptions.png)
+![Listing Merge Descriptions](images/ListingMergeDescriptions.png)
 
 
 Each of the listings in the above image displays the associated program (Result, Latest,
 etc). This allows you to look at each of the programs involved in the merge whenever you
-are trying to resolve a Listing conflict. You can use the ![expand.gif](../icons/expand.gif) expand icon in the Result listing's toolbar to adjust the fields that are displayed in
+are trying to resolve a Listing conflict. You can use the ![Expand](../icons/expand.gif) expand icon in the Result listing's toolbar to adjust the fields that are displayed in
 all of the listings like in the Code Browser. The *GoTo* is also available for
 navigating within the listings.
 
 
-<u>Scroll Locks for the Listings</u> ![lock.gif](../icons/lock.gif) ![unlock.gif](../icons/unlock.gif)
+<u>Scroll Locks for the Listings</u> ![Lock](../icons/lock.gif) ![Unlock](../icons/unlock.gif)
 
 
-Initially, the four programs scroll together. Each listing has a lock icon ![lock.gif](../icons/lock.gif) associated with it. When the lock icon ![lock.gif](../icons/lock.gif) is displayed for a listing, scrolling that listing or
+Initially, the four programs scroll together. Each listing has a lock icon ![Lock](../icons/lock.gif) associated with it. When the lock icon ![Lock](../icons/lock.gif) is displayed for a listing, scrolling that listing or
 navigating within that listing will also cause all other locked listings to scroll to the
-same address. When a listing is displaying the unlocked icon ![unlock.gif](../icons/unlock.gif) , it will not scroll when the other listings scroll. Likewise, scrolling it will
+same address. When a listing is displaying the unlocked icon ![Unlock](../icons/unlock.gif) , it will not scroll when the other listings scroll. Likewise, scrolling it will
 not cause any of the other listings to scroll.
 
 
@@ -974,7 +967,7 @@ two characters and the word was changed in the latest version to two separate
 characters.
 
 
-![](images/CodeUnit2CharConflict.png)
+![Code Unit2 Char Conflict](images/CodeUnit2CharConflict.png)
 
 
 Notice that the listings allow you to open and close the structure in the
@@ -984,8 +977,7 @@ currently trying to resolve.
 
 
 Note that you will have already resolved all [data type conflicts](#data-types-and-categories) by this time; this conflict is due to
-different data types being applied at the same address. You are resolving *which data
-type to apply* at the address.
+different data types being applied at the same address. You are resolving *which data type to apply* at the address.
 
 
 In this case the options to resolve the conflict are:
@@ -1061,7 +1053,7 @@ the Checked Out program. Both external locations refer to the same external memo
 may be intended as the same external.
 
 
-![](images/ExternalAddConflict.png)
+![External Add Conflict](images/ExternalAddConflict.png)
 
 
 In this case you must select the radio button indicating which external(s) to keep:
@@ -1086,7 +1078,7 @@ Select a radio button and press the
 having its data type set in the latest version while you changed it into a function.
 
 
-![](images/ExternalDataTypeConflict.png)
+![External Data Type Conflict](images/ExternalDataTypeConflict.png)
 
 
 In this case you must select the radio button indicating which change to keep:
@@ -1108,7 +1100,7 @@ has been defined differently in each version. You must choose which parameter si
 and its associated storage should be kept.
 
 
-![](images/ExternalFunctionParametersConflict.png)
+![External Function Parameters Conflict](images/ExternalFunctionParametersConflict.png)
 
 
 In this case the options to resolve the conflict are:
@@ -1198,7 +1190,7 @@ conflict. You must choose a radio button on each row to indicate what you want t
 the version that will get checked in.
 
 
-![](images/ParameterMultiConflict.png)
+![Parameter Multi Conflict](images/ParameterMultiConflict.png)
 
 
 The function FUN_01002b44 has two conflicts for its second parameter.
@@ -1221,12 +1213,11 @@ Select a radio button on each row to resolve the conflicts and press the
 function bodies. In this case you created a function at address 01001984 and the latest
 version created a function at address 01001979. The two functions don't have the same
 entry point, but their bodies overlap. Since function bodies can't overlap, you must
-choose which version's functions should be kept. The *Resolve Function Overlap
-Conflict* area indicates the address range(s) that are in conflict. This is also
+choose which version's functions should be kept. The *Resolve Function Overlap Conflict* area indicates the address range(s) that are in conflict. This is also
 indicated by the gray background in the listings.
 
 
-![](images/FunctionOverlapConflict.png)
+![Function Overlap Conflict](images/FunctionOverlapConflict.png)
 
 
 In this case you must select the radio button indicating which version's functions to
@@ -1250,7 +1241,7 @@ return type and the function was deleted in the latest version. You must choose 
 to keep the function or remove it.
 
 
-![](images/FunctionRemoveVsChangeConflict.png)
+![Function Remove Vs Change Conflict](images/FunctionRemoveVsChangeConflict.png)
 
 
 In this case the options to resolve the conflict are:
@@ -1295,7 +1286,7 @@ you changed the label "DDD" from global scope to function scope (in the FUN_0100
 function's namespace) and the latest version removed the symbol.
 
 
-![](images/SymbolRemoveVsChangeConflict.png)
+![Symbol Remove Vs Change Conflict](images/SymbolRemoveVsChangeConflict.png)
 
 
 In the *Resolve Symbol Conflict* area you must choose an option to
@@ -1329,7 +1320,7 @@ changed the label "AAA" to "ME" and changed it to global scope, but the latest v
 only renamed the symbol.
 
 
-![](images/SymbolRenameWithScopeConflict.png)
+![Symbol Rename With Scope Conflict](images/SymbolRenameWithScopeConflict.png)
 
 
 In this case the options to resolve the conflict are:
@@ -1353,7 +1344,7 @@ and the latest version added the same named symbol at the same address, but gave
 global scope.
 
 
-![](images/SymbolAddressConflict.png)
+![Symbol Address Conflict](images/SymbolAddressConflict.png)
 
 
 In the *Resolve Symbol Conflict* area you must choose an option to
@@ -1387,7 +1378,7 @@ the same address since they have different names, but they cannot both be the pr
 symbol. So you must choose which label is the primary one.
 
 
-![](images/SymbolPrimaryConflict.png)
+![Symbol Primary Conflict](images/SymbolPrimaryConflict.png)
 
 
 In this case the options to resolve the conflict are:
@@ -1420,7 +1411,7 @@ namespace called SecondNamespace was not removed since it contained at least one
 other symbol.
 
 
-![](images/SymbolNamespaceKept.png)
+![Symbol Namespace Kept](images/SymbolNamespaceKept.png)
 
 
 Press the OK button on this dialog to continue with the merge process.
@@ -1437,7 +1428,7 @@ is the global symbol ME which was renamed to ME_conflict1. The second is the sym
 in the FUN_01001ae3 namespace which was renamed YOU_conflict1.
 
 
-![](images/SymbolConflictAutoRenamed.png)
+![Symbol Conflict Auto Renamed](images/SymbolConflictAutoRenamed.png)
 
 
 Press the OK button to continue with the merge process.
@@ -1495,7 +1486,7 @@ In the latest version:
 ORANGE
 
 
-![](images/EquateConflict.png)
+![Equate Conflict](images/EquateConflict.png)
 
 
 The options to resolve the conflict are:
@@ -1549,7 +1540,7 @@ In the latest version:
 Added a **Space** property with a value of **3**.
 
 
-![](images/UserDefinedUseForAllConflict.png)
+![User Defined Use For All Conflict](images/UserDefinedUseForAllConflict.png)
 
 
 The options to resolve the conflict are:
@@ -1568,8 +1559,7 @@ checked in version.
 
 
 You can resolve the remaining conflicts for the same named property by selecting the
-checkbox, *Use the selected option for resolving all remaining 'Space' property
-conflicts.* The same program version option that you selected will be applied to the
+checkbox, *Use the selected option for resolving all remaining 'Space' property conflicts.* The same program version option that you selected will be applied to the
 remaining conflicts for the same named property. In the example above, the 'Check Out'
 version option would be used for the remaining conflicts for the **Space**
 property.
@@ -1612,7 +1602,7 @@ changed the reference and one or more parts are now different. The following ind
 the parts of a reference that can conflict with another reference of the same type.
 
 
-Parts of an ***external*** reference that may conflict:
+Parts of an *\**external*\** reference that may conflict:
 
 
 - external program name
@@ -1621,7 +1611,7 @@ Parts of an ***external*** reference that may conflict:
 - whether or not it is user defined
 
 
-Parts of a ***stack*** reference that may conflict:
+Parts of a *\**stack*\** reference that may conflict:
 
 
 - stack offset
@@ -1629,7 +1619,7 @@ Parts of a ***stack*** reference that may conflict:
 - first-use address
 
 
-Parts of a ***register*** reference that may conflict:
+Parts of a *\**register*\** reference that may conflict:
 
 
 - the register
@@ -1637,7 +1627,7 @@ Parts of a ***register*** reference that may conflict:
 - first-use address
 
 
-Parts of a ***memory*** reference that may conflict:
+Parts of a *\**memory*\** reference that may conflict:
 
 
 - offset
@@ -1669,13 +1659,12 @@ the same reference.
 instruction is numbered as operand 0.
 
 
-<u>Example 1</u> : The following image illustrates an *external
-reference conflict*. Your version and the latest version both changed the external
+<u>Example 1</u> : The following image illustrates an *external reference conflict*. Your version and the latest version both changed the external
 reference at address 01001000 operand 0. The latest version caused it to become user
 defined and you changed it to refer to the symbol "bud" instead of "IsTextUnicode".
 
 
-![](images/ExternalRefConflict.png)
+![External Ref Conflict](images/ExternalRefConflict.png)
 
 
 The options to resolve the conflict are:
@@ -1701,33 +1690,31 @@ memory, stack, register or external. In this case, you added a stack reference a
 latest version has a register reference added at address 010018cd operand 0.
 
 
-![](images/RefRegStackConflict.png)
+![Ref Reg Stack Conflict](images/RefRegStackConflict.png)
 
 
 Once again, select the radio button for which reference to keep and
 select the **Apply** button to continue with the merge process.
 
 
-<u>Example 3</u> : The next image illustrates a *memory reference
-conflict* where you changed an existing memory reference from a DATA reference to a
+<u>Example 3</u> : The next image illustrates a *memory reference conflict* where you changed an existing memory reference from a DATA reference to a
 WRITE reference and the latest version changed the memory reference to a READ_WRITE
 reference.
 
 
-![](images/MemRefConflict.png)
+![Mem Ref Conflict](images/MemRefConflict.png)
 
 
 Select the radio button for which reference to keep and select the
 **Apply** button to continue with the merge process.
 
 
-<u>Example 4</u> : The following illustrates a *conflict when
-different reference types are added* in your version and the latest version. In this
+<u>Example 4</u> : The following illustrates a *conflict when different reference types are added* in your version and the latest version. In this
 case you added an external reference at address 01002510 operand 0 and the latest
 version added multiple memory references.
 
 
-![](images/RefTypeConflict.png)
+![Ref Type Conflict](images/RefTypeConflict.png)
 
 
 The options to resolve the conflict are:
@@ -1788,7 +1775,7 @@ particular type and category so that they no longer match.
 latest version both adding different **Note** bookmarks at the same address.
 
 
-![](images/BmNoteBothAddConflict.png)
+![Bm Note Both Add Conflict](images/BmNoteBothAddConflict.png)
 
 
 When bookmarks are in conflict, you can:
@@ -1814,7 +1801,7 @@ Select either the latest version or your checked out version and then select
 user changed the comment in the latest version, but you removed the bookmark.
 
 
-![](images/BmRemoveVsChangeConflict.png)
+![Bm Remove Vs Change Conflict](images/BmRemoveVsChangeConflict.png)
 
 
 Select *Keep 'Latest' version* to keep the other user's changes or select
@@ -1837,7 +1824,7 @@ If a comment is removed in one version and changed in the other version, you mus
 choose whether to keep or remove it. This scenario is shown in the image below.
 
 
-![](images/CommentRemoveVsChangeConflict.png)
+![Comment Remove Vs Change Conflict](images/CommentRemoveVsChangeConflict.png)
 
 
 If both versions added the same type of comment at an address and the two comments
@@ -1850,7 +1837,7 @@ no longer match then you must decide to keep the latest version's comment, your
 comment, or both comments. This scenario is shown in the image below.
 
 
-![](images/CommentChangeConflict.png)
+![Comment Change Conflict](images/CommentChangeConflict.png)
 
 
 > **Note:** If you choose to keep both comments by
@@ -1883,7 +1870,7 @@ program path associated with that name
 versions changed the path for an external program name.
 
 
-![](images/ExternalProgramChangeConflict.png)
+![External Program Change Conflict](images/ExternalProgramChangeConflict.png)
 
 
 Select the version (Latest or Checked Out) of Ghidra program path to associate with the
@@ -1895,7 +1882,7 @@ merge.
 removed in one version and changed in the other.
 
 
-![](images/ExternalProgramRemoveConflict.png)
+![External Program Remove Conflict](images/ExternalProgramRemoveConflict.png)
 
 
 In the above scenario, the external program name "ADVAPI32.DLL" was removed in the
@@ -1935,7 +1922,7 @@ A property list conflict will result when you change a property that was either 
 or changed in the latest version. The image below shows this scenario:
 
 
-![](images/ProperyListConflict.png)
+![Propery List Conflict](images/ProperyListConflict.png)
 
 
 Here, in the *Analysis Disassembly* Property Group, another user changed the

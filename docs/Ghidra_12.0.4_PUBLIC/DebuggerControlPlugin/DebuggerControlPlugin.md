@@ -1,3 +1,5 @@
+[Home](../index.md) > [DebuggerControlPlugin](index.md) > Control and Machine State
+
 # Debugger: Control and Machine State
 
 
@@ -23,8 +25,7 @@ target. It is always displayed, but only available when a trace is active. The p
 are:
 
 
-- ![Target](../icons/record.png) **Control Target w/Edits
-Disabled:** The default, this presents actions for controlling the live target but rejects
+- ![Target](../icons/record.png) **Control Target w/Edits Disabled:** The default, this presents actions for controlling the live target but rejects
 all machine-state edits. Breakpoint commands are directed to the live target. When active,
 the UI automatically follows the latest snapshot recorded, and navigating back in time is not
 permitted. If the target is terminated and the trace remains open, the mode is automatically
@@ -35,8 +36,7 @@ Breakpoint commands are directed to the live target. When active, the UI automat
 follows the latest snapshot recorded, an navigating back in time is not permitted. If the
 target is terminated and the trace remains open, the mode is automatically switched to
 **Control Emulator**.
-- ![Trace](../icons/video-x-generic16.png) **Control Trace w/Edits
-Disabled:** This presents actions for navigating trace snapshots but rejects all
+- ![Trace](../icons/video-x-generic16.png) **Control Trace w/Edits Disabled:** This presents actions for navigating trace snapshots but rejects all
 machine-state edits. Breakpoint commands are directed to the emulator.
 - ![Trace](../icons/write-trace.png) **Control Trace:** This
 presents actions for navigating trace snapshots. It directs all edits to the trace database.
@@ -211,8 +211,7 @@ supported by the emulator.
 
 
 The default mode is **Control Target w/Edits Disabled**, because in most cases, this is
-the desired behavior. When the target dies, the mode becomes **Control Trace w/Edits
-Disabled**. For the most part, modifying the recorded trace itself is discouraged. There are
+the desired behavior. When the target dies, the mode becomes **Control Trace w/Edits Disabled**. For the most part, modifying the recorded trace itself is discouraged. There are
 few reasons to edit a trace, perhaps including 1) Hand-generating an experimental trace; 2)
 Generating a trace from a script, e.g., importing an event log, recording an emulated target;
 3) Patching in state missed by the original recording. Be wary of **Control Trace** mode,
@@ -227,3 +226,8 @@ use the state editing service. However, disabling edits cannot prevent a script 
 accessing Ghidra's Target API to modify a target. Nor can it prevent edits via the connected
 debugger's command-line interpreter. The following components all use the service: [Dynamic Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md), [Memory (Dynamic
 Bytes)](../DebuggerMemoryBytesPlugin/DebuggerMemoryBytesPlugin.md), [Registers](../DebuggerRegistersPlugin/DebuggerRegistersPlugin.md), and [Watches](../DebuggerWatchesPlugin/DebuggerWatchesPlugin.md).
+
+
+---
+
+[← Previous: Variable Hovers](../VariableValueHoverPlugin/VariableValueHoverPlugin.md) | [Next: Memview Plot →](../DebuggerMemviewPlugin/DebuggerMemviewPlugin.md)

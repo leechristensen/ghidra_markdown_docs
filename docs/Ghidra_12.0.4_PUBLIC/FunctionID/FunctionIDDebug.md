@@ -1,3 +1,5 @@
+[Home](../index.md) > [FunctionID](index.md) > Plug-in Functionality
+
 # Function ID Debug Plug-in
 
 
@@ -55,7 +57,7 @@ A search is initiated for a specific search field by entering a value and then h
 the **RETURN** key, with the cursor and focus still in the desired field.
 
 
-![](images/FIDSearch.png)
+![Fidsearch](images/FIDSearch.png)
 
 
 #### Search Fields
@@ -157,3 +159,8 @@ that lists individual records in one table. A drop-down menu allows the user to 
 between the different underlying tables.  Most of the columns contain row keys and don't
 present readable values. The only meaningful table is likely to be the
 *Libraries Table* which will list each library making up the database.
+
+
+---
+
+[← Previous: Enabling the Plug-in](FunctionIDDebug.md) | [Next: Version Tracking →](../VersionTrackingPlugin/Version_Tracking_Intro.md)

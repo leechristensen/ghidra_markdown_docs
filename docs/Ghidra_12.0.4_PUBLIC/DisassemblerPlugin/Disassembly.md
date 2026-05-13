@@ -44,17 +44,13 @@ provides a "Cancel" button.  Press the "Cancel" button to stop the disassembly
 process.  Note: this will not undo any disassembly that has already occurred.
 
 
-*Press the 'D' key to Disassemble starting at the
-current cursor location*.
+*Press the 'D' key to Disassemble starting at the current cursor location*.
 
 
-*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instructions to
-undefined bytes.*
+*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instructions to undefined bytes.*
 
 
-*Be aware that some processors may allow for
-disassembly in different modes (eg: ARM vs. THUMB). Specific commands may be provided for
-these and are not discussed here.*
+*Be aware that some processors may allow for disassembly in different modes (eg: ARM vs. THUMB). Specific commands may be provided for these and are not discussed here.*
 
 
 ## Disassembler Options
@@ -64,15 +60,15 @@ The following *Disassembler* options exist which control certain behaviors durin
 *Disassembly*:
 
 
-- ***Mark Bad Disassembly*** - places an error bookmark on any instruction or
+- **\*Mark Bad Disassembly\*** - places an error bookmark on any instruction or
 instruction flow which fails to disassemble due to parse error or instruction conflict
 (Enabled by default).
-- ***Mark Unimplemented Pcode*** - places a warning bookmark on any instruction
+- **\*Mark Unimplemented Pcode\*** - places a warning bookmark on any instruction
 which has *unimplemented* pcode/semantics at the time disassembly was performed
 (Enabled by default).  The *MarkUnimplementedPcode* script may be run to update
 these warnings since processor language updates may implement previously unimplemented
 instruction pcode.
-- ***Restrict Disassembly to Executable Memory*** - If enabled will restrict
+- **\*Restrict Disassembly to Executable Memory\*** - If enabled will restrict
 disassembly to those memory blocks marked as executable (Not restricted by default).
 
 
@@ -111,8 +107,7 @@ provides a "Cancel" button.  Press the "Cancel" button to stop the disassembly
 process.  Note: this will not undo any disassembly that has already occurred.
 
 
-*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instruction to
-undefined bytes.*
+*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instruction to undefined bytes.*
 
 
 ## Restricted Disassembly
@@ -137,8 +132,7 @@ provides a "Cancel" button.  Press the "Cancel" button to stop the disassembly
 process.  Note: this will not undo any disassembly that has already occurred.
 
 
-*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instruction to
-undefined bytes.*
+*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instruction to undefined bytes.*
 
 
 ## Disassemble ARM / Thumb
@@ -173,12 +167,10 @@ provides a "Cancel" button.  Press the "Cancel" button to stop the disassembly
 process.  Note: this will not undo any disassembly that has already occurred.
 
 
-*Press the 'F11' key to Disassemble in ARM
-mode and press the "F12" key to disassemble in Thumb mode.*
+*Press the 'F11' key to Disassemble in ARM mode and press the "F12" key to disassemble in Thumb mode.*
 
 
-*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instruction to
-undefined bytes.*
+*Selecting [Undo](../Tool/Undo_Redo.md) will return the disassembled instruction to undefined bytes.*
 
 
 ## Processor Options
@@ -191,15 +183,14 @@ or options of the processor.  The language specifies a default for these modes,
 user can effectively change the defaults using the **Processor Options** dialog.
 
 
-![](images/ProcessorOptions.png)
+![Processor Options](images/ProcessorOptions.png)
 
 
 The options are
 specific to the processor and the user should refer to the processor manual for a description
 of a processors modes. Whenever, disassembly takes place these are the assumed values that
 will be used to initiate disassembly, unless the user has specifically set the values at an
-address using the  **[Register
-Manager Window](../RegisterPlugin/Registers.md).**
+address using the  **[Register Manager Window](../RegisterPlugin/Registers.md).**
 
 
 To changes the default processor options:
@@ -209,7 +200,7 @@ To changes the default processor options:
 2. Enter the values and press the "Ok" button.
 
 
-*Provided by: *Disassembler* plugin*
+Provided by: *Disassembler* plugin
 
 
 **Related Topics:**
@@ -254,8 +245,7 @@ behavior.
 Click OK in the dialog
 
 
-*An instruction whose flow has been
-modified will have its' mnemonic color modified.*
+*An instruction whose flow has been modified will have its' mnemonic color modified.*
 
 
 ## Modify Instruction Length
@@ -272,7 +262,7 @@ quickly identified by the error bookmark along with the offcut reference.  In th
 around the LOCK prefix byte resulting in an offcut flow and disassembly conflict.
 
 
-![](images/LengthOverrideLockPrefixExample.png)
+![Length Override Lock Prefix Example](images/LengthOverrideLockPrefixExample.png)
 
 
 The above case can be resolved by overriding the code-unit length of the first
@@ -300,7 +290,7 @@ to one, is preserved and both instructions fallthrough to the same `JNZ`
 instruction.
 
 
-![](images/LengthOverrideLockPrefixExample2.png)
+![Length Override Lock Prefix Example2](images/LengthOverrideLockPrefixExample2.png)
 
 
 ---

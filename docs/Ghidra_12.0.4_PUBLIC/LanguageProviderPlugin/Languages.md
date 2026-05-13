@@ -58,7 +58,7 @@ from the popup menu.  Since setting the language is such a major
 change, the following warning will appear.
 
 
-![](images/Warning.png)
+![Warning](images/Warning.png)
 
 
 Alternatively, if your file is versioned, you
@@ -67,7 +67,7 @@ operation.  If you press the "OK" button, the Select Language
 dialog will be displayed:
 
 
-![](images/Languages.png)
+![Languages](images/Languages.png)
 
 
 Select the language from the list and press "OK" to
@@ -76,10 +76,7 @@ selected language is
 sufficiently similar to the existing language, the change will be
 made.  Otherwise, an error dialog will appear and the change will
 not be allowed.
-*By default, a filter will automatically be applied that displays the
-most
-compatible languages. It is recommended to only use one of these
-languages.*
+*By default, a filter will automatically be applied that displays the most compatible languages. It is recommended to only use one of these languages.*
 
 
 > **Note:** Once the operation completes successfully the only way to
@@ -112,7 +109,7 @@ The figure
 below shows a CodeBrowser with the PCode field added.
 
 
-![](images/PCodeDisplay.png)
+![Pcode Display](images/PCodeDisplay.png)
 
 
 **Related Topics:**
@@ -124,4 +121,4 @@ below shows a CodeBrowser with the PCode field added.
 
 ---
 
-[← Previous: Block Models](../BlockModel/Block_Model.md)
+[← Previous: Block Models](../BlockModel/Block_Model.md) | [Next: Theming →](../Theming/ThemingOverview.md)

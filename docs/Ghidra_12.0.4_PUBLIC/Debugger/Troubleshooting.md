@@ -1,3 +1,5 @@
+[Home](../index.md) > [Debugger](index.md) > Troubleshooting
+
 # Debugger: Troubleshooting
 
 
@@ -82,3 +84,8 @@ recommended.
 
 
 Additional troubleshooting recommendations are given in the Debugger course materials.
+
+
+---
+
+[← Previous: Launching a Target](GettingStarted.md) | [Next: Debug Console →](../DebuggerConsolePlugin/DebuggerConsolePlugin.md)

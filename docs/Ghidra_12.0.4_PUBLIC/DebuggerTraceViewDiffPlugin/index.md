@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Comparing Times](DebuggerTraceViewDiffPlugin.md)

@@ -18,8 +18,7 @@ types are shown in the Data Type Manager display.
 <a name="editpluginpathdialog"></a>
 
 
-| ![](images/EditPluginPath.png) |
-| --- |
+![Edit Plugin Path](images/EditPluginPath.png)
 
 
 The *User Plugin Paths* list shows the paths in the order to be searched.  Each
@@ -41,15 +40,14 @@ to the plugin path, you must restart Ghidra to see the effects.
 To add a Plugin Path,
 
 
-1. From the Ghidra Project Window, select **Edit →  Plugin Path...**
+1. From the Ghidra Project Window, select **Edit → Plugin Path...**
 2. The *Edit Plugin Path* [dialog](#edit-plugin-path) is displayed; in
 the *Directory or Jar File Name* field
   - Select the **Add Jar...** or **Add Dir...** button to choose either a jar
 file or directory from the file system.
   - Locate and select the appropriate jar file or directory within the file chooser
 dialog.
-  - Select the **Add Jar,** or **Add
-Dir** button within the file chooser dialog.
+  - Select the **Add Jar,** or **Add Dir** button within the file chooser dialog.
 3. Select the **Apply** or **OK** button from the *Edit Plugin Path* dialog.
   - **Apply** applies the changes and leaves the dialog up.
   - **OK** applies the changes and dismisses the dialog.
@@ -62,8 +60,8 @@ To change the search order of the paths within the User Plugin Path list,
 
 
 1. Select a path from the User Plugin Paths list.
-2. Select the ![up.png](../icons/up.png) button to move
-the path up in the list; select the ![down.png](../icons/down.png)
+2. Select the ![Up](../icons/up.png) button to move
+the path up in the list; select the ![Down](../icons/down.png)
 to move the path down in the list.
 
 
@@ -78,7 +76,7 @@ class that is loaded is the one that you will be using when you run Ghidra.
 - To Remove an existing jar from the Plugin Path,
 
 
-1. From the Ghidra Project Window,  select **Edit →  Plugin Path...**
+1. From the Ghidra Project Window,  select **Edit → Plugin Path...**
 2. Select **a User Plugin Path.**
 3. **Click the Remove Button.**
 4. **Click Apply or OK.**

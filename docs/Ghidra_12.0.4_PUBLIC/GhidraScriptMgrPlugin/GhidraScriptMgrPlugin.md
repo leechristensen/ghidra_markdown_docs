@@ -98,7 +98,7 @@ binding, etc.
 ## Script Manager Actions
 
 
-### Run Script ![play.png](../icons/play.png)
+### Run Script ![Play](../icons/play.png)
 
 
 Runs the selected script. If the script source file or any source in
@@ -107,10 +107,10 @@ successful, then the script will be run. If the script does not compile, the com
 errors will be displayed in the [Console](../ConsolePlugin/console.md) and an error icon ![Error](../icons/emblem-important.png) will be displayed in the first column of the table.
 
 
-![](images/Console.png)
+![Console](images/Console.png)
 
 
-### Run Last Script ![play_again.png](../icons/play_again.png)
+### Run Last Script ![Play Again](../icons/play_again.png)
 
 
 Runs the last run script. This action is available as a keybinding from
@@ -131,16 +131,16 @@ You may either use the mouse to choose the desired script from the popup list or
 the Enter key to selected the highlighted list element.
 
 
-![](images/ScriptQuickLaunchDialog.png)
+![Script Quick Launch Dialog](images/ScriptQuickLaunchDialog.png)
 
 
-### Edit Script ![accessories-text-editor.png](../icons/accessories-text-editor.png)
+### Edit Script ![Accessories Text Editor](../icons/accessories-text-editor.png)
 
 
 Edits the selected script. For more information on script meta data, see [Ghidra Script Development](ScriptDevelopment.md#meta-data)
 
 
-![](images/Edit_Script.png)
+![Edit Script](images/Edit_Script.png)
 
 
 #### Refresh ![Refresh](../icons/reload3.png)
@@ -151,14 +151,14 @@ filesystem. This action is useful if you have edited the script outside of Ghidr
 would like to have the editor update to show those changes.
 
 
-#### Save ![disk.png](../icons/disk.png)
+#### Save ![Disk](../icons/disk.png)
 
 
 Saves the changed script back to the original file. The *Save*
 option is only enabled when changes have been made.
 
 
-#### Save As... ![disk_save_as.png](../icons/disk_save_as.png)
+#### Save As... ![Disk Save As](../icons/disk_save_as.png)
 
 
 Saves the script (with any changes) to a new script file. The default
@@ -168,7 +168,7 @@ script in the editor. When selecting *Save As...*, Ghidra will prompt for a
 filename.
 
 
-![](images/SaveAs.png)
+![Save As](images/SaveAs.png)
 
 
 #### Undo [Undo]
@@ -184,7 +184,7 @@ up to 50 edits.
 Redo returns the last edit back into the editor.
 
 
-#### Select Font ![text_lowercase.png](../icons/text_lowercase.png)
+#### Select Font ![Text Lowercase](../icons/text_lowercase.png)
 
 
 Changes the font for all open editors. It will also set the default font
@@ -192,40 +192,31 @@ that will be used for all future editors. The dialog allows you to specify the f
 size, and style.
 
 
-![](images/Select_Font.png)
+![Select Font](images/Select_Font.png)
 
 
-### Edit Script with Eclipse ![eclipse.png](../icons/eclipse.png)
+### Edit Script with Eclipse ![Eclipse](../icons/eclipse.png)
 
 
 Edits the selected script in Eclipse using the GhidraDev plugin.
 
 
-*Before a script can
-be edited in Eclipse, an Eclipse installation and workspace directory must be defined in
-the Tool's [Eclipse
-Integration](../EclipseIntegration/EclipseIntegration.md) options.*
+*Before a script can be edited in Eclipse, an Eclipse installation and workspace directory must be defined in the Tool's [Eclipse Integration](../EclipseIntegration/EclipseIntegration.md) options.*
 
 
-*For more information
-on developing Ghidra scripts in Eclipse, see
-Extensions/Eclipse/GhidraDev/GhidraDev_README.html.*
+*For more information on developing Ghidra scripts in Eclipse, see Extensions/Eclipse/GhidraDev/GhidraDev_README.html.*
 
 
-### Edit Script with Visual Studio Code ![vscode.png](../icons/vscode.png)
+### Edit Script with Visual Studio Code ![Vscode](../icons/vscode.png)
 
 
 Edits the selected script in Visual Studio Code.
 
 
-*Before a script can
-be edited in Visual Studio Code, a Visual Studio Code executable path must be defined in
-the Tool's [Visual Studio
-Code Integration](../VSCodeIntegration/VSCodeIntegration.md) options if Visual Studio Code is installed in a non-default
-location.*
+*Before a script can be edited in Visual Studio Code, a Visual Studio Code executable path must be defined in the Tool's [Visual Studio Code Integration](../VSCodeIntegration/VSCodeIntegration.md) options if Visual Studio Code is installed in a non-default location.*
 
 
-### Assign Key Binding ![key.png](../icons/key.png)
+### Assign Key Binding ![Key](../icons/key.png)
 
 
 Allows you to assign a key binding the selected script.
@@ -235,25 +226,23 @@ Allows you to assign a key binding the selected script.
 assign to the script.
 
 
-![](images/Assign_Key_Binding.png)
+![Assign Key Binding](images/Assign_Key_Binding.png)
 
 
-*The script key
-bindings are stored in the Tool's [Key Binding](../Tool/ToolOptions_Dialog.md#key-bindings)
-options.*
+*The script key bindings are stored in the Tool's [Key Binding](../Tool/ToolOptions_Dialog.md#key-bindings) options.*
 
 
-### Delete Script ![table_row_delete.png](../icons/table_row_delete.png)
+### Delete Script ![Table Row Delete](../icons/table_row_delete.png)
 
 
 Deletes the selected script. You will receive a confirmation
 dialog.
 
 
-![](images/Delete_Script_Confirm.png)
+![Delete Script Confirm](images/Delete_Script_Confirm.png)
 
 
-***This is a permanent operation.***
+*\**This is a permanent operation.*\**
 
 
 You cannot delete scripts in the [system
@@ -261,17 +250,17 @@ directory](#script-directories-bundle-manager), as this may affect other users. 
 you will receive a warning dialog.
 
 
-### Rename Script ![textfield_rename.png](../icons/textfield_rename.png)
+### Rename Script ![Textfield Rename](../icons/textfield_rename.png)
 
 
 Renames the selected script. When selecting *Rename*, Ghidra will
 prompt for a new filename.
 
 
-![](images/Rename.png)
+![Rename](images/Rename.png)
 
 
-### Create New Script ![script_add.png](../icons/script_add.png)
+### Create New Script ![Script Add](../icons/script_add.png)
 
 
 Creates a new empty script and displays it in a Script Editor.
@@ -281,11 +270,10 @@ If more than one `GhidraScriptProvider`
 exists, then you will have to choose what type of script to create.
 
 
-![](images/Pick.png)
+![Pick](images/Pick.png)
 
 
-See `Ghidra Script
-Development` for details on how to write a script.
+See `Ghidra Script Development` for details on how to write a script.
 
 
 ### Refresh Script List ![Refresh](../icons/reload3.png)
@@ -294,7 +282,7 @@ Development` for details on how to write a script.
 Refreshes the script list by re-scanning the script directories.
 
 
-### Script Directories / Bundle Manager ![text_list_bullets.png](../icons/text_list_bullets.png)
+### Script Directories / Bundle Manager ![Text List Bullets](../icons/text_list_bullets.png)
 
 
 Allows you to add and remove directories to search for scripts and other
@@ -307,16 +295,16 @@ the "Enable" column checkbox.
 For more information on Ghidra's dynamic module support, see [Ghidra Bundles](../BundleManager/BundleManager.md).
 
 
-![](images/Script_Dirs.png)
+![Script Dirs](images/Script_Dirs.png)
 
 
-### Help ![red-cross.png](../icons/red-cross.png)
+### Help ![Red Cross](../icons/red-cross.png)
 
 
 Opens the Ghidra help viewer on the GhidraScript API.
 
 
-*Provided by: *Ghidra Script Manager Plugin**
+Provided by: *Ghidra Script Manager Plugin*
 
 
 **Related Topics:**

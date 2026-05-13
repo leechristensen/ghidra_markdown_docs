@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [BSim Feature Visualizer](BSimFeatureVisualizerPlugin.md)

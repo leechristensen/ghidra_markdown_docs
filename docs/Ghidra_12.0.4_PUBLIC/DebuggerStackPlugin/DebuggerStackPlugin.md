@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerStackPlugin](index.md) > Stack
+
 # Debugger: Stack
 
 
-![](images/DebuggerStackPlugin.png)
+![Debugger Stack Plugin](images/DebuggerStackPlugin.png)
 
 
 The stack window displays the current trace's execution stack, as unwound and reported by
@@ -54,7 +56,7 @@ stack pointer in a Dynamic Listing. The Stack window *does not* display Ghidra's
 unwinding results.
 
 
-![](images/DebuggerStackUnwindInListing.png)
+![Debugger Stack Unwind In Listing](images/DebuggerStackUnwindInListing.png)
 
 
 Each call record generates a structure data unit derived from the function's frame. The
@@ -80,3 +82,8 @@ determined by interpreting the function's machine code.
 The frame entries are *not* automatically updated when a function's frame changes in
 a program database. To update the unwind after changing a function's stack frame, you must
 unwind again.
+
+
+---
+
+[← Previous: Disassembly and Assembly](../DebuggerDisassemblerPlugin/DebuggerDisassemblerPlugin.md) | [Next: Breakpoints →](../DebuggerBreakpointsPlugin/DebuggerBreakpointsPlugin.md)

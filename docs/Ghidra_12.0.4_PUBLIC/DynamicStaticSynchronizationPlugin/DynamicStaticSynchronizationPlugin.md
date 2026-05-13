@@ -1,3 +1,5 @@
+[Home](../index.md) > [DynamicStaticSynchronizationPlugin](index.md) > Static Synchronization
+
 # Debugger: Static Synchronization
 
 
@@ -67,3 +69,8 @@ This action is offered as a resolution whenever a module cannot be automatically
 This typically happens when the module's program database has crash data that can be recovered
 and/or needs a version upgrade. It will attempt to open the program, allowing Ghidra to prompt
 you about the situation.
+
+
+---
+
+[← Previous: Static Mappings](../DebuggerStaticMappingPlugin/DebuggerStaticMappingPlugin.md) | [Next: Watches →](../DebuggerWatchesPlugin/DebuggerWatchesPlugin.md)

@@ -1,4 +1,6 @@
-<a name="graph-exporter"></a>
+[Home](../index.md) > [GraphServices](index.md) > Exporting a Graph
+
+<a name="graph_exporter"></a>
 
 
 # Graph Export Service
@@ -11,8 +13,7 @@ Whenever a graph is generated and the graph output is set to **Graph Export**, t
 following graph export dialog is displayed:
 
 
-| ![](images/ExportDialog.png) |
-| --- |
+![Export Dialog](images/ExportDialog.png)
 
 
 The Export Graph dialog offers a choice of the following graph formats:
@@ -39,10 +40,15 @@ The **Ok** button will marshal the graph to the selected file in the selected fo
 The **Cancel** button will close the dialog and perform no other action.
 
 
-*Provided By:  *GraphDisplayBrokerPlugin**
+Provided By:  *GraphDisplayBrokerPlugin*
 
 
 **Related Topics:**
 
 
 - [Default Graph Display](GraphDisplay.md)
+
+
+---
+
+[← Previous: Default Graph Display](GraphDisplay.md) | [Next: Visual Graphs →](../VisualGraph/Visual_Graph.md)

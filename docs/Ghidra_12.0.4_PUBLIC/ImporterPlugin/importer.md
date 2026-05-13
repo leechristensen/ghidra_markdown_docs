@@ -61,8 +61,7 @@ file [Importer Dialog](#importer-dialog) to complete the import.
 #### Steps:
 
 
-- Invoke the action from the **File → Import
-File...** menu item.
+- Invoke the action from the **File → Import File...** menu item.
 - Select the file to import using the filechooser that appears.
 - Use the [Importer Dialog](#importer-dialog) (or the [Batch Importer Dialog](#batch-import-dialog) if it is an archive) that pops up to
 perform the import.
@@ -101,8 +100,7 @@ recursively find programs to import.
 #### Steps:
 
 
-- Invoke the action from the **File → Batch
-Import...** menu item.
+- Invoke the action from the **File → Batch Import...** menu item.
 - Use the filechooser dialog that appears to select a root directory for searching for
 files to import.
 - Use the [Batch Importer Dialog](#batch-import-dialog) that appears to
@@ -138,8 +136,7 @@ be open in the tool to perform this action.
 #### Steps:
 
 
-- Invoke the action from the **File → Add to
-Program...** menu item.
+- Invoke the action from the **File → Add to Program...** menu item.
 - Use the filechooser dialog that appears to select a root directory for searching for
 files to import.
 - Use the [Importer Dialog](#importer-dialog) to configure the import.
@@ -163,8 +160,7 @@ is preferred to set the library loading options directly from the [Importer Dial
 #### Steps:
 
 
-- Invoke the action from the **File → Load
-Libraries...** menu item.
+- Invoke the action from the **File → Load Libraries...** menu item.
 - Use the options dialog that appears to control the library import settings.
 - Press OK on the dialog to initiate importing any discovered libraries.
 - When complete, the currently open program should have additional
@@ -185,8 +181,7 @@ tool.
 
 
 - Make a selection in the Listing window in the CodeBrowser tool.
-- Invoke the action by right-clicking and from the popup menu, select the **Extract
-and Import...** menu item.
+- Invoke the action by right-clicking and from the popup menu, select the **Extract and Import...** menu item.
 - Use the [Importer Dialog](#importer-dialog) to configure the import.
 - Press OK on the dialog to initiate importing the selected files.
 - When the import is complete, a new program will appear in the project window and also
@@ -200,7 +195,7 @@ When the user initiates a single file import, the **Importer Dialog** is used to
 the import for that file.
 
 
-![](images/ImporterDialog.png)
+![Importer Dialog](images/ImporterDialog.png)
 
 
 ### Dialog Fields
@@ -235,7 +230,7 @@ project folder and file links.](../FrontEndPlugin/Ghidra_Front_end.md#create-lin
 import.
 
 
-![](../shared/note.yellow.png)If this dialog appears as a result of the
+![Note.Yellow](../shared/note.yellow.png)If this dialog appears as a result of the
 **Add To Program** action, then the Language, Destination Folder, and Filename fields
 will be disabled since these values are already determined by the existing program.
 
@@ -265,7 +260,7 @@ reset vector or interrupt vector.
 
 
 If this option is on, labels created from the processor specification are
-***anchored***. This means that if the image base is changed or a memory block is moved,
+**\*anchored\***. This means that if the image base is changed or a memory block is moved,
 those symbols will remain at the address they were originally placed. If the option is
 off, the symbols will move with the image base or the memory block.
 
@@ -282,8 +277,7 @@ them.
 
 The project folder that will get searched for existing library programs.  If left
 empty, the folder that the main program is being imported to will be searched.
-***This option is hidden and set to the program destination folder if filesystem
-mirroring is enabled in the Importer Dialog***.
+**\*This option is hidden and set to the program destination folder if filesystem mirroring is enabled in the Importer Dialog\***.
 
 
 #### Load Libraries From Disk
@@ -310,8 +304,7 @@ traversed when loading local or system libraries.
 
 The project folder where newly loaded library programs will get created.  If left
 empty, they will get created in the same folder as the main program being imported.
-***This option is hidden and set to the program destination folder if filesystem
-mirroring is enabled in the Importer Dialog***.
+**\*This option is hidden and set to the program destination folder if filesystem mirroring is enabled in the Importer Dialog\***.
 
 
 #### Mirror Library Disk Layout
@@ -321,8 +314,7 @@ If selected, the filesystem path layout of all imported libraries are
 mirrored in the library destination folder. Any filesystem directory and file
 soft links will be mirrored as
 [Ghidra
-project folder and file links](../FrontEndPlugin/Ghidra_Front_end.md#create-linked-folder-or-file). ***This option is hidden and enabled if filesystem
-mirroring is enabled in the Importer Dialog***.
+project folder and file links](../FrontEndPlugin/Ghidra_Front_end.md#create-linked-folder-or-file). **\*This option is hidden and enabled if filesystem mirroring is enabled in the Importer Dialog\***.
 
 
 ### COFF Options
@@ -475,14 +467,12 @@ process, the information will be cached locally to the user's `.ghidra/`
 directory to speed up future imports.
 
 
-![](../shared/note.yellow.png) When running Ghidra with symbol files
+![Note.Yellow](../shared/note.yellow.png) When running Ghidra with symbol files
 created from an older operating system, you may receive the following warning
 message:
 
 
-*Unable to locate [`symbol_name`] in
-[`<filepath>.exports`].
-Please verify the version is correct.*
+*Unable to locate [`symbol_name`] in [`<filepath>.exports`]. Please verify the version is correct.*
 
 
 This warning message indicates which symbols do not exist in the corresponding
@@ -540,7 +530,7 @@ reset vector or interrupt vector.
 
 
 If this option is on, labels created from the processor specification are
-***anchored***. This means that if the image base is changed or a memory block is moved,
+**\*anchored\***. This means that if the image base is changed or a memory block is moved,
 those symbols will remain at the address they were originally placed. If the option is
 off, the symbols will move with the image base or the memory block.
 
@@ -663,7 +653,7 @@ specified above for XML.
 
 
 The Library Search Path dialog is used to specify the directories, container files,
-and/or FSRLs that Ghidra should use to resolve external libraries (e.g.; *.dll, *.so) while
+and/or FSRLs that Ghidra should use to resolve external libraries (e.g.; \*.dll, \*.so) while
 importing. A "." can be added to specify the program's import location.  FSRLs can be
 added via the
 [File System Browser context menu](../FileSystemBrowserPlugin/FileSystemBrowserPlugin.md#add-library-search-path).
@@ -673,7 +663,7 @@ If importing with filesystem mirroring activated, these paths also are used to l
 already-imported libraries that are rooted in the project at the specified destination folder.
 
 
-![](images/SearchPathsDialog.png)
+![Search Paths Dialog](images/SearchPathsDialog.png)
 
 
 ### Change the Library Path Search Order
@@ -683,36 +673,32 @@ To change the search order of the paths within the list:
 
 
 1. Select a path from the list
-2. Select the ![up.png](../icons/up.png) button to move the path **up** in
+2. Select the ![Up](../icons/up.png) button to move the path **up** in
 the list
-3. Select the ![down.png](../icons/down.png) button to move the path **down**
+3. Select the ![Down](../icons/down.png) button to move the path **down**
 in the list
 
 
-*![](../shared/note.yellow.png) The search order is important when you
-have different versions of a libraries in different directories. The first directory in
-the search path that contains a required library is the one that Ghidra will
-use.*
+*![Note.Yellow](../shared/note.yellow.png) The search order is important when you have different versions of a libraries in different directories. The first directory in the search path that contains a required library is the one that Ghidra will use.*
 
 
 ### Add Library Search Path
 
 
-1. Click the ![Plus.png](../icons/Plus.png) button
+1. Click the ![Plus](../icons/Plus.png) button
 2. Select a directory or container file from the file chooser, or the program's
 import location if "." is not present in the list already
 3. Click the "Select Directory" button
 
 
-*The newly added path will be placed at
-the top of the list.*
+*The newly added path will be placed at the top of the list.*
 
 
 ### Remove Library Search Path
 
 
 1. Select one or more paths from the list
-2. Click the ![edit-delete.png](../icons/edit-delete.png) button
+2. Click the ![Edit Delete](../icons/edit-delete.png) button
 
 
 ### Reset Library Search Paths
@@ -721,7 +707,7 @@ the top of the list.*
 To reset the paths to the default list:
 
 
-1. Click the ![trash-empty.png](../icons/trash-empty.png) button
+1. Click the ![Trash Empty](../icons/trash-empty.png) button
 2. Click "Yes" on the pop-up dialog to confirm path reset
 
 
@@ -737,7 +723,7 @@ the appropriate language/compiler spec. If not, this dialog can be used to selec
 override the default selection.
 
 
-![](images/LanguagePickerDialog.png)
+![Language Picker Dialog](images/LanguagePickerDialog.png)
 
 
 Each row in the table represents a unique processor language/compiler spec pair. To
@@ -785,7 +771,7 @@ individual files in a directory tree, and/or files from an archive file of some 
 as a zip or tar file.
 
 
-![](images/BatchImportDialog.png)
+![Batch Import Dialog](images/BatchImportDialog.png)
 
 
 ### Import Sources
@@ -878,7 +864,7 @@ folder. The relative path is usually the relative path of the file to its import
 folder, but can be adjusted with some of the path options described earlier.
 
 
-*Provided By: *Importer* Plugin*
+Provided By: *Importer* Plugin
 
 
 ---

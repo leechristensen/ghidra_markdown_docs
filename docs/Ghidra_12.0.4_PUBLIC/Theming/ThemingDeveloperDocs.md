@@ -1,3 +1,5 @@
+[Home](../index.md) > [Theming](index.md) > Developer's Guide
+
 # Developer's Guide to Theming
 
 
@@ -56,8 +58,7 @@ and
 becomes
 
 
-`public static final Color MY_COLOR = new
-GColor("color.fg.xzy");`
+`public static final Color MY_COLOR = new GColor("color.fg.xzy");`
 
 
 The `GColor` class uses a delegation model where all method calls to
@@ -75,15 +76,13 @@ Icons work just like colors, so you can just create a `GIcon(String id)`.
 So, for example,
 
 
-`public static final Icon MY_ICON =
-ResourceManager("images/balloon.png");`
+`public static final Icon MY_ICON = ResourceManager("images/balloon.png");`
 
 
 becomes
 
 
-`public static final Icon MY_ICON = new
-GIcon("icon.text.bubble");`
+`public static final Icon MY_ICON = new GIcon("icon.text.bubble");`
 
 
 ### Fonts
@@ -200,7 +199,7 @@ Examples:
 - icon.plugin.byteviewer.provider
 
 
-- <a name="system-ids"></a>**System IDs:** The following resource IDs are created and
+- <a name="system_ids"></a>**System IDs:** The following resource IDs are created and
 used by the system.  For a description of how these IDs are used internally by the
 application, see the `UiDefaultsMapper` class .   The `system.*` keys
 allow users to quickly change many Look and Feel values via these high-level concepts.   The
@@ -208,17 +207,16 @@ allow users to quickly change many Look and Feel values via these high-level con
 A description of the system properties can be found in the `SystemThemeIds` class.
 
 
-- laf.color.*
-- laf.font.*
-- laf.icon.*
+- laf.color.\*
+- laf.font.\*
+- laf.icon.\*
 
 
-- system.color.*
-- system.font.*
+- system.color.\*
+- system.font.\*
 
 
-The `system` property names use the standard property names, such as `
-font, bg` and `fg`.  These properties introduce these additional terms:
+The `system` property names use the standard property names, such as `font, bg` and `fg`.  These properties introduce these additional terms:
 `control, view, menu and tooltip`.   `control` refers to items that
 generally control the state of the application, such as buttons and check boxes.
 `view` refers to widgets that display data, such as trees, tables and text
@@ -271,22 +269,7 @@ specifies a property ID (sometimes referred to as the key) and a value, separate
 section for specifying defaults for "dark" themes.
 
 
-`
-
-[Defaults]
-
-[property id 1] = [some value]
-[property id 2] = [some value]
-[property id 3] = [some value]
-...
-
-[Dark Defaults]
-
-[property id 1] = [some value]
-[property id 2] = [some value]
-...
-
-`
+`[Defaults] [property id 1] = [some value] [property id 2] = [some value] [property id 3] = [some value] ... [Dark Defaults] [property id 1] = [some value] [property id 2] = [some value] ...`
 
 
 Example:
@@ -343,8 +326,7 @@ that all of the application's defined properties start with either "color.", "fo
 
 
 Properties defined by the theming system do not follow this pattern. To reference a
-property that does not have a standard prefix, an ID can be prefixed with `[color]
-`, `[font]`, or `[icon]` as appropriate to allow the theme
+property that does not have a standard prefix, an ID can be prefixed with `[color]`, `[font]`, or `[icon]` as appropriate to allow the theme
 property parser to recognize the values as IDs to other properties. For example, to refer to a
 system property named `system.color.bg.view`,
 you would use the following definition:
@@ -593,7 +575,7 @@ and Feel concepts presented by the different LaFs.
 
 This class is used by the `UiDefaultsMapper` class and presents a set of resource IDs common across all
 LaFs. These values can be changed by the user.   See also the description of
-<a name="system-ids"></a>System IDs in this document.
+<a name="system_ids"></a>System IDs in this document.
 
 
 ### Known Issues
@@ -604,7 +586,7 @@ this happens, you may notice odd UI artifacts.  These will go away when the appl
 restarted and often when you again switch the theme.
 
 
-*Provided by: *Theme Manager**
+Provided by: *Theme Manager*
 
 
 **Related Topics:**
@@ -613,3 +595,8 @@ restarted and often when you again switch the theme.
 - [Theming Overview](ThemingOverview.md)
 - [Theming User's Guide](ThemingUserDocs.md)
 - [Theming Architecture](ThemingInternals.md)
+
+
+---
+
+[← Previous: User's Guide](ThemingUserDocs.md) | [Next: Architecture →](ThemingInternals.md)

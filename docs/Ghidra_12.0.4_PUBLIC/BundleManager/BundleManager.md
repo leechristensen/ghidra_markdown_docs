@@ -24,8 +24,7 @@ manifest file that tells the framework what it uses/imports and what it
 provides/exports.
 Bundles are Jars, but Ghidra will automatically compile source
 directories to bundles.  We refer to source directories intended to be
-used in OSGi as [*source
-bundles*](BundleManager.md#source-bundles). Each Ghidra script directory is a seperate
+used in OSGi as [*source bundles*](BundleManager.md#source-bundles). Each Ghidra script directory is a seperate
 source bundle.
 3. Bundles can *export* Java packages for use by other bundles,
 and packages can have version numbers assigned.
@@ -56,15 +55,13 @@ by the OSGi framework.
 
 
 **NOTE:** The `<user settings>` directory is platform/configuration
-specific. Its value can be found in the Ghidra Front End GUI, under `Help ->
-Runtime Information -> Application Layout -> Settings Directory`
+specific. Its value can be found in the Ghidra Front End GUI, under `Help -> Runtime Information -> Application Layout -> Settings Directory`
 
 
 ### Exploded Bundles
 
 
-Each such subdirectory of `compiled-bundles/` is an *exploded
-jar* --  by compressing it, we get a standard OSGi Jar bundle:
+Each such subdirectory of `compiled-bundles/` is an *exploded jar* --  by compressing it, we get a standard OSGi Jar bundle:
 
 
 ```
@@ -215,8 +212,8 @@ You can find detailed descriptions of manifest attributes used by OSGi, like `Im
 If a Ghidra source bundle has no manifest, Ghidra [generates one](#generated-files).
 
 
-For example, the `@importpackage yourlib` in the previous example corresponds to the `yourlib` entry
-in the `Import-Package` line of the manifest generated for `my_ghidra_scripts`:
+For example, the `@importpackage yourlib` in the previous example corresponds to the \`yourlib\` entry
+in the \`Import-Package\` line of the manifest generated for `my_ghidra_scripts`:
 
 
 ```
@@ -349,4 +346,4 @@ Refresh will deactivate, clean, then reactivate every enabled bundle.
 
 ---
 
-[← Previous: Ghidra Script Development](../GhidraScriptMgrPlugin/ScriptDevelopment.md) | [Next: Symbol Table →](../SymbolTablePlugin/symbol_table.md)
+[← Previous: Ghidra Script Development](../GhidraScriptMgrPlugin/ScriptDevelopment.md) | [Next: PyGhidra Interpreter →](../PyGhidra/interpreter.md)

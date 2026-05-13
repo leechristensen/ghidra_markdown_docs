@@ -4,7 +4,7 @@
 
 
 *Search for Strings* searches the entire program or a specific selection for possible
-***Ascii*** or ***Unicode*** strings from the main menu. The results will be
+**\*Ascii\*** or **\*Unicode\*** strings from the main menu. The results will be
 displayed in a table that can be filtered and sorted and provides actions for creating
 strings.
 
@@ -16,7 +16,7 @@ To search for strings, select **Search** →  **For Strings...** This will bring
 where you can configure the search criteria before initiating the search.
 
 
-![](images/StringSearchDialog.png)
+![String Search Dialog](images/StringSearchDialog.png)
 
 
 ## **Search Options**
@@ -57,20 +57,20 @@ specified to change the starting location(s) past the beginning of the string. S
 be automatically labeled.
 
 
-![](images/StringSearchResults.png)
+![String Search Results](images/StringSearchResults.png)
 
 
 ## Table Columns
 
 
 - **Defined** - shows an icon that indicates the status of the string.
-  - ![font.png](../icons/font.png) - indicates a string that has already
+  - ![Font](../icons/font.png) - indicates a string that has already
 been defined.
-  - ![magnifier.png](../icons/magnifier.png) - indicates a string that is not
+  - ![Magnifier](../icons/magnifier.png) - indicates a string that is not
 defined.
-  - ![dialog-warning.png](../icons/dialog-warning.png) - indicates a string that
+  - ![Dialog Warning](../icons/dialog-warning.png) - indicates a string that
 has been partially defined at some offset.
-  - ![dialog-warning_red.png](../icons/dialog-warning_red.png) - indicates a string
+  - ![Dialog Warning Red](../icons/dialog-warning_red.png) - indicates a string
 that conflicts with an instruction or some other data already defined at that
 address.
 - **Location** - The address of the found string.
@@ -99,16 +99,16 @@ There are four toggle buttons in the table window's title bar that are used to c
 which strings are included in the table base on the strings "defined" state.
 
 
-- ![font.png](../icons/font.png) - toggles inclusion of **defined**
+- ![Font](../icons/font.png) - toggles inclusion of **defined**
 strings.
-- ![magnifier.png](../icons/magnifier.png) - toggles inclusion of completely
+- ![Magnifier](../icons/magnifier.png) - toggles inclusion of completely
 **undefined** strings.
-- ![dialog-warning.png](../icons/dialog-warning.png) - toggles inclusion of
+- ![Dialog Warning](../icons/dialog-warning.png) - toggles inclusion of
 **partially defined** strings.
-- ![dialog-warning_red.png](../icons/dialog-warning_red.png) - toggles inclusion of
+- ![Dialog Warning Red](../icons/dialog-warning_red.png) - toggles inclusion of
 strings that **conflict** with an instruction or some other data at the start
 address.
-- ![view-filter.png](../icons/view-filter.png) - toggles inclusion of
+- ![View Filter](../icons/view-filter.png) - toggles inclusion of
 **high-confidence word** strings. NOTE: this icon is only available if a String Search
 Dialog 'Word Model' field contains a valid model file.
 
@@ -156,18 +156,16 @@ results.
 ### Make Selection ![Make Selection](../icons/text_align_justify.png)
 
 
-*See [Make
-Selection](Query_Results_Dialog.md#make-selection)*.
+*See [Make Selection](Query_Results_Dialog.md#make-selection)*.
 
 
-### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
+### Selection Navigation ![Location In](../icons/locationIn.gif)
 
 
-*See [Selection
-Navigation](Query_Results_Dialog.md#selection-navigation)*.
+*See [Selection Navigation](Query_Results_Dialog.md#selection-navigation)*.
 
 
-*Provided By: *StringTablePlugin**
+Provided By: *StringTablePlugin*
 
 
 ### Search For Encoded Strings
@@ -183,8 +181,7 @@ The **Encoded Strings Dialog** will initially allow the user to select the chara
 string to create, and displays a preview of the strings found in the current selection:
 
 
-| ![](images/EncodedStringsDialog_initial.png) |
-| --- |
+![Encoded Strings Dialog Initial](images/EncodedStringsDialog_initial.png)
 
 
 **Advanced options**
@@ -196,8 +193,7 @@ strings containing specific scripts (alphabets) and also excluding strings that 
 properties that are unwanted.
 
 
-| ![](images/EncodedStringsDialog_advancedoptions.png) |
-| --- |
+![Encoded Strings Dialog Advancedoptions](images/EncodedStringsDialog_advancedoptions.png)
 
 
 **Character Script filtering**
@@ -289,7 +285,7 @@ See the [Defined Strings](../ViewStringsPlugin/ViewStringsPlugin.md) window to s
 already created strings.
 
 
-*Provided By: *EncodedStringsPlugin**
+Provided By: *EncodedStringsPlugin*
 
 
 **Related Topics:**

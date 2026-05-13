@@ -8,8 +8,7 @@ the entire program or be limited to a selection. The results are presented in li
 allowing the user to make tables and disassemble the addresses in those tables.
 
 
-| ![](images/SearchForAddressTables.png) |
-| --- |
+![Search For Address Tables](images/SearchForAddressTables.png)
 
 
 ### Searching for Address Tables
@@ -104,13 +103,13 @@ selected address tables.
 *See [Make Selection](Query_Results_Dialog.md#make-selection)*.
 
 
-### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
+### Selection Navigation ![Location In](../icons/locationIn.gif)
 
 
 *See [Selection Navigation](Query_Results_Dialog.md#selection-navigation)*.
 
 
-*Provided by: *AutoTableDisassemblerPlugin**
+Provided by: *AutoTableDisassemblerPlugin*
 
 
 **Related Topics:**

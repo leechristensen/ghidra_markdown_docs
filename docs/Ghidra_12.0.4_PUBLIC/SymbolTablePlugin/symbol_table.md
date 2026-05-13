@@ -13,12 +13,11 @@ A symbol, also known as a label, is an association between a name and an address
 ## **Displaying the Symbol Table component**
 
 
-- From the menu-bar of a tool, select **Window  →  Symbol
-Table**
-- From the tool-bar of a tool, click on the ![table.png](../icons/table.png) button
+- From the menu-bar of a tool, select **Window → Symbol Table**
+- From the tool-bar of a tool, click on the ![Table](../icons/table.png) button
 
 
-![](images/Symbol_Table.png)
+![Symbol Table](images/Symbol_Table.png)
 
 
 Some of the columns in the table are:
@@ -33,8 +32,7 @@ Some of the columns in the table are:
 | **Reference Count** | Total number of references made to this symbol. |
 
 
-*You can sort the table on any column by clicking on
-the column header. The column can be sorted in ascending or descending order.*
+*You can sort the table on any column by clicking on the column header. The column can be sorted in ascending or descending order.*
 
 
 > **Warning:** Sorting a column in the symbol table when the program has a large number of symbols
@@ -68,18 +66,18 @@ When only filtering on the symbol name, via the checkbox above, the overall filt
 is considerably faster.
 
 
-The filter text field will accept basic globbing characters such as '*****' and
+The filter text field will accept basic globbing characters such as '**\***' and
 '**?**' within the filter text unless the "Regular Expression" filter strategy is
 selected, in which case you should use standard regular expression syntax.
 
 
-## Viewing Symbol References ![table_go.png](../icons/table_go.png)
+## Viewing Symbol References ![Table Go](../icons/table_go.png)
 
 
 See [Symbol References](symbol_references.md)
 
 
-## Deleting Symbols ![edit-delete.png](../icons/edit-delete.png)
+## Deleting Symbols ![Edit Delete](../icons/edit-delete.png)
 
 
 You can use the *Symbol Table* to delete symbols from the program.
@@ -90,17 +88,15 @@ To delete symbols:
 
 1. Select the symbols in the Symbol Table (hold the `<Ctrl>` key down to add to the
 selection) to be deleted.
-2. Right-mouse-click and select "Delete" from the popup menu, or click the ![edit-delete.png](../icons/edit-delete.png) button in the *Symbol Table* toolbar.
+2. Right-mouse-click and select "Delete" from the popup menu, or click the ![Edit Delete](../icons/edit-delete.png) button in the *Symbol Table* toolbar.
 
 
 *Notes on deleting a symbol:*
 
 
 1. *You can only delete a default symbol when it has zero (0) references.*
-2. *If you delete a user-defined symbol with references, then a default symbol will
-automatically be created and assigned those references.*
-3. *You can delete a non-primary symbol with references, but those references will be
-reassigned to the primary the symbol.*
+2. *If you delete a user-defined symbol with references, then a default symbol will automatically be created and assigned those references.*
+3. *You can delete a non-primary symbol with references, but those references will be reassigned to the primary the symbol.*
 
 
 ## Making a Selection ![Make Selection](../icons/text_align_justify.png)
@@ -116,8 +112,7 @@ To make a selection:
 1. Select the symbols in the Symbol Table (hold the `<Ctrl>` key down to add to the
 selection) to be added to the selection.
 2. Right-mouse-click and select "Make Selection" from the popup menu.
-  - Or, click the ![Make Selection](../icons/text_align_justify.png)  button in the *Symbol
-Table* toolbar.
+  - Or, click the ![Make Selection](../icons/text_align_justify.png)  button in the *Symbol Table* toolbar.
 
 
 ## Making a Selection ![Make Selection](../icons/text_align_justify.png)
@@ -152,8 +147,7 @@ You can edit the external location and associated library details for any *Exter
 *External Function*
 symbol within the symbol table.
 Right mouse click on
-the symbol table row and choose the **Edit External
-Location** action from the popup menu (see Symbol Tree -
+the symbol table row and choose the **Edit External Location** action from the popup menu (see Symbol Tree -
 [Edit External Location](../SymbolTreePlugin/SymbolTree.md#edit-external-location)
 for more discussion on the use of the edit dialog).
 
@@ -187,19 +181,17 @@ selection) to be added to the selection.
 The list of displayed symbols is determined by the current symbol table settings. These
 settings can be adjusted by clicking the *Filter* ![Configure Filter](../icons/exec.png)
 button in the toolbar of the *Symbol Table* window or from the right-mouse popup menu..
-The displayed symbols will correspond to the selected checkboxes in the *Symbol Table
-Filter* dialog.
+The displayed symbols will correspond to the selected checkboxes in the *Symbol Table Filter* dialog.
 
 
 *Symbol Table Filter* Dialog
 
 
-![](images/Filter.png)
+![Filter](images/Filter.png)
 
 
 The Symbol Table Filter dialog consists of three sets of filters - Symbol
-Source, Symbol Types, and miscellaneous *[Advanced
-filters](#filtering)* which are not initially shown.  The Symbol Types are further divided
+Source, Symbol Types, and miscellaneous *[Advanced filters](#filtering)* which are not initially shown.  The Symbol Types are further divided
 into label symbols and non-label symbols.  This grouping is for informational purposes
 only. For most situations, only the Source and Type filters need to be set.  This will
 generate a query that will include all symbols that have one of the selected sources AND have
@@ -244,8 +236,8 @@ Note these do NOT include labels where functions exists.
 symbols.
 
 
-Use the ***Select All*** button to select all symbol types and the
-***Clear All*** to de-select all types.
+Use the *\**Select All*\** button to select all symbol types and the
+**\*Clear All\*** to de-select all types.
 
 
 <a name="advancedfilters"></a>**Advanced Symbol Filters -** Advanced
@@ -270,8 +262,7 @@ namespace.  Applies to *Labels, Functions, Namespaces,* and *classes.*
 - **Locals -** Accepts the symbol if it is NOT in the global
 namespace.  Applies to *Labels, Functions, Namespaces,* and *classes.*
 - **Register Variables -** Accepts function parameters or local
-variables that are register based. Applies to *Parameters* and *local
-variables.*
+variables that are register based. Applies to *Parameters* and *local variables.*
 - **Stack Variables -** Accepts function parameters or local variables
 that are stack based. Applies to *Parameters* and *local variables.*
 - **Entry Points -** Accepts labels or functions at external entry
@@ -304,10 +295,10 @@ Select the *Use Advanced Filters* checkbox to see the advanced
 filters.
 
 
-![](images/Filter2.png)
+![Filter2](images/Filter2.png)
 
 
-The ***Reset Filters*** button sets all checkboxes back to their
+The *\**Reset Filters*\** button sets all checkboxes back to their
 default states.
 
 
@@ -401,7 +392,7 @@ Labels, selecting both of these advanced filters accomplished nothing.  The resu
 would have been the same if neither was selected.
 
 
-*Provided by: *Symbol Table Plugin**
+Provided by: *Symbol Table Plugin*
 
 
 **Related Topics:**
@@ -414,4 +405,4 @@ Display Options](../CodeBrowserPlugin/CodeBrowserOptions.md#color-and-fonts)
 
 ---
 
-[← Previous: Ghidra Bundles](../BundleManager/BundleManager.md) | [Next: Symbol References →](symbol_references.md)
+[← Previous: Jython Interpreter](../Jython/interpreter.md) | [Next: Symbol References →](symbol_references.md)

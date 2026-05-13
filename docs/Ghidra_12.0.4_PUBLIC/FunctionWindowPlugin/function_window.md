@@ -5,12 +5,11 @@ The Functions window provides a list of functions defined in the currently open 
 To display the Function Window, select the **Window** → **Functions**option on the tool menu.
 
 
-| ![](images/FunctionWindow.png) |
-| --- |
+![Function Window](images/FunctionWindow.png)
 
 
-This window has three columns.  The ***Name*** column shows the
-function name.  The ***Address*** column shows the function's address.  The ***Function Signature*** column shows a preview of the
+This window has three columns.  The **\*Name\*** column shows the
+function name.  The **\*Address\*** column shows the function's address.  The **\*Function Signature\*** column shows a preview of the
 function's signature.  Click on the top of a column to sort the list by that column.  By default, the data is sorted by address ascending.
 
 
@@ -25,16 +24,15 @@ on the tool bar to make a selection in the Code Browser. To make a selection,
 
 
 1. Select the functions in the **Functions** window.
-2. Right mouse click and select the ![Make Selection](../icons/text_align_justify.png) **Make
-Selection** option, OR select the ![Make Selection](../icons/text_align_justify.png)button on
+2. Right mouse click and select the ![Make Selection](../icons/text_align_justify.png) **Make Selection** option, OR select the ![Make Selection](../icons/text_align_justify.png)button on
 the tool bar.
 
 
 ### Compare Selected Functions
 
 
-The Functions window has an icon (![page_white_c.png](../icons/page_white_c.png) which contains a star
-![bullet_star.png](../icons/bullet_star.png)) on the tool bar that allows users to compare
+The Functions window has an icon (![Page White C](../icons/page_white_c.png) which contains a star
+![Bullet Star](../icons/bullet_star.png)) on the tool bar that allows users to compare
 the functions currently selected in the table.
 
 
@@ -57,7 +55,7 @@ The resulting [Function Comparison](../FunctionComparison/FunctionComparison.md)
 window will allow the functions to be viewed side by side.
 
 
-*Provided By:  *FunctionWindowPlugin**
+Provided By:  *FunctionWindowPlugin*
 
 
 **Related Topics:**

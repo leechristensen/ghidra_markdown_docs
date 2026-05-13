@@ -38,16 +38,16 @@ the **Copy** option.
 
 
 In order to copy labels and comments, right-click from within the Code Browser, Click
-***Copy Special...***, and choose the format you would like to copy. The last selected
+**\*Copy Special...\***, and choose the format you would like to copy. The last selected
 format is also available from the right-click popup menu.
 
 
 The clipboard supports the following operations:
 
 
-- ***Copy*** - Copies selected items onto the clipboard.
-- ***Paste*** - Pastes the clipboard contents to the current location.
-- ***Copy Special...*** - Allows for a copy operation where the type/format copied
+- *\**Copy*\** - Copies selected items onto the clipboard.
+- *\**Paste*\** - Pastes the clipboard contents to the current location.
+- *\**Copy Special...*\** - Allows for a copy operation where the type/format copied
 is specified by the user.
 
 
@@ -58,7 +58,7 @@ clipboard. Data copied onto the system clipboard may be accepted by other applic
 ## Default Operations
 
 
-### Copy ![page_white_copy.png](../icons/page_white_copy.png)
+### Copy ![Page White Copy](../icons/page_white_copy.png)
 
 
 Copies the currently selected items. The behavior will be dependent on the specific window
@@ -68,7 +68,7 @@ application. The copy action can be triggered via the context menu that appears 
 right-click.
 
 
-### Paste ![page_paste.png](../icons/page_paste.png)
+### Paste ![Page Paste](../icons/page_paste.png)
 
 
 Pastes the clipboard contents to the current location. The behavior will be dependent on
@@ -86,7 +86,7 @@ that appears when you right-click.
 ### Copy Special
 
 
-![](images/CopySpecial.png)
+![Copy Special](images/CopySpecial.png)
 
 
 The copy special dialog allows you to copy the selected information in a specific format.
@@ -105,7 +105,7 @@ the last format is called `Copy Special Again`. When available, the popup menu
 appears as follows:
 
 
-![](images/CopySpecialAgain.png)
+![Copy Special Again](images/CopySpecialAgain.png)
 
 
 ## Supported Windows
@@ -119,8 +119,7 @@ The Code Browser **Listing** window can copy the following formats:
 
 - **Formatted Code<a name="formattedcode"></a>** - Copies text from the selected
 blocks in the Code Browser to the clipboard. The spacing and formatting are preserved as
-much as possible. The plain text can easily be pasted into a text processor. **This is the
-default copy format**.
+much as possible. The plain text can easily be pasted into a text processor. **This is the default copy format**.
 - **Labels and Comments** <a name="labelscomments"></a> - Copies the labels and
 comments from the selected blocks in the Code Browser to the clipboard. These can be pasted
 to another part of the program or to another open Code Browser, however, there is no
@@ -132,7 +131,7 @@ change.
 in the Code Browser to the clipboard as text. These can be pasted to another part of the
 program (provided the area pasted to is undefined) or to an external application that
 supports pasting byte strings. Often, hex editors will be able to paste this format.
-- **Byte String (No Spaces)** <a name="bytestring-nospaces"></a> - This is the same as
+- **Byte String (No Spaces)** <a name="bytestring_nospaces"></a> - This is the same as
 the Byte String format, except there are no delimiting spaces between bytes.
 - **Data** - Copies a the values of all the selected data objects to the clipboard as
 text. This option ignores any compound data objects such as structures, unions, or arrays.
@@ -188,8 +187,7 @@ The Byte Viewer **Bytes In Memory** window can copy the following formats:
 - **Byte String** - Copies the bytes from the selected blocks in the Code Browser to
 the clipboard as text. These can be pasted to another part of the program (provided the
 area pasted to is undefined) or to an external application that supports pasting byte
-strings. Often, hex editors will be able to paste this format. **This is the default copy
-format**.
+strings. Often, hex editors will be able to paste this format. **This is the default copy format**.
 - **Byte String (No Spaces)** - This is the same as the Byte String format, except
 there are no delimiting spaces between bytes.
 - **Python Byte String** - Copies the bytes into the Python byte string format, for

@@ -1,3 +1,5 @@
+[Home](../index.md) > [Jython](index.md) > Jython Interpreter
+
 # Jython Interpreter
 
 
@@ -42,21 +44,21 @@ different packages, they must be explicitly imported. Failure to do so will resu
 Jython `NameError`.
 
 
-## Clear ![erase16.png](../icons/erase16.png)
+## Clear ![Erase16](../icons/erase16.png)
 
 
 This command clears the interpreter's display.  Its effect is purely visual.
 It does not affect the state of the interpreter in any way.
 
 
-## Interrupt ![dialog-cancel.png](../icons/dialog-cancel.png)
+## Interrupt ![Dialog Cancel](../icons/dialog-cancel.png)
 
 
 This command issues a keyboard interrupt to the interpreter, which can be used to interrupt
 long running commands or loops.
 
 
-## Reset ![reload3.png](../icons/reload3.png)
+## Reset ![Reload3](../icons/reload3.png)
 
 
 This command resets the interpreter, which clears the display and resets all state.
@@ -145,7 +147,12 @@ Jython function on it.  Failure to do so will result in a Jython `NameError`.
 
 For more information on the Jython environment, such as how to interact with Java objects
 through a Python interface, please refer to Jython's free e-book which can be found on the
-Internet at ***www.jython.org/jythonbook/en/1.0/***
+Internet at *\**www.jython.org/jythonbook/en/1.0/*\**
 
 
-*Provided by: *JythonPlugin**
+Provided by: *JythonPlugin*
+
+
+---
+
+[← Previous: PyGhidra Interpreter](../PyGhidra/interpreter.md) | [Next: Symbol Table →](../SymbolTablePlugin/symbol_table.md)

@@ -15,28 +15,27 @@ of selection exposes different characteristics of the program.
 
 
 To create a selection using one of the predefined methods via the menu item
-**Select*****→ SelectionType**.*
+**Select** *\**→ SelectionType**.*
 
 
-The ***SelectionTypes*** and their descriptions are as follows:
+The *\**SelectionTypes*\** and their descriptions are as follows:
 
 
 | Predefined Selection Methods |  |
-| --- | --- |
 | Selection Type | Description |
 | --- | --- |
-| <a name="select-program-changes"></a> Program Changes | Select all program changes. |
-| All Flows From | This follows all program flows from the cursor location if no selection                         or from the selected code units if there is a selection. Select All Flows                         will traverse all branches conditional and unconditional. All the code                         units that are traversed are selected. |
-| All Flows To | This selects all program flows to the cursor location if no selection                         or to the selected code units if there is a selection. Select All Flows To                         will traverse all branches conditional and unconditional. All the code                         units that are traversed are selected. In other words, this follows all program flows backwards from the                          location or selection. |
-| Limited Flows From | The types of program flows to be followed in this case are based on                         options configured on theSelection by Flow                         Options tab. Limited Flows only follows the indicated types of program                         flows from the cursor location if no selection or from the selected code                         units if there is a selection. All the code units that are traversed are                         selected. |
-| Limited Flows To | The types of program flows to be followed in this case are based on                         options configured on theSelection by Flow                         Options tab. Limited Flows To only follows the indicated types of program                         flows to the cursor location if no selection or to the selected code                         units if there is a selection. All the code units that are traversed are                         selected. In other words, this follows the types of program flows, as indicated                           by the options, backwards from the location or selection. |
-| Subroutine | If there is no selection, this selects the code units of the subroutine                         that contains the current cursor location. If there is a selection, this                         selects all the subroutines that contain the selected code units. |
-| <a name="select-dead-subroutine"></a> Dead Subroutines | Selects the code units of all                       subroutines that not directly referenced, also known as "dead" code. |
-| Function | If there is no selection, this selects the code units of the function                         that contains the current cursor location. If there is a selection, this                         selects all the functions that contain the selected code units. |
-| All in View | Selects all code units being displayed in the browser view. |
-| Clear Selection | Clears the current selection in the browser view. |
-| <a name="select-complement"></a> Complement | Changes the selection to everything in the current view that                       is not in the current selection.   |
-| <a name="mark-and-select"></a> Mark and Select | Creates a selection in a two step process. The first time                       the action is invoked, the current location is marked. The second time the                       action is invoked, a selection is created from the marked location to the                       current location.   |
+| <a name="select_program_changes"></a> Program Changes | Select all program changes. |
+| <a name="select_all_flows_from"></a>All Flows From | This follows all program flows from the cursor location if no selection                         or from the selected code units if there is a selection. Select All Flows                         will traverse all branches conditional and unconditional. All the code                         units that are traversed are selected. |
+| <a name="select_all_flows_to"></a>All Flows To | This selects all program flows to the cursor location if no selection                         or to the selected code units if there is a selection. Select All Flows To                         will traverse all branches conditional and unconditional. All the code                         units that are traversed are selected. In other words, this follows all program flows backwards from the                          location or selection. |
+| <a name="select_limited_flows_from"></a>Limited Flows From | The types of program flows to be followed in this case are based on                         options configured on theSelection by Flow                         Options tab. Limited Flows only follows the indicated types of program                         flows from the cursor location if no selection or from the selected code                         units if there is a selection. All the code units that are traversed are                         selected. |
+| <a name="select_limited_flows_to"></a>Limited Flows To | The types of program flows to be followed in this case are based on                         options configured on theSelection by Flow                         Options tab. Limited Flows To only follows the indicated types of program                         flows to the cursor location if no selection or to the selected code                         units if there is a selection. All the code units that are traversed are                         selected. In other words, this follows the types of program flows, as indicated                           by the options, backwards from the location or selection. |
+| <a name="select_subroutine"></a>Subroutine | If there is no selection, this selects the code units of the subroutine                         that contains the current cursor location. If there is a selection, this                         selects all the subroutines that contain the selected code units. |
+| <a name="select_dead_subroutine"></a> Dead Subroutines | Selects the code units of all                       subroutines that not directly referenced, also known as "dead" code. |
+| <a name="select_function"></a>Function | If there is no selection, this selects the code units of the function                         that contains the current cursor location. If there is a selection, this                         selects all the functions that contain the selected code units. |
+| <a name="select_all"></a>All in View | Selects all code units being displayed in the browser view. |
+| <a name="clear_selection"></a>Clear Selection | Clears the current selection in the browser view. |
+| <a name="select_complement"></a> Complement | Changes the selection to everything in the current view that                       is not in the current selection.   |
+| <a name="mark_and_select"></a> Mark and Select | Creates a selection in a two step process. The first time                       the action is invoked, the current location is marked. The second time the                       action is invoked, a selection is created from the marked location to the                       current location.   |
 | <a name="data"></a> Data | Selects all the defined data in the                       current program if there isn't a selection. Otherwise, it selects the defined                       data within the current selection. |
 | <a name="instructions"></a> Instructions | Selects all the instructions in the                       current program if there isn't a selection. Otherwise, it selects the                       instructions within the current selection. |
 | <a name="undefined"></a> Undefined                       Data | Selects all the undefined data in                       the current program if there isn't a selection. Otherwise, it selects the                       undefined data within the current selection. |
@@ -50,7 +49,7 @@ previous selection rather than adding to it. To retain a selection in a manner t
 transient, change it to a [highlight](../SetHighlightPlugin/Highlighting.md).
 
 
-> **Note:** At any time you can
+> <a name="restore_selection"></a>**Note:** At any time you can
 restore the previous selection for the current program by pressing the Select Restore Selection.
 
 
@@ -61,7 +60,7 @@ The *Select By Flow* plugin adds options to the tool. To view or edit the option
 settings:
 
 
-- From the tool's menu select **Edit*****→*****Tool Options...**
+- From the tool's menu select **Edit** *\**→*\** **Tool Options...**
 - Click on the *Selection by Flow* tree node
 
 
@@ -88,12 +87,10 @@ encountered are added to the selection, wherever the program jumps will also get
 selection and the program flow is also followed from there. If a conditional call is
 encountered, then this instruction gets added to the selection. But the conditional call is
 not followed and the code at the call's destination is not added since this type isn't being
-followed. *The code for the subroutine at the call's destination could still end up in the
-selection, if it is flowed to by a different flow path using the flow types being
-followed.*
+followed. *The code for the subroutine at the call's destination could still end up in the selection, if it is flowed to by a different flow path using the flow types being followed.*
 
 
-*Provided by: *Select By Flow* Plugin*
+Provided by: *Select By Flow* Plugin
 
 
 ---
@@ -124,18 +121,16 @@ To move the program's cursor location to the beginning of the next selected rang
 addresses:
 
 
-From the menu-bar of the Code Browser, select **Navigation*****→*** **Next Selected Range**
+From the menu-bar of the Code Browser, select **Navigation** *\**→*\** **Next Selected Range**
 
 
 OR
 
 
-From the tool-bar of the Code Browser, click the **Go to next selected range** (![NextSelectionBlock16.gif](../icons/NextSelectionBlock16.gif)) button
+From the tool-bar of the Code Browser, click the **Go to next selected range** (![Next Selection Block16](../icons/NextSelectionBlock16.gif)) button
 
 
-*When the Code Browser is on or after the
-last address range in the selection, the "Next Selected Range" menu-bar and tool-bar options
-will be disabled.*
+*When the Code Browser is on or after the last address range in the selection, the "Next Selected Range" menu-bar and tool-bar options will be disabled.*
 
 
 ### Previous Selected Range
@@ -145,22 +140,20 @@ To move the program's cursor location to the beginning of the next selected rang
 addresses:
 
 
-From the menu-bar of the Code Browser, select **Navigation*****→*****Previous Selected Range**
+From the menu-bar of the Code Browser, select **Navigation** *\**→*\** **Previous Selected Range**
 
 
 OR
 
 
 From the tool-bar of the Code Browser, click the **Go to previous selected range**
-(![PreviousSelectionBlock16.gif](../icons/PreviousSelectionBlock16.gif)) button
+(![Previous Selection Block16](../icons/PreviousSelectionBlock16.gif)) button
 
 
-*When the Code Browser is on or before the first
-address range in the selection, the "Previous Selected Range" menu-bar and tool-bar options
-will be disabled.*
+*When the Code Browser is on or before the first address range in the selection, the "Previous Selected Range" menu-bar and tool-bar options will be disabled.*
 
 
-*Provided by: *Go To Next-Previous Selected Range* Plugin*
+Provided by: *Go To Next-Previous Selected Range* Plugin
 
 
 **Related Topics:**

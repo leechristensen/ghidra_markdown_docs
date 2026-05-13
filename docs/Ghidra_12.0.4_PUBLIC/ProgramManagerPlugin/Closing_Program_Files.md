@@ -17,13 +17,11 @@ open only in one tool.
 ## To Close a Program File
 
 
-1. From the Tool menu, select **File →
-Close**
-2. If changes were made to the program and they haven't been saved yet, the *Save
-Program?* dialog appears.
+1. From the Tool menu, select **File → Close**
+2. If changes were made to the program and they haven't been saved yet, the *Save Program?* dialog appears.
 
 
-![](images/SaveProgram.png)
+![Save Program](images/SaveProgram.png)
 
 
 The buttons in the *Save Program?* dialog perform the following functions.
@@ -36,7 +34,7 @@ it.
 saved.
 
 
-<a name="close-program"></a>
+<a name="close_program"></a>
 
 
 > **Tip:** If the
@@ -45,14 +43,13 @@ across the top of the listing window.  Programs can be closed by selecting the 
 tab and pressing the corresponding "x" button or right-clicking on the tab and choosing the close menu option.
 
 
-![](images/ClosedTab.png)
+![Closed Tab](images/ClosedTab.png)
 
 
 ## To Close All Programs
 
 
-1. From the Tool menu, select **File →
-Close All**
+1. From the Tool menu, select **File → Close All**
 2. For each program that was changed, the *Save Program?* dialog appears.
 
 
@@ -64,8 +61,7 @@ right-clicking on any tab and choosing the Close All menu option.
 ## To Close All Programs Other Than The Current Program
 
 
-1. From the Tool menu, select **File →
-Close Others**
+1. From the Tool menu, select **File → Close Others**
 2. For each of the other programs that was changed, the *Save Program?* dialog
 appears.
 
@@ -76,7 +72,7 @@ right-clicking on the tab of the program to keep and choosing the Close Others m
 option.
 
 
-*Provided by: *Program Manager* Plugin*
+Provided by: *Program Manager* Plugin
 
 
 **Related Topics:**

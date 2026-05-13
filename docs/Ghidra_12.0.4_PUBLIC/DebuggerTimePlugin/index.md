@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Time](DebuggerTimePlugin.md)

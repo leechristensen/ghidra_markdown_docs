@@ -1,3 +1,5 @@
+[Home](../index.md) > [dbgeng](index.md) > Windows Kernel
+
 # Debugger Launchers: Windows Debugger (WinDbg, dbgeng.dll)
 
 
@@ -298,3 +300,8 @@ import errors. The only real way to be sure is to use a system utility and inspe
 loaded by the `python.exe` process. You may be able to work around the issue by copying
 `dbghelp.dll` (and any other affected WinDbg DLLs) from the WinDbg installation into
 your Python installation, e.g., `C:\Python313\dbghelp.dll`.
+
+
+---
+
+[← Previous: TTD (Time-Travel Debugging)](dbgeng.md) | [Next: drgn Integration →](../drgn/drgn.md)

@@ -45,23 +45,116 @@ class TableStats:
 
 
 def slugify(text: str) -> str:
-    """Convert text to GitHub-style anchor slug.
+    """Convert text to an anchor slug compatible with python-markdown/kramdown.
+
+    Both engines (mkdocs default + Jekyll default) auto-id headings by:
+        - lowercasing
+        - stripping characters that aren't `\\w`, whitespace, or hyphen
+        - collapsing whitespace/hyphens to a single `-`
+
+    `\\w` includes underscore, so `foo_bar` stays `foo_bar` — replacing the
+    underscore with a hyphen here would break cross-references whose target
+    rendered with the underscore intact.
 
     Examples:
         "Error Dialogs" -> "error-dialogs"
-        "Ghidra Overview" -> "ghidra-overview"
-        "P-code" -> "p-code"
+        "P-code"         -> "p-code"
+        "bsim_ctl"       -> "bsim_ctl"
     """
-    # Lowercase
     slug = text.lower()
-    # Replace spaces/underscores with hyphens
-    slug = re.sub(r"[\s_]+", "-", slug)
-    # Remove non-alphanumeric except hyphens
-    slug = re.sub(r"[^a-z0-9-]", "", slug)
-    # Collapse multiple hyphens
-    slug = re.sub(r"-+", "-", slug)
-    # Strip leading/trailing hyphens
+    # Strip everything except word chars (a-z, 0-9, _), whitespace, hyphen.
+    slug = re.sub(r"[^\w\s-]", "", slug)
+    # Collapse whitespace + hyphen runs into a single hyphen.
+    slug = re.sub(r"[\s-]+", "-", slug)
     return slug.strip("-")
+
+
+def _wrap_inline_code(content: str) -> str:
+    """Wrap `content` as a markdown inline code span, using a backtick fence
+    long enough to contain any backticks in the content.
+
+    CommonMark allows multi-backtick fences to embed shorter backtick runs:
+    `` ``foo`bar`` `` renders as the literal code "foo`bar". Without this,
+    `<CODE>foo`bar</CODE>` would become `` `foo`bar` `` which markdown
+    parses as two code spans with stray text.
+    """
+    if not content:
+        return ""
+    # Find the longest run of backticks in the content and use one more.
+    longest = max((len(m) for m in re.findall(r"`+", content)), default=0)
+    fence = "`" * (longest + 1)
+    pad = " " if content.startswith("`") or content.endswith("`") else ""
+    return f"{fence}{pad}{content}{pad}{fence}"
+
+
+def _ends_with_emphasis(text: str) -> bool:
+    """Return True if `text` ends with a markdown bold/italic marker.
+
+    We skip backticks here: two adjacent code spans render fine
+    (`<code>a</code><code>b</code>`) and inserting a visible space between
+    them would break things like multi-part file paths in the source.
+    """
+    if not text:
+        return False
+    if text.endswith("*"):
+        return not text.endswith("\\*")
+    return False
+
+
+def _starts_with_emphasis(text: str) -> bool:
+    """Return True if `text` starts with a markdown bold/italic marker."""
+    return bool(text) and text[0] == "*"
+
+
+def _escape_markdown_specials(text: str) -> str:
+    """Backslash-escape literal `*` and `` ` `` in plain text.
+
+    The Ghidra HTML source uses `<B>`/`<I>`/`<EM>` for emphasis and
+    `<CODE>`/`<TT>` for code, so any `*` or backtick that survives into
+    NavigableString text is meant as a literal character (wildcard, C
+    pointer, placeholder, keyboard mention, etc.). Without escaping, those
+    end up creating spurious emphasis/code spans in the rendered markdown.
+    """
+    return text.replace("*", "\\*").replace("`", "\\`")
+
+
+def _escape_emphasis_boundaries(content: str) -> str:
+    """Escape literal `*` at the start/end of emphasis content.
+
+    The upstream Ghidra HTML wraps wildcard patterns like `*.gpr` in `<em>` and
+    file extensions like `*.mv.db` in `<b>`. Emitting these as `*<text>*` or
+    `**<text>**` produces ambiguous markdown where the boundary asterisks
+    collide with the emphasis markers — e.g. `**.mv.db*` parses as italic
+    italic-`<em>.mv.db</em>` + trailing `*`. Backslash-escape boundary
+    asterisks so the rendered output is `<strong>*.mv.db</strong>`.
+    """
+    if content.startswith("*"):
+        content = "\\" + content
+    if content.endswith("*") and not content.endswith("\\*"):
+        content = content[:-1] + "\\*"
+    return content
+
+
+def _alt_from_filename(filename: str) -> str:
+    """Synthesize human-readable alt text from an image filename.
+
+    The upstream Ghidra HTML uses `alt=""` for nearly every inline icon,
+    which lints as an accessibility warning when carried verbatim into
+    markdown. Derive something useful from the filename instead:
+
+    - Drop the extension.
+    - Split CamelCase: `ArchiveProject` -> `Archive Project`.
+    - Treat `_` and `-` as word separators.
+    - Title-case and collapse repeated whitespace.
+    """
+    stem = Path(filename).stem
+    # Split CamelCase boundaries: insert a space before any uppercase letter
+    # that follows a lowercase letter or digit.
+    stem = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", stem)
+    # Underscores and hyphens become spaces.
+    stem = stem.replace("_", " ").replace("-", " ")
+    # Collapse runs of whitespace and title-case the result.
+    return " ".join(stem.split()).title()
 
 
 def escape_angle_brackets(text: str) -> str:
@@ -139,6 +232,9 @@ class HTMLToMarkdownConverter:
 
         Fixes:
         - Mismatched heading tags (e.g., <H3>...</H2> -> <H3>...</H3>)
+        - Self-closing <a/> + stray </a> patterns that confuse HTML parsers,
+          e.g. `<A name="foo"/><A name="bar"/></A>Text</H3>` — html.parser
+          and lxml both drop the trailing text out of the heading.
         """
         # Fix mismatched heading closing tags
         # Only match within a single line to avoid corrupting valid multi-line HTML
@@ -151,6 +247,36 @@ class HTMLToMarkdownConverter:
                     # [^\n]* ensures we don't match across newlines
                     pattern = re.compile(rf"(<[Hh]{level}[^>]*>)([^\n]*?)(</[Hh]{wrong_level}>)", re.IGNORECASE)
                     html_content = pattern.sub(rf"\g<1>\g<2></h{level}>", html_content)
+
+        # Normalize self-closing <a/> tags to <a></a> (HTML doesn't allow
+        # void <a>, but Ghidra sources frequently use <A name="x"/>).
+        html_content = re.sub(r"<([Aa])\s+([^>]*?)\s*/>", r"<\1 \2></\1>", html_content)
+        # Fix mismatched table cell closers: `<TH>...</TD>` and `<TD>...</TH>`
+        # appear in some Ghidra sources (notably DataPlugin/Data.htm). Both
+        # html.parser and lxml mis-nest these into a single outer cell with
+        # the second cell's text merged in, which collapses table columns.
+        html_content = re.sub(r"(<[Tt][Hh][^>]*>[^\n]*?)</[Tt][Dd]>", r"\1</th>", html_content)
+        html_content = re.sub(r"(<[Tt][Dd][^>]*>[^\n]*?)</[Tt][Hh]>", r"\1</td>", html_content)
+        # Merge adjacent `<CODE>...</CODE><CODE>...</CODE>` runs (often used
+        # to compose long paths / commands across attribute styles, like
+        # `<CODE class="path">DIR/</CODE><CODE>name</CODE>`). Without the
+        # merge, the converter emits two adjacent backtick spans that
+        # python-markdown then interprets as a double-backtick fence,
+        # swallowing the inner backticks as literal text.
+        prev = None
+        while prev != html_content:
+            prev = html_content
+            html_content = re.sub(
+                r"</[Cc][Oo][Dd][Ee]>\s*<[Cc][Oo][Dd][Ee][^>]*>", "", html_content
+            )
+        # Drop unmatched stray </a> tags directly following a closed anchor —
+        # the pattern in some headings is `<a/><a/></a>` which after the prior
+        # normalization becomes `<a></a><a></a></a>`.
+        prev = None
+        while prev != html_content:
+            prev = html_content
+            html_content = re.sub(r"(</[Aa]>)\s*</[Aa]>", r"\1", html_content)
+
         return html_content
 
     def convert(self, html_content: str) -> str:
@@ -271,9 +397,14 @@ class HTMLToMarkdownConverter:
         """Recursively convert an HTML element to Markdown."""
         if isinstance(element, NavigableString):
             text = str(element)
-            # Preserve some whitespace but normalize excessive whitespace
-            # Escape angle brackets to prevent markdown interpreting them as HTML
-            # (e.g., <Ctrl>, <Shift> keyboard shortcuts in paragraph text)
+            # Ghidra source HTML uses <B>/<I>/<EM> for emphasis, so any
+            # literal `*` or `_` in raw text is meant as a character —
+            # often a wildcard like `*.gpr`, a C pointer type like `int *`,
+            # or a placeholder like `***TODO***`. Without escaping, those
+            # turn into spurious italic/bold spans.
+            text = _escape_markdown_specials(text)
+            # Escape angle brackets so markdown doesn't interpret <Ctrl>,
+            # <Shift> etc. as HTML.
             return escape_angle_brackets(text)
 
         if not isinstance(element, Tag):
@@ -334,7 +465,16 @@ class HTMLToMarkdownConverter:
         """Convert all children of an element."""
         result = []
         for child in element.children:
-            result.append(self._convert_element(child))
+            converted = self._convert_element(child)
+            if not converted:
+                continue
+            # Adjacent emphasis or code markers from sibling tags (e.g.
+            # `<I>foo</I><I>bar</I>`) would concatenate to `*foo**bar*`,
+            # which markdown parses as italic + bold-open. Insert a thin
+            # separator so each span stays distinct.
+            if result and _starts_with_emphasis(converted) and _ends_with_emphasis(result[-1]):
+                result.append(" ")
+            result.append(converted)
         return "".join(result)
 
     def _convert_heading(self, element: Tag) -> str:
@@ -362,9 +502,15 @@ class HTMLToMarkdownConverter:
             if img_md:
                 heading_images.append(img_md)
 
-        # GitHub-flavored markdown automatically generates anchors from heading text
-        # e.g., "## My Section" -> anchor "#my-section"
-        heading_slug = slugify(text)
+        # The markdown renderer auto-IDs the FINAL heading line. Markdown
+        # `![alt](src)` images are rendered to <img> tags and their syntax is
+        # stripped from the slug, but non-image image_md (text placeholders
+        # like `[Undo]`, ` → `, or RUNTIME_ICONS strings) stays as text and
+        # contributes to the slug. Include only the non-image placeholders so
+        # the converter's slug matches what python-markdown/kramdown produce.
+        text_placeholders = [im for im in heading_images if not im.startswith("!")]
+        slug_input = text if not text_placeholders else text + " " + " ".join(text_placeholders)
+        heading_slug = slugify(slug_input)
 
         # Update current heading slug for orphan anchor mapping
         self.current_heading_slug = heading_slug
@@ -394,15 +540,17 @@ class HTMLToMarkdownConverter:
         first_img = element.find("img", recursive=False)
         if first_img:
             src = first_img.get("src", "")
+            callout = None
             if "note.png" in src:
-                text = element.get_text(separator=" ", strip=True)
-                return f"\n\n> **Note:** {text}\n\n"
+                callout = "Note"
             elif "tip.png" in src:
-                text = element.get_text(separator=" ", strip=True)
-                return f"\n\n> **Tip:** {text}\n\n"
+                callout = "Tip"
             elif "warning.png" in src:
+                callout = "Warning"
+            if callout:
                 text = element.get_text(separator=" ", strip=True)
-                return f"\n\n> **Warning:** {text}\n\n"
+                anchor_markup = self._emit_nested_anchors(element)
+                return f"\n\n> {anchor_markup}**{callout}:** {text}\n\n"
 
         content = self._convert_children(element).strip()
 
@@ -418,6 +566,13 @@ class HTMLToMarkdownConverter:
             # Otherwise, it's a paragraph containing links - convert normally
             return f"\n\n{content}\n\n"
         elif "providedbyplugin" in classes:
+            # If the inner content already has emphasis markers (e.g.
+            # `Provided by: *PluginName*`), wrapping in another `*...*`
+            # produces malformed `*Provided by: *PluginName**` that
+            # python-markdown parses as italic-`Provided by:` + literal `**`.
+            # Keep the inner emphasis only in that case.
+            if "*" in content:
+                return f"\n\n{content}\n\n"
             return f"\n\n*{content}*\n\n"
 
         return f"\n\n{content}\n\n"
@@ -673,7 +828,7 @@ class HTMLToMarkdownConverter:
                 icon_ref = self._copy_icon_to_output(resolved_path)
                 if icon_ref:
                     self.image_stats.markdown_images += 1
-                    return f"![{alt or filename}]({icon_ref})"
+                    return f"![{alt or _alt_from_filename(filename)}]({icon_ref})"
 
         # Fall back to text placeholders for icons that don't exist as files
         if filename in self.RUNTIME_ICONS:
@@ -687,7 +842,7 @@ class HTMLToMarkdownConverter:
 
         # Regular image - becomes markdown
         self.image_stats.markdown_images += 1
-        return f"![{alt}]({src})"
+        return f"![{alt or _alt_from_filename(filename)}]({src})"
 
     def _copy_icon_to_output(self, icon_path: Path) -> Optional[str]:
         """
@@ -821,9 +976,28 @@ class HTMLToMarkdownConverter:
                 continue
             name = child.name.lower()
             if name == "dt":
+                # Preserve any <a name>/id anchors inside the <dt> so cross-file
+                # links like Foo.md#bar still resolve. Without this, term-level
+                # anchors are stripped entirely by _get_text_content.
+                dt_anchors: list[str] = []
+                for a in child.find_all("a"):
+                    anchor_name = a.get("name") or a.get("id")
+                    if not anchor_name:
+                        continue
+                    slug = slugify(anchor_name)
+                    if not slug or slug in dt_anchors:
+                        continue
+                    self.anchors.append(slug)
+                    if self.current_heading_slug and slug != self.current_heading_slug:
+                        self.anchor_to_heading_slug[slug] = self.current_heading_slug
+                    dt_anchors.append(slug)
+
                 term = self._get_text_content(child).strip()
                 term = " ".join(term.split())  # collapse whitespace
                 if term:
+                    if dt_anchors:
+                        anchor_markup = "".join(f'<a name="{a}"></a>' for a in dt_anchors)
+                        term = anchor_markup + term
                     current_terms.append(term)
             elif name == "dd":
                 if not current_terms:
@@ -886,14 +1060,13 @@ class HTMLToMarkdownConverter:
 
         is_layout_table = self._is_layout_table(element)
 
-        # Check if this layout table contains nested tables
-        # If so, just convert the children directly instead of creating a markdown table
+        # Layout tables (used for positioning rather than tabular data) have no
+        # meaningful structure to render — emit their inner content directly so
+        # we don't produce single-cell or blank markdown tables that lint tools
+        # flag (and that look ugly).
         if is_layout_table:
-            nested_tables = element.find_all("table", recursive=True)
-            if nested_tables:
-                self.table_stats.layout_tables += 1
-                # Convert children directly - nested tables will be handled separately
-                return self._convert_children(element)
+            self.table_stats.layout_tables += 1
+            return "\n\n" + self._convert_children(element).strip() + "\n\n"
 
         rows = []
         table_has_content = False
@@ -936,11 +1109,43 @@ class HTMLToMarkdownConverter:
         else:
             self.table_stats.content_tables += 1
 
-        # Build markdown table
-        result = ["\n"]
-
         # Determine column count
         max_cols = max(len(r[0]) for r in rows)
+
+        # A leading "title" row (single non-empty cell that spans all
+        # columns) followed by a real `<TH>` header row produces invalid
+        # markdown — the engine needs the separator on line 2. Pull the
+        # title out as a bold caption ABOVE the table so the actual column
+        # headers can occupy row 0.
+        caption = ""
+        if len(rows) >= 2:
+            first_cells, first_is_header = rows[0]
+            non_empty = [c for c in first_cells if c.strip()]
+            has_following_header = any(h for _, h in rows[1:])
+            if (
+                len(non_empty) == 1
+                and not first_is_header
+                and has_following_header
+            ):
+                caption = non_empty[0]
+                rows = rows[1:]
+                max_cols = max(len(r[0]) for r in rows)
+
+        # Build markdown table
+        result = ["\n"]
+        if caption:
+            result.append(caption)
+            result.append("")
+
+        # Markdown tables allow exactly one header separator. Place it after
+        # the LAST header row so all `<TH>` rows stay in the header section.
+        # Fall back to "first row is header" when no `<TH>` is present.
+        last_header_idx = -1
+        for idx, (_, is_header) in enumerate(rows):
+            if is_header:
+                last_header_idx = idx
+        separator_after = last_header_idx + 1 if last_header_idx >= 0 else 1
+        separator_after = min(separator_after, len(rows))
 
         for i, (cells, is_header) in enumerate(rows):
             # Pad cells if needed
@@ -950,8 +1155,7 @@ class HTMLToMarkdownConverter:
             row_str = "| " + " | ".join(cells) + " |"
             result.append(row_str)
 
-            # Add header separator after first row or header row
-            if i == 0 or is_header:
+            if i + 1 == separator_after:
                 separator = "| " + " | ".join(["---"] * max_cols) + " |"
                 result.append(separator)
 
@@ -973,6 +1177,9 @@ class HTMLToMarkdownConverter:
         - Contain only images
         - Have x-use-null-cells attribute
         - Are used for centering/positioning content
+        - Have only ONE row (markdown tables require header + separator +
+          data rows; a single-row source table renders as "header but no
+          data rows" otherwise)
         """
         # Check for layout indicators
         width = element.get("width", "")
@@ -1004,6 +1211,14 @@ class HTMLToMarkdownConverter:
             # Single cell with width="100%" = likely layout
             if width == "100%" or cell.get("width") == "100%":
                 return True
+
+        # Single-row tables (any number of cells) can't be rendered as valid
+        # markdown tables — markdown requires a header row + separator + data
+        # rows, so a 1-row source becomes a header-only table that lints flag.
+        # Treat them as layout containers and let their cell content render
+        # inline.
+        if len(direct_rows) == 1 and all(c.name.lower() == "td" for c in direct_cells):
+            return True
 
         if has_null_cells:
             return True
@@ -1067,22 +1282,46 @@ class HTMLToMarkdownConverter:
                 elif child.name.lower() in ("b", "strong"):
                     text = child.get_text(strip=True)
                     if text:
-                        result.append(f"**{escape_angle_brackets(text)}**")
+                        anchor_markup = self._emit_nested_anchors(child)
+                        result.append(f"**{anchor_markup}{escape_angle_brackets(text)}**")
                 elif child.name.lower() in ("i", "em"):
                     text = child.get_text(strip=True)
                     if text:
-                        result.append(f"*{escape_angle_brackets(text)}*")
+                        anchor_markup = self._emit_nested_anchors(child)
+                        result.append(f"*{anchor_markup}{escape_angle_brackets(text)}*")
                 elif child.name.lower() in ("code", "tt"):
                     text = child.get_text(strip=True)
                     if text:
-                        result.append(f"`{text}`")
+                        anchor_markup = self._emit_nested_anchors(child)
+                        result.append(f"{anchor_markup}`{text}`")
                 else:
                     # Recursively get text from other elements
                     text = child.get_text(strip=True)
                     if text:
-                        result.append(escape_angle_brackets(text))
+                        anchor_markup = self._emit_nested_anchors(child)
+                        result.append(f"{anchor_markup}{escape_angle_brackets(text)}")
 
         return " ".join(result)
+
+    def _emit_nested_anchors(self, element: Tag) -> str:
+        """Find any <a name>/id anchors inside element, record them in the
+        anchor-to-heading mapping, and return inline `<a name="x"></a>` markup
+        to prepend before the element's text. Used by table-cell and similar
+        text-flattening paths so nested anchors aren't silently dropped.
+        """
+        found: list[str] = []
+        for a in element.find_all("a"):
+            anchor_name = a.get("name") or a.get("id")
+            if not anchor_name:
+                continue
+            slug = slugify(anchor_name)
+            if not slug or slug in found:
+                continue
+            self.anchors.append(slug)
+            if self.current_heading_slug and slug != self.current_heading_slug:
+                self.anchor_to_heading_slug[slug] = self.current_heading_slug
+            found.append(slug)
+        return "".join(f'<a name="{a}"></a>' for a in found)
 
     def _convert_code(self, element: Tag) -> str:
         """Convert code/pre elements and track conversion statistics."""
@@ -1103,28 +1342,33 @@ class HTMLToMarkdownConverter:
             self.code_block_stats.markdown_code_blocks += 1
             return f"\n\n```{lang}\n{content}\n```\n\n"
         else:
-            # Inline code
-            content = element.get_text()
-            return f"`{content}`"
+            # Inline code — collapse internal whitespace so the span doesn't
+            # break across a line and split the backtick pair across lines.
+            content = " ".join(element.get_text().split())
+            return _wrap_inline_code(content)
 
     def _convert_inline_code(self, element: Tag) -> str:
         """Convert TT (teletype) elements to inline code."""
-        content = element.get_text()
-        return f"`{content}`"
+        content = " ".join(element.get_text().split())
+        return _wrap_inline_code(content)
 
     def _convert_bold(self, element: Tag) -> str:
         """Convert bold elements."""
         content = self._convert_children(element).strip()
         if not content:
             return ""
-        return f"**{content}**"
+        # Collapse internal whitespace so the bold span stays on one line —
+        # multi-line `**...**` looks unmatched to lint tools and renderers.
+        content = " ".join(content.split())
+        return f"**{_escape_emphasis_boundaries(content)}**"
 
     def _convert_italic(self, element: Tag) -> str:
         """Convert italic elements."""
         content = self._convert_children(element).strip()
         if not content:
             return ""
-        return f"*{content}*"
+        content = " ".join(content.split())
+        return f"*{_escape_emphasis_boundaries(content)}*"
 
     def _convert_blockquote(self, element: Tag) -> str:
         """Convert blockquote elements."""
@@ -1276,11 +1520,14 @@ class HTMLToMarkdownConverter:
                     # Include any text inside the anchor
                     result.append(child.get_text())
                 elif child.name.lower() in ("b", "strong"):
-                    result.append(f"**{child.get_text()}**")
+                    inner = " ".join(child.get_text().split())
+                    result.append(f"**{_escape_emphasis_boundaries(inner)}**" if inner else "")
                 elif child.name.lower() in ("i", "em"):
-                    result.append(f"*{child.get_text()}*")
+                    inner = " ".join(child.get_text().split())
+                    result.append(f"*{_escape_emphasis_boundaries(inner)}*" if inner else "")
                 elif child.name.lower() in ("code", "tt"):
-                    result.append(f"`{child.get_text()}`")
+                    inner = " ".join(child.get_text().split())
+                    result.append(_wrap_inline_code(inner) if inner else "")
                 else:
                     result.append(child.get_text())
 

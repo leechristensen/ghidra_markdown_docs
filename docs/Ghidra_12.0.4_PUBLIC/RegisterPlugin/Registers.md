@@ -4,8 +4,7 @@
 
 
 Each program has a set of registers that is determined by the program's *language.*
-When a program is actually running, the registers contain values that make up the *processor
-state* at any given instant. Since Ghidra programs represent a *static* view (i.e. not
+When a program is actually running, the registers contain values that make up the *processor state* at any given instant. Since Ghidra programs represent a *static* view (i.e. not
 running), there is no "instant" that can be examined to see register values. The best
 approximation is to assign registers values at addresses. This is useful if the register value
 can be determined to be constant anytime the instruction at that address is executed.
@@ -34,15 +33,15 @@ To display the *Register Manager*, select the **Register Manager** menu item fro
 the **Window** menu of the toolbar or.
 
 
-![](images/RegisterManager.png)
+![Register Manager](images/RegisterManager.png)
 
 
 The left side of the Register Manager is a tree containing all the registers defined for
 the program's language.  If the registers have been grouped into categories by the
 language, those registers will appear under a folder with that group name.  Registers
-that break down into smaller registers are marked with the ![registerGroup.png](../icons/registerGroup.png) icon.  These nodes can be further opened to reveal their
+that break down into smaller registers are marked with the ![Register Group](../icons/registerGroup.png) icon.  These nodes can be further opened to reveal their
 component registers.  For example, EAX can be opened to show AX, which can then be
-opened to show AL and AH.  Registers that don't have sub pieces use the ![registerIcon.png](../icons/registerIcon.png) icon.  The filter text field, located under the register tree
+opened to show AL and AH.  Registers that don't have sub pieces use the ![Register Icon](../icons/registerIcon.png) icon.  The filter text field, located under the register tree
 can be used to quickly find any register.  As you begin to type the name of a register,
 the tree will shrink eliminating any registers that don't contain the filter text.
 
@@ -58,14 +57,14 @@ assigned by the language and usually only apply to context registers.
 ### Tool Buttons
 
 
-![locationIn.gif](../icons/locationIn.gif)Toggles whether or not to select the row in the
+![Location In](../icons/locationIn.gif)Toggles whether or not to select the row in the
 currently selected register value table whose address range contains the current address
 of the cursor in the listing view.  For example, in the Register Manager image show above,
 if the user clicks on any address between 804c12 and 804c24, then the first row of the
 table will be selected if this action toggle is on.
 
 
-![edit-delete.png](../icons/edit-delete.png)Deletes the register value associations for all the
+![Edit Delete](../icons/edit-delete.png)Deletes the register value associations for all the
 selected ranges in the table.
 
 
@@ -73,7 +72,7 @@ selected ranges in the table.
 ranges selected in the register values table.
 
 
-![view-filter.png](../icons/view-filter.png)Filters out all registers in the register tree that
+![View Filter](../icons/view-filter.png)Filters out all registers in the register tree that
 don't have any associated values (default or otherwise).
 
 
@@ -87,11 +86,10 @@ register value ranges mixed in with user set register value ranges.
 ### Editing an Address Value Range
 
 
-Double click on any row in the register value table to bring up the *Edit Register
-Value Range* dialog.
+Double click on any row in the register value table to bring up the *Edit Register Value Range* dialog.
 
 
-![](images/EditRegisterValueRange.png)
+![Edit Register Value Range](images/EditRegisterValueRange.png)
 
 
 Using the dialog, you can adjust the start or end address and/or change the value
@@ -113,7 +111,7 @@ action by either using the right-mouse popup or using the `<Ctrl>`R quick key. �
 following dialog appears.
 
 
-![](images/SetRegisterValues.png)
+![Set Register Values](images/SetRegisterValues.png)
 
 
 Choose the register for which you want to set a value, enter the value and press the *Ok* button.
@@ -134,7 +132,7 @@ invoke the *Clear Register Values* action by using the right-mouse popup.  The
 following dialog appears.
 
 
-![](images/ClearRegisterValues.png)
+![Clear Register Values](images/ClearRegisterValues.png)
 
 
 Choose the register for the association and press the *Ok* button.  The
@@ -150,7 +148,7 @@ Activating this action will remove the register association over the entire rang
 associated with that "Assume" statement.
 
 
-*Provided by: *RegisterPlugin**
+Provided by: *RegisterPlugin*
 
 
 ---

@@ -1,3 +1,5 @@
+[Home](../index.md) > [gdb](index.md) > Wine
+
 # Debugger Launchers: GDB
 
 
@@ -67,13 +69,11 @@ are still getting import errors, check the version that GDB embeds:
 
 
 Note the version and ensure that you are invoking Pip with that version. Supposing
-`sys.version` indicates 3.10, you should invoke Pip using `python3.10 -m
-pip`.
+`sys.version` indicates 3.10, you should invoke Pip using `python3.10 -m pip`.
 
 
 **Warning**: Modern Linux distributions are beginning to adopt PEP 668, which prevents
-installation of Python packages outside of a virtual environment (venv) *even for non-root
-user accounts*. Unfortunately, `gdb` does not seem to honor the currently activated
+installation of Python packages outside of a virtual environment (venv) *even for non-root user accounts*. Unfortunately, `gdb` does not seem to honor the currently activated
 venv, and so such configurations are not officially supported. You may be able to work around
 this by modifying the `PYTHONPATH` lines of the launcher script, but your mileage may
 vary. For now, we recommend using the `--break-system-packages` argument with Pip.
@@ -82,7 +82,7 @@ vary. For now, we recommend using the `--break-system-packages` argument with Pi
 ### Options
 
 
-![](images/GdbLauncher.png)
+![Gdb Launcher](images/GdbLauncher.png)
 
 
 - **Image**: This is the path to the target binary image (ELF). Ghidra will try to fill
@@ -156,8 +156,7 @@ versions.
 ### Options
 
 
-- **Image**: This is the path to the target binary image (ELF) *on the remote
-system*. Ghidra will try to fill this in based on information gathered when the current
+- **Image**: This is the path to the target binary image (ELF) *on the remote system*. Ghidra will try to fill this in based on information gathered when the current
 program was imported; however, it cannot examine the *remote* system. If the file
 exists and is executable on the *local* machine, it will be filled in automatically.
 Whether or not it is filled automatically, please ensure the location is correct with respect
@@ -272,8 +271,7 @@ many distributions of Linux, you can install `gdb-multiarch`. Follow the steps g
 
 
 - **Image**: This is the path to the target binary image (ELF). This works the same as
-in GDB, but is passed to QEMU. This will also provide the name to GDB using its "`file
-...`" command.
+in GDB, but is passed to QEMU. This will also provide the name to GDB using its "`file ...`" command.
 - **Arguments** (User-mode only): These are the command-line arguments to pass into the
 target process. These are passed as is on QEMU's command line.
 - **QEMU command**: The command or path to QEMU.
@@ -421,3 +419,8 @@ user's home directory in `.local/share/rr/target_name`.
 
 
 Other options are the same as in GDB.
+
+
+---
+
+[← Previous: Via SSH](gdb.md) | [Next: Getting Started →](../Debugger/GettingStarted.md)

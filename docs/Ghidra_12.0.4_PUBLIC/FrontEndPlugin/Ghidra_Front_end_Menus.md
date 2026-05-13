@@ -12,13 +12,11 @@ required at a high level, such as [importing
 a Program](../ImporterPlugin/importer.md) into a Ghidra project, or [archiving](Archive_Project.md) the
 active project. These "special" Plugins can also be added to any tool; however, the archive
 and restore options show up only in the Ghidra Project Window even though the plugins
-providing these options can be added to other tools. To bring up the *Configure Tool
-Plugins*  dialog, select the **File** →
+providing these options can be added to other tools. To bring up the *Configure Tool Plugins*  dialog, select the **File** →
 **Configure** option.
 
 
-| ![](images/ConfigureTool.png) |
-| --- |
+![Configure Tool](images/ConfigureTool.png)
 
 
 The *Configure Tool* dialog shows a list of plugin packages that can be added to
@@ -80,8 +78,7 @@ associated with this server.
 
 
 To configure, choose **Edit → Set PKI Certificate...**. A
-file chooser is displayed; select your PKI certificate file and select the **Set
-Certificate** button. You must restart Ghidra in order for the setting to take effect.
+file chooser is displayed; select your PKI certificate file and select the **Set Certificate** button. You must restart Ghidra in order for the setting to take effect.
 When you connect to the server the next time you run Ghidra, you will be prompted for the
 key-store password associated with this certificate key file. The path to your PKI
 certificate file is saved as part of your Ghidra preferences.
@@ -116,8 +113,7 @@ save these files to a new name. You can choose to Cancel and go perform the Save
 to the read-only file.
 
 
-| ![](images/SaveReadOnly.png) |
-| --- |
+![Save Read Only](images/SaveReadOnly.png)
 
 
 <a name="savedatadialog"></a>If you have made any changes to Programs, then a dialog is
@@ -125,8 +121,7 @@ displayed to prompt you to save changes. After the programs, all other files tha
 changed and not saved are listed.
 
 
-| ![](images/SaveFiles.png) |
-| --- |
+![Save Files](images/SaveFiles.png)
 
 
 By default, the check box is selected to do a save. You can select or deselect the check

@@ -1,0 +1,42 @@
+site_name: Ghidra Help
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+theme:
+  name: mkdocs
+  custom_dir: overrides
+
+# Drive the top-bar dropdown from SUMMARY.md (literate-nav). The converter
+# regenerates `Ghidra_<ver>_PUBLIC/SUMMARY.md` each run, mirroring the
+# full Ghidra ToC tree — so the dropdown matches the in-page Table of
+# Contents instead of the default alphabetical directory listing.
+plugins:
+  - search
+  - literate-nav:
+      nav_file: SUMMARY.md
+
+# Promote mkdocs's built-in link/anchor checks from INFO to WARN. Run
+# `mkdocs build --strict` to fail the build on any warning. This replaces
+# the previous lychee workflow and avoids its `use_directory_urls`
+# false-positives.
+validation:
+  nav:
+    # Many module sub-pages exist in the converted docs but aren't in
+    # Ghidra's master TOC (they're reachable via in-page links, not the
+    # top nav). Silence the "omitted file" warnings for those.
+    omitted_files: ignore
+    # The SUMMARY.md nav entries can include `file.md#anchor` references
+    # to distinguish multiple TOC items pointing at different sections of
+    # the same file. mkdocs's nav validator doesn't resolve those
+    # anchors against the rendered HTML headings, so it flags them as
+    # "not found" even when the anchor IS rendered. Anchor correctness
+    # is enforced by `validation.links.anchors` (which DOES check the
+    # rendered HTML) instead.
+    not_found: info
+  links:
+    anchors: warn
+    # `folder/` entries in SUMMARY.md are literate-nav recursion markers;
+    # mkdocs's link validator doesn't know about that idiom and would
+    # otherwise flag them under `--strict`.
+    unrecognized_links: info
+    absolute_links: warn

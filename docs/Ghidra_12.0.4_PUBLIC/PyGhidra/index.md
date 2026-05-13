@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [PyGhidra Interpreter](interpreter.md)

@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerPcodeStepperPlugin](index.md) > P-code Stepper
+
 # Debugger: P-code Stepper
 
 
-![](images/DebuggerPcodeStepperPlugin.png)
+![Debugger Pcode Stepper Plugin](images/DebuggerPcodeStepperPlugin.png)
 
 
 P-code is the "microcode" or "intermediate representation" of Ghidra's processor models,
@@ -60,3 +62,8 @@ the next p-code tick, using emulation. Note that emulation does not affect the t
 Furthermore, emulation of p-code user-ops, including those indicating a system call, is
 generally not possible. Pluggable mechanisms for emulating user-ops and/or simulating a more
 complete system is a work in progress.
+
+
+---
+
+[← Previous: Time Overview Sidebar](../DebuggerTimeOverviewPlugin/DebuggerTimeOverviewPlugin.md) | [Next: Comparing Times →](../DebuggerTraceViewDiffPlugin/DebuggerTraceViewDiffPlugin.md)

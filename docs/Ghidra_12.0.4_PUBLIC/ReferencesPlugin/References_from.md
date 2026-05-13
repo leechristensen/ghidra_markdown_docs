@@ -61,8 +61,7 @@ The following types of explicit forward references may be defined from a mnemoni
 of an instruction or data code unit:
 
 
-- [Memory Reference](#memory-references) (*includes Offset and Offcut
-references*)
+- [Memory Reference](#memory-references) (*includes Offset and Offcut references*)
 - [External Reference](#external-references)
 - [Stack Reference](#stack-references)
 - [Register Reference](#register-references)
@@ -83,8 +82,7 @@ single reference may be placed on a given mnemonic/operand.
 
 
 All *Memory Reference* have a destination defined by a memory address within the
-current program.  A variation of the typical memory reference is the *Offset
-Reference* which permits the destination address to be specified as some base memory address
+current program.  A variation of the typical memory reference is the *Offset Reference* which permits the destination address to be specified as some base memory address
 plus a 64-bit signed offset.
 
 
@@ -96,7 +94,7 @@ body of  [Functions](../FunctionPlugin/Functions.md) affected by a
 new flow reference.
 
 
-<a name="offcut-references"></a><a name="offcutrefs"></a>
+<a name="offcut_references"></a><a name="offcutrefs"></a>
 
 
 Any *Memory Reference* can be characterized as an *Offcut Reference* if its
@@ -139,8 +137,7 @@ External References currently utilize the single RefType of EXTERNAL.
 on the stack.  All *Stack References* have a destination defined by a stack offset
 within the containing function's stack frame.  If a real frame-pointer is not used, the
 Function analysis will track the stack pointer usage and establish a virtual stack frame for
-the purpose of defining stack parameters and local variables.  When creating a *Stack
-Reference*, a corresponding stack parameter/variable may be explcitly bound to the reference
+the purpose of defining stack parameters and local variables.  When creating a *Stack Reference*, a corresponding stack parameter/variable may be explcitly bound to the reference
 (see [Function Variables](../FunctionPlugin/Variables.md)), although this
 is generally unnecessary since this relationship can generally be determined from the stack
 offset.   The sign of the stack frame offset makes the distinction between a parameter or
@@ -161,8 +158,7 @@ source code units contained within a function.
 
 *Register References* define data access to a function parameter or local variable
 located within a register.  All *Register References* have a destination defined by a
-register within the context of a containing function.  When creating a *Register
-Reference* a corresponding register variable may be explcitly bound to the reference (see [Function Variables](../FunctionPlugin/Variables.md)), although this is
+register within the context of a containing function.  When creating a *Register Reference* a corresponding register variable may be explcitly bound to the reference (see [Function Variables](../FunctionPlugin/Variables.md)), although this is
 generally unnecessary since this relationship can generally be determined from the register
 used.
 
@@ -254,8 +250,7 @@ used.
 | CALLOTHER_OVERRIDE_JUMP | M | Flow | Used to change CALLOTHER pcode operations to BRANCH operations. The new jump target is the "to" address of the              reference.  The override only takes effect when the reference is primary, and only when there is exactly one primary              CALLOTHER_OVERRIDE_JUMP reference at the "from" address of the reference. Only the first CALLOTHER operation at the "from"             address of the reference is changed. *Applying this override to an instance of a CALLOTHER op with output is not recommended* (see             the discussion above about CALLOTHER_OVERRIDE_CALL references).   |
 
 
-*In the above table, the ***Reference*** column indicates the "*type of
-reference*" for which the ***Ref-Type*** is applicable: <u>M</u>emory, <u>S</u>tack,
+\*In the above table, the **\*Reference\*** column indicates the "*type of reference*" for which the **\*Ref-Type\*** is applicable: <u>M</u>emory, <u>S</u>tack,
 <u>R</u>egister and <u>E</u>xternal.
 
 
@@ -296,8 +291,8 @@ indicated with {}'s.
 
 While there is a separate action for creating a default reference on an operand (see [Creating a Default Reference](#creating-a-default-reference-alt-r) below), an arbitrary
 reference may be also be added directly to a mnemonic or operand by using the popup menu action
-***References →  Add Reference from...*** .
-This will cause the [*Add Reference Dialog*](#addrefdialog) to be
+*\**References → Add Reference from...*\** .
+This will cause the [*Add Reference Dialog*](#adding-a-reference) to be
 displayed, allowing the user to specify any of the permitted reference types.
 
 
@@ -305,7 +300,7 @@ displayed, allowing the user to specify any of the permitted reference types.
 
 
 While the current cursor location is on the operand of an instruction or data code unit
-within the CodeBrowser Listing, the popup menu item ***References →  Create Default Reference**** may be selected to create
+within the CodeBrowser Listing, the popup menu item *\**References → Create Default Reference*\**\* may be selected to create
 the default primary reference for an operand.  This action will be disabled if the current
 location does not correspond to an operand field or a default reference can not be determined.
 
@@ -334,7 +329,7 @@ Memory Reference, Create Stack Reference, Create Register Reference.
 
 
 While the current cursor location is on the mnemonic/operand of an instruction or data code
-unit within the CodeBrowser Listing, the popup menu item ***References →  Delete Reference***s* may be selected to delete all
+unit within the CodeBrowser Listing, the popup menu item *\**References → Delete Reference*\**s\* may be selected to delete all
 references on the current mnemonic/operand.  This action will be disabled if the current
 location does not correspond to a mnemonic/operand field or references do not exist on the
 current mnemonic/operand.
@@ -350,13 +345,13 @@ Reference, Delete Register Reference, Delete External Reference.
 
 All references "from" a data or instruction code unit can be edited and/or viewed by
 clicking on the code unit (or a specific operand) within the Listing and activating the
-***Add/Edit...*** action via the popup menu item ***References →  Add/Edit...*** {'R'}.   Each time this action is
-invoked a new instance of the ***References Editor*** panel will be displayed.  Once the panel is
-displayed, the ![locationIn.gif](../icons/locationIn.gif)  toggle button may be pushed-in to
+*\**Add/Edit...*\** action via the popup menu item *\**References → Add/Edit...*\** {'R'}.   Each time this action is
+invoked a new instance of the **\*References Editor\*** panel will be displayed.  Once the panel is
+displayed, the ![Location In](../icons/locationIn.gif)  toggle button may be pushed-in to
 have the *source* location follow the current location within the [Listing](../CodeBrowserPlugin/CodeBrowser.md) display.
 
 
-![](images/RefProvider.png)
+![Ref Provider](images/RefProvider.png)
 
 
 ### Source
@@ -364,7 +359,7 @@ have the *source* location follow the current location within the [Listing](../
 
 The references displayed and managed within this panel are all "from" a single
 *source* instruction or data code unit.  The current *source* code
-unit  is displayed at the top of the ***References Editor*** panel as it would
+unit  is displayed at the top of the *\**References Editor*\** panel as it would
 appear in the [Listing](../CodeBrowserPlugin/CodeBrowser.md).
 Using this display, you can click on either the code unit Mnemonic or an individual
 operand to highlight the corresponding references within the table below and to set the
@@ -376,7 +371,7 @@ will also act as drag-n-drop target zones for code unit selections dragged from 
 > **Note:** The table entries that match the selected source element will be gray in color.
 
 
-The Home Button ![go-home.png](../icons/go-home.png)  can be used to set the
+The Home Button ![Go Home](../icons/go-home.png)  can be used to set the
 current Listing location to the Source code unit address.
 
 
@@ -387,26 +382,26 @@ All references "from" the current *source* code unit are listed within the table
 with the following columns:
 
 
-- ***Operand*** - Indicates on which portion of the code unit the reference has
+- **\*Operand\*** - Indicates on which portion of the code unit the reference has
 been placed (`MNEMONIC,OP-0,OP-1,OP-2,...`).
-- ***Destination*** - Indicates the destination location associated with the
+- **\*Destination\*** - Indicates the destination location associated with the
 reference.  The destination displayed for each type of reference utilizes a
 different format:
 `<`*address*`>` : indicates a memory destination
-*`<address>`**&lt;signed-offset&gt;* : indicates an offset memory
+*`<address>`* *&lt;signed-offset&gt;* : indicates an offset memory
 reference relative to a base address.
-`Stack[`*&lt;signed-**offset**&gt;*`]` : indicates a
+`Stack[`*&lt;signed-* *offset* *&gt;*`]` : indicates a
 stack reference with a specified stack frame offset.
 `<`*register*&gt; : indicates a register reference for the specified
 register.
 `External` : indicates an external reference
-- ***Label*** - Indicates the namespace-qualified symbol name associated with
+- **\*Label\*** - Indicates the namespace-qualified symbol name associated with
 the destination (See [Reference Destination Symbols](#reference-destination-symbols)).
-- ****Ref-Type*** - Identifies the type of data access or instruction flow
+- **\*\*Ref-Type\*** - Identifies the type of data access or instruction flow
 associated with a reference.
-- ****Primary?*** - Allows the user to choose a single memory reference which
+- **\*\*Primary?\*** - Allows the user to choose a single memory reference which
 will be reflected in the rendering of a code unit operand.
-- ***User Ref?*** - References which were manually added by the user or by
+- **\*User Ref?\*** - References which were manually added by the user or by
 means of auto-analysis will have a check displayed.
 
 
@@ -427,41 +422,37 @@ resolve some of these apparent " BAD " references.
 ### Actions
 
 
-The following actions are available from the ***References Editor*** panel.
+The following actions are available from the *\**References Editor*\** panel.
 For those actions with a default key-binding or mouse-click-binding, this has been
 indicated with {}'s.
 
 
-<a name="add-reference"></a>![Plus.png](../icons/Plus.png) ***Add
-Reference*** {Insert-key} - Invoking this action will launch the Add Reference Dialog
+<a name="add_reference"></a>![Plus](../icons/Plus.png) *\**Add Reference*\** {Insert-key} - Invoking this action will launch the Add Reference Dialog
 for the current code unit (see [Adding a Reference](#adding-a-reference)).
 
 
-<a name="delete-references"></a>![edit-delete.png](../icons/edit-delete.png) ***Delete
-References*** {Delete-key} - Invoking this action will delete all selected
+<a name="delete_references"></a>![Edit Delete](../icons/edit-delete.png) *\**Delete References*\** {Delete-key} - Invoking this action will delete all selected
 references.
 
 
-<a name="edit-reference"></a>![editbytes.gif](../icons/editbytes.gif) ***Edit
-Reference*** {Enter-key or double-click a row} - Invoking this action will popup the
-***Edit Reference Dialog*** for the selected reference (see [Editing a Reference](#editing-a-reference)).  This action is  only available when a
+<a name="edit_reference"></a>![Editbytes](../icons/editbytes.gif) *\**Edit Reference*\** {Enter-key or double-click a row} - Invoking this action will popup the
+*\**Edit Reference Dialog*\** for the selected reference (see [Editing a Reference](#editing-a-reference)).  This action is  only available when a
 single reference row is selected.
 
 
-<a name="select-destinations"></a>![Make Selection](../icons/text_align_justify.png) ***Select
-Memory Reference Destination*** - With one or more memory references selected in the
+<a name="select_destinations"></a>![Make Selection](../icons/text_align_justify.png) *\**Select Memory Reference Destination*\** - With one or more memory references selected in the
 table, invoking this action will cause the corresponding locations within the [Listing](../CodeBrowserPlugin/CodeBrowser.md) to become selected.
 
 
-<a name="follow-location-changes"></a>![locationIn.gif](../icons/locationIn.gif)
-***Follow Tool Location Changes*** - Once enabled (i.e., button pushed-in), any
+<a name="follow_location_changes"></a>![Location In](../icons/locationIn.gif)
+*\**Follow Tool Location Changes*\** - Once enabled (i.e., button pushed-in), any
 location change within the tool (e.g., Listing panel)  will cause the currently
 displayed  *source* code unit and associated references to reflect the new
 location.
 
 
-<a name="goto-selected-destination"></a>![locationOut.gif](../icons/locationOut.gif)
-***Send Location Change for Selected Reference Destination*** - Once enabled (i.e.,
+<a name="goto_selected_destination"></a>![Location Out](../icons/locationOut.gif)
+*\**Send Location Change for Selected Reference Destination*\** - Once enabled (i.e.,
 button pushed-in), selecting a single row within the references table will send a location
 change to the tool corresponding to the selected *destination*.  This will have
 the effect of  scrolling the [Listing](../CodeBrowserPlugin/CodeBrowser.md) to selected *destination*.
@@ -470,18 +461,17 @@ corresponding program and scrolling to the corresponding external label within t
 program.
 
 
-***<a name="goto-source-location"></a>![go-home.png](../icons/go-home.png) GoTo
-Reference Source Location*** - Invoking this action will send a location change to the
+*\**<a name="goto_source_location"></a>![Go Home](../icons/go-home.png) GoTo Reference Source Location*\** - Invoking this action will send a location change to the
 tool corresponding to the *source* code unit.  This will have the effect of
 scrolling the [Listing](../CodeBrowserPlugin/CodeBrowser.md) to
 the current *source* code unit.
 
 
-## Adding a Reference ![Plus.png](../icons/Plus.png)
+## Adding a Reference ![Plus](../icons/Plus.png)
 
 
-Invoking the ***Add...*** action from the ***References Editor*** window will
-cause the ***Add Reference Dialog*** to be displayed for the current *Source* code
+Invoking the *\**Add...*\** action from the **\*References Editor\*** window will
+cause the *\**Add Reference Dialog*\** to be displayed for the current *Source* code
 unit.  Once displayed, the *Source* code unit mnemonic or operand may be selected by
 clicking on it, as well as the *Type of Reference*.  The available choices for Type
 of Reference may be constrained based upon the chosen operand.
@@ -503,11 +493,11 @@ WRITE Ref-Type .
 single reference may be set for a given operand or mnemonic.
 
 
-> **Note:** An External reference
+> <a name="addrefdialog"></a>**Note:** An External reference
 may not be set on a mnemonic.
 
 
-![](images/AddReferenceDialog.png)
+![Add Reference Dialog](images/AddReferenceDialog.png)
 
 
 Based upon the chosen *Type of Reference*, the lower portion of the dialog will
@@ -515,14 +505,13 @@ change.  The following sections discuss the input panels for each of the four p
 choices:
 
 
-1. [Memory Reference Panel](#memory-reference-panel) *(includes Offset and Offcut
-references)*
+1. [Memory Reference Panel](#memory-reference-panel) *(includes Offset and Offcut references)*
 2. [External Reference Panel](#external-reference-panel)
 3. [Stack Reference Panel](#stack-reference-panel)
 4. [Register Reference Panel](#register-reference-panel)
 
 
-Once the appropriate reference panel has been filled-in as required, the ***Add***
+Once the appropriate reference panel has been filled-in as required, the **\*Add\***
 button may be clicked to complete the operation.
 
 
@@ -535,11 +524,11 @@ within the Listing and hitting the "*Delete*" key.  Keep in mind that when a va
 is deleted, any explicit bindings to that variable will be cleared.
 
 
-## Editing a Reference ![editbytes.gif](../icons/editbytes.gif)
+## Editing a Reference ![Editbytes](../icons/editbytes.gif)
 
 
-Invoking the ***Edit...*** action from the ***References Editor*** window will
-cause the ***Edit Reference Dialog*** to be displayed for the current *Source*
+Invoking the *\**Edit...*\** action from the **\*References Editor\*** window will
+cause the *\**Edit Reference Dialog*\** to be displayed for the current *Source*
 code unit.  Once displayed, the *Source* code unit mnemonic or operand corresponding
 to the edited reference will be selected, as well as the *Type of Reference*.
 Neither the *Source* operand nor the *Type of Reference* may be changed when
@@ -549,8 +538,8 @@ reference](References_from.md#adding-a-reference).
 
 
 The *Edit Reference Dialog* uses the same layout as the [Add
-References Dailog](#addrefdialog) with the only exception being the dialog title and the *Add* button
-which is named ***Update*** in the Edit mode.  Similarly, the lower portion of the
+References Dailog](#adding-a-reference) with the only exception being the dialog title and the *Add* button
+which is named **\*Update\*** in the Edit mode.  Similarly, the lower portion of the
 dialog will vary based upon the *Type of Reference*.  The following sections discuss
 the input panels for each of the four possible choices:
 
@@ -565,7 +554,7 @@ Panel](References_from.md#stack-reference-panel)
 Panel](References_from.md#register-reference-panel)
 
 
-Once the specific reference panel settings have been modified, the ***Update***
+Once the specific reference panel settings have been modified, the **\*Update\***
 button may be clicked to complete the operation.
 
 
@@ -580,13 +569,11 @@ reference or its resulting label whose destination address does not correspond t
 of a data or instruction code unit (see [Offcut References](#memory-references)).
 
 
-Below is an image of the *Memory Reference Panel* as it might appear in the *Add
-Reference* or *Edit Reference Dialog.*The two views reflect a  regular
-memory reference and an *Offset* reference (*Note the Address label change based upon
-the Offset selection state*).
+Below is an image of the *Memory Reference Panel* as it might appear in the *Add Reference* or *Edit Reference Dialog.*The two views reflect a  regular
+memory reference and an *Offset* reference (*Note the Address label change based upon the Offset selection state*).
 
 
-![](images/MemRefPanel.png)
+![Mem Ref Panel](images/MemRefPanel.png)
 
 
 ### Offset
@@ -602,8 +589,7 @@ prefix is used when entering a Hex value.
 ### To Address
 
 
-[***![](images/unchecked.png)
-Offset***] The *To Address* entry is required for normal memory references
+[*\**![Unchecked](images/unchecked.png) Offset*\**] The *To Address* entry is required for normal memory references
 and specifies the reference destination as a memory offset within a selected address
 space. Enter an address
 (or [Address Expression](../Misc/AddressExpressions.md)) to specify
@@ -617,8 +603,7 @@ checkbox is selected.
 ### Base Address
 
 
-[***![](images/checked.png)
-Offset***] The *Base Address* entry is required for offset memory references
+[**\*![Checked](images/checked.png) Offset\***] The *Base Address* entry is required for offset memory references
 and specifies the offset base location.  See **To Address** entry above for
 entry details.
 
@@ -661,7 +646,7 @@ Below is  an image of the *External Reference Panel* as it might appear in the
 *Add Reference* or *Edit Reference Dialogs*:
 
 
-![](images/ExtRefPanel.png)
+![Ext Ref Panel](images/ExtRefPanel.png)
 
 
 ### Name
@@ -703,7 +688,7 @@ Below is  an image of the *Stack Reference Panel* as it might appear in the
 *Add Reference* or *Edit Reference Dialogs*:
 
 
-![](images/StackRefPanel.png)
+![Stack Ref Panel](images/StackRefPanel.png)
 
 
 ### Stack Offset
@@ -744,7 +729,7 @@ Below is  an image of the *Register Reference Panel* as it might appear in the
 *Add Reference* or *Edit Reference Dialogs*:
 
 
-![](images/RegRefPanel.png)
+![Reg Ref Panel](images/RegRefPanel.png)
 
 
 ### Register
@@ -774,26 +759,25 @@ keeping the initial default variable choice.
 
 
 A code unit selection from the CodeBrowser Listing may be dragged and dropped onto the
-***References Editor*** panel to create [Memory References](#memory-references) in bulk
+**\*References Editor\*** panel to create [Memory References](#memory-references) in bulk
 for the current Source.  This capability must be used carefully since a separate reference
 will be created "to" every code unit contained within the selection.
 
 
 The specific mnemonic/operand which will be used as the source for the new memory references
-depends on where the selection is "dropped" within the ***References Editor*** panel (see
+depends on where the selection is "dropped" within the **\*References Editor\*** panel (see
 figure below).  The preferred method is to "drop" the selection on the correct
-monc/operand within the ***Source*** code unit area (i.e., *Operand-specific Drop
-Zone*).  Alternatively, the selection may be "dropped" on the reference table (i.e.,
+monc/operand within the *\**Source*\** code unit area (i.e., *Operand-specific Drop Zone*).  Alternatively, the selection may be "dropped" on the reference table (i.e.,
 *Active-operand Drop Zone*) to utilize the current mnemonic/operand choice from the
-***Source*** code unit area.  When "dropping" on the table, be careful "dragging"
-the selection across te ***Source*** code unit area since this could change the active
+**\*Source\*** code unit area.  When "dropping" on the table, be careful "dragging"
+the selection across te *\**Source*\** code unit area since this could change the active
 Source mnemonic/operand for the panel.
 
 
-![](images/DropZones.png)
+![Drop Zones](images/DropZones.png)
 
 
-*Provided By:  *ReferencesPlugin**
+Provided By:  *ReferencesPlugin*
 
 
 **Related Topics:**

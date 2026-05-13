@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerBreakpointsPlugin](index.md) > Breakpoints
+
 # Debugger: Breakpoints
 
 
-![](images/DebuggerBreakpointsPlugin.png)
+![Debugger Breakpoints Plugin](images/DebuggerBreakpointsPlugin.png)
 
 
 The breakpoints window tabulates and manipulates breakpoints among all traces, including
@@ -313,3 +315,8 @@ in the current trace.
 
 This action is always available. It filters the bottom table to those locations belonging to
 a selected breakpoint in the top table.
+
+
+---
+
+[← Previous: Stack](../DebuggerStackPlugin/DebuggerStackPlugin.md) | [Next: In the Listings →](../DebuggerBreakpointMarkerPlugin/DebuggerBreakpointMarkerPlugin.md)

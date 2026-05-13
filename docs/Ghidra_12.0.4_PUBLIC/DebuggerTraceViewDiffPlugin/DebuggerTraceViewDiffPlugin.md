@@ -1,10 +1,12 @@
+[Home](../index.md) > [DebuggerTraceViewDiffPlugin](index.md) > Comparing Times
+
 # Debugger: Comparing Times
 
 
-![](images/DebuggerTraceViewDiffPlugin.png)
+![Debugger Trace View Diff Plugin](images/DebuggerTraceViewDiffPlugin.png)
 
 
-<a name="toggle-header"></a>A common strategy in dynamic analysis is to compare machine
+<a name="toggle_header"></a>A common strategy in dynamic analysis is to compare machine
 state between two points in time. To this end, the "trace diff" plugin extends the [Dynamic Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md) to provide
 side-by-side comparison of bytes between points in time. When active, listings for both times
 are displayed, and the byte value differences between them are highlighted. **NOTE:** This
@@ -33,7 +35,7 @@ This action is available whenever a trace is active in the main listing. It prom
 alternative point in time:
 
 
-![](images/DebuggerTimeSelectionDialog.png)
+![Debugger Time Selection Dialog](images/DebuggerTimeSelectionDialog.png)
 
 
 The snapshot table is exactly the same as that in the [Time Window](../DebuggerTimePlugin/DebuggerTimePlugin.md). In most cases, simply
@@ -113,3 +115,8 @@ without a live target.
 These actions are only present when the comparison listing is visible. Each is available
 when there exists a previous or next range from the main listing's cursor. Clicking the action
 navigates to the nearest address in that range.
+
+
+---
+
+[← Previous: P-code Stepper](../DebuggerPcodeStepperPlugin/DebuggerPcodeStepperPlugin.md) | [Next: Platform Selection →](../DebuggerPlatformPlugin/DebuggerPlatformPlugin.md)

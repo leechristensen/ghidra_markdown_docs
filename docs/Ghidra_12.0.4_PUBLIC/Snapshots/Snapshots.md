@@ -36,7 +36,7 @@ history.
 Snapshot views are created by first
 viewing the desired information in the connected view.  Views that
 support snapshots will have the Create
-Snapshot action (![camera-photo.png](../icons/camera-photo.png)) on the local toolbar.
+Snapshot action (![Camera Photo](../icons/camera-photo.png)) on the local toolbar.
 Pressing this icon will create a snapshot view of the same type (a Code Viewer will create a Code Viewer snapshot, a Decompiler will create a Decompiler snapshot, etc.)
 configured exactly the same as the creating view.  The main view
 can then navigate to other programs and locations, but the snapshot

@@ -7,7 +7,7 @@ The Listing View is the main windows for displaying and working with a program's
 and data.
 
 
-![](images/CodeBrowser.png)
+![Code Browser](images/CodeBrowser.png)
 
 
 Listing View
@@ -103,7 +103,7 @@ program may be opened and positioned within the CodeBrowser. See the tool [Edit 
 certain Navigation behaviors.
 
 
-<a name="show-xrefs"></a>
+<a name="show_xrefs"></a>
 
 
 In the XRef field, sometimes there are too many addresses to display so the field will
@@ -133,7 +133,7 @@ stale, then the button will become color filled, as it is here. You may push the
 button for a refresh in either state.
 
 
-### Show Thunk Xrefs ![ThunkFunction.gif](../icons/ThunkFunction.gif)
+### Show Thunk Xrefs ![Thunk Function](../icons/ThunkFunction.gif)
 
 
 Available when viewing all Xrefs to a particular function, this toolbar action
@@ -183,7 +183,7 @@ location can either be specified by the user (Bookmarks) or by various Ghidra pl
 Navigation Markers.
 
 
-![](images/CodeBrowserWithMarkers.png)
+![Code Browser With Markers](images/CodeBrowserWithMarkers.png)
 
 
 Markers
@@ -227,7 +227,7 @@ shown in the image below. Turn markers on and off by clicking on the appropriate
 item.
 
 
-![](images/MarkerPopup.png)
+![Marker Popup](images/MarkerPopup.png)
 
 
 Marker Popup Menu
@@ -255,13 +255,13 @@ described below:
 appropriately when some plugin adds/removes new marker types.
 
 
-<a name="navigation-markers"></a>Another way to control the display of Navigation
+<a name="navigation_markers"></a>Another way to control the display of Navigation
 Markers is to set the options in Navigation Markers panel of the [Edit Options](../Tool/ToolOptions_Dialog.md) dialog, as shown below. Select
 the *Navigation Markers* node in the Options tree. Click the appropriate checkbox to
 turn the marker on or off.
 
 
-![](images/NavigationMarkerOptions.png)
+![Navigation Marker Options](images/NavigationMarkerOptions.png)
 
 
 Navigation Marker Options
@@ -277,7 +277,7 @@ are indicated by solid lines. Flow lines are bolded when the cursor is positione
 source of the jump.
 
 
-![](images/CodeBrowserWithFlowArrows.png)
+![Code Browser With Flow Arrows](images/CodeBrowserWithFlowArrows.png)
 
 
 Flow Arrows
@@ -338,7 +338,7 @@ Listing or to quickly examine data located in another part of the program's memo
 figure below shows an example of a reference popup.
 
 
-![](images/CodeBrowserReferencePopup.png)
+![Code Browser Reference Popup](images/CodeBrowserReferencePopup.png)
 
 
 Reference Popup
@@ -346,8 +346,7 @@ Reference Popup
 
 You can change the size of the popup can be changed by editing options. Choose
 **Edit** →  **Tool Options...**,
-click on the *Listing Popups* node in the Options tree. Select the *Reference Code
-Viewer* node to display the height and width values of the popup. Edit the values and
+click on the *Listing Popups* node in the Options tree. Select the *Reference Code Viewer* node to display the height and width values of the popup. Edit the values and
 click on the **OK** or **Apply** button.
 
 
@@ -371,7 +370,7 @@ The data type popup is shown whenever the user hovers over a the mnemonic field 
 data type has been set. The figure below shows an example of a data type popup.
 
 
-![](images/DataTypeHover.png)
+![Data Type Hover](images/DataTypeHover.png)
 
 
 Data Type Popup
@@ -430,13 +429,13 @@ in the event that you attempt to enable popups from this icon and all hover serv
 are disabled.
 
 
-![](images/MouseHoverButton.png)
+![Mouse Hover Button](images/MouseHoverButton.png)
 
 
-#### Mouse Hover Enabled ![hoverOn.gif](../icons/hoverOn.gif)
+#### Mouse Hover Enabled ![Hover On](../icons/hoverOn.gif)
 
 
-#### Mouse Hover Disabled ![hoverOff.gif](../icons/hoverOff.gif)
+#### Mouse Hover Disabled ![Hover Off](../icons/hoverOff.gif)
 
 
 ## Opening/Closing Structures and Arrays
@@ -450,13 +449,13 @@ to display or hide the contents of structures and arrays.
 To see the contents of a Structure or Array, select on the + icon.
 
 
-![](images/ClosedStructure.png)
+![Closed Structure](images/ClosedStructure.png)
 
 
 To hide the contents of a Structure or Array, select on the - icon.
 
 
-![](images/OpenStructure.png)
+![Open Structure](images/OpenStructure.png)
 
 
 Structures within Structures, Unions and Arrays can be opened in the same manner.
@@ -516,11 +515,11 @@ In addition to the control widget in the display, there are also several actions
 can be used to control the display of function variables.
 
 
-- <a name="show-all-variables"></a>**Show/Hide All Variables** - This toggle
+- <a name="show_all_variables"></a>**Show/Hide All Variables** - This toggle
 action can be used to globally control whether or not function variables are displayed.
 Individual functions can still be toggled on or off, but this sets the default for all
 functions.
-- <a name="show-variables"></a>**Show/Hide Variables** - This action toggles
+- <a name="show_variables"></a>**Show/Hide Variables** - This action toggles
 the display of the variables. If they are showing, this will turn them off. And if they
 are not showing, this action will turn them on. The default keybinding is
 `Space` so if you are on a function or variable, pressing the space bar will
@@ -541,7 +540,7 @@ being highlighted. To determine matches that should be highlighted, a case-sensi
 whole-word string compare is used.
 
 
-![](images/Highlight_Example.png)
+![Highlight Example](images/Highlight_Example.png)
 
 
 Cursor Text Highlight
@@ -566,7 +565,7 @@ below).
 This feature can be turned off by adjusting highlight settings (see below).
 
 
-![](images/CodeBrowser_OperandHighlight.png)
+![Code Browser Operand Highlight](images/CodeBrowser_OperandHighlight.png)
 
 
 Scoped Register Highlight
@@ -604,11 +603,11 @@ Options](CodeBrowserOptions.md) for a complete description of the options and ho
 
 
 If an error ever occurs while the code browser is attempting to display information in a
-field, it will show an "*Error*" field instead. Double-click on the error field to display
+field, it will show an "\*Error\*" field instead. Double-click on the error field to display
 the **Log Details dialog**.
 
 
-*Provided by: *Code Browser Plugin**
+Provided by: *Code Browser Plugin*
 
 
 **Related Topics:**

@@ -1,3 +1,5 @@
+[Home](../index.md) > [ProgramGraphPlugin](index.md) > Program Graph
+
 # Graphing the Program
 
 
@@ -102,7 +104,7 @@ nodes as shown below on the node labeled "00408133". A node is selected if any a
 selection.
 
 
-![](images/SelectGraphNode.png)
+![Select Graph Node](images/SelectGraphNode.png)
 
 
 When a selection is made in the graph display, all addresses represented by each selected node become
@@ -127,7 +129,7 @@ The node containing the current address location is marked with a large red arro
 below on the graph node labeled "00408133".
 
 
-![](images/FocusGraphNode.png)
+![Focus Graph Node](images/FocusGraphNode.png)
 
 
 Whenever the cursor location changes in the Code Browser (or tool that created
@@ -196,7 +198,7 @@ To Reuse A Graph,
 2. Select an existing graph window to set it to the active window.
 (this will pop the graph window to the front)
 3. Create a graph using:
-Select **Graph →  Block Flow**, **Graph →  Calls**, or any of the **Graph →  Calls Using Model** items
+Select **Graph → Block Flow**, **Graph → Calls**, or any of the **Graph → Calls Using Model** items
 
 
 ## Append Graph
@@ -216,7 +218,7 @@ To append to an existing graph,
 2. Select the Graph window to append to
 (this will pop the graph window to the front).
 3. Create a graph using:
-Select **Graph →  Block Flow**, **Graph →  Calls**, or any of the **Graph →  Calls Using Model** menu items
+Select **Graph → Block Flow**, **Graph → Calls**, or any of the **Graph → Calls Using Model** menu items
 
 
 > **Note:** The Reuse Graph option must be enabled for the Append Graph option to be considered. Toggling on the Append Graph option will
@@ -253,13 +255,13 @@ flow. A labeled instruction will always start a block regardless of the instruct
 For example:
 
 
-![](images/BasicBlockExampleCode.png)
+![Basic Block Example Code](images/BasicBlockExampleCode.png)
 
 
 Would generate the following graph:
 
 
-![](images/BasicBlockGraph.png)
+![Basic Block Graph](images/BasicBlockGraph.png)
 
 
 > **Note:** If there is a current selection, the nodes and edges
@@ -269,7 +271,7 @@ will be restricted to blocks of code that fall within the selection.
 To Graph Block Flow Using the default model,
 
 
-1. Select **Graph →  Block Flow**
+1. Select **Graph → Block Flow**
 2. A new graph window is created
 
 
@@ -288,14 +290,14 @@ within the associated block. The list of instructions are passed to the graph as
 label.
 
 
-![](images/CodeBlockGraph.png)
+![Code Block Graph](images/CodeBlockGraph.png)
 
 
 ## Graph Calls
 
 
 A graph of the call instruction flow from one subroutine to another can be created with
-**Graph →  Calls**. The graph is created using the default
+**Graph → Calls**. The graph is created using the default
 Call Model. Several Subroutine Models are available. Each model provides a slightly
 different perspective on what constitutes a subroutine.
 
@@ -307,14 +309,14 @@ will be restricted to blocks of code that fall within the selection.
 To Graph Calls Using the default model,
 
 
-1. Select **Graph →  Calls**
+1. Select **Graph → Calls**
 2. A new graph window is created
 
 
-<a name="graph-calls-using-model"></a>To Graph Calls Using a specific model*,
+<a name="graph_calls_using_model"></a>To Graph Calls Using a specific model\*,
 
 
-1. Select **Graph →  Calls Using Model →** &lt;***a Call Model***&gt;
+1. Select **Graph → Calls Using Model →** &lt;*\**a Call Model*\**&gt;
 2. Select one of
   - Isolated Entry Model
   - Multiple Entry Model
@@ -332,12 +334,9 @@ set of block models configured into the tool.
 ## Graph Data References
 
 
-A graph of data references can be created with **Graph →
-Data** then selecting **To References**, **From References** or **To/From References**.
+A graph of data references can be created with **Graph → Data** then selecting **To References**, **From References** or **To/From References**.
 Only the selected references will be included. By default only a single layer of references will
-be graphed, this can be adjusted using the **Edit  →
-Tool Options  →  Graph  →
-Max Reference Depth**
+be graphed, this can be adjusted using the **Edit → Tool Options → Graph → Max Reference Depth**
 
 
 > **Note:** Unlike flow graphs, where only the selection is
@@ -348,7 +347,7 @@ To graph Data References,
 
 
 1. Select the data to start from in the listing
-Select **Graph →  Data →**
+Select **Graph → Data →**
 Select one of
   - To References - selected data and all references to it
   - From References - selected data all references from it
@@ -375,7 +374,7 @@ use program elements as vertices and reference types as edges. See
 **Graph Type Display Options** for general help on graph type display options.
 
 
-*Provided by: *Program Graph Plugin**
+Provided by: *Program Graph Plugin*
 
 
 **Related Topics:**
@@ -383,3 +382,8 @@ use program elements as vertices and reference types as edges. See
 
 - [Default Graph Display](../GraphServices/GraphDisplay.md)
 - [Graph Export](../GraphServices/GraphExport.md)
+
+
+---
+
+[← Previous: Layouts](../FunctionGraphPlugin/Function_Graph_Layouts.md) | [Next: Function Call Graph →](../FunctionCallGraphPlugin/Function_Call_Graph.md)

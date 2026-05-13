@@ -97,8 +97,7 @@ filled in with suggested values for all fields. The *Edit Label* dialog, on the 
 will be filled in with the current values of the label being edited.
 
 
-| ![](images/AddLabel.png) |
-| --- |
+![Add Label](images/AddLabel.png)
 
 
 > **Note:** If you add a label where there is a function
@@ -108,7 +107,7 @@ with a default label name, the label you add will become the function's new name
 ### Dialog Fields
 
 
-***Enter Label***
+*\**Enter Label*\**
 
 
 - Text field for entering the name of the label. A combo box is included which allows
@@ -128,7 +127,7 @@ path that starts with **Global**, then the value of the *Namespace* combo box
 will be ignored.
 
 
-***Namespace***
+*\**Namespace*\**
 
 
 - The defining scope of the label. The available namespaces are based upon the current
@@ -144,14 +143,14 @@ namespace of the function and the label name you enter will become the new funct
 name.
 
 
-***Entry Point***
+*\**Entry Point*\**
 
 
 - Sets the entry point property for address associated with this label. Setting this
 property on one symbol, changes it for all symbols at the same address.
 
 
-***Primary***
+*\**Primary*\**
 
 
 - Sets the primary property for this symbol. If there is only one symbol at this
@@ -164,7 +163,7 @@ select the checkbox, the function is renamed to the new label that you entered.Â
 function symbol must always be the primary symbol.
 
 
-***Pinned***
+*\**Pinned*\**
 
 
 - Sets the label to pinned.  A pinned label will not move if the image base is changed
@@ -182,8 +181,7 @@ of an instruction or data item. Ghidra allows users to change which symbol is us
 the address using the *Set Label* dialog.
 
 
-| ![](images/SetLabel.png) |
-| --- |
+![Set Label](images/SetLabel.png)
 
 
 ### Label
@@ -341,12 +339,11 @@ To have the operand display a different label corresponding to the primary memor
 
 1. Right click on the operand symbol and choose the **Set Associated Label...** menu option from the
 pop-up menu.  This action only appears if the primary reference is a memory reference.
-2. Choose a label from the drop-down list on the **[Set
-Label](#set-label-dialog)** dialog or type in a name for a new label that will appear at the referred-to
+2. Choose a label from the drop-down list on the **[Set Label](#set-label-dialog)** dialog or type in a name for a new label that will appear at the referred-to
 address.
 
 
-*Provided by: the ***Edit Labels*** Plugin*
+Provided by: the **\*Edit Labels\*** Plugin
 
 
 ### Show Label History
@@ -362,12 +359,10 @@ result of disassembly are not recorded in the history; however, if you rename a 
 label, you will see an entry in the table, as shown below.
 
 
-*A column for "Address" shows up in the
-table if you are viewing the history of changes on labels at all addresses.*
+*A column for "Address" shows up in the table if you are viewing the history of changes on labels at all addresses.*
 
 
-| ![](images/ShowLabelHistory.png) |
-| --- |
+![Show Label History](images/ShowLabelHistory.png)
 
 
 To display the history of label changes at a specific address,
@@ -383,14 +378,14 @@ modification date (i.e., oldest date first). You can also reorder the columns by
 header to another column position.
 
 
-<a name="show-all-history"></a> To seach for label history for a past or present label
+<a name="show_all_history"></a> To seach for label history for a past or present label
 name:
 
 
 1. Select Search â†’ **Label History**...
 
 
-![](images/LabelHistoryInputDialog.png)
+![Label History Input Dialog](images/LabelHistoryInputDialog.png)
 
 
 1. A dialog is displayed so that you can enter a label name (or part of a label
@@ -405,7 +400,7 @@ label history was found.
 row in the table.
 
 
-*Provided by: the ***Edit Labels*** Plugin*
+Provided by: the **\*Edit Labels\*** Plugin
 
 
 **Related Topics:**

@@ -8,7 +8,7 @@ Operands and mnemonics may be masked to allow maximum flexibility in modifying t
 pattern.
 
 
-![](images/SearchInstructionPatterns.png)
+![Search Instruction Patterns](images/SearchInstructionPatterns.png)
 
 
 ## **Dialog Layout**
@@ -22,10 +22,10 @@ displays the string (in binary or hex) that will be used for searching
 ### Instruction Table
 
 
-![](images/SearchInstructionPatternsInstructionTable.png)
+![Search Instruction Patterns Instruction Table](images/SearchInstructionPatternsInstructionTable.png)
 
 
-This table is populated when a selection is made in the code listing and the ![reload.png](../icons/reload.png) icon is selected. All items in
+This table is populated when a selection is made in the code listing and the ![Reload](../icons/reload.png) icon is selected. All items in
 the selection range will have an entry in the table, even non-instructions. Users may click
 on an item in the table to mask it from the final search string.
 
@@ -38,7 +38,7 @@ blue , data items are tan .
 #### Instruction Table Toolbar
 
 
-![](images/SearchInstructionPatternsInstructionTableToolbar.png)
+![Search Instruction Patterns Instruction Table Toolbar](images/SearchInstructionPatternsInstructionTableToolbar.png)
 
 
 These tools provide ways to manipulate the Instruction Table and are discussed in
@@ -68,7 +68,7 @@ the listing to the location defined by this set of instructions.
 ### Preview Table
 
 
-![](images/SearchInstructionPatternsPreviewTable.png)
+![Search Instruction Patterns Preview Table](images/SearchInstructionPatternsPreviewTable.png)
 
 
 The Preview Table shows what the search string will look like, in either binary or hex
@@ -85,18 +85,18 @@ instead, the binary value with the masked bits will be displayed inside brackets
 #### Preview Table Toolbar
 
 
-![](images/SearchInstructionPatternsPreviewTableToolbar.png)
+![Search Instruction Patterns Preview Table Toolbar](images/SearchInstructionPatternsPreviewTableToolbar.png)
 
 
 These tools provide ways to manipulate the Preview Table and are discussed in detail
 below:
 
 
-- [ ![binaryData.gif](../icons/binaryData.gif) ] Switches to
+- [ ![Binary Data](../icons/binaryData.gif) ] Switches to
 binary display mode.
-- [ ![hexData.png](../icons/hexData.png) ] Switches to
+- [ ![Hex Data](../icons/hexData.png) ] Switches to
 hex display mode.
-- [ ![page_white_copy.png](../icons/page_white_copy.png) ] Copies the
+- [ ![Page White Copy](../icons/page_white_copy.png) ] Copies the
 preview table contents to the clipboard.
 
 
@@ -107,7 +107,7 @@ By default any search will be run against the entire program. If you only want t
 particular range, that can be done using the options below:
 
 
-![](images/SearchInstructionPatternsControlPanel.png)
+![Search Instruction Patterns Control Panel](images/SearchInstructionPatternsControlPanel.png)
 
 
 - Selection Scope
@@ -122,10 +122,10 @@ forward or backward in the listing for the search pattern.
 ### Manual Entry
 
 
-![](images/SearchInstructionsManualSearchDialog.png)
+![Search Instructions Manual Search Dialog](images/SearchInstructionsManualSearchDialog.png)
 
 
-If the user clicks the ![editbytes.gif](../icons/editbytes.gif)
+If the user clicks the ![Editbytes](../icons/editbytes.gif)
 button, the manual entry dialog above will be displayed. Users may enter either a binary or
 hex string here (full bytes, no nibbles!) and if the string represents a valid set of
 instructions for the loaded program, then activating the *Apply* button will cause them
@@ -145,7 +145,7 @@ will immediately move to the next match in the listing. Whether the cursor moves
 or previous match depends on the *Search Direction* setting.
 
 
-![](images/SearchInstructionPatternsResultsTable.png)
+![Search Instruction Patterns Results Table](images/SearchInstructionPatternsResultsTable.png)
 
 
 > **Tip:** It should be noted that the search will look
@@ -162,8 +162,7 @@ The most basic usage of the search dialog is as follows:
 
 
 1. Select a range of instructions in the code listing.
-2. From the Tool, select **Search** →  **For
-Instruction Patterns**.
+2. From the Tool, select **Search** →  **For Instruction Patterns**.
 The dialog will launch and be populated with the instruction set.
 3. Select/deselect items in the table to mask the desired instructions.
 4. Click the *Search All* button. A dialog will pop up showing all occurrences of the
@@ -194,7 +193,7 @@ B and select the *Search* button, Program B will be searched for the selected
 instructions.
 
 
-*Provided by: *InstructionSearchPlugin**
+Provided by: *InstructionSearchPlugin*
 
 
 ---

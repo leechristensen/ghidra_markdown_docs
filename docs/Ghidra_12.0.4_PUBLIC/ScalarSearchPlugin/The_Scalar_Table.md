@@ -11,8 +11,7 @@ instructions, data, or structures.
 ## To Search for Scalars:
 
 
-1. From the Tool, select **Search** →  **For
-Scalars...**
+1. From the Tool, select **Search** →  **For Scalars...**
 2. Select "Scalars in Range:" or "Specific Scalar:".
 3. Once the search type is selected, enter scalars into the value fields in either decimal
 or hexadecimal (0x...) notation.
@@ -24,7 +23,7 @@ text field, Ctrl+M toggles the value display between the
 decimal and hex 	representation of the value in that field.
 
 
-![](images/SearchAllScalarsDialog.png)
+![Search All Scalars Dialog](images/SearchAllScalarsDialog.png)
 
 
 ## Search Options
@@ -69,7 +68,7 @@ user. The table shows the address of the scalar, a preview of the item at that a
 scalar in Hex, and the scalar in signed decimal as shown in the image below:
 
 
-![](images/ScalarWindow.png)
+![Scalar Window](images/ScalarWindow.png)
 
 
 Each element of the table is a scalar found in either data or an instruction in the
@@ -105,8 +104,7 @@ The scalar table has the following
 
 
 1. **Text Filter** - allows you to filter based on any text in the table.
-2. **Range Filter** - allows you to filter on a range of scalars **based
-upon their signed value**.
+2. **Range Filter** - allows you to filter on a range of scalars **based upon their signed value**.
 3. **Column Filter** - allows you to filter on specific column values.
 
 
@@ -119,19 +117,19 @@ upon their signed value**.
 *See [Make Selection](../Search/Query_Results_Dialog.md#make-selection)*
 
 
-### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
+### Selection Navigation ![Location In](../icons/locationIn.gif)
 
 
 *See [Selection Navigation](../Search/Query_Results_Dialog.md#selection-navigation)*
 
 
-### Remove Items ![table_delete.png](../icons/table_delete.png)
+### Remove Items ![Table Delete](../icons/table_delete.png)
 
 
 *See [Remove Items](../Search/Query_Results_Dialog.md#remove-items)*
 
 
-*Provided by: *ScalarTablePlugin**
+Provided by: *ScalarTablePlugin*
 
 
 ---

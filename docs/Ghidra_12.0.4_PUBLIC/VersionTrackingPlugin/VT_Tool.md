@@ -1,8 +1,9 @@
+[Home](../index.md) > [VersionTrackingPlugin](index.md) > Tool
+
 # Version Tracking Tool
 
 
-| ![](images/VersionTrackingTool.png) |
-| --- |
+![Version Tracking Tool](images/VersionTrackingTool.png)
 
 
 The primary Version Tracking Tool, by default, consists of a few actions and
@@ -54,8 +55,7 @@ same.  They differ in which program they show, the source program or the destina
 program.
 
 
-| ![](images/SourceTool.png) |
-| --- |
+![Source Tool](images/SourceTool.png)
 
 
 Each of these tools is similar to default Ghidra
@@ -68,16 +68,16 @@ functionality.
 ## Version Tracking Tool Actions
 
 
-<a name="create-session"></a>The **Create Session**
-![start-here_16.png](../icons/start-here_16.png) action will launch the
+<a name="create_session"></a>The **Create Session**
+![Start Here 16](../icons/start-here_16.png) action will launch the
 [Version Tracking Wizard](VT_Wizard.md) to
 guide you through the process of create a new
 [version
 tracking session](Version_Tracking_Intro.md#version-tracking-session).
 
 
-<a name="add-to-session"></a>The **Add to Session**
-![Plus.png](../icons/Plus.png) action will launch the
+<a name="add_to_session"></a>The **Add to Session**
+![Plus](../icons/Plus.png) action will launch the
 [Version Tracking Wizard](VT_Wizard.md) to
 guide you through the process of create adding new
 [Program Correlator](VT_Correlators.md)
@@ -87,8 +87,7 @@ an existing
 tracking session](Version_Tracking_Intro.md#version-tracking-session).
 
 
-<a name="automatic-version-tracking"></a> The **Automatic Version
-Tracking** ![wizard.png](../icons/wizard.png) action will launch
+<a name="automatic_version_tracking"></a> The **Automatic Version Tracking** ![Wizard](../icons/wizard.png) action will launch
 [Auto Version Tracking](VT_AutoVT.md) to
 try and automatically create and accept the most likely matches .
 
@@ -107,8 +106,7 @@ The **File** menu
 
 - **Add to Session** - Shows the
 [Version Tracking Wizard](VT_Wizard.md) so that you can perform
-[program correlation](VT_Correlators.md) and have the results **added to the currently open
-version tracking session.**
+[program correlation](VT_Correlators.md) and have the results **added to the currently open version tracking session.**
 - **New Session** - Shows the
 [Version Tracking Wizard](VT_Wizard.md) so that you can create a new version tracking
 session.
@@ -118,8 +116,7 @@ try and automatically create and accept the most likely matches .
 - **Open Session** - Shows a chooser dialog that allows
 you to open an **existing** version tracking session.
 - **Close Session - Closes the currently open version tracking session.**
-- **Save Session - Saves any changes to the current version tracking
-session.**
+- **Save Session - Saves any changes to the current version tracking session.**
 - **Save Tool** - Saves the state Version Tracking Tool (e.g.,
 window locations, size and open state).
 - **Close Tool** - Closes the Version Tracking Tool and the current
@@ -135,7 +132,7 @@ Tracking Tool.
 - **Undo** - Performs an undo of the last edit (e.g., accepting a
 match, applying markup, etc).
 - **Redo** - Performs a redo of the previous undo action.
-- <a name="reset-tools"></a>**Reset Source and Destination Tools** -
+- <a name="reset_tools"></a>**Reset Source and Destination Tools** -
 Will reset the sub-tools to be the default configurations.  This
 is useful if you have made changes (layout, size, etc.)
 to the tools and would like to undo those changes.
@@ -158,25 +155,25 @@ the [sub tools](#version-tracking-sub-tools).
 ### Create Manual Match
 
 
-The **Create Manual Match** action (![Plus.png](../icons/Plus.png)
+The **Create Manual Match** action (![Plus](../icons/Plus.png)
 
 
 ### Create And Accept Manual Match
 
 
-The **Create And Accept Manual Match** action (![flag.png](../icons/flag.png)
+The **Create And Accept Manual Match** action (![Flag](../icons/flag.png)
 
 
 ### Create And Apply Manual Match
 
 
-The **Create And Apply Manual Match** action (![checkmark_green.gif](../icons/checkmark_green.gif)
+The **Create And Apply Manual Match** action (![Checkmark Green](../icons/checkmark_green.gif)
 
 
 Main content blockquote
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -188,3 +185,8 @@ Tracking Markup Table](providers/VT_Markup_Table.md)
 - [Version
 Tracking Introduction](Version_Tracking_Intro.md)
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
+
+
+---
+
+[← Previous: Session Wizard](VT_Wizard.md) | [Next: Matches Table →](providers/VT_Matches_Table.md)

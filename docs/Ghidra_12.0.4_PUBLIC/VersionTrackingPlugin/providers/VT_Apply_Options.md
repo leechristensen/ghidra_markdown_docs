@@ -4,7 +4,7 @@
 The actions taken when accepting match or applying its markup are defined as options, which
 can be changed by the user.  The sections below describe the various options available
 and list the default values.  To access the options you can click the
-![settings16.gif](../../icons/settings16.gif) icon on the
+![Settings16](../../icons/settings16.gif) icon on the
 [Matches Table](VT_Matches_Table.md).
 
 
@@ -14,8 +14,7 @@ and list the default values.  To access the options you can click the
 Below is a image of the **Accept Match Options**:
 
 
-| ![](../images/VTOptions_AcceptMatchDialog.png) |
-| --- |
+![Vtoptions Accept Match Dialog](../images/VTOptions_AcceptMatchDialog.png)
 
 
 The following items will happen when a
@@ -34,8 +33,7 @@ The following items will happen when a
 Below is a image of the **Apply Markup Options**:
 
 
-| ![](../images/VTOptions_ApplyMarkupDialog.png) |
-| --- |
+![Vtoptions Apply Markup Dialog](../images/VTOptions_ApplyMarkupDialog.png)
 
 
 The table below contains the markup items and their default actions taken
@@ -130,7 +128,7 @@ the markup from the source program.
 | **Var Args** :   Specifies the action to take for applying the var args flag when  			          		applying a function signature markup of a match. | `Replace` |
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**

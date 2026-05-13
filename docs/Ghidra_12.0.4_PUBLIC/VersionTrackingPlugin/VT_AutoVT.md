@@ -24,8 +24,7 @@ the set minimum number of votes and does not exceed the set maximum number of co
 will be applied.
 
 
-![](../shared/note.yellow.png) **NOTE: It is unlikely that all matches in the entire program will be made and there is no guarantee that no mistakes will be made. This
-action was designed to try to save as much time as possible while also taking a conservative approach to the automation.**
+![Note.Yellow](../shared/note.yellow.png) **NOTE: It is unlikely that all matches in the entire program will be made and there is no guarantee that no mistakes will be made. This action was designed to try to save as much time as possible while also taking a conservative approach to the automation.**
 
 
 ## Auto Version Tracking Options
@@ -37,8 +36,7 @@ run individually. To access the options use Edit-&gt;Tool Options-&gt;Version Tr
 Version Tracking from the Version Tracking Match Window.
 
 
-The following options are found when the **Edit-&gt;Tool Options-&gt;Version Tracking-&gt;Auto Version
-Tracking** options folder is selected and will determine which correlators will be run during
+The following options are found when the **Edit-&gt;Tool Options-&gt;Version Tracking-&gt;Auto Version Tracking** options folder is selected and will determine which correlators will be run during
 Auto Version Tracking.
 
 
@@ -113,7 +111,7 @@ The following options are found when selecting
 Main content blockquote
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**

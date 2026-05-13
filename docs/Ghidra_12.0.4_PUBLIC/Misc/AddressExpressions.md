@@ -66,7 +66,7 @@ language.
 ### Math Operators
 
 
-Supported math operators are "+ - * /". These operators generate either a number or
+Supported math operators are "+ - \* /". These operators generate either a number or
 address result depending on the operands.
 
 

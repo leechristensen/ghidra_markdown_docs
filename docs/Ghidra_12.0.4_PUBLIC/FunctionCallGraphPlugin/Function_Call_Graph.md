@@ -1,8 +1,9 @@
+[Home](../index.md) > [FunctionCallGraphPlugin](index.md) > Function Call Graph
+
 # Function Call Graph Plugin
 
 
-| ![](images/FunctionCallGraphProvider.png) |
-| --- |
+![Function Call Graph Provider](images/FunctionCallGraphProvider.png)
 
 
 The Function Call Graph Plugin is a simple graph display that shows incoming and
@@ -52,7 +53,7 @@ upon the selected node's direction:  for *In* nodes, the newly added nodes
 will be those nodes that **call** the selected node; for *Out* nodes, the
 newly added nodes will be those nodes **called by** the selected node.
 - **Direct Edges**: An edge (a call) between two adjacent levels.
-- <a name="indirect-edges"></a>**Indirect Edges**: An edge (a call)
+- <a name="indirect_edges"></a>**Indirect Edges**: An edge (a call)
 between two	non-adjacent levels or an edge within the same level.   These
 edges are rendered with less emphasis than *direct edges*.
 
@@ -102,8 +103,7 @@ replaced with a warning icon, as so:
 
 
 All functions that relate to the [Level](#terms) of
-the selected function will be shown, **not just calls to the selected
-function.**
+the selected function will be shown, **not just calls to the selected function.**
 
 
 ### Navigate on Incoming Location Changes
@@ -164,12 +164,10 @@ Component Provider, which itself can be moved, resized and docked anywhere in th
 wish.
 
 
-To undock the Satellite View, right-click in the graph and deselect the **Dock
-Satellite View** menu item.
+To undock the Satellite View, right-click in the graph and deselect the **Dock Satellite View** menu item.
 
 
-To re-dock the Satellite View, right-click in the graph and select the **Dock Satellite
-View** menu item.
+To re-dock the Satellite View, right-click in the graph and select the **Dock Satellite View** menu item.
 
 
 > **Tip:** To reshow the Satellite View if it is
@@ -199,7 +197,7 @@ The **Use Animation** option signals to the graph whether to animate mutative gr
 operations and navigations.
 
 
-<a name="layout-compressing"></a>The **Use Condensed Layout** option signals to the
+<a name="layout_compressing"></a>The **Use Condensed Layout** option signals to the
 graph to bring vertices as close together as possible when laying out the graph. Using this
 option to fit as many vertices on the screen as possible. Disable this option to make the
 overall layout of the graph more aesthetic.
@@ -226,10 +224,15 @@ There are various edge color and highlight color options available to change. Th
 highlight colors are those to be used when the flow animations take place.
 
 
-*Provided by: *Function Call Graph Plugin**
+Provided by: *Function Call Graph Plugin*
 
 
 **Related Topics:**
 
 
 - [Graphs](../Graph/GraphIntro.md)
+
+
+---
+
+[← Previous: Program Graph](../ProgramGraphPlugin/ProgramGraph.md) | [Next: Memory Map →](../MemoryMapPlugin/Memory_Map.md)

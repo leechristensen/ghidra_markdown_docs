@@ -13,8 +13,7 @@ dialog may be activated by right-clicking on a function header in the listing an
 **Edit Function Tags** option.
 
 
-| ![](images/FullWindow.png) |
-| --- |
+![Full Window](images/FullWindow.png)
 
 
 ## Window Components
@@ -28,7 +27,7 @@ function.
 - **Functions**: Displays functions that contain any selected tags. If multiple
 tags are selected, functions containing ANY of the tags will be displayed.
 - **Tag Input Field**: Allows users to create new tags. Multiple tags may be created at one time.
-![](images/InputField.png)
+![Input Field](images/InputField.png)
 
 
 - **Action Buttons**
@@ -62,7 +61,7 @@ Tags may deleted by selecting a set of tags and pressing the ![Delete](../icons/
 following:
 
 
-![](images/DeleteWarning.png)
+![Delete Warning](images/DeleteWarning.png)
 
 
 If confirmed, the tag will be removed from the system and from all functions to which it had been assigned.
@@ -75,13 +74,13 @@ Tag names and comments may be edited by double-clicking the item in the list. If
 tag is not editable the user will be presented with the following warning:
 
 
-![](images/EditNotAllowedWarning.png).
+![Edit Not Allowed Warning](images/EditNotAllowedWarning.png).
 
 
 If editing is allowed, the following dialog will be shown:
 
 
-![](images/EditTag.png)
+![Edit Tag](images/EditTag.png)
 
 
 > **Tip:** An italicized tag name
@@ -109,7 +108,7 @@ removed from the Assigned Tags List and added to the Available Tags List.
 
 
 Tags may be loaded on startup from an external source if desired. These tags will be shown with
-an asterisk (*) after the name and cannot be edited or deleted; with one caveat: once a tag has
+an asterisk (\*) after the name and cannot be edited or deleted; with one caveat: once a tag has
 been assigned to a function it ceases to have any special protections and can be edited
 like any other. If the tag is ever removed from all functions using the
 ![Delete](../icons/edit-delete.png) button, it will again be present in the
@@ -141,7 +140,7 @@ as-follows:
 removed/edited will reappear with Ghidra is restarted, as these are always loaded from this file.
 
 
-*Provided By:  *FunctionTagPlugin**
+Provided By:  *FunctionTagPlugin*
 
 
 **Related Topics:**

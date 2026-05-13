@@ -74,3 +74,6 @@ Thumbs.db
 # Project specific
 output/
 ghidra/
+
+# mkdocs build output
+site/

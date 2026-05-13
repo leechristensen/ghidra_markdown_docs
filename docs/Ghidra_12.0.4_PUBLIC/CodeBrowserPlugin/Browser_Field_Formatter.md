@@ -7,11 +7,11 @@ The *Browser Field Formatter* is used to control how the fields in a listing are
 displayed by the Listing. The format specifies which fields are displayed, the order of fields,
 and the width of each field. The formatter is not normally displayed by default, but can be
 accessed at anytime by clicking on the
-![field.header.down.png](../icons/field.header.down.png)<a name="toggle-header"></a> icon located in the Listing's toolbar.  When the formatter is
+![Field.Header.Down](../icons/field.header.down.png)<a name="toggle_header"></a> icon located in the Listing's toolbar.  When the formatter is
 visible, the button becomes depressed, and can be clicked to hide the formatter.
 
 
-![](images/OpenHeader.png)
+![Open Header](images/OpenHeader.png)
 
 
 The listing displays information at each address of a program.  This information is
@@ -48,8 +48,7 @@ current cursor location is highlighted.
 
 
 New fields can be added to the format by right-clicking on the Browser Field Formatter
-component and selecting **Add Field →
-&lt;**name of field&gt; from the popup menu. The new field will be inserted at the
+component and selecting **Add Field → &lt;**name of field&gt; from the popup menu. The new field will be inserted at the
 right-click point.  Only the fields that have already been added to the format show up
 in the popup menu.  If more than one field appears in the popup, an additional menu
 item, **Add Field → All**, is
@@ -67,7 +66,7 @@ from the popup menu. After adding the *spacer* field, adjust its size to take up
 more or less space.
 
 
-#### ** Set Text**
+#### **Set Text**
 
 
 *Spacer* fields can optionally have an associated text value.  Each spacer's
@@ -100,7 +99,7 @@ far to the left as possible to fill up any empty space. So if a field is moved o
 row, all the fields to its right, move left to fill in the empty space. If a field is
 dropped before another field, that field and all the fields to its right are moved to the
 right to make room for the new field. *Spacer* fields can be inserted before a field
-to move it further to the right. <a name="codebrowser-label"></a>
+to move it further to the right. <a name="codebrowser_label"></a>
 
 
 ### **Disabling Fields**
@@ -122,8 +121,7 @@ listing.
 ### **Insert Row**
 
 
-A new row for placing fields can be inserted by right clicking and selecting **Insert
-Row** from the popup menu. A new empty row will then be inserted at point where the mouse
+A new row for placing fields can be inserted by right clicking and selecting **Insert Row** from the popup menu. A new empty row will then be inserted at point where the mouse
 was clicked. Empty rows do not affect the listing because any rows (even rows that have
 fields) that don't have displayable information are suppressed from the listing.
 
@@ -131,8 +129,7 @@ fields) that don't have displayable information are suppressed from the listing.
 ### **Remove Row**
 
 
-Empty rows can be deleted by right clicking on the row and selecting the **Remove
-Row** option from the popup menu. The **Remove Row** option is not available if the
+Empty rows can be deleted by right clicking on the row and selecting the **Remove Row** option from the popup menu. The **Remove Row** option is not available if the
 row is not empty.
 
 
@@ -172,8 +169,7 @@ allow you to include members of the structure in its display.
 To create a custom format, right click on the formatter when the cursor is over a
 structure and choose the **Create Custom Format** option. A new format will be created
 with the same format as the Instruction/Data format. In addition to all the standard
-fields, a displayable field is created for each member and is available in the **Add
-Field** submenu.
+fields, a displayable field is created for each member and is available in the **Add Field** submenu.
 
 
 ### Delete Custom Format
@@ -244,7 +240,7 @@ provided.  In some instances a field can be accessed from more than one categor
 | + | Instruction/Data; Open Data | Opens and Closes structures and arrays. |
 
 
-*Provided by: *Code Browser* plugin*
+Provided by: *Code Browser* plugin
 
 
 **Related Topics:**

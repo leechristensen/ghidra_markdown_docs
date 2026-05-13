@@ -39,7 +39,7 @@ specified paper and printer.
 ## **The Print Options Dialog**
 
 
-![](images/PrintOptions.png)
+![Print Options](images/PrintOptions.png)
 
 
 When you select **Print** from the **File** menu, a dialog with basic options is

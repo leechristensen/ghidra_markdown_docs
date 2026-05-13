@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerWatchesPlugin](index.md) > Watches
+
 # Debugger: Watches
 
 
-![](images/DebuggerWatchesPlugin.png)
+![Debugger Watches Plugin](images/DebuggerWatchesPlugin.png)
 
 
 Watches refer to expressions which are evaluated each pause in order to monitor the value of
@@ -164,3 +166,8 @@ This action is available when at least one watch is selected. It removes those w
 This toggle is a write protector for machine state. To modify a watch's value, this toggle
 must be enabled. Edits are directed according the to [Control and Machine State
 Plugin](../DebuggerControlPlugin/DebuggerControlPlugin.md).
+
+
+---
+
+[← Previous: Static Synchronization](../DynamicStaticSynchronizationPlugin/DynamicStaticSynchronizationPlugin.md) | [Next: Variable Hovers →](../VariableValueHoverPlugin/VariableValueHoverPlugin.md)

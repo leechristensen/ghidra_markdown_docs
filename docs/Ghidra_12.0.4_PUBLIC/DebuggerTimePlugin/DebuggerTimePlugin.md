@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerTimePlugin](index.md) > Time
+
 # Debugger: Time
 
 
-![](images/DebuggerTimePlugin.png)
+![Debugger Time Plugin](images/DebuggerTimePlugin.png)
 
 
 This window displays all recorded snapshots in the current trace. Typically, there is one
@@ -37,8 +39,7 @@ time, or the snapshot does not correspond to an event, then it is the snapshot c
 - Schedule - if applicable, a source snap and the stepping schedule which produces this
 snapshot. This always applies to *scratch* snapshots produced by emulation, but may
 (rarely) apply to recorded events if the stepping schedule between them is somehow known. See
-the [Go To Time](#go-to-time) action for a description of the notation. *(hidden
-by default)*
+the [Go To Time](#go-to-time) action for a description of the notation. *(hidden by default)*
 - Description - a user-modifiable description of the snapshot or event. This defaults to
 the debugger's description of the event.
 
@@ -107,3 +108,8 @@ time coordinates with a back end that supports time travel. Notably, WinDbg TTD 
 hexadecimal for its event sequence numbers. Normally, the back end would set the UI's radix
 automatically, but in case it does not, or if you'd like to override the radix, these actions
 are available.
+
+
+---
+
+[← Previous: Memory Regions](../DebuggerRegionsPlugin/DebuggerRegionsPlugin.md) | [Next: Modules and Sections →](../DebuggerModulesPlugin/DebuggerModulesPlugin.md)

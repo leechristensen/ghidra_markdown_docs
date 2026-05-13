@@ -1,6 +1,6 @@
 [Home](../index.md) > [Search](index.md) > Search and Replace
 
-<a name="search-and-replace"></a>
+<a name="search_and_replace"></a>
 
 
 # Search And Replace
@@ -30,7 +30,7 @@ The Search and Replace Dialog provides controls and options for performing and s
 and replace operation.
 
 
-![](images/SearchAndReplaceDialog.png)
+![Search And Replace Dialog](images/SearchAndReplaceDialog.png)
 
 
 *Search and Replace Dialog*
@@ -129,7 +129,7 @@ to the database.)
 trees.
 
 
-<a name="search-and-replace-results"></a>
+<a name="search_and_replace_results"></a>
 
 
 ## Results Window
@@ -141,7 +141,7 @@ been made to the program. This provides an opportunity to review the pending cha
 they are applied. The changes can now be applied all at once or individually.
 
 
-![](images/SearchAndReplaceResults.png)
+![Search And Replace Results](images/SearchAndReplaceResults.png)
 
 
 *Search and Replace Results Window*
@@ -226,7 +226,7 @@ Press this button to apply all items in the table, regardless of what is
 selected.
 
 
-<a name="apply-selected"></a>
+<a name="apply_selected"></a>
 
 
 #### Apply Selected Action
@@ -238,7 +238,7 @@ the table. If only one item is selected when this is done, the selected item wil
 move to the next item in the table to facilitate a one at a time workflow.
 
 
-<a name="auto-delete"></a>
+<a name="auto_delete"></a>
 
 
 > **Note:** There is also a popup toggle action
@@ -303,7 +303,7 @@ be given as follows:
 | Red(.*)Blue(.*) | Green$1Purple$2 | RedApplesBlueBerries | GreenApplesPurpleBerries |
 
 
-*Provided by: *SearchAndReplacePlugin**
+Provided by: *SearchAndReplacePlugin*
 
 
 **Related Topics:**

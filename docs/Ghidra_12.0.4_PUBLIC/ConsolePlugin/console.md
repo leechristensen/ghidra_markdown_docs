@@ -18,17 +18,17 @@ color.
 - Standard error (red)
 
 
-![](images/Console.png)
+![Console](images/Console.png)
 
 
-## Scroll Lock ![lock.png](../icons/lock.png)
+## Scroll Lock ![Lock](../icons/lock.png)
 
 
 This action stops the console from automatically scrolling as new output is
 appended.
 
 
-## Clear ![erase16.png](../icons/erase16.png)
+## Clear ![Erase16](../icons/erase16.png)
 
 
 This action clears all content in the *Console* component.
@@ -52,7 +52,7 @@ you can navigate to that symbol or address by double-clicking on it. You will kn
 text is valid, because the mouse cursor will change from the pointer to a hand.
 
 
-*Provided by: *ConsolePlugin**
+Provided by: *ConsolePlugin*
 
 
 **Related Topics:**

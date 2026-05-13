@@ -16,14 +16,13 @@ The *Edit Field Name*dialog will be filled in with the
 current field name when displayed.
 
 
-| ![](images/EditFieldNameDialog.png) |
-| --- |
+![Edit Field Name Dialog](images/EditFieldNameDialog.png)
 
 
 ### Dialog Fields
 
 
-***Enter Field Name***
+*\**Enter Field Name*\**
 
 
 - Text field for entering the name of the compsite field.
@@ -32,8 +31,8 @@ name.  Default names of the form  field# are
 reserved for default names and may not be used.
 
 
-*Provided by: the ***Edit Labels***
-Plugin*
+Provided by: the **\*Edit Labels\***
+Plugin
 
 
 **Related Topics:**

@@ -16,7 +16,7 @@ under Windows 7, 8.x, 10 and 11.  For this application to execute properly the f
 
 - [Microsoft Visual C++ Redistributable for Visual Studio 2017](https://go.microsoft.com/fwlink/?LinkId=746572) with its'
 prerequisite updates, and
-- [DIA SDK runtime support.](#DIASDK)
+- [DIA SDK runtime support.](#dia-sdk-dependency)
 
 
 ## PDB File Processing
@@ -36,7 +36,7 @@ native execution issue and the use of an intermediate XML format.
 Although GHIDRA has been primarily designed to utilize locally stored PDB files during analysis,
 the ability to interactively download individual PDB files from a web-based Microsoft Symbol Server
 is also provided.  This capability is accessed via the GUI while a program is open via the
-***File → Load PDB File...*** action.
+**\*File → Load PDB File...\*** action.
 
 
 ## DIA SDK Dependency

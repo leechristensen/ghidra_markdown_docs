@@ -25,7 +25,7 @@ A user first selects the following lines of code. Then, from the Search menu the
 **Search for Matching Instructions** and one of the following options:
 
 
-![](images/SearchInstructions.png)
+![Search Instructions](images/SearchInstructions.png)
 
 
 **Option 1:**
@@ -35,12 +35,11 @@ If the **Include Operands** action is chosen then the search will find all
 instances of the following instructions and operands.
 
 
-![](images/SearchInstructionsIncludeOperands.png)
+![Search Instructions Include Operands](images/SearchInstructionsIncludeOperands.png)
 
 
 All of the bytes that make up the selected code will be searched for exactly, with no
-wild carding. The bit pattern **10000101 11000000 01010110 01101010 00010100
-01011110** which equates to the byte pattern **85 c0 56 6a 14 5e** is searched
+wild carding. The bit pattern **10000101 11000000 01010110 01101010 00010100 01011110** which equates to the byte pattern **85 c0 56 6a 14 5e** is searched
 for.
 
 
@@ -51,12 +50,11 @@ If the **Exclude Operands** option is chosen then the search will find all
 instances of the following instructions only.
 
 
-![](images/SearchInstructionsExcludeOperands.png)
+![Search Instructions Exclude Operands](images/SearchInstructionsExcludeOperands.png)
 
 
 Only the parts of the byte pattern that make up the instructions will be searched for
-with the remaining bits used as wildcards. The bit pattern **10000101 11...... 01010...
-01101010 ........ 01011...** is searched for where the .'s indicate the wild carded
+with the remaining bits used as wildcards. The bit pattern **10000101 11...... 01010... 01101010 ........ 01011...** is searched for where the .'s indicate the wild carded
 values.
 
 
@@ -68,7 +66,7 @@ will find all instances of the instruction and all operands except the 0x14 whic
 constant.
 
 
-![](images/SearchInstructionsIncludeOperandsNoConsts.png)
+![Search Instructions Include Operands No Consts](images/SearchInstructionsIncludeOperandsNoConsts.png)
 
 
 The bit pattern **10000101 11000000 01010110 01101010 ........ 01011110** which
@@ -80,10 +78,10 @@ number N between 0x0 and 0xff.
 will be shown and the operation will be cancelled.
 
 
-![](images/MultipleSelectionError.png)
+![Multiple Selection Error](images/MultipleSelectionError.png)
 
 
-*Provided by: *Mnemonic Search Plugin**
+Provided by: *Mnemonic Search Plugin*
 
 
 **Related Topics:**

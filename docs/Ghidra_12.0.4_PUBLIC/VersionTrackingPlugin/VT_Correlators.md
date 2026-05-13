@@ -1,3 +1,5 @@
+[Home](../index.md) > [VersionTrackingPlugin](index.md) > Symbol Name Match Correlator
+
 # Version Tracking Program Correlators
 
 
@@ -70,7 +72,7 @@ Duplicate Data Match reports 1.0 for similarity score (because by definition, th
 is exactly the same), but the confidence scores will all be less than 1.0. Duplicate Data
 Match uses 10/(total source and destination matches) for raw confidence, but due to the
 log10 scaling of the confidence reporting column these values will always be
-less than 0.7*.
+less than 0.7\*.
 
 
 Note that the data does not need to be defined in the destination program for these
@@ -139,7 +141,7 @@ Duplicate Function Match reports 1.0 for similarity score, even though the funct
 aren't necessarily identical byte-for-byte. The confidence scores will all be less than
 1.0. Duplicate Function Match uses 10/(total source and destination matches) for raw
 confidence, but due to the log10 scaling of the confidence reporting column
-these values will always be less than 0.7*.
+these values will always be less than 0.7\*.
 
 
 ### Exact Function Mnemonics Match
@@ -253,10 +255,10 @@ Duplicate Exact Symbol Name Match reports 1.0 for similarity score, since the sy
 (minus the tacked on address) are identical. The confidence scores will all be less than
 1.0. Duplicate Exact Symbol Name Match uses 10/(total source and destination matches) for
 raw confidence, but due to the log10 scaling of the confidence reporting column
-these values will always be less than 0.7*.
+these values will always be less than 0.7\*.
 
 
-* `log10(10/N) < 0.7 for N > 1; e.g. log10(5) ~= 0.69897`
+\* `log10(10/N) < 0.7 for N > 1; e.g. log10(5) ~= 0.69897`
 
 
 ### Similar Symbol Name Match
@@ -279,19 +281,19 @@ Each of the following program correlators determines correlation based on featur
 matched and unmatched references of their respective types.  The algorithm used is
 
 
-1. Identify functions that reference each ACCEPTED (![flag.png](../icons/flag.png)) match of the correct type.
+1. Identify functions that reference each ACCEPTED (![Flag](../icons/flag.png)) match of the correct type.
 2. Construct a sourceMap and a destinationMap of the form {referencingFunction:featureVector}
 where the featureVector identifies an ACCEPTED match with the log weight for
 the probability that it appears in any one function in the system.
 NOTE: The same feature and log weight are added to sourceMap and destinationMap for each match.
-For each referencingFunction add a unique feature* to its featureVector with probability 0.5 for each
+For each referencingFunction add a unique feature\* to its featureVector with probability 0.5 for each
 of its UNMATCHED references of the correct type.
 Score each pair of SOURCE and DESTINATION functions by the angle between their feature vectors,
 taking the highest scoring pairs as the result.
 Refine the results by removing matches that have no clear winner.
 
 
-* This is to account for the probabilistic cost of a reference being switched, dropped or picked
+\* This is to account for the probabilistic cost of a reference being switched, dropped or picked
 up between SOURCE and DESTINATION versions. Theoretically this should be dependent on the probability of the referenced element occurring,
 but for simplicity we consider the model for a generalized switch and drop/pickup by assigning
 a probability of 0.5 to each of the unmatched references made in any of our considered functions.
@@ -307,18 +309,18 @@ That is, a reference is considered if it is a reference to matched data location
 #### Example
 
 
-1. (![start-here_16.png](../icons/start-here_16.png))  Start a Version Tracking session
-2. (![Plus.png](../icons/Plus.png)) Run  the "Exact Data Match" correlator
-3. (![flag.png](../icons/flag.png)) Accept  all the matches
+1. (![Start Here 16](../icons/start-here_16.png))  Start a Version Tracking session
+2. (![Plus](../icons/Plus.png)) Run  the "Exact Data Match" correlator
+3. (![Flag](../icons/flag.png)) Accept  all the matches
 ![Select All Exact Matches and Accept](images/DataRefCorr_ExactSelectAll.png)
-4. (![Plus.png](../icons/Plus.png)) Run the "Data Reference Correlator"
-![](images/DataRefCorrelator_Setup.png)
+4. (![Plus](../icons/Plus.png)) Run the "Data Reference Correlator"
+![Data Ref Correlator Setup](images/DataRefCorrelator_Setup.png)
 5. Try using the default options (click 'Next' and 'Finish'):
-![](images/DataRefCorr_options.png)
+![Data Ref Corr Options](images/DataRefCorr_options.png)
 6. Now try sorting on Score for the Data Reference Correlator and note that the lowest score is above the
 minimum threshold set in the options.  If a function is missing that you expect to see in the results, try
 lowering the thresholds and/or unchecking the "Refine Results" checkbox.
-![](images/DataRefCorr_refined.png)
+![Data Ref Corr Refined](images/DataRefCorr_refined.png)
 
 
 ### Function Reference Correlator
@@ -335,20 +337,20 @@ considered if it is a reference to a matched function.
 1. By first running the "Exact Function Instructions Match" correlator, and then
 running the "Function Reference Correlator" with the default options as above, we see
 potential matches with Scores &gt;= 0.5.
-![](images/FuncRefCorr_defaultOptions_results.png)
+![Func Ref Corr Default Options Results](images/FuncRefCorr_defaultOptions_results.png)
 2. By lowering the "Minimum similarity threshold (score)", we see one additional possible match.
 The lower score indicates to us that this function, "__onexit", makes reference to functions that have not been matched yet.
-![](images/FuncRefCorr_lowerScoreThresh.png)
+![Func Ref Corr Lower Score Thresh](images/FuncRefCorr_lowerScoreThresh.png)
 3. By using the same thresholds as above, but also unchecking the "Refine Results" box, we
 get many more results returned from the Reference Correlator.  In this case, most of the additional results
 are BLOCKED by our previously ACCEPTED matches, which, for example, results in only the correct pair for
 "print" being made available for matching.
-![](images/FuncRefCorr_lowerScoreThreshUnrefined.png)
-![](images/FuncRefCorr_lowerScoreThreshUnrefined_results.png)
+![Func Ref Corr Lower Score Thresh Unrefined](images/FuncRefCorr_lowerScoreThreshUnrefined.png)
+![Func Ref Corr Lower Score Thresh Unrefined Results](images/FuncRefCorr_lowerScoreThreshUnrefined_results.png)
 NOTE: By deafult the Version Tracking table does not display "Blocked" matches.
-To see them, go to the Match Table Filters (![settings16.gif](../icons/settings16.gif) in the upper right corner)
+To see them, go to the Match Table Filters (![Settings16](../icons/settings16.gif) in the upper right corner)
 and check the box next to "Blocked" under "Association Status".
-![](images/FuncRefCorr_MatchTableFilters_AssocStatus.png)
+![Func Ref Corr Match Table Filters Assoc Status](images/FuncRefCorr_MatchTableFilters_AssocStatus.png)
 
 
 ### Combined Function and Data Reference Correlator
@@ -367,7 +369,7 @@ considered if it is a reference to a matched function or matched data location.
 Main content blockquote
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -378,3 +380,8 @@ Tracking Matches Table](providers/VT_Matches_Table.md)
 - [Version Tracking Tool](VT_Tool.md)
 - [Version Tracking
 Introduction](Version_Tracking_Intro.md)
+
+
+---
+
+[← Previous: Manual Match Correlator](VT_Correlators.md) | [Next: BSim Program Correlator →](../BSimCorrelator/BSim_Correlator.md)

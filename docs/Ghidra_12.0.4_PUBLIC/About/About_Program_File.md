@@ -9,26 +9,22 @@ The *About Program* dialog displays summary information about a program.
 ## **To view information about the currently open (active) program**
 
 
-1. From the menu-bar of the tool that has the program open, select **Help  →  About Program ...**
+1. From the menu-bar of the tool that has the program open, select **Help → About Program ...**
 
 
-## **To view information about any program in the project window **
+## **To view information about any program in the project window**
 
 
 1. Right click on the program and select **About...** from the popup menu.
 
 
-![](images/About_Program.png)
+![About Program](images/About_Program.png)
 
 
 Figure 1 - About Program
 
 
-*Notes:
-When viewing the "About" information on a non-open program, you may get a very abbreviated
-version of the program's information if the program was created with a version of Ghidra
-before version 4.2.  Once a program has been saved with version 4.2 or later, the full
-"About" information will be available.*
+*Notes: When viewing the "About" information on a non-open program, you may get a very abbreviated version of the program's information if the program was created with a version of Ghidra before version 4.2. Once a program has been saved with version 4.2 or later, the full "About" information will be available.*
 
 
 ## Standard **information displayed in the "About Program" dialog**
@@ -63,7 +59,7 @@ displayed here will vary from program to program.
 1. Click the **OK** button.
 
 
-***Provided by:** *About Program* plugin*
+**Provided by:** *About Program* plugin
 
 
 **Related Topics:**

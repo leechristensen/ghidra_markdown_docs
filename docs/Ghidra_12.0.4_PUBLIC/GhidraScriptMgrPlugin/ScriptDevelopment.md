@@ -20,7 +20,7 @@ script-specific code.
 An implementation for Python (based on Jython) is also provided.
 
 
-![](images/New_Script_Editor.png)
+![New Script Editor](images/New_Script_Editor.png)
 
 
 ## Tips
@@ -79,12 +79,7 @@ of the [`Import-Package` attribute](https://osgi.org/specification/osgi.core/7.0
 For example:
 
 
-`
-@importpackage org.my.script.library
-@importpackage org.my.script.library,org.your.script.library
-@importpackage org.apache.commons.collections.properties;version=4.4
-@importpackage org.ghidra.analysis;version="[1.1,2)"
-`
+`@importpackage org.my.script.library @importpackage org.my.script.library,org.your.script.library @importpackage org.apache.commons.collections.properties;version=4.4 @importpackage org.ghidra.analysis;version="[1.1,2)"`
 
 
 **`@keybinding`**
@@ -99,11 +94,7 @@ case-sensitive.
 For example:
 
 
-`@keybinding ctrl shift H
-@keybinding ctrl alt shift F1
-@keybinding L
-@keybinding ctrl shift COMMA
-`
+`@keybinding ctrl shift H @keybinding ctrl alt shift F1 @keybinding L @keybinding ctrl shift COMMA`
 
 
 **`@menupath`**
@@ -117,10 +108,7 @@ key. Ampersands can be escaped by adding another ampersand ("&&").
 For example:
 
 
-`@menupath File.Run.My Script
-@menupath File.Run.My &Script
-@menupath File.Run.Me && My &Script
-`
+`@menupath File.Run.My Script @menupath File.Run.My &Script @menupath File.Run.Me && My &Script`
 
 
 `@toolbar`
@@ -130,7 +118,7 @@ This tag indicates a top-level toolbar button should be created to launch this s
 and the image to use for the button. The Script Manager will attempt to locate the image
 in the [Script Directories](GhidraScriptMgrPlugin.md#script-directories-bundle-manager) and
 then in the Ghidra installation. If the image does not exists, a toolbar button will be
-created using the default Ghidra ![core.png](../icons/core.png) image.
+created using the default Ghidra ![Core](../icons/core.png) image.
 
 
 For example, `"@toolbar myScriptImage.gif"`.

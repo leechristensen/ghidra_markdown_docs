@@ -12,7 +12,7 @@ The Ghidra Server provides file access to multiple users enabling a team to coll
 ## Running the Server
 
 
-The Ghidra Server capability is incorporated into the standard distribution of Ghidra.  Please refer to the ***svrREADME.html*** file located within the Ghidra installation directory (***`<your installation directory>`/server/svrREADME.html***).
+The Ghidra Server capability is incorporated into the standard distribution of Ghidra.  Please refer to the **\*svrREADME.html\*** file located within the Ghidra installation directory (**\*`<your installation directory>`/server/svrREADME.html\***).
 This file will provide information regarding the installation, configuration and administration of the Ghidra Server.
 
 

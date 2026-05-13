@@ -1,4 +1,4 @@
-[Home](../index.md) > [VisualGraph](index.md) > Visual Graphs
+[Home](../index.md) > [VisualGraph](index.md) > Satellite View
 
 # Visual Graphs
 
@@ -28,7 +28,7 @@ current graph fits into the primary view.
 The Satellite View can be in one of three states:  docked, undocked, or not showing. A
 docked satellite view will be display in a corner of the primary graph. An undocked view
 will be displayed in its own window. If the view is not showing, there will be an
-![network-wireless.png](../icons/network-wireless.png)icon in the corner to indicate that
+![Network Wireless](../icons/network-wireless.png)icon in the corner to indicate that
 it is available.
 
 
@@ -54,12 +54,10 @@ The Satellite View is docked by default. However, you can choose to instead
 undock it and display it in its own window.
 
 
-To undock the Satellite View, right-click in the graph and deselect the **Dock
-Satellite View** menu item.
+To undock the Satellite View, right-click in the graph and deselect the **Dock Satellite View** menu item.
 
 
-To re-dock the Satellite View, right-click in the graph and select the **Dock Satellite
-View** menu item.
+To re-dock the Satellite View, right-click in the graph and select the **Dock Satellite View** menu item.
 
 
 > **Tip:** To show the Satellite View if it is
@@ -136,4 +134,4 @@ rectangle that is painted with the current background color of the vertex.
 
 ---
 
-[← Previous: Graph Services](../Graph/GraphServicesIntro.md) | [Next: Memory Map →](../MemoryMapPlugin/Memory_Map.md)
+[← Previous: Primary View](../FunctionGraphPlugin/Function_Graph.md) | [Next: Zooming →](../FunctionGraphPlugin/Function_Graph.md)

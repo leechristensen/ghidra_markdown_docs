@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerRegionsPlugin](index.md) > Memory Regions
+
 # Debugger: Memory Regions
 
 
-![](images/DebuggerRegionsPlugin.png)
+![Debugger Regions Plugin](images/DebuggerRegionsPlugin.png)
 
 
 Regions refer to ranges of allocated or reserved memory reported by the target, i.e., the
@@ -50,7 +52,7 @@ include the module's file name, otherwise the matcher has no means to identify a
 program.
 
 
-![](images/DebuggerRegionMapProposalDialog.png)
+![Debugger Region Map Proposal Dialog](images/DebuggerRegionMapProposalDialog.png)
 
 
 ### Map Regions to Current Program
@@ -110,3 +112,8 @@ at the current snapshot — are displayed in the listing and memory windows. Whe
 toggle is on, regions are ignored. Instead, all physical addresses are displayed. ("Physical"
 includes all Sleigh memory spaces except `OTHER`.) This toggle applies only to the
 current trace.
+
+
+---
+
+[← Previous: In the Listings](../DebuggerBreakpointMarkerPlugin/DebuggerBreakpointMarkerPlugin.md) | [Next: Time →](../DebuggerTimePlugin/DebuggerTimePlugin.md)

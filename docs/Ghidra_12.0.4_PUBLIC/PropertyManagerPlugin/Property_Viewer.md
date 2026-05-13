@@ -12,8 +12,7 @@ pink marker for each location of that property. The window provides a quick way 
 properties at once.
 
 
-| ![](images/PropertyViewer.png) |
-| --- |
+![Property Viewer](images/PropertyViewer.png)
 
 
 To display the Property Viewer window, select **Window → Manage Properties...** from the tool menu.
@@ -27,7 +26,7 @@ other locations where the Space properties exist; click on the right margin to n
 location.
 
 
-![](images/Markers.png)
+![Markers](images/Markers.png)
 
 
 <a name="deleteproperties"></a>To delete all properties in the Program,
@@ -39,7 +38,7 @@ location.
   - To undo the delete, select the [Undo]button on the tool.
 
 
-*Provided by: *PropertyManagerPlugin**
+Provided by: *PropertyManagerPlugin*
 
 
 **Related Topics:**

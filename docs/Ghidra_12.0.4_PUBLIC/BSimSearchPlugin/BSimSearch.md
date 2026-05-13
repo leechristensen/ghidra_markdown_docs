@@ -1,3 +1,5 @@
+[Home](../index.md) > [BSimSearchPlugin](index.md) > Authentication
+
 # BSim Search
 
 
@@ -32,7 +34,7 @@ The server dialog can be invoked either from main toolbar, **BSim → Manage Ser
 dialogs.
 
 
-![](images/ManageServersDialog.png)
+![Manage Servers Dialog](images/ManageServersDialog.png)
 
 
 The dialog displays a table showing all the currently defined BSim databases/servers.
@@ -56,7 +58,7 @@ This field will be blank for these databases when in a disconnected state.
 There are four primary actions for this dialog:
 
 
-<a name="manage-servers-actions"></a>
+<a name="manage_servers_actions"></a>
 
 
 - ![Add](../icons/Plus2.png) Add a new BSim database/server definition - an
@@ -79,7 +81,7 @@ Pressing the ![Add](../icons/Plus2.png) brings up the **Add BSim Server**
 dialog
 
 
-![](images/AddServerDialog.png)
+![Add Server Dialog](images/AddServerDialog.png)
 
 
 Choose the type of BSim database first as that will affect the type of information that
@@ -87,7 +89,7 @@ needs to be specified. For *postgres* and *elastic*, you must enter a database n
 hostname/address, and port.  Specify a host name of "localhost" for a server running on the local system.
 Invalid or missing entries are shown in red.  For a *file* database,
 the "..." button is used to launch a filechooser for selecting an existing H2 database file
-(*.mv.db).
+(\*.mv.db).
 
 
 ## BSim Overview Query
@@ -101,7 +103,7 @@ matching results for each function.
 To invoke an overview search dialog, select **BSim → Overview...**
 
 
-![](images/BSimOverviewDialog.png)
+![Bsim Overview Dialog](images/BSimOverviewDialog.png)
 
 
 To start the overview task, select a predefined BSim database server from the combo box or
@@ -117,7 +119,7 @@ After performing a BSim Overview Query, the **BSim Function Overview** window wi
 appear.
 
 
-![](images/BSimOverviewResults.png)
+![Bsim Overview Results](images/BSimOverviewResults.png)
 
 
 The table displays an entry for each function that had at least one hit. Each entry displays
@@ -125,7 +127,7 @@ the address of the function, its name, the number of hits BSim found and the sel
 of the function
 
 
-<a name="overview-search-info-action"></a>
+<a name="overview_search_info_action"></a>
 
 
 The ![Info](../icons/information.png) action pops up a dialog displaying the search
@@ -144,12 +146,12 @@ listing for the selected row(s).
 There are also several pop-up actions that work on the selected rows.
 
 
-- <a name="overview-initiate-search"></a>**Search Selected Functions** Performs a BSim
+- <a name="overview_initiate_search"></a>**Search Selected Functions** Performs a BSim
 Similar Functions Search on the selected functions in the Overview Results table.
-- <a name="overview-initiate-search-dialog"></a>**Search Selected Functions...** Shows the
+- <a name="overview_initiate_search_dialog"></a>**Search Selected Functions...** Shows the
 BSim Search Dialog populated with the selected functions in the Overview Results
 table.
-- <a name="overview-make-selection"></a>**Make Selection** Selects functions in the
+- <a name="overview_make_selection"></a>**Make Selection** Selects functions in the
 listing based on the selected rows in the Overview results table.
 
 
@@ -185,7 +187,7 @@ body of any function, an error dialog will appear).
 To invoke an overview search dialog, select **BSim → Search Functions...** or press the ![Provider](../icons/preferences-web-browser-shortcuts.png)  button in the main toolbar.
 
 
-![](images/BSimSearchDialog.png)
+![Bsim Search Dialog](images/BSimSearchDialog.png)
 
 
 This dialog allows you to configure the BSim search. The fields are as follows:
@@ -194,7 +196,7 @@ This dialog allows you to configure the BSim search. The fields are as follows:
 ### Standard Fields
 
 
-- <a name="bsim-server"></a>**BSim Server** - Choose a BSim database/sever from the
+- <a name="bsim_server"></a>**BSim Server** - Choose a BSim database/sever from the
 drop down list or define a new one using the ![Configure Filter](../icons/exec.png)
 button.
 - <a name="selected-functions"></a>**Function(s)** - Shows the function to be searched
@@ -210,7 +212,7 @@ threshold for matches. Confidence is an unbounded score that indicates how likel
 a given pair of functions to be a causal match. Formally, confidence is a log likelihood
 ratio that accumulates positive scores for features in common and negative scores for
 differences. The larger the score, the more significant the result.
-- <a name="max-matches"></a>**Max Matches Per Function** - Enter the maximum number of
+- <a name="max_matches"></a>**Max Matches Per Function** - Enter the maximum number of
 results to return for any one function
 
 
@@ -251,7 +253,7 @@ Once all the fields have valid values, press the **Search** button to initiate t
 Function search.
 
 
-<a name="bsim-quick-search"></a>
+<a name="bsim_quick_search"></a>
 
 
 > **Note:** A BSim search can also be initiated from
@@ -276,7 +278,7 @@ After initiating a BSim Similar functions search, a BSim Search Results Window w
 appear.
 
 
-![](images/BSimResultsProvider.png)
+![Bsim Results Provider](images/BSimResultsProvider.png)
 
 
 There are two panels associated with each result set. The top panel is the Function Matches
@@ -354,8 +356,7 @@ aggregated value over all function matches that share that same executable.
 
 - **Confidence** - For a query taken from functions in an *unknown* executable,
 the greater the number of function matches that come from a single executable, the more
-significant that executable is overall as a match to the unknown executable. The **per
-executable** confidence quantifies this by summing all the function match confidence
+significant that executable is overall as a match to the unknown executable. The **per executable** confidence quantifies this by summing all the function match confidence
 scores into a single executable score.
 - **Function Count** - A simple count of the number of function matches that share
 this same executable.
@@ -377,17 +378,16 @@ Overview Query](#bsim-overview-query).
 #### Toolbar Actions
 
 
-- <a name="search-info-action"></a>![Info](../icons/information.png)  **Search
-Info**- Pops up a dialog displaying the search criteria used to generate this results
+- <a name="search_info_action"></a>![Info](../icons/information.png)  **Search Info**- Pops up a dialog displaying the search criteria used to generate this results
 set.
-- <a name="searched-functions"></a>![Table](../icons/FunctionScope.gif)
+- <a name="searched_functions"></a>![Table](../icons/FunctionScope.gif)
 **Searched Functions**- Pops up a dialog showing a table of all searched functions and
 the match count for each.
-- <a name="filter-results-action"></a>![Configure Filter](../icons/exec.png) **Post Filters** - Pops up a dialog for creating
+- <a name="filter_results_action"></a>![Configure Filter](../icons/exec.png) **Post Filters** - Pops up a dialog for creating
 post search filters to further reduce the data being displayed in the table. See [BSim Filters](#filters) for a description of the filters.
-- <a name="hide-show-executables-table"></a>![Split](../icons/view_top_bottom.png)  **Hide/Show Executables Summary Table**- Toggles the
+- <a name="hide_show_executables_table"></a>![Split](../icons/view_top_bottom.png)  **Hide/Show Executables Summary Table**- Toggles the
 Executables Summary table on or off.
-- &gt;<a name="navigate-on-selection"></a>![Navigate On Incoming Event](../icons/locationIn.gif) **Navigate on table selection**- Toggles
+- &gt;<a name="navigate_on_selection"></a>![Navigate On Incoming Event](../icons/locationIn.gif) **Navigate on table selection**- Toggles
 whether or not single clicking in the table will cause the tool to navigate. Double
 clicking will always navigate.
 
@@ -395,37 +395,36 @@ clicking will always navigate.
 #### Popup Actions on Functions Table
 
 
-- <a name="apply-name"></a>**Apply Function Name** - For each selected row, Ghidra
+- <a name="apply_name"></a>**Apply Function Name** - For each selected row, Ghidra
 will attempt to apply the name and namespace of the matching function to the queried
 function. If more than one match has been selected for the queried function, then nothing
 will be applied.
-- <a name="apply-signature"></a>**Apply Function Signature** - For each selected row,
+- <a name="apply_signature"></a>**Apply Function Signature** - For each selected row,
 Ghidra will attempt to apply the name, namespace and skeleton signature of the matching
 function to the queried function. A skeleton signature is a signature where all
 non-primitive data types have been replaced with empty placeholder structures. This is safer
 than using all the data types which may not be appropriate for the target program as BSim
 finds matches against programs with differing architectures and compilers. If more than one
 match has been selected for the queried function, then nothing will be applied.
-- <a name="apply-signature-with-datatypes"></a>**Apply Function Signature and
-Data types** - For each selected row, Ghidra will attempt to apply the name, namespace,
+- <a name="apply_signature_with_datatypes"></a>**Apply Function Signature and Data types** - For each selected row, Ghidra will attempt to apply the name, namespace,
 signature,and referenced data types of the matching function to the queried function. This
 action should be used with caution as it could result in using many data types that are
 not appropriate for the target function, especially when applying signatures from different
 architectures and compilers. If more than one match has been selected for the queried
 function, then nothing will be applied.
-- <a name="clear-error-status"></a>**Clear Error Status** - Clears any apply error
+- <a name="clear_error_status"></a>**Clear Error Status** - Clears any apply error
 statuses on the selected row(s).
-- <a name="compare-functions"></a>**Compare Functions** - The Function Comparison
+- <a name="compare_functions"></a>**Compare Functions** - The Function Comparison
 window will be displayed for the selected query and matching function.
 
 
 #### Popup Actions on Executables Summary Table
 
 
-- <a name="filter-on-executable"></a>**Filter on this Executable** - This will cause a
+- <a name="filter_on_executable"></a>**Filter on this Executable** - This will cause a
 filter to be applied to the Function Matches table such that only matches from the selected
 Executable will be displayed.
-- <a name="load-executable"></a>**Load Executable** - The selected program will be
+- <a name="load_executable"></a>**Load Executable** - The selected program will be
 loaded and displayed in the active tool.
 
 
@@ -475,8 +474,12 @@ connection.
 
 
 If the BSim server requires PKI authentication, the user must register their certificate
-with the Ghidra client. This is accomplished from the main Project window by selecting **Set
-PKI Certificate...** from the **Edit** menu and pointing the dialog at the certificate
+with the Ghidra client. This is accomplished from the main Project window by selecting **Set PKI Certificate...** from the **Edit** menu and pointing the dialog at the certificate
 file. The same certificate is used for authenticating with BSim and with a Ghidra server, if
 either require PKI. Ghidra will typically bring up a password dialog once per session to unlock
 the certificate at the first point it is required.
+
+
+---
+
+[← Previous: Similar Function Search Results](BSimSearch.md) | [Next: Features and Weights →](../BSim/FeatureWeight.md)

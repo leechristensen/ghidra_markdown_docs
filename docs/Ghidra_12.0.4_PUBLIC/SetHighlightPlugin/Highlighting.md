@@ -5,7 +5,7 @@
 
 A highlight is a more permanent variation of a [selection](../Selection/Selecting.md). As you may recall, a selection can be
 cleared simply by clicking in the Code Browser. In order to clear a highlight, you must
-explicitly select the **Select →  Highlight** →  option.
+explicitly select the **Select → Highlight** →  option.
 
 
 You would commonly use a highlight when you do not want to lose a selection. For example,
@@ -22,17 +22,16 @@ results.
 
 
 1. Create a selection in the Code Browser
-2. From the menu-bar of the Code Browser, select **Select  →  Highlight** **→** **Selection**
+2. From the menu-bar of the Code Browser, select **Select → Highlight** **→** **Selection**
 OR
 From the right mouse popup menu of the Code Browser, select **Highlight**
-**→** **Entire
-Selection**
+**→** **Entire Selection**
 
 
 ### **To clear a highlight**
 
 
-1. From the menu-bar of the Code Browser, select **Select  →  Highlight** **→** **Clear**
+1. From the menu-bar of the Code Browser, select **Select → Highlight** **→** **Clear**
 OR
 From the right mouse popup menu of the Code Browser, select **Highlight**
 **→** **Clear**
@@ -41,35 +40,32 @@ From the right mouse popup menu of the Code Browser, select **Highlight**
 ### **To add a selection to a highlight**
 
 
-1. From the menu-bar of the Code Browser, select **Select  →  Highlight** **→** **Add Selection**
+1. From the menu-bar of the Code Browser, select **Select → Highlight** **→** **Add Selection**
 OR
 From the right mouse popup menu of the Code Browser, select **Highlight**
-**→**  **Add
-Selection**
+**→**  **Add Selection**
 
 
 ### **To subtract a selection from a highlight**
 
 
-1. From the menu-bar of the Code Browser, select **Select  →  Highlight** **→** **Subtract Selection**
+1. From the menu-bar of the Code Browser, select **Select → Highlight** **→** **Subtract Selection**
 OR
 From the right mouse popup menu of the Code Browser, select **Highlight**
-**→**  **Subtract
-Selection**
+**→**  **Subtract Selection**
 
 
 ### **To create a selection from a highlight**
 
 
 1. Create a highlight in the Code Browser
-2. From the menu-bar of the Code Browser, select **Select  →  From Highlight**
+2. From the menu-bar of the Code Browser, select **Select → From Highlight**
 OR
 From the right mouse popup menu of the Code Browser, select **Select**
-**→** **Entire
-Highlight**
+**→** **Entire Highlight**
 
 
-*Provided By: *Set Highlight Plugin**
+Provided By: *Set Highlight Plugin*
 
 
 ## Navigating over a highlight
@@ -91,15 +87,13 @@ corresponding address range.
 ### Using the Navigation Menu
 
 
-From the menu-bar of the Code Browser, select either **Navigation  →  Previous Highlighted Range** or **Navigation  →  Next Highlighted Range**.
+From the menu-bar of the Code Browser, select either **Navigation → Previous Highlighted Range** or **Navigation → Next Highlighted Range**.
 
 
 OR
 
 
-From the tool-bar of the Code Browser, select either the **Go to previous highlighted
-range** (![PreviousHighlightBlock16.gif](../icons/PreviousHighlightBlock16.gif)) and **Go to
-next highlighted range** (![NextHighlightBlock16.gif](../icons/NextHighlightBlock16.gif))
+From the tool-bar of the Code Browser, select either the **Go to previous highlighted range** (![Previous Highlight Block16](../icons/PreviousHighlightBlock16.gif)) and **Go to next highlighted range** (![Next Highlight Block16](../icons/NextHighlightBlock16.gif))
 buttons.
 
 
@@ -114,7 +108,7 @@ range in the highlight, the "Next Highlight Range" menu and toolbar options will
 disabled.
 
 
-*Provided By: *Next Prev Highlight Range Plugin**
+Provided By: *Next Prev Highlight Range Plugin*
 
 
 **Related Topics:**

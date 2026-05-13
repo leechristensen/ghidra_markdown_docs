@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Trace Management](DebuggerTraceManagerServicePlugin.md)

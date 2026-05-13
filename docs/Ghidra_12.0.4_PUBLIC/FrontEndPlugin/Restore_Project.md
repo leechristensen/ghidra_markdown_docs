@@ -15,20 +15,18 @@ To restore an archived project,
 
 
 1. If a project is open, close it by selecting **File → Close Project** from the [Ghidra Project Window](Ghidra_Front_end.md) menu.
-2. Select **File → Restore
-Project...**.
+2. Select **File → Restore Project...**.
 
 
-![](images/RestoreProjectFilledIn.png)
+![Restore Project Filled In](images/RestoreProjectFilledIn.png)
 
 
 1. The Restore Project Archive dialog is displayed.  Fill in the fields to indicate the
 project to restore and where to restore it.
 2. - *Archive File:* Specify the full path for the archive file to be
-restored. Use the browse button ("**. . .**") to locate the archive (*.gar)
+restored. Use the browse button ("**. . .**") to locate the archive (\*.gar)
 file.
-  - The *Restore
-Directory* and *Project Name* fields are automatically filled in when you use the
+  - The *Restore Directory* and *Project Name* fields are automatically filled in when you use the
 browse button ("**. . .**") to the right of the *Archive File* field to select
 the archive file.
   - *Restore Directory:* The project directory where the new project will be
@@ -39,8 +37,7 @@ created.
 1. Press the **OK** button.
 2. If the project is being restored to the same name and location as an existing
 project,  the *Project Exists* dialog is displayed, as shown below.
-| ![](images/ProjectExists.png) |
-| --- |
+![Project Exists](images/ProjectExists.png)
   - Specify a different *Restore Directory* or a *Project Name* that doesn't exist
 and try again.
 
@@ -61,7 +58,7 @@ files. You will see the folders and data files for the other users that were in 
 but you are the owner.
 
 
-*Provided by: *ArchivePlugin**
+Provided by: *ArchivePlugin*
 
 
 **Related Topics:**

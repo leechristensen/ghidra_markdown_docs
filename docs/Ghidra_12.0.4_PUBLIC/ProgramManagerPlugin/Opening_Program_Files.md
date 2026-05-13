@@ -15,11 +15,11 @@ A program can be opened in the currently displayed tool or can be displayed in a
 ## Opening a Program File in the Current Tool
 
 
-1. To open a program file in the currently displayed tool, select **File →  Open...** from the Ghidra Tool's menu.
+1. To open a program file in the currently displayed tool, select **File → Open...** from the Ghidra Tool's menu.
 2. The *Open Program* dialog is displayed.
 
 
-![](images/OpenProgram.png)
+![Open Program](images/OpenProgram.png)
 
 
 This allows selection of any file that is part of the active project.
@@ -35,14 +35,14 @@ program that you have opened. Select a tab to make that program the active one, 
 the image below.
 
 
-![](images/Tabs.png)
+![Tabs](images/Tabs.png)
 
 
 In addition to selecting a file, this dialog can be used to perform some basic
 directory/file operations. Right click on a program to get the directory/file menu.
 
 
-![](images/OpenProgramMenu.png)
+![Open Program Menu](images/OpenProgramMenu.png)
 
 
 ### History
@@ -53,7 +53,7 @@ versions of a program (if the selected program is [shared](../Glossary/glossary.
 view a read-only previous version of the program.
 
 
-![](images/OpenHistory.png)
+![Open History](images/OpenHistory.png)
 
 
 The History panel shows all previous versions for the selected program.  Each entry
@@ -69,7 +69,7 @@ pressing the "No History" button.
 1. Locate the program to open in the Ghidra Project Window.
 
 
-![](images/FrontEnd3.png)
+![Front End3](images/FrontEnd3.png)
 
 
 1. Left mouse press on the program in the tree, drag it to the Tool Chest, and drop it on
@@ -84,7 +84,7 @@ Chest indicates the CodeBrowser tool.
 Tools area of the Ghidra Project Window now shows the newly launched tool.
 
 
-![](images/FrontEndWithProgram.png)
+![Front End With Program](images/FrontEndWithProgram.png)
 
 
 Alternatively, programs can be dropped onto running tools (either the icon in
@@ -100,7 +100,7 @@ dialog is displayed to warn you of this. You will not be allowed to save changes
 unless you check it out.
 
 
-![](images/FileNotCheckedOut.png)
+![File Not Checked Out](images/FileNotCheckedOut.png)
 
 
 If you are working in a [shared project](../VersionControl/project_repository.md), AND if you plan to make
@@ -113,7 +113,7 @@ If you choose the "No" option, the program will be opened *read only*,
 thus you will have to save your changes to *another* filename.
 
 
-*Provided by: *ProgramManagerPlugin**
+Provided by: *ProgramManagerPlugin*
 
 
 **Related Topics:**

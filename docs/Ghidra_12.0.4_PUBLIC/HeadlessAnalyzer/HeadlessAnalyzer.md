@@ -28,9 +28,9 @@ analyzeHeadless [&lt;project_location&gt; &lt;project_name&gt;[/&lt;folder_path&
 
 [[-import [`<directory>`|`<file>`]+] | [-process [&lt;project_file&gt;]]]
 
-[-preScript `<ScriptName>` [`<arg>`]*]
+[-preScript `<ScriptName>` [`<arg>`]\*]
 
-[-postScript `<ScriptName>` [`<arg>`]*]
+[-postScript `<ScriptName>` [`<arg>`]\*]
 
 [-scriptPath "`<path1>`[;`<path2>`...]"]
 
@@ -88,4 +88,4 @@ analyzeHeadless [&lt;project_location&gt; &lt;project_name&gt;[/&lt;folder_path&
 
 ---
 
-[← Previous: Support](../Intro/GhidraSupport.md) | [Next: Keyboard Navigation →](../KeyboardNavigation/KeyboardNavigation.md)
+[← Previous: Support](../Intro/GhidraSupport.md) | [Next: GhidraGo →](../GhidraGo/GhidraGo.md)

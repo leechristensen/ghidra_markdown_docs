@@ -19,8 +19,7 @@ dialog to allow you to save any changes. Changed items are selected by default. 
 items that you do not want saved. Select the **OK** button close the project.
 
 
-| ![](images/SaveFiles.png) |
-| --- |
+![Save Files](images/SaveFiles.png)
 
 
 The **Deselect All** button deselects all changed items in your project. If you choose

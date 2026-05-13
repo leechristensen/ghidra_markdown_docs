@@ -28,7 +28,7 @@ projects, and different users is a long term goal for Ghidra.
 Ghidra supports three kinds of data types: "Built-in", user defined, and derived.
 
 
-| **Built-in** | The built-in data types are implemented directly in Java and are used for the               basic standard types such as byte, word, string, etc. They can't be changed, renamed,               or moved within an archive. |
+| **<a name="built_in"></a>Built-in** | The built-in data types are implemented directly in Java and are used for the               basic standard types such as byte, word, string, etc. They can't be changed, renamed,               or moved within an archive. |
 | --- | --- |
 | **User Defined** | There are four user defined data types: Structures, Unions, Enums, and               Typedefs. They can be created, modified, and renamed as needed. |
 | **Derived** | There are two derivative data types: Pointers and Arrays. Pointers and arrays can               be created and deleted as needed, but they take on a name derived from their base               type. |
@@ -48,7 +48,7 @@ modification](#opening-a-file-data-type-archive-for-editing) or as read-only. Wi
 actions for opening, closing, renaming, and making archives modifiable.
 
 
-### Built-In Data Type Archive ![closedBookBrown.png](../icons/closedBookBrown.png)
+### Built-In Data Type Archive ![Closed Book Brown](../icons/closedBookBrown.png)
 
 
 The "Built-in" archive is a special archive that is always available in the
@@ -62,7 +62,7 @@ or jar files are added while Ghidra is running, there is a refresh action which 
 add the new data types to the "built-in" archive.
 
 
-### File Data Type Archive ![closedBookGreen.png](../icons/closedBookGreen.png)
+### File Data Type Archive ![Closed Book Green](../icons/closedBookGreen.png)
 
 
 File data type archives (or simply: file archives) store data types in files and have
@@ -71,7 +71,7 @@ be open by more than one user at the same time (assuming it is located on a shar
 filesystem), but only one of those users can have it open for modification.
 
 
-### Project Data Type Archive ![closedBookBlue.png](../icons/closedBookBlue.png)
+### Project Data Type Archive ![Closed Book Blue](../icons/closedBookBlue.png)
 
 
 Project data type archives (or simply: project archives) store data types in Ghidra
@@ -81,7 +81,7 @@ archives can be versioned and shared in a multi-user environment just like progr
 the same "check-in/checkout" semantics for updating and sharing changes.
 
 
-### Data Types in a Program ![closedBookRed.png](../icons/closedBookRed.png)
+### Data Types in a Program ![Closed Book Red](../icons/closedBookRed.png)
 
 
 Besides being stored in archives, data types are also stored inside programs.
@@ -100,7 +100,7 @@ times are maintained to facilitate keeping data types consistent across archives
 programs.
 
 
-### Categories ![closedFolder.png](../icons/closedFolder.png)
+### Categories ![Closed Folder](../icons/closedFolder.png)
 
 
 Within a program or data type archive, data types can be organized using categories.
@@ -181,8 +181,7 @@ DataTypeName **(SourceArchiveName)**
 
 
 Ghidra uses the term *client* *archive* to
-represent the archive that contains a data type taken from a *[source archive](#source-archive)*. This includes normal data type archives **and
-the program**.
+represent the archive that contains a data type taken from a *[source archive](#source-archive)*. This includes normal data type archives **and the program**.
 
 
 ### Update Source Archive Names
@@ -281,8 +280,7 @@ Data Type Archive Architecture ).
 ### Opening a File Data Type Archive
 
 
-From the local menu ![menu16.gif](../icons/menu16.gif) , select ***Open
-File Archive...***. A file chooser will appear. Use the file chooser to find and select
+From the local menu ![Menu16](../icons/menu16.gif) , select *\**Open File Archive...*\**. A file chooser will appear. Use the file chooser to find and select
 the data type archive to open. A new node will appear in the tree for the newly opened
 archive. Also, the directory containing the newly opened archive will be added to the
 archive path if it is not already there.
@@ -291,8 +289,7 @@ archive path if it is not already there.
 ### Opening a Project Data Type Archive
 
 
-From the local menu ![menu16.gif](../icons/menu16.gif) , select ***Open
-Project Archive...***. A Ghidra project data type archive chooser will appear. This
+From the local menu ![Menu16](../icons/menu16.gif) , select *\**Open Project Archive...*\**. A Ghidra project data type archive chooser will appear. This
 chooser will show all the project archives in the current project. Use the chooser to find
 and select the project data type archive to open. A new node will appear in the tree for
 the newly opened archive.
@@ -301,8 +298,7 @@ the newly opened archive.
 ### Creating a New File Data Type Archive
 
 
-From the local menu ![menu16.gif](../icons/menu16.gif) , select ***New
-File Archive...***. A file chooser will appear. Use the file chooser to select a
+From the local menu ![Menu16](../icons/menu16.gif) , select *\**New File Archive...*\**. A file chooser will appear. Use the file chooser to select a
 directory and enter a name for the new archive. If an archive already exists with that
 name, a dialog will appear asking if the existing archive should be over-written. A new
 node will appear in the tree for the newly created archive.
@@ -311,8 +307,7 @@ node will appear in the tree for the newly created archive.
 ### Creating a New Project Data Type Archive
 
 
-From the local menu ![menu16.gif](../icons/menu16.gif) , select ***New
-Project Archive...***. A Ghidra project data type archive chooser will appear. Use the
+From the local menu ![Menu16](../icons/menu16.gif) , select *\**New Project Archive...*\**. A Ghidra project data type archive chooser will appear. Use the
 chooser to select a folder and enter a name for the new archive. A new node will appear in
 the tree for the newly created archive.
 
@@ -331,13 +326,12 @@ By default, data type archives are not assigned an architecture and adopt a defa
 as well as alignment and packing behavior.  While data types copied between archives or a program
 with disimilar *Data Organizations* will generally resolve correctly, unexpected results
 may sometimes arise (e.g., bit-field packing within structures).  In addition, this situation
-frequently causes some confusion when viewing and editing data types where the *Data
-Organization* differs from the intended target architecture.
+frequently causes some confusion when viewing and editing data types where the *Data Organization* differs from the intended target architecture.
 
 
 With either a file or project data type archive open for editing, a specific architecture
 may be assigned to the archive.  This is done by selecting the open archive node from the
-data type tree, right-click on it and select the ***Set Architecture...*** action.
+data type tree, right-click on it and select the *\**Set Architecture...*\** action.
 This will popup a processor/compiler-specification selection dialog from which a selection
 may be made and the **OK** button clicked.  A final confirmation dialog will be displayed
 before completing the change from which the **Set Architecture** or **Cancel** button
@@ -356,7 +350,7 @@ an architecture setting change to allow for a fallback if neccessary.
 
 With either a file or project data type archive open for editing, a currently assigned architecture
 may be cleared for a selected archive.  This is done by selecting the open archive node from the
-data type tree, right-click on it and select the ***Clear Architecture*** action.
+data type tree, right-click on it and select the *\**Clear Architecture*\** action.
 A final confirmation dialog will be displayed
 before completing the change from which the **Clear Architecture** or **Cancel** button
 must be clicked to confirm or cancel the change.  If confirmed, the archive will revert a default
@@ -372,8 +366,7 @@ architecture setting to allow for a fallback if neccessary.
 ### Closing a Data Type Archive
 
 
-Select the data type archive to close, right-click on it and select the ***Close
-Archive*** action. The archive will be removed from the tree.
+Select the data type archive to close, right-click on it and select the *\**Close Archive*\** action. The archive will be removed from the tree.
 
 
 ### Opening a File Data Type Archive for Editing
@@ -381,7 +374,7 @@ Archive*** action. The archive will be removed from the tree.
 
 When an archive is first opened, it is not editable. In order to make any changes to
 the archive, it must be open for editing. Select the archive to edit, right-click on it
-and select the ***Open for Editing*** action. If someone else is currently
+and select the *\**Open for Editing*\** action. If someone else is currently
 editing that archive, this action will fail and a dialog will appear explaining that
 someone else is already editing that archive.
 
@@ -392,7 +385,7 @@ someone else is already editing that archive.
 When an archive that is [open for editing](#opening-a-file-data-type-archive-for-editing) no longer
 needs to be edited, then it should be put back to a read-only mode so that other users
 can then modify it. Select the data type archive to close for editing, right-click on it
-and select the ***Close for Editing*** action. If the archive has unsaved
+and select the *\**Close for Editing*\** action. If the archive has unsaved
 changes, a dialog will appear providing an opportunity to save the changes.
 
 
@@ -400,10 +393,10 @@ changes, a dialog will appear providing an opportunity to save the changes.
 
 
 Whenever a data type archive has been opened for
-editing and has unsaved changes, the node will display its name with '*' attached.
-For example the archive "MyArchive" will display as "MyArchive *". To save these changes,
-right-click on the unsaved archive and select the ***Save Archive*** action. The
-changes will be saved and the name will be updated to not show a '*'.
+editing and has unsaved changes, the node will display its name with '\*' attached.
+For example the archive "MyArchive" will display as "MyArchive \*". To save these changes,
+right-click on the unsaved archive and select the *\**Save Archive*\** action. The
+changes will be saved and the name will be updated to not show a '\*'.
 
 
 Unimplemented Action
@@ -449,7 +442,7 @@ cleared.
 
 Deleting an archive will not only remove the archive from the tree, but will
 permanently remove it from the filesystem. To delete an archive, right-click on it and
-select the ***Delete Archive*** action. An archive file must be open for editing
+select the *\**Delete Archive*\** action. An archive file must be open for editing
 before this action will appear (see [Opening a Data Type
 Archive for Editing](#opening-a-file-data-type-archive-for-editing)).
 
@@ -458,9 +451,9 @@ Archive for Editing](#opening-a-file-data-type-archive-for-editing)).
 
 
 When an archive file fails to open (when Ghidra can't find the file in the archive path
-or encounters a permission problem) it will be displayed with the ![closedFolderInvalid.png](../icons/closedFolderInvalid.png) icon. If you wish to permanently remove the file path
+or encounters a permission problem) it will be displayed with the ![Closed Folder Invalid](../icons/closedFolderInvalid.png) icon. If you wish to permanently remove the file path
 from the tool configuration and the current program options, you may right-click on it and
-select the ***Remove Invalid Archive*** action.
+select the *\**Remove Invalid Archive*\** action.
 
 
 ### Updating an Archive From a Source Archive
@@ -468,13 +461,12 @@ select the ***Remove Invalid Archive*** action.
 
 Datatypes within an archive that originally came from some other source archive may
 need updating if they have been changed in the originating archive. If a an archive has
-one or more datatypes that need updating, it will be marked with either the ![smallLeftArrow.png](../icons/smallLeftArrow.png) or the ![doubleArrow.png](../icons/doubleArrow.png)
+one or more datatypes that need updating, it will be marked with either the ![Small Left Arrow](../icons/smallLeftArrow.png) or the ![Double Arrow](../icons/doubleArrow.png)
 icon.
 
 
 To update the datatypes, right-click on the node that needs updating and select
-**Update Datatypes From** ***→** **&lt;Source Archive
-Name&gt;.*** The Update Data Types dialog will be shown allowing you to select
+**Update Datatypes From** *\**→** **&lt;Source Archive Name&gt;.*\** The Update Data Types dialog will be shown allowing you to select
 the datatypes to update.
 
 
@@ -493,12 +485,11 @@ detected and the archive will be considered updated.
 Datatypes within an archive that originally came from some other source archive may
 have been changed and need to be pushed back (committed) to the originating archive. If a
 an archive has one or more datatypes that need committing, it will be marked with either
-the ![smallRightArrow.png](../icons/smallRightArrow.png) or the ![doubleArrow.png](../icons/doubleArrow.png) icon.
+the ![Small Right Arrow](../icons/smallRightArrow.png) or the ![Double Arrow](../icons/doubleArrow.png) icon.
 
 
 To commit the datatypes, right-click on the node that contains the changed datatypes
-and select **Commit Datatypes To** ***→** **&lt;Source Archive
-Name&gt;.*** The Commit Data Types dialog will be shown allowing you to select
+and select **Commit Datatypes To** *\**→** **&lt;Source Archive Name&gt;.*\** The Commit Data Types dialog will be shown allowing you to select
 the datatypes to commit.
 
 
@@ -525,13 +516,12 @@ source archive.
 Datatypes within an archive that originally came from some other source archive may
 have been changed and need to be reverted back to same state as the source archive (i.e.
 discard the local changes) If a an archive has one or more datatypes that can be
-reverted, it will be marked with either the ![smallRightArrow.png](../icons/smallRightArrow.png)
-or the ![doubleArrow.png](../icons/doubleArrow.png) icon.
+reverted, it will be marked with either the ![Small Right Arrow](../icons/smallRightArrow.png)
+or the ![Double Arrow](../icons/doubleArrow.png) icon.
 
 
 To revert the datatypes, right-click on the node that contains the changed datatypes
-and select **Revert Datatypes To** ***→** **&lt;Source Archive
-Name&gt;.*** The Revert Data Types dialog will be shown allowing you to select
+and select **Revert Datatypes To** *\**→** **&lt;Source Archive Name&gt;.*\** The Revert Data Types dialog will be shown allowing you to select
 the datatypes to revert.
 
 
@@ -546,8 +536,7 @@ action will be available.
 
 
 To disassociate datatypes, right-click on the node that contains the datatypes and
-select **Disassociate Datatypes From** ***→** **&lt;Source
-Archive Name&gt;.*** The Revert Data Types dialog will be shown allowing you to
+select **Disassociate Datatypes From** *\**→** **&lt;Source Archive Name&gt;.*\** The Revert Data Types dialog will be shown allowing you to
 select the datatypes to revert.
 
 
@@ -564,8 +553,7 @@ source archive.
 
 To refresh sync indicators for datatypes associated with a particular source archive,
 right-click on the node that contains the datatypes and select
-**Refresh Sync Indicators For** ***→** **&lt;Source Archive
-Name&gt;.*** &lt;
+**Refresh Sync Indicators For** *\**→** **&lt;Source Archive Name&gt;.*\** &lt;
 
 
 ### Version Control / Multi-user Actions on Project Archives
@@ -583,9 +571,9 @@ the Project Window for more information.
 structure. Categories can contain data types and other categories. Archive nodes represent
 the root or default category for their corresponding archive they represent in addition to
 representing the archive itself. In other words, most of the actions that apply to category
-nodes can also be applied to archive nodes. The two exceptions are ***Delete*** and
-***Rename***. The root category in an archive cannot be deleted and to rename it,
-you must use the ***Save As...*** action, since its name is the name of the
+nodes can also be applied to archive nodes. The two exceptions are *\**Delete*\** and
+*\**Rename*\**. The root category in an archive cannot be deleted and to rename it,
+you must use the *\**Save As...*\** action, since its name is the name of the
 archive.
 
 
@@ -593,21 +581,21 @@ archive.
 
 
 Right-click on the category where the new category is to be created. Select the
-***New →  Category*** action and a new
+*\**New → Category*\** action and a new
 category named "New Category" will be created.
 
 
 ### Renaming a Category
 
 
-Right-click on the category to be renamed. Select the ***Rename*** action and
+Right-click on the category to be renamed. Select the *\**Rename*\** action and
 then type in the new name in the in-place text edit box.
 
 
 ### Deleting a Category
 
 
-Right-click on the category to be deleted. Select the ***Delete*** action. A
+Right-click on the category to be deleted. Select the *\**Delete*\** action. A
 confirmation dialog will appear since **this action cannot be undone** (unless its in
 the program's archive)
 
@@ -656,7 +644,7 @@ types and so on, until finally they are built on the primitive types (the built-
 types.)
 
 
-![](../shared/note.yellow.png)Built-in types have several restrictions. They
+![Note.Yellow](../shared/note.yellow.png)Built-in types have several restrictions. They
 always live in the root category of an archive and they can't be renamed.
 
 
@@ -687,7 +675,7 @@ Function Definitions, Typedefs and Pointers.
 
 Structures, unions, enums, and function definitions can be created by right-clicking
 on the category where the new type should be located, and then choosing either the
-***New →  Structure*, *New →  Union*,** ***New →  Enum*** or ***New →  Function Definition*** action respectively. Each of
+**\*New → Structure*, *New → Union*,** *\**New → Enum*\** or *\**New → Function Definition*\** action respectively. Each of
 these actions will bring up an appropriate editor ([structure
 editor](../DataTypeEditors/StructureEditor.md) for structures and unions, the [enum editor](../DataTypeEditors/EnumEditor.md) for enums and the edit function
 signature editor for function definitions) for creating the new desired data type.
@@ -697,14 +685,12 @@ signature editor for function definitions) for creating the new desired data typ
 
 
 Creating a new **typedef** is even easier. Right-click on the data type to be
-typedef'ed and select the ***New →  Typedef on
-XYZ*** action. A new typedef will be created on the *XYZ* data type in the
+typedef'ed and select the *\**New → Typedef on XYZ*\** action. A new typedef will be created on the *XYZ* data type in the
 same category as the original data type.
 
 
-Alternatively, you can click ***New →
-Typedef...***, which will show a dialog that allows you to choose a typedef name
-and the data type from which the typedef will be created.* This action can
+Alternatively, you can click *\**New → Typedef...*\**, which will show a dialog that allows you to choose a typedef name
+and the data type from which the typedef will be created.\* This action can
 also be executed from any folder instead of directly on another data type.
 
 
@@ -716,16 +702,16 @@ where a dynamic name will be assigned based upon the underlying pointer and assi
 typedef attribute settings. Examples:
 
 
-- *char * __((space(ram)))*
-- *int * __((offset(0x8)))*
+- *char \* __((space(ram)))*
+- *int \* __((offset(0x8)))*
 - *pointer __((image-base-relative))*
 
 
 #### Creating a Pointer
 
 
-To create a **pointer**, you can click ***New →  Pointer to XYZ***. A new pointer will be created to the *XYZ* data
-type in the same category as the original data type.*
+To create a **pointer**, you can click *\**New → Pointer to XYZ*\**. A new pointer will be created to the *XYZ* data
+type in the same category as the original data type.\*
 
 
 > **Note:** * A pointer will always be created
@@ -740,7 +726,7 @@ the Browser](../DataPlugin/Data.md#structure) for details.
 ### Renaming a Data Type
 
 
-Right-click on the data type to be renamed. Select the ***Rename*** action and
+Right-click on the data type to be renamed. Select the *\**Rename*\** action and
 then type in the new name in the in-place text edit box.
 
 
@@ -749,7 +735,7 @@ then type in the new name in the in-place text edit box.
 
 Only structures, unions, enums and functionDefinitions can be edited. To edit one of
 these data types, either double-click on its node or right-click its node and select the
-***Edit*** action. For structures and unions, the [structure
+*\**Edit*\** action. For structures and unions, the [structure
 editor](../DataTypeEditors/StructureEditor.md) will appear, and for enums the [enum editor](../DataTypeEditors/EnumEditor.md) will appear.
 
 
@@ -762,7 +748,7 @@ Dialog that you can use to choose a type to edit.
 ### Creating a new Enum from a Selection of Enums
 
 
-Select two or more existing enums. Select the ***Create Enum from Selection***
+Select two or more existing enums. Select the *\**Create Enum from Selection*\**
 action. A dialog will appear asking you for the new enum's name. This name must be unique
 or you will be prompted to enter a unique name. The resulting enum will contain a
 combination of all names and values from the selected enums. NOTE: If more than one of
@@ -777,7 +763,7 @@ had names modified to allow the addition of the entry.
 ### Deleting a Data Type
 
 
-Right-click on the category to be deleted. Select the ***Delete*** action. A
+Right-click on the category to be deleted. Select the *\**Delete*\** action. A
 confirmation dialog will appear since **this action cannot be undone** (unless its in
 the program's archive)
 
@@ -830,8 +816,7 @@ and the changes will be applied back to the source archive.
 If changes are made to a data type in a source archive that has associated data types in
 a client archive (another archive or the program), the data type in the client archive can
 be *updated* from the source archive. Right-click on
-the data type to be updated. Select the **Update From
-Archive** action and the changes will be applied from the archive.
+the data type to be updated. Select the **Update From Archive** action and the changes will be applied from the archive.
 
 
 ### Reverting Changes
@@ -875,7 +860,7 @@ type were created in the archive and copied to the program.
 A data type can be replaced by another data type. This means that every occurrence of
 the original data type in a program is replaced by the new data type and the original
 data type is deleted. To replace a data type, right-click on the type to be replaced
-and select the ***Replace Data Type...*** action.  This will show a
+and select the **\*Replace Data Type...\*** action.  This will show a
 [dialog](../DataTypeEditors/DataTypeSelectionDialog.md) that allows
 you to choose the replacement data type.
 
@@ -885,19 +870,19 @@ you to choose the replacement data type.
 
 Data types can be marked as *favorites* such that they show up in the **[Data](../DataPlugin/Data.md#favorites)** option menu and the **[Set Data Type](../FunctionPlugin/Variables.md#define-variable-data-type-or-function-return-type)** popup action menu in the
 Browser. This is a quick way to apply a data type to the Program. The default Code
-Browser has most of the well-known types in the ***BuiltInTypes*** category
+Browser has most of the well-known types in the *\**BuiltInTypes*\** category
 marked as a favorite.
 
 
-To make a favorite, right-click on the data type and select the ***Favorite***
-action. Favorite data types are marked with the ![emblem-favorite.png](../icons/emblem-favorite.png) icon.
+To make a favorite, right-click on the data type and select the *\**Favorite*\**
+action. Favorite data types are marked with the ![Emblem Favorite](../icons/emblem-favorite.png) icon.
 
 
-![](images/FavoriteDts.png)
+![Favorite Dts](images/FavoriteDts.png)
 
 
 To remove a favorite, right-click on the data type and deselect the
-***Favorite*** action.
+*\**Favorite*\** action.
 
 
 > **Note:** The favorites are identified by
@@ -959,7 +944,7 @@ naming concerns for such typedefs and to replace the use of custom BuiltIn data 
 be better modeled as a Pointer.
 
 
-*Provided by: *DataTypeManagerPlugin**
+Provided by: *DataTypeManagerPlugin*
 
 
 **Related Topics:**

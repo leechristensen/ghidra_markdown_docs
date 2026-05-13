@@ -72,7 +72,7 @@ of parameters is allowed. Common C functions which employ Varargs are *printf* a
 
 A function may be tagged with a predefined *Call-Fixup* which can be used to
 alter/simplify the semantic effect of calling such a function. The available set of
-predefined call-fixups are defined within the compiler specification (*.cspec file)
+predefined call-fixups are defined within the compiler specification (\*.cspec file)
 associated with a program. This feature is typically used when the effects of calling a
 well-known function need to be simplified so that the caller can be more easily analyzed
 and/or understood.
@@ -145,11 +145,7 @@ function signature either via the Code Browser listing or within the Decompiler
 ### Local Variables
 
 
-*Currently, there is no specific user interface
-action for creating Local Variables.  Stack and register variables will be created
-automatically when a suitable stack or register reference is created via the user
-interface.  Additionally, the Decompiler's commit actions will create Local Variables as
-needed.* *They can also be created programmatically.*
+*Currently, there is no specific user interface action for creating Local Variables. Stack and register variables will be created automatically when a suitable stack or register reference is created via the user interface. Additionally, the Decompiler's commit actions will create Local Variables as needed.* *They can also be created programmatically.*
 
 
 In addition to register and stack locations, Local Variables
@@ -178,8 +174,7 @@ displayed within the listing.
 
 
 1. Right mouse click on the return type or parameter within the function signature
-2. If the cursor is over the return type, Select **Set Data Type** →  ; if the cursor is over a parameter, select **Set Data
-Type** →
+2. If the cursor is over the return type, Select **Set Data Type** →  ; if the cursor is over a parameter, select **Set Data Type** →
   - The pull right menu lists data types that you have marked as "[favorites](../DataTypeManagerPlugin/data_type_manager_description.md#setting-favorite-data-types)."
   - After you apply a data type, this becomes your [most
 recently used data type](#recently-used-data-type) and is shown on the menu with the 'Y' as the "hot
@@ -202,7 +197,7 @@ key."
 window (drag and drop)
 
 
-1. From the Code Browser tool bar select Display Data Types  ![dataTypes.png](../icons/dataTypes.png)   icon
+1. From the Code Browser tool bar select Display Data Types  ![Data Types](../icons/dataTypes.png)   icon
 2. In the *Data Type Manager* window select the appropriate data type
 3. Drag and Drop the data type onto the target parameter, `<RETURN>` or local variable in the Code Browser
 
@@ -230,7 +225,7 @@ changes. To edit a function do the following:
 5. Press *OK* to save your changes.
 
 
-![](images/FunctionEditor.png)
+![Function Editor](images/FunctionEditor.png)
 
 
 ### Function Signature Field
@@ -252,11 +247,7 @@ If the parser fails to successfully parse your changed signature field, a dialog
 giving you the option to continue typing in the field or aborting your edits in that field.
 
 
-*Due to limitations in the parser, there are many
-function signatures that Ghidra supports that you cannot directly enter by typing in the
-function signature field.  For example, you cannot use the signature field to enter templated types.
-Also, the parser currently only supports common datatypes and datatypes that are currently used in your program.
-To enter more complicated values or find datatypes from open archives, use the more precise controls that the dialog provides.*
+*Due to limitations in the parser, there are many function signatures that Ghidra supports that you cannot directly enter by typing in the function signature field. For example, you cannot use the signature field to enter templated types. Also, the parser currently only supports common datatypes and datatypes that are currently used in your program. To enter more complicated values or find datatypes from open archives, use the more precise controls that the dialog provides.*
 
 
 ### Function Name
@@ -330,7 +321,7 @@ or **(ptr)** with the displayed computed storage.
 This field is a combobox that allows use to use a predefined Call-Fixup. A function may be
 tagged with a predefined Call-Fixup which can be used to alter/simplify the semantic effect
 of calling such a function. The available set of predefined Call-Fixups are defined within
-the compiler specification (*.cspec file) associated with a program. This feature is
+the compiler specification (\*.cspec file) associated with a program. This feature is
 typically used when the effects of calling a well-known function need to be simplified so
 that the caller can be more easily analyzed and/or understood.
 
@@ -349,7 +340,7 @@ which will lock-in parameter details within the Decompiler.  The **Signature Sou
 Function Listing Field can be useful for monitoring this state.
 
 
-![warning.help.png](../icons/warning.help.png)
+![Warning.Help](../icons/warning.help.png)
 If the signature has been autogenerated by the decompiler and changes have been made to
 things other than the signature, like calling convention or callfixup, that may affect the
 generated signature.  Consider changing the calling convention only to check if the
@@ -373,7 +364,7 @@ storage of a parameter. The parameter can even be divided amongst multiple stora
 Each row of the table specifies a storage location used by the parameter.
 
 
-![](images/EditStorage.png)
+![Edit Storage](images/EditStorage.png)
 
 
 ### Size Information
@@ -421,8 +412,7 @@ within the register, up to the size of the register.
 Once you have defined a function, you can make a function signature definition which is a
 new data type that can be applied to another function so that it has the same signature. The
 data type appears under the [program
-node](../DataTypeManagerPlugin/data_type_manager_window.md#the-data-type-tree) in the *[Manage Data
-Types](../DataTypeManagerPlugin/data_type_manager_description.md)* window.
+node](../DataTypeManagerPlugin/data_type_manager_window.md#the-data-type-tree) in the *[Manage Data Types](../DataTypeManagerPlugin/data_type_manager_description.md)* window.
 
 
 To create a function definition, position the cursor on a function signature, right mouse
@@ -438,8 +428,7 @@ type from the *Data Type Manager* window and drop it on the existing function wh
 want the new function signature to be created.
 
 
-*If you attempt to create a function definition on one
-that you have already defined, nothing happens.*
+*If you attempt to create a function definition on one that you have already defined, nothing happens.*
 
 
 ## Rename Variable
@@ -508,7 +497,7 @@ the [key bindings panel](../Tool/ToolOptions_Dialog.md#key-bindings)
 on the [Edit Options dialog](../Tool/ToolOptions_Dialog.md).
 
 
-*Provided By: *Function* Plugin*
+Provided By: *Function* Plugin
 
 
 **Related Topics:**

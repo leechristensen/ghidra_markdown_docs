@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Debug Console](DebuggerConsolePlugin.md)

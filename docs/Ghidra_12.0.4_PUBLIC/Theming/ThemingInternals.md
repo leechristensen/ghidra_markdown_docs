@@ -1,3 +1,5 @@
+[Home](../index.md) > [Theming](index.md) > Architecture
+
 # Theming Architecture
 
 
@@ -104,7 +106,7 @@ any existing values with the same ID. The values are loaded in the following ord
 
 
 - Java defaults (values from Look and Feel)
-- application defaults (from *.theme.properties files)
+- application defaults (from \*.theme.properties files)
 - applications dark defaults (if theme is dark)
 - theme values (values that were overridden by a specific theme)
 
@@ -220,7 +222,7 @@ differences among Look and Feels, we created a `LookandFeelManager` base class w
 sub-classes for each Look and Feel.
 
 
-*Provided by: *Theme Manager**
+Provided by: *Theme Manager*
 
 
 **Related Topics:**
@@ -229,3 +231,8 @@ sub-classes for each Look and Feel.
 - [Theming Overview](ThemingOverview.md)
 - [Theming User's Guide](ThemingUserDocs.md)
 - [Theming Developer's Guide](ThemingDeveloperDocs.md)
+
+
+---
+
+[← Previous: Developer's Guide](ThemingDeveloperDocs.md)

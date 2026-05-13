@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Modules and Sections](DebuggerModulesPlugin.md)

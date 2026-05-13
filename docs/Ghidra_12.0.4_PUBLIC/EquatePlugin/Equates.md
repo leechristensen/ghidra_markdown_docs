@@ -352,7 +352,7 @@ an operand may prevent rendering of the converted scalar value since reference m
 precedence over equates and data formatting.
 
 
-*Provided By: *EquatePlugin* and *EquateTablePlugin**
+Provided By: *EquatePlugin* and *EquateTablePlugin*
 
 
 **Related Topics:**

@@ -14,8 +14,7 @@ To Clear a single instruction,
 
 
 1. Position the cursor on a defined instruction or data code unit
-2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Code
-Bytes*
+2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Code Bytes*
 Alternately: press the 'C' key
 
 
@@ -23,8 +22,7 @@ To Clear an area,
 
 
 1. Select the defined code units (data and instructions)
-2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Code
-Bytes*
+2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Code Bytes*
 Alternately: press the 'C' key
 
 
@@ -32,8 +30,7 @@ To Clear components of a structure directly in the browser,
 
 
 1. Select the structure elements in the open structure
-2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Code
-Bytes*
+2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Code Bytes*
 Alternately: press the 'C' key
 3.
 
@@ -57,7 +54,7 @@ If the check box is selected, that item will be removed everywhere within the se
 the OK button is pressed.
 
 
-![](images/ClearWithOptions.png)
+![Clear With Options](images/ClearWithOptions.png)
 
 
 To Clear With Options,
@@ -65,8 +62,7 @@ To Clear With Options,
 
 1. Create a selection in the Code Browser containing instruction and/or defined data to
 be cleared.
-2. From the right-mouse pop-up menu over the Code Browser window, select *Clear With
-Options...*
+2. From the right-mouse pop-up menu over the Code Browser window, select *Clear With Options...*
 3. De-selected the check boxes from the items that should not be cleared.
 4. Click *OK*.
 
@@ -197,8 +193,7 @@ The *Clear Flow* options dialog has check boxes to control its behavior. Pressin
 *OK* button will begin the clear process using the selected options.
 
 
-| ![](images/ClearFlow.png)   |
-| --- |
+![Clear Flow](images/ClearFlow.png)
 
 
 To Clear instructions produced by an invalid fall-through or bad code produced by a data
@@ -206,8 +201,7 @@ reference:
 
 
 1. Click on the first bad instruction
-2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Flow
-and Repair...*
+2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Flow and Repair...*
 3. Choose the desired *Clear Flow Options*.
 4. Click *OK*.
 
@@ -216,8 +210,7 @@ To Clear instructions referenced by one or more pointers :
 
 
 1. Select all pointer data units
-2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Flow
-and Repair...*
+2. From the right-mouse pop-up menu over the Code Browser window, select *Clear Flow and Repair...*
 3. Choose the desired *Clear Flow Options*.
 4. Click *OK*.
 
@@ -250,7 +243,7 @@ Following the clearing of the flow, attempt to repair the disassembly of referen
 the cleared region.
 
 
-*Provided By: *ClearPlugin**
+Provided By: *ClearPlugin*
 
 
 **Related Topics:**

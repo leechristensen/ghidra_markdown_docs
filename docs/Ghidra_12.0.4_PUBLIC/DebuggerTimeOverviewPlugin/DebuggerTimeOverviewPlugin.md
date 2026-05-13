@@ -1,3 +1,5 @@
+[Home](../index.md) > [DebuggerTimeOverviewPlugin](index.md) > Time Overview Sidebar
+
 # Debugger: Time Overview
 
 
@@ -27,3 +29,8 @@ itself, resulting in a more detailed zoom.
 
 Shift click & drag on the Trace Selection allows the user to move forward and backward
 in the view without rescaling.
+
+
+---
+
+[← Previous: Memview Plot](../DebuggerMemviewPlugin/DebuggerMemviewPlugin.md) | [Next: P-code Stepper →](../DebuggerPcodeStepperPlugin/DebuggerPcodeStepperPlugin.md)

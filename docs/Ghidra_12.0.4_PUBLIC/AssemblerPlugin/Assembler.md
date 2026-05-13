@@ -3,7 +3,7 @@
 # Assembler
 
 
-![](images/Assembler.png)
+![Assembler](images/Assembler.png)
 
 
 Assembly Editor
@@ -90,7 +90,7 @@ at the current address. If this fails, the error is displayed in Ghidra's status
 input fields remain on screen.
 
 
-*Provided by: *Assembler* plugin*
+Provided by: *Assembler* plugin
 
 
 **Related Topics:**

@@ -335,6 +335,7 @@ class GhidraHelpConverter:
         print("\n[9/10] Generating index files...")
         self._generate_master_index()
         self._generate_module_indexes()
+        self._generate_docs_root_summary()
         print("  Generated index files")
 
         # Step 10: Validate links
@@ -1023,6 +1024,13 @@ class GhidraHelpConverter:
                     converter = HTMLToMarkdownConverter()
                     markdown = converter.convert(content)
 
+                    # Make same-file anchor refs go through the resolver so
+                    # legacy HTML anchor names (e.g. `#DIASDK`) get mapped to
+                    # the rendered heading slug (`#dia-sdk-dependency`).
+                    if converter.anchor_to_heading_slug:
+                        self.link_resolver.add_anchor_mappings(output_path, converter.anchor_to_heading_slug)
+                    markdown = self.link_resolver.transform_markdown_links(markdown, output_path)
+
                     # Rewrite sibling .html refs to .md so converted docs still
                     # cross-link to each other after conversion. Older Ghidra
                     # releases (11.x) ship WhatsNew/ChangeHistory as HTML with
@@ -1173,8 +1181,55 @@ class GhidraHelpConverter:
         lines.append("## Table of Contents")
         lines.append("")
 
+        lines.extend(self._build_toc_list())
+
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+        lines.append("*Generated from Ghidra HTML help documentation*")
+        lines.append("")
+
+        index_path = self.output_dir / "index.md"
+        index_path.write_text("\n".join(lines), encoding="utf-8")
+
+        # SUMMARY.md powers the mkdocs-literate-nav plugin, which uses the
+        # bulleted list as the site nav (so the top-bar dropdown mirrors
+        # this ToC instead of the auto-generated alphabetical directory
+        # listing). mkdocs nav can't navigate to a `#anchor` of a file that
+        # is also a parent section — literate-nav renders such entries as
+        # blank "None" items — so strip anchors from parent links here.
+        summary_path = self.output_dir / "SUMMARY.md"
+        summary_lines = self._build_toc_list(for_nav=True)
+        summary_path.write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+
+    def _build_toc_list(self, *, for_nav: bool = False) -> list[str]:
+        """Build the TOC as a list of markdown bullet lines (used both in
+        the master index page and as the SUMMARY.md nav for the
+        mkdocs-literate-nav plugin).
+
+        When `for_nav` is set, format the list for mkdocs-literate-nav:
+        entries that have children become pure section headers (no link)
+        rather than `[text](file.md)` followed by children — otherwise
+        mkdocs shows the parent file as a duplicate child entry inside the
+        section.
+        """
+        out: list[str] = []
+
         def write_entry(entry: TOCEntry, level: int = 0) -> None:
-            indent = "  " * level
+            # 4 spaces per level — python-markdown (mkdocs's renderer) ignores
+            # 2-space nested list indentation and renders sub-items as siblings.
+            indent = "    " * level
+            if for_nav and entry.children:
+                # mkdocs-literate-nav: a parent with children should be a
+                # pure section header so the dropdown doesn't show the
+                # parent file as a duplicate child entry inside its own
+                # section. Page-level linking is preserved via the
+                # children (and the in-page index.md still has the link).
+                out.append(f"{indent}- {entry.text}")
+                for child in entry.children:
+                    write_entry(child, level + 1)
+                return
+
             if entry.target:
                 target = entry.target
 
@@ -1185,7 +1240,7 @@ class GhidraHelpConverter:
                         external_path = external_path[:-5] + ".md"
                     elif external_path.endswith(".htm"):
                         external_path = external_path[:-4] + ".md"
-                    lines.append(f"{indent}- [{entry.text}]({external_path})")
+                    out.append(f"{indent}- [{entry.text}]({external_path})")
                     for child in entry.children:
                         write_entry(child, level + 1)
                     return
@@ -1205,35 +1260,68 @@ class GhidraHelpConverter:
                 elif md_path.endswith(".html"):
                     md_path = md_path[:-5] + ".md"
 
-                # Add anchor if this entry has one (points to a section)
-                # Slugify and resolve the anchor for markdown compatibility
+                # Add anchor if this entry has one (points to a section).
+                # Leaf entries keep their anchors so multiple TOC items
+                # pointing at different sections of the same file remain
+                # distinct.
                 anchor_suffix = ""
                 if entry.anchor:
                     anchor_slug = slugify(entry.anchor)
                     resolved_anchor = self.link_resolver._resolve_anchor(anchor_slug, md_path)
                     anchor_suffix = f"#{resolved_anchor}"
 
-                lines.append(f"{indent}- [{entry.text}]({md_path}{anchor_suffix})")
+                if for_nav and anchor_suffix:
+                    # mkdocs's nav builder treats `file.md#anchor` as a
+                    # single filename and emits the href verbatim — so the
+                    # `.md` survives into the rendered nav and 404s under
+                    # `use_directory_urls: true`. Emit the rendered URL
+                    # form directly; mkdocs passes it through as-is.
+                    nav_target = md_path
+                    if nav_target.endswith(".md"):
+                        nav_target = nav_target[:-3] + "/"
+                    out.append(f"{indent}- [{entry.text}]({nav_target}{anchor_suffix})")
+                else:
+                    out.append(f"{indent}- [{entry.text}]({md_path}{anchor_suffix})")
             else:
-                lines.append(f"{indent}- **{entry.text}**")
+                out.append(f"{indent}- **{entry.text}**")
 
             for child in entry.children:
                 write_entry(child, level + 1)
 
         for entry in self.toc_tree.entries:
-            # Skip "What's New" since it's already at the top
+            # Skip "What's New" since it's already at the top of the
+            # master index page (handled separately by _generate_master_index).
             if entry.target and entry.target.startswith("external:docs/WhatsNew"):
                 continue
             write_entry(entry)
 
-        lines.append("")
-        lines.append("---")
-        lines.append("")
-        lines.append("*Generated from Ghidra HTML help documentation*")
-        lines.append("")
+        return out
 
-        index_path = self.output_dir / "index.md"
-        index_path.write_text("\n".join(lines), encoding="utf-8")
+    def _generate_docs_root_summary(self) -> None:
+        """Write `docs/SUMMARY.md`, listing every `Ghidra_*_PUBLIC` version
+        folder so mkdocs-literate-nav can drive the top-bar dropdown from
+        each version's TOC. Sorted newest version first.
+        """
+        docs_root = self.output_dir.parent
+        if not docs_root.exists():
+            return
+        versions = sorted(
+            (p for p in docs_root.iterdir() if p.is_dir() and p.name.startswith("Ghidra_")),
+            key=lambda p: p.name,
+            reverse=True,
+        )
+        if not versions:
+            return
+        lines = ["- [Home](index.md)"]
+        for v in versions:
+            # Display "Ghidra 12.0.4 PUBLIC" instead of the folder slug.
+            display = v.name.replace("_", " ")
+            # `folder/` is literate-nav's "recurse into this subdir's
+            # SUMMARY.md" idiom. mkdocs's link validator doesn't recognize
+            # it as a regular link — `validation.links.unrecognized_links`
+            # is set to `info` in mkdocs.yml so --strict ignores it.
+            lines.append(f"- [{display}]({v.name}/)")
+        (docs_root / "SUMMARY.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     def _generate_module_indexes(self) -> None:
         """Generate index.md files for each module."""

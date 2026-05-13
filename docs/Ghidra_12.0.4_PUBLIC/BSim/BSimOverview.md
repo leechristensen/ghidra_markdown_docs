@@ -1,3 +1,5 @@
+[Home](../index.md) > [BSim](index.md) > BSim
+
 # BSim Database
 
 
@@ -74,3 +76,8 @@ file-based databases are supported on all platforms via an embedded H2 database
 engine.  The BSim client
 software is supported on all platforms and can connect to servers on a different
 architecture.
+
+
+---
+
+[← Previous: Wildcard Assembler](../WildcardAssemblerModule/Wildcard_Assembler.md) | [Next: BSim Database Configuration →](DatabaseConfiguration.md)

@@ -1,8 +1,9 @@
+[Home](../index.md) > [FunctionGraphPlugin](index.md) > Zooming
+
 # Function Graph Plugin
 
 
-| ![](images/FunctionGraphWindow.png) |
-| --- |
+![Function Graph Window](images/FunctionGraphWindow.png)
 
 
 The Function Graph Plugin is a simple graph display that shows the code blocks of the
@@ -12,7 +13,7 @@ function containing the cursor in the [Listing](../CodeBrowserPlugin/CodeBrowser
 The display consists of the [Primary View](#primary-view) and the [Satellite View](../VisualGraph/Visual_Graph.md#satellite-view). There is also a group of [actions](#graph-actions) that apply to the entire graph.
 
 
-<a name="toggle-listing-and-function-graph"></a>
+<a name="toggle_listing_and_function_graph"></a>
 
 
 > **Tip:** Ctrl-Space will toggle
@@ -32,17 +33,15 @@ subroutine. If this is the case, then the background of the Primary View will be
 color, such in the following image:
 
 
-| ![](images/FunctionGraph_Provider_Undefined.png) |
-| --- |
+![Function Graph Provider Undefined](images/FunctionGraph_Provider_Undefined.png)
 
 
-<a name="stale-graph"></a> By default, as changes to the program are detected, the graph
+<a name="stale_graph"></a> By default, as changes to the program are detected, the graph
 will **not** relayout to account for these changes. The image below shows the bottom of
 the Primary View when the graph has detected changes and is considered **stale**
 
 
-| ![](images/FunctionGraph_Stale_Graph.png) |
-| --- |
+![Function Graph Stale Graph](images/FunctionGraph_Stale_Graph.png)
 
 
 Once a graph is stale, you can press the refresh button at any time to have the graph
@@ -56,8 +55,7 @@ If you would like to change the default behavior on program changes to perform a
 graph update, then you can change this value via the tool options. You can access these
 options by right-clicking in graph and selecting the **Properties** action. Alternatively,
 you can click on the tool's menu bar **Edit-&gt;Tool Options...** to launch
-the options.   From there you can find the option at **Function Graph-&gt;
-Automatic Graph Relayout**
+the options.   From there you can find the option at **Function Graph-&gt; Automatic Graph Relayout**
 
 
 ## Vertices (Blocks)
@@ -126,11 +124,10 @@ inside of the block. You may disable [popups](#popups) as desired.
 ### Vertex Actions
 
 
-| ![](images/FunctionGraph_Vertex_Header.png) |
-| --- |
+![Function Graph Vertex Header](images/FunctionGraph_Vertex_Header.png)
 
 
-<a name="vertex-action-color"></a>The ![](images/FunctionGraph_Vertex_Action_Color.png) button
+<a name="vertex_action_color"></a>The ![Function Graph Vertex Action Color](images/FunctionGraph_Vertex_Action_Color.png) button
 allows you to set the background color for the vertex. You may press the button to choose
 the color currently displayed in the icon, or you may use the drop-down menu to pick a
 previously used color. Additionally, from the drop-down menu you can clear the color or
@@ -141,26 +138,26 @@ choose a new color to set.
 applied to a vertex are also applied to the primary disassembly Listing.
 
 
-<a name="vertex-action-group"></a>The ![shape_handles.png](../icons/shape_handles.png)
+<a name="vertex_action_group"></a>The ![Shape Handles](../icons/shape_handles.png)
 button will [group](#vertex-grouping) all selected vertices.
 
 
 ### Popup Menu Vertex Actions
 
 
-<a name="vertex-action-label"></a>The ![](images/FunctionGraph_Vertex_Action_Label.png)
+<a name="vertex_action_label"></a>The ![Function Graph Vertex Action Label](images/FunctionGraph_Vertex_Action_Label.png)
 button allows you to set the label for the code block (this will also change the block
 header).
 
 
-<a name="vertex-action-full-view"></a>The ![fullscreen_view.png](../icons/fullscreen_view.png)
+<a name="vertex_action_full_view"></a>The ![Fullscreen View](../icons/fullscreen_view.png)
 toggle button allows you to quickly view the contents of the block in a full window
 view, which uses the same format as Ghidra's primary [Listing](../CodeBrowserPlugin/CodeBrowser.md). To restore the graph view
 from the full window view, click this action again, which will then have this icon:
-![](images/FunctionGraph_Vertex_Action_Full_View_Alt.png).
+![Function Graph Vertex Action Full View Alt](images/FunctionGraph_Vertex_Action_Full_View_Alt.png).
 
 
-<a name="vertex-action-xrefs"></a>The ![](images/FunctionGraph_Vertex_Action_XRefs.png)
+<a name="vertex_action_xrefs"></a>The ![Function Graph Vertex Action Xrefs](images/FunctionGraph_Vertex_Action_XRefs.png)
 button will show a table of xrefs to the entry point of the currently graphed
 function.
 
@@ -172,15 +169,14 @@ appear in the vertex containing the function entry point, for convenience.
 ### Grouped Vertex Actions
 
 
-| ![](images/FunctionGraph_Grouped_Vertex_Header.png) |
-| --- |
+![Function Graph Grouped Vertex Header](images/FunctionGraph_Grouped_Vertex_Header.png)
 
 
 > **Note:** This section describes vertex
 grouping, which is covered later in this document .
 
 
-<a name="group-vertex-action-color"></a>The ![](images/FunctionGraph_Vertex_Action_Color.png) button
+<a name="group_vertex_action_color"></a>The ![Function Graph Vertex Action Color](images/FunctionGraph_Vertex_Action_Color.png) button
 allows you to set the background color for the vertex. You may press the button to choose
 the color currently displayed in the icon, or you may use the drop-down menu to pick a
 previously used color. Additionally, from the drop-down menu you can clear the color or
@@ -216,21 +212,21 @@ take on that color.
 disable this feature.
 
 
-<a name="group-vertex-action-label"></a>The ![](images/FunctionGraph_Vertex_Action_Label.png) button
+<a name="group_vertex_action_label"></a>The ![Function Graph Vertex Action Label](images/FunctionGraph_Vertex_Action_Label.png) button
 allows you to set the text displayed in the group vertex. Unlike the action when used in a
 non-grouped vertex, this action will not edit the label at the start address of the
 vertex.
 
 
-<a name="vertex-action-ungroup"></a>The ![shape_ungroup.png](../icons/shape_ungroup.png) button will [ungroup](#the-ungrouping-process) the
+<a name="vertex_action_ungroup"></a>The ![Shape Ungroup](../icons/shape_ungroup.png) button will [ungroup](#the-ungrouping-process) the
 given vertex.
 
 
-<a name="group-vertex-action-group"></a>The ![shape_handles.png](../icons/shape_handles.png) button will [group](#vertex-grouping) all selected
+<a name="group_vertex_action_group"></a>The ![Shape Handles](../icons/shape_handles.png) button will [group](#vertex-grouping) all selected
 vertices.
 
 
-<a name="vertex-action-group-add"></a>The ![shape_square_add.png](../icons/shape_square_add.png) button will add to the given group vertex all other selected
+<a name="vertex_action_group_add"></a>The ![Shape Square Add](../icons/shape_square_add.png) button will add to the given group vertex all other selected
 vertices.
 
 
@@ -240,7 +236,7 @@ child, contained inside of the new grouped vertex. Alternatively, the **add to g
 action adds to the *existing* group node chosen all other selected vertices.
 
 
-<a name="vertex-action-regroup"></a>The regroup ![edit-redo.png](../icons/edit-redo.png) button is included in the header of any **uncollapsed** vertex,
+<a name="vertex_action_regroup"></a>The regroup ![Edit Redo](../icons/edit-redo.png) button is included in the header of any **uncollapsed** vertex,
 which is a vertex that is the member of a group, where that group has been [ungrouped](#the-ungrouping-process). This action will **regroup** (or collapse) all
 vertices in the same group as the vertex containing the action. To regroup is to convert
 all members of a given group back into a single grouped vertex.
@@ -306,12 +302,14 @@ angles.
 ## Vertex Grouping
 
 
-| ![](images/FunctionGraph_Pre_Group.png) Selected Vertices - Before Grouping |
-| --- |
+![Function Graph Pre Group](images/FunctionGraph_Pre_Group.png)
+
+*Selected Vertices - Before Grouping*
 
 
-| ![](images/FunctionGraph_Post_Group.png) Grouped Vertices |
-| --- |
+![Function Graph Post Group](images/FunctionGraph_Post_Group.png)
+
+*Grouped Vertices*
 
 
 You may select 2 or more vertices to be turned into a single grouped vertex. This allows
@@ -332,14 +330,12 @@ the body of the group vertex. By default, the titles of each grouped vertex will
 the text of the grouped vertex.
 
 
-| ![](images/FunctionGraph_Group_Text_Dialog.png) Grouped Vertex Text Input Dialog |
-| --- |
+![Function Graph Group Text Dialog](images/FunctionGraph_Group_Text_Dialog.png)
+
+*Grouped Vertex Text Input Dialog*
 
 
-*The default contents of the group vertex text entry dialog are generated from the
-titles of each vertex being grouped. When grouping a vertex which is itself a group, the
-text of that group vertex will be used in the text entry dialog in addition to its
-title.*
+*The default contents of the group vertex text entry dialog are generated from the titles of each vertex being grouped. When grouping a vertex which is itself a group, the text of that group vertex will be used in the text entry dialog in addition to its title.*
 
 
 > **Tip:** Grouped vertices may contain other
@@ -385,29 +381,28 @@ group.
 The following actions are buttons in the Function Graph Plugin header.
 
 
-| ![](images/FunctionGraph_Provider_Header.png) |
-| --- |
+![Function Graph Provider Header](images/FunctionGraph_Provider_Header.png)
 
 
-<a name="function-graph-action-copy"></a>The ![page_white_copy.png](../icons/page_white_copy.png) button will perform a copy action in one or more vertex
+<a name="function_graph_action_copy"></a>The ![Page White Copy](../icons/page_white_copy.png) button will perform a copy action in one or more vertex
 listings. See the [Clipboard](../ClipboardPlugin/Clipboard.md) help
 for more information on using copy in the Listing and Listing-based views.
 
 
-<a name="function-graph-action-paste"></a>The ![page_paste.png](../icons/page_paste.png) button will perform a paste action in one or more
+<a name="function_graph_action_paste"></a>The ![Page Paste](../icons/page_paste.png) button will perform a paste action in one or more
 vertex listings. See the [Clipboard](../ClipboardPlugin/Clipboard.md)
 help for more information on using paste in the Listing and Listing-based views.
 
 
-<a name="function-graph-action-home"></a>The ![house.png](../icons/house.png) button will
+<a name="function_graph_action_home"></a>The ![House](../icons/house.png) button will
 navigate to and select the entry point block.
 
 
-<a name="function-graph-reload-graph"></a>The ![Refresh](../icons/reload3.png) button clear all **position and grouping** changes made to the graph and
+<a name="function_graph_reload_graph"></a>The ![Refresh](../icons/reload3.png) button clear all **position and grouping** changes made to the graph and
 then perform a reload and relayout of the graph.
 
 
-<a name="function-graph-action-layout"></a>The ![](images/FunctionGraph_Action_Layout.png) button allows
+<a name="function_graph_action_layout"></a>The ![Function Graph Action Layout](images/FunctionGraph_Action_Layout.png) button allows
 you to both change the layout used to arrange the graph and to perform a relayout of the
 graph using the current layout. Simply pressing the button will trigger a relayout, whereas
 clicking on the drop-down arrow will allow you to choose a new layout.
@@ -417,7 +412,7 @@ clicking on the drop-down arrow will allow you to choose a new layout.
 perform a graph relayout without losing grouping information
 
 
-<a name="function-graph-action-format"></a>The ![field.header.png](../icons/field.header.png) button allows
+<a name="function_graph_action_format"></a>The ![Field.Header](../icons/field.header.png) button allows
 you to change the fields of the blocks' listing.
 
 
@@ -428,7 +423,7 @@ as well as adjusting the size of the fields in the vertex listing display, see t
 help](../CodeBrowserPlugin/Browser_Field_Formatter.md).
 
 
-<a name="function-graph-action-snapshot"></a>The ![camera-photo.png](../icons/camera-photo.png) button will create a [Snapshot](../Snapshots/Snapshots.md) of the current graph.
+<a name="function_graph_action_snapshot"></a>The ![Camera Photo](../icons/camera-photo.png) button will create a [Snapshot](../Snapshots/Snapshots.md) of the current graph.
 
 
 ## Path Highlight Actions
@@ -452,20 +447,20 @@ focus and hover, except in special cases, as noted.
 
 | Icon | Name | Description |
 | --- | --- | --- |
-| <a name="scoped-flow-from-block"></a> ![](images/FunctionGraph_Action_Show_Scoped_Flow_From_Block.png) | Show Scoped Flow From Block | Highlights control flow to code blocks that are only reachable if the current               code block is executed. This is useful to see a local neighborhood of blocks that               follow the current block. |
-| <a name="scoped-flow-to-block"></a> ![](images/FunctionGraph_Action_Show_Scoped_Flow_To_Block.png) | Show Scoped Flow To Block | Highlights control flow from code blocks that must eventually reach the current               code block. This is useful to see a local neighborhood of blocks that precede the               current block. |
-| <a name="paths-to-from-block"></a> ![](images/FunctionGraph_Action_Show_Paths_To_From_Block.png) | Show Paths To/From Block | Highlights control flow from codes blocks that can reach the current code block,               as well as control flow to code blocks that can be reached from the current block.               This is useful to show all possible flows before and after the current block. |
-| <a name="paths-from-block"></a> ![](images/FunctionGraph_Action_Show_Paths_From_Block.png) | Show Paths From Block | Highlights control flow to code blocks that can be reached from the current code block.               This is useful to show all possible flows after the current block. |
-| <a name="paths-to-block"></a> ![](images/FunctionGraph_Action_Show_Paths_To_Block.png) | Show Paths To Block | Highlights control flow from codes blocks that can reach the current code block.                This is useful to show all possible flows before the current block. |
-| <a name="loops-containing-block"></a> ![](images/FunctionGraph_Action_Show_Loops_Containing_Block.png) | Show Loops Containing Block | Highlights the control flow between all possible looped blocks (cycles) that pass               through the current block. If a function has multiple non-intersecting loops, this               helps resolve the loops from each other in the case that the graph layout has placed               them too close to differentiate. |
-| <a name="paths-from-focus-to-hover"></a> ![](images/FunctionGraph_Action_Show_Paths_From_Focus_To_Hover.png) | Show Paths From Focus to Hover (hover mode only) | Highlights the control flow from the currently focused code block to the               currently hovered code block. If there are no paths possible, no edges will be               highlighted. This is useful to see reachability between two sections of the               function. |
-| <a name="all-loops-in-function"></a> ![](images/FunctionGraph_Action_Show_All_Loops_In_Function.png) | Show All Loops In Function (focus mode only) | Highlights the control flow between all possible looped blocks (cycles) in the               current function. This mode doesn't actually depend on a focused code block; instead,               selecting it highlights all loops immediately. |
+| <a name="scoped_flow_from_block"></a> ![Function Graph Action Show Scoped Flow From Block](images/FunctionGraph_Action_Show_Scoped_Flow_From_Block.png) | Show Scoped Flow From Block | Highlights control flow to code blocks that are only reachable if the current               code block is executed. This is useful to see a local neighborhood of blocks that               follow the current block. |
+| <a name="scoped_flow_to_block"></a> ![Function Graph Action Show Scoped Flow To Block](images/FunctionGraph_Action_Show_Scoped_Flow_To_Block.png) | Show Scoped Flow To Block | Highlights control flow from code blocks that must eventually reach the current               code block. This is useful to see a local neighborhood of blocks that precede the               current block. |
+| <a name="paths_to_from_block"></a> ![Function Graph Action Show Paths To From Block](images/FunctionGraph_Action_Show_Paths_To_From_Block.png) | Show Paths To/From Block | Highlights control flow from codes blocks that can reach the current code block,               as well as control flow to code blocks that can be reached from the current block.               This is useful to show all possible flows before and after the current block. |
+| <a name="paths_from_block"></a> ![Function Graph Action Show Paths From Block](images/FunctionGraph_Action_Show_Paths_From_Block.png) | Show Paths From Block | Highlights control flow to code blocks that can be reached from the current code block.               This is useful to show all possible flows after the current block. |
+| <a name="paths_to_block"></a> ![Function Graph Action Show Paths To Block](images/FunctionGraph_Action_Show_Paths_To_Block.png) | Show Paths To Block | Highlights control flow from codes blocks that can reach the current code block.                This is useful to show all possible flows before the current block. |
+| <a name="loops_containing_block"></a> ![Function Graph Action Show Loops Containing Block](images/FunctionGraph_Action_Show_Loops_Containing_Block.png) | Show Loops Containing Block | Highlights the control flow between all possible looped blocks (cycles) that pass               through the current block. If a function has multiple non-intersecting loops, this               helps resolve the loops from each other in the case that the graph layout has placed               them too close to differentiate. |
+| <a name="paths_from_focus_to_hover"></a> ![Function Graph Action Show Paths From Focus To Hover](images/FunctionGraph_Action_Show_Paths_From_Focus_To_Hover.png) | Show Paths From Focus to Hover (hover mode only) | Highlights the control flow from the currently focused code block to the               currently hovered code block. If there are no paths possible, no edges will be               highlighted. This is useful to see reachability between two sections of the               function. |
+| <a name="all_loops_in_function"></a> ![Function Graph Action Show All Loops In Function](images/FunctionGraph_Action_Show_All_Loops_In_Function.png) | Show All Loops In Function (focus mode only) | Highlights the control flow between all possible looped blocks (cycles) in the               current function. This mode doesn't actually depend on a focused code block; instead,               selecting it highlights all loops immediately. |
 
 
 ## Function Graph Options
 
 
-The <a name="auto-relayout"></a>**Automatic Graph Relayout** option describes when the
+The <a name="auto_relayout"></a>**Automatic Graph Relayout** option describes when the
 graph will perform an automatic relayout of the vertices as the graph changes. The available
 values are:
 
@@ -507,7 +502,7 @@ The **Use Animation** option signals to the graph whether to animate mutative gr
 operations and navigations.
 
 
-<a name="layout-compressing"></a>The **Use Condensed Layout** option signals to the
+<a name="layout_compressing"></a>The **Use Condensed Layout** option signals to the
 graph to bring vertices as close together as possible when laying out the graph. Using this
 option to fit as many vertices on the screen as possible. Disable this option to make the
 overall layout of the graph more aesthetic.
@@ -546,26 +541,22 @@ highlight colors are those to be used when the flow animations take place.
 ### From Paths
 
 
-<a name="path-selection"></a> You may create Program Selections from the **current path
-highlights** by clicking **Program Selection →  From Hovered Edges** and **From Focused Edges** from the popup menu of a block.
+<a name="path_selection"></a> You may create Program Selections from the **current path highlights** by clicking **Program Selection → From Hovered Edges** and **From Focused Edges** from the popup menu of a block.
 If not paths are highlighted, then these actions will be disabled.
 
 
 ### From Code Blocks
 
 
-<a name="code-unit-selection"></a> You may select all Code Units in a Code Block by
-clicking **Program Selection →  Select All
-Code Units** from the popup menu (or by using the default keybinding, **Ctrl-A**). This
-action will select all Code Units in all selected Code Blocks in the graph. **If no Code
-Blocks are selected, then a Program Selection will be created for all Code Units in all Code
-Blocks in the graph.**
+<a name="code_unit_selection"></a> You may select all Code Units in a Code Block by
+clicking **Program Selection → Select All Code Units** from the popup menu (or by using the default keybinding, **Ctrl-A**). This
+action will select all Code Units in all selected Code Blocks in the graph. **If no Code Blocks are selected, then a Program Selection will be created for all Code Units in all Code Blocks in the graph.**
 
 
 ### Clearing Selections
 
 
-You may clear the current Program Selection by clicking **Program Selection →  Clear Selection** from the popup menu.
+You may clear the current Program Selection by clicking **Program Selection → Clear Selection** from the popup menu.
 
 
 ## Popups
@@ -584,18 +575,17 @@ The following popup menu items provide additional [grouping](#vertex-grouping)
 functionality.
 
 
-- <a name="vertex-grouping-group-selected-popup"></a> **Group Selected Vertices** -
+- <a name="vertex_grouping_group_selected_popup"></a> **Group Selected Vertices** -
 Groups all selected vertices
-- <a name="vertex-grouping-add-selected-vertices-to-group"></a> **Group Selected
-Vertices - Add to Group** - Adds the selected vertices to group vertex in the selection.
+- <a name="vertex_grouping_add_selected_vertices_to_group"></a> **Group Selected Vertices - Add to Group** - Adds the selected vertices to group vertex in the selection.
 This action will not be enabled if there is not one, and only one, group vertex in the
 selection.
-- <a name="vertex-grouping-remove-from-group"></a> **Remove From Group** - Removes the
+- <a name="vertex_grouping_remove_from_group"></a> **Remove From Group** - Removes the
 [uncollapsed vertex](#group-vertex-coloring-algorithm) from its group.
-- <a name="vertex-grouping-ungroup-all-popup"></a> **Ungroup All Vertices** - Ungroups
+- <a name="vertex_grouping_ungroup_all_popup"></a> **Ungroup All Vertices** - Ungroups
 **all** vertices in the graph, not just those selected or visible. This operation cannot
 be undone!
-- <a name="vertex-grouping-ungroup-selected-popup"></a> **Ungroup Selected Vertices**
+- <a name="vertex_grouping_ungroup_selected_popup"></a> **Ungroup Selected Vertices**
           - Ungroups the selected group vertices
 
 
@@ -650,7 +640,7 @@ and actions.
 - [Interaction Threshold](../VisualGraph/Visual_Graph.md#interaction-threshold)
 
 
-*Provided by: *Function Graph Plugin**
+Provided by: *Function Graph Plugin*
 
 
 **Related Topics:**
@@ -658,3 +648,8 @@ and actions.
 
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
 - [Snapshots](../Snapshots/Snapshots.md)
+
+
+---
+
+[← Previous: Satellite View](../VisualGraph/Visual_Graph.md) | [Next: Layouts →](Function_Graph_Layouts.md)

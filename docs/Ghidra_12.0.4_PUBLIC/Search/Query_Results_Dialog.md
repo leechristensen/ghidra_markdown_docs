@@ -12,8 +12,7 @@ also see the *Search Results* window when you do a [Go To](../Navigation/Navigat
 entry.
 
 
-| ![](images/QueryResultsSearch.png) |
-| --- |
+![Query Results Search](images/QueryResultsSearch.png)
 
 
 Each row of the table is associated with an address or location within the program. There
@@ -42,7 +41,7 @@ label column will move the cursor to the corresponding label in the listing pane
 ### Marker Margins
 
 
-When searching strings or memory, a yellow arrow marker ![searchm_obj.gif](../icons/searchm_obj.gif) is placed in the left hand marker margin at
+When searching strings or memory, a yellow arrow marker ![Searchm Obj](../icons/searchm_obj.gif) is placed in the left hand marker margin at
 each location in the browser that a match was found. The location of each search result in the
 entire view is displayed as a yellow box in the right hand Navigation Margin. You can
 navigate to a search result by left-mouse-clicking on the yellow box in the Navigation margin.
@@ -88,7 +87,7 @@ the tool bar, or right mouse click and choose **Make Selection**.
 4. The current selection will be set to the address of all the highlighted items.
 
 
-### Remove Items ![table_delete.png](../icons/table_delete.png)
+### Remove Items ![Table Delete](../icons/table_delete.png)
 
 
 You can remove entries from the table via this action.  Items are **only** removed
@@ -96,7 +95,7 @@ from the table--no program data is changed.  This can be useful when you wish to
 exclude results that are of no interest to you.
 
 
-### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
+### Selection Navigation ![Location In](../icons/locationIn.gif)
 
 
 This action causes the Listing to navigate to the address represented by a row when
@@ -116,4 +115,4 @@ Options](../Tool/ToolOptions_Dialog.md)
 
 ---
 
-[← Previous: Direct References](Search_for_DirectReferences.md) | [Next: DWARF External Debug Files →](../DWARFExternalDebugFilesPlugin/DWARFExternalDebugFilesPlugin.md)
+[← Previous: Direct References](Search_for_DirectReferences.md) | [Next: Decompiled Text →](../DecompilerTextFinderPlugin/Decompiler_Text_Finder.md)

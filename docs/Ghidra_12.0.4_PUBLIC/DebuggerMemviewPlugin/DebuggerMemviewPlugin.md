@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerMemviewPlugin](index.md) > Memview Plot
+
 # Debugger: Memory View
 
 
-![](images/DebuggerMemviewPlugin.png)
+![Debugger Memview Plugin](images/DebuggerMemviewPlugin.png)
 
 
 As in the Threads view, you may wish to follow the evolution of various objects over time.
@@ -74,3 +76,8 @@ panel. The behavior can be toggled on or off at the user's discretion.
 
 This button determines whether the table filter affects the plot panel. When toggled on,
 only objects listed in the table are displayed in the plot.
+
+
+---
+
+[← Previous: Control and Machine State](../DebuggerControlPlugin/DebuggerControlPlugin.md) | [Next: Time Overview Sidebar →](../DebuggerTimeOverviewPlugin/DebuggerTimeOverviewPlugin.md)

@@ -1,9 +1,11 @@
+[Home](../index.md) > [VersionTrackingPlugin](index.md) > Preconditions
+
 # Version Tracking Preconditions
 
 
 One of the first items you run across in the Version Tracking Wizard is the
 Precondition Panel.
-***Put picture here****
+\*\*\*Put picture here\*\*\*\*
 It is an important initial step in the Version Tracking process. In the past, users
 trying to match functions and pull relevant "mark-up" such as labels and comments into a
 new version of a binary, would encounter problems if one or both of the binaries were not
@@ -11,7 +13,7 @@ sufficiently analyzed or had major analysis problems. Users were given no indica
 these issues were a direct result of having a poorly analyzed binary. The success or failure
 of the various preconditions are indicatiors of how well your binaries have been analyzed
 and how well their analyses "match" each other. If the preconditions indicates problems
-*** show and describe red x, warning, green check****, it is important to fix them before
+\*\*\* show and describe red x, warning, green check\*\*\*\*, it is important to fix them before
 moving on or there will probably be problems with the Version Tracking process, such as
 identifying incorrect matches or failing to find valid function matches. In general,
 Version Tracking will work best if the same methods of cleaning up a binary are used and
@@ -31,7 +33,7 @@ if similar numbers of functions are created.
 | **Red Flags** | This validator checks to see if either program has red flags indicating errors in analysis. | Potential problems include incorrect instruction definitions at the language level and incorrect analysis of code or data. | Use the Bookmark Manager or Margin Markers to find red flags. Fix them and the problems that caused them to be created such 			          as bad flow (most likely) or bad instruction definitions. |
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -43,3 +45,8 @@ Tracking Markup Table](providers/VT_Markup_Table.md)
 - [Version
 Tracking Introduction](Version_Tracking_Intro.md)
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
+
+
+---
+
+[← Previous: Workflow](VT_Workflow.md) | [Next: Example Workflow →](VT_Workflow.md)

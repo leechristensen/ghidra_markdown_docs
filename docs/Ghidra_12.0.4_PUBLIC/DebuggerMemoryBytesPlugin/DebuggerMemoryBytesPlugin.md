@@ -1,10 +1,12 @@
+[Home](../index.md) > [DebuggerMemoryBytesPlugin](index.md) > Memory
+
 # Debugger: Memory (Dynamic Bytes)
 
 
-![](images/DebuggerMemoryBytesPlugin.png)
+![Debugger Memory Bytes Plugin](images/DebuggerMemoryBytesPlugin.png)
 
 
-<a name="toggle-header"></a>The memory, or dynamic bytes, window is analogous to Ghidra's
+<a name="toggle_header"></a>The memory, or dynamic bytes, window is analogous to Ghidra's
 bytes window for static analysis, but in the dynamic context. It displays memory contents from
 a target. More precisely, it displays recorded memory contents in a trace. In most use cases,
 that trace is "at the present," meaning it is the most recent memory from a live target.
@@ -75,7 +77,7 @@ This action is equivalent to the [same action](../DebuggerListingPlugin/Debugger
 Dynamic Listing window.
 
 
-![](../DebuggerListingPlugin/images/DebuggerGoToDialog.png)
+![Debugger Go To Dialog](../DebuggerListingPlugin/images/DebuggerGoToDialog.png)
 
 
 ### Read Memory
@@ -105,3 +107,8 @@ This action does the same as it does for the static context. Edits may be reject
 trace [control mode](../DebuggerControlPlugin/DebuggerControlPlugin.md#control-mode) is
 set to Read-Only in the tool. **NOTE:** This toggle also disables automatic navigation in
 order to prevent the cursor from being moved unexpectedly while typing edits.
+
+
+---
+
+[← Previous: Emulation](../DebuggerEmulationServicePlugin/DebuggerEmulationServicePlugin.md) | [Next: Registers →](../DebuggerRegistersPlugin/DebuggerRegistersPlugin.md)

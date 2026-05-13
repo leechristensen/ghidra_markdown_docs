@@ -1,21 +1,23 @@
+[Home](../index.md) > [DecompilerTextFinderPlugin](index.md) > Decompiled Text
+
 # Search Decompiled Text
 
 
-Available from **Search  →  Search
-Decompiled Text**, this action allows you to search the decompiled output
+Available from **Search → Search Decompiled Text**, this action allows you to search the decompiled output
 for each function in the current program.
 
 
-The **Decompiled Function Search** dialog is shown when users execute the **Search
-Decompiled Text** action.   If *String Search* is selected, then a case insensitive text
+The **Decompiled Function Search** dialog is shown when users execute the **Search Decompiled Text** action.   If *String Search* is selected, then a case insensitive text
 search is performed using the specified text.   If *Regular Expression* is selected, then
 a [Regular Expression](../Search/Regular_Expressions.md#regular-expression-syntax)
 search is performed.  Selecting *Search Selection* will only search function entry points
 that are in the current program selection.
 
 
-| ![](images/DecompilerTextFinderDialog.png) |
-| --- |
+![Decompiler Text Finder Dialog](images/DecompilerTextFinderDialog.png)
+
+
+*The Decompiled Function Search input dialog*
 
 
 > **Tip:** When restricting the search to
@@ -37,13 +39,15 @@ line search matches, the matching part of the search will be highlighted in the 
 column.
 
 
-| ![](images/DecompilerTextFinderResultsTable.png) |
-| --- |
+![Decompiler Text Finder Results Table](images/DecompilerTextFinderResultsTable.png)
+
+
+*The Decompiled Function Search results table*
 
 
 ### Select Functions Action [Functions]
 
-<a name="select-functions"></a>
+<a name="select_functions"></a>
 
 
 This action will create a program selection for each function entry point for each function
@@ -72,7 +76,7 @@ line.
 | `(?s)ffff.*piVar2 =` | A regular expression that searches across multiple lines by using `(?S)` .  This           will find `ffff` followed by any number of characters, followed by `piVar2 =` . | `if (__CTOR_LIST__ != (code *)0xffffffff) {piVar2 = (int *)&__CTOR_LIST__;,` |
 
 
-*Provided by: *Decompiler Text Finder Plugin**
+Provided by: *Decompiler Text Finder Plugin*
 
 
 **Related Topics:**
@@ -81,3 +85,8 @@ line.
 - [Decompiler](../DecompilePlugin/DecompilerIntro.md)
 - [Search Program Text](../Search/Search_Program_Text.md)
 - [Regular Expressions](../Search/Regular_Expressions.md)
+
+
+---
+
+[← Previous: Query Results Window](../Search/Query_Results_Dialog.md) | [Next: DWARF External Debug Files →](../DWARFExternalDebugFilesPlugin/DWARFExternalDebugFilesPlugin.md)

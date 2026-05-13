@@ -31,8 +31,7 @@ exists.
 
 
 **Clear All Colors** - Available from the listing right-click context menu under
-the **Colors** pull-right. This action will clear all colors applied **to the entire
-program**. exists.
+the **Colors** pull-right. This action will clear all colors applied **to the entire program**. exists.
 
 
 > **Note:** Any of these actions can be undone
@@ -45,15 +44,44 @@ using the undo action .
 From a script, using the `GhidraScript` API:
 
 
-| public void run() throws Exception {                 setBackgroundColor(anotherAddress, Color.YELLOW);                                                   // OR, using a range of addresses                                  // create an address set with values you want to change                 AddressSet addresses = new AddressSet(currentProgram.getAddressFactory());                                      addresses.add(currentAddress.add(10));                 addresses.add(currentAddress.add(11));                 addresses.add(currentAddress.add(12));                  setBackgroundColor(addresses, new Color(100, 100, 200));         } |
-| --- |
+```
+
+
+        public void run() throws Exception {
+                setBackgroundColor(anotherAddress, Color.YELLOW);
+
+
+                // OR, using a range of addresses
+
+                // create an address set with values you want to change
+                AddressSet addresses = new AddressSet(currentProgram.getAddressFactory());
+                addresses.add(currentAddress.add(10));
+                addresses.add(currentAddress.add(11));
+                addresses.add(currentAddress.add(12));
+
+                setBackgroundColor(addresses, new Color(100, 100, 200));
+        }
+
+```
 
 
 From a script, using the service directly:
 
 
-| public void run() throws Exception {                 ColorizingService service = state.getTool().getService(ColorizingService.class);                 if (service == null) {                         println("Can't find ColorizingService service--ColorizingPlugin not installed");                                return;                 }                  service.setBackgroundColor(currentAddress, currentAddress, new Color(255, 200, 200));         } |
-| --- |
+```
+
+
+        public void run() throws Exception {
+                ColorizingService service = state.getTool().getService(ColorizingService.class);
+                if (service == null) {
+                        println("Can't find ColorizingService service--ColorizingPlugin not installed");
+                        return;
+                }
+
+                service.setBackgroundColor(currentAddress, currentAddress, new Color(255, 200, 200));
+        }
+
+```
 
 
 ## Navigating Colors
@@ -62,13 +90,13 @@ From a script, using the service directly:
 ### Actions
 
 
-**Next Color Range** - Available from the menu bar at **Navigation  →  Next Color Range** This action will
+**Next Color Range** - Available from the menu bar at **Navigation → Next Color Range** This action will
 navigate to the next color range at an address larger than the current address. Depending
 upon the range navigation options, either the bottom of the current range, or the top of
 next range will be chosen.
 
 
-**Previous Color Range** - Available from the menu bar at **Navigation  → Previous Color Range** This action will
+**Previous Color Range** - Available from the menu bar at **Navigation → Previous Color Range** This action will
 navigate to the next color range at an address larger than the current address. Depending
 upon the range navigation options, either the bottom of the previous range, or the top of
 the previous range will be chosen.
@@ -86,7 +114,7 @@ You can also navigate to color ranges via the Listing's [navigation
 markers](CodeBrowser.md#navigation-marker).
 
 
-*Provided by: *Colorizing* plugin*
+Provided by: *Colorizing* plugin
 
 
 **Related Topics:**

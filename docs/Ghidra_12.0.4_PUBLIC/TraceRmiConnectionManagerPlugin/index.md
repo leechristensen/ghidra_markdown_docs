@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Connection Manager](TraceRmiConnectionManagerPlugin.md)

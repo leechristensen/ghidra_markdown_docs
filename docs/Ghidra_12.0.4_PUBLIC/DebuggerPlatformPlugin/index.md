@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Platform Selection](DebuggerPlatformPlugin.md)

@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Static Synchronization](DynamicStaticSynchronizationPlugin.md)

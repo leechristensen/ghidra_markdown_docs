@@ -1,3 +1,5 @@
+[Home](../index.md) > [DecompilerTaint](index.md) > Decompiler Taint
+
 # Decompiler Taint Operations
 
 
@@ -253,3 +255,8 @@ Clear taint matching the selected rows from the Decompiler listing.
 
 
 Create a selection from the selected addresses.
+
+
+---
+
+[← Previous: Pop-up Menu and Keyboard Actions](../DecompilePlugin/DecompilerWindow.md) | [Next: Function ID →](../FunctionID/FunctionID.md)

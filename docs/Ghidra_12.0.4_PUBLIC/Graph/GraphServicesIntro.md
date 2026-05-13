@@ -11,4 +11,4 @@ see the **Graph** menu on the toolbar.
 
 ---
 
-[← Previous: Graphing](GraphIntro.md) | [Next: Visual Graphs →](../VisualGraph/Visual_Graph.md)
+[← Previous: Graphing](GraphIntro.md) | [Next: Default Graph Display →](../GraphServices/GraphDisplay.md)

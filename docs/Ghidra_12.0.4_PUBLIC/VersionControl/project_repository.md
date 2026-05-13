@@ -45,10 +45,9 @@ not currently connected to the shared repository server, a manual connection may
 clicking the **Connect Shared Repository** popup action on the root node of a shared project.
 For the active project there is also a Connect status button in the lower-right corner of the
 project window.  When this button shows the disconnected state
-![disconnected.gif](../icons/disconnected.gif) it may be clicked to attempt a connection.
-This may also be done from the *[Project
-Info](../FrontEndPlugin/Project_Info.md)* dialog. When the active project repository connection is successful, the connection
-status button changes to ![connected.gif](../icons/connected.gif).
+![Disconnected](../icons/disconnected.gif) it may be clicked to attempt a connection.
+This may also be done from the *[Project Info](../FrontEndPlugin/Project_Info.md)* dialog. When the active project repository connection is successful, the connection
+status button changes to ![Connected](../icons/connected.gif).
 
 
 > **Tip:** Successfully connecting to a Ghidra Server which corresponds to multiple named repositories will cause
@@ -89,16 +88,15 @@ version control features is the same regardless of whether your project reposito
 shared.
 
 
-### Add to Version Control ![vcAdd.png](../icons/vcAdd.png)
+### Add to Version Control ![Vc Add](../icons/vcAdd.png)
 
 
 Add a file (or multiple files at once) to version control by selecting the file in the
-Ghidra Project Window. You can either click on the tool bar icon, ![vcAdd.png](../icons/vcAdd.png), or right mouse click and choose the **Add to Version
-Control...** option. A dialog is displayed so that you can add comments about the
+Ghidra Project Window. You can either click on the tool bar icon, ![Vc Add](../icons/vcAdd.png), or right mouse click and choose the **Add to Version Control...** option. A dialog is displayed so that you can add comments about the
 file.
 
 
-![](images/AddToVersionControlDialog.png)
+![Add To Version Control Dialog](images/AddToVersionControlDialog.png)
 
 
 Leave the checkbox selected for *Keep File Checked Out* so that you do not have
@@ -109,7 +107,7 @@ version control. After you add the file, the Ghidra Project Window indicates the
 check out state and version.
 
 
-![](images/CheckedOut.png)
+![Checked Out](images/CheckedOut.png)
 
 
 <a name="samplecheckouticon"></a>This image shows that the file
@@ -130,11 +128,11 @@ the file was checked out, and the date that is was last modified. An asterisk wi
 on the file icon to indicate that changes have been made but not checked in.
 
 
-### Check Out ![vcCheckOut.png](../icons/vcCheckOut.png)
+### Check Out ![Vc Check Out](../icons/vcCheckOut.png)
 
 
 To check out a file, select the file in the Ghidra Project Window. You can either
-click on the check out icon ![vcCheckOut.png](../icons/vcCheckOut.png) on the tool
+click on the check out icon ![Vc Check Out](../icons/vcCheckOut.png) on the tool
 bar, or right mouse click on the file and choose the **Check Out...**
 option.
 
@@ -142,11 +140,11 @@ option.
 <a name="checkoutdialog"></a>
 
 
-![](images/CheckOutFile.png)
+![Check Out File](images/CheckOutFile.png)
 
 
 If your project repository is shared, a dialog is displayed to allow you to request an
-<a name="exclusivelock"></a> ***exclusive lock*** on the file.  An exclusive
+<a name="exclusivelock"></a> *\**exclusive lock*\** on the file.  An exclusive
 lock is necessary if you plan to [manipulate the memory map](../MemoryMapPlugin/Memory_Map.md) in any way,
 e.g., move or delete memory blocks, [change the program's
 language](../LanguageProviderPlugin/Languages.md#setting-a-programs-language), etc. An exclusive lock can be granted if no other user has the file checked
@@ -156,13 +154,13 @@ out. While the exclusive lock exists, no other user can check out the file.
 > **Note:** The exclusive lock is implied for a non-shared project repository.
 
 
-### Check In ![vcCheckIn.png](../icons/vcCheckIn.png)
+### Check In ![Vc Check In](../icons/vcCheckIn.png)
 
 
 After you have made your changes and saved them, you are ready to check in your file.
 (You cannot check in a file that was not changed.) The check in creates a new version for
 this file. To check in the file, select the file in the Ghidra Project Window. You can
-either click on the check in icon ![vcCheckIn.png](../icons/vcCheckIn.png) on the
+either click on the check in icon ![Vc Check In](../icons/vcCheckIn.png) on the
 tool bar, or right mouse click and select the **Check In...** option.
 
 
@@ -173,13 +171,12 @@ A dialog is displayed so that you can enter comments that describe your changes.
 available from within the tool where you have the file opened.
 
 
-![](images/CheckInFile.png)
+![Check In File](images/CheckInFile.png)
 
 
 The checkbox for *Keep File Checked Out* is selected and disabled automatically if
 you still have the file open. If the file is closed and you plan to create more versions,
-leave the checkbox selected for *Keep File Checked Out*. The checkbox for *Create
-".keep" file* is selected by default; this option causes a copy of the file that you are
+leave the checkbox selected for *Keep File Checked Out*. The checkbox for *Create ".keep" file* is selected by default; this option causes a copy of the file that you are
 checking in to be created on your local file system.
 
 
@@ -195,7 +192,7 @@ in red. Refer to the [Merge](../Repository/Merge_Program_Files.md)
 page for more information about merging.
 
 
-### Undo Checkout ![vcUndoCheckOut.png](../icons/vcUndoCheckOut.png)
+### Undo Checkout ![Vc Undo Check Out](../icons/vcUndoCheckOut.png)
 
 
 You may want to undo your checkout such that you lose all your changes, and your file
@@ -207,19 +204,19 @@ To undo a checkout:
 
 1. Close the checked out file.
 2. Select the checked out file in the Ghidra Project Window.
-3. You can either click on the undo checkout icon ![vcUndoCheckOut.png](../icons/vcUndoCheckOut.png) in the tool bar, or right mouse click on the
+3. You can either click on the undo checkout icon ![Vc Undo Check Out](../icons/vcUndoCheckOut.png) in the tool bar, or right mouse click on the
 selected file and choose the **Undo Checkout** option. If you had made changes to the
 file, a dialog is displayed confirm the undo check out.
 
 
-![](images/UndoCheckoutDialog.png)
+![Undo Checkout Dialog](images/UndoCheckoutDialog.png)
 
 
 If the checkbox on the dialog is selected, then a private file is created
 with a ".keep" extension on the filename. The checkbox is selected by default.
 
 
-![](../shared/note.yellow.png)
+![Note.Yellow](../shared/note.yellow.png)
 
 
 > **Note:** When a file is checked-out a copy of the file and
@@ -229,7 +226,7 @@ store.  This is done to ensure any folder name changes or removals within a shar
 repository are properly reflected while connected and avoid showing old/stale folders.
 
 
-### Update ![vcMerge.png](../icons/vcMerge.png)
+### Update ![Vc Merge](../icons/vcMerge.png)
 
 
 While you are working on a program in a shared project repository, you may want to
@@ -253,7 +250,7 @@ changes applied to your program without your having to check in your file.
 
 
 To update your current program either select the program in the Ghidra Project Window
-and click on the update icon ![vcMerge.png](../icons/vcMerge.png) in the tool
+and click on the update icon ![Vc Merge](../icons/vcMerge.png) in the tool
 bar, or right mouse click and choose the **Update...** option.   The Update
 option is only enabled when the latest version number on the server is **greater** than
 the version that you checked out.
@@ -266,7 +263,7 @@ tool where you have the file opened.
 > **Note:** The update action is not applicable in a non-shared project repository.
 
 
-### Undo Hijack ![undo_hijack.png](../icons/undo_hijack.png)
+### Undo Hijack ![Undo Hijack](../icons/undo_hijack.png)
 
 
 A file becomes "hijacked" when it exists locally as a private file in your project
@@ -282,7 +279,7 @@ Project Window changes to indicate that it is hijacked. To undo the hijack:
 hijack.
 
 
-![](images/UndoHijack.png)
+![Undo Hijack](images/UndoHijack.png)
 
 
 Deselect the checkbox next to the name if you do not want to undo the
@@ -302,7 +299,7 @@ which the version was created, the user that created it, and the comments descri
 version.
 
 
-![](images/VersionHistory.png)
+![Version History](images/VersionHistory.png)
 
 
 ### View Version
@@ -346,7 +343,7 @@ To view a list of who has a file checked out, right mouse click on the file in t
 Project Window, and select the **View Checkouts...** option.
 
 
-![](images/ViewCheckouts.png)
+![View Checkouts](images/ViewCheckouts.png)
 
 
 The *Checkout Date* is when you checked out the file; the *Version* is the
@@ -369,7 +366,7 @@ sample image below, all checkouts from the root project directory (pathname of "
 displayed; one file from the "TestFiles" folder is checked out.
 
 
-![](images/FindMyCheckouts.png)
+![Find My Checkouts](images/FindMyCheckouts.png)
 
 
 *Name* is the name of the file;. *Pathname* is the complete path to
@@ -377,10 +374,10 @@ the file. *Checkout Date* is when you checked out the file.  *Version* is the
 version number of the file that you have checked out.
 
 
-<a name="undo-checkout"></a> <a name="check-in"></a>From this dialog, you can
+<a name="undo_checkout"></a> <a name="check_in"></a>From this dialog, you can
 [check in](#find-checkouts) your files or [undo your
 checkout](#undo-checkout). Make a selection in the table, right mouse click and choose **Check In...**
-or **Undo Checkout**. You can also click on the toolbar icon ![vcCheckIn.png](../icons/vcCheckIn.png)  to check in, or click on the icon ![vcUndoCheckOut.png](../icons/vcUndoCheckOut.png)  to undo the check out.
+or **Undo Checkout**. You can also click on the toolbar icon ![Vc Check In](../icons/vcCheckIn.png)  to check in, or click on the icon ![Vc Undo Check Out](../icons/vcUndoCheckOut.png)  to undo the check out.
 
 
 **Related Topics:**

@@ -43,4 +43,4 @@ This table supports the ability to create a new table with the selected rows.
 
 ---
 
-[← Previous: Symbol Tree](../SymbolTreePlugin/SymbolTree.md) | [Next: Support →](../Intro/GhidraSupport.md)
+[← Previous: Symbol Tree](../SymbolTreePlugin/SymbolTree.md) | [Next: Byte Viewer →](../ByteViewerPlugin/The_Byte_Viewer.md)

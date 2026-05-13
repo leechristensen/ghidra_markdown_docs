@@ -36,21 +36,20 @@ Comments can be added or edited using the *Set Comment(s)* dialog as follows:
 
 
 1. From the right-mouse pop-up menu over the Code Browser window, select the
-**Comments →  Set** menu
+**Comments → Set** menu
 option.
 2. Choose the appropriate tab for the type of comment that is to be added or edited.
 3. Enter the comment text in the text window.
 4. Press the **OK** button to save the changes and close the dialog.
 
 
-| ![](images/Comment.png) |
-| --- |
+![Comment](images/Comment.png)
 
 
 This dialog has the following keyboard shortcut behavior:
 
 
-<a name="comments-option"></a>
+<a name="comments_option"></a>
 
 
 - When the *Enter accepts comment* checkbox is not selected, pressing **Enter**
@@ -71,8 +70,7 @@ To Delete a Comment:
 
 
 1. Right-click on the comment to be deleted.
-2. Choose **Comments →  Delete
-`<comment type>` Comment** from the popup-menu.
+2. Choose **Comments → Delete `<comment type>` Comment** from the popup-menu.
 
 
 To undo a delete comment operation, use the [Undo Operation](../Tool/Undo_Redo.md).
@@ -96,19 +94,16 @@ name of the user who made the change, the modification date, and the comment. Co
 are sorted in descending date order (most recent date first).
 
 
-| ![](images/ShowCommentHistory.png) |
-| --- |
+![Show Comment History](images/ShowCommentHistory.png)
 
 
 To view the history of changes,
 
 
 1. Right-click on the comment that you would like to view the history.
-2. Choose **Comments →  Show History
-for `<comment type>`...**.
+2. Choose **Comments → Show History for `<comment type>`...**.
   - If you are not over a specific comment, right mouse click and choose
-**Comments →  Show
-History...**.
+**Comments → Show History...**.
 3. A dialog containing a tab for each of the comment types is displayed.
   - If the comment does not contain history, then "No History Found" is shown in the
 tabbed panel for that comment.
@@ -120,7 +115,7 @@ address of data or instructions are displayed.  Comments on addresses other tha
 (interior) address will remain hidden until the data or instructions are cleared.
 
 
-*Provided by: *Edit Comments* Plugin*
+Provided by: *Edit Comments* Plugin
 
 
 Related Topics:

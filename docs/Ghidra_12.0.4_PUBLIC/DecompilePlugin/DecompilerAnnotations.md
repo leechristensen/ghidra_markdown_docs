@@ -1,3 +1,5 @@
+[Home](../index.md) > [DecompilePlugin](index.md) > Register Values
+
 # Program Annotations Affecting the Decompiler
 
 
@@ -179,7 +181,7 @@ comments, but only if they are attached to the *entry point*
 of the function. In this case, they are displayed first in the Decompiler output,
 along with WARNING comments, before the function declaration.  Other comment
 types can be configured to be part of Decompiler output by changing the
-Decompiler display options (see [Display <kind-of> Comments](DecompilerOptions.md#commentoptions)).
+Decompiler display options (see [Display <kind-of> Comments](DecompilerOptions.md#display-options)).
 
 
 > **Warning:** Unlike a Listing window, the Decompiler does not alter how a comment is
@@ -356,7 +358,7 @@ output for the variable (see [Forcing Data-types](DecompilerAnnotations.md#forci
 The **void** data-type is supported but treated specially by
 the Decompiler, as does Ghidra in general.  A **void** can be
 used to indicate the absence of a return value in function prototypes, but cannot be used
-as a general annotation on variables.  A void pointer, **void ***,
+as a general annotation on variables.  A void pointer, **void \***,
 is possible; the Decompiler treats it as a pointer to an unknown data-type.
 
 
@@ -482,7 +484,7 @@ of the access from the start of the array, and the second integer indicates the 
 
 If more then one element is being accessed simultaneously, the Decompiler may try to split
 the access into logical pieces. See the description of the analysis option for
-[Splitting Array Accesses](DecompilerOptions.md#analysissplitarray).
+[Splitting Array Accesses](DecompilerOptions.md#analysis-options).
 
 
 ##### Structure
@@ -518,7 +520,7 @@ of the access from the start of the structure, and the second integer indicates 
 
 If more than one field is being accessed simultaneously, the Decompiler may try to split
 the access into logical pieces. See the description of the analysis option for
-[Splitting Structure Accesses](DecompilerOptions.md#analysissplitstruct).
+[Splitting Structure Accesses](DecompilerOptions.md#analysis-options).
 
 
 ##### Enumeration
@@ -923,7 +925,7 @@ part of its analysis to *discover* the input parameters and the return value of 
 
 The name **unknown** is reserved to indicate that nothing is known about the calling convention.  If
 set to **unknown**, depending on context, the Decompiler may assign the calling convention based on
-the *Prototype Evaluation* option (see [Prototype Evaluation](DecompilerOptions.md#optionprotoeval)), or it
+the *Prototype Evaluation* option (see [Prototype Evaluation](DecompilerOptions.md#program-options)), or it
 may use the default calling convention for the architecture.
 
 Variable Arguments
@@ -1077,7 +1079,7 @@ so that the its position within the code and any sequence of accesses is clearly
 Any access, either read or write, will always be displayed, even if the value is not directly
 used by the function. The token representing the variable will be displayed using the
 **Special** color, highlighting that the access is volatile
-(See [Color for <token>](DecompilerOptions.md#displaytokencolor)).
+(See [Color for <token>](DecompilerOptions.md#display-options)).
 
 
 ```
@@ -1229,3 +1231,8 @@ Because context registers affect machine instructions, they also affect the unde
 have a substantial impact on decompilation.  Although details vary by processor, context register
 values are typically established during the initial import and analysis of a Program and aren't changed
 frequently.
+
+
+---
+
+[← Previous: Constant Annotations](DecompilerAnnotations.md) | [Next: Decompiler Options →](DecompilerOptions.md)

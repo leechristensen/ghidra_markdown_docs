@@ -1,3 +1,5 @@
+[Home](../../index.md) > [VersionTrackingPlugin](../index.md) > Matches Table
+
 # Version Tracking Matches Table
 
 
@@ -8,8 +10,7 @@ is also the primary means for accepting matches and bulk applying markup items. 
 this table provides an extensive filtering system.
 
 
-| ![](../images/MatchesTable.png) |
-| --- |
+![Matches Table](../images/MatchesTable.png)
 
 
 ## Version Tracking Match
@@ -31,8 +32,7 @@ will block the second match since A can't be associated with both X and Y.
 ## Match Status
 
 
-Each match has a primary status that is one of **Available, Accepted, Rejected, or
-Blocked**. In addition, matches that are **Accepted** have additional status for its
+Each match has a primary status that is one of **Available, Accepted, Rejected, or Blocked**. In addition, matches that are **Accepted** have additional status for its
 markup items. The status column uses overlayed icons to provide information about both
 types of status. The table below lists the various combined status of a match.
 
@@ -40,12 +40,12 @@ types of status. The table below lists the various combined status of a match.
 | Status | Icon | Description |
 | --- | --- | --- |
 | AVAILABLE |  | The match is available to be accepted and applied. |
-| REJECTED | ![dialog-cancel.png](../../icons/dialog-cancel.png) | The match has been rejected by the user. |
-| <a name="blocked"></a> BLOCKED | ![kgpg.png](../../icons/kgpg.png) | The match can't be accepted because a conflicting match has been accepted.     Note: To see which associations are causing a blocked association, sort the table 	          by source or destination address to see all conflicting associations. |
-| ACCEPTED | ![flag.png](../../icons/flag.png) | The match has been accepted. |
+| REJECTED | ![Dialog Cancel](../../icons/dialog-cancel.png) | The match has been rejected by the user. |
+| <a name="blocked"></a> BLOCKED | ![Kgpg](../../icons/kgpg.png) | The match can't be accepted because a conflicting match has been accepted.     Note: To see which associations are causing a blocked association, sort the table 	          by source or destination address to see all conflicting associations. |
+| ACCEPTED | ![Flag](../../icons/flag.png) | The match has been accepted. |
 | ACCEPTED - Not Done |  | The match has been accepted. There is at least 1 markup item that has not been examined. |
-| ACCEPTED - Fully considered | ![](../images/accepted_fully_considered.png) | The match is accepted and all markup items have been applied or ignored. |
-| ACCEPTED - Fully Applied | ![](../images/accepted_fully_applied.png) | The match is accepted and all markup items have been applied. |
+| ACCEPTED - Fully considered | ![Accepted Fully Considered](../images/accepted_fully_considered.png) | The match is accepted and all markup items have been applied or ignored. |
+| ACCEPTED - Fully Applied | ![Accepted Fully Applied](../images/accepted_fully_applied.png) | The match is accepted and all markup items have been applied. |
 
 
 ## Match Table Columns
@@ -78,51 +78,51 @@ types of status. The table below lists the various combined status of a match.
 ## Match Table Actions
 
 
-<a name="accept-match"></a>The **Accept Match**
-![flag.png](../../icons/flag.png)
+<a name="accept_match"></a>The **Accept Match**
+![Flag](../../icons/flag.png)
 action marks a match (and all matches that have the same association) as being
 accepted.  All competing matches will become blocked.
 [There are options](VT_Apply_Options.md#accept-match-options) to auto-apply
 function names and create implied matches when accepting a match.
 
 
-<a name="apply-blocked-match"></a>The **Apply Blocked Match**
+<a name="apply_blocked_match"></a>The **Apply Blocked Match**
 [Blocked]
 
 
-<a name="apply-markup"></a>The **Apply Markup**
-![checkmark_green.gif](../../icons/checkmark_green.gif)
+<a name="apply_markup"></a>The **Apply Markup**
+![Checkmark Green](../../icons/checkmark_green.gif)
 action will attempt to apply all the markup items for the match
 [according to the apply settings](VT_Apply_Options.md#apply-markup-options).
 If the match is not already accepted, it will first be marked as accepted.
 
 
-<a name="reject-match"></a>The **Reject Match**
-![dialog-cancel.png](../../icons/dialog-cancel.png)
+<a name="reject_match"></a>The **Reject Match**
+![Dialog Cancel](../../icons/dialog-cancel.png)
 action will mark the match as rejected.
 
 
-<a name="choose-tag"></a>The **Choose Match Tag**
-![tag_blue.png](../../icons/tag_blue.png)
+<a name="choose_tag"></a>The **Choose Match Tag**
+![Tag Blue](../../icons/tag_blue.png)
 action allows the user to set a user-defined tag that has been created via the [Edit Tag](#match-table-actions) action.
 
 
-<a name="remove-tag"></a>The **Remove Match Tag**
-![tag_blue_delete.png](../../icons/tag_blue_delete.png)
+<a name="remove_tag"></a>The **Remove Match Tag**
+![Tag Blue Delete](../../icons/tag_blue_delete.png)
 action removes any tag associated with the selected match(es)
 
 
-<a name="edit-tag"></a>The **Edit Tag**
-![tag_blue_edit.png](../../icons/tag_blue_edit.png)
+<a name="edit_tag"></a>The **Edit Tag**
+![Tag Blue Edit](../../icons/tag_blue_edit.png)
 action allows the user to manage (create and delete) custom tags that can be applied to
 matches.
 
 
-<a name="clear-match"></a>The **Clear Match** ![undo-apply.png](../../icons/undo-apply.png)
+<a name="clear_match"></a>The **Clear Match** ![Undo Apply](../../icons/undo-apply.png)
 action will reset the match to unaccepted and undo any applied markup.
 
 
-<a name="remove-match"></a>The **Remove Match** ![edit-delete.png](../../icons/edit-delete.png)
+<a name="remove_match"></a>The **Remove Match** ![Edit Delete](../../icons/edit-delete.png)
 action will remove the selected match(es).
 
 
@@ -160,8 +160,7 @@ remove that markup.  When deleting an accepted match:
 
 <u>To keep all applied markup</u>, simply delete the match and, when
 prompted, choose **Delete Accepted Matches**.  This choice will delete the match and
-its markup items, but **any applied markup item content will remain in the destination
-program.**  Alternatively, when prompted, you can choose **Finish** which will
+its markup items, but **any applied markup item content will remain in the destination program.**  Alternatively, when prompted, you can choose **Finish** which will
 close the prompt dialog and will not delete the remaining accepted matches or markup.
 
 
@@ -171,12 +170,12 @@ action will remove applied markup.  After clearing the match, then you can remov
 the match and no markup will remain in the destination program.
 
 
-<a name="make-selections"></a>The **Make Selections** ![Make Selection](../../icons/text_align_justify.png)
+<a name="make_selections"></a>The **Make Selections** ![Make Selection](../../icons/text_align_justify.png)
 action will create selections in the source and destination tools for all matches selected in the table.
 
 
-<a name="match-table-selection"></a>The **Table Selection Mode**
-![table_gear.png](../../icons/table_gear.png) allows you to change the behavior
+<a name="match_table_selection"></a>The **Table Selection Mode**
+![Table Gear](../../icons/table_gear.png) allows you to change the behavior
 of the match table with regard to how it tracks table selections as you apply
 matches.
 
@@ -184,7 +183,7 @@ matches.
 As you make changes to a match, the table will update.   Sometimes as the table
 updates the changed match will disappear from the table (for example, if your filter
 settings are setup to hide applied matches and you have just applied a match).  The
-default behavior (![table_gear.png](../../icons/table_gear.png)) is to keep
+default behavior (![Table Gear](../../icons/table_gear.png)) is to keep
 the table selection on the same row, regardless of whether
 the match changes its position in the table or is removed from the table altogether.
 
@@ -194,16 +193,16 @@ Table Selection States:
 
 | Action Icon | Action Name | Description |
 | --- | --- | --- |
-| ![table_gear.png](../../icons/table_gear.png) | Track Selected Index | Causes the match table to maintain the selection for  			        		the selected **row** .  So, for example, if you change a match, and that  			        		match is moved as a result of the table re-sorting, then the selection  			        		will remain on the row where the applied match used to be. |
-| ![table_go.png](../../icons/table_go.png) | Track Selected Match | Causes the match table to maintain the selection for  			        		the selected **match** .  So, for example, if you change a match,  			        		and that match is moved as a result of the table re-sorting, then  			        		the selection will change to keep the applied match selected. |
-| ![table_delete.png](../../icons/table_delete.png) | No Selection Tracking | In this state the table will not restore selections.   			        			If changes are made to matches, the selection will be lost. |
+| ![Table Gear](../../icons/table_gear.png) | Track Selected Index | Causes the match table to maintain the selection for  			        		the selected **row** .  So, for example, if you change a match, and that  			        		match is moved as a result of the table re-sorting, then the selection  			        		will remain on the row where the applied match used to be. |
+| ![Table Go](../../icons/table_go.png) | Track Selected Match | Causes the match table to maintain the selection for  			        		the selected **match** .  So, for example, if you change a match,  			        		and that match is moved as a result of the table re-sorting, then  			        		the selection will change to keep the applied match selected. |
+| ![Table Delete](../../icons/table_delete.png) | No Selection Tracking | In this state the table will not restore selections.   			        			If changes are made to matches, the selection will be lost. |
 
 
-<a name="match-table-settings"></a>The **Settings** ![settings16.gif](../../icons/settings16.gif)
+<a name="match_table_settings"></a>The **Settings** ![Settings16](../../icons/settings16.gif)
 action will bring up the version tracking accept and apply options.
 
 
-<a name="match-table-compare-functions"></a>The **Compare Functions**
+<a name="match_table_compare_functions"></a>The **Compare Functions**
 action allows users to visually compare selected matched functions. To initiate this action,
 select one or more matches from the Version Tracking Matches Table, then choose
 **Compare Functions** from the pop up menu. This will open a new
@@ -233,7 +232,7 @@ All confidence values will be greater than -9.999 and smaller than 9.999.
 functions that are smaller than some number
 
 
-<a name="vt-advanced-filters"></a>
+<a name="vt_advanced_filters"></a>
 
 
 ### Advanced Filters
@@ -265,7 +264,7 @@ The matches table also supports
 end of top-level blockquote
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -276,3 +275,8 @@ Tracking Markup Items Table](VT_Markup_Table.md)
 - [Version Tracking Tool](../VT_Tool.md)
 - [Version
 Tracking Introduction](../Version_Tracking_Intro.md)
+
+
+---
+
+[← Previous: Tool](../VT_Tool.md) | [Next: Markup Items Table →](VT_Markup_Table.md)

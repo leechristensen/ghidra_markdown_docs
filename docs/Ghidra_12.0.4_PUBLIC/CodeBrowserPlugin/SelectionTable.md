@@ -7,13 +7,13 @@ the table represents a code unit that may span a range of address. If a given se
 listing does not contain any code units, then no table will be created.
 
 
-![](images/SelectionTable.png)
+![Selection Table](images/SelectionTable.png)
 
 
 Selection Table
 
 
-To create a table from the current selection within the [Listing](CodeBrowser.md#listing-view), press **Select  → Create Table From Selection** from the tool's menu bar.
+To create a table from the current selection within the [Listing](CodeBrowser.md#listing-view), press **Select → Create Table From Selection** from the tool's menu bar.
 
 
 The **Create Table From Ranges** action will create a table based on the
@@ -34,7 +34,7 @@ This action creates a program selection containing the maximum address of each s
 address range.
 
 
-*Provided by: *Code Browser* plugin*
+Provided by: *Code Browser* plugin
 
 
 **Related Topics:**

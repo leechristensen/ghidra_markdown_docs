@@ -37,7 +37,7 @@ for all transient windows.)
 - [Highlight Search Options](#search-memory-backwards)
 
 
-<a name="memory-search-window"></a>
+<a name="memory_search_window"></a>
 
 
 ## Memory Search Window
@@ -53,13 +53,13 @@ option for reducing the results to those that either changed, didn't change, wer
 incremented, or were decremented.
 
 
-![](images/MemorySearchProvider.png)
+![Memory Search Provider](images/MemorySearchProvider.png)
 
 
 *Memory Search Window*
 
 
-<a name="search-controls"></a>
+<a name="search_controls"></a>
 
 
 ### Search Controls
@@ -125,7 +125,7 @@ there is an action that controls whether this option will be selected automatica
 a selection exists.
 
 
-<a name="scan-controls"></a>
+<a name="scan_controls"></a>
 
 
 ### Scan Controls
@@ -137,7 +137,7 @@ scan controls are not showing by default. Pressing the ![Scan](../icons/view_bot
 above the results table.
 
 
-![](images/MemorySearchProviderWithScanPanelOn.png)
+![Memory Search Provider With Scan Panel On](images/MemorySearchProviderWithScanPanelOn.png)
 
 
 *Memory Search Window With Scan Controls Showing*
@@ -180,7 +180,7 @@ update the bytes for each search result and show them in red without reducing th
 of results.
 
 
-<a name="results-table"></a>
+<a name="results_table"></a>
 
 
 ### Results Table
@@ -213,7 +213,7 @@ The options panel is not displayed by default. Pressing the ![Options](../icons/
 window.
 
 
-![](images/MemorySearchProviderWithOptionsOn.png)
+![Memory Search Provider With Options On](images/MemorySearchProviderWithOptionsOn.png)
 
 
 *Memory Search Window With Options Open*
@@ -287,7 +287,7 @@ part of a loaded executable binary. On by default.
 file header data. Off by default.
 
 
-<a name="search-formats"></a>
+<a name="search_formats"></a>
 
 
 ## Search Formats
@@ -308,7 +308,7 @@ format.
 ## Actions
 
 
-<a name="search-next"></a>
+<a name="search_next"></a>
 
 
 ### Incremental Search Forward ![Down](../icons/down.png)
@@ -320,7 +320,7 @@ search space is reached. It does not "wrap". If a match is found, it is added to
 current table of results.
 
 
-<a name="search-previous"></a>
+<a name="search_previous"></a>
 
 
 ### Incremental Search Backwards ![Up](../icons/up.png)
@@ -332,7 +332,7 @@ the search space is reached. It does not "wrap". If a match is found, it is adde
 the current table of results.
 
 
-<a name="refresh-values"></a>
+<a name="refresh_values"></a>
 
 
 ### Refresh ![Refresh](../icons/reload3.png)
@@ -343,7 +343,7 @@ table, looking to see if any of the bytes have changed. If so, the *Match Bytes*
 *Match Value* columns will display the changed values in red.
 
 
-<a name="toggle-search"></a>
+<a name="toggle_search"></a>
 
 
 ### Toggle Search Controls ![Search](../icons/view_top_bottom.png)
@@ -352,7 +352,7 @@ table, looking to see if any of the bytes have changed. If so, the *Match Bytes*
 This action toggles the [search controls](#memory-search-window) on or off.
 
 
-<a name="toggle-scan"></a>
+<a name="toggle_scan"></a>
 
 
 ### Toggle Scan Controls ![Scan](../icons/view_bottom.png)
@@ -361,7 +361,7 @@ This action toggles the [search controls](#memory-search-window) on or off.
 This action toggles the [scan controls](#selection-only-checkbox) on or off.
 
 
-<a name="toggle-options"></a>
+<a name="toggle_options"></a>
 
 
 ### Toggle Options Panel ![Options](../icons/view_left_right.png)
@@ -391,15 +391,14 @@ row to navigate in the associated view.
 This action deletes all selected rows in the results match table.
 
 
-<a name="combining-searches"></a>
+<a name="combining_searches"></a>
 
 
 ## Combining Searches
 
 
 Results from multiple searches can be combined in various ways. These options are only
-available once you have results in the table. Once results are present, the *Search
-Button* changes to a button that has a drop down menu that allows you do decide how you
+available once you have results in the table. Once results are present, the *Search Button* changes to a button that has a drop down menu that allows you do decide how you
 want additional searches to interact with the current results showing in the results table.
 The options are as follows:
 
@@ -465,7 +464,7 @@ values of 3. The sets are mutually exclusive, so the intersection would be empty
 Explaining how to take advantage of these options is beyond the scope of this document.
 
 
-<a name="repeating-searches"></a>
+<a name="repeating_searches"></a>
 
 
 ## Search Forward/Backwards Using Global Actions
@@ -476,7 +475,7 @@ incremental fashion outside a search window using global actions in the main too
 their assigned default keybindings.
 
 
-<a name="repeat-search-forwards"></a>
+<a name="repeat_search_forwards"></a>
 
 
 ### Search Memory Forwards:
@@ -489,7 +488,7 @@ location. To execute this action, select **Search**  → **Search Memory Forward
 **F3** (the default keybinding.)
 
 
-<a name="repeat-search-backwards"></a>
+<a name="repeat_search_backwards"></a>
 
 
 ### Search Memory Backwards:
@@ -502,7 +501,7 @@ location. To execute this action, select **Search**  → **Search Memory Backwar
 **`<Shift>`F3** (the default keybinding.)
 
 
-<a name="highlight-options"></a>
+<a name="highlight_options"></a>
 
 
 ## Highlight Search Options
@@ -528,7 +527,7 @@ text highlighting , that becomes the new highlight string.
 Highlights are removed when you close the search window.
 
 
-*Provided by: *Memory Search Plugin**
+Provided by: *Memory Search Plugin*
 
 
 **Related Topics:**

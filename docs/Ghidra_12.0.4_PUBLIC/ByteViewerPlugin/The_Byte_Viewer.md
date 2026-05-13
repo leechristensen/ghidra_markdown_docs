@@ -1,3 +1,5 @@
+[Home](../index.md) > [ByteViewerPlugin](index.md) > Byte Editing
+
 # The Byte Viewer
 
 
@@ -8,10 +10,10 @@ plugin in a separate window from the
 tool](../Tool/Ghidra_Tool_Administration.md#default-tool), the Code Browser.
 
 
-![](images/ByteViewer.png)
+![Byte Viewer](images/ByteViewer.png)
 
 
-To show the Byte Viewer, select the icon, ![binaryData.gif](../icons/binaryData.gif),
+To show the Byte Viewer, select the icon, ![Binary Data](../icons/binaryData.gif),
 on the Code Browser toolbar, OR, choose the **Window** → **Bytes: ...** menu.
 
 
@@ -26,7 +28,7 @@ default.  Each format is an instance of a DataFormatModel interface,
 so any [new formats that you provide](#writing-your-own-format-plugin) will automatically show up in the Byte Viewer Options dialog that
 lists the data formats that
 may be added to your view. To add or remove a data format view
-from the tool, press the ![wrench.png](../icons/wrench.png)
+from the tool, press the ![Wrench](../icons/wrench.png)
 icon to bring up the  Byte Viewer Options dialog.
 Select the formats that you want and press the OK button.
 
@@ -60,7 +62,7 @@ This view supports byte [editing](#editing-memory).
 The Address view displays  a tic (".") for all bytes whose
 formed address does not fall within the range of memory for the
 program. For those addresses that can be formed and are in memory, the
-view shows the symbol, ![](images/addressMark.png)
+view shows the symbol, ![Address Mark](images/addressMark.png)
 So if you go to that address in the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md), and
 [make a
 Pointer data type](../DataPlugin/Data.md#pointer), the address pointed to is in memory. Conversely, if
@@ -75,7 +77,7 @@ This view does not support [editing](#editing-memory).
 ### Disassembled
 
 
-The Disassemble view shows a "box" (![](images/box.gif) ) symbol for each address that has
+The Disassemble view shows a "box" (![Box](images/box.gif) ) symbol for each address that has
 undefined bytes. For those addresses that are [instructions](../Glossary/glossary.md#instruction)
 or [defined data](../Glossary/glossary.md#data-item), the
 view
@@ -176,7 +178,7 @@ The  labels below the scroll pane that contains the views shows the following i
 To enable byte editing,
 
 
-1. Toggle the Enable/Disable Edit toolbar button ![editbytes.gif](../icons/editbytes.gif)
+1. Toggle the Enable/Disable Edit toolbar button ![Editbytes](../icons/editbytes.gif)
 so that it appears pushed-in.
 2. Click in a view that supports editing, e.g., Hex or Ascii
 3. The cursor changes to red to indicate that this view can be edited.
@@ -202,7 +204,7 @@ hitting the Redo button ([Redo] ).
 
 To turn off byte editing, click the
 Enable/Disable
-Edit toolbar button ![editbytes.gif](../icons/editbytes.gif)
+Edit toolbar button ![Editbytes](../icons/editbytes.gif)
 so that it no longer appears pushed-in.
 
 
@@ -231,10 +233,10 @@ number of bytes per line,
 and set the group size to be
 used by the hex view.
 To launch the Byte Viewer Options dialog,
-press the ![wrench.png](../icons/wrench.png) icon on the Byte Viewer toolbar.
+press the ![Wrench](../icons/wrench.png) icon on the Byte Viewer toolbar.
 
 
-![](images/ByteViewerOptionsDialog.png)
+![Byte Viewer Options Dialog](images/ByteViewerOptionsDialog.png)
 
 
 ### Alignment Address
@@ -260,7 +262,7 @@ bytes (values of 00) to appear in the first column, you would enter an
 alignment address of 0040b003, as indicated by your cursor position.
 
 
-![](images/ByteViewerExample.png)
+![Byte Viewer Example](images/ByteViewerExample.png)
 
 
 The result of setting the alignment address to 0040b003
@@ -272,7 +274,7 @@ the first line, you would see that your insertion point is 0040b000, in
 this example.
 
 
-![](images/ByteViewerResults.png)
+![Byte Viewer Results](images/ByteViewerResults.png)
 
 
 ### Set Bytes Per Line
@@ -337,7 +339,7 @@ environment.
 3. Restart Ghidra.
 
 
-*Provided by: *Byte Viewer Plugin**
+Provided by: *Byte Viewer Plugin*
 
 
 **Related Topics:**
@@ -349,3 +351,8 @@ data types](../DataPlugin/Data.md#pointer)
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
 - [Configure Tool](../Tool/Configure_Tool.md)
 - [Select Bytes](../SelectBlockPlugin/Select_Block_Help.md)
+
+
+---
+
+[← Previous: Formats](The_Byte_Viewer.md) | [Next: Configuration Options →](ByteViewerOptions.md)

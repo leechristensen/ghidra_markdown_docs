@@ -10,7 +10,7 @@ interpreted as signed or unsigned. The *value* of the data at an address is adde
 the new data.
 
 
-![](images/CreateOffsetTable.png)
+![Create Offset Table](images/CreateOffsetTable.png)
 
 
 To create an offset table,
@@ -18,10 +18,8 @@ To create an offset table,
 
 1. Make a [selection](../Selection/Selecting.md) in the Code Browser;
 the selection should not contain instructions.
-2. Right mouse click and choose the **References →
-Create Offset Reference** option.
-*If the selection contains
-instructions, then a warning message is displayed in the tool status area.*
+2. Right mouse click and choose the **References → Create Offset Reference** option.
+*If the selection contains instructions, then a warning message is displayed in the tool status area.*
 3. The "Enter Base Address" field in the dialog is filled in with the first address in the
 selection. You can enter a different address
 (or [Address Expression](../Misc/AddressExpressions.md))
@@ -43,10 +41,7 @@ be the primary reference so that the operand field shows up as a "DAT," if no ot
 symbol exists for this reference address.
 
 
-*If the value of the data type being used
-as the offset does not result in a valid address for the reference, then a message is
-displayed in the status area of the tool. The data type will have been created, but not the
-reference.*
+*If the value of the data type being used as the offset does not result in a valid address for the reference, then a message is displayed in the status area of the tool. The data type will have been created, but not the reference.*
 
 
 The image below shows the result of creating an offset reference table; the base address
@@ -54,11 +49,11 @@ for the references is 004f5000. Value references were created on the double word
 types.
 
 
-![](images/OffsetRefsExample.png)&gt;
+![Offset Refs Example](images/OffsetRefsExample.png)&gt;
 
 
 
-*Provided by: *Create* *Offset References* Plugin*
+Provided by: *Create* *Offset References* Plugin
 
 
 **Related Topics:**

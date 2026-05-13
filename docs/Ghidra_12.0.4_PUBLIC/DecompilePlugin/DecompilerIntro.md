@@ -1,7 +1,9 @@
+[Home](../index.md) > [DecompilePlugin](index.md) > Decompiler
+
 # Decompiler
 
 
-![](images/DecompWindow.png)
+![Decomp Window](images/DecompWindow.png)
 
 
 ## Overview
@@ -105,3 +107,8 @@ Recovering Structure Definitions
 :   The Decompiler can be used to create structures that match the usage
 pattern of particular functions and variables, automatically discovering
 component offsets and data-types.
+
+
+---
+
+[← Previous: Configuration Options](../ByteViewerPlugin/ByteViewerOptions.md) | [Next: Decompiler Concepts →](DecompilerConcepts.md)

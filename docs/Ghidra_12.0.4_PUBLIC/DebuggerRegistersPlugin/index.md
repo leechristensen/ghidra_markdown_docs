@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Registers](DebuggerRegistersPlugin.md)

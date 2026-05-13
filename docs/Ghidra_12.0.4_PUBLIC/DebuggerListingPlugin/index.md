@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Dynamic Listing](DebuggerListingPlugin.md)

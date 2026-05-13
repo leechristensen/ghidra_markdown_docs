@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Decompiler Taint](DecompilerTaint.md#decompiler-taint-operations)

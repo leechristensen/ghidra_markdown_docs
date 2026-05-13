@@ -5,8 +5,7 @@
 
 A newly imported program consists of bytes that have not yet been identified.  These
 bytes are known as undefined data and are displayed using "**??**".  Disassembly,
-analysis, and other user actions convert these bytes into *instructions* or *defined
-data*.  In general, the term "data" refers to defined data.
+analysis, and other user actions convert these bytes into *instructions* or *defined data*.  In general, the term "data" refers to defined data.
 
 
 ## Data Types
@@ -22,7 +21,7 @@ etc).  Ghidra also provides the capability of creating "User-defined" Data type
 underlying data.
 
 
-![](../shared/note.yellow.png) It is important to note that the size of many of the primitive built-in types is
+![Note.Yellow](../shared/note.yellow.png) It is important to note that the size of many of the primitive built-in types is
 determined by the language and compiler specification (e.g., the size of an integer
 can vary).
 
@@ -30,9 +29,9 @@ can vary).
 ### Built-In Data Types
 
 
-| **Undefined - Fixed Size Types** |  |  |  |
-| --- | --- | --- | --- |
-| Name Size |  |  |  |
+**Undefined - Fixed Size Types**
+
+| Name | Size |  |  |
 | --- | --- | --- | --- |
 | undefined ( *default* ) | 1 |  |  |
 | undefined1 | 1 |  |  |
@@ -46,9 +45,9 @@ can vary).
 | Settings Mutability (normal, volatile, constant) |  |  |  |
 
 
-| **Numeric - Fixed Size Types** |  |  |  |
-| --- | --- | --- | --- |
-| Name MnemonicSizeSigned/Unsigned |  |  |  |
+**Numeric - Fixed Size Types**
+
+| Name | Mnemonic | Size | Signed/Unsigned |
 | --- | --- | --- | --- |
 | byte | db | 1 | Unsigned |
 | sbyte | sdb | 1 | Signed |
@@ -69,9 +68,9 @@ can vary).
 | Settings Endian (default, big, little)Format (hex, decimal, octal, binary, ascii)Mnemonic-style (default, assembly, C)Mutability (normal, volatile, constant)Padding (unpadded, padded) |  |  |  |
 
 
-| **Miscellaneous - Fixed Size Types** |  |  |  |
-| --- | --- | --- | --- |
-| Name MnemonicSizeSigned/Unsigned |  |  |  |
+**Miscellaneous - Fixed Size Types**
+
+| Name | Mnemonic | Size | Signed/Unsigned |
 | --- | --- | --- | --- |
 | void | void | 0 | n/a |
 | wchar16 | wchar16 | 2 | Signed |
@@ -79,9 +78,9 @@ can vary).
 | Settings Mutability (normal, volatile, constant) |  |  |  |
 
 
-| **Numeric - Dynamic Size Types**   *size determined by data organization within compiler specification - order is based upon relative sizes* |  |  |  |
-| --- | --- | --- | --- |
-| Name Signed/Unsigned |  |  |  |
+**Numeric - Dynamic Size Types**   *size determined by data organization within compiler specification - order is based upon relative sizes*
+
+| Name | Signed/Unsigned |  |  |
 | --- | --- | --- | --- |
 | char | (determined by data organziation)* |  |  |
 | schar | Signed* |  |  |
@@ -97,9 +96,9 @@ can vary).
 | Settings *(may vary)* Endian (default, big, little)Format (hex, decimal, octal, binary, ascii)Mnemonic-style (default, assembly, C)Mutability (normal, volatile, constant)Padding (unpadded, padded) *Additional character type [Settings](#string-data-types) : Charset (defaults to US-ASCII if user settable)Render non-ASCII Unicode (all, byte sequence, escape sequence) |  |  |  |
 
 
-| **Miscellaneous - Dynamic Size Types**   *size determined by data organization within compiler specification* |  |  |  |
-| --- | --- | --- | --- |
-| Name Description |  |  |  |
+**Miscellaneous - Dynamic Size Types**   *size determined by data organization within compiler specification*
+
+| Name | Description |  |  |
 | --- | --- | --- | --- |
 | wchar_t | Signed Wide Character* |  |  |
 | pointer | Pointer to memory address (may refer to another data type) |  |  |
@@ -109,9 +108,9 @@ can vary).
 | Settings *(may vary)* Mutability (normal, volatile, constant) |  |  |  |
 
 
-| **String Types**   |  |  |  |
-| --- | --- | --- | --- |
-| Name CharsetCharsizeLayout |  |  |  |
+**String Types**
+
+| Name | [Charset](#string-data-types) | Charsize | [Layout](#string-data-types) |
 | --- | --- | --- | --- |
 | [String](#string-data-types) | settable | from charset | fixed length |
 | [String-utf8](#string-data-types) | UTF-8 | 1-3 | fixed length |
@@ -129,9 +128,9 @@ can vary).
 ### User-Defined Data Types
 
 
-| **User-Defined Data Types** |  |
-| --- | --- |
-| Name Description |  |
+**User-Defined Data Types**
+
+| Name | Description |
 | --- | --- |
 | structure | Grouping of data types that are located consecutively                 in memory |
 | union | Grouping of data types that share the same memory                 location(s) |
@@ -150,7 +149,7 @@ are numerous ways to apply data types.  A status message indicating whether or 
 was created is displayed in the tool's [status area](../Tool/Ghidra_Tool_Administration.md#tool-status-components).
 
 
-![](../shared/note.yellow.png) Regardless of how a data type is applied, data is
+![Note.Yellow](../shared/note.yellow.png) Regardless of how a data type is applied, data is
 only created if the data type will fit within the available undefined bytes.
 
 
@@ -265,7 +264,7 @@ settings can be changed for an individual data item or for all data of the same 
 type.
 
 
-<a name="data-settings"></a>To change the settings of a single data item:
+<a name="data_settings"></a>To change the settings of a single data item:
 
 
 1. Place the cursor on the data item
@@ -274,8 +273,7 @@ type.
 settings dialog
 
 
-| ![](images/InstanceSettings.png) |
-| --- |
+![Instance Settings](images/InstanceSettings.png)
 
 
 In the screenshot above, the settings dialog is shown for a byte data type applied at
@@ -290,7 +288,7 @@ press **OK**.  To reset a setting to its default value, set the **Use Default**
 checkbox.
 
 
-<a name="default-settings"></a>The *default* settings for a given data type can
+<a name="default_settings"></a>The *default* settings for a given data type can
 be changed.  When a default setting has been changed, every data item *currently*
 using the default setting for that data type will use the new default value.  Data items
 that have a modified value for that setting will not be affected.
@@ -301,14 +299,13 @@ To change the default settings for a given data type:
 
 1. Place the cursor on a data item of that type,
 2. Press mouse-right to bring up the popup menu,
-3. Select **Data →  Default Settings...** to bring up
+3. Select **Data → Default Settings...** to bring up
 the default settings dialog.  This action may not be available in cases which do not allow
 the default settings to be modified such as components of Dynamic Data Types which are
 established on-the-fly.
 
 
-| ![](images/DefaultSettings.png) |
-| --- |
+![Default Settings](images/DefaultSettings.png)
 
 
 In the screenshot above, the default setting dialog is shown for the word data type.
@@ -321,7 +318,7 @@ list of valid choices for that setting.  Choose a value from this list of choic
 press **OK**.
 
 
-> **Note:** Default settings on components within a structure apply to that structure only. For
+> <a name="settingsonstructurecomponents"></a>**Note:** Default settings on components within a structure apply to that structure only. For
 example, if Struct_1 has a byte component with its format set as Octal, then only other
 instances of Struct_1 will be affected. Settings on other occurrences of byte are not affected.
 
@@ -333,18 +330,17 @@ default settings for either the typedef or its underlying data type doesn't affe
 default settings of the underlying data type or typedef respectively.
 
 
-<a name="data-settings-onselection"></a>To change the data settings for multiple data
+<a name="data_settings_onselection"></a>To change the data settings for multiple data
 items:
 
 
 1. Select data items of interest (does not work for interior array elements)
 2. Press mouse-right to bring up the popup menu
-3. Select **Data →  Settings...** to bring up the
+3. Select **Data → Settings...** to bring up the
 settings dialog
 
 
-| ![](images/DataSelectionSettings.png)   |
-| --- |
+![Data Selection Settings](images/DataSelectionSettings.png)
 
 
 In the screenshot above, the common data settings dialog is shown for the current
@@ -379,8 +375,7 @@ structure *directly* in the browser:
 
 
 1. Select a set of contiguous defined or undefined Data
-2. Use the right-mouse popup **Data** →  **Create
-Structure**
+2. Use the right-mouse popup **Data** →  **Create Structure**
 3. The Data items within the selection are used to define the structure
 4. The **Create Structure** dialog is displayed.  This dialog can be used to
 either create a new structure or apply an existing structure that has a matching
@@ -388,8 +383,7 @@ format.  If a new structure is created, it will be added to the Data Type
 Manager.
 
 
-| ![](images/CreateStructureDialog.png) |
-| --- |
+![Create Structure Dialog](images/CreateStructureDialog.png)
 
 
 The **Create Structure** dialog is divided into two parts.  In the top part is
@@ -407,12 +401,10 @@ To create a new structure, enter a unique name in the **Create Structure By Name
 text field and press OK.
 
 
-| ![](images/CreateStructureDialogWithTableSelection.png) |
-| --- |
+![Create Structure Dialog With Table Selection](images/CreateStructureDialogWithTableSelection.png)
 
 
-To use an existing, matching structure, find and select the structure in the **Use
-Exising Structure** table and press OK.
+To use an existing, matching structure, find and select the structure in the **Use Exising Structure** table and press OK.
 
 
 > **Note:** You can create nested structures by following the
@@ -517,17 +509,17 @@ To create a typed pointer:
 2. Apply a data type to the untyped
 pointer
 3. The mnemonic will change from 'addr' to
-the referenced data type's mnemonic (ie: for a byte "db *", for a pointer "addr *")
+the referenced data type's mnemonic (ie: for a byte "db \*", for a pointer "addr \*")
 
 
 Pressing the '**p**' key invokes the pointer action. This will generally create
 a default pointer unless the existing data is already a pointer in which case that
-pointer will be wrapped with an additional pointer (e.g., int * would become int **).
+pointer will be wrapped with an additional pointer (e.g., int \* would become int \*\*).
 This action will always apply a default sized pointer.
 Otherwise you can drag one of the other pointer types from the
 *Data Type Manager* window.
 With existing pointer data, the base type of that pointer may be changed simply by applying
-another type onto the pointer (e.g., applying byte to default pointer becomes db *).
+another type onto the pointer (e.g., applying byte to default pointer becomes db \*).
 If you do not want this pointer stacking behavior to happen,
 it is best to clear the code unit(s) before applying a data type via drag-n-drop or
 key-binding actions.
@@ -546,7 +538,7 @@ the array is specified when the array is created.  Arrays can also be
 multi-dimensional.  In this case, the innermost dimension is created first.
 
 
-<a name="create-array"></a><a name="define-array"></a>To create an array,
+<a name="create_array"></a><a name="define_array"></a>To create an array,
 
 
 1. Place the cursor at the address where you want to create an array
@@ -747,7 +739,7 @@ string is decoded and how it is rendered when displayed.
   - Any of the currently available java.nio.charsets.
 Defaults to US-ASCII
 See charset_info.xml to customize display order or character size.
-Not available on string types that have "UTF*" or "Unicode" in the
+Not available on string types that have "UTF\*" or "Unicode" in the
 name.
 Render non-ASCII Unicode
   - all - attempt to render the character (display font may or may not provide it)
@@ -789,7 +781,7 @@ displaying that field in the listing and then right click and select **Data** �
 ### Edit Field Dialog
 
 
-![](images/EditFieldDialog.png)
+![Edit Field Dialog](images/EditFieldDialog.png)
 
 
 - **Field Name**: The name of the structure or union field can be changed here.
@@ -802,7 +794,7 @@ will be added to the datatype's field comment if not already there.
 field comment if not already there.
 
 
-*Provided By: *Data* Plugin*
+Provided By: *Data* Plugin
 
 
 **Related Topics:**

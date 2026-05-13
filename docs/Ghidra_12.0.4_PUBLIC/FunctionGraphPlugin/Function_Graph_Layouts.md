@@ -1,3 +1,5 @@
+[Home](../index.md) > [FunctionGraphPlugin](index.md) > Layouts
+
 # Function Graph Layouts
 
 
@@ -56,4 +58,9 @@ This layout is the same as the Flow Chart Layout, except parent nodes are place 
 above their left most child.
 
 
-*Provided by: *Function Graph Plugin**
+Provided by: *Function Graph Plugin*
+
+
+---
+
+[← Previous: Zooming](Function_Graph.md) | [Next: Program Graph →](../ProgramGraphPlugin/ProgramGraph.md)

@@ -8,13 +8,13 @@ column will update with the appropriate representation for each data type. If th
 column and navigate to that address in the [Listing](../CodeBrowserPlugin/CodeBrowser.md).
 
 
-![](images/Data_Type_Preview.png)
+![Data Type Preview](images/Data_Type_Preview.png)
 
 
 ## Adding Data Types
 
 
-Click the ![Plus.png](../icons/Plus.png) button and select a datatype from the [Data Type Chooser](../DataTypeEditors/DataTypeSelectionDialog.md).
+Click the ![Plus](../icons/Plus.png) button and select a datatype from the [Data Type Chooser](../DataTypeEditors/DataTypeSelectionDialog.md).
 
 
 OR
@@ -25,21 +25,17 @@ and dropped into the Data Type Preview table. If you add a structure or union, t
 will be added for member of the structure or union.
 
 
-*The data type preview does
-not support *dynamic* data types.  However, keep in mind that not all variable-length
-data types are dynamic.  Specifically, you **can** use data types that
-implement* `Dynamic` *as long as they do not also extend from*
+*The data type preview does not support *dynamic* data types. However, keep in mind that not all variable-length data types are dynamic. Specifically, you **can** use data types that implement* `Dynamic` *as long as they do not also extend from*
 `DynamicDataType`.
 
 
 ## Removing Data Types
 
 
-Select the row(s) to delete and click on the ![edit-delete.png](../icons/edit-delete.png) to remove data types from the table.
+Select the row(s) to delete and click on the ![Edit Delete](../icons/edit-delete.png) to remove data types from the table.
 
 
-*If you remove a structure
-member, then entire structure will be removed from the preview table*
+*If you remove a structure member, then entire structure will be removed from the preview table*
 
 
 *Provided by: DataTypePreviewPlugin*

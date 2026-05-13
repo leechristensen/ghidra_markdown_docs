@@ -23,7 +23,7 @@ Location](#starting-program-location-options) when opening a program
 ### To Perform a Go To:
 
 
-1. In the menu-bar of a tool, select **Navigation  →  Go To...**
+1. In the menu-bar of a tool, select **Navigation → Go To...**
 2. The *Go To* dialog will be displayed, as shown below:
 3. Enter either an [address](#go-to-address), [label](#go-to-label),
 [expression](#go-to-expression), or [file offset](#go-to-file-offset)
@@ -34,8 +34,10 @@ repositioned to that location and the dialog will be dismissed
 an error message
 
 
-| Go To Address, Label, Expression, or File Offset             Dialag |
-| --- |
+![Go To Dialog](images/GoToDialog.png)
+
+
+*Go To Address, Label, Expression, or File Offset Dialag*
 
 
 ### Go To Address
@@ -45,9 +47,7 @@ Enter an address into the text area of the dialog. The value entered will be ass
 be in hexadecimal. That is, "0x1000" and "1000" are the same value.
 
 
-*When the program has multiple
-address spaces and the destination address is ambiguous (based on the current location), a
-query results dialog will be displayed.*
+*When the program has multiple address spaces and the destination address is ambiguous (based on the current location), a query results dialog will be displayed.*
 
 
 **Consider the following examples:**
@@ -56,8 +56,7 @@ query results dialog will be displayed.*
 Given:
 
 
-A program with the following memory blocks **which reside in different address
-spaces**:
+A program with the following memory blocks **which reside in different address spaces**:
 
 
 | **Name** | **Start Address** | **End Address** |
@@ -88,15 +87,17 @@ Example #2 - Ambiguous Address
 dialog will be displayed as shown in the image below.
 
 
-| Ambiguous Destination Address |
-| --- |
+![Goto Ambiguous](images/Goto_Ambiguous.png)
+
+
+*Ambiguous Destination Address*
 
 
 ### Go To Label
 
 
 Enter the name or namespace path of an existing label into the text field of the dialog.
-The name and/or path may contain wildcards (* ? **).
+The name and/or path may contain wildcards (\* ? \*\*).
 
 
 #### Namespace Paths
@@ -122,7 +123,7 @@ namespace.
 #### Wildcards
 
 
-Wildcard characters(* ** ?) can be used to match namespace names and/or symbol names.
+Wildcard characters(\* \*\* ?) can be used to match namespace names and/or symbol names.
 If more than one match is found, the results are displayed in a **GoTo Query Results**
 table
 
@@ -188,7 +189,7 @@ Results dialog.
 
 
 This option determines if the query includes generic dynamically generated labels
-(LAB*, DAT*, FUN*, etc.). If this option is off, only defined labels are searched.
+(LAB\*, DAT\*, FUN\*, etc.). If this option is off, only defined labels are searched.
 
 
 > **Note:** Turning off this option can result
@@ -204,14 +205,10 @@ assumed to be in decimal unless it is preceded by **0x**. That is, "file(0x1000)
 "file(1000)" are different values.
 
 
-*Ghidra does not support storing
-source file bytes for all file formats. Searching for a file offset in these programs will
-always yield no results.*
+*Ghidra does not support storing source file bytes for all file formats. Searching for a file offset in these programs will always yield no results.*
 
 
-*When the program has multiple file
-byte sources and the destination address is ambiguous, a query results dialog will be
-displayed.*
+*When the program has multiple file byte sources and the destination address is ambiguous, a query results dialog will be displayed.*
 
 
 ### Go To Expression
@@ -219,7 +216,7 @@ displayed.*
 
 Enter an arithmetic expression that can include addresses, symbols, or can be relative
 to the current location. All numbers are assumed to be hexadecimal. Supported operators are
-"+ - * / &lt;&lt; &gt;&gt;".  Also, parentheses are supported to control order of
+"+ - \* / &lt;&lt; &gt;&gt;".  Also, parentheses are supported to control order of
 expression evaluation.
 
 For example:
@@ -239,8 +236,10 @@ Each time a Go To Label or a Query is performed, it is stored in the drop-down b
 shown in the image below.
 
 
-| Previous Go to List |
-| --- |
+![Goto Previous List](images/Goto_PreviousList.png)
+
+
+*Previous Go to List*
 
 
 To repeat a previous Go To or Query:
@@ -264,7 +263,7 @@ the dialog.
 string.
 
 
-*Provided by: *Go To Address or Label* plugin*
+Provided by: *Go To Address or Label* plugin
 
 
 ## Next/Previous Code Unit
@@ -405,7 +404,7 @@ state is selected, then this task will simply navigate to the next address that 
 bookmark.
 
 
-*Provided by: *Go To Next-Previous Code Unit* plugin*
+Provided by: *Go To Next-Previous Code Unit* plugin
 
 
 
@@ -426,7 +425,7 @@ actions have been created so that keybindings can be assigned for each direction
 
 This action navigates the cursor to the closest function entry point that is at an
 address greater than the current address. The default keybinding is
-`Control-Down Arrow`.
+`Control-Down Arrow`.
 
 
 ### Previous Function
@@ -434,10 +433,10 @@ address greater than the current address. The default keybinding is
 
 This action navigates the cursor to the closest function entry point that is at an
 address less than the current address. The default keybinding is
-`Control-Up Arrow`.
+`Control-Up Arrow`.
 
 
-*Provided by: *CodeBrowser* plugin*
+Provided by: *CodeBrowser* plugin
 
 
 
@@ -460,7 +459,7 @@ previous locations.
 To traverse the history stack:
 
 
-1. In the tool-bar, click either the **Go to previous location** (![left.png](../icons/left.png) ) button or the **Go to next location** (![right.png](../icons/right.png)) button
+1. In the tool-bar, click either the **Go to previous location** (![Left](../icons/left.png) ) button or the **Go to next location** (![Right](../icons/right.png)) button
 2. The Code Browser will be repositioned to the saved location
 
 
@@ -498,14 +497,14 @@ be ignored when navigating to the previous function.
 ### Clear History
 
 
-To clear the navigation history stack, select **Navigation  →  Clear History**
+To clear the navigation history stack, select **Navigation → Clear History**
 
 
-After clearing the history, the ![left.png](../icons/left.png) and
-![right.png](../icons/right.png) buttons are disabled
+After clearing the history, the ![Left](../icons/left.png) and
+![Right](../icons/right.png) buttons are disabled
 
 
-*Provided by: *Next/Previous* plugin*
+Provided by: *Next/Previous* plugin
 
 
 
@@ -527,7 +526,7 @@ providers.
 Allows the user to switch focus back to the previously focused component provider.
 
 
-*Provided by: *ProviderNavigation* plugin*
+Provided by: *ProviderNavigation* plugin
 
 
 
@@ -599,7 +598,7 @@ will try to find a preferred symbol, then it will look for the lowest code block
 finally lowest overall address
 
 
-**<a name="start-symbols"></a>Start Symbols** - A comma separated list of symbol
+**<a name="start_symbols"></a>Start Symbols** - A comma separated list of symbol
 names to be used as the starting location for the program if the "Preferred Symbol Name"
 option is selected above. The first matching symbol found will be used as the starting
 location for newly opened programs.

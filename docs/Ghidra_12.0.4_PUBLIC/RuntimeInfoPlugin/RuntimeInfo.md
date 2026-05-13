@@ -12,16 +12,15 @@ debugging.
 To display the Runtime Information dialog:
 
 
-- From the Project Window, Select **Help →
-Runtime Information** from the menu.
+- From the Project Window, Select **Help → Runtime Information** from the menu.
 
 
 Runtime Information categories are organized in tabs. The following categories are provided:
 
 
 - **Version** - Ghidra, Operating System, and Java version information. Clicking the
-***Copy*** button will copy this information to the clipboard for easy transfer into a bug report.
-- **Memory** - JVM memory usage.  Clicking the ***Collect Garbage*** button will
+**\*Copy\*** button will copy this information to the clipboard for easy transfer into a bug report.
+- **Memory** - JVM memory usage.  Clicking the **\*Collect Garbage\*** button will
 suggest to the JVM that garbage collection should run.
 - **Application Layout** - Ghidra application layout information, including directory
 locations.
@@ -31,5 +30,5 @@ locations.
 - **Extension Points** - A list of discovered Ghidra Extension Points.
 - **Classpath** - The ordered classpath for the active Ghidra application.
 - **Extensions Classpath** - The ordered extensions classpath, if the
-***ghidra.extensions.classpath.restricted*** property is set (see
+**\*ghidra.extensions.classpath.restricted\*** property is set (see
 *support/launch.properties*).

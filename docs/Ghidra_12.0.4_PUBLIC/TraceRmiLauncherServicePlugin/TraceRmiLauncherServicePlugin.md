@@ -1,3 +1,5 @@
+[Home](../index.md) > [TraceRmiLauncherServicePlugin](index.md) > Launchers
+
 # Debugger: Launchers
 
 
@@ -16,7 +18,7 @@ Even if just about everything else goes wrong, the terminal should still be fait
 operational:
 
 
-![](images/GdbTerminal.png)
+![Gdb Terminal](images/GdbTerminal.png)
 
 
 The Terminal is fully integrated into Ghidra's UI and so can be docked or undocked just like
@@ -35,7 +37,7 @@ point, the plugin generally takes over, reacting to user and target events, acce
 requests, and generally keeping Ghidra and the back end synchronized.
 
 
-<a name="launch-tracermi"></a>The list of launchers can be accessed in either of two places:
+<a name="launch_tracermi"></a>The list of launchers can be accessed in either of two places:
 1) In the **Debugger → Configure and Launch ...** menu or more conveniently from the
 **Launch** button in the main toolbar. This is the blue bug ![Debugger](../icons/debugger.png)
 button near the top center. The **Configure and Launch ...** menu lists all available
@@ -130,7 +132,7 @@ an orange border) then closing the window will, in fact, destroy the Terminal.
 ## Development and Diagnostic Launchers
 
 
-<a name="python-raw"></a>We currently provide a launcher for Trace RMI API exploration and
+<a name="python_raw"></a>We currently provide a launcher for Trace RMI API exploration and
 development: The "`raw python`" launcher runs Python in a Terminal window, connects a
 Trace RMI client back to Ghidra, then starts a blank trace. Once running, it presents the
 Python interpreter, with the `ghidratrace` and `ghidratrace.client` packages
@@ -174,3 +176,8 @@ more complicated invocation:
 Python 2 is not supported.
 - **Ghidra Language**: The LanguageID for the blank trace.
 - **Ghidra Compiler**: The CompilerSpecID for the blank trace.
+
+
+---
+
+[← Previous: Debugger](../Debugger/Debugger.md) | [Next: WinDbg (dbgeng.dll) Integration →](../dbgeng/dbgeng.md)

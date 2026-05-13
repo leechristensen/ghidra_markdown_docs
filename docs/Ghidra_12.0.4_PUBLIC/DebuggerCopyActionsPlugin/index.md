@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Copy Actions](DebuggerCopyActionsPlugin.md)

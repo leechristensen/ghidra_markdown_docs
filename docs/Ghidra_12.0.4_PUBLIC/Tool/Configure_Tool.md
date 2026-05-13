@@ -8,7 +8,7 @@ display the *Configure Tool* dialog, select **File**  → **Configure**.This dia
 tool](Ghidra_Tool_Administration.md#create-tool).
 
 
-![](images/ConfigTool.png)
+![Config Tool](images/ConfigTool.png)
 
 
 <a name="stepstoconfiguretool"></a>
@@ -26,36 +26,35 @@ Clicking on the **Configure** link will bring up a dialog for adding individual
 plugins.
 
 
-![](../shared/note.yellow.png)
+![Note.Yellow](../shared/note.yellow.png)
 
 
 #### Saving
 
 
-<a name="savetool"></a> Save changes to your tool by clicking on the ![disk.png](../icons/disk.png) icon in the dialog's toolbar; [save your tool to a different
-name](Ghidra_Tool_Administration.md#save-tool-to-tool-chest) by clicking on the ![disk_save_as.png](../icons/disk_save_as.png) icon.
+<a name="savetool"></a> Save changes to your tool by clicking on the ![Disk](../icons/disk.png) icon in the dialog's toolbar; [save your tool to a different
+name](Ghidra_Tool_Administration.md#save-tool-to-tool-chest) by clicking on the ![Disk Save As](../icons/disk_save_as.png) icon.
 
 
 #### Configuring All Plugins
 
 
 <a name="configureallplugins"></a> To Configure all plugins regardless of package,
-select the ![plugin.png](../icons/plugin.png) icon in the dialog's toolbar and the
+select the ![Plugin](../icons/plugin.png) icon in the dialog's toolbar and the
 *Configure Plugins* dialog will appear with all plugins in its plugin table.
 
 
-![](../shared/note.yellow.png)The **Experimental** package can't be
+![Note.Yellow](../shared/note.yellow.png)The **Experimental** package can't be
 added as a package. Experimental plugins must be added individually.
 
 
 ### Configure Plugins Dialog
 
 
-Selecting the *Configure* link for a package will bring up the *Configure
-Plugins Dialog*.
+Selecting the *Configure* link for a package will bring up the *Configure Plugins Dialog*.
 
 
-![](images/ConfigurePlugins.png)
+![Configure Plugins](images/ConfigurePlugins.png)
 
 
 The dialog has two parts: A table at the top of the dialog that shows of all the plugins
@@ -73,7 +72,7 @@ The plugin table shows the following information for each plugin:
 - A status icon:
   - none     - the plugin is good.  It has help and
 been reasonably tested.
-  - ![warning.png](../icons/warning.png)          -
+  - ![Warning](../icons/warning.png)          -
 the plugin is useable, but has not been fully tested and/or not
 documented.
   - ![Strong Warning](../icons/software-update-urgent.png)          - the

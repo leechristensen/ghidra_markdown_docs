@@ -15,13 +15,11 @@ attributes that can be customized:
 ## Color and Fonts
 
 
-To view or change colors and fonts for fields of the Listing, open the [Tool Options Dialog](../Tool/ToolOptions_Dialog.md) and select the *Listing
-Display* node in the Options tree. The Listing Display panel will be displayed as shown
+To view or change colors and fonts for fields of the Listing, open the [Tool Options Dialog](../Tool/ToolOptions_Dialog.md) and select the *Listing Display* node in the Options tree. The Listing Display panel will be displayed as shown
 below.
 
 
-| ![](images/CodeBrowserColors.png) |
-| --- |
+![Code Browser Colors](images/CodeBrowserColors.png)
 
 
 This panel is divided into the following sections:
@@ -87,7 +85,7 @@ appear.
 | Xref, Offcut | Offcut cross reference addresses | Offcut references Xref field |
 
 
-*The Background is a special case. Select this element to set the background color for
+\*The Background is a special case. Select this element to set the background color for
 the Listing.
 
 
@@ -287,8 +285,7 @@ show one comment in the EOL Comments field at a time, based on this precedence, 
 Comment being the highest.
 
 
-**Repeatable -** The Repeatable Comment defined *at the current
-code unit address*.
+**Repeatable -** The Repeatable Comment defined *at the current code unit address*.
 
 
 **Referenced Repeatable -** The Repeatable Comment that is defined at the
@@ -410,7 +407,7 @@ panel. The following table describes the effect of each format option. The optio
 displaying comments are listed in the order in which the options are processed when
 determining what formatting comments are to be displayed. (The order below is based on the
 assumption that the order of the comment fields in the Code Browser are
-***Plate***, ***Pre***, and ***Post***.)
+**\*Plate\***, **\*Pre\***, and *\**Post*\**.)
 
 
 | **Option** | Field Type | Description |
@@ -587,16 +584,12 @@ such as the original address, followed by the offset.  For example, the
 string "foo_bar", with an offcut reference to "bar" would look like:
 
 
-`
-s_bar_12345678+4
-`
+`s_bar_12345678+4`
 
 
 with this option on, and with it off would look like:
 
-`
-s_bar
-`
+`s_bar`
 
 
 **Underline References -** Option to underline operand references so that you can
@@ -774,8 +767,7 @@ popup.
 
 
 To view or change the size of popup windows, open the [Tool Options Dialog](../Tool/ToolOptions_Dialog.md) and then open the
-*Listing Popups* node in the Options tree. Next select the *Reference Code
-Viewer* node.
+*Listing Popups* node in the Options tree. Next select the *Reference Code Viewer* node.
 
 
 **Dialog Height -** The height of the popups in pixels.
@@ -786,4 +778,4 @@ Viewer* node.
 
 ---
 
-[← Previous: Cursor Text Highlight](CodeBrowser.md) | [Next: Eclipse Integration →](../EclipseIntegration/EclipseIntegration.md)
+[← Previous: Cursor Text Highlight](CodeBrowser.md) | [Next: Program Differences →](../Diff/Diff.md)

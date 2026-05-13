@@ -1,3 +1,5 @@
+[Home](../index.md) > [VersionTrackingPlugin](index.md) > Session Wizard
+
 # Version Tracking Wizard
 
 
@@ -14,7 +16,7 @@ To create a new version tracking session you can:
 - Drag the two programs to be tracked onto a running tool or the Version Tracking tool
 button ([more
 info](../Tool/Ghidra_Tool_Administration.md#run-tool))
-- Press the **Create Session** ![start-here_16.png](../icons/start-here_16.png)
+- Press the **Create Session** ![Start Here 16](../icons/start-here_16.png)
 action from within the
 [Version Tracking Tool](VT_Tool.md#version-tracking-tool-actions)
 
@@ -22,8 +24,7 @@ action from within the
 ### New Version Tracking Session Panel
 
 
-| ![](images/SessionPanel.png) |
-| --- |
+![Session Panel](images/SessionPanel.png)
 
 
 The new version tracking session panel appears when creating a new session only. On
@@ -36,14 +37,13 @@ markup items.
 
 When dragging two programs from the front-end onto the version tracking tool, the
 source and destination might not be properly identified. If they are backwards (source is
-destination, destination is source) simply press the "swap" button (![doubleArrowUpDown.png](../icons/doubleArrowUpDown.png)) to correct the ordering.
+destination, destination is source) simply press the "swap" button (![Double Arrow Up Down](../icons/doubleArrowUpDown.png)) to correct the ordering.
 
 
 ### Preconditions Panel
 
 
-| ![](images/PreconditionsPanel.png) |
-| --- |
+![Preconditions Panel](images/PreconditionsPanel.png)
 
 
 The preconditions panel has a list of mini-analysis routines called "validators".
@@ -63,8 +63,7 @@ by clicking on the individual tests in the list.
 ### Summary Panel
 
 
-| ![](images/SummaryPanel.png) |
-| --- |
+![Summary Panel](images/SummaryPanel.png)
 
 
 The summary panel shows a summary of the selections provided to the Version Tracking
@@ -78,7 +77,7 @@ Selecting the "Finish" button creates the new version tracking session.
 To add to an existing session you can:
 
 
-- Press the **Add to Session** ![Plus.png](../icons/Plus.png)
+- Press the **Add to Session** ![Plus](../icons/Plus.png)
 action from within the
 [Version Tracking Tool](VT_Tool.md#version-tracking-tool-actions)
 
@@ -93,8 +92,7 @@ are for adding correlation results to an existing session.
 ### Correlation Algorithm Panel
 
 
-| ![](images/CorrelatorPanel.png) |
-| --- |
+![Correlator Panel](images/CorrelatorPanel.png)
 
 
 The correlation algorithm panel lets you choose which program correlator to use. The
@@ -108,8 +106,7 @@ page for information about which correlators to run first.
 ### Options Panel
 
 
-| ![](images/OptionsPanel.png) |
-| --- |
+![Options Panel](images/OptionsPanel.png)
 
 
 The options panel displays correlation algorithm specific options to select. Please
@@ -120,8 +117,7 @@ options.
 ### Address Set Options Panel
 
 
-| ![](images/VT_Wizard_AddressSetOptions.png) |
-| --- |
+![Vt Wizard Address Set Options](images/VT_Wizard_AddressSetOptions.png)
 
 
 The address set options panel lets the user add or remove specific address ranges from
@@ -151,8 +147,7 @@ source program's address ranges and the destination program's address ranges.
 ### Select Address Range(s) Panel
 
 
-| ![](images/VT_Wizard_SelectAddressRanges.png) |
-| --- |
+![Vt Wizard Select Address Ranges](images/VT_Wizard_SelectAddressRanges.png)
 
 
 The select address ranges panel lets the user limit the source and destination
@@ -193,9 +188,9 @@ disabled whenever the option is not the currently selected radio button.
 When you have a Source Tool selection, the list will initially contain the same
 address ranges as the selection. Otherwise, it will contain the address ranges for
 the current memory in the source program.
-  - Press the **Add Range** ![Plus.png](../icons/Plus.png)
+  - Press the **Add Range** ![Plus](../icons/Plus.png)
 button to add another address range to those already in the list.
-  - Press the **Remove Range** ![list-remove.png](../icons/list-remove.png)
+  - Press the **Remove Range** ![List Remove](../icons/list-remove.png)
 button to remove all addresses from the list that fall within a specific range.
   - Pressing the **Remove Selected Range(s)** button will remove any
 address ranges from the Address Ranges list that are currently selected.
@@ -238,9 +233,9 @@ disabled whenever the option is not the currently selected radio button.
 When you have a Destination Tool selection, the list will initially contain the same
 address ranges as the selection. Otherwise, it will contain the address ranges for
 the current memory in the destination program.
-  - Press the **Add Range** ![Plus.png](../icons/Plus.png)
+  - Press the **Add Range** ![Plus](../icons/Plus.png)
 button to add another address range to those already in the list.
-  - Press the **Remove Range** ![list-remove.png](../icons/list-remove.png)
+  - Press the **Remove Range** ![List Remove](../icons/list-remove.png)
 button to remove all addresses from the list that fall within a specific range.
   - Pressing the **Remove Selected Range(s)** button will remove any
 address ranges from the Address Ranges list that are currently selected.
@@ -251,8 +246,7 @@ isn't selected or if there isn't an address range selected in the list.
 ### Summary Panel
 
 
-| ![](images/VT_Wizard_AddToSession_Summary.png) |
-| --- |
+![Vt Wizard Add To Session Summary](images/VT_Wizard_AddToSession_Summary.png)
 
 
 The summary panel shows a summary of the selections provided to the Version Tracking
@@ -268,7 +262,7 @@ To open an existing session you can do one of the following:
 
 
 - Double click a an existing Session in the Project Manager window. Sessions can be
-identified by the ![](images/start-here.png) icon next to their names.
+identified by the ![Start Here](images/start-here.png) icon next to their names.
 - Drag an existing Session onto a running tool.
 - Choose File-&gt;Open Session... from an open Version Tracking tool and select a Version Tracking Session.
 
@@ -282,8 +276,7 @@ mechanism mostly in the same way programs or data archives can be with some
 qualifications:
 
 
-- Most shared project actions work for Sessions as they normally do, such as **Add to
-Version Control**, **Check In**, **History**, ...
+- Most shared project actions work for Sessions as they normally do, such as **Add to Version Control**, **Check In**, **History**, ...
 - When checking out a Session you must choose exclusive checkout because there is no
 way to merge two Sessions that have been edited. Exclusive checkout will prevent others
 from making changes to the session until an Undo Checkout is performed.
@@ -299,7 +292,7 @@ programs) must be the ones added.
 Main content blockquote
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -308,3 +301,8 @@ Main content blockquote
 - [Version Tracking
 Introduction](Version_Tracking_Intro.md)
 - [Version Tracking Tool](VT_Tool.md)
+
+
+---
+
+[← Previous: BSim Program Correlator](../BSimCorrelator/BSim_Correlator.md) | [Next: Tool →](VT_Tool.md)

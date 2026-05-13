@@ -13,7 +13,7 @@ using the
 [Data Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md#editing-a-data-type) display. The editor for an Enum is shown below.
 
 
-![](images/EnumEditor.png)
+![Enum Editor](images/EnumEditor.png)
 
 
 ### Enum Editor Fields
@@ -37,14 +37,14 @@ decompiler it is probably because the size is incorrect.
 
 
 When you make any change to the enum, the
-![disk.png](../icons/disk.png)
+![Disk](../icons/disk.png)
 (**Apply**) button is enabled.
 
 
 ## Edit an Enum Entry
 
 
-<a name="enum-entry"></a>To edit an entry in the enum table,
+<a name="enum_entry"></a>To edit an entry in the enum table,
 select an entry; double click in the field that you want to change,
 OR press **F2**.
 A cell editor is displayed; enter the value   (press the `<Enter>` key).
@@ -68,7 +68,7 @@ Changes the Enum value column to show values in hex or decimal.
 
 
 Create an new enum entry by selecting the
-![Plus.png](../icons/Plus.png)
+![Plus](../icons/Plus.png)
 (**Add**) button on the editor's tool bar.
 An entry with default values is added to the table; the default name is
 "New Name;" the default value is the next highest value.
@@ -80,7 +80,7 @@ Double click on the fields to change the entries.
 
 To delete enum entries, select the entries that you want to remove.
 Right mouse-click and choose the **Delete** option, OR select the
-![edit-delete.png](../icons/edit-delete.png)
+![Edit Delete](../icons/edit-delete.png)
 button on the editor's tool bar.
 
 
@@ -88,7 +88,7 @@ button on the editor's tool bar.
 
 
 When you have completed making changes, select the
-![disk.png](../icons/disk.png)
+![Disk](../icons/disk.png)
 button on the editor's tool bar. If you have changed the name of the enum,
 the *Data Type Manager* display is updated to reflect the new name in the tree.
 
@@ -96,7 +96,7 @@ the *Data Type Manager* display is updated to reflect the new name in the tree.
 ## Show In Data Type Manager
 
 
-Select the ![go-home.png](../icons/go-home.png) icon in the toolbar to have the editor's
+Select the ![Go Home](../icons/go-home.png) icon in the toolbar to have the editor's
 data type be highlighted in the Data Type Manager's tree.
 
 
@@ -112,7 +112,7 @@ header and dragging it to the new position. Changing the sort order has no
 effect on the enum.
 
 
-*Provided By: *Data Type Manager* Plugin*
+Provided By: *Data Type Manager* Plugin
 
 
 **Related Topics:**

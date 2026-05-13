@@ -1,3 +1,5 @@
+[Home](../index.md) > [Debugger](index.md) > Launching a Target
+
 # Debugger: Getting Started
 
 
@@ -59,8 +61,7 @@ begin with "Debugger" or "TraceRmi."
 For the **Launch** button to work, you must (a) have the program you wish to run visible
 and selected in the static Listing window, and (b) have imported the program from the place it
 lives on the local system. In other words, the file path associated with the program should be
-the path to the executable for the current file system. You can verify this using the **Help
-→ About my_program** menu item in the main tool bar. For example, on a Linux system, if
+the path to the executable for the current file system. You can verify this using the **Help → About my_program** menu item in the main tool bar. For example, on a Linux system, if
 you've imported "xclock", **Help → About xclock...** should have an entry at the bottom
 of the page for "`Executable Location: /usr/bin/xclock`".
 
@@ -140,3 +141,8 @@ active/selected/focused thread in the back-end debugger, but not always.
 The [Debug Console](../DebuggerConsolePlugin/DebuggerConsolePlugin.md)
 is a central place for reporting activity, errors, and suggesting actions. This and the
 Terminal are the first places to look when troubleshooting.
+
+
+---
+
+[← Previous: Getting Started](GettingStarted.md) | [Next: Troubleshooting →](Troubleshooting.md)

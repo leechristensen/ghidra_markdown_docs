@@ -14,13 +14,12 @@ server that other users can access.
 <a name="createnonsharedproject"></a>To create a new non-shared project:
 
 
-1. Select the **File → New
-Project...** menu option from the Ghidra Project Window.
+1. Select the **File → New Project...** menu option from the Ghidra Project Window.
 2. The <a name="selectprojecttype"></a> first panel of the *New Project* wizard is
 displayed, where you choose the project type.
 
 
-![](images/SelectProjectType.png)
+![Select Project Type](images/SelectProjectType.png)
 
 
 1. Leave the *Non-Shared Project* radio button selected to create a project that will
@@ -28,7 +27,7 @@ not be shared with others.
 2. Activate the **Next&gt;&gt;** button.
 
 
-![](images/SelectProjectLocation.png)
+![Select Project Location](images/SelectProjectLocation.png)
 
 
 1. Click on the browse button (**...**) to display a file chooser; select the directory
@@ -62,20 +61,18 @@ repository.
 To create a shared project,
 
 
-1. Select the **File → New
-Project...** menu option from the Ghidra Project Window; the first panel of the *New
-Project* wizard is displayed.
+1. Select the **File → New Project...** menu option from the Ghidra Project Window; the first panel of the *New Project* wizard is displayed.
 2. Select the *Shared Project* radio button on the *Select Project Type*
 panel.
 
 
-![](images/SelectSharedProjectType.png)
+![Select Shared Project Type](images/SelectSharedProjectType.png)
 
 
 1. <a name="serverinfo"></a>Activate the **Next &gt;&gt;** button.
 
 
-![](images/ServerInfo.png)
+![Server Info](images/ServerInfo.png)
 
 
 1. Enter the name of the server or the IP address of the server of where the repository
@@ -92,7 +89,7 @@ you fail to connect to the Ghidra Server.
 <a name="selectrepository"></a>
 
 
-![](images/RepositoryNamePanel.png)
+![Repository Name Panel](images/RepositoryNamePanel.png)
 
 
 1. In this example, three repositories are listed in the *Repository Names* list which
@@ -115,11 +112,11 @@ control will appear allowing you to grant anonymous access to this new repositor
 <a name="useraccesslist"></a>
 
 
-![](images/UsersPanel.png)
+![Users Panel](images/UsersPanel.png)
 
 
 1. Users that are known to the server are listed in the *Known Users* area. Users that
-are part of the project are marked with the ![user.png](../icons/user.png)
+are part of the project are marked with the ![User](../icons/user.png)
 icon. To add users, select users from *Known Users*, select the
 **Add&gt;&gt;** button. Add all users by selecting the **Add All** button. To remove
 users, select users in the project, and select the **&lt;&lt;Remove** button. To remove
@@ -147,7 +144,7 @@ specify where to create your project that will be associated with the project re
 Typically, you would specify a directory on your local file system.
 
 
-![](images/SelectSharedProjectLocation.png)
+![Select Shared Project Location](images/SelectSharedProjectLocation.png)
 
 
 1. Select the project directory. The *Project Directory* field defaults to the

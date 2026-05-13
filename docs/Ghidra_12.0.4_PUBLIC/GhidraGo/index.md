@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [GhidraGo](GhidraGo.md)

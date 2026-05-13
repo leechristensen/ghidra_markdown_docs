@@ -1,3 +1,5 @@
+[Home](../index.md) > [VersionTrackingPlugin](index.md) > Common Problems
+
 # Version Tracking Workflow
 
 
@@ -78,11 +80,9 @@ instructions), the markup items, such as labels and comments, are going to line 
 correctly, allowing an automated pull of all markup at once. To automatically accept all
 of these items as matches and apply all related markup, the user can do a **CTRL-A**
 in the match table after making sure only the exact matches are in the table. Then, click
-on the **Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon to
+on the **Apply Markup** ![Checkmark Green](../icons/checkmark_green.gif) icon to
 accept all the matches and apply all related markup. If the two binaries are very
-similar, this can do the majority of the matching very quickly. **It is recommended to
-run these three exact correlators in this order before running any other
-correlators.**
+similar, this can do the majority of the matching very quickly. **It is recommended to run these three exact correlators in this order before running any other correlators.**
 
 
 #### Symbol Match Correlator
@@ -93,7 +93,7 @@ Correlator](VT_Correlators.md#symbol-name-match-correlators). If you have unique
 corresponding functions or data will be a match. However, it is not immediately apparent,
 without visiting them individually, whether these matches are exactly the same in both
 versions of the binary. The markup items such as labels, comments, data types, and
-parameters might not match up exactly so the user should use the **Accept** ![flag.png](../icons/flag.png) icon to accept the matches, then if necessary, individually [visually inspect
+parameters might not match up exactly so the user should use the **Accept** ![Flag](../icons/flag.png) icon to accept the matches, then if necessary, individually [visually inspect
 and apply the markup items](providers/VT_Markup_Table.md). In some cases, the user might not care about the markup.
 For example, if there are no user-generated markup items associated with the match, there
 is no reason to do anything other than "Accept" the match. Users might wonder why it is
@@ -134,7 +134,7 @@ Exact Symbol Name Correlator](VT_Correlators.md#duplicate-exact-symbol-name-matc
 The user won't know right away which ones match. The [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) in the Source and Destination CodeBrowsers are useful for determining
 which matches are correct. Once the user determines the correct matches, the markup
-should line up correctly and be pulled over all at once with the **Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon.
+should line up correctly and be pulled over all at once with the **Apply Markup** ![Checkmark Green](../icons/checkmark_green.gif) icon.
 
 
 #### Other Correlators
@@ -161,8 +161,7 @@ Table Filter](providers/VT_Matches_Table.md#match-filters) to remove **Implied M
 next few steps
 4. **(Optional)** Bring up the [Version Tracking
 Functions Table](providers/VT_Functions_Table.md) and either tab it with the [Match Table](providers/VT_Matches_Table.md) or dock
-it in its own location. Configure it to [**Show
-Only Unaccepted Functions**](providers/VT_Functions_Table.md#functions-table-filter). This will allow the user to continually see the list of
+it in its own location. Configure it to [**Show Only Unaccepted Functions**](providers/VT_Functions_Table.md#functions-table-filter). This will allow the user to continually see the list of
 functions they need to still match.
 5. [Create a new
 session](VT_Wizard.md#creating-a-new-session) by specifying your source and destination programs and then running the
@@ -173,7 +172,7 @@ to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the 
 Function Bytes Correlator](VT_Correlators.md#exact-function-bytes-match).
 After the correlator is finished, in the matched table:
   - Press **CTRL-A** to select all matches currently listed in the table
-  - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
+  - **Click the Apply Markup** ![Checkmark Green](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 > **Note:** NOTE: For any of the following runs, there is an option to Exclude Accepted
 Matches so that the correlator being run will not report matches that are already made.
@@ -185,14 +184,14 @@ to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the 
 Function Instructions Correlator](VT_Correlators.md#exact-function-instructions-match).
 After the correlator is finished, in the matched table:
   - Press **CTRL-A** to select all matches currently listed in the table
-  - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
+  - **Click the Apply Markup** ![Checkmark Green](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 8. [Add
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Exact Data Match
 Correlator](VT_Correlators.md#exact-data-match) .
 After the correlator is finished, in the matched table:
   - Press **CTRL-A** to select all matches currently listed in the table
-  - **Click the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif)
+  - **Click the Apply Markup** ![Checkmark Green](../icons/checkmark_green.gif)
 icon to accept all matches and apply all their markup items.
 9. [Add
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Symbol Match
@@ -213,14 +212,14 @@ to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the 
 Function Instruction Match Correlator](VT_Correlators.md#duplicate-function-instructions-match)
   - Use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to figure out which ones match
-  - **Use the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon
+  - **Use the Apply Markup** ![Checkmark Green](../icons/checkmark_green.gif) icon
 to accept and apply markup for each match individually.
 11. [Add
 to the existing session](VT_Wizard.md#add-to-an-existing-session), choosing the [Duplicate
 Data Match Correlator](VT_Correlators.md#duplicate-data-match)
   - Use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to figure out which ones match
-  - **Use the Apply Markup** ![checkmark_green.gif](../icons/checkmark_green.gif) icon
+  - **Use the Apply Markup** ![Checkmark Green](../icons/checkmark_green.gif) icon
 to accept and apply markup for each match individually.
 12. Run any other correlators available but don't do anything with their matches yet.
   - Reset the [Match
@@ -238,7 +237,7 @@ match
 match
   - To help determine valid matches, use the [Related
 Matches Tables](providers/VT_Related_Associations_Table.md) to see all correlated matches for a particular match item.
-  - Use the **Accept** ![flag.png](../icons/flag.png) icon to individually
+  - Use the **Accept** ![Flag](../icons/flag.png) icon to individually
 accept matches once they are determined.
 13. Use the [Version Tracking
 Functions Table](providers/VT_Functions_Table.md) to see what is left and manually match them using this table.
@@ -280,7 +279,7 @@ listings are. For matches found with the exact one-to-one correlators, it is rel
 safe to turn on the auto option. For other correlators, it is safer to use the table.
 
 
-![](images/ImpliedMatchExample.png)
+![Implied Match Example](images/ImpliedMatchExample.png)
 
 
 ### What do the Scores and Confidence Columns Mean?
@@ -297,8 +296,7 @@ two or more matches. Users should look at both of these indicators to help decid
 to Accept, Apply, Reject, or Ignore a match.
 
 
-**It is important to note that score and confidence values cannot be reliably compared
-between different correlators.** A confidence value of 0.8 for one correlator might be
+**It is important to note that score and confidence values cannot be reliably compared between different correlators.** A confidence value of 0.8 for one correlator might be
 theoretically higher than a confidence value of 0.9 for another, because each correlator
 computes similarity and confidence differently.
 
@@ -309,10 +307,8 @@ computes similarity and confidence differently.
 Bring up the [Window->Version
 Tracking Functions Table](providers/VT_Functions_Table.md). By default, two separate lists of functions from both
 programs are shown. To see which functions in both programs have no matches generated by
-any correlator so far, click on the black triangle and choose **Show Only Unmatched
-Functions**. To see which functions in both programs have no matches accepted by the user
-(includes functions with and without a correlator generated match) choose **Show Only
-Unaccepted Functions**
+any correlator so far, click on the black triangle and choose **Show Only Unmatched Functions**. To see which functions in both programs have no matches accepted by the user
+(includes functions with and without a correlator generated match) choose **Show Only Unaccepted Functions**
 
 
 ### Why Do I See The Same Match More Than Once in the Match Table?
@@ -358,7 +354,7 @@ programs, then we recommend restarting the version tracking process from the beg
 after your changes have been made.
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -373,3 +369,8 @@ Wizard](VT_Wizard.md)
 Tracking Matches Table](providers/VT_Matches_Table.md)
 - [Version
 Tracking Markup Items Table](providers/VT_Markup_Table.md)
+
+
+---
+
+[← Previous: Workflow FAQ](VT_Workflow.md) | [Next: Program Correlators →](VT_Correlators.md)

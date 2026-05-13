@@ -130,8 +130,7 @@ shown in the figure below, where increasing memory addresses are going from left
 right.
 
 
-| ![](images/BigEndian.png) |
-| --- |
+![Big Endian](images/BigEndian.png)
 
 
 ## Block Model
@@ -701,8 +700,7 @@ in the figure below, where the increasing memory addresses are going from right 
 left.
 
 
-| ![](images/LittleEndian.png) |
-| --- |
+![Little Endian](images/LittleEndian.png)
 
 
 ## Listing
@@ -901,7 +899,7 @@ One of the ways a Ghidra client can use to identify itself to the Ghidra server.
 
 
 Comments that are displayed as a block header above the instruction.  Plate
-comments are automatically surrounded by '*'s.
+comments are automatically surrounded by '\*'s.
 
 
 ## Plugin

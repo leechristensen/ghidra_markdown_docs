@@ -117,8 +117,7 @@ Uses a 512-bit (64-byte) count. The SHA-512 hash is always represented in
 hexadecimal format.
 
 
-*It is now possible to write a custom checksum
-algorithm and add it to the table using a script. Contact the Ghidra Team for more detail.*
+*It is now possible to write a custom checksum algorithm and add it to the table using a script. Contact the Ghidra Team for more detail.*
 
 
 ---
@@ -132,20 +131,20 @@ of checksums can be viewed in decimal or hex format. There is also an option to 
 applicable results displayed in 1's or 2's complement.
 
 
-![](images/Dialog_Blank.png)
+![Dialog Blank](images/Dialog_Blank.png)
 
 
 ### Checksum Options:
 
 
-#### As Hex ![hexData.png](../icons/hexData.png)
+#### As Hex ![Hex Data](../icons/hexData.png)
 
 
 Toggle this option to display all results as hexadecimal format. Otherwise, applicable
 checksums will be displayed as decimal format.
 
 
-#### On Selection ![NextSelectionBlock16.gif](../icons/NextSelectionBlock16.gif)
+#### On Selection ![Next Selection Block16](../icons/NextSelectionBlock16.gif)
 
 
 Toggle this option to limit the checksum calculations to the bytes contained in the
@@ -153,45 +152,41 @@ current selection. A selection must exist for this option to be enabled. Otherwi
 checksum calculations are computed over all bytes in the entire program.
 
 
-#### Carry ![carry.png](../icons/carry.png)
+#### Carry ![Carry](../icons/carry.png)
 
 
 Toggle this option to perform a carry operation on the applicable checksums.
 
 
-#### XOR ![xor.png](../icons/xor.png)
+#### XOR ![Xor](../icons/xor.png)
 
 
 Toggle this option to perform an XOR on the applicable checksums.
 
 
-#### 1's Complement ![onesComplement.png](../icons/onesComplement.png)
+#### 1's Complement ![Ones Complement](../icons/onesComplement.png)
 
 
 Toggle this option to perform a 1's complement on the applicable checksums.
 
 
-#### 2's Complement ![twosComplement.png](../icons/twosComplement.png)
+#### 2's Complement ![Twos Complement](../icons/twosComplement.png)
 
 
 Toggle this option to perform a 2's complement on the applicable checksums.
 
 
-*Once the results are posted in the table,
-choosing another checksum option will automatically update the results, without your having to
-regenerate the results.*
+*Once the results are posted in the table, choosing another checksum option will automatically update the results, without your having to regenerate the results.*
 
 
 ### Generating Checksums:
 
 
-To compute the checksums, click on the *Generate* button (![Refresh](../icons/reload3.png)) or make a selection in the listing. When the *Generating
-Checksums* task is completed, the checksum results are displayed in the *Checksum
-Results* panel. If the checksum generation is cancelled before completion, the fields will
+To compute the checksums, click on the *Generate* button (![Refresh](../icons/reload3.png)) or make a selection in the listing. When the *Generating Checksums* task is completed, the checksum results are displayed in the *Checksum Results* panel. If the checksum generation is cancelled before completion, the fields will
 all be blank.
 
 
-![](images/Dialog.png)
+![Dialog](images/Dialog.png)
 
 
-***Provided by:** *ComputeChecksumsPlugin**
+**Provided by:** *ComputeChecksumsPlugin*

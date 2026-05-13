@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Disassembly and Assembly](DebuggerDisassemblerPlugin.md)

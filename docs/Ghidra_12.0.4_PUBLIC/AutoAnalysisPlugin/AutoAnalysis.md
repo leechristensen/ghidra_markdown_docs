@@ -10,7 +10,7 @@ further changes to the program. Any changes an Analyzer makes to the program may
 additional Analyzers to run. An example chain of auto analysis might be:
 
 
-![](images/AutoAnalysis.png)
+![Auto Analysis](images/AutoAnalysis.png)
 
 
 1. The user triggers disassembly
@@ -39,12 +39,12 @@ code references would not be a good idea.
 
 
 A program imported through Front End will have no initial analysis applied to it. To force
-analysis, use the **Analysis →  Auto Analysis** menu
+analysis, use the **Analysis → Auto Analysis** menu
 item. The Auto Analysis Options dialog is displayed to allow changes to the analysis options
 before beginning analysis.
 
 
-![](images/AutoAnalysisOptions.png)
+![Auto Analysis Options](images/AutoAnalysisOptions.png)
 
 
 > **Note:** The display of this dialog may be controlled
@@ -71,7 +71,7 @@ the Code Browser window, the background task bar will display. Any Analyzer acti
 messages are within the task bar.
 
 
-![](images/BackgroundAnalysisTasks.png)
+![Background Analysis Tasks](images/BackgroundAnalysisTasks.png)
 
 
 To Cancel the analysis, press the ![Stop](../icons/process-stop.png) button.
@@ -84,7 +84,7 @@ This action will auto-analyze all open programs. The [options](#auto-analysis-op
 program.
 
 
-![warning.help.png](../icons/warning.help.png)
+![Warning.Help](../icons/warning.help.png)
 When you choose options to use for analyzing a program, they are based
 upon the architecture of the **current** program. When analyzing all open programs, any
 programs besides the current program will only be analyzed if their architecture (language
@@ -124,11 +124,11 @@ now has changes that need to be saved.
 ## Auto Analysis Options Panel
 
 
-Each Analyzer can be turned off using the *Analysis* panel in the **Edit →  ProgramOptions** dialog.
+Each Analyzer can be turned off using the *Analysis* panel in the **Edit → ProgramOptions** dialog.
 
 
 The *Analysis* panel configures Analyzer specific options and which Analyzers are
-enabled to run. To view these options, choose **Edit →  Program Options...**; then open the Analysis node in the Options
+enabled to run. To view these options, choose **Edit → Program Options...**; then open the Analysis node in the Options
 tree. Each analyzer is represented as a leaf under the Analysis folder node.
 
 
@@ -137,13 +137,13 @@ analyzers can be very useful on certain programs, but have not been exercised on
 number of programs. Use them with caution.
 
 
-![](images/ProgramOptions.png)
+![Program Options](images/ProgramOptions.png)
 
 
 > **Note:** A separate dialog showing the Analysis options is also displayed after a new program has been imported, or the Analysis Auto Analysis menu item is chosen.
 
 
-![warning.help.png](../icons/warning.help.png) Some analyzers only work
+![Warning.Help](../icons/warning.help.png) Some analyzers only work
 on certain processors. For example, the MIPS Instruction Analyzer only works on MIPS
 processors. Their options will only show up if the currently open program can be analyzed
 with the analyzer.
@@ -224,8 +224,7 @@ pre-identified valid strings. This analyzer runs at a very low priority.
 
 
 Set options for this analyzer by selecting **ASCII Strings** on the options panel.
-Some options such as **Require null termination for string** and **String start
-alignment** work the same way as in [Search for Strings](../Search/Search_for_Strings.md).
+Some options such as **Require null termination for string** and **String start alignment** work the same way as in [Search for Strings](../Search/Search_for_Strings.md).
 
 
 #### **Options**
@@ -280,7 +279,7 @@ Windows" executables, the data archive applied were parsed from the standard win
 files. All other executables will have function signatures applied from the standard "C"
 header files (stdio, fcntl, ...). For example, if a label exists for strcmp upon import,
 the analyzer will assume this is the standard C-library strcmp and apply a function
-signature of "int strcmp(char *, char *)".
+signature of "int strcmp(char \*, char \*)".
 
 
 <u>Started By</u>: Importing or adding to a program, Auto Analyze command
@@ -294,8 +293,7 @@ and functions. When a valid function is found, the code is disassembled starting
 referenced location. When a valid string is found, a string data type is created.
 
 
-Enable this option by selecting **Ascii String References**, **Unicode String
-References, or Subroutine References** on the options panel for **Instructions**.
+Enable this option by selecting **Ascii String References**, **Unicode String References, or Subroutine References** on the options panel for **Instructions**.
 
 
 <u>Started By:</u> New disassembled code
@@ -362,7 +360,7 @@ The default demangler options are:
 | Use Standard Text Replacements | Use text simplifications in demangled output, for example to use standard c++  				typedefs. Using this option will produce shorter demangled output in some cases. The simplifications are defined inGhidra/Features/GnuDemangler/data/default.gnu.demangler.replacements.txtThis file can be edited.  Also new files can be added with more simplifications. 				Each new file must end with.gnu.demangler.replacements.txtand must  				reside inside of a module'sdatadirectory. |
 
 
-<a name="gnu-demangler-options"></a>**The GNU Demangler** adds the following analysis options:
+<a name="gnu_demangler_options"></a>**The GNU Demangler** adds the following analysis options:
 
 
 
@@ -389,12 +387,8 @@ demangler, which is **version 2.24**, will automatically be used.
 The available programs are:
 
 
-- `
-<GHIDRA_INSTALL_DIR>/GPL/DemanglerGnu/os/<OS>/
-``demangler_gnu_v2_41`
-- `
-<GHIDRA_INSTALL_DIR>/GPL/DemanglerGnu/os/<OS>/
-``demangler_gnu_v2_24`
+- `<GHIDRA_INSTALL_DIR>/GPL/DemanglerGnu/os/<OS>/ demangler_gnu_v2_41`
+- `<GHIDRA_INSTALL_DIR>/GPL/DemanglerGnu/os/<OS>/ demangler_gnu_v2_24`
 
 
 > **Warning:** When using an external GNU demangler,
@@ -414,7 +408,7 @@ which demanglers get called, as well as which options are used.
 <u>Started By:</u> New defined functions
 
 
-<a name="microsoft-demangler-options"></a>**The Microsoft Demangler** adds the following analysis option:
+<a name="microsoft_demangler_options"></a>**The Microsoft Demangler** adds the following analysis option:
 
 
 
@@ -446,8 +440,7 @@ be removed in a future release.
 ### Entry Point Analyzer
 
 
-Disassembles code starting at all Symbols in the symbol table marked as *External
-Entry Points*.
+Disassembles code starting at all Symbols in the symbol table marked as *External Entry Points*.
 
 
 Enable this option by selecting **Disassemble Entry Points** on the options panel for
@@ -620,7 +613,7 @@ default for this is 1.
 <u>Started By</u>: Auto Analyze command
 
 
-*Provided by: *AutoAnalysisPlugin**
+Provided by: *AutoAnalysisPlugin*
 
 
 **Related Topics:**

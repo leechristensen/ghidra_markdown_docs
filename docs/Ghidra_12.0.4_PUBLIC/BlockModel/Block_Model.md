@@ -17,31 +17,27 @@ subroutine which contains a single entry point.
 
 | Model Name | Model | Entry Point | Overlapping Code? | Entry Point Type |
 | --- | --- | --- | --- | --- |
-| Isolated Entry* | S | 1 | Yes | only call |
-| Multiple Entry | M | 1 or more | --- | only call |
-| Overlapped Code* | O | 1 or more | Yes | only call |
-| Partitioned Code* | P | 1 | No | any |
+| <a name="isolated_entry"></a>Isolated Entry* | S | 1 | Yes | only call |
+| <a name="multipleentry"></a>Multiple Entry | M | 1 or more | --- | only call |
+| <a name="overlappedcode"></a>Overlapped Code* | O | 1 or more | Yes | only call |
+| <a name="partitionedcode"></a>Partitioned Code* | P | 1 | No | any |
 
 
-- <a name="isolated-entry-model"></a> ***Isolated Entry Model**** - A subroutine
+- <a name="isolated_entry_model"></a> *\**Isolated Entry Model*\**\* - A subroutine
 must have only one entry point but may share code with another subroutine.  The
 subroutine body will stop if another called or source entry point is encountered.
-- <a name="multiple-entry-model"></a> ***Multiple Entry Model*** - A subroutine may
+- <a name="multiple_entry_model"></a> *\**Multiple Entry Model*\** - A subroutine may
 have multiple entry points and may not overlap code from other subroutines.
-- <a name="overlapped-code-model"></a> ***Overlapped Code Model**** - A subroutine
+- <a name="overlapped_code_model"></a> *\**Overlapped Code Model*\**\* - A subroutine
 is all code accessible from a single entry point and terminates at returns.  Code may be
 shared with other subroutines.  Each subroutine is defined to include the overlapping
 code as part of its body.
-- <a name="partitioned-code-model"></a> ***Partitioned Code Model**** - There is
+- <a name="partitioned_code_model"></a> *\**Partitioned Code Model*\**\* - There is
 exactly one entry point which may have any type of source flow.  Each instruction
 belongs to exactly one subroutine (code is not shared).
 
 
-*The default
-subroutine model for the tool can be specified from **Edit*****→*****Tool Options** dialog on
-**[Tool](../Tool/ToolOptions_Dialog.md)** panel.  The default
-subroutine model is generally used by those plugins and actions which do not provide a
-subroutine model choice (e.g., subroutine selection, call graph, symbol table, etc.).*
+*The default subroutine model for the tool can be specified from **Edit*\** **→** *\**Tool Options** dialog on **[Tool](../Tool/ToolOptions_Dialog.md)** panel. The default subroutine model is generally used by those plugins and actions which do not provide a subroutine model choice (e.g., subroutine selection, call graph, symbol table, etc.).*
 
 
 <a name="basicblockdefinition"></a>There is a more primitive *Block Model* called a
@@ -56,7 +52,7 @@ In the
 example below each color change represents a different basic block.
 
 
-![](images/BasicBlockCode.png)
+![Basic Block Code](images/BasicBlockCode.png)
 
 
 Provided By:  *Block Model Service* Plugin

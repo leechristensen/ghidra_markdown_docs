@@ -20,7 +20,7 @@ left click on an instruction within the code viewer).  The raw instruction is
 displayed in the lower right hand corner of the code browser tool.
 
 
-![](images/RawInstructionDisplay.png)
+![Raw Instruction Display](images/RawInstructionDisplay.png)
 
 
 ## **Processor Manual**
@@ -50,14 +50,14 @@ uses to open manuals. You may also copy the file information from text fields, i
 by selecting the text and pressing *Ctrl-C*. Below is the warning dialog.
 
 
-![](images/UnableToLaunch.png)
+![Unable To Launch](images/UnableToLaunch.png)
 
 
 If you choose to edit the settings you will be taken to the options dialog shown
 below.
 
 
-<a name="processor-manual-options"></a> ![](images/ProcessorManualOptions.png)
+<a name="processor_manual_options"></a> ![Processor Manual Options](images/ProcessorManualOptions.png)
 
 
 | Options Name | Description |
@@ -96,7 +96,7 @@ descriptive name for the information displayed on that row.
 | Masked Value   | Identifies the specific bit values within the               instruction bytes which are responsible to the operand value (i.e., specific               register, scalar value, etc.)   |
 
 
-![](images/ShowInstructionInfo.png)
+![Show Instruction Info](images/ShowInstructionInfo.png)
 
 
 The ![In](../icons/locationIn.gif) *Dynamic Update* toggle indicates whether the
@@ -104,11 +104,10 @@ window should update when you change the location in the Code Browser.  By defa
 toggle is selected. As you change your
 [location](../CodeBrowserPlugin/CodeBrowser.md#cursor) in the Code
 Browser, the window will be updated to show the info for the new location.  If you turn
-off the toggle, the window does not update; the next time you choose *Instruction
-Info*, a new tab is displayed in the *Instruction Info* window.
+off the toggle, the window does not update; the next time you choose *Instruction Info*, a new tab is displayed in the *Instruction Info* window.
 
 
-*Provided by: *Show Instruction Info* Plugin*
+Provided by: *Show Instruction Info* Plugin
 
 
 **Related Topics:**

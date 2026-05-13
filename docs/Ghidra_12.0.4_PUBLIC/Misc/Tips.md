@@ -34,7 +34,7 @@
 - You can edit program information and analysis options by selecting "Edit-&gt;Options for {program name}".
 - You can compare any two Ghidra programs (or Ghidra versions of a program) using the "Open Diff View" action from the Listing's toolbar.
 - Did you know that Ghidra does version tracking? It includes data version tracking as well as function version tracking. It also has numerous algorithms for finding matches. Use the "Footprint" tool to get started.
-- Did you know that you don't have to remember a whole label to navigate to it? Simply type 'g' to bring up the Goto dialog and type in a partial label then a '*'. If there are more than one matches it will bring up a navigable list of matches.
+- Did you know that you don't have to remember a whole label to navigate to it? Simply type 'g' to bring up the Goto dialog and type in a partial label then a '\*'. If there are more than one matches it will bring up a navigable list of matches.
 - New processor languages can be added to Ghidra using the Sleigh language syntax and compiler.
 - You can bring up an online processor manual (for most processors) by right mousing on an instruction and choosing Processor Manual.
 - You can have snapshot (disconnected) views of the Listing, Byte Viewer, and Decompiler.  Click the camera icon to create a snapshot.
@@ -58,7 +58,7 @@
 - In 1992, the Antarctic Ozone hole was larger than the continent of North America.
 - Did you know you can see where a register is initialized in its current scope by clicking on it with the middle mouse button? All instances of the register in the current scope will highlight in bright yellow. The mustard yellow one is where it is initialized in the current scope.
 - You can perform a program memory search using a regular expression (regex).
-- If a Windows executable contains Icons or Bitmap Resources, they are displayed in the CodeBrowser. Do a Search-&gt;Program Text on Labels for "Rsrc_Icon*" and "Rsrc_Bitmap*" to find them.
+- If a Windows executable contains Icons or Bitmap Resources, they are displayed in the CodeBrowser. Do a Search-&gt;Program Text on Labels for "Rsrc_Icon\*" and "Rsrc_Bitmap\*" to find them.
 - The average temperature on Earth is 15 degrees Celsius.
 - If you hover on a reference in the XREF or operand fields, a popup with the reference code or data will appear.
 - If you hover on a data type in the CodeBrowser or Data Type Manager, a popup with the data type definition will appear.

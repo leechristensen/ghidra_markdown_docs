@@ -1,3 +1,5 @@
+[Home](../index.md) > [DecompilePlugin](index.md) > Specification Extensions
+
 # Decompiler Options
 
 
@@ -38,14 +40,14 @@ These options govern what resources are available to the Plug-in and the Decompi
 not affect how analysis is performed or results are displayed.
 
 
-Cache Size (Functions)
+<a name="generalcachesize"></a>Cache Size (Functions)
 :   Producing decompilation results for a single function can be computationally intensive.
 This option specifies the number of functions whose decompilation results
 can be cached simultaneously. When navigating to a function that
 has been recently cached, as when navigating back and forth between a few functions,
 a new decompilation is not triggered.
 
-Decompiler Max-Payload (MBytes)
+<a name="generalmaxpayload"></a>Decompiler Max-Payload (MBytes)
 :   This option limits the number of bytes that can be produced by the Decompiler process as output
 when decompiling a single function. A payload includes the actual characters to be displayed in
 the window, additional token markup, symbol information, and other details of the underlying
@@ -53,20 +55,20 @@ syntax tree. The limit is specified in megabytes of data. If the limit is exceed
 function, decompilation is aborted for that function, and an error message
 "Decompiler results exceeded payload limit ..." is displayed.
 
-Decompiler Timeout (seconds)
+<a name="generaltimeout"></a>Decompiler Timeout (seconds)
 :   This option sets an upper limit on the number of seconds the Decompiler spends attempting
 to analyze one function before aborting.
 It is currently **not** enforced for a Decompiler
 window.  Instead it applies to the DecompilerSwitchAnalyzer, the `analyzeHeadless` command, scripts, and other
 plug-ins that make use of the Decompiler service.
 
-Max Instructions per Function
+<a name="generalmaxinstruction"></a>Max Instructions per Function
 :   This option sets a maximum number of machine instructions that the Decompiler will attempt
 to analyze for a single function, as a safeguard against analyzing a long sequence
 of zeroes or other constant data. The Decompiler will quickly throw an exception if it
 traces control flow into more than the indicated number of instructions.
 
-Max Entries per Jumptable
+<a name="generalmaxjumptable"></a>Max Entries per Jumptable
 :   This option sets the maximum number of entries (addresses) that the Decompiler can
 recover from analyzing a single jumptable. This serves as a sanity check that the recovered
 dimensions of a jumptable are reasonable and places an upper limit on the sheer number
@@ -80,7 +82,7 @@ These options directly affect how the Decompiler performs its analysis, either b
 toggling specific analysis passes or changing how it treats various annotations.
 
 
-Alias Blocking
+<a name="analysisaliasblocking"></a>Alias Blocking
 :   When deciding if an individual stack location has become dead, the Decompiler
 must consider *aliases*, pointers onto the stack that could
 be used to modify the location within a called function.  One strong heuristic the Decompiler
@@ -105,7 +107,7 @@ Selecting *None* is the equivalent of turning off the heuristic. Selecting anyth
 except *All Data-types* allows users to safely label small variables without
 knowing immediately if the stack location is part of a larger structure or array.
 
-Eliminate unreachable code
+<a name="analysisunreachable"></a>Eliminate unreachable code
 :   When toggled *on*, the Decompiler eliminates code that it
 considers unreachable.  This usually happens when, due to constant propagation and other
 analysis, the Decompiler decides that a boolean value controlling a conditional branch can
@@ -116,7 +118,7 @@ by the control-flow structure:
 
 > if (false) { ... }
 
-Ignore unimplemented instructions
+<a name="analysisignoreunimplemented"></a>Ignore unimplemented instructions
 :   When toggled *on*, the Decompiler treats instructions whose semantics
 have been formally marked **unimplemented** as if they do
 nothing (no operation). Crucially, control flow falls through to the next instruction.
@@ -127,7 +129,7 @@ If this option is toggled *off*, the Decompiler inserts the built-in
 function `halt_unimplemented()` at the point of the unimplemented instruction, and
 control flow does not fall through.
 
-Infer constant pointers
+<a name="analysisinferconstants"></a>Infer constant pointers
 :   When toggled *on*, the Decompiler infers a data-type for constants
 it determines are likely pointers. In the basic heuristic,
 each constant is considered as an address, and if that address starts a known data or function element
@@ -135,7 +137,7 @@ in the program, the constant is assumed to be a pointer.  The constants are trea
 any other source of data-type information, and the inferred data-types are freely propagated by
 the Decompiler to other parts of the function.
 
-NaN operations
+<a name="analysisnanignore"></a>NaN operations
 :   This option determines how the Decompiler treats floating-point **NaN**
 (Not a Number) operations.  Many processors automatically perform NaN checks on the operands of
 floating-point instructions, and unless specifically configured, these show up in Decompiler output
@@ -157,7 +159,7 @@ The possible settings are:
 The Decompiler considers a NaN operation to be associated with a floating-point comparison if they both
 can be considered boolean clauses of the same **if** condition.
 
-Recover -for- loops
+<a name="analysisforloops"></a>Recover -for- loops
 :   When toggled *on*, the Decompiler attempts to pinpoint
 variables that control the iteration over specific loops in the function body.
 When these *loop* variables are discovered, the loop is
@@ -172,7 +174,7 @@ When toggled *off*, the loop is displayed using
 **while** syntax, with any initializer and
 iterating statements mixed in with the loop body or preceding basic blocks.
 
-Respect read-only flags
+<a name="analysisreadonly"></a>Respect read-only flags
 :   When toggled *on*, the Decompiler treats any values in memory
 marked *read-only* as constant. If a read-only memory location is explicitly
 referenced by the function being decompiled, it is considered to be unchanging, and the initial
@@ -188,13 +190,13 @@ Users can actively set whether specific memory regions are considered read-only 
 as *constant* via the **Mutability** setting
 (see [Data Mutability](DecompilerAnnotations.md#data-mutability)).
 
-Simplify extended integer operations
+<a name="analysisextendedprecision"></a>Simplify extended integer operations
 :   This toggles whether the Decompiler attempts to simplify double precision arithmetic operations,
 where a single logical operation is split into two parts, calculating the high and low pieces
 of the result in separate instructions.  Decompiler support for this kind of transform is currently
 limited, and only certain constructions are simplified.
 
-Simplify predication
+<a name="analysispredicate"></a>Simplify predication
 :   When this option is active, the Decompiler simplifies code sequences containing
 *predicated* instructions. A predicated instruction is executed
 conditionally based on a boolean value, the **predicate**,
@@ -202,7 +204,7 @@ and a sequence of instructions can share the same predicate. The Decompiler merg
 resulting `if/else` blocks that share the same predicate so that the condition is only
 printed once.
 
-Split combined structure fields
+<a name="analysissplitstruct"></a>Split combined structure fields
 :   When this option is active, the Decompiler attempts to identify places in the code where multiple
 fields of a structure data-type are being moved simultaneously with a single operation. Then it splits the
 operation into multiple pieces so that the logical fields can be seen individually.
@@ -219,7 +221,7 @@ represent the combined fields being written to or read from.
 
     ```
 
-Split combined array elements
+<a name="analysissplitarray"></a>Split combined array elements
 :   When this option is active, the Decompiler attempts to identify places in the code where multiple
 elements of an array are being moved simultaneously with a single operation. Then it splits the
 operation into multiple pieces so each element of the array can be seen individually.
@@ -236,18 +238,18 @@ represent the combined elements being written to or read from.
 
     ```
 
-Split pointers to combined elements
+<a name="analysissplitpointers"></a>Split pointers to combined elements
 :   This options affects when the Decompiler's splitting actions are applied. See
 the discussion above about
-[Splitting Structure Accesses](DecompilerOptions.md#analysissplitstruct) and
-[Splitting Array Accesses](DecompilerOptions.md#analysissplitarray).
+[Splitting Structure Accesses](DecompilerOptions.md#analysis-options) and
+[Splitting Array Accesses](DecompilerOptions.md#analysis-options).
 If this option is on, a split is performed whenever combined elements or combined
 fields are copied.  In particular, either the read access, or the write access, or both,
 can be through a pointer.
 If this option is off, splitting is limited to copies between structures or arrays at fixed
 locations, either at a global address, or on the local stack.
 
-Use in-place assignment operators
+<a name="analysisinplace"></a>Use in-place assignment operators
 :   When toggled *on*, the Decompiler employs in-place assignment operators,
 such as `+=` and `<<=`, in its output syntax.
 
@@ -258,10 +260,10 @@ such as `+=` and `<<=`, in its output syntax.
 These options do not change the Decompiler's analysis but only affect how the results are presented.
 
 
-Background Color
+<a name="displaybackgroundcolor"></a>Background Color
 :   Assign the background color for the Decompiler window.
 
-Brace Format for <kind-of> blocks
+<a name="displaybraceformatting"></a>Brace Format for <kind-of> blocks
 :   Choose how braces are placed after function declarations, or other kinds of code blocks in Decompiler output.
 Formatting can be controlled for:
 
@@ -279,43 +281,43 @@ the declaration or keyword starting the block.  The formatting options are:
 The "Same line" option is consistent with K & R code formatting style.  The "Next line" option is consistent with
 the Allman formatting style.
 
-Color Default
+<a name="displaycolordefault"></a>Color Default
 :   Assign the color to any characters emitted by the Decompiler that do not fall into one of token types
 listed below. This includes delimiter characters like commas and parentheses as well as various *operator*
 characters.
 
-Color for <token>
+<a name="displaytokencolor"></a>Color for <token>
 :   Assign colors to the different types of language tokens emitted by the Decompiler.
 These include:
 
 
 > Comments Constants - including integer, floating-point, character, and string Functions names Globals - names of variables with global scope Keywords - reserved names in the language being emitted Parameters - names of function input variables Types - names of data-types in variable declarations and casts Variables - names of local variables Special - volatile variables and other special symbols
 
-Color for Current Variable Highlight
+<a name="displaycurrenthighlight"></a>Color for Current Variable Highlight
 :   Assign the background color used to highlight the token currently under the cursor in a Decompiler window.
 
-Color for Highlighting Find Matches
+<a name="displayfindhighlight"></a>Color for Highlighting Find Matches
 :   Assign the background color used to highlight characters matching the current *Find* pattern
 (see [Find...](DecompilerWindow.md#find)).
 
-Color for Highlighting Middle-mouse Matches
+<a name="middlemousecolor"></a>Color for Highlighting Middle-mouse Matches
 :   Assign the background color used to highlight characters when highlighting using the middle-mouse button.
 
-Comment line indent level
+<a name="displaycommentindent"></a>Comment line indent level
 :   Set the number of characters that comment lines are indented within Decompiler output. This applies only
 to comments within the body of the function being displayed.  Comments at the head of the function
 are not indented.
 
-Comment style
+<a name="displaycommentstyle"></a>Comment style
 :   Set the language syntax used to delimit comments emitted as part of Decompiler output. For C and Java,
 the choices are `/* C style comments */` and `// C++ style comments`.
 
-Disable printing of type casts
+<a name="displaydisablecasts"></a>Disable printing of type casts
 :   Set whether the syntax for *type casts* is emitted in Decompiler output.
 If this is toggled on, type cast syntax is never displayed, even when rules of the language
 require it. So individual statements may no longer be formally accurate.
 
-Display <kind-of> Comments
+<a name="commentoptions"></a>Display <kind-of> Comments
 :   Set whether a specific type of comment should be incorporated into Decompiler output.
 Each type has its own toggle and can be individually included or excluded from Decompiler output.
 
@@ -327,20 +329,20 @@ A comment's type indicates how it is placed within a Listing window, not how it 
 a Decompiler window.  All comments within the body of the function are displayed in the same way
 by the decompiler, regardless of their type (see the discussion in [Comments](DecompilerAnnotations.md#comments)).
 
-Display Header comment
+<a name="displayheadercomment"></a>Display Header comment
 :   Toggle whether the Decompiler emits comments at the head (before the beginning) of a function.
 The header is built from Plate comments placed at the *entry point* of the
 function (see the discussion in [Comments](DecompilerAnnotations.md#comments)).
 The inclusion of other Plate comments is controlled by the **Display PLATE comments** toggle, described above.
 
-Display Line Numbers
+<a name="displaylinenumbers"></a>Display Line Numbers
 :   Toggle whether line numbers are displayed in any Decompiler window.  If toggled
 on, each Decompiler window reserves space to display a numbers down the left
 side of the window, labeling each line of output produced by the Decompiler.
 Line numbers are associated with the window itself and are not formally part of
 the Decompiler's output.
 
-Display Namespaces
+<a name="displaynamespaces"></a>Display Namespaces
 :   Control how the Decompiler displays namespace information associated
 with function and variable symbols. The possible settings are:
 
@@ -356,17 +358,17 @@ by the function, or if a portion of the path is completely outside the function'
 The **Never** setting never displays any of the namespace path under any
 circumstances and may produce output that is ambiguous and doesn't formally parse.
 
-Display Warning comments
+<a name="displaywarningcomments"></a>Display Warning comments
 :   Toggle whether Decompiler generated *WARNING* comments are displayed as part
 of the output. The Decompiler generates these comments, independent of those laid down by users, to
 indicate unusual conditions or possible errors (see [Warning Comments](DecompilerAnnotations.md#warning-comments)).
 
-Font
+<a name="displayfont"></a>Font
 :   Set the typeface used to render characters in any Decompiler window. Indentation is generally clearer
 using a monospaced (fixed-width) font, but any font available to Ghidra can be used.  The size of
 the font can also be controlled from this option.
 
-Integer format
+<a name="displayintegerformat"></a>Integer format
 :   Set how integer constants are formatted in the Decompiler output.
 The possible settings are:
 
@@ -378,25 +380,25 @@ For **Best Fit**, a representation is selected based on how
 close it is to either a *round* decimal value (10, 100, 1000, etc.) or
 a round hexadecimal value (0x10, 0x100, 0x1000, etc.)
 
-Maximum characters in a code line
+<a name="displaymaxchar"></a>Maximum characters in a code line
 :   Set the maximum number of characters in a line of code emitted by the Decompiler before a line break
 is forced.  The Decompiler will not split an individual token across lines. So line breaks frequently
 will come before the maximum number of characters is reached, and technically a single token can
 extend the line beyond the maximum.
 
-Number of characters per indent level
+<a name="displayindentlevel"></a>Number of characters per indent level
 :   Set the amount of indenting used to print statements within a nested scope in the
 Decompiler output.  Each level of nesting (function bodies,
 loop bodies, **if/else** bodies, etc.)
 adds this number characters.
 
-Print 'NULL' for null pointers
+<a name="displaynull"></a>Print 'NULL' for null pointers
 :   Set how null pointers are displayed in Decompiler output.  If this is toggled
 on, the Decompiler will print a constant pointer value of zero (a **null** pointer)
 using the special token `NULL`.  Otherwise the pointer value is represented with the '0' character,
 which is then cast to a pointer.
 
-Print calling convention name
+<a name="displayconvention"></a>Print calling convention name
 :   Set whether the *calling convention* is printed as part of the function
 declaration in Decompiler output. If this option is turned on, the name of the calling convention
 is printed just prior to the return value data-type within the function declaration.  All functions
@@ -411,7 +413,7 @@ Changes to these options affect only the Decompiler and only for
 the current Program being analyzed.
 
 
-Prototype Evaluation
+<a name="optionprotoeval"></a>Prototype Evaluation
 :   Sets the calling convention (prototype model) used when decompiling a function where
 the convention is not known; i.e., marked as **unknown**.  Many architectures have multiple
 calling conventions, **__stdcall**, **__thiscall**, etc.
@@ -638,3 +640,8 @@ If a **prototype** or **callfixup** is removed,
 all functions are checked to see if they have the matching calling convention or call-fixup set.
 A function with matching calling convention is changed to have the *default* convention, which is always a core element.
 A function with matching call-fixup is changed to have no call-fixup.
+
+
+---
+
+[← Previous: Program Options](DecompilerOptions.md) | [Next: Decompiler Window →](DecompilerWindow.md)

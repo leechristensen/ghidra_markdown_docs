@@ -1,3 +1,5 @@
+[Home](../index.md) > [DebuggerCopyActionsPlugin](index.md) > Copy Actions
+
 # Debugger: Copy Actions
 
 
@@ -42,7 +44,7 @@ The **Copy Into...** actions both present the same dialog: (The **Export Trace V
 action uses a different dialog.)
 
 
-![](images/DebuggerCopyIntoProgramDialog.png)
+![Debugger Copy Into Program Dialog](images/DebuggerCopyIntoProgramDialog.png)
 
 
 The dialog consists of several options, followed by a table that displays the proposed
@@ -56,8 +58,7 @@ trace's memory manager.
 
 - The **Destination** drop down allows the choice of an alternative destination. All
 open programs, **`<New Program>`**, and **`<Temporary Program>`** are available
-for selection. Modifying this option will reset the proposal. Choosing **&lt;New
-Program&gt;** will prompt for a new destination program upon a successful copy. Choosing
+for selection. Modifying this option will reset the proposal. Choosing **&lt;New Program&gt;** will prompt for a new destination program upon a successful copy. Choosing
 **`<Temporary Program>`** will create a temporary, read-only program. The temporary
 program can still be saved later.
 - The **Read live** checkbox includes the [Read Memory](../DebuggerListingPlugin/DebuggerListingPlugin.md#read-memory)
@@ -70,7 +71,7 @@ program.
 Mappings](../DebuggerStaticMappingPlugin/DebuggerStaticMappingPlugin.md) when determining the destination addresses. This is only available for existing
 programs, and will only operate on portions of the source trace that are mapped to the
 destination program. Modifying this option will reset the proposal.
-- The **<a name="use-overlays"></a>Use overlays** checkbox causes the dialog to propose
+- The **<a name="use_overlays"></a>Use overlays** checkbox causes the dialog to propose
 overlay blocks for destination ranges that already exist in the program's memory. When
 unchecked, ranges are broken apart so that portions already in the destination memory map
 will not modify the map. Portions not already in the memory map will generate new blocks.
@@ -137,3 +138,8 @@ The **Copy** button confirms the dialog and copies *all proposed ranges* in the
 table. If successful, the dialog is closed. The **Cancel** button dismisses the dialog
 without performing any operation. The **Reset** button resets the proposal, in case entries
 were accidentally removed or modified.
+
+
+---
+
+[← Previous: Debug Console](../DebuggerConsolePlugin/DebuggerConsolePlugin.md) | [Next: Model →](../DebuggerModelPlugin/DebuggerModelPlugin.md)

@@ -1,7 +1,9 @@
+[Home](../index.md) > [FunctionID](index.md) > Scoring and Disambiguation
+
 # Function ID
 
 
-![](images/FIDmatch.png)
+![Fidmatch](images/FIDmatch.png)
 
 
 ## Overview
@@ -227,3 +229,8 @@ Function names are considered to match if their *base* names match.
 The base name is obtained by stripping off any namespace from the symbol plus any initial underscores.
 If the name is mangled, an attempt is made to demangle it first, then namespace and
 parameter information is stripped.
+
+
+---
+
+[← Previous: Analysis Options](FunctionID.md) | [Next: Function ID Plugin →](FunctionIDPlugin.md)

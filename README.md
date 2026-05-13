@@ -138,13 +138,15 @@ docs/Ghidra_<version>/
 # Quick built-in checker (run automatically as the last conversion step)
 uv run ghidra-docs-validator ./docs/Ghidra_12.0.4_PUBLIC
 
-# Comprehensive link checking (requires lychee in $PATH)
-lychee --no-progress --max-concurrency 8 --cache \
-  --accept '200,204,206,403,429' --format markdown \
-  ./docs/Ghidra_12.0.4_PUBLIC | tee lychee-report.md
+# Render + link/anchor check via mkdocs. Wraps `mkdocs build --strict`
+# and fails on any warning (broken anchor, unknown nav file, missing
+# fragment). Run this after every converter change or doc edit.
+./scripts/check_links.sh
 ```
 
 The built-in validator catches broken internal links, malformed tables,
 unmatched bold/backtick markers, missing image files, and same-line
-anchor+heading rendering bugs. lychee additionally validates external
-HTTP links.
+anchor+heading rendering bugs. `mkdocs build --strict` additionally
+validates every `[text](path.md#anchor)` reference against the rendered
+heading slugs and any `<a name>` markup in the target file (configured
+via `validation:` in `mkdocs.yml`).

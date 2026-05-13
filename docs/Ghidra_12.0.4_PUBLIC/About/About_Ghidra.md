@@ -10,7 +10,7 @@ Ghidra.
 ## **To view information about Ghidra**
 
 
-- From the menu-bar in tool, click **Help  → About Ghidra**
+- From the menu-bar in tool, click **Help → About Ghidra**
 
 
 > **Tip:** This option is also available from the Ghidra Project

@@ -3,7 +3,7 @@
 # Ghidra Tool Administration
 
 
-A Ghidra Tool is a collection of building blocks, called <a name="plugins"></a>***Plugins***.  You can create tools by combining different Plugins
+A Ghidra Tool is a collection of building blocks, called <a name="plugins"></a>**\*Plugins\***.  You can create tools by combining different Plugins
 that cooperate with one another to achieve certain functionality. You can add tools to the Tool
 Chest or configure them to share data and resources with other tools.  Ghidra provides a
 set of Plugins, but you may create your own Plugins to add more functionality to your
@@ -73,8 +73,7 @@ Window](../FrontEndPlugin/Ghidra_Front_end.md#tool-chest)).  An icon for a new 
 Project Window.
 
 
-| ![](images/SaveTool.png) |
-| --- |
+![Save Tool](images/SaveTool.png)
 
 
 To save a tool,
@@ -124,11 +123,7 @@ The [Status](../FrontEndPlugin/Ghidra_Front_end.md#console)
 area on the Ghidra Project Window indicates whether the export was successful.
 
 
-*If the tool contains Plugins that are not part of
-Ghidra (i.e., you wrote new Plugins), you will have to distribute a jar file containing the
-class files for the Plugins along with the XML file. The recipient can then just place the
-jar file in one of the [locations](../FrontEndPlugin/Edit_Plugin_Path.md) where Ghidra
-will search for available Plugins.*
+*If the tool contains Plugins that are not part of Ghidra (i.e., you wrote new Plugins), you will have to distribute a jar file containing the class files for the Plugins along with the XML file. The recipient can then just place the jar file in one of the [locations](../FrontEndPlugin/Edit_Plugin_Path.md) where Ghidra will search for available Plugins.*
 
 
 #### Export Default Tool
@@ -140,9 +135,7 @@ may be helpful if the user is going to share the exported tool with others.
 
 
 This action is only available from within a running tool via
-**File  →
-Export  →
-Export Default Tool...**
+**File → Export → Export Default Tool...**
 
 
 ### Import Tool
@@ -170,10 +163,7 @@ errors during the import are reported in the [Status](../FrontEndPlugin/Ghidra_F
 Ghidra Project Window.
 
 
-*If the tool that you are importing contains Plugins
-that are not part of Ghidra, you must have the jar file containing the class files for the
-Plugins. Place the jar file in one of the [locations](../FrontEndPlugin/Edit_Plugin_Path.md) where Ghidra
-will search for available Plugins and restart Ghidra.*
+*If the tool that you are importing contains Plugins that are not part of Ghidra, you must have the jar file containing the class files for the Plugins. Place the jar file in one of the [locations](../FrontEndPlugin/Edit_Plugin_Path.md) where Ghidra will search for available Plugins and restart Ghidra.*
 
 
 #### Import Default Tools to Tool Chest
@@ -182,8 +172,7 @@ will search for available Plugins and restart Ghidra.*
 The default tool for the [Code
 Browser](../CodeBrowserPlugin/CodeBrowser.md) is part of the Ghidra installation, and can be added to your Tool Chest at any
 time. So if you [delete](#delete-tool) the default tool from your Tool Chest,
-you can always recover them by using the **Import Default Tools to Tool
-Chest** option.
+you can always recover them by using the **Import Default Tools to Tool Chest** option.
 
 
 To import default tools,
@@ -196,7 +185,7 @@ Window](../FrontEndPlugin/Ghidra_Front_end.md), select **Tools** →
 tools. Select the tools you want to import and then select **OK**.
 
 
-![](images/ImportDefaultToolsDialog.png)
+![Import Default Tools Dialog](images/ImportDefaultToolsDialog.png)
 
 
 1. The default tools are added to your Tool Chest; if the default tools already exist,
@@ -214,7 +203,7 @@ To launch a tool from the [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#too
 OR
 - From the [Ghidra Project
 Window](../FrontEndPlugin/Ghidra_Front_end.md), select **Tools** →
-**Run Tool** →  ***`<tool name>`***
+**Run Tool** →  **\*`<tool name>`\***
 
 
 To launch a tool with a specific Program,
@@ -225,9 +214,7 @@ Ghidra Project Window, and drop it onto a tool  icon in the Tool Chest panel. T
 tool is launched and has the Program opened.
 
 
-*If you bring up more than one instance of the same
-tool, the window title shows a one-up number appended to the tool name, e.g.,
-CodeBrowser(2).*
+*If you bring up more than one instance of the same tool, the window title shows a one-up number appended to the tool name, e.g., CodeBrowser(2).*
 
 
 ### Rename Tool
@@ -238,7 +225,7 @@ To rename a tool  from the [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#t
 
 - Right-click on the icon for the tool in the Tool Chest panel in the Ghidra Project
 Window and select Rename from the popup
-menu***.***
+menu**\*.\***
 - Enter the new tool name in the dialog that appears and press the
 `<OK>` button.
 
@@ -256,12 +243,11 @@ drag a file in the Front End onto any tool
 in the Tool Chest in order to open the file in that tool.
 
 
-To change the associated tool for any file type, select **Tools →  Set Tool Associations...** menu.   This will
+To change the associated tool for any file type, select **Tools → Set Tool Associations...** menu.   This will
 open the **Set Tool Associations Dialog**
 
 
-| ![](images/SetToolAssociations.png) |
-| --- |
+![Set Tool Associations](images/SetToolAssociations.png)
 
 
 This dialog shows a list of known content types and the tool that is currently used
@@ -276,8 +262,7 @@ then click the **Edit** button.  This button will trigger the
 
 
 
-| ![](images/PickTool.png) |
-| --- |
+![Pick Tool](images/PickTool.png)
 
 
 This dialog shows a list of all tools that can open the given content type.  If you
@@ -315,8 +300,7 @@ If you made changes to the Program and not saved them before you closed the tool
 a dialog is displayed to ask whether you want to save your changes.
 
 
-| ![](images/SaveChangesDialog.png) |
-| --- |
+![Save Changes Dialog](images/SaveChangesDialog.png)
 
 
 - Choose the **Save** button to save the Program.
@@ -356,7 +340,7 @@ To delete a tool from your [Tool Chest](../FrontEndPlugin/Ghidra_Front_end.md#to
 
 
 - From the [Ghidra Project
-Window](../FrontEndPlugin/Ghidra_Front_end.md), Select the **Tools** →  **Delete Tool** →  ***`<tool name>`***
+Window](../FrontEndPlugin/Ghidra_Front_end.md), Select the **Tools** →  **Delete Tool** →  **\*`<tool name>`\***
 OR,
 - Right mouse click on the icon in the Tool Chest and select the **Delete...** option.
 
@@ -380,7 +364,7 @@ happening in the tool. The cancel button allows you to cancel the currently runn
 task. You can still interact with the program while the task is running.
 
 
-![](images/Progress.png)
+![Progress](images/Progress.png)
 
 
 <a name="taskdialog"></a>There may be times when a task is "modal" such
@@ -390,7 +374,7 @@ cancel it. Depending on the task, the dialog may or may not show a progress
 bar.
 
 
-![](images/ModalTaskDialog.png)
+![Modal Task Dialog](images/ModalTaskDialog.png)
 
 
 **Related Topics:**

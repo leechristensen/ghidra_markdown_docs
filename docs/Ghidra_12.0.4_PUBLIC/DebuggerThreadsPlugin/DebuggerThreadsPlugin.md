@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerThreadsPlugin](index.md) > Threads
+
 # Debugger: Threads
 
 
-![](images/DebuggerThreadsPlugin.png)
+![Debugger Threads Plugin](images/DebuggerThreadsPlugin.png)
 
 
 In general, a thread refers to a unit of concurrent execution within a target. Typically,
@@ -49,3 +51,8 @@ interface. Notably, the [Registers](../DebuggerRegistersPlugin/DebuggerRegisters
 display the activated thread's register values. [Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md) windows with
 configured location tracking will re-compute that location with the thread's context and
 navigate to it.
+
+
+---
+
+[← Previous: Model](../DebuggerModelPlugin/DebuggerModelPlugin.md) | [Next: Trace Management →](../DebuggerTraceManagerServicePlugin/DebuggerTraceManagerServicePlugin.md)

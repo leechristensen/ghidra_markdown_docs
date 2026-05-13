@@ -1,3 +1,5 @@
+[Home](../index.md) > [Debugger](index.md) > Debugger
+
 # Ghidra Debugger
 
 
@@ -51,3 +53,8 @@ add actions and options to other windows.
 This package is already enabled in the default "Debugger" tool. You may need to import the
 tool using the Tools → Import Default Tools menu from Ghidra's
 project window. You may also add the package to an existing tool using the File → Configure menu from your tool window and selecting "Debugger."
+
+
+---
+
+[← Previous: Pattern Clipboard](../FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin.md) | [Next: Launchers →](../TraceRmiLauncherServicePlugin/TraceRmiLauncherServicePlugin.md)

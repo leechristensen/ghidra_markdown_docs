@@ -10,7 +10,7 @@ Properties are settings related to a program.
 <a name="optionssampleimage"></a>
 
 
-![](images/ProgramOptionsDialog.png)
+![Program Options Dialog](images/ProgramOptionsDialog.png)
 
 
 ## Accessing Program Properties
@@ -27,8 +27,7 @@ Generically, to modify a program option or setting for the currently open
 program:
 
 
-1. Select **Edit →  Program
-Options...**.
+1. Select **Edit → Program Options...**.
 2. Select the *category* node in the Options tree to view the settings
 for that category.
 3. The displayed settings can then be changed as needed.
@@ -81,12 +80,11 @@ following paragraphs.
 ### Date Editor
 
 
-The [sample image](#program-options-dialog) above shows an option for *Date
-Created*. Click on the browse button (**...**) to the right of the field that shows
+The [sample image](#program-options-dialog) above shows an option for *Date Created*. Click on the browse button (**...**) to the right of the field that shows
 the date. The date editor is displayed as shown below.
 
 
-![](images/EditDate.png)
+![Edit Date](images/EditDate.png)
 
 
 The editor displays a calendar to change the month, day or year, and
@@ -110,7 +108,7 @@ A file chooser is displayed. Select the new filename from the file chooser and c
 either the **OK** or **Apply** button to make the change.
 
 
-*Provided by: *ProgramManagerPlugin**
+Provided by: *ProgramManagerPlugin*
 
 
 **Related Topics:**

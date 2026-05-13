@@ -25,13 +25,11 @@ To create forward or reverse scoped
 following two actions, respectively:
 
 
-- From the menu bar choose **Select****→
-Scoped Flow → *Forward Scoped Flow***
-- From the menu bar choose **Select****→
-Scoped Flow → *Reverse Scoped Flow***
+- From the menu bar choose **Select** **→ Scoped Flow → *Forward Scoped Flow\***
+- From the menu bar choose **Select** **→ Scoped Flow → *Reverse Scoped Flow\***
 
 
-*Provided by: *Select By Scoped Flow* Plugin*
+Provided by: *Select By Scoped Flow* Plugin
 
 
 **Related Topics:**

@@ -5,8 +5,10 @@ The Disassembled View Plugin is for viewing the **virtual** disassembly for the 
 address and a small number of addresses beyond the selected address.
 
 
-| ![](images/DisassembledViewPluginMain.png) |
-| --- |
+![Disassembled View Plugin Main](images/DisassembledViewPluginMain.png)
+
+
+*The highlighted window is the Disassembled View Plugin*
 
 
 ## Main Display
@@ -46,7 +48,7 @@ Names"
 This option affects how the text form of the address is displayed in the plugin window.
 
 
-*Provided By: *DisassembledViewPlugin**
+Provided By: *DisassembledViewPlugin*
 
 
 **Related Topics:**

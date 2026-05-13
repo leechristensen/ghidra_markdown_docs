@@ -1,3 +1,5 @@
+[Home](../../index.md) > [VersionTrackingPlugin](../index.md) > Markup Items Table
+
 # Version Tracking Markup Items Table
 
 
@@ -16,8 +18,7 @@ where you want, by dropping it in the destination program.
 The [dual listing](#dual-listing-window) will be described below in more detail.
 
 
-| ![](../images/VersionTrackingMarkupItems.png) |
-| --- |
+![Version Tracking Markup Items](../images/VersionTrackingMarkupItems.png)
 
 
 Once you have decided that you believe a function or data match is correct,
@@ -89,14 +90,14 @@ and a description of that status.
 | --- | --- | --- | --- |
 | Unapplied | *no icon* |   | The markup item has not had anything done to it and if a destination address is  			        		specified the source and destination values are not the same. |
 | No Address | *no icon* |   | The markup item has not had anything done to it because it doesn't have a  			        		destination address associated with it. |
-| Same | ![](../images/Same.png) |   | The destination already has the same value as the source. |
-| Added | ![](../images/ApplyAdd.png) |   | The source value was applied by adding it to the destination value. |
-| Replaced | ![](../images/ApplyReplace.png) |   | The destination value was applied by replacing it with the source value. |
-| Don't Care | ![asterisk_orange.png](../../icons/asterisk_orange.png) |   | The user set this markup item to indicate that we don't care about it  			        		and it should be ignored when applying the match for this item. |
-| Don't Know | ![unknown.gif](../../icons/unknown.gif) |   | The user set this markup item to indicate that we don't know if it is correct 			        		or if it should be applied  			        		and therefore it should be ignored when applying the match for this item. |
-| <a name="conflict-status"></a> Conflict | ![cache.png](../../icons/cache.png) |   | The user applied another markup item for this match that conflicts with 			        		this markup item and prevents it from being applied. |
-| Reject | ![dialog-cancel.png](../../icons/dialog-cancel.png) |   | The user rejected this markup item and it should be ignored 			        		when applying the match for this item. |
-| Failed | ![edit-delete.png](../../icons/edit-delete.png) |   | An attempt to apply this markup item failed.  			        		If you hover over the icon in the markup item table a tooltip will appear with  			        		more information about the failure. |
+| Same | ![Same](../images/Same.png) |   | The destination already has the same value as the source. |
+| Added | ![Apply Add](../images/ApplyAdd.png) |   | The source value was applied by adding it to the destination value. |
+| Replaced | ![Apply Replace](../images/ApplyReplace.png) |   | The destination value was applied by replacing it with the source value. |
+| Don't Care | ![Asterisk Orange](../../icons/asterisk_orange.png) |   | The user set this markup item to indicate that we don't care about it  			        		and it should be ignored when applying the match for this item. |
+| Don't Know | ![Unknown](../../icons/unknown.gif) |   | The user set this markup item to indicate that we don't know if it is correct 			        		or if it should be applied  			        		and therefore it should be ignored when applying the match for this item. |
+| <a name="conflict_status"></a> Conflict | ![Cache](../../icons/cache.png) |   | The user applied another markup item for this match that conflicts with 			        		this markup item and prevents it from being applied. |
+| Reject | ![Dialog Cancel](../../icons/dialog-cancel.png) |   | The user rejected this markup item and it should be ignored 			        		when applying the match for this item. |
+| Failed | ![Edit Delete](../../icons/edit-delete.png) |   | An attempt to apply this markup item failed.  			        		If you hover over the icon in the markup item table a tooltip will appear with  			        		more information about the failure. |
 
 
 ## Markup Item Actions
@@ -108,17 +109,17 @@ listing. The table below lists these actions.
 
 | Action | Icon | Description |
 | --- | --- | --- |
-| <a name="apply-markup-item-using-options-and-forcing"></a> Apply (Use Options; Force If Necessary) | ![checkmark_green.gif](../../icons/checkmark_green.gif) | This action applies the selected markup items using the current apply 			        		match option for each markup type. For each selected markup item this  			        		action will force (or try to cause) the option to be applied.  			        		For example, if the option for a selected markup type is set to  			        		"Do Not Apply", this action would cause an add or replace to be 			        		performed depending on the item. |
-| <a name="add-as-primary-markup-item"></a> Apply (Add As Primary) | ![Plus.png](../../icons/Plus.png) | This action applies the source value for each selected markup item  			        		by adding it to the destination value. If possible the source markup  			        		item becomes the primary one. |
-| <a name="add-markup-item"></a> Apply (Add) | ![Plus.png](../../icons/Plus.png) | This action applies the source value for each selected markup item by adding it  			        		to the destination value. The destination markup item remains the primary one. |
-| <a name="replace-default-markup-item"></a> Apply (Replace Default Only) | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value only if the  			        		destination value is a default value. |
-| <a name="replace-first-markup-item"></a> Apply (Replace First Only) | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value if the only  			        		defined data being replaced is the Data item at the destination address.  			        		If there is more than one defined data in the destination program that  			        		would be replaced by the source data type, then no replace will occur. |
-| <a name="replace-markup-item"></a> Apply (Replace) | ![sync_enabled.png](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value. For data this  			        		will replace all defined data that is currently in the way of the 			        		source data type being created.   Important: For Data markup that is replaced,  			        		theReset Mark-upaction will only be able to restore the single  			        		Data item that was originally at the Destination Address. Any other  			        		Data items that were replaced by this action will not be restored byReset Mark-up. |
-| <a name="tag-markup-item-dont-care"></a> Don't Care | ![asterisk_orange.png](../../icons/asterisk_orange.png) | This action sets the status of this markup item to Don't Care. This indicates that 			        		we don't care about this markup item and it shouldn't be applied when the match 			        		is applied. |
-| <a name="tag-markup-item-dont-know"></a> Don't Know | ![unknown.gif](../../icons/unknown.gif) | This action sets the status of this markup item to Don't Know. This indicates that 			        		we don't know if this markup item is correct or don't know if it should be applied 			        		when the match is applied. |
-| <a name="tag-markup-item-rejected"></a> Reject | ![dialog-cancel.png](../../icons/dialog-cancel.png) | This action sets the status of this markup item to rejected. Once a markup item is  			        		rejected, it will be ignored when applying the match for this item. |
-| <a name="edit-markup-item-destination-address"></a> Edit Destination Address | ![edit-rename.png](../../icons/edit-rename.png) | This action provides an edit address dialog that allows you to specify a destination  			        		address for any markup item that doesn't already have an address as indicated by "No Address". 			        		It also allows you to change the destination address if the one specified for the markup item 			        		is incorrect. In some circumstances you can't edit the destination address and an 			        		information dialog indicating why it's not editable will be displayed instead. |
-| <a name="reset-markup-item"></a> Reset | ![undo-apply.png](../../icons/undo-apply.png) | This action resets the markup item back to its original unapplied state and  			        		restores the markup in the destination program back to its original state if 			        		necessary. |
+| <a name="apply_markup_item_using_options_and_forcing"></a> Apply (Use Options; Force If Necessary) | ![Checkmark Green](../../icons/checkmark_green.gif) | This action applies the selected markup items using the current apply 			        		match option for each markup type. For each selected markup item this  			        		action will force (or try to cause) the option to be applied.  			        		For example, if the option for a selected markup type is set to  			        		"Do Not Apply", this action would cause an add or replace to be 			        		performed depending on the item. |
+| <a name="add_as_primary_markup_item"></a> Apply (Add As Primary) | ![Plus](../../icons/Plus.png) | This action applies the source value for each selected markup item  			        		by adding it to the destination value. If possible the source markup  			        		item becomes the primary one. |
+| <a name="add_markup_item"></a> Apply (Add) | ![Plus](../../icons/Plus.png) | This action applies the source value for each selected markup item by adding it  			        		to the destination value. The destination markup item remains the primary one. |
+| <a name="replace_default_markup_item"></a> Apply (Replace Default Only) | ![Sync Enabled](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value only if the  			        		destination value is a default value. |
+| <a name="replace_first_markup_item"></a> Apply (Replace First Only) | ![Sync Enabled](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value if the only  			        		defined data being replaced is the Data item at the destination address.  			        		If there is more than one defined data in the destination program that  			        		would be replaced by the source data type, then no replace will occur. |
+| <a name="replace_markup_item"></a> Apply (Replace) | ![Sync Enabled](../../icons/sync_enabled.png) | This action applies the source value for each selected markup item by  			        		replacing the destination value with the source value. For data this  			        		will replace all defined data that is currently in the way of the 			        		source data type being created.   Important: For Data markup that is replaced,  			        		theReset Mark-upaction will only be able to restore the single  			        		Data item that was originally at the Destination Address. Any other  			        		Data items that were replaced by this action will not be restored byReset Mark-up. |
+| <a name="tag_markup_item_dont_care"></a> Don't Care | ![Asterisk Orange](../../icons/asterisk_orange.png) | This action sets the status of this markup item to Don't Care. This indicates that 			        		we don't care about this markup item and it shouldn't be applied when the match 			        		is applied. |
+| <a name="tag_markup_item_dont_know"></a> Don't Know | ![Unknown](../../icons/unknown.gif) | This action sets the status of this markup item to Don't Know. This indicates that 			        		we don't know if this markup item is correct or don't know if it should be applied 			        		when the match is applied. |
+| <a name="tag_markup_item_rejected"></a> Reject | ![Dialog Cancel](../../icons/dialog-cancel.png) | This action sets the status of this markup item to rejected. Once a markup item is  			        		rejected, it will be ignored when applying the match for this item. |
+| <a name="edit_markup_item_destination_address"></a> Edit Destination Address | ![Edit Rename](../../icons/edit-rename.png) | This action provides an edit address dialog that allows you to specify a destination  			        		address for any markup item that doesn't already have an address as indicated by "No Address". 			        		It also allows you to change the destination address if the one specified for the markup item 			        		is incorrect. In some circumstances you can't edit the destination address and an 			        		information dialog indicating why it's not editable will be displayed instead. |
+| <a name="reset_markup_item"></a> Reset | ![Undo Apply](../../icons/undo-apply.png) | This action resets the markup item back to its original unapplied state and  			        		restores the markup in the destination program back to its original state if 			        		necessary. |
 
 
 ## Markup Items Filters
@@ -129,18 +130,17 @@ primary text filter. Typing text into the filter will remove all markup item row
 that don't have that text in at least one of the displayed fields.
 
 
-The ![view-filter.png](../../icons/view-filter.png) button to the right of the
+The ![View Filter](../../icons/view-filter.png) button to the right of the
 primary text filter will show the ancillary filters that are
 available.  You can apply an ancillary filter by removing the check mark from its
 box and pressing the **Apply** or **OK** button.
 Once an ancillary filter is applied the ancillary filters icon will change to
-![lightbulb.png](../../icons/lightbulb.png).  Further,
+![Lightbulb](../../icons/lightbulb.png).  Further,
 the icon may occasionally flash as a reminder that there is a filter applied.
 The following image shows the available ancillary filters.
 
 
-| ![](../images/MarkupItemsFilters.png) |
-| --- |
+![Markup Items Filters](../images/MarkupItemsFilters.png)
 
 
 The table below lists and describes the groups of available filters.
@@ -194,25 +194,23 @@ The following shows the dual listings below the Markup Items table with the sour
 positioned above the destination listing.
 
 
-| ![](../images/VersionTrackingMarkupItems.png) |
-| --- |
+![Version Tracking Markup Items](../images/VersionTrackingMarkupItems.png)
 
 
 ### Dual Listing Actions
 
 
-<a name="toggle-dual-listing-visibility"></a>
-The **Toggle Dual Listing Visibility** ![application_tile_horizontal.png](../../icons/application_tile_horizontal.png)
+<a name="toggle_dual_listing_visibility"></a>
+The **Toggle Dual Listing Visibility** ![Application Tile Horizontal](../../icons/application_tile_horizontal.png)
 
 
-| ![](../images/VersionTrackingMarkupItemsTableOnly.png) |
-| --- |
+![Version Tracking Markup Items Table Only](../images/VersionTrackingMarkupItemsTableOnly.png)
 
 
-<a name="markup-item-menu-actions"></a>
+<a name="markup_item_menu_actions"></a>
 
 
-From the toolbar menu ![menu16.gif](../../icons/menu16.gif)
+From the toolbar menu ![Menu16](../../icons/menu16.gif)
 
 
 - **Show Listing Format Header**
@@ -226,27 +224,25 @@ destination listing will be positioned to the right of the source listing.
 Otherwise the destination listing is positioned below the source listing.
 - **Synchronize Scrolling**
 When this item has a checkmark next to it,
-the ![lock.gif](../../icons/lock.gif) button will show in the toolbar and
+the ![Lock](../../icons/lock.gif) button will show in the toolbar and
 the dual listing will synchronize scrolling of the left and right function in
 their views. Scrolling or moving the cursor in one side will cause the location
 in the other side to also scroll or move if a matching location can be determined.
 Otherwise when this item has no checkmark next to it,
-the ![unlock.gif](../../icons/unlock.gif) button will show in the toolbar and the
+the ![Unlock](../../icons/unlock.gif) button will show in the toolbar and the
 left and right sides of the dual listing will scroll independent of the other side.
 
 
 The following shows the *format header* being displayed for the dual listings.
 
 
-| ![](../images/VersionTrackingMarkupItemsHeader.png) |
-| --- |
+![Version Tracking Markup Items Header](../images/VersionTrackingMarkupItemsHeader.png)
 
 
 The following shows the dual listings being displayed *side by side*.
 
 
-| ![](../images/VersionTrackingMarkupItemsSideBySide.png) |
-| --- |
+![Version Tracking Markup Items Side By Side](../images/VersionTrackingMarkupItemsSideBySide.png)
 
 
 ### Background Colors in the Listings
@@ -301,7 +297,7 @@ end Dual Listing blockquote
 end top-level blockquote
 
 
-*Provided by: *Version Tracking Plugin**
+Provided by: *Version Tracking Plugin*
 
 
 **Related Topics:**
@@ -310,3 +306,8 @@ end top-level blockquote
 - [Version Tracking Matches Table](VT_Matches_Table.md)
 - [Version Tracking Tool](../VT_Tool.md)
 - [Version Tracking Introduction](../Version_Tracking_Intro.md)
+
+
+---
+
+[← Previous: Matches Table](VT_Matches_Table.md) | [Next: Functions Table →](VT_Functions_Table.md)

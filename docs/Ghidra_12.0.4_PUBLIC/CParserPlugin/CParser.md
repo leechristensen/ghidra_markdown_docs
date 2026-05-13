@@ -16,8 +16,7 @@ Why would you want to do this?
 entering data type information by hand
 - Define values can be used as equates
 - If you have symbol names for functions (debug information, name table, etc...) you can
-**[Apply
-Function DataTypes](../DataTypeManagerPlugin/data_type_manager_window.md#apply-function-data-types)** from the data archive manager to any program.
+**[Apply Function DataTypes](../DataTypeManagerPlugin/data_type_manager_window.md#apply-function-data-types)** from the data archive manager to any program.
 
 
 One benefit of using the C-Parser over other methods of data type extraction (ie. debug

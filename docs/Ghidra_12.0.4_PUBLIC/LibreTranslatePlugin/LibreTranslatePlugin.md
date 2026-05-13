@@ -34,9 +34,7 @@ the original value, bracketed with **»chevrons«**
 
 
 See
-**Edit  →
-Tool Options  →
-Strings | LibreTranslate**
+**Edit → Tool Options → Strings | LibreTranslate**
 
 
 - **URL** - required.  Example: **http://localhost:5000/**
@@ -55,7 +53,7 @@ per string in each request, to wait for the LibreTranslate HTTP server to
 respond.
 
 
-*Provided by: *LibreTranslate Plugin**
+Provided by: *LibreTranslate Plugin*
 
 
 **Related Topics:**

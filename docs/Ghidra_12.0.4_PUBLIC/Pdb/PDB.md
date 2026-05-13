@@ -1,3 +1,5 @@
+[Home](../index.md) > [Pdb](index.md) > PDB
+
 # Using Microsoft Program Database (PDB) Files
 
 
@@ -32,8 +34,7 @@ PDB files can be loaded in two ways:
 
 
 - **File → [Load PDB File](LoadPDB.md#load-pdb-file)**
-- PDB Analyzer via **Analysis →
-[Auto Analyze](../AutoAnalysisPlugin/AutoAnalysis.md#auto-analysis)** or
+- PDB Analyzer via **Analysis → [Auto Analyze](../AutoAnalysisPlugin/AutoAnalysis.md#auto-analysis)** or
 **Analysis → [One Shot](../AutoAnalysisPlugin/AutoAnalysis.md#one-shot-analysis)**.
 
 
@@ -53,7 +54,7 @@ PDB files can be loaded in two ways:
 ## The DIA SDK-Based Capability
 
 
-*.PDB.XML files can be created in three different ways:
+\*.PDB.XML files can be created in three different ways:
 
 
 
@@ -71,12 +72,11 @@ either one .PDB file or a directory of .PDB files. When given a directory, the s
 recursively traverses all subdirectories to find .PDB files. A created .PDB.XML file is
 placed in the same location as the corresponding original .PDB file. Sample calls to the
 script are shown below.
-`    createPdbXmlFiles.bat C:\Symbols\samplePdb.pdb`
-`    createPdbXmlFiles.bat C:\Symbols`
-- Run the included *pdb.exe* executable (found in the *&lt;ghidra install
-root&gt;/Ghidra/Features/PDB/os/win64* directory) and redirect (save) its output to an
+`createPdbXmlFiles.bat C:\Symbols\samplePdb.pdb`
+`createPdbXmlFiles.bat C:\Symbols`
+- Run the included *pdb.exe* executable (found in the *&lt;ghidra install root&gt;/Ghidra/Features/PDB/os/win64* directory) and redirect (save) its output to an
 XML file as shown below:
-`    pdb.exe samplePdb.pdb > samplePdb.pdb.xml`
+`pdb.exe samplePdb.pdb > samplePdb.pdb.xml`
 
 
 **NOTE:** Execution of *pdb.exe* has runtime dependencies which must be satisfied.
@@ -105,3 +105,8 @@ you will need to add and register one or more files on your computer. Refer to t
 
 - [Load PDB File](LoadPDB.md)
 - [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md)
+
+
+---
+
+[← Previous: DWARF External Debug Files](../DWARFExternalDebugFilesPlugin/DWARFExternalDebugFilesPlugin.md) | [Next: Load PDB File →](LoadPDB.md)

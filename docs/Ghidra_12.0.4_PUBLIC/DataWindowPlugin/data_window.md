@@ -5,8 +5,7 @@ The Data Window provides a list of data defined in the currently open program. T
 the *Data Window*, select the **Window** → **Defined Data** from the tool menu.
 
 
-| ![](images/DataWindow.png) |
-| --- |
+![Data Window](images/DataWindow.png)
 
 
 This window has four columns. The **Data** column shows the string representation of the
@@ -35,24 +34,22 @@ click on ![Make Selection](../icons/text_align_justify.png), or right mouse clic
 ### Filtering Types
 
 
-![exec.png](../icons/exec.png)
+![Exec](../icons/exec.png)
 
 
-Click on the filter icon ![exec.png](../icons/exec.png) in the tool bar of the *Data
-Window* to launch the data filter dialog. This dialog allows you to filter the type of
+Click on the filter icon ![Exec](../icons/exec.png) in the tool bar of the *Data Window* to launch the data filter dialog. This dialog allows you to filter the type of
 data displayed in the data window, including the ability to limit data to the current
 selection or [current view](../CodeBrowserPlugin/CodeBrowser.md#the-view).
 An example of the dialog appears below.
 
 
-![](images/DataWindowFilter.png)
+![Data Window Filter](images/DataWindowFilter.png)
 
 
 Use the radio buttons in the *Filter Enable* panel at the top of the dialog to enable
 and disable the filter. By default, the filter will be enabled. When the filter is enabled,
 the icon at the top of the data window is depressed to indicate that the displayed data has
-been filtered. When the filter is disabled, all defined data types will show in the *Data
-Window*.
+been filtered. When the filter is disabled, all defined data types will show in the *Data Window*.
 
 
 Use the drop down menu to limit data displayed by the data window. You may select
@@ -83,7 +80,7 @@ active (field will show up in yellow); simply remove each letter from this field
 the non-filtered state. Also, all filtering, is case-insensitive.
 
 
-*Provided By: *DataWindowPlugin**
+Provided By: *DataWindowPlugin*
 
 
 **Related Topics:**

@@ -1,10 +1,12 @@
+[Home](../index.md) > [DecompilePlugin](index.md) > Pop-up Menu and Keyboard Actions
+
 # Decompiler Window
 
 
 To display the Decompiler window, position the cursor on a
 function in the Code Browser, then select the
 
-![decompileFunction.gif](../icons/decompileFunction.gif)
+![Decompile Function](../icons/decompileFunction.gif)
 icon from the tool bar, or the
 **Decompile** option from the
 **Window** menu in the tool.
@@ -60,7 +62,7 @@ associated with the warning (see [Warning Comments](DecompilerAnnotations.md#war
 
 Initially pressing
 
-![decompileFunction.gif](../icons/decompileFunction.gif)
+![Decompile Function](../icons/decompileFunction.gif)
 or selecting
 **Decompile** from the **Window** menu in the tool
 brings up the *main* window.  The main window always displays the function
@@ -110,7 +112,7 @@ with or may represent the effect of multiple instructions.
 
 Pressing the
 
-![camera-photo.png](../icons/camera-photo.png)
+![Camera Photo](../icons/camera-photo.png)
 icon
 in any Decompiler window's toolbar causes a *Snapshot* window
 to be created, which shows decompilation of the same function.
@@ -147,7 +149,7 @@ then the Decompiler invents a function body, on the fly, called an
 is changed to gray to indicate this special state.
 
 
-![](images/Undefined.png)
+![Undefined](images/Undefined.png)
 
 
 The *entry point* address of the Undefined Function is chosen by
@@ -180,7 +182,7 @@ displayed in that particular window.
 ### Export to C
 
 
-![page_edit.png](../icons/page_edit.png)
+![Page Edit](../icons/page_edit.png)
  - button
 
 
@@ -201,7 +203,7 @@ the [Export](../ExporterPlugin/exporter.md) dialog.
 ### Snapshot
 
 
-![camera-photo.png](../icons/camera-photo.png)
+![Camera Photo](../icons/camera-photo.png)
  - button
 
 
@@ -214,7 +216,7 @@ follow but continues to display the original function (see [Snapshot Windows](De
 ### Re-decompile
 
 
-![reload3.png](../icons/reload3.png)
+![Reload3](../icons/reload3.png)
  - button
 
 
@@ -236,7 +238,7 @@ aid for plug-in developers.
  - toggle button
 
 
-Quickly turn off the [Eliminate unreachable code](DecompilerOptions.md#analysisunreachable) decompiler setting.
+Quickly turn off the [Eliminate unreachable code](DecompilerOptions.md#analysis-options) decompiler setting.
 
 
 ### Respect Read-only Flags
@@ -246,13 +248,13 @@ Quickly turn off the [Eliminate unreachable code](DecompilerOptions.md#analysisu
  - toggle button
 
 
-Quickly turn off the [Respect read-only flags](DecompilerOptions.md#analysisreadonly) decompiler setting.
+Quickly turn off the [Respect read-only flags](DecompilerOptions.md#analysis-options) decompiler setting.
 
 
 ### Copy
 
 
-![page_white_copy.png](../icons/page_white_copy.png)
+![Page White Copy](../icons/page_white_copy.png)
  - button
 
 
@@ -654,7 +656,7 @@ of the current function itself, but a called function can be edited by putting t
 its name specifically.
 
 
-![](images/EditFunctionSignature.png)
+![Edit Function Signature](images/EditFunctionSignature.png)
 
 
 The dialog provides detailed control over elements like
@@ -759,7 +761,7 @@ In the following example, the token representing the first write to the
 variable *a* is selected when Def-Use is chosen.
 
 
-![](images/Defuse.png)
+![Defuse](images/Defuse.png)
 
 Forward Slice
 :   Highlight all variable tokens where the value at that point in the function is
@@ -773,7 +775,7 @@ In the following example, the token *b*, the output of
 *max_alpha*, is selected when Forward Slice is chosen.
 
 
-![](images/ForwardSlice.png)
+![Forward Slice](images/ForwardSlice.png)
 
 Backward Slice
 :   Highlight all variable tokens where the value at that point in the function
@@ -932,7 +934,7 @@ The selected constant must have had either a [Convert](DecompilerWindow.md#conve
 [Set Equate...](DecompilerWindow.md#set-equate) command applied to it.  After applying this command,
 the conversion is no longer applied, and the selected constant will be displayed
 using the decompiler's default strategy, which depends on the data-type of the constant and
-other display settings (See [Integer format](DecompilerOptions.md#displayintegerformat)).
+other display settings (See [Integer format](DecompilerOptions.md#display-options)).
 
 
 ### Remove Signature Override
@@ -1247,3 +1249,8 @@ This command is only available if the selected token is part of a high-level var
 been speculatively merged.  The part of the variable that is directly represented by the
 token is split out as its own variable, retaining the name of the original variable.
 Any other pieces become a separate variable with a new name.
+
+
+---
+
+[← Previous: Mouse Actions](DecompilerWindow.md) | [Next: Decompiler Taint →](../DecompilerTaint/DecompilerTaint.md)

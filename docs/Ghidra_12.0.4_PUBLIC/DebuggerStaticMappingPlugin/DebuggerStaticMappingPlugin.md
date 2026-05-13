@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerStaticMappingPlugin](index.md) > Static Mappings
+
 # Debugger: Static Mappings
 
 
-![](images/DebuggerStaticMappingPlugin.png)
+![Debugger Static Mapping Plugin](images/DebuggerStaticMappingPlugin.png)
 
 
 A static mapping refers to a range of addresses in the dynamic listing and its corresponding
@@ -59,3 +61,8 @@ the current snap to infinity.
 
 This action is available when at least one mapping is selected. It removes those
 mappings.
+
+
+---
+
+[← Previous: Modules and Sections](../DebuggerModulesPlugin/DebuggerModulesPlugin.md) | [Next: Static Synchronization →](../DynamicStaticSynchronizationPlugin/DynamicStaticSynchronizationPlugin.md)

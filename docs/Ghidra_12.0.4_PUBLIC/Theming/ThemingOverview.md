@@ -1,3 +1,5 @@
+[Home](../index.md) > [Theming](index.md) > Theming
+
 # Theming Overview
 
 
@@ -117,7 +119,7 @@ be saved as a new theme and stored in a file in their application directory. The
 shared with other users by exporting and importing themes.
 
 
-*Provided by: *Theme Manager**
+Provided by: *Theme Manager*
 
 
 **Related Topics:**
@@ -126,3 +128,8 @@ shared with other users by exporting and importing themes.
 - [Theming User's Guide](ThemingUserDocs.md)
 - [Theming Developer's Guide](ThemingDeveloperDocs.md)
 - [Theming Architecture](ThemingInternals.md)
+
+
+---
+
+[← Previous: Languages](../LanguageProviderPlugin/Languages.md) | [Next: User's Guide →](ThemingUserDocs.md)

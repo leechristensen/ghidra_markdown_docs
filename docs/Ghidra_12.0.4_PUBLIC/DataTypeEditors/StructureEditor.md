@@ -9,7 +9,7 @@ that contain components. A component is a data type of a particular size and at 
 offset in the structure. The following illustrates the editor for a structure data type.
 
 
-![](images/StructureEditor.png)
+![Structure Editor](images/StructureEditor.png)
 
 
 As shown above, the Structure Editor also includes a bit-level view of the structure layout to improve
@@ -28,7 +28,7 @@ union data type. All the components of a Union are at an offset of 0. The follow
 the editor for a union data type.
 
 
-![](images/UnionEditor.png)
+![Union Editor](images/UnionEditor.png)
 
 
 A Structure Editor or Union Editor can be launched from the [Data Type Manager](../DataTypeManagerPlugin/data_type_manager_description.md),
@@ -44,7 +44,7 @@ action](#edit-actions) associated with it. These allow the user to: apply change
 Undefined components, reorganize the current components, duplicate components, clear components (changes
 them to *undefined* components), delete components, create array components, and unpackage a
 structure or array component changing it into its component parts.
-- *Pull Down Menu*: The ![menu16.gif](../icons/menu16.gif) icon at the top
+- *Pull Down Menu*: The ![Menu16](../icons/menu16.gif) icon at the top
 of the editor provides additional editor actions. These are: show the category path of a
 component's data type, edit a component's data type, edit the fields of a component, apply
 a cycle group or favorite.
@@ -75,7 +75,7 @@ key or changing focus.  While in this edit state the entry may be reverted by hi
 ## Applying Changes
 
 
-Select the Apply Changes icon ![disk.png](../icons/disk.png) in the toolbar to apply
+Select the Apply Changes icon ![Disk](../icons/disk.png) in the toolbar to apply
 the changes from the editor back to the program or archive.
 
 
@@ -124,14 +124,14 @@ cause the undo/redo stack to be cleared.
 ## Show In Data Type Manager
 
 
-Select the ![go-home.png](../icons/go-home.png) icon in the toolbar to have the editor's
+Select the ![Go Home](../icons/go-home.png) icon in the toolbar to have the editor's
 data type be highlighted in the Data Type Manager's tree.
 
 
 ## Closing the Editor
 
 
-Select the Close dockable component icon ![](../shared/close16.gif) in
+Select the Close dockable component icon ![Close16](../shared/close16.gif) in
 the toolbar to exit from the editor. If you have unsaved changes to your data type, a dialog
 will ask if you want to save the changes.
 
@@ -141,7 +141,7 @@ will ask if you want to save the changes.
 
 To search for text in any column on any row in the editor, enter the text into the
 **Search** field and press return to search forward from the currently selected table row.
-Alternatively, the down ![go-down.tango.16.png](../icons/go-down.tango.16.png) and up ![go-up.tango.16.png](../icons/go-up.tango.16.png) arrows next to the search field can be used to search
+Alternatively, the down ![Go Down.Tango.16](../icons/go-down.tango.16.png) and up ![Go Up.Tango.16](../icons/go-up.tango.16.png) arrows next to the search field can be used to search
 forwards and backwards respectively. Searches are not case sensitive.
 
 
@@ -155,7 +155,7 @@ will also be examined when searching, even though they are not visible in the UI
 To change the name of the structure or union being edited, edit the *Name* field in
 the bottom of the editor. If the name is valid, the structure's or union's name will change
 when the edits are applied by pressing the editor's Apply Changes icon
-![disk.png](../icons/disk.png) in the toolbar.
+![Disk](../icons/disk.png) in the toolbar.
 
 
 ## Entering a Description
@@ -164,7 +164,7 @@ when the edits are applied by pressing the editor's Apply Changes icon
 To change the description of the structure or union being edited, edit the
 *Description* field in the bottom of the editor. The structure's or union's description
 will take effect when the edits are applied by pressing the editor's Apply Changes icon
-![disk.png](../icons/disk.png) in the toolbar.
+![Disk](../icons/disk.png) in the toolbar.
 
 
 ## Changing the Size
@@ -219,7 +219,7 @@ The alignment will not influence the size of a non-packed structure so it is adv
 that the size always be explicity set to a multiple of the alignment value.
 
 
-![](images/StructureEditor.png)
+![Structure Editor](images/StructureEditor.png)
 
 
 ### Packed Structures
@@ -243,7 +243,7 @@ The following image shows the editor state reflecting a default packed structure
 default alignment.
 
 
-![](images/StructureEditorPacked.png)
+![Structure Editor Packed](images/StructureEditorPacked.png)
 
 
 #### align (minimum)
@@ -319,7 +319,7 @@ The alignment will not influence the size of a non-packed union so it is advised
 that the size always be explicity set to a multiple of the alignment value.
 
 
-![](images/UnionEditor.png)
+![Union Editor](images/UnionEditor.png)
 
 
 ### Packed Unions
@@ -334,7 +334,7 @@ a minimum alignment and pack value are specified, the minimum alignment will ove
 pack value if it is larger.
 
 
-![](images/UnionEditorPacked.png)
+![Union Editor Packed](images/UnionEditorPacked.png)
 
 
 ## Bitfield Component
@@ -399,7 +399,7 @@ currently reflected in decompiler results or listing reference markup. Its prima
 if to reflect the C/C++ source definition of a structure with correct alignment and structure sizing.
 
 
-![](images/StructureEditorWithFlexArray.png)
+![Structure Editor With Flex Array](images/StructureEditorWithFlexArray.png)
 
 
 ## Edit Actions
@@ -410,41 +410,41 @@ menu for the component table. To display the popup menu, right mouse click on th
 table. There are also short-cut keys associated with each of the edit actions.
 
 
-### Insert Undefined Byte ![Plus.png](../icons/Plus.png)
+### Insert Undefined Byte ![Plus](../icons/Plus.png)
 
 
-Within a non-packed structure *undefined* components are inserted before the current selection by clicking the ![Plus.png](../icons/Plus.png) **Insert Undefined Byte** button.  Within a packed structure an *undefined1* datatype component
+Within a non-packed structure *undefined* components are inserted before the current selection by clicking the ![Plus](../icons/Plus.png) **Insert Undefined Byte** button.  Within a packed structure an *undefined1* datatype component
 is inserted in a similar fashion, although in packed structures it is more appropriate to use a properly sized datatype (e.g., modify datatype
 on inserted component).
 
 
-### Move Up ![up.png](../icons/up.png)
+### Move Up ![Up](../icons/up.png)
 
 
 A contiguous group of components can be moved up or down in the structure. Select a block
-of one or more components. Each time the ![up.png](../icons/up.png) **Move Up**
+of one or more components. Each time the ![Up](../icons/up.png) **Move Up**
 button is pressed, the group of components is moved up one row. In other words, the component
 that was immediately above the group is now below it. This can be done until the group of
 selected components is at the beginning of the structure (offset 0).
 
 
-### Move Down ![down.png](../icons/down.png)
+### Move Down ![Down](../icons/down.png)
 
 
-Select a block of one or more components. Press the ![down.png](../icons/down.png)
+Select a block of one or more components. Press the ![Down](../icons/down.png)
 **Move Down** button to move the group of selected components down one row. The component
 that immediately followed them is now before them. The selected components can be moved down
 until they are at the end of the structure.
 
 
-### **Duplicate Component** ![DuplicateData.png](../icons/DuplicateData.png)
+### **Duplicate Component** ![Duplicate Data](../icons/DuplicateData.png)
 
 
 To duplicate a component within a structure or union:
 
 
 1. Select the component.
-2. Press the ![DuplicateData.png](../icons/DuplicateData.png) **Duplicate Component**
+2. Press the ![Duplicate Data](../icons/DuplicateData.png) **Duplicate Component**
 button.
 3. A single copy of the component is created immediately following the selected one.
 The newly created component will become selected allowing for repeated use of the action.
@@ -456,22 +456,21 @@ consumed by the new copy of the component.  If action is performed on the last c
 length will grow as needed.
 
 
-### **Duplicate Multiple of Component...** ![MultiDuplicateData.png](../icons/MultiDuplicateData.png)
+### **Duplicate Multiple of Component...** ![Multi Duplicate Data](../icons/MultiDuplicateData.png)
 
 
 To create multiple copies of a component:
 
 
 1. Select the component.
-2. Press the ![MultiDuplicateData.png](../icons/MultiDuplicateData.png) **Duplicate Multiple of
-Component...** button.
-3. <a name="structure-editor-duplicates-numberinputdialog"></a> The number of duplicates
+2. Press the ![Multi Duplicate Data](../icons/MultiDuplicateData.png) **Duplicate Multiple of Component...** button.
+3. <a name="structure_editor_duplicates_numberinputdialog"></a> The number of duplicates
 dialog appears. In a non-packed structure, you can only indicate as many duplicates as will
 fit in place of *undefined* bytes unless duplicating the last component in which case the
 structure will grow as needed.  The last component added will become the selected component.
 
 
-![](images/NumDuplicates.png)
+![Num Duplicates](images/NumDuplicates.png)
 
 
 1. Enter a valid number of duplicates and press the **Enter** key or the **OK**
@@ -480,7 +479,7 @@ button.
 selected one.
 
 
-### Delete Component(s) ![edit-delete.png](../icons/edit-delete.png)
+### Delete Component(s) ![Edit Delete](../icons/edit-delete.png)
 
 
 One or more components can be deleted from a structure or union. Deleting components in a
@@ -492,12 +491,12 @@ To delete components:
 
 
 1. Select one or more components to delete.
-2. Press the ![edit-delete.png](../icons/edit-delete.png) **Delete Component(s)**
+2. Press the ![Edit Delete](../icons/edit-delete.png) **Delete Component(s)**
 button.
 3. The components are removed from the structure or union.
 
 
-### Clear Component(s) ![erase16.png](../icons/erase16.png)
+### Clear Component(s) ![Erase16](../icons/erase16.png)
 
 
 Clearing a component changes it into an *undefined* components that take up the same
@@ -510,7 +509,7 @@ To clear components in a structure:
 
 
 1. Select one or more components in the table.
-2. Press the ![erase16.png](../icons/erase16.png) **Clear Component(s)** button.
+2. Press the ![Erase16](../icons/erase16.png) **Clear Component(s)** button.
 3. Each selected component is replaced by *undefined* components. The number of *undefined* components
 will be equal to the length of the component being cleared.
 
@@ -519,19 +518,19 @@ will be equal to the length of the component being cleared.
 Name and Comment.
 
 
-### Create Array ![Array.png](../icons/Array.png)
+### Create Array ![Array](../icons/Array.png)
 
 
 To create an array from a single selected component:
 
 
 1. Select a component in the table.
-2. Press the ![Array.png](../icons/Array.png) **Create Array** button.
-3. <a name="structure-editor-elements-numberinputdialog"></a> A dialog pops up to request
+2. Press the ![Array](../icons/Array.png) **Create Array** button.
+3. <a name="structure_editor_elements_numberinputdialog"></a> A dialog pops up to request
 the number of elements in the array.
 
 
-![](images/NumElementsPrompt.png)
+![Num Elements Prompt](images/NumElementsPrompt.png)
 
 
 1. Specify the number of elements. For a non-packed structure (i.e., pack disabled), the maximum size of the
@@ -550,7 +549,7 @@ To create an array from a selection of multiple components in a structure:
 
 
 1. Select multiple contiguous components.
-2. Press the ![Array.png](../icons/Array.png) **Create Array** button.
+2. Press the ![Array](../icons/Array.png) **Create Array** button.
 3. An array is created. The data type of the first component in the selection is used as
 the data type of the array. The array's dimension is determined by how many of that data
 type will fit in the space that was occupied by the selection. The size of the array will
@@ -558,7 +557,7 @@ be the array that can fit in the selected number of bytes. Any left over (unused
 the end of the selection will become *undefined* components.
 
 
-### Create Zero-Element / Flexible Array Component ![Array.png](../icons/Array.png)
+### Create Zero-Element / Flexible Array Component ![Array](../icons/Array.png)
 
 
 To create an unsized flexible array component you must use the datatype cell edit feature
@@ -568,25 +567,25 @@ you wish to modify.  This may be an existing component or the empty row at the e
 See [Editing the DataType Field](#editing-the-datatype-field) for more details.
 
 
-### Unpackage Component ![Unpackage.gif](../icons/Unpackage.gif)
+### Unpackage Component ![Unpackage](../icons/Unpackage.gif)
 
 
 Unpackaging takes a single component and replaces it with its own component parts. When
 editing a structure, array and structure components can be unpackaged by selecting that
-component and clicking the ![Unpackage.gif](../icons/Unpackage.gif) **Unpackage Component**
+component and clicking the ![Unpackage](../icons/Unpackage.gif) **Unpackage Component**
 button. For example, the array component Word[4] would become four Word components. If the
 structure struct_1 was composed of a Float and a DWord, then unpackaging it would replace the
 struct_1 component with a Float component and a DWord component.
 
 
-### Create Structure From Selection ![cstruct.png](../icons/cstruct.png)
+### Create Structure From Selection ![Cstruct](../icons/cstruct.png)
 
 
 Creating a structure from a selection takes a contiguous selection of components in the
 structure editor and creates a new structure from those components. It then replaces the
 selection with a single component whose data type is the new structure. The components that
 were in the selection will become the components that make up the new structure. The user
-does this by selecting the components in the editor and clicking the ![cstruct.png](../icons/cstruct.png) **Create Structure From Selection** button. The user is then
+does this by selecting the components in the editor and clicking the ![Cstruct](../icons/cstruct.png) **Create Structure From Selection** button. The user is then
 prompted for the name of the new structure. Once a unique name is specified the new structure
 is created and a component containing it replaces the selected components.  The newly created
 structure will adopt the same pack setting as the current structure.
@@ -643,27 +642,27 @@ Name, and Comment fields are editable.
 The following summarizes the information about each field for a component.
 
 
-***Offset*** - The byte offset of this component from the beginning of the
+**\*Offset\*** - The byte offset of this component from the beginning of the
 structure. For unions the byte offset of all components is zero, and therefore this field
 isn't shown.
 
 
-***Length*** - The length of this component in bytes.
+**\*Length\*** - The length of this component in bytes.
 
 
-***Mnemonic*** - The mnemonic (brief identifier) for this component's data
+**\*Mnemonic\*** - The mnemonic (brief identifier) for this component's data
 type.
 
 
-***DataType*** - The data type of this component. This field is editable.
+**\*DataType\*** - The data type of this component. This field is editable.
 
 
-***Name*** - The field name associated with this component in the structure or
+**\*Name\*** - The field name associated with this component in the structure or
 union. When specified, the field names must be unique for the components in a structure or
 union. This field is editable, except on *undefined* components.
 
 
-***Comment*** - A comment associated with this component. This field is editable,
+**\*Comment\*** - A comment associated with this component. This field is editable,
 except on *undefined* components.
 
 
@@ -776,7 +775,7 @@ not change its size.
 Examples of datatypes which may be specified, include:
 
 
-<a name="structure-editor-basic-data-type"></a>**Basic Data Type**
+<a name="structure_editor_basic_data_type"></a>**Basic Data Type**
 
 
 This can be any fixed-length built-in data type (e.g., byte, word, etc.), structure, union, typedef, or enum.
@@ -794,12 +793,12 @@ will be prompted to specify the component size.
 
 
 This can be a named Pointer data type (e.g., *pointer*, *pointer16*, etc.) or a pointer to a specific data type. A pointer to a data
-type is indicated by following the data type name with an * (i.e., asterisk symbol).  It is also possible to stipulate a specific pointer-size, although it should be
-only done when the default pointer size is inappropriate.  A stipulated pointer size may be specified by following the * with its bit-size
-(16,24,32..64).  The pointer * designation may also be stacked for a pointer-to-pointer type.
+type is indicated by following the data type name with an \* (i.e., asterisk symbol).  It is also possible to stipulate a specific pointer-size, although it should be
+only done when the default pointer size is inappropriate.  A stipulated pointer size may be specified by following the \* with its bit-size
+(16,24,32..64).  The pointer \* designation may also be stacked for a pointer-to-pointer type.
 
 
-For example, *word** is a pointer to a Word using the default pointer size.  If a non-default size is needed *word*16* would force
+For example, *word\** is a pointer to a Word using the default pointer size.  If a non-default size is needed *word\*16* would force
 the use of a 16-bit pointer.
 
 
@@ -820,7 +819,7 @@ as *char[0]*.
 Arrays of pointers may also be specified.
 
 
-For example, *float*[5]* is an array with five elements where each element is a pointer to
+For example, *float\*[5]* is an array with five elements where each element is a pointer to
 a Float.
 
 
@@ -883,11 +882,11 @@ The comment can be any Ascii text.
 
 Pressing the '**p**' key invokes the pointer action on a component. This will generally
 create a default pointer unless the existing data is already a pointer in which case that
-pointer will be wrapped with an additional pointer (e.g., int * would become int **). This
+pointer will be wrapped with an additional pointer (e.g., int \* would become int \*\*). This
 action will always apply a default sized pointer. Otherwise you can drag one of the other
 pointer types from the *Data Type Manager* window. With existing pointer data, the base
 type of that pointer may be changed simply by applying another type onto the pointer (e.g.,
-applying byte to default pointer becomes db *). If you do not want this pointer stacking
+applying byte to default pointer becomes db \*). If you do not want this pointer stacking
 behavior to happen, it is best to clear the code unit(s) before applying a data type via
 drag-n-drop or key-binding actions.
 
@@ -1013,12 +1012,12 @@ Drag a data type from the data type manager to the empty row at the end of the c
 table and drop it. The data type is added to the end of the structure in the editor.
 
 
-<a name="structure-editor-bytes-numberinputdialog"></a>If the data type can be various
+<a name="structure_editor_bytes_numberinputdialog"></a>If the data type can be various
 sizes, the user is prompted for the desired size. The following illustrates the dialog due
 to the drag and drop of a string.
 
 
-![](images/BytesNumberInputDialog.png)
+![Bytes Number Input Dialog](images/BytesNumberInputDialog.png)
 
 
 Simply enter the number of bytes desired for the data type and press the Enter key or
@@ -1277,7 +1276,7 @@ viewer is **Show Byte Offsets in Hexadecimal**.  Invoking either the **Add Bitfi
 operation if one is active.
 
 
-![](images/StructureEditBitfield.png)
+![Structure Edit Bitfield](images/StructureEditBitfield.png)
 
 
 > **Tip:** A component zoom feature is provided which can
@@ -1350,7 +1349,7 @@ values while preserving bitfield positioning within the structure.  The allocati
 conveyed by the editor are for editor use only.
 
 
-*Provided by: *Data Type Manager* Plugin*
+Provided by: *Data Type Manager* Plugin
 
 
 **Related Topics:**

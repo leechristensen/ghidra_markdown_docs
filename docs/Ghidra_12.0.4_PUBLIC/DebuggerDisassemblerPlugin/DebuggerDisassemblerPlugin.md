@@ -1,3 +1,5 @@
+[Home](../index.md) > [DebuggerDisassemblerPlugin](index.md) > Disassembly and Assembly
+
 # Debugger: Disassembler and Assembler
 
 
@@ -32,3 +34,8 @@ assembly.
 
 
 This action patches the data unit at the cursor, if its type provides an encoder.
+
+
+---
+
+[← Previous: Dynamic Listing](../DebuggerListingPlugin/DebuggerListingPlugin.md) | [Next: Stack →](../DebuggerStackPlugin/DebuggerStackPlugin.md)

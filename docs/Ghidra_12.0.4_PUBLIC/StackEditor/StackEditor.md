@@ -7,7 +7,7 @@ bytes are in ascending order by offset. The following illustrates the editor for
 frame.
 
 
-![](images/StackEditor.png)
+![Stack Editor](images/StackEditor.png)
 
 
 A Stack Frame Editor can be launched from the right mouse popup on a function or stack
@@ -22,7 +22,7 @@ stack frame. Each button has a different [edit action](#edit-actions)
 associated with it. These allow the user to: apply changes, clear defined stack variables
 (changes them to undefined bytes), delete stack bytes, and change a stack variable data type
 to an array.
-- *Pull Down Menu*: The ![menu16.gif](../icons/menu16.gif) icon at the top of
+- *Pull Down Menu*: The ![Menu16](../icons/menu16.gif) icon at the top of
 the editor provides additional editor actions. These are: show the category path of a
 component's data type, edit a component's data type, edit the fields of a component, and
 apply a cycle group or favorite.
@@ -35,7 +35,7 @@ Stack variables can be [defined](#creating-a-stack-variable) or [modified](#repl
 by applying a [Favorite](#favorites-basics) data type. The data type for a
 stack variable can also be changed by [cycling](#cycling-a-component-data-type) the data
 type.
-- <a name="stack-editor-frame-size"></a> <a name="stack-editor-return-address-offset"></a>
+- <a name="stack_editor_frame_size"></a> <a name="stack_editor_return_address_offset"></a>
 *Stack Frame Information Area*: This is the area below the table with the stack frame
 size, return address offset, local size, parameter offset and parameter size for the stack
 frame. The [local size](#changing-the-local-size), [parameter offset](#changing-the-parameter-offset) and [parameter size](#changing-the-parameter-size) can be modified here.
@@ -46,14 +46,14 @@ will appear.
 ## Applying Changes
 
 
-Select the Apply Changes icon ![pencil16.png](../icons/pencil16.png) in the toolbar to apply
+Select the Apply Changes icon ![Pencil16](../icons/pencil16.png) in the toolbar to apply
 the changes from the editor back to the function's stack frame in the program.
 
 
 ## Closing the Editor
 
 
-Select the Close dockable component icon ![](../shared/close16.gif) in the
+Select the Close dockable component icon ![Close16](../shared/close16.gif) in the
 toolbar to exit from the editor. If you have unsaved changes to your stack frame, a dialog will
 ask if you want to save the changes.
 
@@ -97,7 +97,7 @@ menu for the component table. To display the popup menu, right mouse click on th
 table. There are also short-cut keys associated with each of the edit actions.
 
 
-### Delete Stack Frame Byte(s) ![edit-delete.png](../icons/edit-delete.png)
+### Delete Stack Frame Byte(s) ![Edit Delete](../icons/edit-delete.png)
 
 
 A contiguous selection of components can be deleted to reduce the local size or parameter
@@ -110,12 +110,12 @@ To delete components:
 
 1. Make a contiguous selection of one or more components (stack variables and undefined
 bytes) to delete.
-2. Press the ![edit-delete.png](../icons/edit-delete.png) **Delete Component(s)**
+2. Press the ![Edit Delete](../icons/edit-delete.png) **Delete Component(s)**
 button.
 3. The components are removed from the stack frame.
 
 
-### Clear Stack Variable(s) ![erase16.png](../icons/erase16.png)
+### Clear Stack Variable(s) ![Erase16](../icons/erase16.png)
 
 
 Clearing a component removes the current stack variable defined at that offset in the
@@ -127,24 +127,24 @@ To clear stack variables in the stack frame:
 
 
 1. Select one or more stack variable components in the table.
-2. Press the ![erase16.png](../icons/erase16.png) **Clear Component(s)** button.
+2. Press the ![Erase16](../icons/erase16.png) **Clear Component(s)** button.
 3. Each selected component is replaced by undefined bytes. The number of undefined bytes
 will be equal to the length of the component being cleared.
 
 
-### Change Stack Variable's Data Type To Array ![Array.png](../icons/Array.png)
+### Change Stack Variable's Data Type To Array ![Array](../icons/Array.png)
 
 
 To create an array data type for a single selected component:
 
 
 1. Select a component in the table.
-2. Press the ![Array.png](../icons/Array.png) **Create Array** button.
-3. <a name="stack-editor-elements-numberinputdialog"></a> A dialog pops up to request the
+2. Press the ![Array](../icons/Array.png) **Create Array** button.
+3. <a name="stack_editor_elements_numberinputdialog"></a> A dialog pops up to request the
 number of elements in the array.
 
 
-![](images/NumElementsPrompt.png)
+![Num Elements Prompt](images/NumElementsPrompt.png)
 
 
 1. Specify the number of elements. The maximum size of the array is limited by the number
@@ -164,22 +164,22 @@ Name, and Comment fields are editable.
 The following summarizes the information about each field for a component.
 
 
-***Offset*** - The byte offset on the stack frame. This field is editable for
+**\*Offset\*** - The byte offset on the stack frame. This field is editable for
 defined stack variables.
 
 
-***Length*** - The length of this stack variable in bytes.
+**\*Length\*** - The length of this stack variable in bytes.
 
 
-***DataType*** - The data type of this stack variable or undefined if no stack
+**\*DataType\*** - The data type of this stack variable or undefined if no stack
 variable defined at this offset. This field is editable.
 
 
-***Name*** - The name associated with this stack variable. This field is
+**\*Name\*** - The name associated with this stack variable. This field is
 editable.
 
 
-***Comment*** - A comment associated with this stack variable. This field is
+**\*Comment\*** - A comment associated with this stack variable. This field is
 editable.
 
 
@@ -294,10 +294,10 @@ For example, Word.
 
 
 This can be the basic Pointer data type or a pointer to a data type. A pointer to a data
-type is indicated by following the data type with an *.
+type is indicated by following the data type with an \*.
 
 
-For example, Word * is a pointer to a Word.
+For example, Word \* is a pointer to a Word.
 
 
 **Array**
@@ -316,7 +316,7 @@ with 4 elements that are DWords.
 Arrays of pointers can also be specified.
 
 
-For example, Float*[5] is an array with five elements where each element is a pointer to
+For example, Float\*[5] is an array with five elements where each element is a pointer to
 a Float.
 
 
@@ -356,8 +356,8 @@ The comment can be any Ascii text.
 
 Pressing the **p** key invokes the pointer action. This changes the selected component's
 data type into a pointer based on its previous type. If an Undefined is selected, it becomes a
-simple Pointer. If a Byte is selected, it becomes a Byte*, which is a pointer to a byte. If
-MyStructure[5] is selected, it becomes MyStructure[5]*, which is a pointer to an array of five
+simple Pointer. If a Byte is selected, it becomes a Byte\*, which is a pointer to a byte. If
+MyStructure[5] is selected, it becomes MyStructure[5]\*, which is a pointer to an array of five
 structures. If the editor is unlocked and the empty last component is selected, a simple
 Pointer is added.
 
@@ -615,7 +615,7 @@ The *StackEditor* tab contains the following options:
 To select an option simply click on the check box.
 
 
-*Provided by: *Data Type Manager* Plugin*
+Provided by: *Data Type Manager* Plugin
 
 
 **Related Topics:**

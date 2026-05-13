@@ -13,15 +13,15 @@ Marker Margin) shows the Bookmark's type and comment.
 The type refers to how the bookmark was added. Ghidra supplies five types of bookmarks:
 
 
-| <a name="bookmarktype"></a> Bookmark Types |  |  |
-| --- | --- | --- |
+<a name="bookmarktype"></a> Bookmark Types
+
 | Type (icon) | How Bookmark is Added | Navigator Color |
 | --- | --- | --- |
-| Note ![notes.gif](../icons/notes.gif) | Added via the [Note Bookmarkdialog](#add-a-bookmark-in-the-codebrowser) ; *Notes* are intended to be user-defined only. | Purple |
-| Info ![information.png](../icons/information.png) | May be added by a plugin to mark an address of interest. | Cyan |
-| Analysis ![applications-system.png](../icons/applications-system.png) | Added during the [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md) process.               Indicates automatic changes which have been made to the program (e.g., code found,               address tables, etc.). | Orange |
-| Error ![edit-delete.png](../icons/edit-delete.png) | Added by the [disassembler](../DisassemblerPlugin/Disassembly.md) or [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md) process when an               unexpected condition is identified at a specific address (e.g., bad               instruction). | Red |
-| *Unknown* ![unknown.gif](../icons/unknown.gif)   | Represents a custom Bookmark type which was added by a plugin not               currently configured into the tool. A properly designed plugin will assign a custom               icon and color to its custom type.   | Magenta   |
+| Note ![Notes](../icons/notes.gif) | Added via the [Note Bookmarkdialog](#add-a-bookmark-in-the-codebrowser) ; *Notes* are intended to be user-defined only. | Purple |
+| Info ![Information](../icons/information.png) | May be added by a plugin to mark an address of interest. | Cyan |
+| Analysis ![Applications System](../icons/applications-system.png) | Added during the [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md) process.               Indicates automatic changes which have been made to the program (e.g., code found,               address tables, etc.). | Orange |
+| Error ![Edit Delete](../icons/edit-delete.png) | Added by the [disassembler](../DisassemblerPlugin/Disassembly.md) or [Auto Analysis](../AutoAnalysisPlugin/AutoAnalysis.md) process when an               unexpected condition is identified at a specific address (e.g., bad               instruction). | Red |
+| *Unknown* ![Unknown](../icons/unknown.gif)   | Represents a custom Bookmark type which was added by a plugin not               currently configured into the tool. A properly designed plugin will assign a custom               icon and color to its custom type.   | Magenta   |
 
 
 Ghidra also places a marker for the bookmark in the [Navigation Margin](../CodeBrowserPlugin/CodeBrowser.md#navigation-marker) of the
@@ -29,14 +29,13 @@ Code Browser. Clicking on the Navigation Margin causes the Code Browser to go to
 and centers it in the browser.
 
 
-The following paragraphs describes the [*Bookmarks
-window*](#bookmarks-window), and how to [add](#add-a-bookmark-in-the-codebrowser) and [remove](#remove-bookmarks) bookmarks.
+The following paragraphs describes the [*Bookmarks window*](#bookmarks-window), and how to [add](#add-a-bookmark-in-the-codebrowser) and [remove](#remove-bookmarks) bookmarks.
 
 
 ## **Add a Bookmark (in the CodeBrowser)**
 
 
-![](images/AddBookmarkDialog.png)
+![Add Bookmark Dialog](images/AddBookmarkDialog.png)
 
 
 To add a Note Bookmark,
@@ -60,8 +59,14 @@ selection. Deselecting the checkbox will cause the bookmark to be created at the
 location.
 
 
-| ![before](images/Before.png)   Before Adding Bookmarks to Selection   | ![after](images/After.png)   After Adding Bookmarks to Selection   |
-| --- | --- |
+![before](images/Before.png)
+
+Before Adding Bookmarks to Selection
+
+
+![after](images/After.png)
+
+After Adding Bookmarks to Selection
 
 
 The following image depicts the Code Browser with Bookmarks. Notice the checkmarks in the
@@ -70,7 +75,7 @@ the left and the markers in the [Navigation Margin](../CodeBrowserPlugin/CodeBro
 the right.
 
 
-![](images/MarkerForBookmark.png)
+![Marker For Bookmark](images/MarkerForBookmark.png)
 
 
 ## **Remove a Bookmark (in the CodeBrowser)**
@@ -81,7 +86,7 @@ To remove a bookmark,
 
 1. Position the cursor on the address of the bookmark to be deleted
 2. From the [Marker
-Margin](../CodeBrowserPlugin/CodeBrowser.md#margin-marker), right-mouse-click, select **Delete Bookmark →  `<type>`: `<description>`**
+Margin](../CodeBrowserPlugin/CodeBrowser.md#margin-marker), right-mouse-click, select **Delete Bookmark → `<type>`: `<description>`**
 
 
 ## **Bookmarks Window**
@@ -92,10 +97,10 @@ bookmark type, category, description, address, label, and code unit where the bo
 placed. Click on a Bookmark to navigate to the selected address in the [Code Browser](../CodeBrowserPlugin/CodeBrowser.md).
 
 
-![](images/Bookmarks.png)
+![Bookmarks](images/Bookmarks.png)
 
 
-To display the *Bookmarks* window, click the bookmark icon ![notes.gif](../icons/notes.gif) in the Code Browser toolbar, or select the **Window →  Bookmarks** option from the menu.
+To display the *Bookmarks* window, click the bookmark icon ![Notes](../icons/notes.gif) in the Code Browser toolbar, or select the **Window → Bookmarks** option from the menu.
 
 
 Each of the columns may be sorted by clicking on the header. The sort graphic illustrates
@@ -111,13 +116,12 @@ of the categories. Choose an existing category or enter a new one. If a new cate
 entered, the combo box is updated.
 
 
-![](images/BookmarksFilter.png)
+![Bookmarks Filter](images/BookmarksFilter.png)
 
 
-<a name="filter-dialog"></a>The list of Bookmarks displayed can be filtered by clicking
-the Filter button ![view-filter.png](../icons/view-filter.png) in the toolbar of the Bookmark
-Window. The displayed bookmarks will correspond to the selected checkboxes in the *Bookmark
-Filter* dialog.
+<a name="filter_dialog"></a>The list of Bookmarks displayed can be filtered by clicking
+the Filter button ![View Filter](../icons/view-filter.png) in the toolbar of the Bookmark
+Window. The displayed bookmarks will correspond to the selected checkboxes in the *Bookmark Filter* dialog.
 
 
 > **Note:** You may also filter the contents of the
@@ -177,7 +181,7 @@ a checkmark ( ).
 filter dialog by saving the tool.
 
 
-<a name="filter-textfield"></a> In addition to filtering on the type of bookmarks you
+<a name="filter_textfield"></a> In addition to filtering on the type of bookmarks you
 may also filter the contents of the bookmark table by entering text into the filter text
 field found at the bottom of the bookmark table. This filter will include only those
 Bookmarks whose Category or Description contain the specified text. For example, to show
@@ -201,14 +205,14 @@ in the table.
 2. Click the Select Bookmark Locations ![Make Selection](../icons/text_align_justify.png)
 button in the local toolbar.
 3. The corresponding addresses are selected in the browser.
-4. Navigate to the selected addressed by using the [navigation buttons](../Selection/Selecting.md#navigating-over-a-selection) (![NextSelectionBlock16.gif](../icons/NextSelectionBlock16.gif) , ![PreviousSelectionBlock16.gif](../icons/PreviousSelectionBlock16.gif) ) on the *main* tool bar.
+4. Navigate to the selected addressed by using the [navigation buttons](../Selection/Selecting.md#navigating-over-a-selection) (![Next Selection Block16](../icons/NextSelectionBlock16.gif) , ![Previous Selection Block16](../icons/PreviousSelectionBlock16.gif) ) on the *main* tool bar.
 
 
 ### Remove Bookmarks
 
 
 1. Select one or more rows in the Bookmarks table.
-2. Hit the **`<Delete>`** key, or press the ![edit-delete.png](../icons/edit-delete.png) icon on the *Bookmarks* toolbar, or right mouse click and
+2. Hit the **`<Delete>`** key, or press the ![Edit Delete](../icons/edit-delete.png) icon on the *Bookmarks* toolbar, or right mouse click and
 choose the **Delete** option.
 
 
@@ -219,7 +223,7 @@ Click the **Dismiss** button to exit the *Bookmarks* window.
 
 
 
-*Provided by: *Bookmarks* Plugin*
+Provided by: *Bookmarks* Plugin
 
 
 **Related Topics:**

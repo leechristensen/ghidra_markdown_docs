@@ -23,11 +23,11 @@ To display the *Options* dialog, select **Edit → Tool Options** from the tool 
 
 
 You can restore any currently selected options panel to its default settings by pressing
-the ***Restore Defaults*** button at the bottom of the options panel. Use caution
+the *\**Restore Defaults*\** button at the bottom of the options panel. Use caution
 when executing this action, as it cannot be undone.
 
 
-![](images/RestoreDefaults.png)
+![Restore Defaults](images/RestoreDefaults.png)
 
 
 ## **Key Bindings**
@@ -71,7 +71,7 @@ The display below shows the key bindings panel for the *Project Window*. Using t
 Key Bindings Options panel works the same as for a regular Ghidra Tool.
 
 
-![](images/KeyBindings.png)
+![Key Bindings](images/KeyBindings.png)
 
 
 ### Change a Key Binding
@@ -92,7 +92,7 @@ text field.
 button.
 
 
-![](../shared/note.yellow.png) When a key is mapped to multiple
+![Note.Yellow](../shared/note.yellow.png) When a key is mapped to multiple
 actions, and more than one of these actions is valid in the current context (i.e., the action
 is enabled), then a dialog is displayed for you to choose what action you want to
 perform.
@@ -158,8 +158,7 @@ A key binding can be applied to any menu item or toolbar icon. For example:
 **File**  →  **Close**
 
 
-**Data**  →  **Cycle**  →  **Cycle: Float,
-Double**
+**Data**  →  **Cycle**  →  **Cycle: Float, Double**
 
 
 Apply key bindings to menu items or icons that are frequently accessed.
@@ -176,11 +175,10 @@ associated with the Key Binding. When the Key Binding key is used, this menu ite
 associated with the icon will be applied.
 
 
-1. Press the `<F4>` key to display **Set Key
-Binding** dialog:
+1. Press the `<F4>` key to display **Set Key Binding** dialog:
 
 
-![](images/SetKeyBindings.png)
+![Set Key Bindings](images/SetKeyBindings.png)
 
 
 1. Enter a key combination in the **Set Key Binding** dialog, The panel below the
@@ -272,8 +270,8 @@ efficient. The following two options are available:
 
 | **Option** | **Description** |
 | --- | --- |
-| Program Cache Size | <a name="program-cache-size"></a> This options                 specifies the maximum number of programs to keep open in the cache. |
-| Program Cache Duration | <a name="program-cache-duration"></a> This option                 specifies how long (in minutes) to keep an otherwise unused cached program open. If                 the program is in use by some feature, it won't be closed when the time                 expires, and it will stay in the cache for the full cache time. |
+| Program Cache Size | <a name="program_cache_size"></a> This options                 specifies the maximum number of programs to keep open in the cache. |
+| Program Cache Duration | <a name="program_cache_duration"></a> This option                 specifies how long (in minutes) to keep an otherwise unused cached program open. If                 the program is in use by some feature, it won't be closed when the time                 expires, and it will stay in the cache for the full cache time. |
 
 
 **Related Topics:**

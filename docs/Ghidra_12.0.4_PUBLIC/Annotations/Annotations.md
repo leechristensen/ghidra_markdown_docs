@@ -32,7 +32,7 @@ will be displayed.  Quotes around display text are optional.
 image
 
 
-![](images/CommentDialogURLExample.png)
+![Comment Dialog Urlexample](images/CommentDialogURLExample.png)
 
 *URL Annotation Example*
 
@@ -44,7 +44,7 @@ tab of the Comments dialog.
 The image below shows how the annotation is rendered in Ghidra.
 
 
-![](images/RenderedURLExample.png)
+![Rendered Urlexample](images/RenderedURLExample.png)
 
 *Rendered URL Annotation Example*
 
@@ -91,7 +91,7 @@ The following is a table of supported annotations:
 
 
 ![Note](../icons/warning.help.png) All annotations support double
-quotes (") around content inside of the annotation tag, excluding the **@*name***
+quotes (") around content inside of the annotation tag, excluding the **@*name\***
 part of the tag. Further, some annotations require quotes, as listed in the table above
 (e.g., the **Execute** annotation requires quotes). It is considered good practice to
 quote all annotation parameter values.
@@ -112,7 +112,7 @@ of the annotations.
 image
 
 
-![](images/InvalidAnnotationsDialogExample.png)
+![Invalid Annotations Dialog Example](images/InvalidAnnotationsDialogExample.png)
 
 *Invalid Annotation Text Entry*
 
@@ -120,7 +120,7 @@ image
 image
 
 
-![](images/RenderedInvalidAnnotation.png)
+![Rendered Invalid Annotation](images/RenderedInvalidAnnotation.png)
 
 *Rendered Invalid Annotation Example*
 

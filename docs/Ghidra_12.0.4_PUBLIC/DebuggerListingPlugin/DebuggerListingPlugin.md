@@ -1,10 +1,12 @@
+[Home](../index.md) > [DebuggerListingPlugin](index.md) > Dynamic Listing
+
 # Debugger: Dynamic Listing
 
 
-![](images/DebuggerListingPlugin.png)
+![Debugger Listing Plugin](images/DebuggerListingPlugin.png)
 
 
-<a name="toggle-header"></a>The dynamic listing is analogous to Ghidra's listing for static
+<a name="toggle_header"></a>The dynamic listing is analogous to Ghidra's listing for static
 analysis, but in the dynamic context. It displays annotated memory contents from a target. More
 precisely, it displays recorded memory contents in a trace. In most use cases, that trace is
 "at the present," meaning it is the most recent memory from a live target. Multiple listings
@@ -150,7 +152,7 @@ of labels, registers, and constants. Labels may come from the current trace or a
 into the trace. Ambiguities are resolved arbitrarily.
 
 
-![](images/DebuggerGoToDialog.png)
+![Debugger Go To Dialog](images/DebuggerGoToDialog.png)
 
 
 Note that a Go-To action can fail for many reasons, e.g., syntax errors, computation
@@ -208,3 +210,8 @@ reads stale ranges that enter this listing's view.
 - ![Autoread](../icons/autoread.png) Read Visible Memory, RO Once -
 (default) behaves like Read Visible Memory, except it will neglect read-only ranges that have
 been read previously.
+
+
+---
+
+[← Previous: Registers](../DebuggerRegistersPlugin/DebuggerRegistersPlugin.md) | [Next: Disassembly and Assembly →](../DebuggerDisassemblerPlugin/DebuggerDisassemblerPlugin.md)

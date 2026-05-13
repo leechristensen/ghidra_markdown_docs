@@ -50,7 +50,7 @@ currently focused component window or dialog and allows the user to select and i
 valid, enabled action using either the mouse or keyboard.
 
 
-![](images/ActionsDialog.png)
+![Actions Dialog](images/ActionsDialog.png)
 
 
 The dialog displays a list of available actions, grouped into categories indicating
@@ -93,4 +93,4 @@ select actions, display actions, show actions.
 
 ---
 
-[← Previous: Headless Analyzer](../HeadlessAnalyzer/HeadlessAnalyzer.md) | [Next: Undo/Redo →](../Tool/Undo_Redo.md)
+[← Previous: GhidraGo](../GhidraGo/GhidraGo.md) | [Next: Undo/Redo →](../Tool/Undo_Redo.md)

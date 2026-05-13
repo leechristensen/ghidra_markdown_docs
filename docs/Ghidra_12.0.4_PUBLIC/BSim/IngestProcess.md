@@ -1,3 +1,5 @@
+[Home](../index.md) > [BSim](index.md) > Migration
+
 # Ingesting Executables
 
 
@@ -311,8 +313,7 @@ limited set of circumstances where it makes sense to turn this Analyzer off.
 
 Scripts can be used to alter settings on any number of objects during the analysis
 process. A few of these can have significant impact on extracted features. With the
-exception of symbol names and data-types, which *do
-not* have an effect on features, anything that changes decompilation will
+exception of symbol names and data-types, which *do not* have an effect on features, anything that changes decompilation will
 likely change the extracted features. These settings include:
 
 
@@ -395,8 +396,8 @@ Very similar to the two ingest commands, **generatesigs** and **commitsigs**, th
 
 The **generateupdates** command produces
 stripped down metadata XML files for every executable contained within the repository
-folder specified by the *ghidraURL*. Just like the **generatesigs** command, it can take an optional **--config *&lt;config_template&gt;*** parameter, which
-allows the command to execute without the BSim server running, otherwise a **--bsim *`<bsimURL>`***
+folder specified by the *ghidraURL*. Just like the **generatesigs** command, it can take an optional **--config *&lt;config_template&gt;\*** parameter, which
+allows the command to execute without the BSim server running, otherwise a **--bsim *`<bsimURL>`\***
 parameter is required. It can also take an
 optional **--overwrite** parameter, causing it
 to overwrite any previously generated XML files. If the
@@ -449,8 +450,7 @@ much longer to complete.
 **NOTE:** Applies to PostgreSQL databases only
 
 
-A maintainer can issue the **bsim
-prewarm** command to prepopulate RAM with commonly accessed portions of a
+A maintainer can issue the **bsim prewarm** command to prepopulate RAM with commonly accessed portions of a
 BSim database.
 
 
@@ -482,8 +482,7 @@ release.
 
 
 Unfortunately, the only option to upgrade in these cases is to reingest the executables
-into a new BSim database. Frequently the first two stages of ingest (See [*Ingesting
-Executables*](IngestProcess.md)), importing executables to a Ghidra Server and running auto-analysis,
+into a new BSim database. Frequently the first two stages of ingest (See [*Ingesting Executables*](IngestProcess.md)), importing executables to a Ghidra Server and running auto-analysis,
 do not need to be repeated. Only the final two stages need to be performed, generating
 and importing features to the BSim server, usually accomplished with the *generatesigs* and *commitsigs* commands.
 
@@ -497,3 +496,8 @@ should have little to no impact for most queries, but users will have to tolerat
 rare degradation of results if they place queries using a client that doesn't match the
 BSim server's version. If the client and server differ by a major version, queries will
 return an error message.
+
+
+---
+
+[← Previous: Maintenance](IngestProcess.md) | [Next: BSim Search →](../BSimSearchPlugin/BSimSearch.md)

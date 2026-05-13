@@ -10,14 +10,14 @@ file in various formats.
 Some of the formats the *Exporter* supports are:
 
 
-<a name="exporter-formats"></a>- [ASCII](#ascii)
+<a name="exporter_formats"></a>- [ASCII](#ascii)
 - [C/C++](#cc)
 - [Ghidra Zip File (GZF)](#ghidra-zip-file-gzf)
 - [Ghidra Data Type Archive File (GDT)](#ghidra-data-type-archive-file-gdt)
 - [HTML](#html)
 - [Intel Hex](#intel-hex)
 - [Original File](#original-file)
-- [Raw Bytes](#binary)
+- [Raw Bytes](#raw-bytes)
 - [XML Export Format](#xml)
 - [SARIF Export Format](#sarif)
 
@@ -42,13 +42,7 @@ export.
 - Press the **OK** button to perform the export.
 
 
-*In preparation for a file export, a selected project
-file may be opened in an attempt to support export formats that require an open
-file.  If the selected file requires an upgrade a warning dialog
-will be displayed and the affected export formats will not be available until an upgrade
-is perfored, however a direct packed format of the project file may still be chosen
-without performing the upgrade first (e.g., [Ghidra Zip File (GZF)](#ghidra-zip-file-gzf),
-[Ghidra Zip File (GZF)](#ghidra-zip-file-gzf)).*
+*In preparation for a file export, a selected project file may be opened in an attempt to support export formats that require an open file. If the selected file requires an upgrade a warning dialog will be displayed and the affected export formats will not be available until an upgrade is perfored, however a direct packed format of the project file may still be chosen without performing the upgrade first (e.g., [Ghidra Zip File (GZF)](#ghidra-zip-file-gzf), [Ghidra Zip File (GZF)](#ghidra-zip-file-gzf)).*
 
 
 ### To export from the CodeBrowser tool:
@@ -59,8 +53,7 @@ without performing the upgrade first (e.g., [Ghidra Zip File (GZF)](#ghidra-zip-
 
 - Make sure the program to export is the currently open program in the CodeBrowser
 tool.
-- Invoke the action from the **File → Export
-File...** menu item.
+- Invoke the action from the **File → Export File...** menu item.
 - Use the [Exporter Dialog](#export-dialog) that appears to configure the
 export.
 - Press the **OK** button to perform the export.
@@ -72,7 +65,7 @@ export.
 The Export Dialog is used to configure the export of the chosen program.
 
 
-![](images/Export_Dialog.png)
+![Export Dialog](images/Export_Dialog.png)
 
 
 ### Dialog Fields
@@ -109,7 +102,7 @@ Browser Field Format](../CodeBrowserPlugin/Browser_Field_Formatter.md).
 #### Ascii Options
 
 
-![](images/Ascii_Options.png)
+![Ascii Options](images/Ascii_Options.png)
 
 
 #### Advanced
@@ -163,12 +156,12 @@ can be placed in a separate header file.
 #### C/C++ Options
 
 
-![](images/C_Options.png)
+![C Options](images/C_Options.png)
 
 
 - **Create Header File (.h)** - Select to create a .h file.
 - **Create C File (.c)** - Select to create a .c file.
-- **Use C++ Style Comments (//)** - Select to use // or /* style comments.
+- **Use C++ Style Comments (//)** - Select to use // or /\* style comments.
 - **Emit Data-type Definitions** - Select to export a C/C++ definition for each data-type.
 - **Emit Referenced Globals** - Select to export a C/C++ declaration for referended global variable.
 - **Function Tags to Filter** - Optional list of function tags to filter which
@@ -212,8 +205,7 @@ fields to be color-matched to those in the Code Browser. The hyper-linking allow
 navigation similar to that supported in the Code Browser.
 
 
-*The HTML Options are identical
-the [ASCII Options](#ascii-options).*
+*The HTML Options are identical the [ASCII Options](#ascii-options).*
 
 
 ### Intel Hex
@@ -227,7 +219,7 @@ which can be used to program these EPROM devices.
 #### Intel Hex Options
 
 
-![](images/Intel_Hex_Options.png)
+![Intel Hex Options](images/Intel_Hex_Options.png)
 
 
 - **Address Space** - Specifies which address space to export as Intel Hex format
@@ -280,13 +272,15 @@ restored to their original values, even if the user modifies them.
 
 > **Warning:** Programs written to disk with
 this exporter may be runnable on your native platform.  Use caution when exporting
-potentially malicious programs.Raw Bytes
+potentially malicious programs.
+
+
+### Raw Bytes
 
 
 Creates a binary file containing only the raw bytes from each memory block in the
 program. If there are multiple memory blocks, their bytes will be concatenated in the
-exported binary file.  If the program was originally created using the **Binary
-Importer** and there is only one memory block, then this exporter allows recreation of
+exported binary file.  If the program was originally created using the **Binary Importer** and there is only one memory block, then this exporter allows recreation of
 the original file.
 
 
@@ -301,8 +295,7 @@ The XML Exporter creates XML files that conform to Ghidra's Program DTD. You can
 re-import files in this format using the [XML Importer](../ImporterPlugin/importer.md).
 
 
-<a name="xml-options"></a> *The
-XML Options are identical the [XML Importer Options](../ImporterPlugin/importer.md#xml-options).*
+<a name="xml_options"></a> *The XML Options are identical the [XML Importer Options](../ImporterPlugin/importer.md#xml-options).*
 
 
 ### SARIF
@@ -312,8 +305,7 @@ The SARIF Exporter creates SARIF files that conform to Ghidra's Program DTD. You
 re-import files in this format using the [SARIF Importer](../ImporterPlugin/importer.md).
 
 
-<a name="sarif-options"></a> *The
-SARIF Options are identical the [SARIF Importer Options](../ImporterPlugin/importer.md#sarif-options).*
+<a name="sarif_options"></a> *The SARIF Options are identical the [SARIF Importer Options](../ImporterPlugin/importer.md#sarif-options).*
 
 
 **Related Topics:**

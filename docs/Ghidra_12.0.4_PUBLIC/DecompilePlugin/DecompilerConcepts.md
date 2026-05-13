@@ -1,3 +1,5 @@
+[Home](../index.md) > [DecompilePlugin](index.md) > SLEIGH Specification Files
+
 # Decompiler Concepts
 
 
@@ -639,3 +641,8 @@ and `*.sinc` files and will rebuild the corresponding
 Ghidra restarts. So analysts can and do make changes to these files.
 However they need to be prepared to view any results as temporary and
 should backup their installation and specific Programs being analyzed.
+
+
+---
+
+[← Previous: The HighFunction](DecompilerConcepts.md) | [Next: Program Annotations Affecting the Decompiler →](DecompilerAnnotations.md)

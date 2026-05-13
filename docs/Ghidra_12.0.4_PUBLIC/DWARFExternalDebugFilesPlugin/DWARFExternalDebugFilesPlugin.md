@@ -27,9 +27,9 @@ as ".build-id/NN/hexhash.debug" if build-id information is available, falling ba
 the debuglink filename in any subdirectory, and lastly in the original binary's import location.
 
 
-*Provided by: *DWARF External Debug Files Plugin**
+Provided by: *DWARF External Debug Files Plugin*
 
 
 ---
 
-[← Previous: Query Results Window](../Search/Query_Results_Dialog.md) | [Next: Program Tree →](../ProgramTreePlugin/program_tree.md)
+[← Previous: Decompiled Text](../DecompilerTextFinderPlugin/Decompiler_Text_Finder.md) | [Next: PDB →](../Pdb/PDB.md)

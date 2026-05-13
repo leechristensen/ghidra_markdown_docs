@@ -1,9 +1,9 @@
+[Home](../index.md) > [WildcardAssemblerModule](index.md) > Wildcard Assembler
+
 # Wildcard Assembler Module
 
 
-**This feature is currently only available as an API for Ghidra scripts and plugins. For
-an example of how to use the API, see the FindInstructionWithWildcard and
-WildSleighAssemblerInfo scripts in the Script Manager.**
+**This feature is currently only available as an API for Ghidra scripts and plugins. For an example of how to use the API, see the FindInstructionWithWildcard and WildSleighAssemblerInfo scripts in the Script Manager.**
 
 
 The *Wildcard Assembler* extends Ghidra's assembler to enable assembling instructions
@@ -19,7 +19,7 @@ derive the value of the wildcarded token and the expression used to derive the v
 
 
 Wildcards in instructions are specified by replacing the to-be-wildcarded token with a
-wildcard name surrounded by backticks (e.g. ``Q1`` where Q1 is an arbitrary
+wildcard name surrounded by backticks (e.g. `` `Q1` `` where Q1 is an arbitrary
 wildcard name) and passing the entire instruction to the Wildcard Assembler.
 
 
@@ -29,7 +29,7 @@ limited by filtering the wildcard by appending specific syntax after the wildcar
 
 
 - **Numeric Filter:**
-  - Appending `[..]` e.g., `MOV RAX, `Q1[..]``, will constrain
+  - Appending `[..]` e.g., `` MOV RAX, `Q1[..]` ``, will constrain
 the wildcarded token to only numeric values (and not registers or other strings).
   - Appending `[0x0..0x100]` (where 0x0 and 0x100 are arbitrary hexadecimal
 values with the smaller number first) will constrain the wildcarded token to only
@@ -54,10 +54,10 @@ No wildcard:
 :   `MOVSD.REP ES:EDI,ESI`
 
 Single token:
-:   `MOVSD.REP `Q1`:EDI,ESI`
+:   ``MOVSD.REP `Q1`:EDI,ESI``
 
 Single token:
-:   `MOVSD.REP ES:`Q2`,ESI`
+:   ``MOVSD.REP ES:`Q2`,ESI``
 
 
 To allow a single wildcard to match multiple related tokens: precede the wildcard name
@@ -65,10 +65,15 @@ with a `!` character:
 
 
 Multi-token:
-:   `MOVSD.REP `!Q4`,ESI`
+:   ``MOVSD.REP `!Q4`,ESI``
 
 Single token (Does *NOT* assemble):
-:   `MOVSD.REP `Q3`,ESI`
+:   ``MOVSD.REP `Q3`,ESI``
 
 
-*Provided by: *Wildcard Assembler Module**
+Provided by: *Wildcard Assembler Module*
+
+
+---
+
+[← Previous: Implied Matches Table](../VersionTrackingPlugin/providers/VT_Implied_Matches_Table.md) | [Next: BSim →](../BSim/BSimOverview.md)

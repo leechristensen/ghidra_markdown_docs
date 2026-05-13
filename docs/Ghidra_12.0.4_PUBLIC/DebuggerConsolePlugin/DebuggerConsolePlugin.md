@@ -1,7 +1,9 @@
+[Home](../index.md) > [DebuggerConsolePlugin](index.md) > Debug Console
+
 # Debugger: Console
 
 
-![](images/DebuggerConsolePlugin.png)
+![Debugger Console Plugin](images/DebuggerConsolePlugin.png)
 
 
 The console logs messages from Ghidra related to the debugger. This no longer includes
@@ -58,3 +60,8 @@ Resets the selection, usually so table scrolling can be restored to "normal."
 
 For a tasks displaying a progress message in the console, this action will cancel the
 task.
+
+
+---
+
+[← Previous: Troubleshooting](../Debugger/Troubleshooting.md) | [Next: Copy Actions →](../DebuggerCopyActionsPlugin/DebuggerCopyActionsPlugin.md)

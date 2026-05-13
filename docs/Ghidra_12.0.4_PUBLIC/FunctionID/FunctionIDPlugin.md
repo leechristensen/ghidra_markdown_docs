@@ -1,3 +1,5 @@
+[Home](../index.md) > [FunctionID](index.md) > False Positives
+
 # Function ID Plug-in
 
 
@@ -54,7 +56,7 @@ are active. By default, Ghidra ships with a set of databases and they are all in
 active.
 
 
-![](images/ChooseActiveFidDbs.png)
+![Choose Active Fid Dbs](images/ChooseActiveFidDbs.png)
 
 
 Once a database has been deactivated, it will no longer be used for matches in
@@ -94,7 +96,7 @@ database removes it from use in searching, and also causes the user preference
 system to forget about the existence of this database.
 
 
-![](images/DetachAttachedFidDb.png)
+![Detach Attached Fid Db](images/DetachAttachedFidDb.png)
 
 
 ### Populate FidDb from programs...
@@ -106,7 +108,7 @@ this option brings up a dialog where users enter the information needed
 to populate the database.
 
 
-![](images/PopulateFidDbFromPrograms1.png)
+![Populate Fid Db From Programs1](images/PopulateFidDbFromPrograms1.png)
 
 
 #### Dialog Fields
@@ -337,3 +339,8 @@ modifiableFidDB.close();
 
 FunctionID hashes for specific functions can be obtained with the `FIDHashCurrentFunction`
 script.
+
+
+---
+
+[← Previous: Preparing Libraries for a Function ID Database](FunctionIDPlugin.md) | [Next: Function ID Debug Plugin →](FunctionIDDebug.md)

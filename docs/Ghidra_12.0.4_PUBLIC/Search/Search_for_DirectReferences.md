@@ -13,8 +13,7 @@ have a selection). You can navigate to any resulting reference by selecting it i
 table.
 
 
-| ![](images/DirectReferences.png)   |
-| --- |
+![Direct References](images/DirectReferences.png)
 
 
 The Search Results Table shows the following for a search on a location:
@@ -34,8 +33,7 @@ To search for possible direct references to an address,
 
 1. Click on the address in the [Code
 Browser](../CodeBrowserPlugin/CodeBrowser.md).
-2. Select **Search →  for Direct
-References...**
+2. Select **Search → for Direct References...**
 3. If the search will take a while, an "in progress" dialog pops up so that you can see the
 search progress, as well as cancel the search at any time.
 4. A [Query Results](Query_Results_Dialog.md) window is displayed to show the
@@ -43,7 +41,7 @@ results of the search.
 
 
 If you have a selection in your program when you perform the search,
-***Search For Direct References*** will search for possible references to any of
+**\*Search For Direct References\*** will search for possible references to any of
 the addresses in the selection. This can be very useful for finding
 references into an area of memory that currently
 has no references to it.
@@ -68,7 +66,7 @@ segmented, and 32-bit programs.
 
 
 If your search results came from searching on a selection, you can restore the program's
-selection that was used for the search. To do this, click the ![menu16.gif](../icons/menu16.gif) menu button in the Search Results button bar and select
+selection that was used for the search. To do this, click the ![Menu16](../icons/menu16.gif) menu button in the Search Results button bar and select
 **Restore Search Results**. This will set the program selection back to what it was when
 you initially performed the search.
 
@@ -77,7 +75,7 @@ you initially performed the search.
 
 
 Once you have search results you can filter them based on the address alignment of the
-**From Location**. To do this, click the ![menu16.gif](../icons/menu16.gif) menu
+**From Location**. To do this, click the ![Menu16](../icons/menu16.gif) menu
 button in the Search Results button bar, pull right on **Alignment**, and select the
 desired alignment (**1**, **2**, **4**, or **8**). This will limit the displayed
 results to those where the **From Location** is an address that matches the selected byte
@@ -93,13 +91,13 @@ alignment.
 *See [Make Selection](Query_Results_Dialog.md#make-selection)*.
 
 
-### Selection Navigation ![locationIn.gif](../icons/locationIn.gif)
+### Selection Navigation ![Location In](../icons/locationIn.gif)
 
 
 *See [Selection Navigation](Query_Results_Dialog.md#selection-navigation)*.
 
 
-*Provided by: *FindPossibleReferencesPlugin**
+Provided by: *FindPossibleReferencesPlugin*
 
 
 **Related Topics:**

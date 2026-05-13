@@ -1,3 +1,5 @@
+[Home](../index.md) > [Diff](index.md) > Program Differences
+
 # Program Differences
 
 
@@ -15,12 +17,11 @@ program in order to get another user's changes into your program.
 
 
 The **Open/Close Diff View** icon
-![table_relationship.png](../icons/table_relationship.png)
+![Table Relationship](../icons/table_relationship.png)
 in the Code Browser tool bar is used for both opening and closing
 a second program in the Code Browser Diff panel. This is one of two ways to open the Diff
 tool. The other is the menu action, Tools
-**→
-Program Differences...**
+**→ Program Differences...**
 which is described later under **Viewing Program Differences**.
 
 
@@ -28,7 +29,7 @@ which is described later under **Viewing Program Differences**.
 
 When there is only a single program displayed in the Code Browser,
 select the Open Diff View icon
-![table_relationship.png](../icons/table_relationship.png)
+![Table Relationship](../icons/table_relationship.png)
 in the tool bar above the program to open a program for Diff.
 You will be prompted to select the second program and then prompted
 for Diff settings just as when
@@ -40,7 +41,7 @@ for Diff settings just as when
 
 When you are done working with program differences and the second
 program, select the
-![table_relationship.png](../icons/table_relationship.png)
+![Table Relationship](../icons/table_relationship.png)
 icon in the tool bar above the second program. The second program
 and the associated Diff are closed and the Code Browser returns to
 displaying only the tool's program.
@@ -49,7 +50,7 @@ displaying only the tool's program.
 **Bring Diff View to Front**
 
 If you navigate away from the current diff session to another program tab, then
-clicking the ![table_relationship.png](../icons/table_relationship.png) action will
+clicking the ![Table Relationship](../icons/table_relationship.png) action will
 make the diff session be the active program tab.
 
 
@@ -57,10 +58,9 @@ make the diff session be the active program tab.
 
 
 A Diff can be opened from the menu action, Tools
-**→
-Program Differences...**. This is one of two ways to open the Diff
+**→ Program Differences...**. This is one of two ways to open the Diff
 tool. The other is the **Open/Close Diff View** icon
-![table_relationship.png](../icons/table_relationship.png)
+![Table Relationship](../icons/table_relationship.png)
 in the Code Browser tool bar which is described above in **Opening and Closing the Diff View**.
 The following describes using the menu action to open the Diff tool.
 
@@ -71,13 +71,12 @@ view a second program's differences.
 
 1. From the Code Browser, select
 Tools
-**→
-Program Differences...**
+**→ Program Differences...**
 .
 2. The *Select Other Program* dialog is displayed.
 
 
-![](images/SelectOtherProgram.png)
+![Select Other Program](images/SelectOtherProgram.png)
 
 
 1. From the *Select Other Program* dialog select the second
@@ -92,14 +91,14 @@ when the **History&gt;&gt;** button is clicked.
 Select the versioned program from the tree.
 Next select the desired version of the program from the **Version History**
 table on the right side of the dialog.
-![](images/SelectOtherVersionedProgram.png)
+![Select Other Versioned Program](images/SelectOtherVersionedProgram.png)
 If you wish to Diff against another program which is already open in the same tool
 you can select a compatible program from the **Open Programs** tab.  Programs
 which are not compatible (e.g., different architecture) are not shown in the table.
 The **Open Programs** tab is not available if compatible open programs are not
 found.  You may return to the project file tree selection panel by clicking the
 **Project Files** tab.
-![](images/SelectOpenProgram.png)
+![Select Open Program](images/SelectOpenProgram.png)
 2. Click the **OK** button.
 3. The *Determine Program Differences* dialog is displayed.
 This dialog is displayed whenever you are going to determine the
@@ -109,7 +108,7 @@ between the two programs make sure all the check boxes in the
 **Address Ranges To Diff**should not have a check as shown here.
 
 
-![](images/DetermineDiffs.png)
+![Determine Diffs](images/DetermineDiffs.png)
 
 
 The check boxes allow you to limit the types of differences that are
@@ -135,7 +134,7 @@ The following illustrates a Program Diff where differences between
 two programs are highlighted.
 
 
-![](images/Diff.png)
+![Diff](images/Diff.png)
 
 
 > **Tip:** The tool's program, that will be modified by the Diff, is
@@ -181,16 +180,16 @@ for use with a Program Diff. Click on the icon below to go to the help
 section that gives details of that feature.
 
 
-| [![pencil16.png](../icons/pencil16.png)](#Apply_Differences) | Apply the selected differences from the second program to the tool's program. |
+| [![Pencil16](../icons/pencil16.png)](#applying-differences) | Apply the selected differences from the second program to the tool's program. |
 | --- | --- |
-| [![pencil_arrow16.png](../icons/pencil_arrow16.png)](#Apply_Differences_and_Goto_Next_Difference) | Apply the selected difference and go to the next highlighted difference block.   |
-| [![eraser_arrow16.png](../icons/eraser_arrow16.png)](#Ignore_Selection_and_Goto_Next_Difference) | Ignore the selected differences and go to the next highlighted difference block. |
-| [![xmag.png](../icons/xmag.png)](#Show_Diff_Location_Details) | Show the details of the differences between the programs at                the current cursor location. |
-| [![down.png](../icons/down.png)](#Next_Difference) | Go to the next highlighted difference block. |
-| [![up.png](../icons/up.png)](#Previous_Difference) | Go to the previous highlighted difference block. |
-| [![settings16.gif](../icons/settings16.gif)](#Show_Diff_Apply_Settings) | Display the Program Difference Settings dialog. |
-| [![Diff16.png](../icons/Diff16.png)](#Get_All_Differences) | Determine the differences between the programs. |
-| [![table_relationship.png](../icons/table_relationship.png)](#Open_Close_Diff_View) | Open/Close the second program and the Program Diff. |
+| [![Pencil Arrow16](../icons/pencil_arrow16.png)](#applying-differences-and-going-to-next) | Apply the selected difference and go to the next highlighted difference block.   |
+| [![Eraser Arrow16](../icons/eraser_arrow16.png)](#ignoring-differences) | Ignore the selected differences and go to the next highlighted difference block. |
+| [![Xmag](../icons/xmag.png)](#viewing-difference-details-at-a-location) | Show the details of the differences between the programs at                the current cursor location. |
+| [![Down](../icons/down.png)](#next-difference) | Go to the next highlighted difference block. |
+| [![Up](../icons/up.png)](#previous-difference) | Go to the previous highlighted difference block. |
+| [![Settings16](../icons/settings16.gif)](#diff-apply-settings) | Display the Program Difference Settings dialog. |
+| [![Diff16](../icons/Diff16.png)](#getting-new-differences) | Determine the differences between the programs. |
+| [![Table Relationship](../icons/table_relationship.png)](#opening-and-closing-the-diff-view) | Open/Close the second program and the Program Diff. |
 
 
 ---
@@ -199,8 +198,7 @@ section that gives details of that feature.
 ## Determine Program Differences Dialog
 
 
-Whenever you initiate a Program Diff the *Determine Program
-Differences* dialog allows you to control the following settings:
+Whenever you initiate a Program Diff the *Determine Program Differences* dialog allows you to control the following settings:
 
 
 - [Do Differences On](#do-differences-on)
@@ -216,7 +214,7 @@ all the difference type check boxes.
 limited to the current selection in the tool's program.
 
 
-![](images/DetermineDiffs.png)
+![Determine Diffs](images/DetermineDiffs.png)
 
 
 Pressing the **OK** button will check the indicated addresses
@@ -324,7 +322,7 @@ comment type is not exactly the same for the two programs.
 Properties differ.
 
 
-**Functions<a name="executediffdialog-dodifferenceson-functions"></a>**
+**Functions<a name="executediffdialog_dodifferenceson_functions"></a>**
         - detect any code units where the functions differ.
 
 
@@ -344,7 +342,7 @@ parameters differ.)
 - Function tags differ.
 
 
-**Source Map<a name="executediffdialog-dodifferenceson-sourcemap"></a>**
+**Source Map<a name="executediffdialog_dodifferenceson_sourcemap"></a>**
       - detect any addresses where the source map information is different.
 
 
@@ -389,11 +387,11 @@ that the Program Diff is being performed on.
 
 
 While a Program Diff is active, the **Diff View**
-icon ![table_relationship.png](../icons/table_relationship.png)
+icon ![Table Relationship](../icons/table_relationship.png)
 is visually pressed down. If the Diff is being performed on a
 program that is not being actively displayed (in a tab other than the
 current tab), then pressing the **Diff View** icon
-![table_relationship.png](../icons/table_relationship.png) will bring the tab
+![Table Relationship](../icons/table_relationship.png) will bring the tab
 containing the Diff to the front.
 
 If you attempt to start a Diff using **Tools**
@@ -406,10 +404,10 @@ A Program Diff is terminated by any of the following:
 
 
 - Selecting the **Diff View** icon
-![table_relationship.png](../icons/table_relationship.png) from the
+![Table Relationship](../icons/table_relationship.png) from the
 Listing toolbar when the Program Diff is actively being displayed.
 - Selecting the **Close Window** icon
-![](../shared/close16.gif) from the
+![Close16](../shared/close16.gif) from the
 Listing toolbar when the Program Diff is actively being displayed.
 (Normally this will close the current program, but when Diff is active
 this closes the Diff.)
@@ -453,7 +451,7 @@ label is set to primary.
 program and sets the primary label as it is in program 2, if possible.
 
 
-![](images/DiffApplySettings.png)
+![Diff Apply Settings](images/DiffApplySettings.png)
 
 
 The following types of differences are controlled by the
@@ -471,8 +469,7 @@ The following types of differences are controlled by the
 and **equates**.
 
 
-**Comments** - **Plate, Pre, End-of-line, Repeatable, &
-Post** comments.
+**Comments** - **Plate, Pre, End-of-line, Repeatable, & Post** comments.
 
 
 **Functions** - functions
@@ -494,16 +491,15 @@ to the program by plugins.
 **References** - **Memory, External, & Stack** references.
 
 
-<a name="save-default-diff-apply-settings"></a>The
+<a name="save_default_diff_apply_settings"></a>The
 *Diff Apply Settings* toolbar has a **Save as Default** icon
-![disk.png](../icons/disk.png) to save your
+![Disk](../icons/disk.png) to save your
 current Diff Apply Settings to the tool as your new defaults. When you
 select it, the current *Diff Apply Settings* values are set to
 the default Diff Apply Settings. Whenever you start a new Diff, the
 current *Diff Apply Settings*
 will get set to the default settings for that Program Diff. If you determine
-the program differences again for an existing Diff using the **Determine
-Program Differences** icon ![Diff16.png](../icons/Diff16.png)
+the program differences again for an existing Diff using the **Determine Program Differences** icon ![Diff16](../icons/Diff16.png)
 , the current *Diff Apply Settings* will not be affected by the
 defaults.
 
@@ -513,13 +509,13 @@ The Default Diff Apply Settings can also be set by changing the
 .
 
 
-<a name="set-all-to-ignore"></a> <a name="set-all-to-replace"></a>
-<a name="set-all-to-merge"></a> The *Diff Apply Settings* toolbar menu
-![menu16.gif](../icons/menu16.gif) also has actions for changing
+<a name="set_all_to_ignore"></a> <a name="set_all_to_replace"></a>
+<a name="set_all_to_merge"></a> The *Diff Apply Settings* toolbar menu
+![Menu16](../icons/menu16.gif) also has actions for changing
 all the apply settings at once. They are:
 
 
-![](images/DiffApplySettingsPopup.png)
+![Diff Apply Settings Popup](images/DiffApplySettingsPopup.png)
 
 
 - **Set Ignore For All Apply Settings** - Changes all the settings
@@ -536,7 +532,7 @@ to **Replace**. Labels will be set to **Merge & Set Primary**.
 ---
 
 
-## Getting New Differences ![Diff16.png](../icons/Diff16.png)
+## Getting New Differences ![Diff16](../icons/Diff16.png)
 
 
 There are several reasons to get new program differences.
@@ -559,7 +555,7 @@ that program and the tool's program.
 
 
 1. From the toolbar above the second program, select
-the Get Differences ![Diff16.png](../icons/Diff16.png) button.
+the Get Differences ![Diff16](../icons/Diff16.png) button.
 or
 Press the right mouse in the second program area. From the
 popup menu, select **Get Differences...**.
@@ -579,8 +575,7 @@ in the second program.
 ## Limiting the Diff to the Browser Selection
 
 
-The **Limit to Selection** box in the *Program Difference
-Settings* dialog can be selected whenever a Program Diff is started
+The **Limit to Selection** box in the *Program Difference Settings* dialog can be selected whenever a Program Diff is started
 while there is a selection in the tool's program in the Code Browser.
 When the box is checked the differences will only be determined for
 addresses in that selection. This limits the differences being highlighted
@@ -618,7 +613,7 @@ the up and down arrow keys on the keyboard or click the mouse on the desired cod
 
 
 Selecting the **Next Difference** button
-![down.png](../icons/down.png) moves the
+![Down](../icons/down.png) moves the
 current location in the Program Diff to the next difference block.
 
 
@@ -632,7 +627,7 @@ the view.
 
 
 Selecting the **Previous Difference** button
-![up.png](../icons/up.png) moves the current location in
+![Up](../icons/up.png) moves the current location in
 the Program Diff to the previous difference block.
 
 
@@ -662,8 +657,8 @@ to navigate to the next/previous difference block.
 
 
 Using the **Next Difference**
-![down.png](../icons/down.png) or **Previous Difference**
-![up.png](../icons/up.png) to navigate to a highlighted
+![Down](../icons/down.png) or **Previous Difference**
+![Up](../icons/up.png) to navigate to a highlighted
 difference block selects the code units contained in that
 difference block. Left mouse clicking on a difference block also causes the entire
 difference block to become selected. You can then right mouse click and the
@@ -713,7 +708,7 @@ The selection from the tool's program can be used to select some
 of the differences in the second program. While viewing program
 differences in the Code Browser, make a selection in the tool's
 program. Select the **Set Diff Selection** icon
-![DiffSelect16.png](../icons/DiffSelect16.png) in
+![Diff Select16](../icons/DiffSelect16.png) in
 the tool bar above the tool's program. The selection in the second
 program will become any highlighted differences in the second program
 that correspond to the selected code units in the tool's program.
@@ -722,9 +717,9 @@ that correspond to the selected code units in the tool's program.
 For example, you can use this to select all the differences in a
 subroutine. First select all the code units in the tool's program
 that make up the subroutine. The **Set Diff Selection** icon
-![DiffSelect16.png](../icons/DiffSelect16.png) will become
+![Diff Select16](../icons/DiffSelect16.png) will become
 enabled. Select the **Set Diff Selection** icon
-![DiffSelect16.png](../icons/DiffSelect16.png). All the
+![Diff Select16](../icons/DiffSelect16.png). All the
 corresponding code units with highlighted differences in the second
 program become selected. The selection of differences can then be
 [applied](#applying-differences) or
@@ -752,7 +747,7 @@ their differences applied.
 2. Make sure the difference types you want to apply have their
 boxes checked in the *ProgramDiff Settings* dialog.
 3. Click the **Apply Selection** button
-![pencil16.png](../icons/pencil16.png) in the toolbar.
+![Pencil16](../icons/pencil16.png) in the toolbar.
 or
 Press the Apply Selection hot key.
 or
@@ -805,7 +800,7 @@ second program, which are currently selected, can have their differences applied
 2. Make sure the difference types you want to apply have their
 boxes checked in the *Diff Apply Settings* dockable component.
 3. Click the **Apply & Go To Next** button
-![pencil_arrow16.png](../icons/pencil_arrow16.png) in the toolbar.
+![Pencil Arrow16](../icons/pencil_arrow16.png) in the toolbar.
 
 
 All the types of differences that were last selected under Apply
@@ -836,7 +831,7 @@ Note: All versions of Ghidra before 7.4.*X* did not navigate to the next differe
 
 1. Select Differences in the second program.
 2. Click the **Ignore Selection** button
-![eraser_arrow16.png](../icons/eraser_arrow16.png) in the toolbar.
+![Eraser Arrow16](../icons/eraser_arrow16.png) in the toolbar.
 or
 Press the Ignore Selection hot key.
 or
@@ -859,8 +854,7 @@ there are still differences will once again be highlighted.
 
 
 When viewing two programs in the Code Browser, it is possible to
-view all the differences at the current program location. The *Diff
-Details* dockable component displays details indicating
+view all the differences at the current program location. The *Diff Details* dockable component displays details indicating
 differences, if any, between the two programs code units at the current
 program location.
 
@@ -870,7 +864,7 @@ To view the difference details at a location:
 
 1. Click on the code unit of interest to set the location and
 select the **Location Details** button
-![xmag.png](../icons/xmag.png) in the tool bar.
+![Xmag](../icons/xmag.png) in the tool bar.
 or
 Press the right mouse button on the code unit of interest and select
 the **Location Details** button.
@@ -883,7 +877,7 @@ In Program 1 of the Diff "MyLabel" is a global label,
 whereas in Program 2 "MyLabel" is a local function label.
 
 
-![](images/DiffDetails.png)
+![Diff Details](images/DiffDetails.png)
 
 
 > **Note:** When the Automatically Update Details check box is
@@ -995,18 +989,23 @@ option name and select the desired setting from the list.
 ## Problems/Limitations
 
 
-You cannot undo an **Ignore Selection** ![eraser_arrow16.png](../icons/eraser_arrow16.png) action. Undo of an
+You cannot undo an **Ignore Selection** ![Eraser Arrow16](../icons/eraser_arrow16.png) action. Undo of an
 **Apply Selection** or **Ignore Selection** in a Program Diff currently can't
 re-highlight the code units with differences that were ignored. If you want to get
-back differences after undo of an **Apply Selection** ![pencil_arrow16.png](../icons/pencil_arrow16.png) or if you want all ignored
+back differences after undo of an **Apply Selection** ![Pencil Arrow16](../icons/pencil_arrow16.png) or if you want all ignored
 differences to no longer be ignored, you must re-Diff the programs by selecting the
-**Get Differences** button ![Diff16.png](../icons/Diff16.png).
+**Get Differences** button ![Diff16](../icons/Diff16.png).
 
 
-*Provided by: *Program Diff* Plugin*
+Provided by: *Program Diff* Plugin
 
 
 **Related Topics:**
 
 
 - [Code Browser](../CodeBrowserPlugin/CodeBrowser.md)
+
+
+---
+
+[← Previous: Configuration Options](../CodeBrowserPlugin/CodeBrowserOptions.md) | [Next: Eclipse Integration →](../EclipseIntegration/EclipseIntegration.md)

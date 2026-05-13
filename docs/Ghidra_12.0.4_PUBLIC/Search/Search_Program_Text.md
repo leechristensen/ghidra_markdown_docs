@@ -12,7 +12,7 @@ To bring up the *Search Program Text* dialog, as shown below, select **Search** 
 tool menu.
 
 
-![](images/SearchText.png)
+![Search Text](images/SearchText.png)
 
 
 ### Search Type
@@ -53,11 +53,10 @@ selected, as the Search All Fields does not apply to the Program Database . The 
 1. Select the **Search** → **Program Text** from the Code Browser
 tool menu.
 2. In the *Search for* field, enter the string for which you want to search, using
-wildcards (* or ?) as needed. The * matches any character. The ? matches a single
+wildcards (\* or ?) as needed. The \* matches any character. The ? matches a single
 character.
   - This field does
-not support *[regular
-expressions](../Glossary/glossary.md#regular-expression)*.
+not support *[regular expressions](../Glossary/glossary.md#regular-expression)*.
   - If you need to
 search for one of the wildcard characters, then escape the character with a backslash.
 For example, to search for any occurrence of an asterisk, you would enter `\*`
@@ -103,7 +102,7 @@ Browser.
 8. If a match is found, the current location in the Code Browser is moved to the location
 of the match. If no match is found, then a "Not found" message is displayed in the
 dialog.
-9. <a name="repeat-text-search"></a>If you mouse click in the Code Browser to move focus
+9. <a name="repeat_text_search"></a>If you mouse click in the Code Browser to move focus
 there, you can choose **Search** → **Repeat Text Search** to go to the next match found.
 
 
@@ -133,11 +132,10 @@ progress, therefore, the "View Results" question dialog will not be displayed.
 1. Follow the Steps 1 through 6 for [searching
 incrementally](#incremental-search). (Skip Step 4 as *Direction* is irrelevant in this case.)
 2. Click on the **Search All** button.
-3. <a name="searchallresults"></a>The *[Query
-Results](Query_Results_Dialog.md)* display shows all the matches.
+3. <a name="searchallresults"></a>The *[Query Results](Query_Results_Dialog.md)* display shows all the matches.
 
 
-![](images/QueryResultsSearch.png)
+![Query Results Search](images/QueryResultsSearch.png)
 
 
 > **Tip:** When performing a "Search All" on large Programs,
@@ -157,12 +155,11 @@ then the location is moved to the matching string within the operand.
 
 The tool has an option to limit the number of search results. The search will stop after
 this number has been exceeded. The below dialog warns you of the partial results. To see more
-search results, select **Edit** → **Tool
-Options...** from the menu bar, then select the *Search* node in the tree. Edit the
+search results, select **Edit** → **Tool Options...** from the menu bar, then select the *Search* node in the tree. Edit the
 *Search Limit* field to increase your search limit.
 
 
-![](images/SearchLimitExceeded.png)
+![Search Limit Exceeded](images/SearchLimitExceeded.png)
 
 
 ### Highlight Search Option
@@ -240,7 +237,7 @@ case, the cursor movement may look "random." This is the case only for Program D
 the Listing Display Search searches in the order of the displayed fields in the Listing.
 
 
-*Provided By:  *TextSearchPlugin**
+Provided By:  *TextSearchPlugin*
 
 
 **Related Topics:**

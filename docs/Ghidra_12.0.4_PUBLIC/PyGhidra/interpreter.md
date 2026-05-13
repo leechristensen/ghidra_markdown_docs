@@ -1,3 +1,5 @@
+[Home](../index.md) > [PyGhidra](index.md) > PyGhidra Interpreter
+
 # PyGhidra Interpreter
 
 
@@ -42,21 +44,21 @@ different packages, they must be explicitly imported. Failure to do so will resu
 Python `NameError`.
 
 
-## Clear ![erase16.png](../icons/erase16.png)
+## Clear ![Erase16](../icons/erase16.png)
 
 
 This command clears the interpreter's display.  Its effect is purely visual.
 It does not affect the state of the interpreter in any way.
 
 
-## Interrupt ![dialog-cancel.png](../icons/dialog-cancel.png)
+## Interrupt ![Dialog Cancel](../icons/dialog-cancel.png)
 
 
 This command issues a keyboard interrupt to the interpreter, which can be used to interrupt
 long running commands or loops.
 
 
-## Reset ![reload3.png](../icons/reload3.png)
+## Reset ![Reload3](../icons/reload3.png)
 
 
 This command resets the interpreter, which clears the display and resets all state.
@@ -141,7 +143,12 @@ Calling help() with no arguments will show the Javadoc for the GhidraScript clas
 
 For more information on the Jpype environment, such as how to interact with Java objects
 through a Python interface, please refer to Jpype's documentation which can be found on the
-Internet at ***jpype.readthedocs.io***
+Internet at *\**jpype.readthedocs.io*\**
 
 
-*Provided by: *PyGhidraPlugin**
+Provided by: *PyGhidraPlugin*
+
+
+---
+
+[← Previous: Ghidra Bundles](../BundleManager/BundleManager.md) | [Next: Jython Interpreter →](../Jython/interpreter.md)

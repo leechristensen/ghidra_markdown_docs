@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Time Overview Sidebar](DebuggerTimeOverviewPlugin.md)

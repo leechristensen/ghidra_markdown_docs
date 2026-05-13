@@ -4,3 +4,4 @@
 
 ## Contents
 
+- [Decompiled Text](Decompiler_Text_Finder.md)

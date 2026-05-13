@@ -139,7 +139,7 @@ When Ghidra first starts, the *[Ghidra Project Window](../FrontEndPlugin/Ghidra_
 appear.
 
 
-![](images/Empty_ghidra.png)
+![Empty Ghidra](images/Empty_ghidra.png)
 
 *Ghidra Front-End with no open project*
 
@@ -153,7 +153,7 @@ Ghidra project before any work can be performed. Importing data into a Ghidra pr
 *[programs](../Glossary/glossary.md#program)* that Ghidra [tools](../Tool/Ghidra_Tool_Administration.md) can manipulate.
 
 
-![](images/Open_ghidra.png)
+![Open Ghidra](images/Open_ghidra.png)
 
 *Ghidra Front-End with an open project*
 
@@ -191,7 +191,7 @@ error such as a user entering a file path that doesn't exist, Ghidra will displa
 dialog explaining the cause of the problem as shown below in the sample error dialog:
 
 
-![](images/Simple_err_dialog.png)
+![Simple Err Dialog](images/Simple_err_dialog.png)
 
 
 ### Unexpected Programming Errors
@@ -201,7 +201,7 @@ Whenever an action or operation fails in a totally unexpected way, i.e., a progr
 error, a dialog is displayed as shown below:
 
 
-![](images/Err_Dialog.png)
+![Err Dialog](images/Err_Dialog.png)
 
 
 The **Details** &gt;&gt;&gt; button expands the dialog to show the

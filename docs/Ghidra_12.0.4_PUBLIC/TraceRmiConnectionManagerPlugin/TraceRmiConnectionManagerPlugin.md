@@ -1,7 +1,9 @@
+[Home](../index.md) > [TraceRmiConnectionManagerPlugin](index.md) > Connection Manager
+
 # Debugger: Connections
 
 
-![](images/TraceRmiConnectionManagerPlugin.png)
+![Trace Rmi Connection Manager Plugin](images/TraceRmiConnectionManagerPlugin.png)
 
 
 The Connections window manages connections to live debuggers and, at a high level, their
@@ -50,7 +52,7 @@ TCP server. Check the command documentation for your back end's plugin to figure
 have it listen first.
 
 
-![](images/ConnectDialog.png)
+![Connect Dialog](images/ConnectDialog.png)
 
 
 ### Connect by Accept ![Accept](../icons/connect-accept.png)
@@ -109,3 +111,8 @@ a stale state, since event processing on the trace is disabled. If there is good
 believe the back-end has forgotten to close a transaction, this action will forcibly close all
 of them and re-enable event processing. If, however, the back-end was in fact still doing work
 with that transaction, it may crash and/or corrupt the connection.
+
+
+---
+
+[← Previous: Platform Selection](../DebuggerPlatformPlugin/DebuggerPlatformPlugin.md) | [Next: Support →](../Intro/GhidraSupport.md)

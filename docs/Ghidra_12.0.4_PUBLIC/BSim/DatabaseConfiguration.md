@@ -1,3 +1,5 @@
+[Home](../index.md) > [BSim](index.md) > Tailoring BSim Meta-data
+
 # Database Configuration
 
 
@@ -181,16 +183,14 @@ initial **start** command.
 
 
 trust
-:   `bsim_ctl start /path/to/datadir
---auth trust`
+:   `bsim_ctl start /path/to/datadir --auth trust`
 
 
 This is currently the default. No authentication is performed and privilege
 is granted based on the user name presented. Masquerading is possible.
 
 password
-:   `bsim_ctl start /path/to/datadir
---auth password`
+:   `bsim_ctl start /path/to/datadir --auth password`
 
 
 Users are authenticated via password. A default password 'changeme' is
@@ -198,8 +198,7 @@ established when the new user is created. Passwords can be changed by the user
 from the BSim client or can be reset by an administrator via the **resetpassword** command.
 
 pki
-:   `bsim_ctl start /path/to/datadir --auth pki
---cafile "/path/to/rootcert"`
+:   `bsim_ctl start /path/to/datadir --auth pki --cafile "/path/to/rootcert"`
 
 
 Users are authenticated by PKI certificates. Upon initialization, the BSim
@@ -459,9 +458,7 @@ administrator privileges.
 
 
 Assuming an Elasticsearch cluster is running and the plug-in has been properly
-installed, all other parts of BSim interact transparently with the cluster. The **bsim** command, described in [*Ingesting
-Executables*](IngestProcess.md), and the Ghidra/BSim client, described in [*Querying a BSim
-Database*](../BSimSearchPlugin/BSimSearch.md), require no additional configuration to work with Elasticsearch,
+installed, all other parts of BSim interact transparently with the cluster. The **bsim** command, described in [*Ingesting Executables*](IngestProcess.md), and the Ghidra/BSim client, described in [*Querying a BSim Database*](../BSimSearchPlugin/BSimSearch.md), require no additional configuration to work with Elasticsearch,
 except users must provide the correct URL to establish a connection. Elasticsearch
 communicates over *https*, and BSim clients
 automatically assume they are communicating with Elasticsearch when they see this
@@ -595,8 +592,7 @@ There is some facility to tailor a specific BSim database instance so that it ca
 and/or report information about executables or functions to make results more useful for a
 specific project or user. Capabilities can be added after a database has been created and
 is running by issuing specific **bsim** commands,
-but they can also be added to a *configuration
-template* prior to creating the database, which provides a record of the
+but they can also be added to a *configuration template* prior to creating the database, which provides a record of the
 specific additions should the database instance need to be recreated or multiple tailored
 instances be deployed. For additions that allow the ingest of more metadata about
 executables or functions, users must provide additional scripts to Ghidra during the ingest
@@ -613,8 +609,7 @@ command.
 
 This information is displayed in various windows by the BSim client. The values can be
 changed at any time and do not otherwise affect the records contained in the database.
-Multiple command-line parameters can be fed to **bsim
-setmetadata** so long as each one starts with **--name**, **--owner**, or
+Multiple command-line parameters can be fed to **bsim setmetadata** so long as each one starts with **--name**, **--owner**, or
 **--description** respectively. Quoting of values may be
 necessary to get some strings to be interpreted as a single command-line parameter.
 
@@ -646,8 +641,7 @@ It is also possible to create a special time-based category. This category can h
 any name as above, but instead of associating string values with the executable, it
 associates a single time-stamp. The time-stamp has precision down to the millisecond and
 provides filtering and sorting based on time. Internally, this new category repurposes
-the column storage originally providing an executable's *Ingest
-Date* field. As a result, any BSim instance
+the column storage originally providing an executable's *Ingest Date* field. As a result, any BSim instance
 can have only one time category and only one time-stamp within it. The ingest scripting
 must provide any actual time-stamp value for the executable, or the database will fill in
 the "epoch", 12:00 am, Jan 1, 1970.
@@ -671,8 +665,7 @@ There is currently no method for deleting a category once it has been created.
 ### Function Tags
 
 
-BSim can be configured to recognize specific **Function
-Tags**, which are named Boolean properties on individual functions within
+BSim can be configured to recognize specific **Function Tags**, which are named Boolean properties on individual functions within
 an executable. Within a Ghidra program, any number of different function tags can be
 established by the user and are used to label individual functions or specific subsets of
 functions that share a particular property. This would typically be used to label classes
@@ -716,8 +709,7 @@ to repeatedly issue **bsim setmetadata** and
 database. Other aspects of a database can also be manipulated, like weighting schemes and
 index tuning, but doing this properly is beyond the scope of this document. A **database template** is the basic set of configuration
 parameters used to set up BSim database instance. The configuration parameters are
-established for a particular database when the **bsim
-createdatabase** command is run (See [“Creating a
+established for a particular database when the **bsim createdatabase** command is run (See [“Creating a
 Database”](DatabaseConfiguration.md#creating-a-database)). The template name passed on the command-line actually identifies an
 XML file-name, appended with the '.xml' suffix, in the directory:
 
@@ -749,3 +741,8 @@ remaining tags in the file are more dangerous to manipulate. The *`<k>`* and *`<
 tags pertain to the index tuning. The *`<weightsfile>`* tag gives the name of the weights file,
 within the same directory, which is also another XML file. It is simplest to choose from
 the existing weight files provided with the distribution. See [“Weighting Software Features”](FeatureWeight.md#weighting-software-features).
+
+
+---
+
+[← Previous: Creating a Database](DatabaseConfiguration.md) | [Next: Ingesting Executables →](IngestProcess.md)

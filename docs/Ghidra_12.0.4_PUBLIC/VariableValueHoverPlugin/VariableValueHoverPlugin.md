@@ -1,3 +1,5 @@
+[Home](../index.md) > [VariableValueHoverPlugin](index.md) > Variable Hovers
+
 # Debugger: Variable Hovers
 
 
@@ -49,7 +51,7 @@ the variable. Other rows may be present, but overall the table is incomplete.
 ## Examples
 
 
-![](images/VariableValueHoverPluginListing.png)
+![Variable Value Hover Plugin Listing](images/VariableValueHoverPluginListing.png)
 
 
 A register operand in the Dynamic Listing
@@ -65,7 +67,7 @@ window, and so the service cannot interpret the value except as an integer. Regi
 never displayed as raw byte arrays.
 
 
-![](images/VariableValueHoverPluginBrowser.png)
+![Variable Value Hover Plugin Browser](images/VariableValueHoverPluginBrowser.png)
 
 
 A stack variable in the Static Listing
@@ -85,7 +87,7 @@ computes the integer value `1`. It also interprets the value using the assigned 
 type, giving `1h`.
 
 
-![](images/VariableValueHoverPluginDecompiler.png)
+![Variable Value Hover Plugin Decompiler](images/VariableValueHoverPluginDecompiler.png)
 
 
 A stack variable in the Decompiler
@@ -95,3 +97,8 @@ When hovering over variables in the Decompiler, the service behaves similarly to
 for operands in the Static Listing. It locates the appropriate frame and attempts to derive the
 variable's run-time value. Just as in the Static Listing example above, the user has hovered
 over the variable *n*, so the service has again computed the value `1h`.
+
+
+---
+
+[← Previous: Watches](../DebuggerWatchesPlugin/DebuggerWatchesPlugin.md) | [Next: Control and Machine State →](../DebuggerControlPlugin/DebuggerControlPlugin.md)

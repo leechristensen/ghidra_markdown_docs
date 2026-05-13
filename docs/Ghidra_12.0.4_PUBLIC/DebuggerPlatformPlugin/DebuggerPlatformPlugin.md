@@ -1,3 +1,5 @@
+[Home](../index.md) > [DebuggerPlatformPlugin](index.md) > Platform Selection
+
 # Debugger: Platform Selection
 
 
@@ -56,7 +58,7 @@ This action is enabled whenever there is a current trace. It presents a dialog w
 recommended platforms for the trace.
 
 
-![](images/DebuggerSelectPlatformOfferDialog.png)
+![Debugger Select Platform Offer Dialog](images/DebuggerSelectPlatformOfferDialog.png)
 
 
 The "Show Only Recommended Offers" check can be disabled to display *override*
@@ -64,3 +66,8 @@ platforms as well. Every language-compiler-spec pair is offered as an override p
 Selecting an offer and confirming the dialog will add or change to the selected platform in the
 trace. Furthermore, the choice will be added to the **Choose Platform** menu for the current
 trace.
+
+
+---
+
+[← Previous: Comparing Times](../DebuggerTraceViewDiffPlugin/DebuggerTraceViewDiffPlugin.md) | [Next: Connection Manager →](../TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md)
