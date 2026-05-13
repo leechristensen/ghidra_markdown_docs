@@ -1,42 +1,105 @@
 site_name: Ghidra Help
+site_description: Markdown conversion of Ghidra's built-in HTML help.
+
+extra_css:
+  - stylesheets/extra.css
+
 docs_dir: docs
 site_dir: site
 use_directory_urls: true
-theme:
-  name: mkdocs
-  custom_dir: overrides
 
-# Drive the top-bar dropdown from SUMMARY.md (literate-nav). The converter
-# regenerates `Ghidra_<ver>_PUBLIC/SUMMARY.md` each run, mirroring the
-# full Ghidra ToC tree — so the dropdown matches the in-page Table of
-# Contents instead of the default alphabetical directory listing.
+theme:
+  name: material
+  custom_dir: overrides
+  logo: images/GHIDRA_3.png
+  favicon: images/GHIDRA_3.png
+  features:
+    # Search UX: instant results, snippets, term highlighting, share link.
+    - search.suggest
+    - search.highlight
+    - search.share
+    # Faster page transitions (SPA-style swap, no full reloads).
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    # Top-bar dropdown of the merged Ghidra TOC.
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    # Code block niceties.
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    # Dark scheme listed first → used as the default. Light is opt-in via
+    # the toggle. (No `media:` queries, otherwise the OS preference wins.)
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+# Drive the top-bar nav from per-version SUMMARY.md. The converter
+# regenerates these each run, mirroring the full Ghidra ToC tree.
 plugins:
-  - search
+  - search:
+      # Split identifiers like BSimCtl, file.md#anchor, int_3, snake_case,
+      # PascalCase so any sub-token finds the page.
+      separator: '[\s\-,:!=\[\]()"`/\._#]+|(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])'
   - literate-nav:
       nav_file: SUMMARY.md
 
-# Promote mkdocs's built-in link/anchor checks from INFO to WARN. Run
-# `mkdocs build --strict` to fail the build on any warning. This replaces
-# the previous lychee workflow and avoids its `use_directory_urls`
-# false-positives.
+# Markdown extensions material expects + a few that improve fidelity for
+# Ghidra docs (notes/tips/warnings rendered as admonitions, attribute
+# lists for inline IDs, def-list for our pandoc-style definition lists).
+markdown_extensions:
+  - admonition
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# Drop the "Made with Material for MkDocs" footer credit. (Both this
+# and the now-unused overrides/main.html were carried over from the
+# default mkdocs theme.)
+extra:
+  generator: false
+
+# Promote mkdocs's built-in link/anchor checks to `warn`. Run
+# `./scripts/check_links.sh` (which adds `--strict`) to fail on any
+# warning. Catches broken `[text](file.md#anchor)` references better
+# than lychee, with no `use_directory_urls` false-positives.
 validation:
   nav:
-    # Many module sub-pages exist in the converted docs but aren't in
-    # Ghidra's master TOC (they're reachable via in-page links, not the
-    # top nav). Silence the "omitted file" warnings for those.
     omitted_files: ignore
-    # The SUMMARY.md nav entries can include `file.md#anchor` references
-    # to distinguish multiple TOC items pointing at different sections of
-    # the same file. mkdocs's nav validator doesn't resolve those
-    # anchors against the rendered HTML headings, so it flags them as
-    # "not found" even when the anchor IS rendered. Anchor correctness
-    # is enforced by `validation.links.anchors` (which DOES check the
-    # rendered HTML) instead.
+    # Anchor refs in SUMMARY.md are validated against rendered HTML by
+    # `validation.links.anchors` instead — mkdocs's nav-builder doesn't
+    # resolve them and would otherwise flag every one as "not found".
     not_found: info
   links:
     anchors: warn
-    # `folder/` entries in SUMMARY.md are literate-nav recursion markers;
-    # mkdocs's link validator doesn't know about that idiom and would
-    # otherwise flag them under `--strict`.
+    # `folder/` entries in SUMMARY.md are literate-nav recursion markers
+    # mkdocs doesn't recognize as regular links.
     unrecognized_links: info
     absolute_links: warn

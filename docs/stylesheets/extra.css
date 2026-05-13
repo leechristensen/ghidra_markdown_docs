@@ -1,0 +1,52 @@
+/* Single-row top bar: tabs sit inline with the logo, search bar
+ * centered in the header, palette toggle pinned far right.
+ *
+ * The header partial is overridden in `overrides/partials/header.html`
+ * to drop the site-title and inline the tabs nav inside the header
+ * flex container. This stylesheet handles the layout/sizing.
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* Hide the site-title text block (kept in the partial for sub-themes
+     that rely on its presence, but unwanted in our condensed bar). */
+  .md-header__title {
+    display: none;
+  }
+
+  /* Inline tabs render as a flex item next to the logo. */
+  .md-tabs--inline {
+    background: transparent;
+    border-bottom: 0;
+    box-shadow: none;
+    height: 2.4rem;
+    margin-left: 0.5rem;
+  }
+
+  .md-tabs--inline .md-tabs__list {
+    height: 2.4rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .md-tabs--inline .md-tabs__item {
+    height: 2.4rem;
+  }
+
+  .md-tabs--inline .md-tabs__link {
+    margin-top: 0;
+    height: 2.4rem;
+    display: inline-flex;
+    align-items: center;
+    opacity: 1;
+  }
+
+  /* Push the search bar to the center: it's the only flex item with
+     auto margins on both sides, so it claims the middle space. */
+  .md-header__inner .md-search {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Palette toggle is the last item in our custom header, so the
+     natural flex order already puts it on the right. */
+}

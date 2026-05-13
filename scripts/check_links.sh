@@ -22,7 +22,7 @@ LOG="$(mktemp -t mkdocs-strict-log-XXXXXX)"
 trap 'rm -f "$LOG"' EXIT
 
 echo "Building mkdocs in --strict mode (any warning = failure)..."
-if ! uvx --from mkdocs --with mkdocs-literate-nav mkdocs build \
+if ! uvx --from mkdocs-material --with mkdocs-literate-nav mkdocs build \
         --strict --site-dir "$OUTPUT_DIR" 2>&1 | tee "$LOG" >/dev/null; then
     echo
     echo "FAIL: mkdocs --strict reported warnings or errors:"
