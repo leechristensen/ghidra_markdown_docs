@@ -115,4 +115,4 @@ with that transaction, it may crash and/or corrupt the connection.
 
 ---
 
-[← Previous: Platform Selection](../DebuggerPlatformPlugin/DebuggerPlatformPlugin.md) | [Next: Support →](../Intro/GhidraSupport.md)
+[← Previous: Windows Kernel](../dbgeng/dbgeng.md) | [Next: Troubleshooting →](../Debugger/Troubleshooting.md)

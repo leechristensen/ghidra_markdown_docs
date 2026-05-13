@@ -151,4 +151,4 @@ Provided by: *PyGhidraPlugin*
 
 ---
 
-[← Previous: Ghidra Bundles](../BundleManager/BundleManager.md) | [Next: Jython Interpreter →](../Jython/interpreter.md)
+[← Previous: Jython Interpreter](../Jython/interpreter.md) | [Next: Symbol Table →](../SymbolTablePlugin/symbol_table.md)

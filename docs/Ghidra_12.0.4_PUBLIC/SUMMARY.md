@@ -44,6 +44,38 @@
     - [Export Tool](Tool/Ghidra_Tool_Administration/#export-tool)
 - Ghidra Functionality
     - [Assembler](AssemblerPlugin/Assembler.md)
+    - BSim
+        - BSim Database Configuration
+            - [Overview](BSim/DatabaseConfiguration/#overview)
+            - [Server Configuration](BSim/DatabaseConfiguration/#server-configuration)
+            - [Creating a Database](BSim/DatabaseConfiguration/#creating-a-database)
+            - [Tailoring BSim Meta-data](BSim/DatabaseConfiguration/#tailoring-bsim-metadata)
+        - Ingesting Executables
+            - [Ingest Process](BSim/IngestProcess/#ingest-process)
+            - [Tailoring Analysis](BSim/IngestProcess/#tailoring-analysis)
+            - [Analysis Effects on Feature Extraction](BSim/IngestProcess/#analysis-effects-on-feature-extraction)
+            - [Maintenance](BSim/IngestProcess/#maintenance)
+            - [Migration](BSim/IngestProcess/#migration)
+        - BSim Search
+            - [Enabling the BSim Search Plugin](BSimSearchPlugin/BSimSearch/#enabling-the-bsim-search-plugin)
+            - [Defining And Managing BSim Database Definitions](BSimSearchPlugin/BSimSearch/#defining-and-managing-bsim-databases)
+            - [Overview Query](BSimSearchPlugin/BSimSearch/#bsim-overview-query)
+            - [Overview Query Results](BSimSearchPlugin/BSimSearch/#bsim-overview-results)
+            - [Similar Function Search](BSimSearchPlugin/BSimSearch/#bsim-similar-function-search)
+            - [Similar Function Search Results](BSimSearchPlugin/BSimSearch/#similar-function-search-results)
+            - [Authentication](BSimSearchPlugin/BSimSearch/#authentication)
+        - Features and Weights
+            - [Features of Software Functions](BSim/FeatureWeight/#features-of-software-functions)
+            - [Weighting Software Features](BSim/FeatureWeight/#weighting-software-features)
+            - [Comparing Feature Vectors](BSim/FeatureWeight/#comparing-feature-vectors)
+            - [BSim Feature Visualizer](BSimFeatureVisualizerPlugin/BSimFeatureVisualizerPlugin.md)
+        - Command-Line Utility Reference
+            - [BSim Control (bsim_ctl)](BSim/CommandLineReference/#bsim_ctl)
+            - [BSim Command (bsim)](BSim/CommandLineReference/#bsim)
+    - Byte Viewer
+        - [Formats](ByteViewerPlugin/The_Byte_Viewer/#data-formats)
+        - [Byte Editing](ByteViewerPlugin/The_Byte_Viewer/#editing-memory)
+        - [Configuration Options](ByteViewerPlugin/ByteViewerOptions.md)
     - Data Type Manager
         - [Basic Concepts](DataTypeManagerPlugin/data_type_manager_description/#basic-concepts)
         - [Data Type Window](DataTypeManagerPlugin/data_type_manager_window.md)
@@ -59,6 +91,96 @@
         - [Cursor Text Highlight](CodeBrowserPlugin/CodeBrowser/#cursor-text-highlight)
         - [Configuration Options](CodeBrowserPlugin/CodeBrowserOptions.md)
         - [Program Differences](Diff/Diff.md)
+    - Debugger
+        - Getting Started
+            - [Launching a Target](Debugger/GettingStarted/#launching-a-target)
+        - Launchers
+            - drgn Integration
+                - [Attach](drgn/drgn/#attach)
+                - [Core Dump](drgn/drgn/#attach)
+                - [Linux Kernel](drgn/drgn/#attach)
+            - GDB Integration
+                - [gdbserver via SSH](gdb/gdb/#gdbserver-via-ssh)
+                - [Local](gdb/gdb/#local)
+                - [QEMU](gdb/gdb/#qemu)
+                - [Remote](gdb/gdb/#remote)
+                - [rr](gdb/gdb/#rr)
+                - [Via SSH](gdb/gdb/#via-ssh)
+                - [Wine](gdb/gdb/#wine)
+            - Java Debugger Integration
+                - [Attach b PID](jpda/jpda/#attach-by-pid)
+                - [Attach by JDWP](jpda/jpda/#attach-by-jdwp)
+                - [Local](jpda/jpda/#local)
+            - LLDB Integration
+                - [Android (native)](lldb/lldb/#android)
+                - [Local](lldb/lldb/#local)
+                - [macOS Kernel](lldb/lldb/#macos-kernel)
+                - [Remote](lldb/lldb/#remote)
+                - [Via SSH](lldb/lldb/#via-ssh)
+            - WinDbg (dbgeng.dll) Integration
+                - [Attach](dbgeng/dbgeng/#attach)
+                - [Extended Local](dbgeng/dbgeng/#extended-local)
+                - [Local](dbgeng/dbgeng/#local)
+                - [Process Server](dbgeng/dbgeng/#process-server)
+                - [Remote](dbgeng/dbgeng/#remote)
+                - [TTD (Time-Travel Debugging)](dbgeng/dbgeng/#ttd-time-travel-debugging)
+                - [Windows Kernel](dbgeng/dbgeng/#windows-kernel)
+        - [Connection Manager](TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md)
+        - [Troubleshooting](Debugger/Troubleshooting.md)
+        - [Debug Console](DebuggerConsolePlugin/DebuggerConsolePlugin.md)
+        - [Copy Actions](DebuggerCopyActionsPlugin/DebuggerCopyActionsPlugin.md)
+        - [Model](DebuggerModelPlugin/DebuggerModelPlugin.md)
+        - [Threads](DebuggerThreadsPlugin/DebuggerThreadsPlugin.md)
+        - [Trace Management](DebuggerTraceManagerServicePlugin/DebuggerTraceManagerServicePlugin.md)
+        - [Emulation](DebuggerEmulationServicePlugin/DebuggerEmulationServicePlugin.md)
+        - [Memory](DebuggerMemoryBytesPlugin/DebuggerMemoryBytesPlugin.md)
+        - [Registers](DebuggerRegistersPlugin/DebuggerRegistersPlugin.md)
+        - [Dynamic Listing](DebuggerListingPlugin/DebuggerListingPlugin.md)
+        - [Disassembly and Assembly](DebuggerDisassemblerPlugin/DebuggerDisassemblerPlugin.md)
+        - [Stack](DebuggerStackPlugin/DebuggerStackPlugin.md)
+        - Breakpoints
+            - [In the Listings](DebuggerBreakpointMarkerPlugin/DebuggerBreakpointMarkerPlugin.md)
+        - [Memory Regions](DebuggerRegionsPlugin/DebuggerRegionsPlugin.md)
+        - [Time](DebuggerTimePlugin/DebuggerTimePlugin.md)
+        - Modules and Sections
+            - [Static Mappings](DebuggerStaticMappingPlugin/DebuggerStaticMappingPlugin.md)
+            - [Static Synchronization](DynamicStaticSynchronizationPlugin/DynamicStaticSynchronizationPlugin.md)
+        - [Watches](DebuggerWatchesPlugin/DebuggerWatchesPlugin.md)
+        - [Variable Hovers](VariableValueHoverPlugin/VariableValueHoverPlugin.md)
+        - [Control and Machine State](DebuggerControlPlugin/DebuggerControlPlugin.md)
+        - [Memview Plot](DebuggerMemviewPlugin/DebuggerMemviewPlugin.md)
+        - [Time Overview Sidebar](DebuggerTimeOverviewPlugin/DebuggerTimeOverviewPlugin.md)
+        - [P-code Stepper](DebuggerPcodeStepperPlugin/DebuggerPcodeStepperPlugin.md)
+        - [Comparing Times](DebuggerTraceViewDiffPlugin/DebuggerTraceViewDiffPlugin.md)
+        - [Platform Selection](DebuggerPlatformPlugin/DebuggerPlatformPlugin.md)
+    - Decompiler
+        - Decompiler Concepts
+            - [P-code](DecompilePlugin/DecompilerConcepts/#p-code)
+            - [The HighFunction](DecompilePlugin/DecompilerConcepts/#the-highfunction)
+            - [SLEIGH Specification Files](DecompilePlugin/DecompilerConcepts/#sleigh-specification-files)
+        - Program Annotations Affecting the Decompiler
+            - [Machine Instructions](DecompilePlugin/DecompilerAnnotations/#machine-instructions)
+            - [Comments](DecompilePlugin/DecompilerAnnotations/#comments)
+            - [Variable Annotations](DecompilePlugin/DecompilerAnnotations/#variable-annotations)
+            - [Function Prototypes](DecompilePlugin/DecompilerAnnotations/#function-prototypes)
+            - [Data Mutability](DecompilePlugin/DecompilerAnnotations/#data-mutability)
+            - [Constant Annotations](DecompilePlugin/DecompilerAnnotations/#constant-annotations)
+            - [Register Values](DecompilePlugin/DecompilerAnnotations/#register-values)
+        - Decompiler Options
+            - [General Options](DecompilePlugin/DecompilerOptions/#general-options)
+            - [Analysis Options](DecompilePlugin/DecompilerOptions/#analysis-options)
+            - [Display Options](DecompilePlugin/DecompilerOptions/#display-options)
+            - [Program Options](DecompilePlugin/DecompilerOptions/#program-options)
+            - [Specification Extensions](DecompilePlugin/DecompilerOptions/#specification-extensions)
+        - Decompiler Window
+            - [Display](DecompilePlugin/DecompilerWindow/#display)
+            - [Main Window](DecompilePlugin/DecompilerWindow/#main-window)
+            - [Snapshot Windows](DecompilePlugin/DecompilerWindow/#snapshot-windows)
+            - [Undefined Functions](DecompilePlugin/DecompilerWindow/#undefined-functions)
+            - [Tool Bar](DecompilePlugin/DecompilerWindow/#tool-bar)
+            - [Mouse Actions](DecompilePlugin/DecompilerWindow/#mouse-actions)
+            - [Pop-up Menu and Keyboard Actions](DecompilePlugin/DecompilerWindow/#pop-up-menu-and-keyboard-actions)
+        - [Decompiler Taint](DecompilerTaint/DecompilerTaint/#decompiler-taint-operations)
     - [Eclipse Integration](EclipseIntegration/EclipseIntegration.md)
     - Entropy Overview
         - [Entropy Calculation](OverviewPlugin/Overview/#calculation-of-entropy)
@@ -66,24 +188,42 @@
         - [Color Palette](OverviewPlugin/Overview/#color-palette-legend)
         - [Configuration Options](OverviewPlugin/Overview/#configuring-the-entropy-window)
     - [FileSystem Browser](FileSystemBrowserPlugin/FileSystemBrowserPlugin.md)
+    - Function Bit Patterns Explorer
+        - [Byte Sequences](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#byte-sequence-tabs)
+        - [Instruction Sequences](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#instruction-sequence-tabs)
+        - [Function Start Alignment](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#function-start-alignment-tab)
+        - [Context Register Information](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#context-register-information-tab)
+        - [Pattern Clipboard](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#pattern-clipboard)
+    - Function ID
+        - Function ID Analyzer
+            - [Analysis Options](FunctionID/FunctionID/#analysis-options)
+            - [Scoring and Disambiguation](FunctionID/FunctionID/#scoring-and-disambiguation)
+        - Function ID Plugin
+            - [Enabling the Plug-in](FunctionID/FunctionIDPlugin/#enabling-the-plug-in)
+            - [Plug-in Functionality](FunctionID/FunctionIDPlugin/#plug-in-functionality)
+            - [Preparing Libraries for a Function ID Database](FunctionID/FunctionIDPlugin/#preparing-libraries-for-a-function-id-database)
+            - [False Positives](FunctionID/FunctionIDPlugin/#false-positives)
+        - Function ID Debug Plugin
+            - [Enabling the Plug-in](FunctionID/FunctionIDDebug/#enabling-the-plug-in)
+            - [Plug-in Functionality](FunctionID/FunctionIDDebug/#plug-in-functionality)
     - Graphing
         - Graph Services
             - [Default Graph Display](GraphServices/GraphDisplay.md)
             - [Exporting a Graph](GraphServices/GraphExport.md)
-        - [Visual Graphs](VisualGraph/Visual_Graph.md)
         - Data Graph
             - Vertices
                 - [Vertex Grouping](FunctionGraphPlugin/Function_Graph/#vertex-grouping)
             - [Graph Actions](DataGraphPlugin/Data_Graph/#data-graph-actions)
             - [Popups](DataGraphPlugin/Data_Graph/#vertex-actions)
             - [Layout](DataGraphPlugin/Data_Graph/#vertex-layout)
+        - [Function Call Graph](FunctionCallGraphPlugin/Function_Call_Graph.md)
         - Function Graph
             - [Primary View](FunctionGraphPlugin/Function_Graph/#primary-view)
             - [Satellite View](VisualGraph/Visual_Graph/#satellite-view)
             - [Zooming](FunctionGraphPlugin/Function_Graph/#zooming)
             - [Layouts](FunctionGraphPlugin/Function_Graph_Layouts/#function-graph-layouts)
         - [Program Graph](ProgramGraphPlugin/ProgramGraph.md)
-        - [Function Call Graph](FunctionCallGraphPlugin/Function_Call_Graph.md)
+        - [Visual Graphs](VisualGraph/Visual_Graph.md)
     - Memory Map
         - [Editing a Memory Block](MemoryMapPlugin/Memory_Map/#memory-block-edits)
         - Operations on Memory Blocks
@@ -198,12 +338,12 @@
             - [Text](Search/Search_Program_Text.md)
             - [Search and Replace](Search/SearchAndReplace.md)
             - [Strings](Search/Search_for_Strings.md)
+            - [Decompiled Text](DecompilerTextFinderPlugin/Decompiler_Text_Finder.md)
             - [Scalars](ScalarSearchPlugin/The_Scalar_Table.md)
             - [Instruction Patterns](Search/Search_Instruction_Patterns.md)
             - [Address Tables](Search/Search_for_AddressTables.md)
             - [Direct References](Search/Search_for_DirectReferences.md)
             - [Query Results Window](Search/Query_Results_Dialog.md)
-            - [Decompiled Text](DecompilerTextFinderPlugin/Decompiler_Text_Finder.md)
         - [DWARF External Debug Files](DWARFExternalDebugFilesPlugin/DWARFExternalDebugFilesPlugin.md)
         - PDB
             - [Load PDB File](Pdb/LoadPDB.md)
@@ -242,56 +382,12 @@
         - [Console](ConsolePlugin/console.md)
         - [Ghidra Script Development](GhidraScriptMgrPlugin/ScriptDevelopment.md)
         - [Ghidra Bundles](BundleManager/BundleManager.md)
-        - [PyGhidra Interpreter](PyGhidra/interpreter.md)
         - [Jython Interpreter](Jython/interpreter.md)
+        - [PyGhidra Interpreter](PyGhidra/interpreter.md)
     - Symbol Table
         - [Symbol References](SymbolTablePlugin/symbol_references.md)
         - [Symbol Tree](SymbolTreePlugin/SymbolTree.md)
         - [Temporary Symbol Table](SymbolTablePlugin/symbol_table_transient.md)
-    - Byte Viewer
-        - [Formats](ByteViewerPlugin/The_Byte_Viewer/#data-formats)
-        - [Byte Editing](ByteViewerPlugin/The_Byte_Viewer/#editing-memory)
-        - [Configuration Options](ByteViewerPlugin/ByteViewerOptions.md)
-    - Decompiler
-        - Decompiler Concepts
-            - [P-code](DecompilePlugin/DecompilerConcepts/#p-code)
-            - [The HighFunction](DecompilePlugin/DecompilerConcepts/#the-highfunction)
-            - [SLEIGH Specification Files](DecompilePlugin/DecompilerConcepts/#sleigh-specification-files)
-        - Program Annotations Affecting the Decompiler
-            - [Machine Instructions](DecompilePlugin/DecompilerAnnotations/#machine-instructions)
-            - [Comments](DecompilePlugin/DecompilerAnnotations/#comments)
-            - [Variable Annotations](DecompilePlugin/DecompilerAnnotations/#variable-annotations)
-            - [Function Prototypes](DecompilePlugin/DecompilerAnnotations/#function-prototypes)
-            - [Data Mutability](DecompilePlugin/DecompilerAnnotations/#data-mutability)
-            - [Constant Annotations](DecompilePlugin/DecompilerAnnotations/#constant-annotations)
-            - [Register Values](DecompilePlugin/DecompilerAnnotations/#register-values)
-        - Decompiler Options
-            - [General Options](DecompilePlugin/DecompilerOptions/#general-options)
-            - [Analysis Options](DecompilePlugin/DecompilerOptions/#analysis-options)
-            - [Display Options](DecompilePlugin/DecompilerOptions/#display-options)
-            - [Program Options](DecompilePlugin/DecompilerOptions/#program-options)
-            - [Specification Extensions](DecompilePlugin/DecompilerOptions/#specification-extensions)
-        - Decompiler Window
-            - [Display](DecompilePlugin/DecompilerWindow/#display)
-            - [Main Window](DecompilePlugin/DecompilerWindow/#main-window)
-            - [Snapshot Windows](DecompilePlugin/DecompilerWindow/#snapshot-windows)
-            - [Undefined Functions](DecompilePlugin/DecompilerWindow/#undefined-functions)
-            - [Tool Bar](DecompilePlugin/DecompilerWindow/#tool-bar)
-            - [Mouse Actions](DecompilePlugin/DecompilerWindow/#mouse-actions)
-            - [Pop-up Menu and Keyboard Actions](DecompilePlugin/DecompilerWindow/#pop-up-menu-and-keyboard-actions)
-        - [Decompiler Taint](DecompilerTaint/DecompilerTaint/#decompiler-taint-operations)
-    - Function ID
-        - Function ID Analyzer
-            - [Analysis Options](FunctionID/FunctionID/#analysis-options)
-            - [Scoring and Disambiguation](FunctionID/FunctionID/#scoring-and-disambiguation)
-        - Function ID Plugin
-            - [Enabling the Plug-in](FunctionID/FunctionIDPlugin/#enabling-the-plug-in)
-            - [Plug-in Functionality](FunctionID/FunctionIDPlugin/#plug-in-functionality)
-            - [Preparing Libraries for a Function ID Database](FunctionID/FunctionIDPlugin/#preparing-libraries-for-a-function-id-database)
-            - [False Positives](FunctionID/FunctionIDPlugin/#false-positives)
-        - Function ID Debug Plugin
-            - [Enabling the Plug-in](FunctionID/FunctionIDDebug/#enabling-the-plug-in)
-            - [Plug-in Functionality](FunctionID/FunctionIDDebug/#plug-in-functionality)
     - Version Tracking
         - Workflow
             - [Preconditions](VersionTrackingPlugin/VT_Preconditions.md)
@@ -299,13 +395,13 @@
             - [Workflow FAQ](VersionTrackingPlugin/VT_Workflow/#workflow-faq)
             - [Common Problems](VersionTrackingPlugin/VT_Workflow/#common-problems)
         - Program Correlators
+            - [BSim Program Correlator](BSimCorrelator/BSim_Correlator.md)
             - [Data Match Correlator](VersionTrackingPlugin/VT_Correlators/#data-match-correlators)
             - [Function Match Correlator](VersionTrackingPlugin/VT_Correlators/#function-match-correlators)
             - [Implied Match Correlator](VersionTrackingPlugin/VT_Correlators/#implied-correlator)
             - [Legacy Import Match Correlator](VersionTrackingPlugin/VT_Correlators/#legacy-import-correlator)
             - [Manual Match Correlator](VersionTrackingPlugin/VT_Correlators/#manual-match-correlator)
             - [Symbol Name Match Correlator](VersionTrackingPlugin/VT_Correlators/#symbol-name-match-correlators)
-            - [BSim Program Correlator](BSimCorrelator/BSim_Correlator.md)
         - [Session Wizard](VersionTrackingPlugin/VT_Wizard.md)
         - Tool
             - [Matches Table](VersionTrackingPlugin/providers/VT_Matches_Table.md)
@@ -314,113 +410,17 @@
             - [Related Matches Table](VersionTrackingPlugin/providers/VT_Related_Associations_Table.md)
             - [Implied Matches Table](VersionTrackingPlugin/providers/VT_Implied_Matches_Table.md)
     - [Wildcard Assembler](WildcardAssemblerModule/Wildcard_Assembler.md)
-    - BSim
-        - BSim Database Configuration
-            - [Overview](BSim/DatabaseConfiguration/#overview)
-            - [Server Configuration](BSim/DatabaseConfiguration/#server-configuration)
-            - [Creating a Database](BSim/DatabaseConfiguration/#creating-a-database)
-            - [Tailoring BSim Meta-data](BSim/DatabaseConfiguration/#tailoring-bsim-metadata)
-        - Ingesting Executables
-            - [Ingest Process](BSim/IngestProcess/#ingest-process)
-            - [Tailoring Analysis](BSim/IngestProcess/#tailoring-analysis)
-            - [Analysis Effects on Feature Extraction](BSim/IngestProcess/#analysis-effects-on-feature-extraction)
-            - [Maintenance](BSim/IngestProcess/#maintenance)
-            - [Migration](BSim/IngestProcess/#migration)
-        - BSim Search
-            - [Enabling the BSim Search Plugin](BSimSearchPlugin/BSimSearch/#enabling-the-bsim-search-plugin)
-            - [Defining And Managing BSim Database Definitions](BSimSearchPlugin/BSimSearch/#defining-and-managing-bsim-databases)
-            - [Overview Query](BSimSearchPlugin/BSimSearch/#bsim-overview-query)
-            - [Overview Query Results](BSimSearchPlugin/BSimSearch/#bsim-overview-results)
-            - [Similar Function Search](BSimSearchPlugin/BSimSearch/#bsim-similar-function-search)
-            - [Similar Function Search Results](BSimSearchPlugin/BSimSearch/#similar-function-search-results)
-            - [Authentication](BSimSearchPlugin/BSimSearch/#authentication)
-        - Features and Weights
-            - [Features of Software Functions](BSim/FeatureWeight/#features-of-software-functions)
-            - [Weighting Software Features](BSim/FeatureWeight/#weighting-software-features)
-            - [Comparing Feature Vectors](BSim/FeatureWeight/#comparing-feature-vectors)
-            - [BSim Feature Visualizer](BSimFeatureVisualizerPlugin/BSimFeatureVisualizerPlugin.md)
-        - Command-Line Utility Reference
-            - [BSim Control (bsim_ctl)](BSim/CommandLineReference/#bsim_ctl)
-            - [BSim Command (bsim)](BSim/CommandLineReference/#bsim)
-    - Function Bit Patterns Explorer
-        - [Byte Sequences](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#byte-sequence-tabs)
-        - [Instruction Sequences](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#instruction-sequence-tabs)
-        - [Function Start Alignment](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#function-start-alignment-tab)
-        - [Context Register Information](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#context-register-information-tab)
-        - [Pattern Clipboard](FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin/#pattern-clipboard)
-    - Debugger
-        - Launchers
-            - WinDbg (dbgeng.dll) Integration
-                - [Attach](dbgeng/dbgeng/#attach)
-                - [Extended Local](dbgeng/dbgeng/#extended-local)
-                - [Local](dbgeng/dbgeng/#local)
-                - [Process Server](dbgeng/dbgeng/#process-server)
-                - [Remote](dbgeng/dbgeng/#remote)
-                - [TTD (Time-Travel Debugging)](dbgeng/dbgeng/#ttd-time-travel-debugging)
-                - [Windows Kernel](dbgeng/dbgeng/#windows-kernel)
-            - drgn Integration
-                - [Attach](drgn/drgn/#attach)
-                - [Core Dump](drgn/drgn/#attach)
-                - [Linux Kernel](drgn/drgn/#attach)
-            - Java Debugger Integration
-                - [Attach b PID](jpda/jpda/#attach-by-pid)
-                - [Attach by JDWP](jpda/jpda/#attach-by-jdwp)
-                - [Local](jpda/jpda/#local)
-            - LLDB Integration
-                - [Android (native)](lldb/lldb/#android)
-                - [Local](lldb/lldb/#local)
-                - [macOS Kernel](lldb/lldb/#macos-kernel)
-                - [Remote](lldb/lldb/#remote)
-                - [Via SSH](lldb/lldb/#via-ssh)
-            - GDB Integration
-                - [gdbserver via SSH](gdb/gdb/#gdbserver-via-ssh)
-                - [Local](gdb/gdb/#local)
-                - [QEMU](gdb/gdb/#qemu)
-                - [Remote](gdb/gdb/#remote)
-                - [rr](gdb/gdb/#rr)
-                - [Via SSH](gdb/gdb/#via-ssh)
-                - [Wine](gdb/gdb/#wine)
-        - Getting Started
-            - [Launching a Target](Debugger/GettingStarted/#launching-a-target)
-        - [Troubleshooting](Debugger/Troubleshooting.md)
-        - [Debug Console](DebuggerConsolePlugin/DebuggerConsolePlugin.md)
-        - [Copy Actions](DebuggerCopyActionsPlugin/DebuggerCopyActionsPlugin.md)
-        - [Model](DebuggerModelPlugin/DebuggerModelPlugin.md)
-        - [Threads](DebuggerThreadsPlugin/DebuggerThreadsPlugin.md)
-        - [Trace Management](DebuggerTraceManagerServicePlugin/DebuggerTraceManagerServicePlugin.md)
-        - [Emulation](DebuggerEmulationServicePlugin/DebuggerEmulationServicePlugin.md)
-        - [Memory](DebuggerMemoryBytesPlugin/DebuggerMemoryBytesPlugin.md)
-        - [Registers](DebuggerRegistersPlugin/DebuggerRegistersPlugin.md)
-        - [Dynamic Listing](DebuggerListingPlugin/DebuggerListingPlugin.md)
-        - [Disassembly and Assembly](DebuggerDisassemblerPlugin/DebuggerDisassemblerPlugin.md)
-        - [Stack](DebuggerStackPlugin/DebuggerStackPlugin.md)
-        - Breakpoints
-            - [In the Listings](DebuggerBreakpointMarkerPlugin/DebuggerBreakpointMarkerPlugin.md)
-        - [Memory Regions](DebuggerRegionsPlugin/DebuggerRegionsPlugin.md)
-        - [Time](DebuggerTimePlugin/DebuggerTimePlugin.md)
-        - Modules and Sections
-            - [Static Mappings](DebuggerStaticMappingPlugin/DebuggerStaticMappingPlugin.md)
-            - [Static Synchronization](DynamicStaticSynchronizationPlugin/DynamicStaticSynchronizationPlugin.md)
-        - [Watches](DebuggerWatchesPlugin/DebuggerWatchesPlugin.md)
-        - [Variable Hovers](VariableValueHoverPlugin/VariableValueHoverPlugin.md)
-        - [Control and Machine State](DebuggerControlPlugin/DebuggerControlPlugin.md)
-        - [Memview Plot](DebuggerMemviewPlugin/DebuggerMemviewPlugin.md)
-        - [Time Overview Sidebar](DebuggerTimeOverviewPlugin/DebuggerTimeOverviewPlugin.md)
-        - [P-code Stepper](DebuggerPcodeStepperPlugin/DebuggerPcodeStepperPlugin.md)
-        - [Comparing Times](DebuggerTraceViewDiffPlugin/DebuggerTraceViewDiffPlugin.md)
-        - [Platform Selection](DebuggerPlatformPlugin/DebuggerPlatformPlugin.md)
-        - [Connection Manager](TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md)
 - Support
-    - [Headless Analyzer](HeadlessAnalyzer/HeadlessAnalyzer.md)
     - [GhidraGo](GhidraGo/GhidraGo.md)
+    - [Headless Analyzer](HeadlessAnalyzer/HeadlessAnalyzer.md)
 - [Keyboard Navigation](KeyboardNavigation/KeyboardNavigation.md)
 - [Undo/Redo](Tool/Undo_Redo.md)
 - [Glossary](Glossary/glossary.md)
 - [Tips of the Day](Misc/Tips/#ghidra-tips-of-the-day)
-- Appendix
-    - [Block Models](BlockModel/Block_Model.md)
-    - [Languages](LanguageProviderPlugin/Languages.md)
 - Theming
     - [User's Guide](Theming/ThemingUserDocs.md)
     - [Developer's Guide](Theming/ThemingDeveloperDocs.md)
     - [Architecture](Theming/ThemingInternals.md)
+- Appendix
+    - [Block Models](BlockModel/Block_Model.md)
+    - [Languages](LanguageProviderPlugin/Languages.md)

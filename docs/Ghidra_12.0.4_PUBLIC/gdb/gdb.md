@@ -423,4 +423,4 @@ Other options are the same as in GDB.
 
 ---
 
-[← Previous: Via SSH](gdb.md) | [Next: Getting Started →](../Debugger/GettingStarted.md)
+[← Previous: Via SSH](gdb.md) | [Next: Java Debugger Integration →](../jpda/jpda.md)

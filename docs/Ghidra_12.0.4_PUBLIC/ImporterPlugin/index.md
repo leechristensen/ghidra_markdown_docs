@@ -4,5 +4,5 @@
 
 ## Contents
 
-- [Batch Import](importer.md#batch-import)
 - [Import Program](importer.md)
+- [Batch Import](importer.md#batch-import)

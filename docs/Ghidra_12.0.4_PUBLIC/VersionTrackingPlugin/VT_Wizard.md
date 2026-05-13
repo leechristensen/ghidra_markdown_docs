@@ -305,4 +305,4 @@ Introduction](Version_Tracking_Intro.md)
 
 ---
 
-[← Previous: BSim Program Correlator](../BSimCorrelator/BSim_Correlator.md) | [Next: Tool →](VT_Tool.md)
+[← Previous: Symbol Name Match Correlator](VT_Correlators.md) | [Next: Tool →](VT_Tool.md)

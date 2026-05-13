@@ -163,4 +163,4 @@ present readable values. The only meaningful table is likely to be the
 
 ---
 
-[← Previous: Enabling the Plug-in](FunctionIDDebug.md) | [Next: Version Tracking →](../VersionTrackingPlugin/Version_Tracking_Intro.md)
+[← Previous: Enabling the Plug-in](FunctionIDDebug.md) | [Next: Graphing →](../Graph/GraphIntro.md)

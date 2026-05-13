@@ -4,10 +4,10 @@
 
 ## Contents
 
-- [Error Dialogs](Intro.md#error-dialogs)
-- [Getting Started](Intro.md#getting-started)
-- [Ghidra Functionality](GhidraFunctionality.md)
 - [Introduction](Intro.md)
-- [Overview](Intro.md#ghidra-overview)
+- [Getting Started](Intro.md#getting-started)
 - [Starting Ghidra](Intro.md#starting-ghidra)
+- [Error Dialogs](Intro.md#error-dialogs)
+- [Overview](Intro.md#ghidra-overview)
+- [Ghidra Functionality](GhidraFunctionality.md)
 - [Support](GhidraSupport.md)

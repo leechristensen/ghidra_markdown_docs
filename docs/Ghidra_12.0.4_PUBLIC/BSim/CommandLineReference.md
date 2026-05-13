@@ -643,4 +643,4 @@ should include its drive designation preceded by a '/' (e.g., `file:/C:/mydir/my
 
 ---
 
-[← Previous: BSim Control (bsim_ctl)](CommandLineReference.md) | [Next: Function Bit Patterns Explorer →](../FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin.md)
+[← Previous: BSim Control (bsim_ctl)](CommandLineReference.md) | [Next: Byte Viewer →](../ByteViewerPlugin/The_Byte_Viewer.md)

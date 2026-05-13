@@ -384,4 +384,4 @@ Introduction](Version_Tracking_Intro.md)
 
 ---
 
-[← Previous: Manual Match Correlator](VT_Correlators.md) | [Next: BSim Program Correlator →](../BSimCorrelator/BSim_Correlator.md)
+[← Previous: Manual Match Correlator](VT_Correlators.md) | [Next: Session Wizard →](VT_Wizard.md)

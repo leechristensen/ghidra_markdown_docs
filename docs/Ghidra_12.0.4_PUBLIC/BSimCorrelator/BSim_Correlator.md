@@ -90,4 +90,4 @@ Introduction](../VersionTrackingPlugin/Version_Tracking_Intro.md)
 
 ---
 
-[← Previous: Symbol Name Match Correlator](../VersionTrackingPlugin/VT_Correlators.md) | [Next: Session Wizard →](../VersionTrackingPlugin/VT_Wizard.md)
+[← Previous: Program Correlators](../VersionTrackingPlugin/VT_Correlators.md) | [Next: Data Match Correlator →](../VersionTrackingPlugin/VT_Correlators.md)

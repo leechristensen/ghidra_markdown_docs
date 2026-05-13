@@ -89,4 +89,4 @@ Provided by: *Decompiler Text Finder Plugin*
 
 ---
 
-[← Previous: Query Results Window](../Search/Query_Results_Dialog.md) | [Next: DWARF External Debug Files →](../DWARFExternalDebugFilesPlugin/DWARFExternalDebugFilesPlugin.md)
+[← Previous: Strings](../Search/Search_for_Strings.md) | [Next: Scalars →](../ScalarSearchPlugin/The_Scalar_Table.md)

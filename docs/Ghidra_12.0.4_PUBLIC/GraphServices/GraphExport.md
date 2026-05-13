@@ -51,4 +51,4 @@ Provided By:  *GraphDisplayBrokerPlugin*
 
 ---
 
-[← Previous: Default Graph Display](GraphDisplay.md) | [Next: Visual Graphs →](../VisualGraph/Visual_Graph.md)
+[← Previous: Default Graph Display](GraphDisplay.md) | [Next: Data Graph →](../DataGraphPlugin/Data_Graph.md)

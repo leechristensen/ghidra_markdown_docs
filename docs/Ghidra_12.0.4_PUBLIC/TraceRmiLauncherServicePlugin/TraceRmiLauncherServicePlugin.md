@@ -180,4 +180,4 @@ Python 2 is not supported.
 
 ---
 
-[← Previous: Debugger](../Debugger/Debugger.md) | [Next: WinDbg (dbgeng.dll) Integration →](../dbgeng/dbgeng.md)
+[← Previous: Launching a Target](../Debugger/GettingStarted.md) | [Next: drgn Integration →](../drgn/drgn.md)

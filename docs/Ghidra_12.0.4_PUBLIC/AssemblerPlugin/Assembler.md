@@ -101,4 +101,4 @@ Provided by: *Assembler* plugin
 
 ---
 
-[← Previous: Ghidra Functionality](../Intro/GhidraFunctionality.md) | [Next: Data Type Manager →](../DataTypeManagerPlugin/data_type_manager_description.md)
+[← Previous: Ghidra Functionality](../Intro/GhidraFunctionality.md) | [Next: BSim →](../BSim/BSimOverview.md)

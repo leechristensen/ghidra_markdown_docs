@@ -66,4 +66,4 @@ on the Options dialog.
 
 ---
 
-[← Previous: Byte Editing](The_Byte_Viewer.md) | [Next: Decompiler →](../DecompilePlugin/DecompilerIntro.md)
+[← Previous: Byte Editing](The_Byte_Viewer.md) | [Next: Data Type Manager →](../DataTypeManagerPlugin/data_type_manager_description.md)

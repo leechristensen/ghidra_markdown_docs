@@ -4,5 +4,5 @@
 
 ## Contents
 
-- [Enum Editor](EnumEditor.md)
 - [Structure Editor](StructureEditor.md)
+- [Enum Editor](EnumEditor.md)

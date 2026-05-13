@@ -358,4 +358,4 @@ Provided by: *Function Bit Patterns Explorer Plugin*
 
 ---
 
-[← Previous: Context Register Information](FunctionBitPatternsExplorerPlugin.md) | [Next: Debugger →](../Debugger/Debugger.md)
+[← Previous: Context Register Information](FunctionBitPatternsExplorerPlugin.md) | [Next: Function ID →](../FunctionID/FunctionID.md)

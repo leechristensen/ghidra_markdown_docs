@@ -386,4 +386,4 @@ Provided by: *Program Graph Plugin*
 
 ---
 
-[← Previous: Layouts](../FunctionGraphPlugin/Function_Graph_Layouts.md) | [Next: Function Call Graph →](../FunctionCallGraphPlugin/Function_Call_Graph.md)
+[← Previous: Layouts](../FunctionGraphPlugin/Function_Graph_Layouts.md) | [Next: Visual Graphs →](../VisualGraph/Visual_Graph.md)

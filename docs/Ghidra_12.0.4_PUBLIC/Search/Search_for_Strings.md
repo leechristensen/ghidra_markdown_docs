@@ -299,4 +299,4 @@ Provided By: *EncodedStringsPlugin*
 
 ---
 
-[← Previous: Search and Replace](SearchAndReplace.md) | [Next: Scalars →](../ScalarSearchPlugin/The_Scalar_Table.md)
+[← Previous: Search and Replace](SearchAndReplace.md) | [Next: Decompiled Text →](../DecompilerTextFinderPlugin/Decompiler_Text_Finder.md)

@@ -1008,4 +1008,4 @@ Provided by: *Program Diff* Plugin
 
 ---
 
-[← Previous: Configuration Options](../CodeBrowserPlugin/CodeBrowserOptions.md) | [Next: Eclipse Integration →](../EclipseIntegration/EclipseIntegration.md)
+[← Previous: Configuration Options](../CodeBrowserPlugin/CodeBrowserOptions.md) | [Next: Debugger →](../Debugger/Debugger.md)

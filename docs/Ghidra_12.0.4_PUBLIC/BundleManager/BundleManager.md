@@ -346,4 +346,4 @@ Refresh will deactivate, clean, then reactivate every enabled bundle.
 
 ---
 
-[← Previous: Ghidra Script Development](../GhidraScriptMgrPlugin/ScriptDevelopment.md) | [Next: PyGhidra Interpreter →](../PyGhidra/interpreter.md)
+[← Previous: Ghidra Script Development](../GhidraScriptMgrPlugin/ScriptDevelopment.md) | [Next: Jython Interpreter →](../Jython/interpreter.md)

@@ -80,4 +80,4 @@ architecture.
 
 ---
 
-[← Previous: Wildcard Assembler](../WildcardAssemblerModule/Wildcard_Assembler.md) | [Next: BSim Database Configuration →](DatabaseConfiguration.md)
+[← Previous: Assembler](../AssemblerPlugin/Assembler.md) | [Next: BSim Database Configuration →](DatabaseConfiguration.md)

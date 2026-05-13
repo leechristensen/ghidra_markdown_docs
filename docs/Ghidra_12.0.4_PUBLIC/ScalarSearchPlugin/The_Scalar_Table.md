@@ -134,4 +134,4 @@ Provided by: *ScalarTablePlugin*
 
 ---
 
-[← Previous: Strings](../Search/Search_for_Strings.md) | [Next: Instruction Patterns →](../Search/Search_Instruction_Patterns.md)
+[← Previous: Decompiled Text](../DecompilerTextFinderPlugin/Decompiler_Text_Finder.md) | [Next: Instruction Patterns →](../Search/Search_Instruction_Patterns.md)

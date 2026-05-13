@@ -210,4 +210,4 @@ Unlimited Strength Jurisdiction Policy Files"
 
 ---
 
-[← Previous: Configuration Options](../OverviewPlugin/Overview.md) | [Next: Graphing →](../Graph/GraphIntro.md)
+[← Previous: Configuration Options](../OverviewPlugin/Overview.md) | [Next: Function Bit Patterns Explorer →](../FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin.md)

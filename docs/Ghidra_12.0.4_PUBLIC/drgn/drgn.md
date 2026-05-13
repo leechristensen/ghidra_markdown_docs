@@ -81,4 +81,4 @@ Note: requires root access - you will be prompted for a password in the Terminal
 
 ---
 
-[← Previous: Core Dump](drgn.md) | [Next: Java Debugger Integration →](../jpda/jpda.md)
+[← Previous: Core Dump](drgn.md) | [Next: GDB Integration →](../gdb/gdb.md)

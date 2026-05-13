@@ -1,4 +1,4 @@
-[Home](../index.md) > [VisualGraph](index.md) > Satellite View
+[Home](../index.md) > [VisualGraph](index.md) > Visual Graphs
 
 # Visual Graphs
 
@@ -134,4 +134,4 @@ rectangle that is painted with the current background color of the vertex.
 
 ---
 
-[← Previous: Primary View](../FunctionGraphPlugin/Function_Graph.md) | [Next: Zooming →](../FunctionGraphPlugin/Function_Graph.md)
+[← Previous: Program Graph](../ProgramGraphPlugin/ProgramGraph.md) | [Next: Memory Map →](../MemoryMapPlugin/Memory_Map.md)

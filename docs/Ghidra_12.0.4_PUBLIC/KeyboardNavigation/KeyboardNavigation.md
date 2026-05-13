@@ -93,4 +93,4 @@ select actions, display actions, show actions.
 
 ---
 
-[← Previous: GhidraGo](../GhidraGo/GhidraGo.md) | [Next: Undo/Redo →](../Tool/Undo_Redo.md)
+[← Previous: Headless Analyzer](../HeadlessAnalyzer/HeadlessAnalyzer.md) | [Next: Undo/Redo →](../Tool/Undo_Redo.md)

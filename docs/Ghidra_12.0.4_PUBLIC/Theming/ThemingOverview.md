@@ -132,4 +132,4 @@ Provided by: *Theme Manager*
 
 ---
 
-[← Previous: Languages](../LanguageProviderPlugin/Languages.md) | [Next: User's Guide →](ThemingUserDocs.md)
+[← Previous: Tips of the Day](../Misc/Tips.md) | [Next: User's Guide →](ThemingUserDocs.md)

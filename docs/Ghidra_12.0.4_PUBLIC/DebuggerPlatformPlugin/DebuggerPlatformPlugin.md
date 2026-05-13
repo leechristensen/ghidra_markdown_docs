@@ -70,4 +70,4 @@ trace.
 
 ---
 
-[← Previous: Comparing Times](../DebuggerTraceViewDiffPlugin/DebuggerTraceViewDiffPlugin.md) | [Next: Connection Manager →](../TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md)
+[← Previous: Comparing Times](../DebuggerTraceViewDiffPlugin/DebuggerTraceViewDiffPlugin.md) | [Next: Decompiler →](../DecompilePlugin/DecompilerIntro.md)

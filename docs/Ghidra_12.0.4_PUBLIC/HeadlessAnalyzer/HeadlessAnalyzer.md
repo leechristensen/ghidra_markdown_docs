@@ -88,4 +88,4 @@ analyzeHeadless [&lt;project_location&gt; &lt;project_name&gt;[/&lt;folder_path&
 
 ---
 
-[← Previous: Support](../Intro/GhidraSupport.md) | [Next: GhidraGo →](../GhidraGo/GhidraGo.md)
+[← Previous: GhidraGo](../GhidraGo/GhidraGo.md) | [Next: Keyboard Navigation →](../KeyboardNavigation/KeyboardNavigation.md)

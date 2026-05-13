@@ -154,4 +154,4 @@ Last modified: Oct 26 2023
 
 ---
 
-[← Previous: Headless Analyzer](../HeadlessAnalyzer/HeadlessAnalyzer.md) | [Next: Keyboard Navigation →](../KeyboardNavigation/KeyboardNavigation.md)
+[← Previous: Support](../Intro/GhidraSupport.md) | [Next: Headless Analyzer →](../HeadlessAnalyzer/HeadlessAnalyzer.md)

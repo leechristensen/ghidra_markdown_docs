@@ -4,14 +4,14 @@
 
 ## Contents
 
-- [Add](Memory_Map.md#add)
-- [Delete](Memory_Map.md#delete)
 - [Editing a Memory Block](Memory_Map.md#memory-block-edits)
-- [Expand Down](Memory_Map.md#expand-down)
-- [Expand Up](Memory_Map.md#expand-up)
-- [Memory Map](Memory_Map.md)
-- [Merge](Memory_Map.md#merge)
-- [Move](Memory_Map.md#move)
+- [Add](Memory_Map.md#add)
 - [Operations on Memory Blocks](Memory_Map.md#memory-block-operations)
-- [Set Image Base](Memory_Map.md#set-image-base)
+- [Move](Memory_Map.md#move)
 - [Split](Memory_Map.md#split)
+- [Expand Up](Memory_Map.md#expand-up)
+- [Expand Down](Memory_Map.md#expand-down)
+- [Merge](Memory_Map.md#merge)
+- [Delete](Memory_Map.md#delete)
+- [Memory Map](Memory_Map.md)
+- [Set Image Base](Memory_Map.md#set-image-base)

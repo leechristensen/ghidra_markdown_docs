@@ -235,4 +235,4 @@ Provided by: *Function Call Graph Plugin*
 
 ---
 
-[← Previous: Program Graph](../ProgramGraphPlugin/ProgramGraph.md) | [Next: Memory Map →](../MemoryMapPlugin/Memory_Map.md)
+[← Previous: Layout](../DataGraphPlugin/Data_Graph.md) | [Next: Function Graph →](../FunctionGraphPlugin/Function_Graph.md)

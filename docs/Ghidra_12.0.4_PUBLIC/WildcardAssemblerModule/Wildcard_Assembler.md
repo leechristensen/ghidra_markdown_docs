@@ -76,4 +76,4 @@ Provided by: *Wildcard Assembler Module*
 
 ---
 
-[← Previous: Implied Matches Table](../VersionTrackingPlugin/providers/VT_Implied_Matches_Table.md) | [Next: BSim →](../BSim/BSimOverview.md)
+[← Previous: Implied Matches Table](../VersionTrackingPlugin/providers/VT_Implied_Matches_Table.md) | [Next: Support →](../Intro/GhidraSupport.md)

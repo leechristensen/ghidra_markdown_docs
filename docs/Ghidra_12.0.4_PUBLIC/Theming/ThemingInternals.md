@@ -235,4 +235,4 @@ Provided by: *Theme Manager*
 
 ---
 
-[← Previous: Developer's Guide](ThemingDeveloperDocs.md)
+[← Previous: Developer's Guide](ThemingDeveloperDocs.md) | [Next: Appendix →](../Misc/Appendix.md)

@@ -157,4 +157,4 @@ Provided by: *Version Tracking Plugin*
 
 ---
 
-[← Previous: Plug-in Functionality](../FunctionID/FunctionIDDebug.md) | [Next: Workflow →](VT_Workflow.md)
+[← Previous: Temporary Symbol Table](../SymbolTablePlugin/symbol_table_transient.md) | [Next: Workflow →](VT_Workflow.md)

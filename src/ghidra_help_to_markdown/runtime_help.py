@@ -52,6 +52,8 @@ class RuntimeTOCEntry:
 
     id: str
     text: str
+    sort_key: str = ""  # TOCItem.getName() — the `text` attribute from
+                        # TOC.xml that JavaHelp's SortMerge sorts on.
     target_id: Optional[str] = None  # help-id target (may be None for grouping nodes)
     target_url: Optional[str] = None  # resolved URL from combinedMap
     inner_path: Optional[str] = None  # "topics/Tool/X.html"
@@ -95,6 +97,16 @@ class RuntimeHelp:
         expecting JavaHelp to merge them. Ghidra's GHelpSet doesn't honor that
         at runtime, so we merge manually: walk each helpset's TOC and dedupe
         nodes by `toc_id` (which Ghidra requires to be globally unique).
+
+        After merging, sort each level's children by `sort_key`. Ghidra's
+        view-level mergetype is `UniteAppendMerge`, but JavaHelp's
+        `UniteAppendMerge.mergeNodes` delegates the child ordering to
+        `SortMerge.mergeNodeChildren` — i.e. the merged children ARE
+        sorted alphabetically by their TOC.xml `text` attribute
+        (`TOCItem.getName()`), which is what Ghidra's help viewer ends
+        up displaying. Without the sort, sub-helpset entries (BSim,
+        Debugger, …) appear at the end in helpset-load order instead
+        of interleaved alphabetically with the master items.
         """
         top: list[RuntimeTOCEntry] = []
         by_id: dict[str, RuntimeTOCEntry] = {}
@@ -109,6 +121,7 @@ class RuntimeHelp:
                 entry = self._node_to_entry(node)
                 if entry is not None:
                     self._merge_toc_entry(entry, top, by_id)
+        _sort_children_recursive(top)
         return top
 
     def _merge_toc_entry(
@@ -138,6 +151,7 @@ class RuntimeHelp:
         new_entry = RuntimeTOCEntry(
             id=entry.id,
             text=entry.text,
+            sort_key=entry.sort_key,
             target_id=entry.target_id,
             target_url=entry.target_url,
             inner_path=entry.inner_path,
@@ -157,6 +171,7 @@ class RuntimeHelp:
             entry = RuntimeTOCEntry(id="", text="")
         else:
             text = str(obj.getDisplayText() or "")
+            sort_key = str(obj.getName() or "")
             toc_id = str(obj.getTocID() or "")
             target_id_obj = obj.getID()
             target_id = str(target_id_obj.getIDString()) if target_id_obj is not None else None
@@ -178,6 +193,7 @@ class RuntimeHelp:
             entry = RuntimeTOCEntry(
                 id=toc_id,
                 text=text,
+                sort_key=sort_key,
                 target_id=target_id,
                 target_url=target_url,
                 inner_path=inner,
@@ -280,6 +296,20 @@ class RuntimeHelp:
 
 # ----------------------------------------------------------------------
 # URL parsing helpers (module-level for testability)
+
+
+def _sort_children_recursive(entries: list[RuntimeTOCEntry]) -> None:
+    """Sort a TOC level by `sort_key`, then recurse into children.
+
+    Matches the ordering JavaHelp's `SortMerge.mergeNodeChildren`
+    produces inside `UniteAppendMerge` — a case-sensitive
+    lexicographic sort on the `text` attribute (lowercased by the help
+    build for everything except entries with an explicit `sortgroup`).
+    Stable sort preserves insertion order for sort-key duplicates.
+    """
+    entries.sort(key=lambda e: e.sort_key)
+    for entry in entries:
+        _sort_children_recursive(entry.children)
 
 
 def parse_help_url(url: str) -> tuple[Optional[str], Optional[str]]:

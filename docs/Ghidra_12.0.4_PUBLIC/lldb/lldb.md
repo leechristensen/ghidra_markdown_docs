@@ -254,4 +254,4 @@ See the [Setup](#setup) section for the arguments to pass to `pip install ...`.
 
 ---
 
-[← Previous: Remote](lldb.md) | [Next: GDB Integration →](../gdb/gdb.md)
+[← Previous: Remote](lldb.md) | [Next: WinDbg (dbgeng.dll) Integration →](../dbgeng/dbgeng.md)

@@ -38,4 +38,4 @@ For more information on installing and using the GhidraDev Eclipse plugin, see
 
 ---
 
-[← Previous: Program Differences](../Diff/Diff.md) | [Next: Entropy Overview →](../OverviewPlugin/Overview.md)
+[← Previous: Decompiler Taint](../DecompilerTaint/DecompilerTaint.md) | [Next: Entropy Overview →](../OverviewPlugin/Overview.md)

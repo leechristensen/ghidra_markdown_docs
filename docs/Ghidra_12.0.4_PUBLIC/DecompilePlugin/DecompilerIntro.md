@@ -111,4 +111,4 @@ component offsets and data-types.
 
 ---
 
-[← Previous: Configuration Options](../ByteViewerPlugin/ByteViewerOptions.md) | [Next: Decompiler Concepts →](DecompilerConcepts.md)
+[← Previous: Platform Selection](../DebuggerPlatformPlugin/DebuggerPlatformPlugin.md) | [Next: Decompiler Concepts →](DecompilerConcepts.md)

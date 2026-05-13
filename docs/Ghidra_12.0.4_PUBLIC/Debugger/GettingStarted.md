@@ -145,4 +145,4 @@ Terminal are the first places to look when troubleshooting.
 
 ---
 
-[← Previous: Getting Started](GettingStarted.md) | [Next: Troubleshooting →](Troubleshooting.md)
+[← Previous: Getting Started](GettingStarted.md) | [Next: Launchers →](../TraceRmiLauncherServicePlugin/TraceRmiLauncherServicePlugin.md)

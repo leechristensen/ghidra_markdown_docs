@@ -82,4 +82,4 @@
 
 ---
 
-[← Previous: What's New](../docs/WhatsNew.md) | [Next: Appendix →](Appendix.md)
+[← Previous: What's New](../docs/WhatsNew.md) | [Next: Theming →](../Theming/ThemingOverview.md)

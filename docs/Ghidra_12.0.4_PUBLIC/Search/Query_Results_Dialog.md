@@ -115,4 +115,4 @@ Options](../Tool/ToolOptions_Dialog.md)
 
 ---
 
-[← Previous: Direct References](Search_for_DirectReferences.md) | [Next: Decompiled Text →](../DecompilerTextFinderPlugin/Decompiler_Text_Finder.md)
+[← Previous: Direct References](Search_for_DirectReferences.md) | [Next: DWARF External Debug Files →](../DWARFExternalDebugFilesPlugin/DWARFExternalDebugFilesPlugin.md)

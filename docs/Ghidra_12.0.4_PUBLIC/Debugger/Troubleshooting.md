@@ -88,4 +88,4 @@ Additional troubleshooting recommendations are given in the Debugger course mate
 
 ---
 
-[← Previous: Launching a Target](GettingStarted.md) | [Next: Debug Console →](../DebuggerConsolePlugin/DebuggerConsolePlugin.md)
+[← Previous: Connection Manager](../TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md) | [Next: Debug Console →](../DebuggerConsolePlugin/DebuggerConsolePlugin.md)

@@ -4,7 +4,7 @@
 
 ## Contents
 
-- [Architecture](ThemingInternals.md)
-- [Developer's Guide](ThemingDeveloperDocs.md)
-- [Theming](ThemingOverview.md)
 - [User's Guide](ThemingUserDocs.md)
+- [Developer's Guide](ThemingDeveloperDocs.md)
+- [Architecture](ThemingInternals.md)
+- [Theming](ThemingOverview.md)

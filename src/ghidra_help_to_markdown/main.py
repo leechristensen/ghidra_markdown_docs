@@ -149,7 +149,10 @@ class GhidraHelpConverter:
                 text=rt_entry.text,
                 target=target,
                 anchor=anchor,
-                sortgroup=rt_entry.text,  # runtime TOC is already pre-sorted by Ghidra
+                # The runtime TOC is already sorted at each level by
+                # runtime_help.walk_toc() using TOCItem.getName() (the
+                # `text` attribute Ghidra uses for SortMerge).
+                sortgroup=rt_entry.sort_key,
             )
             if entry.id:
                 definitions[entry.id] = entry

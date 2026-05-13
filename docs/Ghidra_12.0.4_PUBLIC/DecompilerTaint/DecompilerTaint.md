@@ -259,4 +259,4 @@ Create a selection from the selected addresses.
 
 ---
 
-[← Previous: Pop-up Menu and Keyboard Actions](../DecompilePlugin/DecompilerWindow.md) | [Next: Function ID →](../FunctionID/FunctionID.md)
+[← Previous: Pop-up Menu and Keyboard Actions](../DecompilePlugin/DecompilerWindow.md) | [Next: Eclipse Integration →](../EclipseIntegration/EclipseIntegration.md)

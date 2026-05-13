@@ -155,4 +155,4 @@ Provided by: *JythonPlugin*
 
 ---
 
-[← Previous: PyGhidra Interpreter](../PyGhidra/interpreter.md) | [Next: Symbol Table →](../SymbolTablePlugin/symbol_table.md)
+[← Previous: Ghidra Bundles](../BundleManager/BundleManager.md) | [Next: PyGhidra Interpreter →](../PyGhidra/interpreter.md)

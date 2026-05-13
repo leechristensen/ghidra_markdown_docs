@@ -405,4 +405,4 @@ Display Options](../CodeBrowserPlugin/CodeBrowserOptions.md#color-and-fonts)
 
 ---
 
-[← Previous: Jython Interpreter](../Jython/interpreter.md) | [Next: Symbol References →](symbol_references.md)
+[← Previous: PyGhidra Interpreter](../PyGhidra/interpreter.md) | [Next: Symbol References →](symbol_references.md)

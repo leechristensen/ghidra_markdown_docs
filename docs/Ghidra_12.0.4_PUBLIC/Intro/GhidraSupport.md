@@ -16,4 +16,4 @@ Most of the available support tools and documentation can be found in:
 
 ---
 
-[← Previous: Connection Manager](../TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md) | [Next: Headless Analyzer →](../HeadlessAnalyzer/HeadlessAnalyzer.md)
+[← Previous: Wildcard Assembler](../WildcardAssemblerModule/Wildcard_Assembler.md) | [Next: GhidraGo →](../GhidraGo/GhidraGo.md)

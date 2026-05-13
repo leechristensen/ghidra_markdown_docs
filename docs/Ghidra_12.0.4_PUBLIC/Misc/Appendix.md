@@ -10,4 +10,4 @@
 
 ---
 
-[← Previous: Tips of the Day](Tips.md) | [Next: Block Models →](../BlockModel/Block_Model.md)
+[← Previous: Architecture](../Theming/ThemingInternals.md) | [Next: Block Models →](../BlockModel/Block_Model.md)

@@ -57,4 +57,4 @@ project window. You may also add the package to an existing tool using the File 
 
 ---
 
-[← Previous: Pattern Clipboard](../FunctionBitPatternsExplorerPlugin/FunctionBitPatternsExplorerPlugin.md) | [Next: Launchers →](../TraceRmiLauncherServicePlugin/TraceRmiLauncherServicePlugin.md)
+[← Previous: Program Differences](../Diff/Diff.md) | [Next: Getting Started →](GettingStarted.md)

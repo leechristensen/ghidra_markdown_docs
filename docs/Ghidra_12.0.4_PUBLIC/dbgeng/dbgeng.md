@@ -304,4 +304,4 @@ your Python installation, e.g., `C:\Python313\dbghelp.dll`.
 
 ---
 
-[← Previous: TTD (Time-Travel Debugging)](dbgeng.md) | [Next: drgn Integration →](../drgn/drgn.md)
+[← Previous: TTD (Time-Travel Debugging)](dbgeng.md) | [Next: Connection Manager →](../TraceRmiConnectionManagerPlugin/TraceRmiConnectionManagerPlugin.md)

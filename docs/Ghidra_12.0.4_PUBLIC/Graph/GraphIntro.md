@@ -10,4 +10,4 @@ see the **Graph** menu on the toolbar.
 
 ---
 
-[← Previous: FileSystem Browser](../FileSystemBrowserPlugin/FileSystemBrowserPlugin.md) | [Next: Graph Services →](GraphServicesIntro.md)
+[← Previous: Plug-in Functionality](../FunctionID/FunctionIDDebug.md) | [Next: Graph Services →](GraphServicesIntro.md)

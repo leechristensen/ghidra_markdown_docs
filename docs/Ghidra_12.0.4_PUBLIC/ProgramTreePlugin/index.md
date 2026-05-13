@@ -4,12 +4,12 @@
 
 ## Contents
 
-- [Close view](view_manager.md#close-a-program-tree)
-- [Control the View](program_tree.md#control-the-view-in-the-code-browser)
-- [Create view](view_manager.md#create-a-default-program-tree)
-- [Cut/Copy/Paste and Drag and Drop](program_tree.md#cutcopypaste-and-drag-and-drop)
-- [Delete view](view_manager.md#delete-a-program-tree)
 - [Folders and Fragments](program_tree.md#folders-and-fragments)
+- [Control the View](program_tree.md#control-the-view-in-the-code-browser)
+- [Cut/Copy/Paste and Drag and Drop](program_tree.md#cutcopypaste-and-drag-and-drop)
 - [Program Organizations](Program_Organizations.md)
-- [Program Tree](program_tree.md)
+- [Create view](view_manager.md#create-a-default-program-tree)
+- [Delete view](view_manager.md#delete-a-program-tree)
 - [Rename view](view_manager.md#rename-a-program-tree)
+- [Close view](view_manager.md#close-a-program-tree)
+- [Program Tree](program_tree.md)

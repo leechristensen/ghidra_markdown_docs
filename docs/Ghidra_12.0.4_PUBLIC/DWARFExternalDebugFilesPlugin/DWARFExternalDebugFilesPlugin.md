@@ -32,4 +32,4 @@ Provided by: *DWARF External Debug Files Plugin*
 
 ---
 
-[← Previous: Decompiled Text](../DecompilerTextFinderPlugin/Decompiler_Text_Finder.md) | [Next: PDB →](../Pdb/PDB.md)
+[← Previous: Query Results Window](../Search/Query_Results_Dialog.md) | [Next: PDB →](../Pdb/PDB.md)

@@ -230,4 +230,4 @@ Provided by: *Data Graph Plugin*
 
 ---
 
-[← Previous: Popups](Data_Graph.md) | [Next: Function Graph →](../FunctionGraphPlugin/Function_Graph.md)
+[← Previous: Popups](Data_Graph.md) | [Next: Function Call Graph →](../FunctionCallGraphPlugin/Function_Call_Graph.md)
