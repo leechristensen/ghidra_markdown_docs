@@ -12,8 +12,20 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Pre-empt the September 2026 Node 20 removal — opt every JS-based action
+# into Node 24 now so the warning annotation disappears and we don't
+# break on the cutover.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+# Pages deployment needs these on the workflow's GITHUB_TOKEN.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  convert-and-check:
+  build:
     name: Convert + link check
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -24,6 +36,9 @@ jobs:
     env:
       GHIDRA_VERSION: "12.0.4"
       GHIDRA_RELEASE_TAG: "Ghidra_12.0.4_build"
+
+    outputs:
+      site_artifact_id: ${{ steps.upload-pages.outputs.artifact_id }}
 
     steps:
       - name: Checkout
@@ -85,6 +100,9 @@ jobs:
       - name: Link check (mkdocs --strict)
         run: ./scripts/check_links.sh
 
+      - name: Build mkdocs site
+        run: uvx --from mkdocs-material --with mkdocs-literate-nav mkdocs build --strict --site-dir site
+
       - name: Upload converted docs as artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -92,3 +110,29 @@ jobs:
           name: ghidra-docs
           path: docs/
           retention-days: 14
+
+      - name: Configure Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        id: upload-pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
