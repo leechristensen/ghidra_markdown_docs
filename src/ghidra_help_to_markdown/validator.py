@@ -567,6 +567,15 @@ class MarkdownValidator:
             )
             return
 
+        # Under mkdocs's `use_directory_urls: true`, a page `foo/bar.md` is
+        # served at the URL `foo/bar/`. SUMMARY.md intentionally emits that
+        # rendered form (see main.py write_entry, the `for_nav` branch), so
+        # accept `foo/bar/` as a synonym for `foo/bar.md` when validating.
+        if not target_path.exists() and target_path.suffix == "":
+            md_candidate = target_path.with_suffix(".md")
+            if md_candidate.is_file():
+                target_path = md_candidate
+
         # Check if target file exists
         if not target_path.exists():
             result.issues.append(

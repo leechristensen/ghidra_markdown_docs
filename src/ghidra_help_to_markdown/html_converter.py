@@ -1566,6 +1566,26 @@ class HTMLToMarkdownConverter:
 
         markdown = "\n".join(cleaned_lines)
 
+        # Guarantee a blank line before every ATX heading. Headings emitted
+        # inside an indented list-continuation get their leading whitespace
+        # stripped above, which also collapses the blank line that
+        # _convert_heading wrapped them in. Without the gap, python-markdown
+        # treats `### ...` as paragraph text and doesn't render it as a header.
+        normalized: list[str] = []
+        in_code_block = False
+        for line in markdown.split("\n"):
+            if line.strip().startswith("```"):
+                in_code_block = not in_code_block
+            elif (
+                not in_code_block
+                and re.match(r"^#{1,6}\s", line)
+                and normalized
+                and normalized[-1].strip()
+            ):
+                normalized.append("")
+            normalized.append(line)
+        markdown = "\n".join(normalized)
+
         # Ensure single newline at end
         markdown = markdown.strip() + "\n"
 
