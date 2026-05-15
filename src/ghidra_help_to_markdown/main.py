@@ -339,6 +339,7 @@ class GhidraHelpConverter:
         self._generate_master_index()
         self._generate_module_indexes()
         self._generate_docs_root_summary()
+        self._update_landing_page_versions()
         print("  Generated index files")
 
         # Step 10: Validate links
@@ -1300,19 +1301,27 @@ class GhidraHelpConverter:
 
         return out
 
+    def _list_version_dirs(self) -> list[Path]:
+        """Return every `Ghidra_*` sibling folder of `self.output_dir`,
+        sorted newest version first (reverse lex on folder name).
+        Shared by SUMMARY.md and landing-page version-list regeneration so
+        both agree on which versions exist and the order they appear in.
+        """
+        docs_root = self.output_dir.parent
+        if not docs_root.exists():
+            return []
+        return sorted(
+            (p for p in docs_root.iterdir() if p.is_dir() and p.name.startswith("Ghidra_")),
+            key=lambda p: p.name,
+            reverse=True,
+        )
+
     def _generate_docs_root_summary(self) -> None:
         """Write `docs/SUMMARY.md`, listing every `Ghidra_*_PUBLIC` version
         folder so mkdocs-literate-nav can drive the top-bar dropdown from
         each version's TOC. Sorted newest version first.
         """
-        docs_root = self.output_dir.parent
-        if not docs_root.exists():
-            return
-        versions = sorted(
-            (p for p in docs_root.iterdir() if p.is_dir() and p.name.startswith("Ghidra_")),
-            key=lambda p: p.name,
-            reverse=True,
-        )
+        versions = self._list_version_dirs()
         if not versions:
             return
         lines = ["- [Home](index.md)"]
@@ -1324,7 +1333,55 @@ class GhidraHelpConverter:
             # it as a regular link — `validation.links.unrecognized_links`
             # is set to `info` in mkdocs.yml so --strict ignores it.
             lines.append(f"- [{display}]({v.name}/)")
-        (docs_root / "SUMMARY.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        (self.output_dir.parent / "SUMMARY.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    def _update_landing_page_versions(self) -> None:
+        """Rewrite the `## Versions` section of `docs/index.md` to reflect
+        the set of `Ghidra_*` folders currently on disk. The intro above
+        the heading is left untouched; anything from `## Versions` through
+        the next `## ` heading (or EOF) is replaced.
+        """
+        index_path = self.output_dir.parent / "index.md"
+        if not index_path.exists():
+            return
+        versions = self._list_version_dirs()
+        if not versions:
+            return
+
+        original = index_path.read_text(encoding="utf-8")
+        lines = original.splitlines()
+
+        start: int | None = None
+        for i, line in enumerate(lines):
+            if line.startswith("## Versions"):
+                start = i
+                break
+        if start is None:
+            self.log("  Warning: docs/index.md has no `## Versions` heading; skipping landing-page version update")
+            return
+
+        end = len(lines)
+        for j in range(start + 1, len(lines)):
+            if lines[j].startswith("## "):
+                end = j
+                break
+
+        new_section = ["## Versions", ""]
+        for v in versions:
+            display = v.name.replace("_", " ")
+            new_section.append(f"- [{display}]({v.name}/index.md)")
+
+        # Preserve a trailing blank line before any following section so
+        # the markdown stays readable when more `## ` sections exist.
+        if end < len(lines):
+            new_section.append("")
+
+        rebuilt = lines[:start] + new_section + lines[end:]
+        new_text = "\n".join(rebuilt)
+        if original.endswith("\n"):
+            new_text += "\n"
+        if new_text != original:
+            index_path.write_text(new_text, encoding="utf-8")
 
     def _generate_module_indexes(self) -> None:
         """Generate index.md files for each module."""
