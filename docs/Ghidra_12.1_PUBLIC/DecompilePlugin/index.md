@@ -1,0 +1,33 @@
+# DecompilePlugin
+
+[← Back to Home](../index.md)
+
+## Contents
+
+- [Decompiler Concepts](DecompilerConcepts.md#decompiler-concepts)
+- [P-code](DecompilerConcepts.md#p-code)
+- [Machine Instructions](DecompilerAnnotations.md#machine-instructions)
+- [General Options](DecompilerOptions.md#general-options)
+- [Display](DecompilerWindow.md#display)
+- [The HighFunction](DecompilerConcepts.md#the-highfunction)
+- [Program Annotations Affecting the Decompiler](DecompilerAnnotations.md#program-annotations-affecting-the-decompiler)
+- [Comments](DecompilerAnnotations.md#comments)
+- [Analysis Options](DecompilerOptions.md#analysis-options)
+- [Main Window](DecompilerWindow.md#main-window)
+- [SLEIGH Specification Files](DecompilerConcepts.md#sleigh-specification-files)
+- [Variable Annotations](DecompilerAnnotations.md#variable-annotations)
+- [Decompiler Options](DecompilerOptions.md)
+- [Display Options](DecompilerOptions.md#display-options)
+- [Snapshot Windows](DecompilerWindow.md#snapshot-windows)
+- [Function Prototypes](DecompilerAnnotations.md#function-prototypes)
+- [Program Options](DecompilerOptions.md#program-options)
+- [Decompiler Window](DecompilerWindow.md#decompiler-window)
+- [Undefined Functions](DecompilerWindow.md#undefined-functions)
+- [Decompiler](DecompilerIntro.md#decompiler)
+- [Data Mutability](DecompilerAnnotations.md#data-mutability)
+- [Specification Extensions](DecompilerOptions.md#specification-extensions)
+- [Tool Bar](DecompilerWindow.md#tool-bar)
+- [Constant Annotations](DecompilerAnnotations.md#constant-annotations)
+- [Mouse Actions](DecompilerWindow.md#mouse-actions)
+- [Register Values](DecompilerAnnotations.md#register-values)
+- [Pop-up Menu and Keyboard Actions](DecompilerWindow.md#pop-up-menu-and-keyboard-actions)
